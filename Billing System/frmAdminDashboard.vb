@@ -25,8 +25,14 @@
         lblDate.Text = Now.ToLongDateString
     End Sub
 
-    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) 
         Me.Close()
     End Sub
 
+    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
+        frmAdminSettings.TopLevel = False
+        panelDashboard.Controls.Add(frmAdminSettings)
+        frmAdminSettings.BringToFront()
+        frmAdminSettings.Show()
+    End Sub
 End Class
