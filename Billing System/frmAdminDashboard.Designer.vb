@@ -235,9 +235,9 @@ Partial Class frmAdminDashboard
         '
         Me.Panel3.Controls.Add(Me.Label22)
         Me.Panel3.Controls.Add(Me.lblUsername)
-        Me.Panel3.Location = New System.Drawing.Point(0, 37)
+        Me.Panel3.Location = New System.Drawing.Point(688, 37)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(991, 37)
+        Me.Panel3.Size = New System.Drawing.Size(303, 37)
         Me.Panel3.TabIndex = 11
         '
         'Label22
@@ -246,7 +246,7 @@ Partial Class frmAdminDashboard
         Me.Label22.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label22.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Location = New System.Drawing.Point(692, 0)
+        Me.Label22.Location = New System.Drawing.Point(4, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(151, 32)
         Me.Label22.TabIndex = 10
@@ -259,7 +259,7 @@ Partial Class frmAdminDashboard
         Me.lblUsername.Dock = System.Windows.Forms.DockStyle.Right
         Me.lblUsername.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsername.ForeColor = System.Drawing.Color.White
-        Me.lblUsername.Location = New System.Drawing.Point(843, 0)
+        Me.lblUsername.Location = New System.Drawing.Point(155, 0)
         Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(148, 32)
         Me.lblUsername.TabIndex = 9

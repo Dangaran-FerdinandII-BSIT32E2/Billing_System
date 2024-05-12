@@ -36,8 +36,8 @@ Partial Class frmRegister
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.panelHeader = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnBack = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.panelHeader.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -258,17 +258,6 @@ Partial Class frmRegister
         Me.panelHeader.Size = New System.Drawing.Size(800, 57)
         Me.panelHeader.TabIndex = 48
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(60, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(215, 32)
-        Me.Label1.TabIndex = 35
-        Me.Label1.Text = "Create Account"
-        '
         'btnBack
         '
         Me.btnBack.BackColor = System.Drawing.Color.Transparent
@@ -289,6 +278,17 @@ Partial Class frmRegister
         Me.btnBack.Size = New System.Drawing.Size(54, 57)
         Me.btnBack.TabIndex = 36
         Me.btnBack.Text = "<"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(60, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(215, 32)
+        Me.Label1.TabIndex = 35
+        Me.Label1.Text = "Create Account"
         '
         'frmRegister
         '
