@@ -85,6 +85,12 @@
     <Compile Include="frmAdminDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAdminSettings.Designer.vb">
+      <DependentUpon>frmAdminSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAnalyticsData.Designer.vb">
       <DependentUpon>frmAnalyticsData.vb</DependentUpon>
     </Compile>
@@ -142,6 +148,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmAdminDashboard.resx">
       <DependentUpon>frmAdminDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminSettings.resx">
+      <DependentUpon>frmAdminSettings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAnalyticsData.resx">
       <DependentUpon>frmAnalyticsData.vb</DependentUpon>
