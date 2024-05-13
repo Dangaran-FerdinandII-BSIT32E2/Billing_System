@@ -29,4 +29,20 @@
         Me.Close()
     End Sub
 
+<<<<<<< Updated upstream
+=======
+    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
+        frmAdminSettings.TopLevel = False
+        panelDashboard.Controls.Add(frmAdminSettings)
+        frmAdminSettings.BringToFront()
+        frmAdminSettings.Show()
+    End Sub
+
+    Private Sub btnProducts_Click(sender As Object, e As EventArgs) Handles btnProducts.Click
+        frmManageProducts.TopLevel = False
+        panelDashboard.Controls.Add(frmManageProducts)
+        frmManageProducts.BringToFront()
+        frmManageProducts.Show()
+    End Sub
+>>>>>>> Stashed changes
 End Class
