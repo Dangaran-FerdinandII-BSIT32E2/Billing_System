@@ -22,6 +22,7 @@ Partial Class frmTestOnly
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+<<<<<<< Updated upstream
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2ComboBox6 = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -203,6 +204,89 @@ Partial Class frmTestOnly
         Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
         Me.Guna2ComboBox1.Size = New System.Drawing.Size(424, 36)
         Me.Guna2ComboBox1.TabIndex = 22
+=======
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
+        Me.SuspendLayout()
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.BorderRadius = 8
+        Me.Guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.FillColor = System.Drawing.Color.MediumBlue
+        Me.Guna2Button2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Guna2Button2.Location = New System.Drawing.Point(686, 300)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.PressedDepth = 20
+        Me.Guna2Button2.Size = New System.Drawing.Size(187, 36)
+        Me.Guna2Button2.TabIndex = 43
+        Me.Guna2Button2.Text = "Add New"
+        '
+        'btnCancel
+        '
+        Me.btnCancel.BorderRadius = 8
+        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCancel.FillColor = System.Drawing.Color.Red
+        Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnCancel.Location = New System.Drawing.Point(890, 300)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.PressedDepth = 20
+        Me.btnCancel.Size = New System.Drawing.Size(187, 36)
+        Me.btnCancel.TabIndex = 42
+        Me.btnCancel.Text = "Cancel"
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.BorderRadius = 8
+        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.FillColor = System.Drawing.Color.Green
+        Me.Guna2Button1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Guna2Button1.Location = New System.Drawing.Point(239, 300)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.PressedDepth = 20
+        Me.Guna2Button1.Size = New System.Drawing.Size(187, 36)
+        Me.Guna2Button1.TabIndex = 41
+        Me.Guna2Button1.Text = "Edit"
+        '
+        'btnSave
+        '
+        Me.btnSave.BorderRadius = 8
+        Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSave.FillColor = System.Drawing.Color.Green
+        Me.btnSave.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnSave.Location = New System.Drawing.Point(32, 300)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.PressedDepth = 20
+        Me.btnSave.Size = New System.Drawing.Size(187, 36)
+        Me.btnSave.TabIndex = 40
+        Me.btnSave.Text = "Save"
+>>>>>>> Stashed changes
         '
         'frmTestOnly
         '
@@ -210,6 +294,7 @@ Partial Class frmTestOnly
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1109, 636)
+<<<<<<< Updated upstream
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Guna2ComboBox6)
         Me.Controls.Add(Me.Label4)
@@ -222,14 +307,20 @@ Partial Class frmTestOnly
         Me.Controls.Add(Me.Guna2ComboBox2)
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.Guna2ComboBox1)
+=======
+        Me.Controls.Add(Me.Guna2Button2)
+        Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.Guna2Button1)
+        Me.Controls.Add(Me.btnSave)
+>>>>>>> Stashed changes
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmTestOnly"
         Me.Text = "frmTestOnly"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
+<<<<<<< Updated upstream
     Friend WithEvents Label5 As Label
     Friend WithEvents Guna2ComboBox6 As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label4 As Label
@@ -242,4 +333,10 @@ Partial Class frmTestOnly
     Friend WithEvents Guna2ComboBox2 As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label22 As Label
     Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
+=======
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
+>>>>>>> Stashed changes
 End Class

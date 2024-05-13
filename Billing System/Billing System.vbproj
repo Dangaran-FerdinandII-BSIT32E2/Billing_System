@@ -91,6 +91,12 @@
     <Compile Include="frmAnalyticsData.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCreateNewProduct.Designer.vb">
+      <DependentUpon>frmCreateNewProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateNewProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCreateNewSupplier.Designer.vb">
       <DependentUpon>frmCreateNewSupplier.vb</DependentUpon>
     </Compile>
@@ -102,6 +108,12 @@
     </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageProducts.Designer.vb">
+      <DependentUpon>frmManageProducts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageProducts.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmManageSuppliers.Designer.vb">
@@ -146,11 +158,17 @@
     <EmbeddedResource Include="frmAnalyticsData.resx">
       <DependentUpon>frmAnalyticsData.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateNewProduct.resx">
+      <DependentUpon>frmCreateNewProduct.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCreateNewSupplier.resx">
       <DependentUpon>frmCreateNewSupplier.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageProducts.resx">
+      <DependentUpon>frmManageProducts.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageSuppliers.resx">
       <DependentUpon>frmManageSuppliers.vb</DependentUpon>

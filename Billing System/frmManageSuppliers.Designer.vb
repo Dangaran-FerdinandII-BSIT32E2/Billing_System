@@ -48,7 +48,7 @@ Partial Class frmManageSuppliers
         Me.panelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBody.Location = New System.Drawing.Point(0, 0)
         Me.panelBody.Name = "panelBody"
-        Me.panelBody.Size = New System.Drawing.Size(1109, 636)
+        Me.panelBody.Size = New System.Drawing.Size(1109, 633)
         Me.panelBody.TabIndex = 5
         '
         'Guna2GroupBox1
@@ -62,7 +62,11 @@ Partial Class frmManageSuppliers
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
+<<<<<<< Updated upstream
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(19, 19)
+=======
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(7, 321)
+>>>>>>> Stashed changes
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.ShadowDecoration.BorderRadius = 5
         Me.Guna2GroupBox1.ShadowDecoration.Enabled = True
@@ -194,7 +198,7 @@ Partial Class frmManageSuppliers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1109, 636)
+        Me.ClientSize = New System.Drawing.Size(1109, 633)
         Me.Controls.Add(Me.panelBody)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmManageSuppliers"
