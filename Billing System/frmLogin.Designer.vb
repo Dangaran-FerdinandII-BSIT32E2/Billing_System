@@ -24,8 +24,6 @@ Partial Class frmLogin
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.panelLogin = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
@@ -53,8 +51,6 @@ Partial Class frmLogin
         'panelLogin
         '
         Me.panelLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.panelLogin.Controls.Add(Me.Label5)
-        Me.panelLogin.Controls.Add(Me.Label2)
         Me.panelLogin.Controls.Add(Me.Panel5)
         Me.panelLogin.Controls.Add(Me.lblRegister)
         Me.panelLogin.Controls.Add(Me.Label3)
@@ -67,28 +63,6 @@ Partial Class frmLogin
         Me.panelLogin.Name = "panelLogin"
         Me.panelLogin.Size = New System.Drawing.Size(400, 500)
         Me.panelLogin.TabIndex = 0
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arial Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(141, 121)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(150, 33)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Username"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial Black", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(123, 50)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(189, 45)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Welcome!"
         '
         'Panel5
         '
@@ -329,10 +303,8 @@ Partial Class frmLogin
     Friend WithEvents Panel5 As Panel
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents txtPassword As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents btnExit As Guna.UI2.WinForms.Guna2Button
 End Class

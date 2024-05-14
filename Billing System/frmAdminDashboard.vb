@@ -1,5 +1,33 @@
 ﻿Public Class frmAdminDashboard
+    Private isFormBeingDragged As Boolean = False
+    Private mouseDownX As Integer
+    Private mouseDownY As Integer
+
+    Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel2.MouseDown
+        If e.Button = MouseButtons.Left Then
+            isFormBeingDragged = True
+            mouseDownX = e.X
+            mouseDownY = e.Y
+        End If
+    End Sub
+
+    Private Sub Panel2_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel2.MouseUp
+        If e.Button = MouseButtons.Left Then
+            isFormBeingDragged = False
+        End If
+    End Sub
+
+    Private Sub Panel2_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel2.MouseMove
+        If isFormBeingDragged Then
+            Dim temp As Point = New Point()
+            temp.X = Me.Location.X + (e.X - mouseDownX)
+            temp.Y = Me.Location.Y + (e.Y - mouseDownY)
+            Me.Location = temp
+            temp = Nothing
+        End If
+    End Sub
     Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call connection()
         frmAnalyticsData.TopLevel = False
         panelDashboard.Controls.Add(frmAnalyticsData)
         frmAnalyticsData.BringToFront()
