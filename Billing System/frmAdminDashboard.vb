@@ -63,4 +63,25 @@
         frmAdminSettings.BringToFront()
         frmAdminSettings.Show()
     End Sub
+
+    Private Sub btnProducts_Click(sender As Object, e As EventArgs) Handles btnProducts.Click
+        frmManageProducts.TopLevel = False
+        panelDashboard.Controls.Add(frmManageProducts)
+        frmManageProducts.BringToFront()
+        frmManageProducts.Show()
+    End Sub
+
+    Private Sub btnCustomers_Click(sender As Object, e As EventArgs) Handles btnCustomers.Click
+        frmManageCustomers.TopLevel = False
+        panelDashboard.Controls.Add(frmManageCustomers)
+        frmManageCustomers.BringToFront()
+        frmManageCustomers.Show()
+    End Sub
+
+    Private Sub btnManageUsers_Click(sender As Object, e As EventArgs) Handles btnManageUsers.Click
+        frmManageUsers.TopLevel = False
+        panelDashboard.Controls.Add(frmManageUsers)
+        frmManageUsers.BringToFront()
+        frmManageUsers.Show()
+    End Sub
 End Class
