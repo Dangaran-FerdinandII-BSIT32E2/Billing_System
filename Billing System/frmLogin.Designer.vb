@@ -50,7 +50,7 @@ Partial Class frmLogin
         '
         'panelLogin
         '
-        Me.panelLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.panelLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.panelLogin.Controls.Add(Me.Panel5)
         Me.panelLogin.Controls.Add(Me.lblRegister)
         Me.panelLogin.Controls.Add(Me.Label3)
@@ -108,7 +108,7 @@ Partial Class frmLogin
         '
         'lblRegister
         '
-        Me.lblRegister.ActiveLinkColor = System.Drawing.Color.Blue
+        Me.lblRegister.ActiveLinkColor = System.Drawing.Color.White
         Me.lblRegister.AutoSize = True
         Me.lblRegister.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblRegister.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -214,7 +214,7 @@ Partial Class frmLogin
         Me.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnLogin.FillColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnLogin.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnLogin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.White
         Me.btnLogin.Location = New System.Drawing.Point(85, 357)

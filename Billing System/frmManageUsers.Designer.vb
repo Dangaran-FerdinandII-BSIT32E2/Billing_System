@@ -27,9 +27,10 @@ Partial Class frmManageUsers
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -37,10 +38,16 @@ Partial Class frmManageUsers
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtSearchUser = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
+        Me.cboStatus = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtUsername = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtLastName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.cboRole = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.btnCreateNew = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
@@ -49,16 +56,9 @@ Partial Class frmManageUsers
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtFirstName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.txtUserID = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.cboRole = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtUsername = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.cboStatus = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -72,7 +72,7 @@ Partial Class frmManageUsers
         Me.Guna2GroupBox2.Controls.Add(Me.Label2)
         Me.Guna2GroupBox2.Controls.Add(Me.Panel2)
         Me.Guna2GroupBox2.Controls.Add(Me.txtSearchUser)
-        Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Guna2GroupBox2.CustomBorderThickness = New System.Windows.Forms.Padding(0, 50, 0, 0)
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
@@ -88,7 +88,7 @@ Partial Class frmManageUsers
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5, Me.ColumnHeader4, Me.ColumnHeader6, Me.ColumnHeader7})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.GridLines = True
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
@@ -117,13 +117,6 @@ Partial Class frmManageUsers
         Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader3.Width = 200
         '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.DisplayIndex = 3
-        Me.ColumnHeader4.Text = "Password"
-        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader4.Width = 200
-        '
         'ColumnHeader5
         '
         Me.ColumnHeader5.DisplayIndex = 4
@@ -131,11 +124,24 @@ Partial Class frmManageUsers
         Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader5.Width = 250
         '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.DisplayIndex = 3
+        Me.ColumnHeader4.Text = "Password"
+        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader4.Width = 200
+        '
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "Role"
         Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader6.Width = 150
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Status"
+        Me.ColumnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader7.Width = 150
         '
         'Panel4
         '
@@ -229,7 +235,7 @@ Partial Class frmManageUsers
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
         Me.Guna2GroupBox1.Controls.Add(Me.txtUserID)
         Me.Guna2GroupBox1.Controls.Add(Me.Label22)
-        Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(7, 317)
@@ -240,6 +246,86 @@ Partial Class frmManageUsers
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1095, 304)
         Me.Guna2GroupBox1.TabIndex = 12
         Me.Guna2GroupBox1.Text = "Manage User"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BorderRadius = 8
+        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.FillColor = System.Drawing.Color.Blue
+        Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnDelete.Location = New System.Drawing.Point(699, 257)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.PressedDepth = 20
+        Me.btnDelete.Size = New System.Drawing.Size(187, 36)
+        Me.btnDelete.TabIndex = 52
+        Me.btnDelete.Text = "Delete"
+        '
+        'cboStatus
+        '
+        Me.cboStatus.BackColor = System.Drawing.Color.Transparent
+        Me.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboStatus.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.cboStatus.ForeColor = System.Drawing.Color.Black
+        Me.cboStatus.ItemHeight = 30
+        Me.cboStatus.Items.AddRange(New Object() {"Active", "InActive"})
+        Me.cboStatus.Location = New System.Drawing.Point(816, 155)
+        Me.cboStatus.Name = "cboStatus"
+        Me.cboStatus.Size = New System.Drawing.Size(268, 36)
+        Me.cboStatus.TabIndex = 51
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(815, 132)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 19)
+        Me.Label7.TabIndex = 50
+        Me.Label7.Text = "Status"
+        '
+        'txtUsername
+        '
+        Me.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtUsername.DefaultText = ""
+        Me.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUsername.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtUsername.ForeColor = System.Drawing.Color.Black
+        Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtUsername.Location = New System.Drawing.Point(819, 77)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUsername.PlaceholderText = "Enter First Name"
+        Me.txtUsername.SelectedText = ""
+        Me.txtUsername.Size = New System.Drawing.Size(265, 36)
+        Me.txtUsername.TabIndex = 49
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(818, 54)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(87, 19)
+        Me.Label8.TabIndex = 48
+        Me.Label8.Text = "Username"
         '
         'txtPassword
         '
@@ -267,7 +353,7 @@ Partial Class frmManageUsers
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(12, 132)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(86, 19)
@@ -300,12 +386,28 @@ Partial Class frmManageUsers
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(539, 54)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(90, 19)
         Me.Label4.TabIndex = 42
         Me.Label4.Text = "Last Name"
+        '
+        'cboRole
+        '
+        Me.cboRole.BackColor = System.Drawing.Color.Transparent
+        Me.cboRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboRole.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboRole.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.cboRole.ForeColor = System.Drawing.Color.Black
+        Me.cboRole.ItemHeight = 30
+        Me.cboRole.Items.AddRange(New Object() {"Controller", "Sales", "Finance", "Unknown Role"})
+        Me.cboRole.Location = New System.Drawing.Point(540, 155)
+        Me.cboRole.Name = "cboRole"
+        Me.cboRole.Size = New System.Drawing.Size(262, 36)
+        Me.cboRole.TabIndex = 41
         '
         'btnCreateNew
         '
@@ -334,7 +436,7 @@ Partial Class frmManageUsers
         Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancel.FillColor = System.Drawing.Color.Red
+        Me.btnCancel.FillColor = System.Drawing.Color.Blue
         Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -353,7 +455,7 @@ Partial Class frmManageUsers
         Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEdit.FillColor = System.Drawing.Color.Green
+        Me.btnEdit.FillColor = System.Drawing.Color.Blue
         Me.btnEdit.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -372,7 +474,7 @@ Partial Class frmManageUsers
         Me.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSave.FillColor = System.Drawing.Color.Green
+        Me.btnSave.FillColor = System.Drawing.Color.Blue
         Me.btnSave.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -409,7 +511,7 @@ Partial Class frmManageUsers
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(260, 132)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(151, 19)
@@ -442,12 +544,24 @@ Partial Class frmManageUsers
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(260, 54)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(91, 19)
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "First Name"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(539, 132)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(44, 19)
+        Me.Label5.TabIndex = 28
+        Me.Label5.Text = "Role"
         '
         'txtUserID
         '
@@ -477,126 +591,12 @@ Partial Class frmManageUsers
         Me.Label22.AutoSize = True
         Me.Label22.BackColor = System.Drawing.Color.Transparent
         Me.Label22.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label22.Location = New System.Drawing.Point(12, 54)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(65, 19)
         Me.Label22.TabIndex = 26
         Me.Label22.Text = "User ID"
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Status"
-        Me.ColumnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader7.Width = 150
-        '
-        'cboRole
-        '
-        Me.cboRole.BackColor = System.Drawing.Color.Transparent
-        Me.cboRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboRole.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboRole.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.cboRole.ForeColor = System.Drawing.Color.Black
-        Me.cboRole.ItemHeight = 30
-        Me.cboRole.Items.AddRange(New Object() {"Controller", "Sales", "Finance", "Unknown Role"})
-        Me.cboRole.Location = New System.Drawing.Point(540, 155)
-        Me.cboRole.Name = "cboRole"
-        Me.cboRole.Size = New System.Drawing.Size(262, 36)
-        Me.cboRole.TabIndex = 41
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(539, 132)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(44, 19)
-        Me.Label5.TabIndex = 28
-        Me.Label5.Text = "Role"
-        '
-        'txtUsername
-        '
-        Me.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtUsername.DefaultText = ""
-        Me.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUsername.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtUsername.ForeColor = System.Drawing.Color.Black
-        Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtUsername.Location = New System.Drawing.Point(819, 77)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtUsername.PlaceholderText = "Enter First Name"
-        Me.txtUsername.SelectedText = ""
-        Me.txtUsername.Size = New System.Drawing.Size(265, 36)
-        Me.txtUsername.TabIndex = 49
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(818, 54)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(87, 19)
-        Me.Label8.TabIndex = 48
-        Me.Label8.Text = "Username"
-        '
-        'cboStatus
-        '
-        Me.cboStatus.BackColor = System.Drawing.Color.Transparent
-        Me.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboStatus.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.cboStatus.ForeColor = System.Drawing.Color.Black
-        Me.cboStatus.ItemHeight = 30
-        Me.cboStatus.Items.AddRange(New Object() {"Active", "InActive"})
-        Me.cboStatus.Location = New System.Drawing.Point(816, 155)
-        Me.cboStatus.Name = "cboStatus"
-        Me.cboStatus.Size = New System.Drawing.Size(268, 36)
-        Me.cboStatus.TabIndex = 51
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(815, 132)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(58, 19)
-        Me.Label7.TabIndex = 50
-        Me.Label7.Text = "Status"
-        '
-        'btnDelete
-        '
-        Me.btnDelete.BorderRadius = 8
-        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDelete.FillColor = System.Drawing.Color.Red
-        Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnDelete.Location = New System.Drawing.Point(699, 257)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.PressedDepth = 20
-        Me.btnDelete.Size = New System.Drawing.Size(187, 36)
-        Me.btnDelete.TabIndex = 52
-        Me.btnDelete.Text = "Delete"
         '
         'frmManageUsers
         '

@@ -102,10 +102,22 @@
     <Compile Include="frmAnalyticsData.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmConfirmPayment.Designer.vb">
+      <DependentUpon>frmConfirmPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfirmPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCreateNewSupplier.Designer.vb">
       <DependentUpon>frmCreateNewSupplier.vb</DependentUpon>
     </Compile>
     <Compile Include="frmCreateNewSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageInvoice.Designer.vb">
+      <DependentUpon>frmManageInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.vb">
@@ -113,6 +125,18 @@
     </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageBilling.Designer.vb">
+      <DependentUpon>frmManageBilling.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageBilling.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageCollection.Designer.vb">
+      <DependentUpon>frmManageCollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageCollection.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmManageCustomers.Designer.vb">
@@ -127,6 +151,12 @@
     <Compile Include="frmManageProducts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmManageSales.Designer.vb">
+      <DependentUpon>frmManageSales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageSales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmManageSuppliers.Designer.vb">
       <DependentUpon>frmManageSuppliers.vb</DependentUpon>
     </Compile>
@@ -137,6 +167,12 @@
       <DependentUpon>frmManageUsers.vb</DependentUpon>
     </Compile>
     <Compile Include="frmManageUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintInvoice.Designer.vb">
+      <DependentUpon>frmPrintInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRegister.Designer.vb">
@@ -178,11 +214,23 @@
     <EmbeddedResource Include="frmAnalyticsData.resx">
       <DependentUpon>frmAnalyticsData.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirmPayment.resx">
+      <DependentUpon>frmConfirmPayment.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCreateNewSupplier.resx">
       <DependentUpon>frmCreateNewSupplier.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManageInvoice.resx">
+      <DependentUpon>frmManageInvoice.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageBilling.resx">
+      <DependentUpon>frmManageBilling.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageCollection.resx">
+      <DependentUpon>frmManageCollection.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageCustomers.resx">
       <DependentUpon>frmManageCustomers.vb</DependentUpon>
@@ -190,11 +238,17 @@
     <EmbeddedResource Include="frmManageProducts.resx">
       <DependentUpon>frmManageProducts.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManageSales.resx">
+      <DependentUpon>frmManageSales.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManageSuppliers.resx">
       <DependentUpon>frmManageSuppliers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageUsers.resx">
       <DependentUpon>frmManageUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintInvoice.resx">
+      <DependentUpon>frmPrintInvoice.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.vb</DependentUpon>

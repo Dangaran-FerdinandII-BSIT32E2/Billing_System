@@ -107,7 +107,7 @@ Partial Class frmRegister
         '
         'btnRegister
         '
-        Me.btnRegister.BorderColor = System.Drawing.Color.Red
+        Me.btnRegister.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnRegister.BorderRadius = 15
         Me.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRegister.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -293,7 +293,7 @@ Partial Class frmRegister
         'frmRegister
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 500)
         Me.Controls.Add(Me.panelHeader)
         Me.Controls.Add(Me.cboRole)

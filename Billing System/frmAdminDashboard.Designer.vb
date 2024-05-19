@@ -25,10 +25,11 @@ Partial Class frmAdminDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAdminDashboard))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnManageUsers = New System.Windows.Forms.Button()
+        Me.btnUser = New System.Windows.Forms.Button()
+        Me.btnRental = New System.Windows.Forms.Button()
         Me.btnCollection = New System.Windows.Forms.Button()
         Me.btnBilling = New System.Windows.Forms.Button()
-        Me.btnSales = New System.Windows.Forms.Button()
+        Me.btnSale = New System.Windows.Forms.Button()
         Me.btnCustomers = New System.Windows.Forms.Button()
         Me.btnProducts = New System.Windows.Forms.Button()
         Me.btnSuppliers = New System.Windows.Forms.Button()
@@ -60,10 +61,11 @@ Partial Class frmAdminDashboard
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.btnManageUsers)
+        Me.Panel1.Controls.Add(Me.btnUser)
+        Me.Panel1.Controls.Add(Me.btnRental)
         Me.Panel1.Controls.Add(Me.btnCollection)
         Me.Panel1.Controls.Add(Me.btnBilling)
-        Me.Panel1.Controls.Add(Me.btnSales)
+        Me.Panel1.Controls.Add(Me.btnSale)
         Me.Panel1.Controls.Add(Me.btnCustomers)
         Me.Panel1.Controls.Add(Me.btnProducts)
         Me.Panel1.Controls.Add(Me.btnSuppliers)
@@ -75,24 +77,43 @@ Partial Class frmAdminDashboard
         Me.Panel1.Size = New System.Drawing.Size(257, 768)
         Me.Panel1.TabIndex = 0
         '
-        'btnManageUsers
+        'btnUser
         '
-        Me.btnManageUsers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnManageUsers.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnManageUsers.FlatAppearance.BorderSize = 0
-        Me.btnManageUsers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.btnManageUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnManageUsers.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnManageUsers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnManageUsers.Image = CType(resources.GetObject("btnManageUsers.Image"), System.Drawing.Image)
-        Me.btnManageUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnManageUsers.Location = New System.Drawing.Point(0, 624)
-        Me.btnManageUsers.Name = "btnManageUsers"
-        Me.btnManageUsers.Size = New System.Drawing.Size(257, 73)
-        Me.btnManageUsers.TabIndex = 10
-        Me.btnManageUsers.Text = "     Users"
-        Me.btnManageUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnManageUsers.UseVisualStyleBackColor = True
+        Me.btnUser.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUser.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnUser.FlatAppearance.BorderSize = 0
+        Me.btnUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUser.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnUser.Image = CType(resources.GetObject("btnUser.Image"), System.Drawing.Image)
+        Me.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnUser.Location = New System.Drawing.Point(0, 697)
+        Me.btnUser.Name = "btnUser"
+        Me.btnUser.Size = New System.Drawing.Size(257, 73)
+        Me.btnUser.TabIndex = 11
+        Me.btnUser.Text = "     Users"
+        Me.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnUser.UseVisualStyleBackColor = True
+        '
+        'btnRental
+        '
+        Me.btnRental.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRental.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnRental.FlatAppearance.BorderSize = 0
+        Me.btnRental.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnRental.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRental.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRental.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnRental.Image = CType(resources.GetObject("btnRental.Image"), System.Drawing.Image)
+        Me.btnRental.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRental.Location = New System.Drawing.Point(0, 624)
+        Me.btnRental.Name = "btnRental"
+        Me.btnRental.Size = New System.Drawing.Size(257, 73)
+        Me.btnRental.TabIndex = 10
+        Me.btnRental.Text = "     Rental"
+        Me.btnRental.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRental.UseVisualStyleBackColor = True
         '
         'btnCollection
         '
@@ -102,7 +123,7 @@ Partial Class frmAdminDashboard
         Me.btnCollection.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
         Me.btnCollection.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCollection.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCollection.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnCollection.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnCollection.Image = CType(resources.GetObject("btnCollection.Image"), System.Drawing.Image)
         Me.btnCollection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCollection.Location = New System.Drawing.Point(0, 551)
@@ -121,7 +142,7 @@ Partial Class frmAdminDashboard
         Me.btnBilling.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
         Me.btnBilling.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBilling.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBilling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnBilling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnBilling.Image = CType(resources.GetObject("btnBilling.Image"), System.Drawing.Image)
         Me.btnBilling.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBilling.Location = New System.Drawing.Point(0, 478)
@@ -132,24 +153,24 @@ Partial Class frmAdminDashboard
         Me.btnBilling.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBilling.UseVisualStyleBackColor = True
         '
-        'btnSales
+        'btnSale
         '
-        Me.btnSales.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSales.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSales.FlatAppearance.BorderSize = 0
-        Me.btnSales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSales.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSales.Image = CType(resources.GetObject("btnSales.Image"), System.Drawing.Image)
-        Me.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSales.Location = New System.Drawing.Point(0, 405)
-        Me.btnSales.Name = "btnSales"
-        Me.btnSales.Size = New System.Drawing.Size(257, 73)
-        Me.btnSales.TabIndex = 5
-        Me.btnSales.Text = "     Sales"
-        Me.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSales.UseVisualStyleBackColor = True
+        Me.btnSale.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSale.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSale.FlatAppearance.BorderSize = 0
+        Me.btnSale.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSale.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSale.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnSale.Image = CType(resources.GetObject("btnSale.Image"), System.Drawing.Image)
+        Me.btnSale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSale.Location = New System.Drawing.Point(0, 405)
+        Me.btnSale.Name = "btnSale"
+        Me.btnSale.Size = New System.Drawing.Size(257, 73)
+        Me.btnSale.TabIndex = 5
+        Me.btnSale.Text = "     Sales"
+        Me.btnSale.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSale.UseVisualStyleBackColor = True
         '
         'btnCustomers
         '
@@ -159,7 +180,7 @@ Partial Class frmAdminDashboard
         Me.btnCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
         Me.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCustomers.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnCustomers.Image = CType(resources.GetObject("btnCustomers.Image"), System.Drawing.Image)
         Me.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.Location = New System.Drawing.Point(0, 332)
@@ -178,7 +199,7 @@ Partial Class frmAdminDashboard
         Me.btnProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
         Me.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProducts.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProducts.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnProducts.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnProducts.Image = CType(resources.GetObject("btnProducts.Image"), System.Drawing.Image)
         Me.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnProducts.Location = New System.Drawing.Point(0, 259)
@@ -197,7 +218,7 @@ Partial Class frmAdminDashboard
         Me.btnSuppliers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
         Me.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSuppliers.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSuppliers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSuppliers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnSuppliers.Image = CType(resources.GetObject("btnSuppliers.Image"), System.Drawing.Image)
         Me.btnSuppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSuppliers.Location = New System.Drawing.Point(0, 186)
@@ -216,7 +237,7 @@ Partial Class frmAdminDashboard
         Me.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDashboard.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnDashboard.Image = CType(resources.GetObject("btnDashboard.Image"), System.Drawing.Image)
         Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDashboard.Location = New System.Drawing.Point(0, 113)
@@ -240,7 +261,7 @@ Partial Class frmAdminDashboard
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.Panel7)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
@@ -313,7 +334,7 @@ Partial Class frmAdminDashboard
         '
         'Panel5
         '
-        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Controls.Add(Me.lblRole)
         Me.Panel5.Controls.Add(Me.Label4)
@@ -442,7 +463,7 @@ Partial Class frmAdminDashboard
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnDashboard As Button
-    Friend WithEvents btnSales As Button
+    Friend WithEvents btnSale As Button
     Friend WithEvents btnCustomers As Button
     Friend WithEvents btnProducts As Button
     Friend WithEvents btnSuppliers As Button
@@ -462,5 +483,6 @@ Partial Class frmAdminDashboard
     Friend WithEvents lblUsername As Label
     Friend WithEvents btnCollection As Button
     Friend WithEvents btnBilling As Button
-    Friend WithEvents btnManageUsers As Button
+    Friend WithEvents btnRental As Button
+    Friend WithEvents btnUser As Button
 End Class

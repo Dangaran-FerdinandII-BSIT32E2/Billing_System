@@ -27,7 +27,7 @@
         End If
     End Sub
     Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call connection()
+        'Call connection()
         frmAnalyticsData.TopLevel = False
         panelDashboard.Controls.Add(frmAnalyticsData)
         frmAnalyticsData.BringToFront()
@@ -78,10 +78,31 @@
         frmManageCustomers.Show()
     End Sub
 
-    Private Sub btnManageUsers_Click(sender As Object, e As EventArgs) Handles btnManageUsers.Click
+    Private Sub btnUser_Click(sender As Object, e As EventArgs) Handles btnUser.Click
         frmManageUsers.TopLevel = False
         panelDashboard.Controls.Add(frmManageUsers)
         frmManageUsers.BringToFront()
         frmManageUsers.Show()
+    End Sub
+
+    Private Sub btnSale_Click(sender As Object, e As EventArgs) Handles btnSale.Click
+        frmManageSales.TopLevel = False
+        panelDashboard.Controls.Add(frmManageSales)
+        frmManageSales.BringToFront()
+        frmManageSales.Show()
+    End Sub
+
+    Private Sub btnBilling_Click(sender As Object, e As EventArgs) Handles btnBilling.Click
+        frmManageBilling.TopLevel = False
+        panelDashboard.Controls.Add(frmManageBilling)
+        frmManageBilling.BringToFront()
+        frmManageBilling.Show()
+    End Sub
+
+    Private Sub btnCollection_Click(sender As Object, e As EventArgs) 
+        frmManageCollection.TopLevel = False
+        panelDashboard.Controls.Add(frmManageCollection)
+        frmManageCollection.BringToFront()
+        frmManageCollection.Show()
     End Sub
 End Class
