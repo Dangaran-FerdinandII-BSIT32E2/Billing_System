@@ -63,6 +63,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -108,10 +109,10 @@
     <Compile Include="frmConfirmPayment.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCreateNewSupplier.Designer.vb">
-      <DependentUpon>frmCreateNewSupplier.vb</DependentUpon>
+    <Compile Include="frmListProducts.Designer.vb">
+      <DependentUpon>frmListProducts.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCreateNewSupplier.vb">
+    <Compile Include="frmListProducts.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmManageInvoice.Designer.vb">
@@ -149,6 +150,12 @@
       <DependentUpon>frmManageProducts.vb</DependentUpon>
     </Compile>
     <Compile Include="frmManageProducts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageRental.Designer.vb">
+      <DependentUpon>frmManageRental.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageRental.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmManageSales.Designer.vb">
@@ -217,8 +224,8 @@
     <EmbeddedResource Include="frmConfirmPayment.resx">
       <DependentUpon>frmConfirmPayment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCreateNewSupplier.resx">
-      <DependentUpon>frmCreateNewSupplier.vb</DependentUpon>
+    <EmbeddedResource Include="frmListProducts.resx">
+      <DependentUpon>frmListProducts.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageInvoice.resx">
       <DependentUpon>frmManageInvoice.vb</DependentUpon>
@@ -237,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageProducts.resx">
       <DependentUpon>frmManageProducts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageRental.resx">
+      <DependentUpon>frmManageRental.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageSales.resx">
       <DependentUpon>frmManageSales.vb</DependentUpon>

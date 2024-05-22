@@ -22,6 +22,7 @@ Partial Class frmManageSales
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageSales))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -43,6 +44,7 @@ Partial Class frmManageSales
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnSearchCompanyName = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel7.SuspendLayout()
@@ -168,6 +170,7 @@ Partial Class frmManageSales
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.White
+        Me.Panel7.Controls.Add(Me.btnSearchCompanyName)
         Me.Panel7.Controls.Add(Me.txtCompanyName)
         Me.Panel7.Controls.Add(Me.Label4)
         Me.Panel7.Controls.Add(Me.DateTimePicker2)
@@ -196,7 +199,7 @@ Partial Class frmManageSales
         Me.txtCompanyName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCompanyName.Name = "txtCompanyName"
         Me.txtCompanyName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtCompanyName.PlaceholderText = "Enter company name"
+        Me.txtCompanyName.PlaceholderText = "Search by company name"
         Me.txtCompanyName.SelectedText = ""
         Me.txtCompanyName.Size = New System.Drawing.Size(348, 36)
         Me.txtCompanyName.TabIndex = 45
@@ -273,6 +276,25 @@ Partial Class frmManageSales
         Me.Panel5.Size = New System.Drawing.Size(10, 573)
         Me.Panel5.TabIndex = 34
         '
+        'btnSearchCompanyName
+        '
+        Me.btnSearchCompanyName.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearchCompanyName.BorderRadius = 8
+        Me.btnSearchCompanyName.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearchCompanyName.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCompanyName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearchCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearchCompanyName.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearchCompanyName.ForeColor = System.Drawing.Color.White
+        Me.btnSearchCompanyName.Image = CType(resources.GetObject("btnSearchCompanyName.Image"), System.Drawing.Image)
+        Me.btnSearchCompanyName.Location = New System.Drawing.Point(673, 36)
+        Me.btnSearchCompanyName.Name = "btnSearchCompanyName"
+        Me.btnSearchCompanyName.PressedDepth = 20
+        Me.btnSearchCompanyName.Size = New System.Drawing.Size(41, 36)
+        Me.btnSearchCompanyName.TabIndex = 45
+        '
         'frmManageSales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -315,4 +337,5 @@ Partial Class frmManageSales
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents btnPrint As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnSearchCompanyName As Guna.UI2.WinForms.Guna2Button
 End Class

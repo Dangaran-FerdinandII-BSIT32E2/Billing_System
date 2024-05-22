@@ -22,6 +22,7 @@ Partial Class frmManageCollection
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageCollection))
         Me.frmManageCollectionPanel = New System.Windows.Forms.Panel()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -34,6 +35,7 @@ Partial Class frmManageCollection
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtSearchCompany = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btnSearchCompanyName = New Guna.UI2.WinForms.Guna2Button()
         Me.frmManageCollectionPanel.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -50,6 +52,7 @@ Partial Class frmManageCollection
         '
         'Guna2GroupBox2
         '
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSearchCompanyName)
         Me.Guna2GroupBox2.Controls.Add(Me.ListView1)
         Me.Guna2GroupBox2.Controls.Add(Me.Panel5)
         Me.Guna2GroupBox2.Controls.Add(Me.Panel4)
@@ -184,10 +187,29 @@ Partial Class frmManageCollection
         Me.txtSearchCompany.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSearchCompany.Name = "txtSearchCompany"
         Me.txtSearchCompany.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearchCompany.PlaceholderText = "Search company name"
+        Me.txtSearchCompany.PlaceholderText = "Search by company name"
         Me.txtSearchCompany.SelectedText = ""
         Me.txtSearchCompany.Size = New System.Drawing.Size(314, 30)
         Me.txtSearchCompany.TabIndex = 12
+        '
+        'btnSearchCompanyName
+        '
+        Me.btnSearchCompanyName.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearchCompanyName.BorderRadius = 8
+        Me.btnSearchCompanyName.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearchCompanyName.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCompanyName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearchCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearchCompanyName.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearchCompanyName.ForeColor = System.Drawing.Color.White
+        Me.btnSearchCompanyName.Image = CType(resources.GetObject("btnSearchCompanyName.Image"), System.Drawing.Image)
+        Me.btnSearchCompanyName.Location = New System.Drawing.Point(727, 8)
+        Me.btnSearchCompanyName.Name = "btnSearchCompanyName"
+        Me.btnSearchCompanyName.PressedDepth = 20
+        Me.btnSearchCompanyName.Size = New System.Drawing.Size(41, 36)
+        Me.btnSearchCompanyName.TabIndex = 45
         '
         'frmManageCollection
         '
@@ -218,4 +240,5 @@ Partial Class frmManageCollection
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents txtSearchCompany As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnSearchCompanyName As Guna.UI2.WinForms.Guna2Button
 End Class

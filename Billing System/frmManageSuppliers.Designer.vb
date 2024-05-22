@@ -22,8 +22,14 @@ Partial Class frmManageSuppliers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageSuppliers))
         Me.panelBody = New System.Windows.Forms.Panel()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblSupplierID = New System.Windows.Forms.Label()
         Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCreateNew = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
@@ -43,9 +49,8 @@ Partial Class frmManageSuppliers
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtAddress = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtSupplierID = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.btnSearchSupplierName = New Guna.UI2.WinForms.Guna2Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -64,6 +69,7 @@ Partial Class frmManageSuppliers
         Me.txtSearchSupplier = New Guna.UI2.WinForms.Guna2TextBox()
         Me.panelBody.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -79,6 +85,9 @@ Partial Class frmManageSuppliers
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.Guna2TextBox1)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label10)
+        Me.Guna2GroupBox1.Controls.Add(Me.Panel5)
         Me.Guna2GroupBox1.Controls.Add(Me.btnDelete)
         Me.Guna2GroupBox1.Controls.Add(Me.btnCreateNew)
         Me.Guna2GroupBox1.Controls.Add(Me.btnCancel)
@@ -98,8 +107,6 @@ Partial Class frmManageSuppliers
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.Controls.Add(Me.txtAddress)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtSupplierID)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label22)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
@@ -111,6 +118,75 @@ Partial Class frmManageSuppliers
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1095, 304)
         Me.Guna2GroupBox1.TabIndex = 10
         Me.Guna2GroupBox1.Text = "Manage Supplier"
+        '
+        'Guna2TextBox1
+        '
+        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox1.DefaultText = ""
+        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox1.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2TextBox1.Location = New System.Drawing.Point(329, 78)
+        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2TextBox1.Name = "Guna2TextBox1"
+        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox1.PlaceholderText = "Enter bank details"
+        Me.Guna2TextBox1.SelectedText = ""
+        Me.Guna2TextBox1.Size = New System.Drawing.Size(242, 36)
+        Me.Guna2TextBox1.TabIndex = 70
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label10.Location = New System.Drawing.Point(328, 55)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(105, 19)
+        Me.Label10.TabIndex = 69
+        Me.Label10.Text = "Bank Details"
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.Transparent
+        Me.Panel5.Controls.Add(Me.Label9)
+        Me.Panel5.Controls.Add(Me.lblSupplierID)
+        Me.Panel5.Location = New System.Drawing.Point(601, 11)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(483, 23)
+        Me.Panel5.TabIndex = 68
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(316, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(103, 19)
+        Me.Label9.TabIndex = 64
+        Me.Label9.Text = "Supplier ID: "
+        '
+        'lblSupplierID
+        '
+        Me.lblSupplierID.AutoSize = True
+        Me.lblSupplierID.BackColor = System.Drawing.Color.Transparent
+        Me.lblSupplierID.Dock = System.Windows.Forms.DockStyle.Right
+        Me.lblSupplierID.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSupplierID.ForeColor = System.Drawing.Color.White
+        Me.lblSupplierID.Location = New System.Drawing.Point(419, 0)
+        Me.lblSupplierID.Name = "lblSupplierID"
+        Me.lblSupplierID.Size = New System.Drawing.Size(64, 19)
+        Me.lblSupplierID.TabIndex = 28
+        Me.lblSupplierID.Text = "XXXXX"
         '
         'btnDelete
         '
@@ -124,10 +200,10 @@ Partial Class frmManageSuppliers
         Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnDelete.Location = New System.Drawing.Point(699, 257)
+        Me.btnDelete.Location = New System.Drawing.Point(767, 257)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedDepth = 20
-        Me.btnDelete.Size = New System.Drawing.Size(187, 36)
+        Me.btnDelete.Size = New System.Drawing.Size(152, 36)
         Me.btnDelete.TabIndex = 67
         Me.btnDelete.Text = "Delete"
         '
@@ -146,7 +222,7 @@ Partial Class frmManageSuppliers
         Me.btnCreateNew.Location = New System.Drawing.Point(9, 257)
         Me.btnCreateNew.Name = "btnCreateNew"
         Me.btnCreateNew.PressedDepth = 20
-        Me.btnCreateNew.Size = New System.Drawing.Size(187, 36)
+        Me.btnCreateNew.Size = New System.Drawing.Size(152, 36)
         Me.btnCreateNew.TabIndex = 66
         Me.btnCreateNew.Text = "Create New"
         '
@@ -162,10 +238,10 @@ Partial Class frmManageSuppliers
         Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCancel.Location = New System.Drawing.Point(897, 257)
+        Me.btnCancel.Location = New System.Drawing.Point(932, 257)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(187, 36)
+        Me.btnCancel.Size = New System.Drawing.Size(152, 36)
         Me.btnCancel.TabIndex = 65
         Me.btnCancel.Text = "Cancel"
         '
@@ -181,10 +257,10 @@ Partial Class frmManageSuppliers
         Me.btnEdit.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnEdit.Location = New System.Drawing.Point(206, 257)
+        Me.btnEdit.Location = New System.Drawing.Point(173, 257)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedDepth = 20
-        Me.btnEdit.Size = New System.Drawing.Size(187, 36)
+        Me.btnEdit.Size = New System.Drawing.Size(152, 36)
         Me.btnEdit.TabIndex = 64
         Me.btnEdit.Text = "Edit"
         '
@@ -200,10 +276,10 @@ Partial Class frmManageSuppliers
         Me.btnSave.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnSave.Location = New System.Drawing.Point(403, 257)
+        Me.btnSave.Location = New System.Drawing.Point(337, 257)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.PressedDepth = 20
-        Me.btnSave.Size = New System.Drawing.Size(187, 36)
+        Me.btnSave.Size = New System.Drawing.Size(152, 36)
         Me.btnSave.TabIndex = 63
         Me.btnSave.Text = "Save"
         '
@@ -384,13 +460,13 @@ Partial Class frmManageSuppliers
         Me.txtCompanyName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtCompanyName.ForeColor = System.Drawing.Color.Black
         Me.txtCompanyName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtCompanyName.Location = New System.Drawing.Point(329, 78)
+        Me.txtCompanyName.Location = New System.Drawing.Point(9, 78)
         Me.txtCompanyName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCompanyName.Name = "txtCompanyName"
         Me.txtCompanyName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCompanyName.PlaceholderText = "Enter company name"
         Me.txtCompanyName.SelectedText = ""
-        Me.txtCompanyName.Size = New System.Drawing.Size(242, 36)
+        Me.txtCompanyName.Size = New System.Drawing.Size(308, 36)
         Me.txtCompanyName.TabIndex = 31
         '
         'Label1
@@ -399,7 +475,7 @@ Partial Class frmManageSuppliers
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(328, 55)
+        Me.Label1.Location = New System.Drawing.Point(8, 55)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(131, 19)
         Me.Label1.TabIndex = 30
@@ -439,42 +515,9 @@ Partial Class frmManageSuppliers
         Me.Label5.TabIndex = 28
         Me.Label5.Text = "Address"
         '
-        'txtSupplierID
-        '
-        Me.txtSupplierID.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSupplierID.DefaultText = ""
-        Me.txtSupplierID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSupplierID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSupplierID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSupplierID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSupplierID.Enabled = False
-        Me.txtSupplierID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSupplierID.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtSupplierID.ForeColor = System.Drawing.Color.Black
-        Me.txtSupplierID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtSupplierID.Location = New System.Drawing.Point(9, 78)
-        Me.txtSupplierID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtSupplierID.Name = "txtSupplierID"
-        Me.txtSupplierID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSupplierID.PlaceholderText = ""
-        Me.txtSupplierID.SelectedText = ""
-        Me.txtSupplierID.Size = New System.Drawing.Size(308, 36)
-        Me.txtSupplierID.TabIndex = 27
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.BackColor = System.Drawing.Color.Transparent
-        Me.Label22.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(8, 55)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(93, 19)
-        Me.Label22.TabIndex = 26
-        Me.Label22.Text = "Supplier ID"
-        '
         'Guna2GroupBox2
         '
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSearchSupplierName)
         Me.Guna2GroupBox2.Controls.Add(Me.ListView1)
         Me.Guna2GroupBox2.Controls.Add(Me.Panel4)
         Me.Guna2GroupBox2.Controls.Add(Me.Panel1)
@@ -493,6 +536,25 @@ Partial Class frmManageSuppliers
         Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(1095, 304)
         Me.Guna2GroupBox2.TabIndex = 2
+        '
+        'btnSearchSupplierName
+        '
+        Me.btnSearchSupplierName.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearchSupplierName.BorderRadius = 8
+        Me.btnSearchSupplierName.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearchSupplierName.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchSupplierName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchSupplierName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearchSupplierName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearchSupplierName.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnSearchSupplierName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearchSupplierName.ForeColor = System.Drawing.Color.White
+        Me.btnSearchSupplierName.Image = CType(resources.GetObject("btnSearchSupplierName.Image"), System.Drawing.Image)
+        Me.btnSearchSupplierName.Location = New System.Drawing.Point(727, 8)
+        Me.btnSearchSupplierName.Name = "btnSearchSupplierName"
+        Me.btnSearchSupplierName.PressedDepth = 20
+        Me.btnSearchSupplierName.Size = New System.Drawing.Size(41, 36)
+        Me.btnSearchSupplierName.TabIndex = 71
         '
         'ListView1
         '
@@ -625,7 +687,7 @@ Partial Class frmManageSuppliers
         Me.txtSearchSupplier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSearchSupplier.Name = "txtSearchSupplier"
         Me.txtSearchSupplier.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearchSupplier.PlaceholderText = "Search suppliers..."
+        Me.txtSearchSupplier.PlaceholderText = "Search by supplier name"
         Me.txtSearchSupplier.SelectedText = ""
         Me.txtSearchSupplier.Size = New System.Drawing.Size(314, 30)
         Me.txtSearchSupplier.TabIndex = 12
@@ -642,6 +704,8 @@ Partial Class frmManageSuppliers
         Me.panelBody.ResumeLayout(False)
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.Guna2GroupBox2.ResumeLayout(False)
         Me.Guna2GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
@@ -670,8 +734,6 @@ Partial Class frmManageSuppliers
     Friend WithEvents Label1 As Label
     Friend WithEvents txtAddress As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtSupplierID As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label22 As Label
     Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents ColumnHeader9 As ColumnHeader
@@ -687,4 +749,10 @@ Partial Class frmManageSuppliers
     Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents lblSupplierID As Label
+    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents btnSearchSupplierName As Guna.UI2.WinForms.Guna2Button
 End Class
