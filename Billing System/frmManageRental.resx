@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnSearchProduct.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSearchRental.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAh1JREFUSEvllkFLFVEYhm+WuktcaIIblcwQFJcVCqG4UCnrJwgRrUOsvbmsf5GR
+        DAAACwwBP0AiyAAAAh1JREFUSEvllkFLFVEYhm+WuktcaIIblcwQFJcVCqG4UCnrJwgRrUOsvbmsf5GR
         biOEFrpRol0tRF2IVFpRplSLFOr4fOe8Nwb1jmcmLwU+8MDl+773HO65c2em8N/jnDuFDdiBjVip1vGj
         zW7iNH7HJLv4Am9jlSJ/D4t14SuMYRWHFM0Pi9zAH7aiWMJxvIaXcBBHcQGL/ML7WiI7hLtxx1aCbziC
         FWofgF4/rmGRO2rFQ6gGP/q4c5+xQ61UmKvH1xYC++071YqDwAMfDcd2VeUomG/CLQvDc5WPhuFK/Opj

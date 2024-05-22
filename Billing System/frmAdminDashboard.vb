@@ -2,6 +2,7 @@
     Private isFormBeingDragged As Boolean = False
     Private mouseDownX As Integer
     Private mouseDownY As Integer
+    'Private isButtonClicked As Boolean = False
 
     Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel2.MouseDown
         If e.Button = MouseButtons.Left Then
@@ -28,17 +29,18 @@
     End Sub
     Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Call connection()
+        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("May", 50000)
+        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("June", 100000)
+        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("July", 200000)
+        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("August", 300000)
+        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("September", 500000)
+        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("October", 1000000)
+
+
         frmAnalyticsData.TopLevel = False
         panelDashboard.Controls.Add(frmAnalyticsData)
         frmAnalyticsData.BringToFront()
         frmAnalyticsData.Show()
-    End Sub
-
-    Private Sub btnSuppliers_Click(sender As Object, e As EventArgs) Handles btnSuppliers.Click
-        frmManageSuppliers.TopLevel = False
-        panelDashboard.Controls.Add(frmManageSuppliers)
-        frmManageSuppliers.BringToFront()
-        frmManageSuppliers.Show()
     End Sub
 
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
@@ -47,6 +49,43 @@
         frmAnalyticsData.BringToFront()
         frmAnalyticsData.Show()
     End Sub
+
+    Private Sub btnSales_Click(sender As Object, e As EventArgs) Handles btnSales.Click
+        'If isButtonClicked Then
+        '    ' Button clicked before, set back to original color
+        '    btnSales.BackColor = Color.White  ' Replace with your original color
+        '    isButtonClicked = False
+        'Else
+        '    ' Button clicked first time, set new color
+        '    btnSales.BackColor = Color.FromArgb(228, 228, 228)
+        '    isButtonClicked = True
+        'End If
+
+        frmManageSales.TopLevel = False
+        panelDashboard.Controls.Add(frmManageSales)
+        frmManageSales.BringToFront()
+        frmManageSales.Show()
+    End Sub
+
+    Private Sub btnBilling_Click_1(sender As Object, e As EventArgs) Handles btnBilling.Click
+        'If isButtonClicked Then
+        '    ' Button clicked before, set back to original color
+        '    btnBilling.BackColor = Color.White  ' Replace with your original color
+        '    isButtonClicked = False
+        'Else
+        '    ' Button clicked first time, set new color
+        '    btnBilling.BackColor = Color.FromArgb(228, 228, 228)
+        '    btnSales.BackColor = Color.White
+        '    isButtonClicked = True
+        'End If
+
+        frmManageBilling.TopLevel = False
+        panelDashboard.Controls.Add(frmManageBilling)
+        frmManageBilling.BringToFront()
+        frmManageBilling.Show()
+    End Sub
+
+
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lblTime.Text = Now.ToShortTimeString
@@ -64,14 +103,28 @@
         frmAdminSettings.Show()
     End Sub
 
-    Private Sub btnProducts_Click(sender As Object, e As EventArgs) Handles btnProducts.Click
+    Private Sub btnCollection_Click(sender As Object, e As EventArgs) Handles btnCollection.Click
+        frmManageCollection.TopLevel = False
+        panelDashboard.Controls.Add(frmManageCollection)
+        frmManageCollection.BringToFront()
+        frmManageCollection.Show()
+    End Sub
+
+    Private Sub btnSupplier_Click(sender As Object, e As EventArgs) Handles btnSupplier.Click
+        frmManageSuppliers.TopLevel = False
+        panelDashboard.Controls.Add(frmManageSuppliers)
+        frmManageSuppliers.BringToFront()
+        frmManageSuppliers.Show()
+    End Sub
+
+    Private Sub btnProduct_Click(sender As Object, e As EventArgs) Handles btnProduct.Click
         frmManageProducts.TopLevel = False
         panelDashboard.Controls.Add(frmManageProducts)
         frmManageProducts.BringToFront()
         frmManageProducts.Show()
     End Sub
 
-    Private Sub btnCustomers_Click(sender As Object, e As EventArgs) Handles btnCustomers.Click
+    Private Sub btnCustomer_Click(sender As Object, e As EventArgs) Handles btnCustomer.Click
         frmManageCustomers.TopLevel = False
         panelDashboard.Controls.Add(frmManageCustomers)
         frmManageCustomers.BringToFront()
@@ -85,24 +138,11 @@
         frmManageUsers.Show()
     End Sub
 
-    Private Sub btnSale_Click(sender As Object, e As EventArgs) Handles btnSale.Click
-        frmManageSales.TopLevel = False
-        panelDashboard.Controls.Add(frmManageSales)
-        frmManageSales.BringToFront()
-        frmManageSales.Show()
+    Private Sub btnRental_Click(sender As Object, e As EventArgs) Handles btnRental.Click
+        frmManageRental.TopLevel = False
+        panelDashboard.Controls.Add(frmManageRental)
+        frmManageRental.BringToFront()
+        frmManageRental.Show()
     End Sub
 
-    Private Sub btnBilling_Click(sender As Object, e As EventArgs) Handles btnBilling.Click
-        frmManageBilling.TopLevel = False
-        panelDashboard.Controls.Add(frmManageBilling)
-        frmManageBilling.BringToFront()
-        frmManageBilling.Show()
-    End Sub
-
-    Private Sub btnCollection_Click(sender As Object, e As EventArgs) 
-        frmManageCollection.TopLevel = False
-        panelDashboard.Controls.Add(frmManageCollection)
-        frmManageCollection.BringToFront()
-        frmManageCollection.Show()
-    End Sub
 End Class

@@ -27,12 +27,12 @@ Partial Class frmAdminDashboard
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnUser = New System.Windows.Forms.Button()
         Me.btnRental = New System.Windows.Forms.Button()
+        Me.btnCustomer = New System.Windows.Forms.Button()
+        Me.btnProduct = New System.Windows.Forms.Button()
+        Me.btnSupplier = New System.Windows.Forms.Button()
         Me.btnCollection = New System.Windows.Forms.Button()
         Me.btnBilling = New System.Windows.Forms.Button()
-        Me.btnSale = New System.Windows.Forms.Button()
-        Me.btnCustomers = New System.Windows.Forms.Button()
-        Me.btnProducts = New System.Windows.Forms.Button()
-        Me.btnSuppliers = New System.Windows.Forms.Button()
+        Me.btnSales = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -63,12 +63,12 @@ Partial Class frmAdminDashboard
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.btnUser)
         Me.Panel1.Controls.Add(Me.btnRental)
+        Me.Panel1.Controls.Add(Me.btnCustomer)
+        Me.Panel1.Controls.Add(Me.btnProduct)
+        Me.Panel1.Controls.Add(Me.btnSupplier)
         Me.Panel1.Controls.Add(Me.btnCollection)
         Me.Panel1.Controls.Add(Me.btnBilling)
-        Me.Panel1.Controls.Add(Me.btnSale)
-        Me.Panel1.Controls.Add(Me.btnCustomers)
-        Me.Panel1.Controls.Add(Me.btnProducts)
-        Me.Panel1.Controls.Add(Me.btnSuppliers)
+        Me.Panel1.Controls.Add(Me.btnSales)
         Me.Panel1.Controls.Add(Me.btnDashboard)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
@@ -92,7 +92,7 @@ Partial Class frmAdminDashboard
         Me.btnUser.Name = "btnUser"
         Me.btnUser.Size = New System.Drawing.Size(257, 73)
         Me.btnUser.TabIndex = 11
-        Me.btnUser.Text = "     Users"
+        Me.btnUser.Text = "     Admin"
         Me.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnUser.UseVisualStyleBackColor = True
         '
@@ -115,6 +115,63 @@ Partial Class frmAdminDashboard
         Me.btnRental.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRental.UseVisualStyleBackColor = True
         '
+        'btnCustomer
+        '
+        Me.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCustomer.FlatAppearance.BorderSize = 0
+        Me.btnCustomer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCustomer.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCustomer.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnCustomer.Image = CType(resources.GetObject("btnCustomer.Image"), System.Drawing.Image)
+        Me.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCustomer.Location = New System.Drawing.Point(0, 551)
+        Me.btnCustomer.Name = "btnCustomer"
+        Me.btnCustomer.Size = New System.Drawing.Size(257, 73)
+        Me.btnCustomer.TabIndex = 9
+        Me.btnCustomer.Text = "     Customers"
+        Me.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCustomer.UseVisualStyleBackColor = True
+        '
+        'btnProduct
+        '
+        Me.btnProduct.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnProduct.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnProduct.FlatAppearance.BorderSize = 0
+        Me.btnProduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProduct.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProduct.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnProduct.Image = CType(resources.GetObject("btnProduct.Image"), System.Drawing.Image)
+        Me.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnProduct.Location = New System.Drawing.Point(0, 478)
+        Me.btnProduct.Name = "btnProduct"
+        Me.btnProduct.Size = New System.Drawing.Size(257, 73)
+        Me.btnProduct.TabIndex = 8
+        Me.btnProduct.Text = "     Products"
+        Me.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnProduct.UseVisualStyleBackColor = True
+        '
+        'btnSupplier
+        '
+        Me.btnSupplier.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSupplier.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSupplier.FlatAppearance.BorderSize = 0
+        Me.btnSupplier.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSupplier.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSupplier.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnSupplier.Image = CType(resources.GetObject("btnSupplier.Image"), System.Drawing.Image)
+        Me.btnSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSupplier.Location = New System.Drawing.Point(0, 405)
+        Me.btnSupplier.Name = "btnSupplier"
+        Me.btnSupplier.Size = New System.Drawing.Size(257, 73)
+        Me.btnSupplier.TabIndex = 5
+        Me.btnSupplier.Text = "     Suppliers"
+        Me.btnSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSupplier.UseVisualStyleBackColor = True
+        '
         'btnCollection
         '
         Me.btnCollection.Cursor = System.Windows.Forms.Cursors.Hand
@@ -126,10 +183,10 @@ Partial Class frmAdminDashboard
         Me.btnCollection.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnCollection.Image = CType(resources.GetObject("btnCollection.Image"), System.Drawing.Image)
         Me.btnCollection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCollection.Location = New System.Drawing.Point(0, 551)
+        Me.btnCollection.Location = New System.Drawing.Point(0, 332)
         Me.btnCollection.Name = "btnCollection"
         Me.btnCollection.Size = New System.Drawing.Size(257, 73)
-        Me.btnCollection.TabIndex = 9
+        Me.btnCollection.TabIndex = 4
         Me.btnCollection.Text = "     Collection"
         Me.btnCollection.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCollection.UseVisualStyleBackColor = True
@@ -145,89 +202,32 @@ Partial Class frmAdminDashboard
         Me.btnBilling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnBilling.Image = CType(resources.GetObject("btnBilling.Image"), System.Drawing.Image)
         Me.btnBilling.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBilling.Location = New System.Drawing.Point(0, 478)
+        Me.btnBilling.Location = New System.Drawing.Point(0, 259)
         Me.btnBilling.Name = "btnBilling"
         Me.btnBilling.Size = New System.Drawing.Size(257, 73)
-        Me.btnBilling.TabIndex = 8
+        Me.btnBilling.TabIndex = 3
         Me.btnBilling.Text = "     Billing"
         Me.btnBilling.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBilling.UseVisualStyleBackColor = True
         '
-        'btnSale
+        'btnSales
         '
-        Me.btnSale.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSale.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSale.FlatAppearance.BorderSize = 0
-        Me.btnSale.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.btnSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSale.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSale.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnSale.Image = CType(resources.GetObject("btnSale.Image"), System.Drawing.Image)
-        Me.btnSale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSale.Location = New System.Drawing.Point(0, 405)
-        Me.btnSale.Name = "btnSale"
-        Me.btnSale.Size = New System.Drawing.Size(257, 73)
-        Me.btnSale.TabIndex = 5
-        Me.btnSale.Text = "     Sales"
-        Me.btnSale.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSale.UseVisualStyleBackColor = True
-        '
-        'btnCustomers
-        '
-        Me.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCustomers.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnCustomers.FlatAppearance.BorderSize = 0
-        Me.btnCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCustomers.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnCustomers.Image = CType(resources.GetObject("btnCustomers.Image"), System.Drawing.Image)
-        Me.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCustomers.Location = New System.Drawing.Point(0, 332)
-        Me.btnCustomers.Name = "btnCustomers"
-        Me.btnCustomers.Size = New System.Drawing.Size(257, 73)
-        Me.btnCustomers.TabIndex = 4
-        Me.btnCustomers.Text = "     Customers"
-        Me.btnCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCustomers.UseVisualStyleBackColor = True
-        '
-        'btnProducts
-        '
-        Me.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnProducts.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnProducts.FlatAppearance.BorderSize = 0
-        Me.btnProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProducts.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProducts.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnProducts.Image = CType(resources.GetObject("btnProducts.Image"), System.Drawing.Image)
-        Me.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnProducts.Location = New System.Drawing.Point(0, 259)
-        Me.btnProducts.Name = "btnProducts"
-        Me.btnProducts.Size = New System.Drawing.Size(257, 73)
-        Me.btnProducts.TabIndex = 3
-        Me.btnProducts.Text = "     Products"
-        Me.btnProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnProducts.UseVisualStyleBackColor = True
-        '
-        'btnSuppliers
-        '
-        Me.btnSuppliers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSuppliers.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSuppliers.FlatAppearance.BorderSize = 0
-        Me.btnSuppliers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSuppliers.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSuppliers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnSuppliers.Image = CType(resources.GetObject("btnSuppliers.Image"), System.Drawing.Image)
-        Me.btnSuppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSuppliers.Location = New System.Drawing.Point(0, 186)
-        Me.btnSuppliers.Name = "btnSuppliers"
-        Me.btnSuppliers.Size = New System.Drawing.Size(257, 73)
-        Me.btnSuppliers.TabIndex = 2
-        Me.btnSuppliers.Text = "     Suppliers"
-        Me.btnSuppliers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSuppliers.UseVisualStyleBackColor = True
+        Me.btnSales.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSales.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSales.FlatAppearance.BorderSize = 0
+        Me.btnSales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSales.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnSales.Image = CType(resources.GetObject("btnSales.Image"), System.Drawing.Image)
+        Me.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSales.Location = New System.Drawing.Point(0, 186)
+        Me.btnSales.Name = "btnSales"
+        Me.btnSales.Size = New System.Drawing.Size(257, 73)
+        Me.btnSales.TabIndex = 2
+        Me.btnSales.Text = "     Sales"
+        Me.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSales.UseVisualStyleBackColor = True
         '
         'btnDashboard
         '
@@ -463,10 +463,10 @@ Partial Class frmAdminDashboard
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnDashboard As Button
-    Friend WithEvents btnSale As Button
-    Friend WithEvents btnCustomers As Button
-    Friend WithEvents btnProducts As Button
-    Friend WithEvents btnSuppliers As Button
+    Friend WithEvents btnSupplier As Button
+    Friend WithEvents btnCollection As Button
+    Friend WithEvents btnBilling As Button
+    Friend WithEvents btnSales As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents panelDashboard As Panel
@@ -481,8 +481,8 @@ Partial Class frmAdminDashboard
     Friend WithEvents btnSettings As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents Label22 As Label
     Friend WithEvents lblUsername As Label
-    Friend WithEvents btnCollection As Button
-    Friend WithEvents btnBilling As Button
+    Friend WithEvents btnCustomer As Button
+    Friend WithEvents btnProduct As Button
     Friend WithEvents btnRental As Button
     Friend WithEvents btnUser As Button
 End Class

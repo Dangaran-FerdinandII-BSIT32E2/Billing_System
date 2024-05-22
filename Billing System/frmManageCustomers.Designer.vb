@@ -22,7 +22,9 @@ Partial Class frmManageCustomers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageCustomers))
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.btnSearchCustomer = New Guna.UI2.WinForms.Guna2Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -62,6 +64,7 @@ Partial Class frmManageCustomers
         '
         'Guna2GroupBox2
         '
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSearchCustomer)
         Me.Guna2GroupBox2.Controls.Add(Me.ListView1)
         Me.Guna2GroupBox2.Controls.Add(Me.Panel4)
         Me.Guna2GroupBox2.Controls.Add(Me.Panel1)
@@ -80,6 +83,25 @@ Partial Class frmManageCustomers
         Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(1095, 304)
         Me.Guna2GroupBox2.TabIndex = 3
+        '
+        'btnSearchCustomer
+        '
+        Me.btnSearchCustomer.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearchCustomer.BorderRadius = 8
+        Me.btnSearchCustomer.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearchCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearchCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearchCustomer.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnSearchCustomer.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearchCustomer.ForeColor = System.Drawing.Color.White
+        Me.btnSearchCustomer.Image = CType(resources.GetObject("btnSearchCustomer.Image"), System.Drawing.Image)
+        Me.btnSearchCustomer.Location = New System.Drawing.Point(727, 8)
+        Me.btnSearchCustomer.Name = "btnSearchCustomer"
+        Me.btnSearchCustomer.PressedDepth = 20
+        Me.btnSearchCustomer.Size = New System.Drawing.Size(41, 36)
+        Me.btnSearchCustomer.TabIndex = 45
         '
         'ListView1
         '
@@ -196,7 +218,7 @@ Partial Class frmManageCustomers
         Me.txtSearchCustomer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSearchCustomer.Name = "txtSearchCustomer"
         Me.txtSearchCustomer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearchCustomer.PlaceholderText = "Search customers..."
+        Me.txtSearchCustomer.PlaceholderText = "Search by customer's name"
         Me.txtSearchCustomer.SelectedText = ""
         Me.txtSearchCustomer.Size = New System.Drawing.Size(314, 30)
         Me.txtSearchCustomer.TabIndex = 12
@@ -246,10 +268,10 @@ Partial Class frmManageCustomers
         Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnDelete.Location = New System.Drawing.Point(699, 257)
+        Me.btnDelete.Location = New System.Drawing.Point(767, 257)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedDepth = 20
-        Me.btnDelete.Size = New System.Drawing.Size(187, 36)
+        Me.btnDelete.Size = New System.Drawing.Size(152, 36)
         Me.btnDelete.TabIndex = 57
         Me.btnDelete.Text = "Delete"
         '
@@ -268,7 +290,7 @@ Partial Class frmManageCustomers
         Me.btnCreateNew.Location = New System.Drawing.Point(9, 257)
         Me.btnCreateNew.Name = "btnCreateNew"
         Me.btnCreateNew.PressedDepth = 20
-        Me.btnCreateNew.Size = New System.Drawing.Size(187, 36)
+        Me.btnCreateNew.Size = New System.Drawing.Size(152, 36)
         Me.btnCreateNew.TabIndex = 56
         Me.btnCreateNew.Text = "Create New"
         '
@@ -284,10 +306,10 @@ Partial Class frmManageCustomers
         Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCancel.Location = New System.Drawing.Point(897, 257)
+        Me.btnCancel.Location = New System.Drawing.Point(932, 257)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(187, 36)
+        Me.btnCancel.Size = New System.Drawing.Size(152, 36)
         Me.btnCancel.TabIndex = 55
         Me.btnCancel.Text = "Cancel"
         '
@@ -303,10 +325,10 @@ Partial Class frmManageCustomers
         Me.btnEdit.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnEdit.Location = New System.Drawing.Point(206, 257)
+        Me.btnEdit.Location = New System.Drawing.Point(173, 257)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedDepth = 20
-        Me.btnEdit.Size = New System.Drawing.Size(187, 36)
+        Me.btnEdit.Size = New System.Drawing.Size(152, 36)
         Me.btnEdit.TabIndex = 54
         Me.btnEdit.Text = "Edit"
         '
@@ -322,10 +344,10 @@ Partial Class frmManageCustomers
         Me.btnSave.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnSave.Location = New System.Drawing.Point(403, 257)
+        Me.btnSave.Location = New System.Drawing.Point(337, 257)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.PressedDepth = 20
-        Me.btnSave.Size = New System.Drawing.Size(187, 36)
+        Me.btnSave.Size = New System.Drawing.Size(152, 36)
         Me.btnSave.TabIndex = 53
         Me.btnSave.Text = "Save"
         '
@@ -609,4 +631,5 @@ Partial Class frmManageCustomers
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnSearchCustomer As Guna.UI2.WinForms.Guna2Button
 End Class
