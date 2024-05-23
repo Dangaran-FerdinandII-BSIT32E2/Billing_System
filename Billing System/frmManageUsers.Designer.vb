@@ -55,25 +55,25 @@ Partial Class frmManageUsers
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnOkay = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.ListView2 = New System.Windows.Forms.ListView()
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btnSearchUsername = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btnSearchUsername = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnOkay = New Guna.UI2.WinForms.Guna2Button()
         Me.TabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl
@@ -173,7 +173,7 @@ Partial Class frmManageUsers
         Me.btnCreateNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnCreateNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCreateNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCreateNew.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnCreateNew.FillColor = System.Drawing.Color.Blue
         Me.btnCreateNew.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCreateNew.ForeColor = System.Drawing.Color.White
         Me.btnCreateNew.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -545,44 +545,6 @@ Partial Class frmManageUsers
         Me.TabPage2.Text = "Activity Logs"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.btnOkay)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(3, 482)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1084, 87)
-        Me.Panel4.TabIndex = 1
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Guna2TextBox1)
-        Me.Panel2.Controls.Add(Me.btnSearchUsername)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(3, 3)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1084, 61)
-        Me.Panel2.TabIndex = 2
-        '
-        'btnOkay
-        '
-        Me.btnOkay.BorderRadius = 8
-        Me.btnOkay.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnOkay.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnOkay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnOkay.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnOkay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnOkay.FillColor = System.Drawing.Color.MediumBlue
-        Me.btnOkay.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnOkay.ForeColor = System.Drawing.Color.White
-        Me.btnOkay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnOkay.Location = New System.Drawing.Point(12, 28)
-        Me.btnOkay.Name = "btnOkay"
-        Me.btnOkay.PressedDepth = 20
-        Me.btnOkay.Size = New System.Drawing.Size(152, 36)
-        Me.btnOkay.TabIndex = 62
-        Me.btnOkay.Text = "Okay"
-        '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.ListView2)
@@ -631,24 +593,15 @@ Partial Class frmManageUsers
         Me.ColumnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader11.Width = 250
         '
-        'btnSearchUsername
+        'Panel2
         '
-        Me.btnSearchUsername.BackColor = System.Drawing.Color.Transparent
-        Me.btnSearchUsername.BorderRadius = 8
-        Me.btnSearchUsername.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSearchUsername.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchUsername.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSearchUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchUsername.FillColor = System.Drawing.Color.MediumBlue
-        Me.btnSearchUsername.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSearchUsername.ForeColor = System.Drawing.Color.White
-        Me.btnSearchUsername.Image = CType(resources.GetObject("btnSearchUsername.Image"), System.Drawing.Image)
-        Me.btnSearchUsername.Location = New System.Drawing.Point(12, 10)
-        Me.btnSearchUsername.Name = "btnSearchUsername"
-        Me.btnSearchUsername.PressedDepth = 20
-        Me.btnSearchUsername.Size = New System.Drawing.Size(41, 36)
-        Me.btnSearchUsername.TabIndex = 45
+        Me.Panel2.Controls.Add(Me.Guna2TextBox1)
+        Me.Panel2.Controls.Add(Me.btnSearchUsername)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(3, 3)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1084, 61)
+        Me.Panel2.TabIndex = 2
         '
         'Guna2TextBox1
         '
@@ -671,6 +624,53 @@ Partial Class frmManageUsers
         Me.Guna2TextBox1.Size = New System.Drawing.Size(295, 36)
         Me.Guna2TextBox1.TabIndex = 46
         '
+        'btnSearchUsername
+        '
+        Me.btnSearchUsername.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearchUsername.BorderRadius = 8
+        Me.btnSearchUsername.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearchUsername.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchUsername.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearchUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearchUsername.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnSearchUsername.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearchUsername.ForeColor = System.Drawing.Color.White
+        Me.btnSearchUsername.Image = CType(resources.GetObject("btnSearchUsername.Image"), System.Drawing.Image)
+        Me.btnSearchUsername.Location = New System.Drawing.Point(12, 10)
+        Me.btnSearchUsername.Name = "btnSearchUsername"
+        Me.btnSearchUsername.PressedDepth = 20
+        Me.btnSearchUsername.Size = New System.Drawing.Size(41, 36)
+        Me.btnSearchUsername.TabIndex = 45
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.btnOkay)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel4.Location = New System.Drawing.Point(3, 482)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1084, 87)
+        Me.Panel4.TabIndex = 1
+        '
+        'btnOkay
+        '
+        Me.btnOkay.BorderRadius = 8
+        Me.btnOkay.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnOkay.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnOkay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnOkay.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnOkay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnOkay.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnOkay.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnOkay.ForeColor = System.Drawing.Color.White
+        Me.btnOkay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnOkay.Location = New System.Drawing.Point(12, 28)
+        Me.btnOkay.Name = "btnOkay"
+        Me.btnOkay.PressedDepth = 20
+        Me.btnOkay.Size = New System.Drawing.Size(152, 36)
+        Me.btnOkay.TabIndex = 62
+        Me.btnOkay.Text = "Okay"
+        '
         'frmManageUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -686,9 +686,9 @@ Partial Class frmManageUsers
         Me.GroupBox1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

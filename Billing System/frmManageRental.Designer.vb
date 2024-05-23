@@ -82,7 +82,7 @@ Partial Class frmManageRental
         Me.btnSearchRental.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnSearchRental.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSearchRental.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchRental.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnSearchRental.FillColor = System.Drawing.Color.Blue
         Me.btnSearchRental.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSearchRental.ForeColor = System.Drawing.Color.White
         Me.btnSearchRental.Image = CType(resources.GetObject("btnSearchRental.Image"), System.Drawing.Image)
@@ -256,7 +256,7 @@ Partial Class frmManageRental
         Me.btnCreateNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnCreateNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCreateNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCreateNew.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnCreateNew.FillColor = System.Drawing.Color.Blue
         Me.btnCreateNew.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCreateNew.ForeColor = System.Drawing.Color.White
         Me.btnCreateNew.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left

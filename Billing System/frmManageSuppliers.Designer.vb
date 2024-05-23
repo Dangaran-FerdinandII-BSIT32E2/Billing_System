@@ -215,7 +215,7 @@ Partial Class frmManageSuppliers
         Me.btnCreateNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnCreateNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCreateNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCreateNew.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnCreateNew.FillColor = System.Drawing.Color.Blue
         Me.btnCreateNew.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCreateNew.ForeColor = System.Drawing.Color.White
         Me.btnCreateNew.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -546,11 +546,11 @@ Partial Class frmManageSuppliers
         Me.btnSearchSupplierName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnSearchSupplierName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSearchSupplierName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchSupplierName.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnSearchSupplierName.FillColor = System.Drawing.Color.Blue
         Me.btnSearchSupplierName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSearchSupplierName.ForeColor = System.Drawing.Color.White
         Me.btnSearchSupplierName.Image = CType(resources.GetObject("btnSearchSupplierName.Image"), System.Drawing.Image)
-        Me.btnSearchSupplierName.Location = New System.Drawing.Point(727, 8)
+        Me.btnSearchSupplierName.Location = New System.Drawing.Point(728, 8)
         Me.btnSearchSupplierName.Name = "btnSearchSupplierName"
         Me.btnSearchSupplierName.PressedDepth = 20
         Me.btnSearchSupplierName.Size = New System.Drawing.Size(41, 36)

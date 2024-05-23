@@ -25,6 +25,7 @@ Partial Class frmManageCollection
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageCollection))
         Me.frmManageCollectionPanel = New System.Windows.Forms.Panel()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.btnSearchCompanyName = New Guna.UI2.WinForms.Guna2Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -35,7 +36,6 @@ Partial Class frmManageCollection
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtSearchCompany = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.btnSearchCompanyName = New Guna.UI2.WinForms.Guna2Button()
         Me.frmManageCollectionPanel.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -72,6 +72,25 @@ Partial Class frmManageCollection
         Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(1095, 620)
         Me.Guna2GroupBox2.TabIndex = 7
+        '
+        'btnSearchCompanyName
+        '
+        Me.btnSearchCompanyName.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearchCompanyName.BorderRadius = 8
+        Me.btnSearchCompanyName.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearchCompanyName.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCompanyName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearchCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearchCompanyName.FillColor = System.Drawing.Color.Blue
+        Me.btnSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearchCompanyName.ForeColor = System.Drawing.Color.White
+        Me.btnSearchCompanyName.Image = CType(resources.GetObject("btnSearchCompanyName.Image"), System.Drawing.Image)
+        Me.btnSearchCompanyName.Location = New System.Drawing.Point(727, 8)
+        Me.btnSearchCompanyName.Name = "btnSearchCompanyName"
+        Me.btnSearchCompanyName.PressedDepth = 20
+        Me.btnSearchCompanyName.Size = New System.Drawing.Size(41, 36)
+        Me.btnSearchCompanyName.TabIndex = 45
         '
         'ListView1
         '
@@ -112,7 +131,7 @@ Partial Class frmManageCollection
         Me.btnShow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnShow.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnShow.FillColor = System.Drawing.Color.Blue
         Me.btnShow.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnShow.ForeColor = System.Drawing.Color.White
         Me.btnShow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -191,25 +210,6 @@ Partial Class frmManageCollection
         Me.txtSearchCompany.SelectedText = ""
         Me.txtSearchCompany.Size = New System.Drawing.Size(314, 30)
         Me.txtSearchCompany.TabIndex = 12
-        '
-        'btnSearchCompanyName
-        '
-        Me.btnSearchCompanyName.BackColor = System.Drawing.Color.Transparent
-        Me.btnSearchCompanyName.BorderRadius = 8
-        Me.btnSearchCompanyName.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSearchCompanyName.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchCompanyName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSearchCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchCompanyName.FillColor = System.Drawing.Color.MediumBlue
-        Me.btnSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSearchCompanyName.ForeColor = System.Drawing.Color.White
-        Me.btnSearchCompanyName.Image = CType(resources.GetObject("btnSearchCompanyName.Image"), System.Drawing.Image)
-        Me.btnSearchCompanyName.Location = New System.Drawing.Point(727, 8)
-        Me.btnSearchCompanyName.Name = "btnSearchCompanyName"
-        Me.btnSearchCompanyName.PressedDepth = 20
-        Me.btnSearchCompanyName.Size = New System.Drawing.Size(41, 36)
-        Me.btnSearchCompanyName.TabIndex = 45
         '
         'frmManageCollection
         '
