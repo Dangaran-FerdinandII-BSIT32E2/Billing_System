@@ -105,7 +105,7 @@ Partial Class frmManageInvoice
         Me.btnDownloadInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnDownloadInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnDownloadInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDownloadInvoice.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnDownloadInvoice.FillColor = System.Drawing.Color.Blue
         Me.btnDownloadInvoice.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnDownloadInvoice.ForeColor = System.Drawing.Color.White
         Me.btnDownloadInvoice.Image = CType(resources.GetObject("btnDownloadInvoice.Image"), System.Drawing.Image)
@@ -451,7 +451,7 @@ Partial Class frmManageInvoice
         Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancel.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnCancel.FillColor = System.Drawing.Color.Blue
         Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -470,7 +470,7 @@ Partial Class frmManageInvoice
         Me.btnPayNow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnPayNow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnPayNow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnPayNow.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnPayNow.FillColor = System.Drawing.Color.Blue
         Me.btnPayNow.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnPayNow.ForeColor = System.Drawing.Color.White
         Me.btnPayNow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
