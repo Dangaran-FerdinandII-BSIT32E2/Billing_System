@@ -12,6 +12,7 @@ Module DatabaseConnection
         If cn.State = ConnectionState.Open Then
             cn.Close()
         End If
-        cn.ConnectionString = "server=localhost;user=root;password=NewPassword;database=dbbilling"
+        cn.ConnectionString = "server=localhost;user=root;password=;database=dbbilling"
+        MsgBox("succes!")
     End Sub
 End Module

@@ -23,7 +23,7 @@ Partial Class frmManageUsers
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageUsers))
-        Me.TabControl = New Guna.UI2.WinForms.Guna2TabControl()
+        Me.TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
@@ -66,7 +66,8 @@ Partial Class frmManageUsers
         Me.btnSearchUsername = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.btnOkay = New Guna.UI2.WinForms.Guna2Button()
-        Me.TabControl.SuspendLayout()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabControl2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -76,35 +77,36 @@ Partial Class frmManageUsers
         Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TabControl
+        'TabControl2
         '
-        Me.TabControl.Controls.Add(Me.TabPage1)
-        Me.TabControl.Controls.Add(Me.TabPage2)
-        Me.TabControl.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TabControl.ItemSize = New System.Drawing.Size(180, 40)
-        Me.TabControl.Location = New System.Drawing.Point(6, 6)
-        Me.TabControl.Name = "TabControl"
-        Me.TabControl.SelectedIndex = 0
-        Me.TabControl.Size = New System.Drawing.Size(1098, 620)
-        Me.TabControl.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
-        Me.TabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.TabControl.TabButtonHoverState.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.TabControl.TabButtonHoverState.ForeColor = System.Drawing.Color.White
-        Me.TabControl.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.TabControl.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty
-        Me.TabControl.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.TabControl.TabButtonIdleState.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.TabControl.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(156, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(167, Byte), Integer))
-        Me.TabControl.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.TabControl.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty
-        Me.TabControl.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.TabControl.TabButtonSelectedState.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TabControl.TabButtonSelectedState.ForeColor = System.Drawing.Color.White
-        Me.TabControl.TabButtonSelectedState.InnerColor = System.Drawing.Color.Blue
-        Me.TabControl.TabButtonSize = New System.Drawing.Size(180, 40)
-        Me.TabControl.TabIndex = 7
-        Me.TabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.TabControl.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
+        Me.TabControl2.Controls.Add(Me.TabPage1)
+        Me.TabControl2.Controls.Add(Me.TabPage2)
+        Me.TabControl2.Controls.Add(Me.TabPage3)
+        Me.TabControl2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TabControl2.ItemSize = New System.Drawing.Size(180, 40)
+        Me.TabControl2.Location = New System.Drawing.Point(6, 6)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(1098, 620)
+        Me.TabControl2.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
+        Me.TabControl2.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.TabControl2.TabButtonHoverState.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.TabControl2.TabButtonHoverState.ForeColor = System.Drawing.Color.White
+        Me.TabControl2.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.TabControl2.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty
+        Me.TabControl2.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.TabControl2.TabButtonIdleState.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.TabControl2.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(156, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.TabControl2.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.TabControl2.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty
+        Me.TabControl2.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.TabControl2.TabButtonSelectedState.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.TabControl2.TabButtonSelectedState.ForeColor = System.Drawing.Color.White
+        Me.TabControl2.TabButtonSelectedState.InnerColor = System.Drawing.Color.Blue
+        Me.TabControl2.TabButtonSize = New System.Drawing.Size(180, 40)
+        Me.TabControl2.TabIndex = 7
+        Me.TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.TabControl2.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
         'TabPage1
         '
@@ -671,16 +673,26 @@ Partial Class frmManageUsers
         Me.btnOkay.TabIndex = 62
         Me.btnOkay.Text = "Okay"
         '
+        'TabPage3
+        '
+        Me.TabPage3.Location = New System.Drawing.Point(4, 44)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(1090, 572)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "TabPage3"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
         'frmManageUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1109, 633)
-        Me.Controls.Add(Me.TabControl)
+        Me.Controls.Add(Me.TabControl2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmManageUsers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.TabControl.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -693,7 +705,7 @@ Partial Class frmManageUsers
 
     End Sub
 
-    Friend WithEvents TabControl As Guna.UI2.WinForms.Guna2TabControl
+    Friend WithEvents TabControl2 As Guna.UI2.WinForms.Guna2TabControl
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents Panel1 As Panel
@@ -736,4 +748,5 @@ Partial Class frmManageUsers
     Friend WithEvents ColumnHeader11 As ColumnHeader
     Friend WithEvents btnSearchUsername As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TabPage3 As TabPage
 End Class
