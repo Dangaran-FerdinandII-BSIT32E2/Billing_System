@@ -7,6 +7,7 @@ Module DatabaseConnection
     Public dr As MySqlDataReader
     Public da As MySqlDataAdapter
     Public ds As DataSet
+    Public sql As String
 
     Public Sub connection()
         If cn.State = ConnectionState.Open Then
