@@ -23,6 +23,7 @@ Partial Class frmManageUsers
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageUsers))
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TabControl = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -66,6 +67,7 @@ Partial Class frmManageUsers
         Me.btnSearchUsername = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.btnOkay = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Panel1.SuspendLayout()
         Me.TabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -76,13 +78,25 @@ Partial Class frmManageUsers
         Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel1.Controls.Add(Me.TabControl)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(6, 6)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.ShadowDecoration.Enabled = True
+        Me.Guna2Panel1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1098, 620)
+        Me.Guna2Panel1.TabIndex = 0
+        '
         'TabControl
         '
         Me.TabControl.Controls.Add(Me.TabPage1)
         Me.TabControl.Controls.Add(Me.TabPage2)
-        Me.TabControl.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TabControl.Cursor = System.Windows.Forms.Cursors.Default
+        Me.TabControl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl.ItemSize = New System.Drawing.Size(180, 40)
-        Me.TabControl.Location = New System.Drawing.Point(6, 6)
+        Me.TabControl.Location = New System.Drawing.Point(0, 0)
         Me.TabControl.Name = "TabControl"
         Me.TabControl.SelectedIndex = 0
         Me.TabControl.Size = New System.Drawing.Size(1098, 620)
@@ -100,9 +114,9 @@ Partial Class frmManageUsers
         Me.TabControl.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(137, Byte), Integer))
         Me.TabControl.TabButtonSelectedState.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TabControl.TabButtonSelectedState.ForeColor = System.Drawing.Color.White
-        Me.TabControl.TabButtonSelectedState.InnerColor = System.Drawing.Color.Blue
+        Me.TabControl.TabButtonSelectedState.InnerColor = System.Drawing.Color.OrangeRed
         Me.TabControl.TabButtonSize = New System.Drawing.Size(180, 40)
-        Me.TabControl.TabIndex = 7
+        Me.TabControl.TabIndex = 9
         Me.TabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
@@ -154,7 +168,7 @@ Partial Class frmManageUsers
         Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDelete.FillColor = System.Drawing.Color.Blue
+        Me.btnDelete.FillColor = System.Drawing.Color.OrangeRed
         Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -173,7 +187,7 @@ Partial Class frmManageUsers
         Me.btnCreateNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnCreateNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCreateNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCreateNew.FillColor = System.Drawing.Color.Blue
+        Me.btnCreateNew.FillColor = System.Drawing.Color.OrangeRed
         Me.btnCreateNew.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCreateNew.ForeColor = System.Drawing.Color.White
         Me.btnCreateNew.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -192,7 +206,7 @@ Partial Class frmManageUsers
         Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancel.FillColor = System.Drawing.Color.Blue
+        Me.btnCancel.FillColor = System.Drawing.Color.OrangeRed
         Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -211,7 +225,7 @@ Partial Class frmManageUsers
         Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEdit.FillColor = System.Drawing.Color.Blue
+        Me.btnEdit.FillColor = System.Drawing.Color.OrangeRed
         Me.btnEdit.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -230,7 +244,7 @@ Partial Class frmManageUsers
         Me.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSave.FillColor = System.Drawing.Color.Blue
+        Me.btnSave.FillColor = System.Drawing.Color.OrangeRed
         Me.btnSave.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -633,7 +647,7 @@ Partial Class frmManageUsers
         Me.btnSearchUsername.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnSearchUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSearchUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchUsername.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnSearchUsername.FillColor = System.Drawing.Color.OrangeRed
         Me.btnSearchUsername.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSearchUsername.ForeColor = System.Drawing.Color.White
         Me.btnSearchUsername.Image = CType(resources.GetObject("btnSearchUsername.Image"), System.Drawing.Image)
@@ -660,7 +674,7 @@ Partial Class frmManageUsers
         Me.btnOkay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnOkay.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnOkay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnOkay.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnOkay.FillColor = System.Drawing.Color.OrangeRed
         Me.btnOkay.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnOkay.ForeColor = System.Drawing.Color.White
         Me.btnOkay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -676,10 +690,11 @@ Partial Class frmManageUsers
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1109, 633)
-        Me.Controls.Add(Me.TabControl)
+        Me.Controls.Add(Me.Guna2Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmManageUsers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Guna2Panel1.ResumeLayout(False)
         Me.TabControl.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
@@ -693,9 +708,29 @@ Partial Class frmManageUsers
 
     End Sub
 
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents TabControl As Guna.UI2.WinForms.Guna2TabControl
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCreateNew As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cboRole As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents cboStatus As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtUsername As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtPassword As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtLastName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtFirstName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtUserID As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label22 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
@@ -705,35 +740,16 @@ Partial Class frmManageUsers
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents ColumnHeader7 As ColumnHeader
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents txtUserID As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label22 As Label
-    Friend WithEvents txtPassword As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents txtLastName As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtFirstName As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txtUsername As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents cboStatus As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents cboRole As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnCreateNew As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents btnOkay As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Panel3 As Panel
     Friend WithEvents ListView2 As ListView
     Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents ColumnHeader9 As ColumnHeader
     Friend WithEvents ColumnHeader10 As ColumnHeader
     Friend WithEvents ColumnHeader11 As ColumnHeader
-    Friend WithEvents btnSearchUsername As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel2 As Panel
     Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnSearchUsername As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents btnOkay As Guna.UI2.WinForms.Guna2Button
 End Class

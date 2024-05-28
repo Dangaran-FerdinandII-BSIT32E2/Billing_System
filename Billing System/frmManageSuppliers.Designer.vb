@@ -50,7 +50,6 @@ Partial Class frmManageSuppliers
         Me.txtAddress = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.btnSearchSupplierName = New Guna.UI2.WinForms.Guna2Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -66,6 +65,7 @@ Partial Class frmManageSuppliers
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnSearchSupplierName = New Guna.UI2.WinForms.Guna2Button()
         Me.txtSearchSupplier = New Guna.UI2.WinForms.Guna2TextBox()
         Me.panelBody.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
@@ -114,7 +114,7 @@ Partial Class frmManageSuppliers
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.ShadowDecoration.BorderRadius = 5
         Me.Guna2GroupBox1.ShadowDecoration.Enabled = True
-        Me.Guna2GroupBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
+        Me.Guna2GroupBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1095, 304)
         Me.Guna2GroupBox1.TabIndex = 10
         Me.Guna2GroupBox1.Text = "Manage Supplier"
@@ -196,7 +196,7 @@ Partial Class frmManageSuppliers
         Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDelete.FillColor = System.Drawing.Color.Blue
+        Me.btnDelete.FillColor = System.Drawing.Color.OrangeRed
         Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -215,7 +215,7 @@ Partial Class frmManageSuppliers
         Me.btnCreateNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnCreateNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCreateNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCreateNew.FillColor = System.Drawing.Color.Blue
+        Me.btnCreateNew.FillColor = System.Drawing.Color.OrangeRed
         Me.btnCreateNew.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCreateNew.ForeColor = System.Drawing.Color.White
         Me.btnCreateNew.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -234,7 +234,7 @@ Partial Class frmManageSuppliers
         Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancel.FillColor = System.Drawing.Color.Blue
+        Me.btnCancel.FillColor = System.Drawing.Color.OrangeRed
         Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -253,7 +253,7 @@ Partial Class frmManageSuppliers
         Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEdit.FillColor = System.Drawing.Color.Blue
+        Me.btnEdit.FillColor = System.Drawing.Color.OrangeRed
         Me.btnEdit.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -272,7 +272,7 @@ Partial Class frmManageSuppliers
         Me.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSave.FillColor = System.Drawing.Color.Blue
+        Me.btnSave.FillColor = System.Drawing.Color.OrangeRed
         Me.btnSave.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -533,28 +533,9 @@ Partial Class frmManageSuppliers
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
         Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 5
         Me.Guna2GroupBox2.ShadowDecoration.Enabled = True
-        Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
+        Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(1095, 304)
         Me.Guna2GroupBox2.TabIndex = 2
-        '
-        'btnSearchSupplierName
-        '
-        Me.btnSearchSupplierName.BackColor = System.Drawing.Color.Transparent
-        Me.btnSearchSupplierName.BorderRadius = 8
-        Me.btnSearchSupplierName.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSearchSupplierName.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchSupplierName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchSupplierName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSearchSupplierName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchSupplierName.FillColor = System.Drawing.Color.Blue
-        Me.btnSearchSupplierName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSearchSupplierName.ForeColor = System.Drawing.Color.White
-        Me.btnSearchSupplierName.Image = CType(resources.GetObject("btnSearchSupplierName.Image"), System.Drawing.Image)
-        Me.btnSearchSupplierName.Location = New System.Drawing.Point(728, 8)
-        Me.btnSearchSupplierName.Name = "btnSearchSupplierName"
-        Me.btnSearchSupplierName.PressedDepth = 20
-        Me.btnSearchSupplierName.Size = New System.Drawing.Size(41, 36)
-        Me.btnSearchSupplierName.TabIndex = 71
         '
         'ListView1
         '
@@ -671,6 +652,25 @@ Partial Class frmManageSuppliers
         Me.Panel2.Size = New System.Drawing.Size(10, 254)
         Me.Panel2.TabIndex = 33
         '
+        'btnSearchSupplierName
+        '
+        Me.btnSearchSupplierName.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearchSupplierName.BorderRadius = 8
+        Me.btnSearchSupplierName.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearchSupplierName.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchSupplierName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchSupplierName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearchSupplierName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearchSupplierName.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnSearchSupplierName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearchSupplierName.ForeColor = System.Drawing.Color.White
+        Me.btnSearchSupplierName.Image = CType(resources.GetObject("btnSearchSupplierName.Image"), System.Drawing.Image)
+        Me.btnSearchSupplierName.Location = New System.Drawing.Point(728, 8)
+        Me.btnSearchSupplierName.Name = "btnSearchSupplierName"
+        Me.btnSearchSupplierName.PressedDepth = 20
+        Me.btnSearchSupplierName.Size = New System.Drawing.Size(41, 36)
+        Me.btnSearchSupplierName.TabIndex = 71
+        '
         'txtSearchSupplier
         '
         Me.txtSearchSupplier.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -713,7 +713,6 @@ Partial Class frmManageSuppliers
     End Sub
     Friend WithEvents panelBody As Panel
     Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents txtSearchSupplier As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel1 As Panel
@@ -755,4 +754,5 @@ Partial Class frmManageSuppliers
     Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents btnSearchSupplierName As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtSearchSupplier As Guna.UI2.WinForms.Guna2TextBox
 End Class
