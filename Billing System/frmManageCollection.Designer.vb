@@ -67,9 +67,9 @@ Partial Class frmManageCollection
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox2.Location = New System.Drawing.Point(6, 6)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 0
+        Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 5
         Me.Guna2GroupBox2.ShadowDecoration.Enabled = True
-        Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
+        Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(1095, 620)
         Me.Guna2GroupBox2.TabIndex = 7
         '
@@ -82,11 +82,11 @@ Partial Class frmManageCollection
         Me.btnSearchCompanyName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnSearchCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSearchCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchCompanyName.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnSearchCompanyName.FillColor = System.Drawing.Color.Blue
         Me.btnSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSearchCompanyName.ForeColor = System.Drawing.Color.White
         Me.btnSearchCompanyName.Image = CType(resources.GetObject("btnSearchCompanyName.Image"), System.Drawing.Image)
-        Me.btnSearchCompanyName.Location = New System.Drawing.Point(728, 8)
+        Me.btnSearchCompanyName.Location = New System.Drawing.Point(727, 8)
         Me.btnSearchCompanyName.Name = "btnSearchCompanyName"
         Me.btnSearchCompanyName.PressedDepth = 20
         Me.btnSearchCompanyName.Size = New System.Drawing.Size(41, 36)
@@ -131,7 +131,7 @@ Partial Class frmManageCollection
         Me.btnShow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnShow.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnShow.FillColor = System.Drawing.Color.Blue
         Me.btnShow.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnShow.ForeColor = System.Drawing.Color.White
         Me.btnShow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left

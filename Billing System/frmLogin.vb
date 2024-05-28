@@ -40,17 +40,20 @@ Public Class frmLogin
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        cn.Open()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Try
             cmd.Parameters.Clear()
-            cmd.Connection = cn
-            cmd.CommandText = "Select Username,Role from tblusers where Username= @username and Password = @password and Status='Active'"
+            cn.Open()
+            sql = "Select Username,Role from tblusers where Username= @username and Password = @password and Status='Active'"
+            cmd = New MySqlCommand(sql, cn)
+
             cmd.Parameters.AddWithValue("@username", txtUsername.Text)
             cmd.Parameters.AddWithValue("@password", txtPassword.Text)
+
             dr = cmd.ExecuteReader
+
             If dr.Read = True Then
                 frmAdminDashboard.lblRole.Text = dr("Role").ToString()
                 frmAdminDashboard.lblUsername.Text = dr("Username").ToString
@@ -59,6 +62,7 @@ Public Class frmLogin
                 dr.Close()
             Else
                 MsgBox("Account Still Inactive" & vbNewLine & "Please Contact your Admin for Account Activation", MsgBoxStyle.Exclamation)
+                cn.Close()
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmLogin(btnLogin): " & ex.Message)
