@@ -111,6 +111,7 @@ Public Class frmManageCustomers
         End Try
         Call loadCustomers()
         Call clearAll()
+        Call disableAll()
 
         btnCreateNew.Enabled = True
 
@@ -133,6 +134,12 @@ Public Class frmManageCustomers
                     End With
                     MsgBox("Deleted!")
                 End If
+                btnCreateNew.Enabled = True
+
+                btnEdit.Enabled = False
+                btnSave.Enabled = False
+                btnDelete.Enabled = False
+                btnCancel.Enabled = False
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageCustomer(btnDelete): " & ex.Message)
@@ -141,6 +148,7 @@ Public Class frmManageCustomers
         End Try
         Call loadCustomers()
         Call clearAll()
+        Call disableAll()
     End Sub
 
     Private Sub clearAll()
