@@ -23,55 +23,70 @@ Partial Class frmManageCollection
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageCollection))
-        Me.frmManageCollectionPanel = New System.Windows.Forms.Panel()
-        Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.btnSearchCompanyName = New Guna.UI2.WinForms.Guna2Button()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.btnShow = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnSearchCompanyName = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.txtSearchCompanyName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Panel22 = New System.Windows.Forms.Panel()
+        Me.Panel23 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txtSearchCompany = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel19 = New System.Windows.Forms.Panel()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel21 = New System.Windows.Forms.Panel()
+        Me.btnShow = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.PanelCollection = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.frmManageCollectionPanel = New System.Windows.Forms.Panel()
+        Me.Panel14.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        Me.Panel20.SuspendLayout()
+        Me.Panel18.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        Me.PanelCollection.SuspendLayout()
+        Me.Panel9.SuspendLayout()
         Me.frmManageCollectionPanel.SuspendLayout()
-        Me.Guna2GroupBox2.SuspendLayout()
-        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
-        'frmManageCollectionPanel
+        'Panel4
         '
-        Me.frmManageCollectionPanel.Controls.Add(Me.Guna2GroupBox2)
-        Me.frmManageCollectionPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.frmManageCollectionPanel.Location = New System.Drawing.Point(0, 0)
-        Me.frmManageCollectionPanel.Name = "frmManageCollectionPanel"
-        Me.frmManageCollectionPanel.Size = New System.Drawing.Size(1109, 633)
-        Me.frmManageCollectionPanel.TabIndex = 0
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(10, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1089, 10)
+        Me.Panel4.TabIndex = 7
         '
-        'Guna2GroupBox2
+        'Panel3
         '
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSearchCompanyName)
-        Me.Guna2GroupBox2.Controls.Add(Me.ListView1)
-        Me.Guna2GroupBox2.Controls.Add(Me.Panel5)
-        Me.Guna2GroupBox2.Controls.Add(Me.Panel4)
-        Me.Guna2GroupBox2.Controls.Add(Me.Panel1)
-        Me.Guna2GroupBox2.Controls.Add(Me.Panel3)
-        Me.Guna2GroupBox2.Controls.Add(Me.Label2)
-        Me.Guna2GroupBox2.Controls.Add(Me.Panel2)
-        Me.Guna2GroupBox2.Controls.Add(Me.txtSearchCompany)
-        Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Guna2GroupBox2.CustomBorderThickness = New System.Windows.Forms.Padding(0, 50, 0, 0)
-        Me.Guna2GroupBox2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(6, 6)
-        Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 5
-        Me.Guna2GroupBox2.ShadowDecoration.Enabled = True
-        Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1095, 620)
-        Me.Guna2GroupBox2.TabIndex = 7
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(10, 623)
+        Me.Panel3.TabIndex = 8
+        '
+        'Panel1
+        '
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel1.Location = New System.Drawing.Point(1099, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(10, 633)
+        Me.Panel1.TabIndex = 6
         '
         'btnSearchCompanyName
         '
@@ -82,15 +97,234 @@ Partial Class frmManageCollection
         Me.btnSearchCompanyName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnSearchCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSearchCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchCompanyName.FillColor = System.Drawing.Color.Blue
+        Me.btnSearchCompanyName.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnSearchCompanyName.FillColor = System.Drawing.Color.OrangeRed
         Me.btnSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSearchCompanyName.ForeColor = System.Drawing.Color.White
         Me.btnSearchCompanyName.Image = CType(resources.GetObject("btnSearchCompanyName.Image"), System.Drawing.Image)
-        Me.btnSearchCompanyName.Location = New System.Drawing.Point(727, 8)
+        Me.btnSearchCompanyName.Location = New System.Drawing.Point(30, 10)
         Me.btnSearchCompanyName.Name = "btnSearchCompanyName"
         Me.btnSearchCompanyName.PressedDepth = 20
-        Me.btnSearchCompanyName.Size = New System.Drawing.Size(41, 36)
-        Me.btnSearchCompanyName.TabIndex = 45
+        Me.btnSearchCompanyName.Size = New System.Drawing.Size(41, 30)
+        Me.btnSearchCompanyName.TabIndex = 46
+        '
+        'Panel12
+        '
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel12.Location = New System.Drawing.Point(71, 10)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(10, 30)
+        Me.Panel12.TabIndex = 10
+        '
+        'txtSearchCompanyName
+        '
+        Me.txtSearchCompanyName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSearchCompanyName.DefaultText = ""
+        Me.txtSearchCompanyName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSearchCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSearchCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSearchCompanyName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSearchCompanyName.Dock = System.Windows.Forms.DockStyle.Right
+        Me.txtSearchCompanyName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtSearchCompanyName.ForeColor = System.Drawing.Color.Black
+        Me.txtSearchCompanyName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtSearchCompanyName.Location = New System.Drawing.Point(81, 10)
+        Me.txtSearchCompanyName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSearchCompanyName.Name = "txtSearchCompanyName"
+        Me.txtSearchCompanyName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearchCompanyName.PlaceholderText = "Search by company name"
+        Me.txtSearchCompanyName.SelectedText = ""
+        Me.txtSearchCompanyName.Size = New System.Drawing.Size(314, 30)
+        Me.txtSearchCompanyName.TabIndex = 13
+        '
+        'Panel13
+        '
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel13.Location = New System.Drawing.Point(395, 10)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(10, 30)
+        Me.Panel13.TabIndex = 12
+        '
+        'Panel22
+        '
+        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel22.Location = New System.Drawing.Point(0, 40)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(405, 10)
+        Me.Panel22.TabIndex = 11
+        '
+        'Panel23
+        '
+        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel23.Location = New System.Drawing.Point(0, 0)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(405, 10)
+        Me.Panel23.TabIndex = 10
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(10, 15)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(103, 22)
+        Me.Label2.TabIndex = 32
+        Me.Label2.Text = "Collection"
+        '
+        'Panel15
+        '
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel15.Location = New System.Drawing.Point(0, 15)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(10, 25)
+        Me.Panel15.TabIndex = 13
+        '
+        'Panel17
+        '
+        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel17.Location = New System.Drawing.Point(0, 40)
+        Me.Panel17.Name = "Panel17"
+        Me.Panel17.Size = New System.Drawing.Size(265, 10)
+        Me.Panel17.TabIndex = 13
+        '
+        'Panel16
+        '
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel16.Location = New System.Drawing.Point(0, 0)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(265, 15)
+        Me.Panel16.TabIndex = 13
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 623)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1099, 10)
+        Me.Panel2.TabIndex = 9
+        '
+        'Panel14
+        '
+        Me.Panel14.Controls.Add(Me.Label2)
+        Me.Panel14.Controls.Add(Me.Panel15)
+        Me.Panel14.Controls.Add(Me.Panel17)
+        Me.Panel14.Controls.Add(Me.Panel16)
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel14.Location = New System.Drawing.Point(0, 0)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(265, 50)
+        Me.Panel14.TabIndex = 13
+        '
+        'Panel5
+        '
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel5.Location = New System.Drawing.Point(10, 50)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1069, 10)
+        Me.Panel5.TabIndex = 7
+        '
+        'Panel6
+        '
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel6.Location = New System.Drawing.Point(0, 50)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(10, 553)
+        Me.Panel6.TabIndex = 8
+        '
+        'Panel7
+        '
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel7.Location = New System.Drawing.Point(0, 603)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(1079, 10)
+        Me.Panel7.TabIndex = 9
+        '
+        'Panel8
+        '
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel8.Location = New System.Drawing.Point(1079, 50)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(10, 563)
+        Me.Panel8.TabIndex = 6
+        '
+        'Panel19
+        '
+        Me.Panel19.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel19.Location = New System.Drawing.Point(0, 51)
+        Me.Panel19.Name = "Panel19"
+        Me.Panel19.Size = New System.Drawing.Size(1069, 10)
+        Me.Panel19.TabIndex = 13
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.btnSearchCompanyName)
+        Me.Panel10.Controls.Add(Me.Panel12)
+        Me.Panel10.Controls.Add(Me.txtSearchCompanyName)
+        Me.Panel10.Controls.Add(Me.Panel13)
+        Me.Panel10.Controls.Add(Me.Panel22)
+        Me.Panel10.Controls.Add(Me.Panel23)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel10.Location = New System.Drawing.Point(684, 0)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(405, 50)
+        Me.Panel10.TabIndex = 10
+        '
+        'Panel21
+        '
+        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel21.Location = New System.Drawing.Point(0, 0)
+        Me.Panel21.Name = "Panel21"
+        Me.Panel21.Size = New System.Drawing.Size(1069, 10)
+        Me.Panel21.TabIndex = 13
+        '
+        'btnShow
+        '
+        Me.btnShow.BorderRadius = 8
+        Me.btnShow.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnShow.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnShow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnShow.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnShow.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnShow.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnShow.ForeColor = System.Drawing.Color.White
+        Me.btnShow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnShow.Location = New System.Drawing.Point(0, 0)
+        Me.btnShow.Name = "btnShow"
+        Me.btnShow.PressedDepth = 20
+        Me.btnShow.Size = New System.Drawing.Size(140, 41)
+        Me.btnShow.TabIndex = 41
+        Me.btnShow.Text = "Show"
+        '
+        'Panel20
+        '
+        Me.Panel20.Controls.Add(Me.btnShow)
+        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel20.Location = New System.Drawing.Point(0, 10)
+        Me.Panel20.Name = "Panel20"
+        Me.Panel20.Size = New System.Drawing.Size(140, 41)
+        Me.Panel20.TabIndex = 13
+        '
+        'Panel18
+        '
+        Me.Panel18.Controls.Add(Me.Panel20)
+        Me.Panel18.Controls.Add(Me.Panel21)
+        Me.Panel18.Controls.Add(Me.Panel19)
+        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel18.Location = New System.Drawing.Point(10, 542)
+        Me.Panel18.Name = "Panel18"
+        Me.Panel18.Size = New System.Drawing.Size(1069, 61)
+        Me.Panel18.TabIndex = 13
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "Company Name"
+        Me.ColumnHeader8.Width = 300
         '
         'ListView1
         '
@@ -101,115 +335,61 @@ Partial Class frmManageCollection
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
         Me.ListView1.HoverSelection = True
-        Me.ListView1.Location = New System.Drawing.Point(10, 60)
+        Me.ListView1.Location = New System.Drawing.Point(0, 0)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1075, 495)
-        Me.ListView1.TabIndex = 34
+        Me.ListView1.Size = New System.Drawing.Size(1069, 482)
+        Me.ListView1.TabIndex = 36
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
-        'ColumnHeader8
+        'Panel11
         '
-        Me.ColumnHeader8.Text = "Company Name"
-        Me.ColumnHeader8.Width = 300
+        Me.Panel11.Controls.Add(Me.ListView1)
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel11.Location = New System.Drawing.Point(10, 60)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(1069, 482)
+        Me.Panel11.TabIndex = 14
         '
-        'Panel5
+        'PanelCollection
         '
-        Me.Panel5.BackColor = System.Drawing.Color.White
-        Me.Panel5.Controls.Add(Me.btnShow)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(10, 555)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1075, 55)
-        Me.Panel5.TabIndex = 35
+        Me.PanelCollection.BackColor = System.Drawing.Color.White
+        Me.PanelCollection.Controls.Add(Me.Panel11)
+        Me.PanelCollection.Controls.Add(Me.Panel18)
+        Me.PanelCollection.Controls.Add(Me.Panel5)
+        Me.PanelCollection.Controls.Add(Me.Panel6)
+        Me.PanelCollection.Controls.Add(Me.Panel7)
+        Me.PanelCollection.Controls.Add(Me.Panel8)
+        Me.PanelCollection.Controls.Add(Me.Panel9)
+        Me.PanelCollection.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelCollection.Location = New System.Drawing.Point(10, 10)
+        Me.PanelCollection.Name = "PanelCollection"
+        Me.PanelCollection.Size = New System.Drawing.Size(1089, 613)
+        Me.PanelCollection.TabIndex = 10
         '
-        'btnShow
+        'Panel9
         '
-        Me.btnShow.BorderRadius = 8
-        Me.btnShow.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnShow.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnShow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnShow.FillColor = System.Drawing.Color.Blue
-        Me.btnShow.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnShow.ForeColor = System.Drawing.Color.White
-        Me.btnShow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnShow.Location = New System.Drawing.Point(6, 10)
-        Me.btnShow.Name = "btnShow"
-        Me.btnShow.PressedDepth = 20
-        Me.btnShow.Size = New System.Drawing.Size(149, 36)
-        Me.btnShow.TabIndex = 40
-        Me.btnShow.Text = "Show"
+        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Panel9.Controls.Add(Me.Panel14)
+        Me.Panel9.Controls.Add(Me.Panel10)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel9.Location = New System.Drawing.Point(0, 0)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(1089, 50)
+        Me.Panel9.TabIndex = 0
         '
-        'Panel4
+        'frmManageCollectionPanel
         '
-        Me.Panel4.BackColor = System.Drawing.Color.White
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(10, 610)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1075, 10)
-        Me.Panel4.TabIndex = 33
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 60)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(10, 560)
-        Me.Panel1.TabIndex = 32
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 50)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1085, 10)
-        Me.Panel3.TabIndex = 33
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(15, 13)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(103, 22)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "Collection"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(1085, 50)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(10, 570)
-        Me.Panel2.TabIndex = 33
-        '
-        'txtSearchCompany
-        '
-        Me.txtSearchCompany.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSearchCompany.DefaultText = ""
-        Me.txtSearchCompany.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSearchCompany.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSearchCompany.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSearchCompany.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSearchCompany.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearchCompany.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtSearchCompany.ForeColor = System.Drawing.Color.Black
-        Me.txtSearchCompany.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtSearchCompany.Location = New System.Drawing.Point(774, 10)
-        Me.txtSearchCompany.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtSearchCompany.Name = "txtSearchCompany"
-        Me.txtSearchCompany.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearchCompany.PlaceholderText = "Search by company name"
-        Me.txtSearchCompany.SelectedText = ""
-        Me.txtSearchCompany.Size = New System.Drawing.Size(314, 30)
-        Me.txtSearchCompany.TabIndex = 12
+        Me.frmManageCollectionPanel.Controls.Add(Me.PanelCollection)
+        Me.frmManageCollectionPanel.Controls.Add(Me.Panel4)
+        Me.frmManageCollectionPanel.Controls.Add(Me.Panel3)
+        Me.frmManageCollectionPanel.Controls.Add(Me.Panel2)
+        Me.frmManageCollectionPanel.Controls.Add(Me.Panel1)
+        Me.frmManageCollectionPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.frmManageCollectionPanel.Location = New System.Drawing.Point(0, 0)
+        Me.frmManageCollectionPanel.Name = "frmManageCollectionPanel"
+        Me.frmManageCollectionPanel.Size = New System.Drawing.Size(1109, 633)
+        Me.frmManageCollectionPanel.TabIndex = 1
         '
         'frmManageCollection
         '
@@ -220,25 +400,48 @@ Partial Class frmManageCollection
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmManageCollection"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Panel14.ResumeLayout(False)
+        Me.Panel14.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel20.ResumeLayout(False)
+        Me.Panel18.ResumeLayout(False)
+        Me.Panel11.ResumeLayout(False)
+        Me.PanelCollection.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
         Me.frmManageCollectionPanel.ResumeLayout(False)
-        Me.Guna2GroupBox2.ResumeLayout(False)
-        Me.Guna2GroupBox2.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents frmManageCollectionPanel As Panel
-    Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader8 As ColumnHeader
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents btnShow As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents txtSearchCompany As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents btnSearchCompanyName As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents txtSearchCompanyName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Panel22 As Panel
+    Friend WithEvents Panel23 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel15 As Panel
+    Friend WithEvents Panel17 As Panel
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Panel19 As Panel
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Panel21 As Panel
+    Friend WithEvents btnShow As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel20 As Panel
+    Friend WithEvents Panel18 As Panel
+    Friend WithEvents ColumnHeader8 As ColumnHeader
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents PanelCollection As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents frmManageCollectionPanel As Panel
 End Class
