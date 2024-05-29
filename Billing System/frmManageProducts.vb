@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class frmManageProducts
@@ -235,5 +236,10 @@ Public Class frmManageProducts
             ListView1.Items.Add(New ListViewItem(row.ItemArray.Select(Function(x) x.ToString()).ToArray()))
 
         Next
+=======
+﻿Public Class frmManageProducts
+    Private Sub btnSearchSupplier_Click(sender As Object, e As EventArgs) Handles btnSearchSupplier.Click
+        frmListSuppliers.ShowDialog()
+>>>>>>> Stashed changes
     End Sub
 End Class
