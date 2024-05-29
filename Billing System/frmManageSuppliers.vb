@@ -1,5 +1,5 @@
-﻿'imports system.data.oledb
-'imports system.management
+
+
 Imports MySql.Data.MySqlClient
 
 Public Class frmManageSuppliers
