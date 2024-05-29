@@ -26,7 +26,6 @@ Partial Class frmManageCustomers
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.btnSearchCustomer = New Guna.UI2.WinForms.Guna2Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -39,6 +38,7 @@ Partial Class frmManageCustomers
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtSearchCustomer = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.lblCustomerID = New System.Windows.Forms.Label()
         Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCreateNew = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
@@ -56,8 +56,6 @@ Partial Class frmManageCustomers
         Me.txtLastName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtCustomerName = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -105,7 +103,7 @@ Partial Class frmManageCustomers
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.GridLines = True
@@ -118,11 +116,6 @@ Partial Class frmManageCustomers
         Me.ListView1.TabIndex = 34
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Customer ID"
-        Me.ColumnHeader1.Width = 150
         '
         'ColumnHeader2
         '
@@ -152,7 +145,7 @@ Partial Class frmManageCustomers
         '
         Me.ColumnHeader6.Text = "Company Name"
         Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader6.Width = 200
+        Me.ColumnHeader6.Width = 100
         '
         'Panel4
         '
@@ -225,6 +218,7 @@ Partial Class frmManageCustomers
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.lblCustomerID)
         Me.Guna2GroupBox1.Controls.Add(Me.btnDelete)
         Me.Guna2GroupBox1.Controls.Add(Me.btnCreateNew)
         Me.Guna2GroupBox1.Controls.Add(Me.btnCancel)
@@ -242,8 +236,6 @@ Partial Class frmManageCustomers
         Me.Guna2GroupBox1.Controls.Add(Me.txtLastName)
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtCustomerName)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label22)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
@@ -255,6 +247,15 @@ Partial Class frmManageCustomers
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1095, 304)
         Me.Guna2GroupBox1.TabIndex = 11
         Me.Guna2GroupBox1.Text = "Manage Customer"
+        '
+        'lblCustomerID
+        '
+        Me.lblCustomerID.AutoSize = True
+        Me.lblCustomerID.Location = New System.Drawing.Point(880, 169)
+        Me.lblCustomerID.Name = "lblCustomerID"
+        Me.lblCustomerID.Size = New System.Drawing.Size(21, 22)
+        Me.lblCustomerID.TabIndex = 58
+        Me.lblCustomerID.Text = "0"
         '
         'btnDelete
         '
@@ -429,7 +430,7 @@ Partial Class frmManageCustomers
         Me.txtFirstName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtFirstName.ForeColor = System.Drawing.Color.Black
         Me.txtFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtFirstName.Location = New System.Drawing.Point(560, 77)
+        Me.txtFirstName.Location = New System.Drawing.Point(294, 83)
         Me.txtFirstName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -444,7 +445,7 @@ Partial Class frmManageCustomers
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(559, 54)
+        Me.Label4.Location = New System.Drawing.Point(293, 60)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(91, 19)
         Me.Label4.TabIndex = 42
@@ -461,7 +462,7 @@ Partial Class frmManageCustomers
         Me.cboStatus.ForeColor = System.Drawing.Color.Black
         Me.cboStatus.ItemHeight = 30
         Me.cboStatus.Items.AddRange(New Object() {"Good Payer", "Bad Payer"})
-        Me.cboStatus.Location = New System.Drawing.Point(840, 77)
+        Me.cboStatus.Location = New System.Drawing.Point(574, 83)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(244, 36)
         Me.cboStatus.TabIndex = 41
@@ -511,7 +512,7 @@ Partial Class frmManageCustomers
         Me.txtLastName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtLastName.ForeColor = System.Drawing.Color.Black
         Me.txtLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtLastName.Location = New System.Drawing.Point(281, 77)
+        Me.txtLastName.Location = New System.Drawing.Point(15, 83)
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -526,7 +527,7 @@ Partial Class frmManageCustomers
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(280, 54)
+        Me.Label1.Location = New System.Drawing.Point(14, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(90, 19)
         Me.Label1.TabIndex = 30
@@ -538,46 +539,11 @@ Partial Class frmManageCustomers
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(839, 54)
+        Me.Label5.Location = New System.Drawing.Point(573, 60)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(58, 19)
         Me.Label5.TabIndex = 28
         Me.Label5.Text = "Status"
-        '
-        'txtCustomerName
-        '
-        Me.txtCustomerName.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtCustomerName.DefaultText = ""
-        Me.txtCustomerName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtCustomerName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtCustomerName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtCustomerName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtCustomerName.Enabled = False
-        Me.txtCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCustomerName.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtCustomerName.ForeColor = System.Drawing.Color.Black
-        Me.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtCustomerName.Location = New System.Drawing.Point(13, 77)
-        Me.txtCustomerName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtCustomerName.Name = "txtCustomerName"
-        Me.txtCustomerName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtCustomerName.PlaceholderText = ""
-        Me.txtCustomerName.ReadOnly = True
-        Me.txtCustomerName.SelectedText = ""
-        Me.txtCustomerName.Size = New System.Drawing.Size(254, 36)
-        Me.txtCustomerName.TabIndex = 27
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.BackColor = System.Drawing.Color.Transparent
-        Me.Label22.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(12, 54)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(104, 19)
-        Me.Label22.TabIndex = 26
-        Me.Label22.Text = "Customer ID"
         '
         'frmManageCustomers
         '
@@ -610,15 +576,12 @@ Partial Class frmManageCustomers
     Friend WithEvents txtLastName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label22 As Label
     Friend WithEvents cboStatus As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents txtPhoneNumber As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtFirstName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtCustomerName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
@@ -632,4 +595,5 @@ Partial Class frmManageCustomers
     Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSearchCustomer As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents lblCustomerID As Label
 End Class

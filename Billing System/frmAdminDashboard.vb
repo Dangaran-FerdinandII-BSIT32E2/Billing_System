@@ -48,6 +48,16 @@
         panelDashboard.Controls.Add(frmAnalyticsData)
         frmAnalyticsData.BringToFront()
         frmAnalyticsData.Show()
+
+        frmManageSales.Close()
+        frmManageBilling.Close()
+        frmManageCollection.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageCustomers.Close()
+        frmManageUsers.Close()
+        frmManageRental.Close()
+        frmAdminSettings.Close()
     End Sub
 
     Private Sub btnSales_Click(sender As Object, e As EventArgs) Handles btnSales.Click
@@ -65,6 +75,15 @@
         panelDashboard.Controls.Add(frmManageSales)
         frmManageSales.BringToFront()
         frmManageSales.Show()
+
+        frmManageBilling.Close()
+        frmManageCollection.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageCustomers.Close()
+        frmManageUsers.Close()
+        frmManageRental.Close()
+        frmAdminSettings.Close()
     End Sub
 
     Private Sub btnBilling_Click_1(sender As Object, e As EventArgs) Handles btnBilling.Click
@@ -83,6 +102,15 @@
         panelDashboard.Controls.Add(frmManageBilling)
         frmManageBilling.BringToFront()
         frmManageBilling.Show()
+
+        frmManageSales.Close()
+        frmManageCollection.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageCustomers.Close()
+        frmManageUsers.Close()
+        frmManageRental.Close()
+        frmAdminSettings.Close()
     End Sub
 
 
@@ -101,6 +129,15 @@
         panelDashboard.Controls.Add(frmAdminSettings)
         frmAdminSettings.BringToFront()
         frmAdminSettings.Show()
+
+        frmManageSales.Close()
+        frmManageBilling.Close()
+        frmManageCollection.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageCustomers.Close()
+        frmManageUsers.Close()
+        frmManageRental.Close()
     End Sub
 
     Private Sub btnCollection_Click(sender As Object, e As EventArgs) Handles btnCollection.Click
@@ -108,6 +145,15 @@
         panelDashboard.Controls.Add(frmManageCollection)
         frmManageCollection.BringToFront()
         frmManageCollection.Show()
+
+        frmManageSales.Close()
+        frmManageBilling.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageCustomers.Close()
+        frmManageUsers.Close()
+        frmManageRental.Close()
+        frmAdminSettings.Close()
     End Sub
 
     Private Sub btnSupplier_Click(sender As Object, e As EventArgs) Handles btnSupplier.Click
@@ -115,6 +161,15 @@
         panelDashboard.Controls.Add(frmManageSuppliers)
         frmManageSuppliers.BringToFront()
         frmManageSuppliers.Show()
+
+        frmManageSales.Close()
+        frmManageBilling.Close()
+        frmManageCollection.Close()
+        frmManageProducts.Close()
+        frmManageCustomers.Close()
+        frmManageUsers.Close()
+        frmManageRental.Close()
+        frmAdminSettings.Close()
     End Sub
 
     Private Sub btnProduct_Click(sender As Object, e As EventArgs) Handles btnProduct.Click
@@ -122,6 +177,15 @@
         panelDashboard.Controls.Add(frmManageProducts)
         frmManageProducts.BringToFront()
         frmManageProducts.Show()
+
+        frmManageSales.Close()
+        frmManageBilling.Close()
+        frmManageCollection.Close()
+        frmManageSuppliers.Close()
+        frmManageCustomers.Close()
+        frmManageUsers.Close()
+        frmManageRental.Close()
+        frmAdminSettings.Close()
     End Sub
 
     Private Sub btnCustomer_Click(sender As Object, e As EventArgs) Handles btnCustomer.Click
@@ -129,6 +193,15 @@
         panelDashboard.Controls.Add(frmManageCustomers)
         frmManageCustomers.BringToFront()
         frmManageCustomers.Show()
+
+        frmManageSales.Close()
+        frmManageBilling.Close()
+        frmManageCollection.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageUsers.Close()
+        frmManageRental.Close()
+        frmAdminSettings.Close()
     End Sub
 
     Private Sub btnUser_Click(sender As Object, e As EventArgs) Handles btnUser.Click
@@ -136,6 +209,15 @@
         panelDashboard.Controls.Add(frmManageUsers)
         frmManageUsers.BringToFront()
         frmManageUsers.Show()
+
+        frmManageSales.Close()
+        frmManageBilling.Close()
+        frmManageCollection.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageCustomers.Close()
+        frmManageRental.Close()
+        frmAdminSettings.Close()
     End Sub
 
     Private Sub btnRental_Click(sender As Object, e As EventArgs) Handles btnRental.Click
@@ -143,6 +225,15 @@
         panelDashboard.Controls.Add(frmManageRental)
         frmManageRental.BringToFront()
         frmManageRental.Show()
+
+        frmManageSales.Close()
+        frmManageBilling.Close()
+        frmManageCollection.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageCustomers.Close()
+        frmManageUsers.Close()
+        frmAdminSettings.Close()
     End Sub
 
 End Class
