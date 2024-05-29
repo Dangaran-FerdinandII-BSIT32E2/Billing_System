@@ -34,7 +34,7 @@ Public Class frmManageSuppliers
 
     End Sub
 
-    Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
+    Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) 
 
         btnSave.Enabled = True
         btnCancel.Enabled = True
@@ -45,7 +45,7 @@ Public Class frmManageSuppliers
         Call enableAll()
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) 
         btnCreateNew.Enabled = True
         btnEdit.Enabled = True
 
@@ -57,7 +57,7 @@ Public Class frmManageSuppliers
         Call enableAll()
     End Sub
 
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) 
         btnSave.Enabled = True
         btnCancel.Enabled = True
         btnDelete.Enabled = True
@@ -67,7 +67,7 @@ Public Class frmManageSuppliers
         Call enableAll()
     End Sub
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) 
         Dim filled As Boolean = True
 
         Dim requiredFields As New Dictionary(Of String, Control) From {
@@ -147,7 +147,7 @@ Public Class frmManageSuppliers
             End If
         End If
     End Sub
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) 
         If ListView1.SelectedItems.Count > 0 Then
             lblSupplierID.Text = ListView1.SelectedItems(0).SubItems(0).Text
             txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(1).Text
@@ -164,7 +164,7 @@ Public Class frmManageSuppliers
         btnDelete.Enabled = True
         btnCancel.Enabled = True
     End Sub
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) 
         If ListView1.SelectedItems.Count > 0 Then
             If MsgBox("Do you want to delete?", vbYesNo) = vbYes Then
                 cn.Open()
@@ -194,7 +194,7 @@ Public Class frmManageSuppliers
 
         lblSupplierID.Text = "XXXXX"
     End Sub
-    Private Sub txtSearchSupplier_TextChanged(sender As Object, e As EventArgs) Handles txtSearchSupplier.TextChanged
+    Private Sub txtSearchSupplier_TextChanged(sender As Object, e As EventArgs) 
         Dim dt As DataTable = SearchDatabase(txtSearchSupplier.Text)
         PopulateListView(dt)
     End Sub
