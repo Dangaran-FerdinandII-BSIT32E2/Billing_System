@@ -1,9 +1,9 @@
 ﻿Public Class frmManageBilling
-    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) 
         frmPrintInvoice.ShowDialog()
     End Sub
 
-    Private Sub btnSearchProduct_Click(sender As Object, e As EventArgs) Handles btnSearchProduct.Click
+    Private Sub btnSearchProduct_Click(sender As Object, e As EventArgs) 
         frmListProducts.ShowDialog()
     End Sub
 End Class
