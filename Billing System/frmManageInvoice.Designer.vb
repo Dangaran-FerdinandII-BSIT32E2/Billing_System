@@ -56,10 +56,11 @@ Partial Class frmManageInvoice
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btnPayNow = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.btnInsert = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
@@ -90,9 +91,9 @@ Partial Class frmManageInvoice
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox2.Location = New System.Drawing.Point(6, 6)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 5
+        Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 0
         Me.Guna2GroupBox2.ShadowDecoration.Enabled = True
-        Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
+        Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(1095, 343)
         Me.Guna2GroupBox2.TabIndex = 5
         '
@@ -105,7 +106,7 @@ Partial Class frmManageInvoice
         Me.btnDownloadInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnDownloadInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnDownloadInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDownloadInvoice.FillColor = System.Drawing.Color.Blue
+        Me.btnDownloadInvoice.FillColor = System.Drawing.Color.OrangeRed
         Me.btnDownloadInvoice.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnDownloadInvoice.ForeColor = System.Drawing.Color.White
         Me.btnDownloadInvoice.Image = CType(resources.GetObject("btnDownloadInvoice.Image"), System.Drawing.Image)
@@ -288,9 +289,9 @@ Partial Class frmManageInvoice
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(6, 356)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.ShadowDecoration.BorderRadius = 5
+        Me.Guna2GroupBox1.ShadowDecoration.BorderRadius = 0
         Me.Guna2GroupBox1.ShadowDecoration.Enabled = True
-        Me.Guna2GroupBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
+        Me.Guna2GroupBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1095, 270)
         Me.Guna2GroupBox1.TabIndex = 7
         '
@@ -436,31 +437,13 @@ Partial Class frmManageInvoice
         '
         Me.Panel12.BackColor = System.Drawing.Color.White
         Me.Panel12.Controls.Add(Me.btnCancel)
+        Me.Panel12.Controls.Add(Me.btnInsert)
         Me.Panel12.Controls.Add(Me.btnPayNow)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel12.Location = New System.Drawing.Point(0, 150)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(485, 70)
         Me.Panel12.TabIndex = 34
-        '
-        'btnCancel
-        '
-        Me.btnCancel.BorderRadius = 8
-        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancel.FillColor = System.Drawing.Color.Blue
-        Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCancel.Location = New System.Drawing.Point(292, 17)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(149, 36)
-        Me.btnCancel.TabIndex = 59
-        Me.btnCancel.Text = "Cancel"
         '
         'btnPayNow
         '
@@ -470,14 +453,14 @@ Partial Class frmManageInvoice
         Me.btnPayNow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnPayNow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnPayNow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnPayNow.FillColor = System.Drawing.Color.Blue
+        Me.btnPayNow.FillColor = System.Drawing.Color.OrangeRed
         Me.btnPayNow.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnPayNow.ForeColor = System.Drawing.Color.White
         Me.btnPayNow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnPayNow.Location = New System.Drawing.Point(50, 17)
+        Me.btnPayNow.Location = New System.Drawing.Point(5, 17)
         Me.btnPayNow.Name = "btnPayNow"
         Me.btnPayNow.PressedDepth = 20
-        Me.btnPayNow.Size = New System.Drawing.Size(149, 36)
+        Me.btnPayNow.Size = New System.Drawing.Size(124, 36)
         Me.btnPayNow.TabIndex = 58
         Me.btnPayNow.Text = "Pay Now"
         '
@@ -501,6 +484,44 @@ Partial Class frmManageInvoice
         Me.Label10.Size = New System.Drawing.Size(99, 22)
         Me.Label10.TabIndex = 31
         Me.Label10.Text = "Summary"
+        '
+        'btnInsert
+        '
+        Me.btnInsert.BorderRadius = 8
+        Me.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnInsert.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnInsert.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnInsert.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnInsert.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnInsert.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnInsert.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnInsert.ForeColor = System.Drawing.Color.White
+        Me.btnInsert.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnInsert.Location = New System.Drawing.Point(138, 17)
+        Me.btnInsert.Name = "btnInsert"
+        Me.btnInsert.PressedDepth = 20
+        Me.btnInsert.Size = New System.Drawing.Size(124, 36)
+        Me.btnInsert.TabIndex = 60
+        Me.btnInsert.Text = "Insert"
+        '
+        'btnCancel
+        '
+        Me.btnCancel.BorderRadius = 8
+        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCancel.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnCancel.Location = New System.Drawing.Point(351, 17)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.PressedDepth = 20
+        Me.btnCancel.Size = New System.Drawing.Size(124, 36)
+        Me.btnCancel.TabIndex = 61
+        Me.btnCancel.Text = "Cancel"
         '
         'frmManageInvoice
         '
@@ -554,7 +575,6 @@ Partial Class frmManageInvoice
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents Panel12 As Panel
-    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnPayNow As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel16 As Panel
     Friend WithEvents Panel14 As Panel
@@ -563,4 +583,6 @@ Partial Class frmManageInvoice
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents btnDownloadInvoice As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnInsert As Guna.UI2.WinForms.Guna2Button
 End Class

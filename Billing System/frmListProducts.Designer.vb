@@ -82,7 +82,7 @@ Partial Class frmListProducts
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox2.Location = New System.Drawing.Point(1, 0)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 5
+        Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 0
         Me.Guna2GroupBox2.ShadowDecoration.Enabled = True
         Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(1087, 612)
@@ -173,7 +173,7 @@ Partial Class frmListProducts
         Me.btnConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnConfirm.FillColor = System.Drawing.Color.MediumBlue
+        Me.btnConfirm.FillColor = System.Drawing.Color.OrangeRed
         Me.btnConfirm.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnConfirm.ForeColor = System.Drawing.Color.White
         Me.btnConfirm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left

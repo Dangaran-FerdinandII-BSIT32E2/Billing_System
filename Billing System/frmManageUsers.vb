@@ -1,5 +1,5 @@
 ﻿Public Class frmManageUsers
-    Private Sub btnOkay_Click(sender As Object, e As EventArgs) Handles btnOkay.Click
+    Private Sub btnOkay_Click(sender As Object, e As EventArgs)
         TabControl2.SelectedTab = TabPage1 ' Replace 'tabPage1' with the actual name of your TabPage1
     End Sub
 
