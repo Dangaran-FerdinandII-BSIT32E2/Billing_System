@@ -23,10 +23,32 @@ Partial Class frmManageBilling
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageBilling))
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.btnPrint = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.btnInsert = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.cboSalesman = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.btnSearchProduct = New Guna.UI2.WinForms.Guna2Button()
         Me.txtProductName = New Guna.UI2.WinForms.Guna2TextBox()
@@ -43,46 +65,296 @@ Partial Class frmManageBilling
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCompanyName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnPrint = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnInsert = New Guna.UI2.WinForms.Guna2Button()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.Panel7.SuspendLayout()
-        Me.Panel8.SuspendLayout()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Guna2DateTimePicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Guna2GroupBox1.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        Me.Panel18.SuspendLayout()
+        Me.Panel17.SuspendLayout()
+        Me.Panel13.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel5
+        'Panel4
         '
-        Me.Panel5.BackColor = System.Drawing.Color.White
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel5.Location = New System.Drawing.Point(0, 40)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(10, 573)
-        Me.Panel5.TabIndex = 34
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(10, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1089, 10)
+        Me.Panel4.TabIndex = 7
         '
-        'Panel6
+        'Panel3
         '
-        Me.Panel6.BackColor = System.Drawing.Color.White
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel6.Location = New System.Drawing.Point(1079, 40)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(10, 573)
-        Me.Panel6.TabIndex = 35
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(10, 623)
+        Me.Panel3.TabIndex = 8
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 623)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1099, 10)
+        Me.Panel2.TabIndex = 9
+        '
+        'Panel1
+        '
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel1.Location = New System.Drawing.Point(1099, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(10, 633)
+        Me.Panel1.TabIndex = 6
+        '
+        'Guna2GroupBox1
+        '
+        Me.Guna2GroupBox1.Controls.Add(Me.Label1)
+        Me.Guna2GroupBox1.Controls.Add(Me.ListView1)
+        Me.Guna2GroupBox1.Controls.Add(Me.Panel8)
+        Me.Guna2GroupBox1.Controls.Add(Me.Panel7)
+        Me.Guna2GroupBox1.Controls.Add(Me.Panel6)
+        Me.Guna2GroupBox1.Controls.Add(Me.Panel5)
+        Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(10, 10)
+        Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
+        Me.Guna2GroupBox1.ShadowDecoration.BorderRadius = 0
+        Me.Guna2GroupBox1.ShadowDecoration.Enabled = True
+        Me.Guna2GroupBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1089, 613)
+        Me.Guna2GroupBox1.TabIndex = 10
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(10, 8)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(140, 22)
+        Me.Label1.TabIndex = 37
+        Me.Label1.Text = "Billing Invoice"
+        '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5, Me.ColumnHeader4})
+        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView1.GridLines = True
+        Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.ListView1.HideSelection = False
+        Me.ListView1.HoverSelection = True
+        Me.ListView1.Location = New System.Drawing.Point(10, 215)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(1069, 333)
+        Me.ListView1.TabIndex = 36
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Quantity"
+        Me.ColumnHeader1.Width = 150
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Unit"
+        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader2.Width = 100
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Description"
+        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader3.Width = 350
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Unit Price"
+        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader5.Width = 180
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Amount"
+        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader4.Width = 200
+        '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.White
+        Me.Panel8.Controls.Add(Me.Panel18)
+        Me.Panel8.Controls.Add(Me.Panel17)
+        Me.Panel8.Controls.Add(Me.Panel15)
+        Me.Panel8.Controls.Add(Me.Panel13)
+        Me.Panel8.Controls.Add(Me.Panel12)
+        Me.Panel8.Controls.Add(Me.Panel11)
+        Me.Panel8.Controls.Add(Me.Panel10)
+        Me.Panel8.Controls.Add(Me.Panel9)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel8.Location = New System.Drawing.Point(10, 548)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(1069, 65)
+        Me.Panel8.TabIndex = 35
+        '
+        'Panel18
+        '
+        Me.Panel18.Controls.Add(Me.btnDelete)
+        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel18.Location = New System.Drawing.Point(929, 15)
+        Me.Panel18.Name = "Panel18"
+        Me.Panel18.Size = New System.Drawing.Size(140, 40)
+        Me.Panel18.TabIndex = 43
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BorderRadius = 8
+        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDelete.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnDelete.Location = New System.Drawing.Point(0, 0)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.PressedDepth = 20
+        Me.btnDelete.Size = New System.Drawing.Size(140, 40)
+        Me.btnDelete.TabIndex = 48
+        Me.btnDelete.Text = "Delete"
+        '
+        'Panel17
+        '
+        Me.Panel17.Controls.Add(Me.btnUpdate)
+        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel17.Location = New System.Drawing.Point(300, 15)
+        Me.Panel17.Name = "Panel17"
+        Me.Panel17.Size = New System.Drawing.Size(140, 40)
+        Me.Panel17.TabIndex = 43
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.BorderRadius = 8
+        Me.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnUpdate.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnUpdate.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnUpdate.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnUpdate.Location = New System.Drawing.Point(0, 0)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.PressedDepth = 20
+        Me.btnUpdate.Size = New System.Drawing.Size(140, 40)
+        Me.btnUpdate.TabIndex = 47
+        Me.btnUpdate.Text = "Update"
+        '
+        'Panel15
+        '
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel15.Location = New System.Drawing.Point(290, 15)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(10, 40)
+        Me.Panel15.TabIndex = 41
+        '
+        'Panel13
+        '
+        Me.Panel13.Controls.Add(Me.btnPrint)
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel13.Location = New System.Drawing.Point(150, 15)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(140, 40)
+        Me.Panel13.TabIndex = 40
+        '
+        'btnPrint
+        '
+        Me.btnPrint.BorderRadius = 8
+        Me.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnPrint.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnPrint.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnPrint.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnPrint.ForeColor = System.Drawing.Color.White
+        Me.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnPrint.Location = New System.Drawing.Point(0, 0)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.PressedDepth = 20
+        Me.btnPrint.Size = New System.Drawing.Size(140, 40)
+        Me.btnPrint.TabIndex = 46
+        Me.btnPrint.Text = "Print"
+        '
+        'Panel12
+        '
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel12.Location = New System.Drawing.Point(140, 15)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(10, 40)
+        Me.Panel12.TabIndex = 40
+        '
+        'Panel11
+        '
+        Me.Panel11.Controls.Add(Me.btnInsert)
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel11.Location = New System.Drawing.Point(0, 15)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(140, 40)
+        Me.Panel11.TabIndex = 39
+        '
+        'btnInsert
+        '
+        Me.btnInsert.BorderRadius = 8
+        Me.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnInsert.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnInsert.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnInsert.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnInsert.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnInsert.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnInsert.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnInsert.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnInsert.ForeColor = System.Drawing.Color.White
+        Me.btnInsert.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnInsert.Location = New System.Drawing.Point(0, 0)
+        Me.btnInsert.Name = "btnInsert"
+        Me.btnInsert.PressedDepth = 20
+        Me.btnInsert.Size = New System.Drawing.Size(140, 40)
+        Me.btnInsert.TabIndex = 45
+        Me.btnInsert.Text = "Insert"
+        '
+        'Panel10
+        '
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel10.Location = New System.Drawing.Point(0, 55)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(1069, 10)
+        Me.Panel10.TabIndex = 38
+        '
+        'Panel9
+        '
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel9.Location = New System.Drawing.Point(0, 0)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(1069, 15)
+        Me.Panel9.TabIndex = 0
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.White
-        Me.Panel7.Controls.Add(Me.DateTimePicker1)
+        Me.Panel7.Controls.Add(Me.Guna2DateTimePicker1)
         Me.Panel7.Controls.Add(Me.cboSalesman)
         Me.Panel7.Controls.Add(Me.btnSearchProduct)
         Me.Panel7.Controls.Add(Me.txtProductName)
@@ -104,15 +376,6 @@ Partial Class frmManageBilling
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1069, 175)
         Me.Panel7.TabIndex = 35
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(552, 116)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(235, 26)
-        Me.DateTimePicker1.TabIndex = 63
         '
         'cboSalesman
         '
@@ -371,170 +634,39 @@ Partial Class frmManageBilling
         Me.Label4.TabIndex = 44
         Me.Label4.Text = "Company Name"
         '
-        'Panel8
+        'Panel6
         '
-        Me.Panel8.BackColor = System.Drawing.Color.White
-        Me.Panel8.Controls.Add(Me.btnDelete)
-        Me.Panel8.Controls.Add(Me.btnUpdate)
-        Me.Panel8.Controls.Add(Me.btnPrint)
-        Me.Panel8.Controls.Add(Me.btnInsert)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel8.Location = New System.Drawing.Point(10, 548)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1069, 65)
-        Me.Panel8.TabIndex = 35
+        Me.Panel6.BackColor = System.Drawing.Color.White
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel6.Location = New System.Drawing.Point(1079, 40)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(10, 573)
+        Me.Panel6.TabIndex = 35
         '
-        'btnDelete
+        'Panel5
         '
-        Me.btnDelete.BorderRadius = 8
-        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDelete.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnDelete.Location = New System.Drawing.Point(925, 16)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.PressedDepth = 20
-        Me.btnDelete.Size = New System.Drawing.Size(144, 36)
-        Me.btnDelete.TabIndex = 43
-        Me.btnDelete.Text = "Delete"
+        Me.Panel5.BackColor = System.Drawing.Color.White
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel5.Location = New System.Drawing.Point(0, 40)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(10, 573)
+        Me.Panel5.TabIndex = 34
         '
-        'btnUpdate
+        'Guna2DateTimePicker1
         '
-        Me.btnUpdate.BorderRadius = 8
-        Me.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnUpdate.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnUpdate.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnUpdate.Location = New System.Drawing.Point(313, 16)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.PressedDepth = 20
-        Me.btnUpdate.Size = New System.Drawing.Size(144, 36)
-        Me.btnUpdate.TabIndex = 42
-        Me.btnUpdate.Text = "Update"
-        '
-        'btnPrint
-        '
-        Me.btnPrint.BorderRadius = 8
-        Me.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnPrint.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnPrint.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnPrint.ForeColor = System.Drawing.Color.White
-        Me.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnPrint.Location = New System.Drawing.Point(159, 16)
-        Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.PressedDepth = 20
-        Me.btnPrint.Size = New System.Drawing.Size(144, 36)
-        Me.btnPrint.TabIndex = 41
-        Me.btnPrint.Text = "Print"
-        '
-        'btnInsert
-        '
-        Me.btnInsert.BorderRadius = 8
-        Me.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnInsert.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnInsert.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnInsert.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnInsert.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnInsert.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnInsert.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnInsert.ForeColor = System.Drawing.Color.White
-        Me.btnInsert.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnInsert.Location = New System.Drawing.Point(3, 16)
-        Me.btnInsert.Name = "btnInsert"
-        Me.btnInsert.PressedDepth = 20
-        Me.btnInsert.Size = New System.Drawing.Size(144, 36)
-        Me.btnInsert.TabIndex = 40
-        Me.btnInsert.Text = "Insert"
-        '
-        'ListView1
-        '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5, Me.ColumnHeader4})
-        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ListView1.GridLines = True
-        Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.ListView1.HideSelection = False
-        Me.ListView1.HoverSelection = True
-        Me.ListView1.Location = New System.Drawing.Point(10, 215)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1069, 333)
-        Me.ListView1.TabIndex = 36
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Quantity"
-        Me.ColumnHeader1.Width = 150
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Unit"
-        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader2.Width = 100
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Description"
-        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader3.Width = 350
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Unit Price"
-        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader5.Width = 180
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Amount"
-        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader4.Width = 200
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(10, 8)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(140, 22)
-        Me.Label1.TabIndex = 37
-        Me.Label1.Text = "Billing Invoice"
-        '
-        'Guna2GroupBox1
-        '
-        Me.Guna2GroupBox1.Controls.Add(Me.Label1)
-        Me.Guna2GroupBox1.Controls.Add(Me.ListView1)
-        Me.Guna2GroupBox1.Controls.Add(Me.Panel8)
-        Me.Guna2GroupBox1.Controls.Add(Me.Panel7)
-        Me.Guna2GroupBox1.Controls.Add(Me.Panel6)
-        Me.Guna2GroupBox1.Controls.Add(Me.Panel5)
-        Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(10, 10)
-        Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.ShadowDecoration.BorderRadius = 0
-        Me.Guna2GroupBox1.ShadowDecoration.Enabled = True
-        Me.Guna2GroupBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1089, 613)
-        Me.Guna2GroupBox1.TabIndex = 3
+        Me.Guna2DateTimePicker1.Checked = True
+        Me.Guna2DateTimePicker1.FillColor = System.Drawing.Color.White
+        Me.Guna2DateTimePicker1.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.Guna2DateTimePicker1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.Guna2DateTimePicker1.Location = New System.Drawing.Point(552, 111)
+        Me.Guna2DateTimePicker1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.Guna2DateTimePicker1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.Guna2DateTimePicker1.Name = "Guna2DateTimePicker1"
+        Me.Guna2DateTimePicker1.Size = New System.Drawing.Size(235, 36)
+        Me.Guna2DateTimePicker1.TabIndex = 83
+        Me.Guna2DateTimePicker1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Guna2DateTimePicker1.Value = New Date(2024, 5, 29, 14, 58, 8, 655)
         '
         'frmManageBilling
         '
@@ -542,21 +674,40 @@ Partial Class frmManageBilling
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1109, 633)
         Me.Controls.Add(Me.Guna2GroupBox1)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmManageBilling"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
-        Me.Panel8.ResumeLayout(False)
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel18.ResumeLayout(False)
+        Me.Panel17.ResumeLayout(False)
+        Me.Panel13.ResumeLayout(False)
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Panel6 As Panel
+
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents Panel8 As Panel
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents cboSalesman As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents btnSearchProduct As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtProductName As Guna.UI2.WinForms.Guna2TextBox
@@ -573,17 +724,19 @@ Partial Class frmManageBilling
     Friend WithEvents Label2 As Label
     Friend WithEvents txtCompanyName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Panel15 As Panel
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel18 As Panel
+    Friend WithEvents Panel17 As Panel
     Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnPrint As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnInsert As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
+    Friend WithEvents btnPrint As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2DateTimePicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
 End Class
