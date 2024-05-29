@@ -22,7 +22,6 @@ Partial Class frmManageUsers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageUsers))
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.ListView2 = New System.Windows.Forms.ListView()
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -39,8 +38,6 @@ Partial Class frmManageUsers
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.btnSearchUsername = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
@@ -62,7 +59,6 @@ Partial Class frmManageUsers
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel35 = New System.Windows.Forms.Panel()
         Me.TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
@@ -240,8 +236,6 @@ Partial Class frmManageUsers
         'Panel7
         '
         Me.Panel7.Controls.Add(Me.Guna2TextBox1)
-        Me.Panel7.Controls.Add(Me.Panel13)
-        Me.Panel7.Controls.Add(Me.btnSearchUsername)
         Me.Panel7.Controls.Add(Me.Panel12)
         Me.Panel7.Controls.Add(Me.Panel18)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
@@ -263,7 +257,7 @@ Partial Class frmManageUsers
         Me.Guna2TextBox1.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(51, 10)
+        Me.Guna2TextBox1.Location = New System.Drawing.Point(0, 10)
         Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Guna2TextBox1.Name = "Guna2TextBox1"
         Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -271,35 +265,6 @@ Partial Class frmManageUsers
         Me.Guna2TextBox1.SelectedText = ""
         Me.Guna2TextBox1.Size = New System.Drawing.Size(295, 31)
         Me.Guna2TextBox1.TabIndex = 47
-        '
-        'Panel13
-        '
-        Me.Panel13.BackColor = System.Drawing.Color.White
-        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel13.Location = New System.Drawing.Point(41, 10)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(10, 31)
-        Me.Panel13.TabIndex = 20
-        '
-        'btnSearchUsername
-        '
-        Me.btnSearchUsername.BackColor = System.Drawing.Color.Transparent
-        Me.btnSearchUsername.BorderRadius = 8
-        Me.btnSearchUsername.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSearchUsername.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchUsername.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSearchUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchUsername.Dock = System.Windows.Forms.DockStyle.Left
-        Me.btnSearchUsername.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnSearchUsername.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSearchUsername.ForeColor = System.Drawing.Color.White
-        Me.btnSearchUsername.Image = CType(resources.GetObject("btnSearchUsername.Image"), System.Drawing.Image)
-        Me.btnSearchUsername.Location = New System.Drawing.Point(0, 10)
-        Me.btnSearchUsername.Name = "btnSearchUsername"
-        Me.btnSearchUsername.PressedDepth = 20
-        Me.btnSearchUsername.Size = New System.Drawing.Size(41, 31)
-        Me.btnSearchUsername.TabIndex = 48
         '
         'Panel12
         '
@@ -543,16 +508,6 @@ Partial Class frmManageUsers
         Me.Panel11.Size = New System.Drawing.Size(1075, 10)
         Me.Panel11.TabIndex = 21
         '
-        'TabPage3
-        '
-        Me.TabPage3.Location = New System.Drawing.Point(4, 44)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1081, 565)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "TabPage3"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.ListView1)
@@ -575,7 +530,6 @@ Partial Class frmManageUsers
         '
         Me.TabControl2.Controls.Add(Me.TabPage1)
         Me.TabControl2.Controls.Add(Me.TabPage2)
-        Me.TabControl2.Controls.Add(Me.TabPage3)
         Me.TabControl2.Cursor = System.Windows.Forms.Cursors.Default
         Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl2.ItemSize = New System.Drawing.Size(180, 40)
@@ -1035,8 +989,6 @@ Partial Class frmManageUsers
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Panel13 As Panel
-    Friend WithEvents btnSearchUsername As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Panel18 As Panel
     Friend WithEvents Panel8 As Panel
@@ -1058,7 +1010,6 @@ Partial Class frmManageUsers
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents Panel11 As Panel
-    Friend WithEvents TabPage3 As TabPage
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel35 As Panel
     Friend WithEvents TabControl2 As Guna.UI2.WinForms.Guna2TabControl
