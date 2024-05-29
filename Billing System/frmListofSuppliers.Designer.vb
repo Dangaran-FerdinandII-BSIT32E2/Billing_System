@@ -22,7 +22,6 @@ Partial Class frmListofSuppliers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListofSuppliers))
         Me.txtSearchCompanyName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
@@ -33,8 +32,6 @@ Partial Class frmListofSuppliers
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.btnSearchCompanyName = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel24 = New System.Windows.Forms.Panel()
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel26 = New System.Windows.Forms.Panel()
         Me.Panel27 = New System.Windows.Forms.Panel()
@@ -167,8 +164,6 @@ Partial Class frmListofSuppliers
         '
         'Panel23
         '
-        Me.Panel23.Controls.Add(Me.btnSearchCompanyName)
-        Me.Panel23.Controls.Add(Me.Panel24)
         Me.Panel23.Controls.Add(Me.txtSearchCompanyName)
         Me.Panel23.Controls.Add(Me.Panel25)
         Me.Panel23.Controls.Add(Me.Panel26)
@@ -178,34 +173,6 @@ Partial Class frmListofSuppliers
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(405, 50)
         Me.Panel23.TabIndex = 10
-        '
-        'btnSearchCompanyName
-        '
-        Me.btnSearchCompanyName.BackColor = System.Drawing.Color.Transparent
-        Me.btnSearchCompanyName.BorderRadius = 8
-        Me.btnSearchCompanyName.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSearchCompanyName.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchCompanyName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSearchCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchCompanyName.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btnSearchCompanyName.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSearchCompanyName.ForeColor = System.Drawing.Color.White
-        Me.btnSearchCompanyName.Image = CType(resources.GetObject("btnSearchCompanyName.Image"), System.Drawing.Image)
-        Me.btnSearchCompanyName.Location = New System.Drawing.Point(30, 10)
-        Me.btnSearchCompanyName.Name = "btnSearchCompanyName"
-        Me.btnSearchCompanyName.PressedDepth = 20
-        Me.btnSearchCompanyName.Size = New System.Drawing.Size(41, 30)
-        Me.btnSearchCompanyName.TabIndex = 46
-        '
-        'Panel24
-        '
-        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel24.Location = New System.Drawing.Point(71, 10)
-        Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(10, 30)
-        Me.Panel24.TabIndex = 10
         '
         'Panel25
         '
@@ -441,8 +408,6 @@ Partial Class frmListofSuppliers
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Panel14 As Panel
     Friend WithEvents Panel23 As Panel
-    Friend WithEvents btnSearchCompanyName As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel24 As Panel
     Friend WithEvents Panel25 As Panel
     Friend WithEvents Panel26 As Panel
     Friend WithEvents Panel27 As Panel
