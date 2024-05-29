@@ -4,8 +4,8 @@ Imports MySql.Data.MySqlClient
 Public Class frmManageCustomers
     Private Sub frmManageCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        cn.Open()
         loadCustomers()
+        Call disableAll()
         btnCreateNew.Enabled = True
 
         btnEdit.Enabled = False
@@ -16,6 +16,7 @@ Public Class frmManageCustomers
 
     Private Sub loadCustomers()
         Try
+            cn.Open()
             sql = "SELECT * FROM tblcustomer"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
@@ -78,10 +79,10 @@ Public Class frmManageCustomers
     End Sub
 
     Private Sub updateCustomer()
-        sql = "UPDATE tblcustomer SET LastName=@LastName, FirstName=@FirstName, PhoneNumber=@PhoneNumber, Email=@Email, CompanyName=@CompanyName, Status=@Status where CustomerID='" & txtCustomerID.Text & "'"
+        sql = "UPDATE tblcustomer SET LastName=@LastName, FirstName=@FirstName, PhoneNumber=@PhoneNumber, Email=@Email, CompanyName=@CompanyName, Status=@Status where CustomerID='" & lblCustomerID.Text & "'"
         cmd = New MySqlCommand(sql, cn)
         With cmd
-            .Parameters.AddWithValue("@CustomerID", txtCustomerID.Text)
+            .Parameters.AddWithValue("@CustomerID", lblCustomerID.Text)
             .Parameters.AddWithValue("@LastName", txtLastName.Text)
             .Parameters.AddWithValue("@FirstName", txtFirstName.Text)
             .Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text)
@@ -120,11 +121,30 @@ Public Class frmManageCustomers
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        ' Implement delete functionality here
+        Try
+            If lblCustomerID.Text IsNot Nothing Then
+                If MsgBox("Do you want to delete?", vbYesNo) = vbYes Then
+                    cn.Open()
+                    sql = "DELETE from tblcustomer where CustomerID = @item"
+                    cmd = New MySqlCommand(sql, cn)
+                    With cmd
+                        .Parameters.AddWithValue("@item", lblCustomerID.Text)
+                        .ExecuteNonQuery()
+                    End With
+                    MsgBox("Deleted!")
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCustomer(btnDelete): " & ex.Message)
+        Finally
+            cn.Close()
+        End Try
+        Call loadCustomers()
+        Call clearAll()
     End Sub
 
     Private Sub clearAll()
-        txtCustomerID.Clear()
+        cboStatus.SelectedIndex = -1
         txtFirstName.Clear()
         txtLastName.Clear()
         txtPhoneNumber.Clear()
@@ -133,6 +153,7 @@ Public Class frmManageCustomers
     End Sub
 
     Private Sub enableAll()
+        cboStatus.Enabled = True
         txtFirstName.Enabled = True
         txtLastName.Enabled = True
         txtPhoneNumber.Enabled = True
@@ -141,7 +162,7 @@ Public Class frmManageCustomers
     End Sub
 
     Private Sub disableAll()
-        txtCustomerID.Enabled = False
+        cboStatus.Enabled = False
         txtFirstName.Enabled = False
         txtLastName.Enabled = False
         txtPhoneNumber.Enabled = False
@@ -158,13 +179,18 @@ Public Class frmManageCustomers
         btnCancel.Enabled = False
 
         Call clearAll()
-        Call enableAll()
+        Call disableAll()
     End Sub
 
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
             lblCustomerID.Text = ListView1.SelectedItems(0).SubItems(6).Text
         End If
+
+        btnEdit.Enabled = True
+        btnDelete.Enabled = True
+        btnCancel.Enabled = True
+        btnCreateNew.Enabled = False
     End Sub
 
     Private Sub lblCustomerID_TextChanged(sender As Object, e As EventArgs) Handles lblCustomerID.TextChanged
@@ -206,7 +232,7 @@ Public Class frmManageCustomers
     End Sub
 
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "Select * from tblcustomer where CompanyName LIKE ? OR LastName LIKE ?"
+        sql = "Select CompanyName,LastName,FirstName,PhoneNumber,Email,Status,CustomerID from tblcustomer where CompanyName LIKE ? OR LastName LIKE ?"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
