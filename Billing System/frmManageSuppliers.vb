@@ -1,4 +1,4 @@
-﻿
+
 Imports MySql.Data.MySqlClient
 Public Class frmManageSuppliers
     Private Sub frmManageSuppliers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
