@@ -22,6 +22,7 @@ Partial Class frmManageProducts
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageProducts))
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.btnSearchProduct = New Guna.UI2.WinForms.Guna2Button()
@@ -32,7 +33,6 @@ Partial Class frmManageProducts
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -55,20 +55,22 @@ Partial Class frmManageProducts
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtPurchasePrice = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtYearManufactured = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtManufacturer = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtCategory = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtDescription = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtDesciption = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtSupplier = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtModelNo = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtManufacturer = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtProductName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtProductId = New System.Windows.Forms.Label()
+        Me.txtSupplierID = New System.Windows.Forms.Label()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2GroupBox2
@@ -85,12 +87,13 @@ Partial Class frmManageProducts
         Me.Guna2GroupBox2.CustomBorderThickness = New System.Windows.Forms.Padding(0, 50, 0, 0)
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(6, 6)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(8, 7)
+        Me.Guna2GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
         Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 5
         Me.Guna2GroupBox2.ShadowDecoration.Enabled = True
         Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1095, 304)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1460, 374)
         Me.Guna2GroupBox2.TabIndex = 3
         '
         'btnSearchProduct
@@ -106,22 +109,24 @@ Partial Class frmManageProducts
         Me.btnSearchProduct.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSearchProduct.ForeColor = System.Drawing.Color.White
         Me.btnSearchProduct.Image = CType(resources.GetObject("btnSearchProduct.Image"), System.Drawing.Image)
-        Me.btnSearchProduct.Location = New System.Drawing.Point(728, 8)
+        Me.btnSearchProduct.Location = New System.Drawing.Point(971, 10)
+        Me.btnSearchProduct.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearchProduct.Name = "btnSearchProduct"
         Me.btnSearchProduct.PressedDepth = 20
-        Me.btnSearchProduct.Size = New System.Drawing.Size(41, 36)
+        Me.btnSearchProduct.Size = New System.Drawing.Size(55, 44)
         Me.btnSearchProduct.TabIndex = 45
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader9, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader9, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader8})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(10, 60)
+        Me.ListView1.Location = New System.Drawing.Point(13, 62)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1075, 234)
+        Me.ListView1.Size = New System.Drawing.Size(1434, 300)
         Me.ListView1.TabIndex = 34
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -161,12 +166,6 @@ Partial Class frmManageProducts
         Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader5.Width = 345
         '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Year Manufactured"
-        Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader6.Width = 200
-        '
         'ColumnHeader7
         '
         Me.ColumnHeader7.Text = "Purchase Price"
@@ -183,18 +182,20 @@ Partial Class frmManageProducts
         '
         Me.Panel4.BackColor = System.Drawing.Color.White
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(10, 294)
+        Me.Panel4.Location = New System.Drawing.Point(13, 362)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1075, 10)
+        Me.Panel4.Size = New System.Drawing.Size(1434, 12)
         Me.Panel4.TabIndex = 33
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 60)
+        Me.Panel1.Location = New System.Drawing.Point(0, 62)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(10, 244)
+        Me.Panel1.Size = New System.Drawing.Size(13, 312)
         Me.Panel1.TabIndex = 32
         '
         'Panel3
@@ -202,8 +203,9 @@ Partial Class frmManageProducts
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 50)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1085, 10)
+        Me.Panel3.Size = New System.Drawing.Size(1447, 12)
         Me.Panel3.TabIndex = 33
         '
         'Label2
@@ -212,9 +214,10 @@ Partial Class frmManageProducts
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(15, 13)
+        Me.Label2.Location = New System.Drawing.Point(20, 16)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(157, 22)
+        Me.Label2.Size = New System.Drawing.Size(197, 29)
         Me.Label2.TabIndex = 31
         Me.Label2.Text = "List of Products"
         '
@@ -222,9 +225,10 @@ Partial Class frmManageProducts
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(1085, 50)
+        Me.Panel2.Location = New System.Drawing.Point(1447, 50)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(10, 254)
+        Me.Panel2.Size = New System.Drawing.Size(13, 324)
         Me.Panel2.TabIndex = 33
         '
         'txtSearchProduct
@@ -239,17 +243,19 @@ Partial Class frmManageProducts
         Me.txtSearchProduct.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtSearchProduct.ForeColor = System.Drawing.Color.Black
         Me.txtSearchProduct.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.txtSearchProduct.Location = New System.Drawing.Point(774, 10)
-        Me.txtSearchProduct.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSearchProduct.Location = New System.Drawing.Point(1032, 12)
+        Me.txtSearchProduct.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearchProduct.Name = "txtSearchProduct"
         Me.txtSearchProduct.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchProduct.PlaceholderText = "Search by product name"
         Me.txtSearchProduct.SelectedText = ""
-        Me.txtSearchProduct.Size = New System.Drawing.Size(314, 30)
+        Me.txtSearchProduct.Size = New System.Drawing.Size(419, 37)
         Me.txtSearchProduct.TabIndex = 12
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.txtSupplierID)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtProductId)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
         Me.Guna2GroupBox1.Controls.Add(Me.Panel5)
         Me.Guna2GroupBox1.Controls.Add(Me.btnDelete)
@@ -261,26 +267,25 @@ Partial Class frmManageProducts
         Me.Guna2GroupBox1.Controls.Add(Me.Label8)
         Me.Guna2GroupBox1.Controls.Add(Me.txtPurchasePrice)
         Me.Guna2GroupBox1.Controls.Add(Me.Label7)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtYearManufactured)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label3)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtManufacturer)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label6)
         Me.Guna2GroupBox1.Controls.Add(Me.txtCategory)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label6)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtDescription)
         Me.Guna2GroupBox1.Controls.Add(Me.Label4)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtDesciption)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtSupplier)
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtModelNo)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtManufacturer)
         Me.Guna2GroupBox1.Controls.Add(Me.txtProductName)
         Me.Guna2GroupBox1.Controls.Add(Me.Label22)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(6, 317)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(8, 390)
+        Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.ShadowDecoration.BorderRadius = 5
         Me.Guna2GroupBox1.ShadowDecoration.Enabled = True
         Me.Guna2GroupBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 10, 10)
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1095, 304)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1460, 374)
         Me.Guna2GroupBox1.TabIndex = 11
         Me.Guna2GroupBox1.Text = "Manage Product"
         '
@@ -290,9 +295,10 @@ Partial Class frmManageProducts
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(227, 55)
+        Me.Label5.Location = New System.Drawing.Point(303, 68)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(121, 19)
+        Me.Label5.Size = New System.Drawing.Size(147, 24)
         Me.Label5.TabIndex = 64
         Me.Label5.Text = "Supplier Name"
         '
@@ -301,9 +307,10 @@ Partial Class frmManageProducts
         Me.Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Panel5.Controls.Add(Me.Label9)
         Me.Panel5.Controls.Add(Me.lblModelNo)
-        Me.Panel5.Location = New System.Drawing.Point(601, 10)
+        Me.Panel5.Location = New System.Drawing.Point(801, 12)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(483, 23)
+        Me.Panel5.Size = New System.Drawing.Size(644, 28)
         Me.Panel5.TabIndex = 63
         '
         'Label9
@@ -313,9 +320,10 @@ Partial Class frmManageProducts
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(289, 0)
+        Me.Label9.Location = New System.Drawing.Point(409, 0)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(130, 19)
+        Me.Label9.Size = New System.Drawing.Size(160, 24)
         Me.Label9.TabIndex = 64
         Me.Label9.Text = "Model Number: "
         '
@@ -326,9 +334,10 @@ Partial Class frmManageProducts
         Me.lblModelNo.Dock = System.Windows.Forms.DockStyle.Right
         Me.lblModelNo.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblModelNo.ForeColor = System.Drawing.Color.White
-        Me.lblModelNo.Location = New System.Drawing.Point(419, 0)
+        Me.lblModelNo.Location = New System.Drawing.Point(569, 0)
+        Me.lblModelNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblModelNo.Name = "lblModelNo"
-        Me.lblModelNo.Size = New System.Drawing.Size(64, 19)
+        Me.lblModelNo.Size = New System.Drawing.Size(75, 24)
         Me.lblModelNo.TabIndex = 28
         Me.lblModelNo.Text = "XXXXX"
         '
@@ -344,10 +353,11 @@ Partial Class frmManageProducts
         Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnDelete.Location = New System.Drawing.Point(767, 257)
+        Me.btnDelete.Location = New System.Drawing.Point(1023, 316)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedDepth = 20
-        Me.btnDelete.Size = New System.Drawing.Size(152, 36)
+        Me.btnDelete.Size = New System.Drawing.Size(203, 44)
         Me.btnDelete.TabIndex = 62
         Me.btnDelete.Text = "Delete"
         '
@@ -363,10 +373,11 @@ Partial Class frmManageProducts
         Me.btnCreateNew.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCreateNew.ForeColor = System.Drawing.Color.White
         Me.btnCreateNew.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCreateNew.Location = New System.Drawing.Point(9, 257)
+        Me.btnCreateNew.Location = New System.Drawing.Point(12, 316)
+        Me.btnCreateNew.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCreateNew.Name = "btnCreateNew"
         Me.btnCreateNew.PressedDepth = 20
-        Me.btnCreateNew.Size = New System.Drawing.Size(152, 36)
+        Me.btnCreateNew.Size = New System.Drawing.Size(203, 44)
         Me.btnCreateNew.TabIndex = 61
         Me.btnCreateNew.Text = "Create New"
         '
@@ -382,10 +393,11 @@ Partial Class frmManageProducts
         Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCancel.Location = New System.Drawing.Point(932, 257)
+        Me.btnCancel.Location = New System.Drawing.Point(1243, 316)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(152, 36)
+        Me.btnCancel.Size = New System.Drawing.Size(203, 44)
         Me.btnCancel.TabIndex = 60
         Me.btnCancel.Text = "Cancel"
         '
@@ -401,10 +413,11 @@ Partial Class frmManageProducts
         Me.btnEdit.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnEdit.Location = New System.Drawing.Point(173, 257)
+        Me.btnEdit.Location = New System.Drawing.Point(231, 316)
+        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedDepth = 20
-        Me.btnEdit.Size = New System.Drawing.Size(152, 36)
+        Me.btnEdit.Size = New System.Drawing.Size(203, 44)
         Me.btnEdit.TabIndex = 59
         Me.btnEdit.Text = "Edit"
         '
@@ -420,10 +433,11 @@ Partial Class frmManageProducts
         Me.btnSave.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnSave.Location = New System.Drawing.Point(337, 257)
+        Me.btnSave.Location = New System.Drawing.Point(449, 316)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.PressedDepth = 20
-        Me.btnSave.Size = New System.Drawing.Size(152, 36)
+        Me.btnSave.Size = New System.Drawing.Size(203, 44)
         Me.btnSave.TabIndex = 58
         Me.btnSave.Text = "Save"
         '
@@ -435,17 +449,18 @@ Partial Class frmManageProducts
         Me.txtSellingPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtSellingPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSellingPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSellingPrice.Enabled = False
         Me.txtSellingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSellingPrice.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtSellingPrice.ForeColor = System.Drawing.Color.Black
         Me.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSellingPrice.Location = New System.Drawing.Point(829, 167)
-        Me.txtSellingPrice.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSellingPrice.Location = New System.Drawing.Point(1105, 206)
+        Me.txtSellingPrice.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSellingPrice.Name = "txtSellingPrice"
         Me.txtSellingPrice.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSellingPrice.PlaceholderText = "Enter selling price"
         Me.txtSellingPrice.SelectedText = ""
-        Me.txtSellingPrice.Size = New System.Drawing.Size(256, 36)
+        Me.txtSellingPrice.Size = New System.Drawing.Size(341, 44)
         Me.txtSellingPrice.TabIndex = 50
         '
         'Label8
@@ -454,9 +469,10 @@ Partial Class frmManageProducts
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(826, 144)
+        Me.Label8.Location = New System.Drawing.Point(1101, 177)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(104, 19)
+        Me.Label8.Size = New System.Drawing.Size(127, 24)
         Me.Label8.TabIndex = 49
         Me.Label8.Text = "Selling Price"
         '
@@ -468,17 +484,18 @@ Partial Class frmManageProducts
         Me.txtPurchasePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtPurchasePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtPurchasePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtPurchasePrice.Enabled = False
         Me.txtPurchasePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPurchasePrice.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtPurchasePrice.ForeColor = System.Drawing.Color.Black
         Me.txtPurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPurchasePrice.Location = New System.Drawing.Point(562, 167)
-        Me.txtPurchasePrice.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPurchasePrice.Location = New System.Drawing.Point(749, 206)
+        Me.txtPurchasePrice.Margin = New System.Windows.Forms.Padding(5)
         Me.txtPurchasePrice.Name = "txtPurchasePrice"
         Me.txtPurchasePrice.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPurchasePrice.PlaceholderText = "Enter purchase price"
         Me.txtPurchasePrice.SelectedText = ""
-        Me.txtPurchasePrice.Size = New System.Drawing.Size(255, 36)
+        Me.txtPurchasePrice.Size = New System.Drawing.Size(340, 44)
         Me.txtPurchasePrice.TabIndex = 48
         '
         'Label7
@@ -487,77 +504,12 @@ Partial Class frmManageProducts
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(561, 144)
+        Me.Label7.Location = New System.Drawing.Point(748, 177)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(125, 19)
+        Me.Label7.Size = New System.Drawing.Size(153, 24)
         Me.Label7.TabIndex = 47
         Me.Label7.Text = "Purchase Price"
-        '
-        'txtYearManufactured
-        '
-        Me.txtYearManufactured.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtYearManufactured.DefaultText = ""
-        Me.txtYearManufactured.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtYearManufactured.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtYearManufactured.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtYearManufactured.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtYearManufactured.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtYearManufactured.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtYearManufactured.ForeColor = System.Drawing.Color.Black
-        Me.txtYearManufactured.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtYearManufactured.Location = New System.Drawing.Point(231, 167)
-        Me.txtYearManufactured.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtYearManufactured.Name = "txtYearManufactured"
-        Me.txtYearManufactured.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtYearManufactured.PlaceholderText = "Enter year manufactured"
-        Me.txtYearManufactured.SelectedText = ""
-        Me.txtYearManufactured.Size = New System.Drawing.Size(319, 36)
-        Me.txtYearManufactured.TabIndex = 46
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(226, 144)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(151, 19)
-        Me.Label3.TabIndex = 45
-        Me.Label3.Text = "Year Manufactured"
-        '
-        'txtManufacturer
-        '
-        Me.txtManufacturer.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtManufacturer.DefaultText = ""
-        Me.txtManufacturer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtManufacturer.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtManufacturer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtManufacturer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtManufacturer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtManufacturer.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtManufacturer.ForeColor = System.Drawing.Color.Black
-        Me.txtManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtManufacturer.Location = New System.Drawing.Point(829, 78)
-        Me.txtManufacturer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtManufacturer.Name = "txtManufacturer"
-        Me.txtManufacturer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtManufacturer.PlaceholderText = "Enter manufacturer"
-        Me.txtManufacturer.SelectedText = ""
-        Me.txtManufacturer.Size = New System.Drawing.Size(256, 36)
-        Me.txtManufacturer.TabIndex = 44
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(8, 144)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(110, 19)
-        Me.Label6.TabIndex = 43
-        Me.Label6.Text = "Manufacturer"
         '
         'txtCategory
         '
@@ -567,18 +519,54 @@ Partial Class frmManageProducts
         Me.txtCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtCategory.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCategory.Enabled = False
         Me.txtCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCategory.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtCategory.ForeColor = System.Drawing.Color.Black
         Me.txtCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCategory.Location = New System.Drawing.Point(562, 78)
-        Me.txtCategory.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCategory.Location = New System.Drawing.Point(1105, 96)
+        Me.txtCategory.Margin = New System.Windows.Forms.Padding(5)
         Me.txtCategory.Name = "txtCategory"
         Me.txtCategory.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCategory.PlaceholderText = "Enter category"
         Me.txtCategory.SelectedText = ""
-        Me.txtCategory.Size = New System.Drawing.Size(255, 36)
-        Me.txtCategory.TabIndex = 42
+        Me.txtCategory.Size = New System.Drawing.Size(341, 44)
+        Me.txtCategory.TabIndex = 44
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(11, 177)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(137, 24)
+        Me.Label6.TabIndex = 43
+        Me.Label6.Text = "Manufacturer"
+        '
+        'txtDescription
+        '
+        Me.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDescription.DefaultText = ""
+        Me.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDescription.Enabled = False
+        Me.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDescription.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtDescription.ForeColor = System.Drawing.Color.Black
+        Me.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDescription.Location = New System.Drawing.Point(749, 96)
+        Me.txtDescription.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtDescription.Name = "txtDescription"
+        Me.txtDescription.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDescription.PlaceholderText = "Enter description"
+        Me.txtDescription.SelectedText = ""
+        Me.txtDescription.Size = New System.Drawing.Size(340, 44)
+        Me.txtDescription.TabIndex = 42
         '
         'Label4
         '
@@ -586,32 +574,34 @@ Partial Class frmManageProducts
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(826, 55)
+        Me.Label4.Location = New System.Drawing.Point(1101, 68)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 19)
+        Me.Label4.Size = New System.Drawing.Size(96, 24)
         Me.Label4.TabIndex = 41
         Me.Label4.Text = "Category"
         '
-        'txtDesciption
+        'txtSupplier
         '
-        Me.txtDesciption.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtDesciption.DefaultText = ""
-        Me.txtDesciption.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtDesciption.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtDesciption.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtDesciption.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtDesciption.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtDesciption.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtDesciption.ForeColor = System.Drawing.Color.Black
-        Me.txtDesciption.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtDesciption.Location = New System.Drawing.Point(231, 78)
-        Me.txtDesciption.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtDesciption.Name = "txtDesciption"
-        Me.txtDesciption.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtDesciption.PlaceholderText = "Enter desciption"
-        Me.txtDesciption.SelectedText = ""
-        Me.txtDesciption.Size = New System.Drawing.Size(319, 36)
-        Me.txtDesciption.TabIndex = 31
+        Me.txtSupplier.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSupplier.DefaultText = ""
+        Me.txtSupplier.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSupplier.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSupplier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSupplier.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSupplier.Enabled = False
+        Me.txtSupplier.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSupplier.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtSupplier.ForeColor = System.Drawing.Color.Black
+        Me.txtSupplier.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSupplier.Location = New System.Drawing.Point(308, 96)
+        Me.txtSupplier.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtSupplier.Name = "txtSupplier"
+        Me.txtSupplier.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSupplier.PlaceholderText = "Enter supplier"
+        Me.txtSupplier.SelectedText = ""
+        Me.txtSupplier.Size = New System.Drawing.Size(425, 44)
+        Me.txtSupplier.TabIndex = 31
         '
         'Label1
         '
@@ -619,32 +609,34 @@ Partial Class frmManageProducts
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(561, 55)
+        Me.Label1.Location = New System.Drawing.Point(748, 68)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(97, 19)
+        Me.Label1.Size = New System.Drawing.Size(118, 24)
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "Description"
         '
-        'txtModelNo
+        'txtManufacturer
         '
-        Me.txtModelNo.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtModelNo.DefaultText = ""
-        Me.txtModelNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtModelNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtModelNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtModelNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtModelNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtModelNo.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtModelNo.ForeColor = System.Drawing.Color.Black
-        Me.txtModelNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtModelNo.Location = New System.Drawing.Point(9, 167)
-        Me.txtModelNo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtModelNo.Name = "txtModelNo"
-        Me.txtModelNo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtModelNo.PlaceholderText = "Enter manufacturer"
-        Me.txtModelNo.SelectedText = ""
-        Me.txtModelNo.Size = New System.Drawing.Size(211, 36)
-        Me.txtModelNo.TabIndex = 29
+        Me.txtManufacturer.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtManufacturer.DefaultText = ""
+        Me.txtManufacturer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtManufacturer.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtManufacturer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtManufacturer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtManufacturer.Enabled = False
+        Me.txtManufacturer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtManufacturer.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtManufacturer.ForeColor = System.Drawing.Color.Black
+        Me.txtManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtManufacturer.Location = New System.Drawing.Point(12, 206)
+        Me.txtManufacturer.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtManufacturer.Name = "txtManufacturer"
+        Me.txtManufacturer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtManufacturer.PlaceholderText = "Enter manufacturer"
+        Me.txtManufacturer.SelectedText = ""
+        Me.txtManufacturer.Size = New System.Drawing.Size(281, 44)
+        Me.txtManufacturer.TabIndex = 29
         '
         'txtProductName
         '
@@ -654,17 +646,18 @@ Partial Class frmManageProducts
         Me.txtProductName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtProductName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtProductName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtProductName.Enabled = False
         Me.txtProductName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtProductName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtProductName.ForeColor = System.Drawing.Color.Black
         Me.txtProductName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtProductName.Location = New System.Drawing.Point(9, 78)
-        Me.txtProductName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtProductName.Location = New System.Drawing.Point(12, 96)
+        Me.txtProductName.Margin = New System.Windows.Forms.Padding(5)
         Me.txtProductName.Name = "txtProductName"
         Me.txtProductName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtProductName.PlaceholderText = "Enter name of product"
         Me.txtProductName.SelectedText = ""
-        Me.txtProductName.Size = New System.Drawing.Size(211, 36)
+        Me.txtProductName.Size = New System.Drawing.Size(281, 44)
         Me.txtProductName.TabIndex = 27
         '
         'Label22
@@ -673,20 +666,55 @@ Partial Class frmManageProducts
         Me.Label22.BackColor = System.Drawing.Color.Transparent
         Me.Label22.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(8, 55)
+        Me.Label22.Location = New System.Drawing.Point(11, 68)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(118, 19)
+        Me.Label22.Size = New System.Drawing.Size(144, 24)
         Me.Label22.TabIndex = 26
         Me.Label22.Text = "Product Name"
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'txtProductId
+        '
+        Me.txtProductId.AutoSize = True
+        Me.txtProductId.BackColor = System.Drawing.Color.Transparent
+        Me.txtProductId.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProductId.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.txtProductId.Location = New System.Drawing.Point(567, 52)
+        Me.txtProductId.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.txtProductId.Name = "txtProductId"
+        Me.txtProductId.Size = New System.Drawing.Size(21, 24)
+        Me.txtProductId.TabIndex = 65
+        Me.txtProductId.Text = "x"
+        Me.txtProductId.Visible = False
+        '
+        'txtSupplierID
+        '
+        Me.txtSupplierID.AutoSize = True
+        Me.txtSupplierID.BackColor = System.Drawing.Color.Transparent
+        Me.txtSupplierID.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupplierID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.txtSupplierID.Location = New System.Drawing.Point(596, 52)
+        Me.txtSupplierID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.txtSupplierID.Name = "txtSupplierID"
+        Me.txtSupplierID.Size = New System.Drawing.Size(21, 24)
+        Me.txtSupplierID.TabIndex = 66
+        Me.txtSupplierID.Text = "x"
+        Me.txtSupplierID.Visible = False
+        '
         'frmManageProducts
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1109, 633)
+        Me.ClientSize = New System.Drawing.Size(1479, 779)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Controls.Add(Me.Guna2GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmManageProducts"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Guna2GroupBox2.ResumeLayout(False)
@@ -695,6 +723,7 @@ Partial Class frmManageProducts
         Me.Guna2GroupBox1.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -713,25 +742,22 @@ Partial Class frmManageProducts
     Friend WithEvents Panel2 As Panel
     Friend WithEvents txtSearchProduct As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents txtDesciption As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtSupplier As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtModelNo As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtManufacturer As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents lblModelNo As Label
     Friend WithEvents txtProductName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label22 As Label
-    Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents ColumnHeader8 As ColumnHeader
-    Friend WithEvents txtManufacturer As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents txtCategory As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtDescription As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtSellingPrice As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents txtPurchasePrice As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents txtYearManufactured As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnCreateNew As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
@@ -742,4 +768,7 @@ Partial Class frmManageProducts
     Friend WithEvents Label5 As Label
     Friend WithEvents ColumnHeader9 As ColumnHeader
     Friend WithEvents btnSearchProduct As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents txtProductId As Label
+    Friend WithEvents txtSupplierID As Label
 End Class

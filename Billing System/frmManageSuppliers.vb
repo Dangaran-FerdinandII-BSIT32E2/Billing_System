@@ -1,6 +1,4 @@
-﻿Imports System.Data.OleDb
-Imports System.Management
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class frmManageSuppliers
     Private Sub frmManageSuppliers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -194,7 +192,8 @@ Public Class frmManageSuppliers
 
         lblSupplierID.Text = "XXXXX"
     End Sub
-    Private Sub txtSearchSupplier_TextChanged(sender As Object, e As EventArgs) 
+    Private Sub txtSearchSupplier_TextChanged(sender As Object, e As EventArgs) Handles txtSearchSupplier.TextChanged
+        cn.Close()
         Dim dt As DataTable = SearchDatabase(txtSearchSupplier.Text)
         PopulateListView(dt)
     End Sub
