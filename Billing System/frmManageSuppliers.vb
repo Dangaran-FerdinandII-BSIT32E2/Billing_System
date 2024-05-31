@@ -1,8 +1,7 @@
-﻿Imports System.Data.OleDb
-Imports System.Management
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class frmManageSuppliers
+    Dim supplierID As Integer
     Private Sub frmManageSuppliers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         cn.Open()
@@ -18,8 +17,7 @@ Public Class frmManageSuppliers
         ListView1.Items.Clear()
 
         Do While dr.Read = True
-            x = New ListViewItem(dr("SupplierID").ToString())
-            x.SubItems.Add(dr("CompanyName").ToString())
+            x = New ListViewItem(dr("CompanyName").ToString())
             x.SubItems.Add(dr("BankDetails").ToString())
             x.SubItems.Add(dr("ContactPerson").ToString())
             x.SubItems.Add(dr("PhoneNumber").ToString())
@@ -27,6 +25,7 @@ Public Class frmManageSuppliers
             x.SubItems.Add(dr("EquipmentType").ToString())
             x.SubItems.Add(dr("DeliveryTerms").ToString())
             x.SubItems.Add(dr("PaymentTerms").ToString())
+            x.SubItems.Add(dr("SupplierID").ToString())
 
             ListView1.Items.Add(x)
         Loop
@@ -95,13 +94,15 @@ Public Class frmManageSuppliers
 
         If filled Then
             If MsgBox("Do you want to save?", vbYesNo) = vbYes Then
+                cn.Close()
+                Call getSupplierId()
                 cn.Open()
                 If btnCreateNew.Enabled = True And btnEdit.Enabled = False Then 'IF CREATE NEW
                     sql = "INSERT INTO tblsupplier(SupplierID, CompanyName, ContactPerson, PhoneNumber, Address, EquipmentType, DeliveryTerms, PaymentTerms, BankDetails) " &
                            "Values(@SupplierID, @CompanyName, @ContactPerson, @PhoneNumber, @Address, @EquipmentType, @DeliveryTerms, @PaymentTerms, @BankDetails)"
                     cmd = New MySqlCommand(sql, cn)
                     With cmd
-                        .Parameters.AddWithValue("@SupplierID", lblSupplierID.Text)
+                        .Parameters.AddWithValue("@SupplierID", supplierID)
                         .Parameters.AddWithValue("@CompanyName", txtCompanyName.Text)
                         .Parameters.AddWithValue("@ContactPerson", txtContactPerson.Text)
                         .Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text)
@@ -121,7 +122,7 @@ Public Class frmManageSuppliers
                         "WHERE SupplierID = '" & lblSupplierID.Text & "'"
                     cmd = New MySqlCommand(sql, cn)
                     With cmd
-                        .Parameters.AddWithValue("@SupplierID", lblSupplierID.Text)
+                        .Parameters.AddWithValue("@SupplierID", supplierID)
                         .Parameters.AddWithValue("@CompanyName", txtCompanyName.Text)
                         .Parameters.AddWithValue("@ContactPerson", txtContactPerson.Text)
                         .Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text)
@@ -137,6 +138,7 @@ Public Class frmManageSuppliers
                 End If
                 Call loadSuppliers()
                 Call clearAll()
+                Call disableAll()
 
                 btnCreateNew.Enabled = True
 
@@ -149,16 +151,18 @@ Public Class frmManageSuppliers
     End Sub
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
-            lblSupplierID.Text = ListView1.SelectedItems(0).SubItems(0).Text
-            txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(1).Text
-            txtBankDetails.Text = ListView1.SelectedItems(0).SubItems(2).Text
-            txtContactPerson.Text = ListView1.SelectedItems(0).SubItems(3).Text
-            txtPhoneNumber.Text = ListView1.SelectedItems(0).SubItems(4).Text
-            txtAddress.Text = ListView1.SelectedItems(0).SubItems(5).Text
-            txtEquipmentType.Text = ListView1.SelectedItems(0).SubItems(6).Text
-            txtDeliveryTerms.Text = ListView1.SelectedItems(0).SubItems(7).Text
-            txtPaymentTerms.Text = ListView1.SelectedItems(0).SubItems(8).Text
+            txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+            txtBankDetails.Text = ListView1.SelectedItems(0).SubItems(1).Text
+            txtContactPerson.Text = ListView1.SelectedItems(0).SubItems(2).Text
+            txtPhoneNumber.Text = ListView1.SelectedItems(0).SubItems(3).Text
+            txtAddress.Text = ListView1.SelectedItems(0).SubItems(4).Text
+            txtEquipmentType.Text = ListView1.SelectedItems(0).SubItems(5).Text
+            txtDeliveryTerms.Text = ListView1.SelectedItems(0).SubItems(6).Text
+            txtPaymentTerms.Text = ListView1.SelectedItems(0).SubItems(7).Text
+            lblSupplierID.Text = ListView1.SelectedItems(0).SubItems(8).Text
         End If
+
+        btnCreateNew.Enabled = False
 
         btnEdit.Enabled = True
         btnDelete.Enabled = True
@@ -191,16 +195,10 @@ Public Class frmManageSuppliers
         txtPaymentTerms.Clear()
         txtPhoneNumber.Clear()
         txtBankDetails.Clear()
-
-        lblSupplierID.Text = "XXXXX"
-    End Sub
-    Private Sub txtSearchSupplier_TextChanged(sender As Object, e As EventArgs) Handles txtSearchSupplier.TextChanged
-        Dim dt As DataTable = SearchDatabase(txtSearchSupplier.Text)
-        PopulateListView(dt)
     End Sub
 
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "Select * from tblsupplier where CompanyName LIKE ? OR ContactPerson LIKE ?"
+        sql = "Select CompanyName,BankDetails,ContactPerson,PhoneNumber,Address,EquipmentType,DeliveryTerms,PaymentTerms,SupplierID from tblsupplier where CompanyName LIKE ? OR ContactPerson LIKE ?"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
@@ -216,7 +214,6 @@ Public Class frmManageSuppliers
         ListView1.Items.Clear()
         For Each row As DataRow In dt.Rows
             ListView1.Items.Add(New ListViewItem(row.ItemArray.Select(Function(x) x.ToString()).ToArray()))
-
         Next
     End Sub
 
@@ -240,5 +237,42 @@ Public Class frmManageSuppliers
         txtPaymentTerms.Enabled = False
         txtPhoneNumber.Enabled = False
         txtBankDetails.Enabled = False
+    End Sub
+    Private Sub getSupplierId()
+        cn.Open()
+        sql = "SELECT SupplierID FROM tblsupplier WHERE CompanyName = '" & txtCompanyName.Text & "' and ContactPerson = '" & txtContactPerson.Text & "'"
+        cmd = New MySqlCommand(sql, cn)
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            supplierID = dr(0).ToString()
+            lblSupplierID.Text = dr(0).ToString()
+            dr.Close()
+            cn.Close()
+        Else
+            supplierID = getNextId()
+            cn.Close()
+        End If
+    End Sub
+
+    Private Function getNextId() As Integer
+        dr.Close()
+        Dim nextID As Integer = 1
+
+        sql = "SELECT MAX(SupplierID) AS lastID FROM tblsupplier"
+        cmd = New MySqlCommand(sql, cn)
+        Dim result As Object = cmd.ExecuteScalar()
+
+        If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+            nextID = CInt(result) + 1
+        End If
+
+        Return nextID
+    End Function
+
+    Private Sub txtSearchSupplierName_TextChanged(sender As Object, e As EventArgs) Handles txtSearchSupplierName.TextChanged
+        cn.Close()
+        Dim dt As DataTable = SearchDatabase(txtSearchSupplierName.Text)
+        PopulateListView(dt)
     End Sub
 End Class
