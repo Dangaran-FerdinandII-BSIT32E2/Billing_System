@@ -171,7 +171,7 @@ Partial Class frmManageSuppliers
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1020, 300)
+        Me.Panel7.Size = New System.Drawing.Size(1089, 297)
         Me.Panel7.TabIndex = 16
         '
         'Panel30
@@ -190,9 +190,9 @@ Partial Class frmManageSuppliers
         Me.Panel30.Controls.Add(Me.Panel32)
         Me.Panel30.Controls.Add(Me.Panel31)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel30.Location = New System.Drawing.Point(0, 240)
+        Me.Panel30.Location = New System.Drawing.Point(0, 237)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(1020, 60)
+        Me.Panel30.Size = New System.Drawing.Size(1089, 60)
         Me.Panel30.TabIndex = 18
         '
         'Panel42
@@ -200,7 +200,7 @@ Partial Class frmManageSuppliers
         Me.Panel42.BackColor = System.Drawing.Color.White
         Me.Panel42.Controls.Add(Me.btnDelete)
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel42.Location = New System.Drawing.Point(720, 10)
+        Me.Panel42.Location = New System.Drawing.Point(789, 10)
         Me.Panel42.Name = "Panel42"
         Me.Panel42.Size = New System.Drawing.Size(140, 40)
         Me.Panel42.TabIndex = 18
@@ -229,7 +229,7 @@ Partial Class frmManageSuppliers
         '
         Me.Panel41.BackColor = System.Drawing.Color.White
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel41.Location = New System.Drawing.Point(860, 10)
+        Me.Panel41.Location = New System.Drawing.Point(929, 10)
         Me.Panel41.Name = "Panel41"
         Me.Panel41.Size = New System.Drawing.Size(10, 40)
         Me.Panel41.TabIndex = 18
@@ -239,7 +239,7 @@ Partial Class frmManageSuppliers
         Me.Panel40.BackColor = System.Drawing.Color.White
         Me.Panel40.Controls.Add(Me.btnCancel)
         Me.Panel40.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel40.Location = New System.Drawing.Point(870, 10)
+        Me.Panel40.Location = New System.Drawing.Point(939, 10)
         Me.Panel40.Name = "Panel40"
         Me.Panel40.Size = New System.Drawing.Size(140, 40)
         Me.Panel40.TabIndex = 18
@@ -268,7 +268,7 @@ Partial Class frmManageSuppliers
         '
         Me.Panel39.BackColor = System.Drawing.Color.White
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel39.Location = New System.Drawing.Point(1010, 10)
+        Me.Panel39.Location = New System.Drawing.Point(1079, 10)
         Me.Panel39.Name = "Panel39"
         Me.Panel39.Size = New System.Drawing.Size(10, 40)
         Me.Panel39.TabIndex = 18
@@ -396,7 +396,7 @@ Partial Class frmManageSuppliers
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel32.Location = New System.Drawing.Point(0, 50)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(1020, 10)
+        Me.Panel32.Size = New System.Drawing.Size(1089, 10)
         Me.Panel32.TabIndex = 18
         '
         'Panel31
@@ -405,7 +405,7 @@ Partial Class frmManageSuppliers
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel31.Location = New System.Drawing.Point(0, 0)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(1020, 10)
+        Me.Panel31.Size = New System.Drawing.Size(1089, 10)
         Me.Panel31.TabIndex = 18
         '
         'Label10
@@ -427,7 +427,7 @@ Partial Class frmManageSuppliers
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel19.Location = New System.Drawing.Point(0, 0)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(1020, 50)
+        Me.Panel19.Size = New System.Drawing.Size(1089, 50)
         Me.Panel19.TabIndex = 1
         '
         'Panel20
@@ -725,7 +725,7 @@ Partial Class frmManageSuppliers
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(10, 326)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1020, 300)
+        Me.Panel5.Size = New System.Drawing.Size(1089, 297)
         Me.Panel5.TabIndex = 27
         '
         'Panel11
@@ -734,7 +734,7 @@ Partial Class frmManageSuppliers
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel11.Location = New System.Drawing.Point(10, 60)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1000, 236)
+        Me.Panel11.Size = New System.Drawing.Size(1069, 236)
         Me.Panel11.TabIndex = 14
         '
         'ListView1
@@ -746,7 +746,7 @@ Partial Class frmManageSuppliers
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1000, 236)
+        Me.ListView1.Size = New System.Drawing.Size(1069, 236)
         Me.ListView1.TabIndex = 35
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -811,7 +811,7 @@ Partial Class frmManageSuppliers
         Me.PanelCollection.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelCollection.Location = New System.Drawing.Point(0, 0)
         Me.PanelCollection.Name = "PanelCollection"
-        Me.PanelCollection.Size = New System.Drawing.Size(1020, 306)
+        Me.PanelCollection.Size = New System.Drawing.Size(1089, 306)
         Me.PanelCollection.TabIndex = 11
         '
         'Panel8
@@ -819,7 +819,7 @@ Partial Class frmManageSuppliers
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(10, 50)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1000, 10)
+        Me.Panel8.Size = New System.Drawing.Size(1069, 10)
         Me.Panel8.TabIndex = 7
         '
         'Panel9
@@ -835,13 +835,13 @@ Partial Class frmManageSuppliers
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel10.Location = New System.Drawing.Point(0, 296)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1010, 10)
+        Me.Panel10.Size = New System.Drawing.Size(1079, 10)
         Me.Panel10.TabIndex = 9
         '
         'Panel12
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel12.Location = New System.Drawing.Point(1010, 50)
+        Me.Panel12.Location = New System.Drawing.Point(1079, 50)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(10, 256)
         Me.Panel12.TabIndex = 6
@@ -854,7 +854,7 @@ Partial Class frmManageSuppliers
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1020, 50)
+        Me.Panel14.Size = New System.Drawing.Size(1089, 50)
         Me.Panel14.TabIndex = 0
         '
         'Panel15
@@ -907,7 +907,7 @@ Partial Class frmManageSuppliers
         Me.Panel23.Controls.Add(Me.Panel26)
         Me.Panel23.Controls.Add(Me.Panel27)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel23.Location = New System.Drawing.Point(615, 0)
+        Me.Panel23.Location = New System.Drawing.Point(684, 0)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(405, 50)
         Me.Panel23.TabIndex = 10
@@ -992,7 +992,7 @@ Partial Class frmManageSuppliers
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel6.Location = New System.Drawing.Point(10, 316)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1020, 10)
+        Me.Panel6.Size = New System.Drawing.Size(1089, 10)
         Me.Panel6.TabIndex = 28
         '
         'Panel13
@@ -1002,7 +1002,7 @@ Partial Class frmManageSuppliers
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel13.Location = New System.Drawing.Point(10, 10)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(1020, 306)
+        Me.Panel13.Size = New System.Drawing.Size(1089, 306)
         Me.Panel13.TabIndex = 29
         '
         'Panel3
@@ -1010,15 +1010,15 @@ Partial Class frmManageSuppliers
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 10)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(10, 616)
+        Me.Panel3.Size = New System.Drawing.Size(10, 613)
         Me.Panel3.TabIndex = 25
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 626)
+        Me.Panel2.Location = New System.Drawing.Point(0, 623)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1030, 10)
+        Me.Panel2.Size = New System.Drawing.Size(1099, 10)
         Me.Panel2.TabIndex = 26
         '
         'Panel4
@@ -1026,22 +1026,22 @@ Partial Class frmManageSuppliers
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1030, 10)
+        Me.Panel4.Size = New System.Drawing.Size(1099, 10)
         Me.Panel4.TabIndex = 24
         '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(1030, 0)
+        Me.Panel1.Location = New System.Drawing.Point(1099, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(10, 636)
+        Me.Panel1.Size = New System.Drawing.Size(10, 633)
         Me.Panel1.TabIndex = 23
         '
         'frmManageSuppliers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1040, 636)
+        Me.ClientSize = New System.Drawing.Size(1109, 633)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel13)
