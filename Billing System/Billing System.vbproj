@@ -109,6 +109,12 @@
     <Compile Include="frmConfirmPayment.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmListofSuppliers.Designer.vb">
+      <DependentUpon>frmListofSuppliers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListofSuppliers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmListProducts.Designer.vb">
       <DependentUpon>frmListProducts.vb</DependentUpon>
     </Compile>
@@ -210,6 +216,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="test-only.Designer.vb">
+      <DependentUpon>test-only.vb</DependentUpon>
+    </Compile>
+    <Compile Include="test-only.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAdminDashboard.resx">
@@ -223,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfirmPayment.resx">
       <DependentUpon>frmConfirmPayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListofSuppliers.resx">
+      <DependentUpon>frmListofSuppliers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListProducts.resx">
       <DependentUpon>frmListProducts.vb</DependentUpon>
@@ -271,6 +284,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test-only.resx">
+      <DependentUpon>test-only.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
