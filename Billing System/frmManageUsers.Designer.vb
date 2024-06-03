@@ -551,7 +551,7 @@ Partial Class frmManageUsers
         Me.TabControl2.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(137, Byte), Integer))
         Me.TabControl2.TabButtonSelectedState.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TabControl2.TabButtonSelectedState.ForeColor = System.Drawing.Color.White
-        Me.TabControl2.TabButtonSelectedState.InnerColor = System.Drawing.Color.Blue
+        Me.TabControl2.TabButtonSelectedState.InnerColor = System.Drawing.Color.OrangeRed
         Me.TabControl2.TabButtonSize = New System.Drawing.Size(180, 40)
         Me.TabControl2.TabIndex = 15
         Me.TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
