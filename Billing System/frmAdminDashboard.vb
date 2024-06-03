@@ -40,6 +40,7 @@
         frmAnalyticsData.TopLevel = False
         panelDashboard.Controls.Add(frmAnalyticsData)
         frmAnalyticsData.BringToFront()
+        frmAnalyticsData.Dock = DockStyle.Fill
         frmAnalyticsData.Show()
     End Sub
 
@@ -47,6 +48,7 @@
         frmAnalyticsData.TopLevel = False
         panelDashboard.Controls.Add(frmAnalyticsData)
         frmAnalyticsData.BringToFront()
+        frmAnalyticsData.Dock = DockStyle.Fill
         frmAnalyticsData.Show()
 
         frmManageSales.Close()
@@ -74,6 +76,7 @@
         frmManageSales.TopLevel = False
         panelDashboard.Controls.Add(frmManageSales)
         frmManageSales.BringToFront()
+        frmManageSales.Dock = DockStyle.Fill
         frmManageSales.Show()
 
         frmManageBilling.Close()
@@ -101,6 +104,7 @@
         frmManageBilling.TopLevel = False
         panelDashboard.Controls.Add(frmManageBilling)
         frmManageBilling.BringToFront()
+        frmManageBilling.Dock = DockStyle.Fill
         frmManageBilling.Show()
 
         frmManageSales.Close()
@@ -120,14 +124,15 @@
         lblDate.Text = Now.ToLongDateString
     End Sub
 
-    Private Sub btnLogout_Click(sender As Object, e As EventArgs) 
-        Me.Close()
-    End Sub
+    'Private Sub btnLogout_Click(sender As Object, e As EventArgs) 
+    '    Me.Close()
+    'End Sub
 
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
         frmAdminSettings.TopLevel = False
         panelDashboard.Controls.Add(frmAdminSettings)
         frmAdminSettings.BringToFront()
+        frmAdminSettings.Dock = DockStyle.Fill
         frmAdminSettings.Show()
 
         frmManageSales.Close()
@@ -144,6 +149,7 @@
         frmManageCollection.TopLevel = False
         panelDashboard.Controls.Add(frmManageCollection)
         frmManageCollection.BringToFront()
+        frmManageCollection.Dock = DockStyle.Fill
         frmManageCollection.Show()
 
         frmManageSales.Close()
@@ -160,6 +166,7 @@
         frmManageSuppliers.TopLevel = False
         panelDashboard.Controls.Add(frmManageSuppliers)
         frmManageSuppliers.BringToFront()
+        frmManageSuppliers.Dock = DockStyle.Fill
         frmManageSuppliers.Show()
 
         frmManageSales.Close()
@@ -176,6 +183,7 @@
         frmManageProducts.TopLevel = False
         panelDashboard.Controls.Add(frmManageProducts)
         frmManageProducts.BringToFront()
+        frmManageProducts.Dock = DockStyle.Fill
         frmManageProducts.Show()
 
         frmManageSales.Close()
@@ -192,6 +200,7 @@
         frmManageCustomers.TopLevel = False
         panelDashboard.Controls.Add(frmManageCustomers)
         frmManageCustomers.BringToFront()
+        frmManageCustomers.Dock = DockStyle.Fill
         frmManageCustomers.Show()
 
         frmManageSales.Close()
@@ -208,6 +217,7 @@
         frmManageUsers.TopLevel = False
         panelDashboard.Controls.Add(frmManageUsers)
         frmManageUsers.BringToFront()
+        frmManageUsers.Dock = DockStyle.Fill
         frmManageUsers.Show()
 
         frmManageSales.Close()
@@ -224,6 +234,7 @@
         frmManageRental.TopLevel = False
         panelDashboard.Controls.Add(frmManageRental)
         frmManageRental.BringToFront()
+        frmManageRental.Dock = DockStyle.Fill
         frmManageRental.Show()
 
         frmManageSales.Close()
