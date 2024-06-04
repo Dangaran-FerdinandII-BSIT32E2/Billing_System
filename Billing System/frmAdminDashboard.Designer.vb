@@ -50,6 +50,8 @@ Partial Class frmAdminDashboard
         Me.lblDate = New System.Windows.Forms.Label()
         Me.panelDashboard = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -263,6 +265,8 @@ Partial Class frmAdminDashboard
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Panel3)
+        Me.Panel2.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.Panel7)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(257, 0)
@@ -274,9 +278,10 @@ Partial Class frmAdminDashboard
         '
         Me.Panel3.Controls.Add(Me.Label22)
         Me.Panel3.Controls.Add(Me.lblUsername)
-        Me.Panel3.Location = New System.Drawing.Point(688, 37)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel3.Location = New System.Drawing.Point(575, 39)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(303, 37)
+        Me.Panel3.Size = New System.Drawing.Size(416, 53)
         Me.Panel3.TabIndex = 11
         '
         'Label22
@@ -285,7 +290,7 @@ Partial Class frmAdminDashboard
         Me.Label22.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label22.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Location = New System.Drawing.Point(4, 0)
+        Me.Label22.Location = New System.Drawing.Point(117, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(151, 32)
         Me.Label22.TabIndex = 10
@@ -298,7 +303,7 @@ Partial Class frmAdminDashboard
         Me.lblUsername.Dock = System.Windows.Forms.DockStyle.Right
         Me.lblUsername.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsername.ForeColor = System.Drawing.Color.White
-        Me.lblUsername.Location = New System.Drawing.Point(155, 0)
+        Me.lblUsername.Location = New System.Drawing.Point(268, 0)
         Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(148, 32)
         Me.lblUsername.TabIndex = 9
@@ -435,6 +440,22 @@ Partial Class frmAdminDashboard
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
+        'Panel4
+        '
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel4.Location = New System.Drawing.Point(0, 92)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(991, 21)
+        Me.Panel4.TabIndex = 0
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(991, 39)
+        Me.FlowLayoutPanel1.TabIndex = 1
+        '
         'frmAdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -485,4 +506,6 @@ Partial Class frmAdminDashboard
     Friend WithEvents btnProduct As Button
     Friend WithEvents btnRental As Button
     Friend WithEvents btnUser As Button
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Panel4 As Panel
 End Class
