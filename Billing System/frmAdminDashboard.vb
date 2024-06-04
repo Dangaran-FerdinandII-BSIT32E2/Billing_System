@@ -247,4 +247,7 @@
         frmAdminSettings.Close()
     End Sub
 
+    Private Sub btnNotification_Click(sender As Object, e As EventArgs) Handles btnNotification.Click
+        frmManageInquiry.ShowDialog()
+    End Sub
 End Class

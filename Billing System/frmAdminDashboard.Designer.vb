@@ -50,14 +50,20 @@ Partial Class frmAdminDashboard
         Me.lblDate = New System.Windows.Forms.Label()
         Me.panelDashboard = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.btnNotification = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.lblCount = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -265,8 +271,9 @@ Partial Class frmAdminDashboard
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Controls.Add(Me.FlowLayoutPanel1)
-        Me.Panel2.Controls.Add(Me.Panel4)
+        Me.Panel2.Controls.Add(Me.Panel9)
+        Me.Panel2.Controls.Add(Me.Panel8)
+        Me.Panel2.Controls.Add(Me.Panel6)
         Me.Panel2.Controls.Add(Me.Panel7)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(257, 0)
@@ -279,9 +286,9 @@ Partial Class frmAdminDashboard
         Me.Panel3.Controls.Add(Me.Label22)
         Me.Panel3.Controls.Add(Me.lblUsername)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(575, 39)
+        Me.Panel3.Location = New System.Drawing.Point(457, 38)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(416, 53)
+        Me.Panel3.Size = New System.Drawing.Size(416, 41)
         Me.Panel3.TabIndex = 11
         '
         'Label22
@@ -440,21 +447,77 @@ Partial Class frmAdminDashboard
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
-        'Panel4
+        'Panel6
         '
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(0, 92)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(991, 21)
-        Me.Panel4.TabIndex = 0
+        Me.Panel6.Controls.Add(Me.lblCount)
+        Me.Panel6.Controls.Add(Me.Guna2CirclePictureBox1)
+        Me.Panel6.Controls.Add(Me.btnNotification)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel6.Location = New System.Drawing.Point(873, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(118, 113)
+        Me.Panel6.TabIndex = 13
         '
-        'FlowLayoutPanel1
+        'btnNotification
         '
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(991, 39)
-        Me.FlowLayoutPanel1.TabIndex = 1
+        Me.btnNotification.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNotification.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnNotification.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnNotification.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnNotification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnNotification.FillColor = System.Drawing.Color.Transparent
+        Me.btnNotification.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnNotification.ForeColor = System.Drawing.Color.White
+        Me.btnNotification.Image = CType(resources.GetObject("btnNotification.Image"), System.Drawing.Image)
+        Me.btnNotification.ImageSize = New System.Drawing.Size(50, 50)
+        Me.btnNotification.Location = New System.Drawing.Point(16, 12)
+        Me.btnNotification.Name = "btnNotification"
+        Me.btnNotification.PressedDepth = 20
+        Me.btnNotification.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnNotification.Size = New System.Drawing.Size(90, 89)
+        Me.btnNotification.TabIndex = 0
+        '
+        'Panel8
+        '
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(0, 0)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(873, 38)
+        Me.Panel8.TabIndex = 14
+        '
+        'Panel9
+        '
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel9.Location = New System.Drawing.Point(0, 79)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(873, 34)
+        Me.Panel9.TabIndex = 15
+        '
+        'Guna2CirclePictureBox1
+        '
+        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.Red
+        Me.Guna2CirclePictureBox1.ImageRotate = 0!
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(61, 22)
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(30, 30)
+        Me.Guna2CirclePictureBox1.TabIndex = 0
+        Me.Guna2CirclePictureBox1.TabStop = False
+        Me.Guna2CirclePictureBox1.UseTransparentBackground = True
+        '
+        'lblCount
+        '
+        Me.lblCount.AutoSize = True
+        Me.lblCount.BackColor = System.Drawing.Color.Red
+        Me.lblCount.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.lblCount.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCount.ForeColor = System.Drawing.Color.White
+        Me.lblCount.Location = New System.Drawing.Point(67, 28)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(18, 19)
+        Me.lblCount.TabIndex = 11
+        Me.lblCount.Text = "1"
         '
         'frmAdminDashboard
         '
@@ -476,6 +539,9 @@ Partial Class frmAdminDashboard
         Me.Panel7.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -506,6 +572,10 @@ Partial Class frmAdminDashboard
     Friend WithEvents btnProduct As Button
     Friend WithEvents btnRental As Button
     Friend WithEvents btnUser As Button
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents btnNotification As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents lblCount As Label
 End Class
