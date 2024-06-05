@@ -167,6 +167,8 @@ Public Class frmManageSuppliers
         btnEdit.Enabled = True
         btnDelete.Enabled = True
         btnCancel.Enabled = True
+
+        Call disableAll()
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If ListView1.SelectedItems.Count > 0 Then
