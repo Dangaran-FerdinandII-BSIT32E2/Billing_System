@@ -39,6 +39,12 @@ Partial Class frmAdminDashboard
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.lblCount = New System.Windows.Forms.Label()
+        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.btnNotification = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.btnSettings = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -50,20 +56,14 @@ Partial Class frmAdminDashboard
         Me.lblDate = New System.Windows.Forms.Label()
         Me.panelDashboard = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.btnNotification = New Guna.UI2.WinForms.Guna2CircleButton()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
-        Me.lblCount = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel7.SuspendLayout()
-        Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel7.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -316,6 +316,78 @@ Partial Class frmAdminDashboard
         Me.lblUsername.TabIndex = 9
         Me.lblUsername.Text = "Username"
         '
+        'Panel9
+        '
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel9.Location = New System.Drawing.Point(0, 79)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(873, 34)
+        Me.Panel9.TabIndex = 15
+        '
+        'Panel8
+        '
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(0, 0)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(873, 38)
+        Me.Panel8.TabIndex = 14
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.lblCount)
+        Me.Panel6.Controls.Add(Me.Guna2CirclePictureBox1)
+        Me.Panel6.Controls.Add(Me.btnNotification)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel6.Location = New System.Drawing.Point(873, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(118, 113)
+        Me.Panel6.TabIndex = 13
+        '
+        'lblCount
+        '
+        Me.lblCount.AutoSize = True
+        Me.lblCount.BackColor = System.Drawing.Color.Red
+        Me.lblCount.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.lblCount.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCount.ForeColor = System.Drawing.Color.White
+        Me.lblCount.Location = New System.Drawing.Point(67, 28)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(18, 19)
+        Me.lblCount.TabIndex = 11
+        Me.lblCount.Text = "1"
+        '
+        'Guna2CirclePictureBox1
+        '
+        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.Red
+        Me.Guna2CirclePictureBox1.ImageRotate = 0!
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(61, 22)
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(30, 30)
+        Me.Guna2CirclePictureBox1.TabIndex = 0
+        Me.Guna2CirclePictureBox1.TabStop = False
+        Me.Guna2CirclePictureBox1.UseTransparentBackground = True
+        '
+        'btnNotification
+        '
+        Me.btnNotification.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNotification.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnNotification.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnNotification.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnNotification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnNotification.FillColor = System.Drawing.Color.Transparent
+        Me.btnNotification.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnNotification.ForeColor = System.Drawing.Color.White
+        Me.btnNotification.Image = CType(resources.GetObject("btnNotification.Image"), System.Drawing.Image)
+        Me.btnNotification.ImageSize = New System.Drawing.Size(50, 50)
+        Me.btnNotification.Location = New System.Drawing.Point(16, 12)
+        Me.btnNotification.Name = "btnNotification"
+        Me.btnNotification.PressedDepth = 20
+        Me.btnNotification.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnNotification.Size = New System.Drawing.Size(90, 89)
+        Me.btnNotification.TabIndex = 0
+        '
         'Panel7
         '
         Me.Panel7.Controls.Add(Me.btnSettings)
@@ -447,78 +519,6 @@ Partial Class frmAdminDashboard
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
-        'Panel6
-        '
-        Me.Panel6.Controls.Add(Me.lblCount)
-        Me.Panel6.Controls.Add(Me.Guna2CirclePictureBox1)
-        Me.Panel6.Controls.Add(Me.btnNotification)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel6.Location = New System.Drawing.Point(873, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(118, 113)
-        Me.Panel6.TabIndex = 13
-        '
-        'btnNotification
-        '
-        Me.btnNotification.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNotification.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnNotification.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnNotification.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnNotification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnNotification.FillColor = System.Drawing.Color.Transparent
-        Me.btnNotification.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnNotification.ForeColor = System.Drawing.Color.White
-        Me.btnNotification.Image = CType(resources.GetObject("btnNotification.Image"), System.Drawing.Image)
-        Me.btnNotification.ImageSize = New System.Drawing.Size(50, 50)
-        Me.btnNotification.Location = New System.Drawing.Point(16, 12)
-        Me.btnNotification.Name = "btnNotification"
-        Me.btnNotification.PressedDepth = 20
-        Me.btnNotification.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.btnNotification.Size = New System.Drawing.Size(90, 89)
-        Me.btnNotification.TabIndex = 0
-        '
-        'Panel8
-        '
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(873, 38)
-        Me.Panel8.TabIndex = 14
-        '
-        'Panel9
-        '
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel9.Location = New System.Drawing.Point(0, 79)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(873, 34)
-        Me.Panel9.TabIndex = 15
-        '
-        'Guna2CirclePictureBox1
-        '
-        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.Red
-        Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(61, 22)
-        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
-        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(30, 30)
-        Me.Guna2CirclePictureBox1.TabIndex = 0
-        Me.Guna2CirclePictureBox1.TabStop = False
-        Me.Guna2CirclePictureBox1.UseTransparentBackground = True
-        '
-        'lblCount
-        '
-        Me.lblCount.AutoSize = True
-        Me.lblCount.BackColor = System.Drawing.Color.Red
-        Me.lblCount.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.lblCount.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCount.ForeColor = System.Drawing.Color.White
-        Me.lblCount.Location = New System.Drawing.Point(67, 28)
-        Me.lblCount.Name = "lblCount"
-        Me.lblCount.Size = New System.Drawing.Size(18, 19)
-        Me.lblCount.TabIndex = 11
-        Me.lblCount.Text = "1"
-        '
         'frmAdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -536,12 +536,12 @@ Partial Class frmAdminDashboard
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
