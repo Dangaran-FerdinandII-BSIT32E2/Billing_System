@@ -39,6 +39,7 @@ Partial Class frmListofSuppliers
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.Panel32 = New System.Windows.Forms.Panel()
         Me.Panel30 = New System.Windows.Forms.Panel()
+        Me.lblSupplierID = New System.Windows.Forms.Label()
         Me.Panel33 = New System.Windows.Forms.Panel()
         Me.Panel31 = New System.Windows.Forms.Panel()
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -83,21 +84,22 @@ Partial Class frmListofSuppliers
         Me.txtSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtSearchCompanyName.ForeColor = System.Drawing.Color.Black
         Me.txtSearchCompanyName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtSearchCompanyName.Location = New System.Drawing.Point(81, 10)
-        Me.txtSearchCompanyName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSearchCompanyName.Location = New System.Drawing.Point(108, 12)
+        Me.txtSearchCompanyName.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearchCompanyName.Name = "txtSearchCompanyName"
         Me.txtSearchCompanyName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchCompanyName.PlaceholderText = "Search by company name"
         Me.txtSearchCompanyName.SelectedText = ""
-        Me.txtSearchCompanyName.Size = New System.Drawing.Size(314, 30)
+        Me.txtSearchCompanyName.Size = New System.Drawing.Size(419, 38)
         Me.txtSearchCompanyName.TabIndex = 13
         '
         'Panel10
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel10.Location = New System.Drawing.Point(0, 603)
+        Me.Panel10.Location = New System.Drawing.Point(0, 742)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1079, 10)
+        Me.Panel10.Size = New System.Drawing.Size(1439, 12)
         Me.Panel10.TabIndex = 9
         '
         'Panel15
@@ -108,8 +110,9 @@ Partial Class frmListofSuppliers
         Me.Panel15.Controls.Add(Me.Panel22)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(265, 50)
+        Me.Panel15.Size = New System.Drawing.Size(353, 62)
         Me.Panel15.TabIndex = 13
         '
         'Label2
@@ -119,42 +122,47 @@ Partial Class frmListofSuppliers
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(10, 15)
+        Me.Label2.Location = New System.Drawing.Point(13, 18)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(161, 22)
+        Me.Label2.Size = New System.Drawing.Size(203, 29)
         Me.Label2.TabIndex = 32
         Me.Label2.Text = "List of Suppliers"
         '
         'Panel16
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel16.Location = New System.Drawing.Point(0, 15)
+        Me.Panel16.Location = New System.Drawing.Point(0, 18)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(10, 25)
+        Me.Panel16.Size = New System.Drawing.Size(13, 32)
         Me.Panel16.TabIndex = 13
         '
         'Panel17
         '
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel17.Location = New System.Drawing.Point(0, 40)
+        Me.Panel17.Location = New System.Drawing.Point(0, 50)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(265, 10)
+        Me.Panel17.Size = New System.Drawing.Size(353, 12)
         Me.Panel17.TabIndex = 13
         '
         'Panel22
         '
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(265, 15)
+        Me.Panel22.Size = New System.Drawing.Size(353, 18)
         Me.Panel22.TabIndex = 13
         '
         'Panel12
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel12.Location = New System.Drawing.Point(1079, 50)
+        Me.Panel12.Location = New System.Drawing.Point(1439, 62)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(10, 563)
+        Me.Panel12.Size = New System.Drawing.Size(13, 692)
         Me.Panel12.TabIndex = 6
         '
         'Panel14
@@ -164,8 +172,9 @@ Partial Class frmListofSuppliers
         Me.Panel14.Controls.Add(Me.Panel23)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1089, 50)
+        Me.Panel14.Size = New System.Drawing.Size(1452, 62)
         Me.Panel14.TabIndex = 0
         '
         'Panel23
@@ -175,33 +184,37 @@ Partial Class frmListofSuppliers
         Me.Panel23.Controls.Add(Me.Panel26)
         Me.Panel23.Controls.Add(Me.Panel27)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel23.Location = New System.Drawing.Point(684, 0)
+        Me.Panel23.Location = New System.Drawing.Point(912, 0)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(405, 50)
+        Me.Panel23.Size = New System.Drawing.Size(540, 62)
         Me.Panel23.TabIndex = 10
         '
         'Panel25
         '
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel25.Location = New System.Drawing.Point(395, 10)
+        Me.Panel25.Location = New System.Drawing.Point(527, 12)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(10, 30)
+        Me.Panel25.Size = New System.Drawing.Size(13, 38)
         Me.Panel25.TabIndex = 12
         '
         'Panel26
         '
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel26.Location = New System.Drawing.Point(0, 40)
+        Me.Panel26.Location = New System.Drawing.Point(0, 50)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(405, 10)
+        Me.Panel26.Size = New System.Drawing.Size(540, 12)
         Me.Panel26.TabIndex = 11
         '
         'Panel27
         '
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel27.Location = New System.Drawing.Point(0, 0)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(405, 10)
+        Me.Panel27.Size = New System.Drawing.Size(540, 12)
         Me.Panel27.TabIndex = 10
         '
         'btnConfirm
@@ -218,9 +231,10 @@ Partial Class frmListofSuppliers
         Me.btnConfirm.ForeColor = System.Drawing.Color.White
         Me.btnConfirm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnConfirm.Location = New System.Drawing.Point(0, 0)
+        Me.btnConfirm.Margin = New System.Windows.Forms.Padding(4)
         Me.btnConfirm.Name = "btnConfirm"
         Me.btnConfirm.PressedDepth = 20
-        Me.btnConfirm.Size = New System.Drawing.Size(140, 40)
+        Me.btnConfirm.Size = New System.Drawing.Size(187, 50)
         Me.btnConfirm.TabIndex = 57
         Me.btnConfirm.Text = "Confirm"
         '
@@ -229,40 +243,55 @@ Partial Class frmListofSuppliers
         Me.Panel34.BackColor = System.Drawing.Color.White
         Me.Panel34.Controls.Add(Me.btnConfirm)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel34.Location = New System.Drawing.Point(10, 10)
+        Me.Panel34.Location = New System.Drawing.Point(13, 12)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(140, 40)
+        Me.Panel34.Size = New System.Drawing.Size(187, 50)
         Me.Panel34.TabIndex = 18
         '
         'Panel32
         '
         Me.Panel32.BackColor = System.Drawing.Color.White
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel32.Location = New System.Drawing.Point(0, 50)
+        Me.Panel32.Location = New System.Drawing.Point(0, 62)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(1069, 10)
+        Me.Panel32.Size = New System.Drawing.Size(1426, 12)
         Me.Panel32.TabIndex = 18
         '
         'Panel30
         '
         Me.Panel30.BackColor = System.Drawing.Color.White
+        Me.Panel30.Controls.Add(Me.lblSupplierID)
         Me.Panel30.Controls.Add(Me.Panel34)
         Me.Panel30.Controls.Add(Me.Panel33)
         Me.Panel30.Controls.Add(Me.Panel32)
         Me.Panel30.Controls.Add(Me.Panel31)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel30.Location = New System.Drawing.Point(10, 543)
+        Me.Panel30.Location = New System.Drawing.Point(13, 668)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(1069, 60)
+        Me.Panel30.Size = New System.Drawing.Size(1426, 74)
         Me.Panel30.TabIndex = 19
+        '
+        'lblSupplierID
+        '
+        Me.lblSupplierID.AutoSize = True
+        Me.lblSupplierID.Location = New System.Drawing.Point(250, 26)
+        Me.lblSupplierID.Name = "lblSupplierID"
+        Me.lblSupplierID.Size = New System.Drawing.Size(48, 16)
+        Me.lblSupplierID.TabIndex = 19
+        Me.lblSupplierID.Text = "Label1"
+        Me.lblSupplierID.Visible = False
         '
         'Panel33
         '
         Me.Panel33.BackColor = System.Drawing.Color.White
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel33.Location = New System.Drawing.Point(0, 10)
+        Me.Panel33.Location = New System.Drawing.Point(0, 12)
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(10, 40)
+        Me.Panel33.Size = New System.Drawing.Size(13, 50)
         Me.Panel33.TabIndex = 18
         '
         'Panel31
@@ -270,8 +299,9 @@ Partial Class frmListofSuppliers
         Me.Panel31.BackColor = System.Drawing.Color.White
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel31.Location = New System.Drawing.Point(0, 0)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(1069, 10)
+        Me.Panel31.Size = New System.Drawing.Size(1426, 12)
         Me.Panel31.TabIndex = 18
         '
         'ColumnHeader5
@@ -292,8 +322,9 @@ Partial Class frmListofSuppliers
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel14)
         Me.pnlListOfCustomerBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlListOfCustomerBody.Location = New System.Drawing.Point(0, 0)
+        Me.pnlListOfCustomerBody.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlListOfCustomerBody.Name = "pnlListOfCustomerBody"
-        Me.pnlListOfCustomerBody.Size = New System.Drawing.Size(1089, 613)
+        Me.pnlListOfCustomerBody.Size = New System.Drawing.Size(1452, 754)
         Me.pnlListOfCustomerBody.TabIndex = 14
         '
         'ListView1
@@ -303,9 +334,10 @@ Partial Class frmListofSuppliers
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(10, 60)
+        Me.ListView1.Location = New System.Drawing.Point(13, 74)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1069, 483)
+        Me.ListView1.Size = New System.Drawing.Size(1426, 594)
         Me.ListView1.TabIndex = 36
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -361,17 +393,19 @@ Partial Class frmListofSuppliers
         'Panel8
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(10, 50)
+        Me.Panel8.Location = New System.Drawing.Point(13, 62)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1069, 10)
+        Me.Panel8.Size = New System.Drawing.Size(1426, 12)
         Me.Panel8.TabIndex = 7
         '
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel9.Location = New System.Drawing.Point(0, 50)
+        Me.Panel9.Location = New System.Drawing.Point(0, 62)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(10, 553)
+        Me.Panel9.Size = New System.Drawing.Size(13, 680)
         Me.Panel9.TabIndex = 8
         '
         'ColumnHeader2
@@ -423,11 +457,12 @@ Partial Class frmListofSuppliers
         '
         'frmListofSuppliers
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1089, 613)
+        Me.ClientSize = New System.Drawing.Size(1452, 754)
         Me.Controls.Add(Me.pnlListOfCustomerBody)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmListofSuppliers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel15.ResumeLayout(False)
@@ -436,6 +471,7 @@ Partial Class frmListofSuppliers
         Me.Panel23.ResumeLayout(False)
         Me.Panel34.ResumeLayout(False)
         Me.Panel30.ResumeLayout(False)
+        Me.Panel30.PerformLayout()
         Me.pnlListOfCustomerBody.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -481,4 +517,5 @@ Partial Class frmListofSuppliers
     Friend WithEvents ColumnHeader15 As ColumnHeader
     Friend WithEvents ColumnHeader16 As ColumnHeader
     Friend WithEvents ColumnHeader17 As ColumnHeader
+    Friend WithEvents lblSupplierID As Label
 End Class

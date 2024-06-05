@@ -46,14 +46,14 @@ Public Class frmManageSuppliers
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         btnCreateNew.Enabled = True
-        btnEdit.Enabled = True
 
+        btnEdit.Enabled = False
         btnSave.Enabled = False
         btnDelete.Enabled = False
         btnCancel.Enabled = False
 
         Call clearAll()
-        Call enableAll()
+        Call disableAll()
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click

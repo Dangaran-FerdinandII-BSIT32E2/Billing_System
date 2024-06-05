@@ -1,13 +1,13 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class frmManageProducts
-    Dim supplierID As String
+    Dim supplierID As Integer
     Private Sub frmManageProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        cn.Open()
         Call loadProducts()
     End Sub
     Private Sub loadProducts()
+        cn.Open()
         sql = "SELECT * FROM qryproducts"
         cmd = New MySqlCommand(sql, cn)
         dr = cmd.ExecuteReader
@@ -30,37 +30,47 @@ Public Class frmManageProducts
         cn.Close()
     End Sub
     Private Sub clearAll()
-        txtProductName.Clear()
-        txtDescription.Clear()
-        txtSupplier.Clear()
-        txtDescription.Clear()
-        txtCategory.Clear()
-        txtPurchasePrice.Clear()
-        txtManufacturer.Clear()
-        txtSellingPrice.Clear()
+        If txtProductName.Enabled = False Then
+            txtProductName.PlaceholderText = "Enter name of product"
+            txtDescription.PlaceholderText = "Enter description"
+            txtCategory.PlaceholderText = "Enter category"
+            txtManufacturer.PlaceholderText = "Enter manufacturer"
+            txtPurchasePrice.PlaceholderText = "Enter purchase price"
+            txtSellingPrice.PlaceholderText = "Enter selling price"
+        Else
+            txtProductName.Clear()
+            txtDescription.Clear()
+            txtCategory.Clear()
+            txtPurchasePrice.Clear()
+            txtManufacturer.Clear()
+            txtSellingPrice.Clear()
+        End If
 
+        txtSupplier.PlaceholderText = "Search supplier"
         lblModelNo.Text = "XXXXX"
     End Sub
     Private Sub enableAll()
         txtProductName.Enabled = True
         txtDescription.Enabled = True
-        txtSupplier.Enabled = True
         txtDescription.Enabled = True
         txtCategory.Enabled = True
         txtPurchasePrice.Enabled = True
         txtSellingPrice.Enabled = True
         txtManufacturer.Enabled = True
+
+        btnSearchSupplier.Enabled = True
     End Sub
 
     Private Sub disableAll()
         txtProductName.Enabled = False
         txtDescription.Enabled = False
-        txtSupplier.Enabled = False
         txtDescription.Enabled = False
         txtCategory.Enabled = False
         txtPurchasePrice.Enabled = False
         txtSellingPrice.Enabled = False
         txtManufacturer.Enabled = False
+
+        btnSearchSupplier.Enabled = False
     End Sub
 
     Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
@@ -69,19 +79,19 @@ Public Class frmManageProducts
 
         btnEdit.Enabled = False
 
-        Call clearAll()
         Call enableAll()
+        Call clearAll()
     End Sub
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         btnCreateNew.Enabled = True
-        btnEdit.Enabled = True
 
+        btnEdit.Enabled = False
         btnSave.Enabled = False
         btnDelete.Enabled = False
         btnCancel.Enabled = False
 
-        Call clearAll()
         Call disableAll()
+        Call clearAll()
     End Sub
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         btnSave.Enabled = True
@@ -93,11 +103,11 @@ Public Class frmManageProducts
         Call enableAll()
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        cn.Close()
         Dim filled As Boolean = True
 
         Dim requiredFields As New Dictionary(Of String, Control) From {
             {"txtProductName", txtProductName},
-            {"txtSupplier", txtSupplier},
             {"txtDescription", txtDescription},
             {"txtCategory", txtDescription},
             {"txtManufacturer", txtCategory},
@@ -123,16 +133,18 @@ Public Class frmManageProducts
                 Call getSupplierId()
                 cn.Open()
                 If btnCreateNew.Enabled = True And btnEdit.Enabled = False Then 'IF CREATE NEW
+
                     sql = "INSERT INTO tblproduct(ProductName, Description, Stock, Category, Manufacturer, ModelNumber, PurchasePrice, SellingPrice, SupplierID) " &
                            "Values(@ProductName, @Description, @Stock, @Category, @Manufacturer, @ModelNumber, @PurchasePrice, @SellingPrice, @SupplierID)"
                     cmd = New MySqlCommand(sql, cn)
+
                     With cmd
                         .Parameters.AddWithValue("@ProductName", txtProductName.Text)
                         .Parameters.AddWithValue("@Description", txtDescription.Text)
                         .Parameters.AddWithValue("@Stock", "Pre-Order") 'UPDATE
-                        .Parameters.AddWithValue("@SupplierID", supplierID) 'NEEDS UPDATE
-                        .Parameters.AddWithValue("@Category", txtDescription.Text)
-                        .Parameters.AddWithValue("@Manufacturer", txtCategory.Text)
+                        .Parameters.AddWithValue("@SupplierID", supplierID)
+                        .Parameters.AddWithValue("@Category", txtCategory.Text)
+                        .Parameters.AddWithValue("@Manufacturer", txtManufacturer.Text)
                         .Parameters.AddWithValue("@ModelNumber", lblModelNo.Text)
                         .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
                         .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
@@ -143,14 +155,14 @@ Public Class frmManageProducts
                 ElseIf btnCreateNew.Enabled = False And btnEdit.Enabled = True Then 'IF EDIT
                     sql = "UPDATE tblproduct SET ProductName=@ProductName, Description=@Description, " &
                         "Stock=@Stock, Category=@Category, Manufacturer=@Manufacturer, ModelNumber=@ModelNumber, " &
-                        "PurchasePrice=@PurchasePrice, SellingPrice=@SellingPrice " &
+                        "PurchasePrice=@PurchasePrice, SellingPrice=@SellingPrice, SupplierID=@SupplierID " &
                         "WHERE ProductID = '" & txtProductId.Text & "'"
                     cmd = New MySqlCommand(sql, cn)
                     With cmd
                         .Parameters.AddWithValue("@ProductName", txtProductName.Text)
                         .Parameters.AddWithValue("@Description", txtDescription.Text)
                         .Parameters.AddWithValue("@Stock", "Pre-Order") 'UPDATE
-                        .Parameters.AddWithValue("@SupplierID", supplierID) 'NEEDS UPDATE
+                        .Parameters.AddWithValue("@SupplierID", txtSupplierID.Text) 'NEEDS UPDATE
                         .Parameters.AddWithValue("@Category", txtCategory.Text)
                         .Parameters.AddWithValue("@Manufacturer", txtManufacturer.Text)
                         .Parameters.AddWithValue("@ModelNumber", lblModelNo.Text)
@@ -168,8 +180,10 @@ Public Class frmManageProducts
 
                     MsgBox("Successfully updated the data!", MsgBoxStyle.Information)
                 End If
+                cn.Close()
                 Call loadProducts()
                 Call clearAll()
+                Call disableAll()
 
                 btnCreateNew.Enabled = True
 
@@ -207,6 +221,9 @@ Public Class frmManageProducts
         btnEdit.Enabled = True
         btnDelete.Enabled = True
         btnCancel.Enabled = True
+
+        btnCreateNew.Enabled = False
+        btnSave.Enabled = False
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If ListView1.SelectedItems.Count > 0 Then
@@ -219,8 +236,10 @@ Public Class frmManageProducts
                     .ExecuteNonQuery()
                 End With
                 MsgBox("Deleted!")
+                cn.Close()
                 Call loadProducts()
                 Call clearAll()
+                Call disableAll()
             End If
         Else
             MsgBox("Please select an item to delete!", vbExclamation)
@@ -233,7 +252,7 @@ Public Class frmManageProducts
         PopulateListView(dt)
     End Sub
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "Select * from tblproduct where ProductName LIKE ? OR Manufacturer LIKE ?"
+        sql = "Select * from qryproducts where ProductName Like ? Or Manufacturer Like ?"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
@@ -244,7 +263,6 @@ Public Class frmManageProducts
 
         Return dt
     End Function
-
     Private Sub PopulateListView(dt As DataTable)
         ListView1.Items.Clear()
         For Each row As DataRow In dt.Rows
@@ -253,36 +271,20 @@ Public Class frmManageProducts
         Next
     End Sub
 
-    Private Sub getSupplierId()
+    Public Sub getSupplierId()
         cn.Open()
-        sql = "SELECT SupplierID FROM tblproduct WHERE ProductID = '" & txtProductId.Text & "'"
+        sql = "SELECT SupplierID FROM tblsupplier WHERE CompanyName = '" & txtSupplier.Text & "'"
         cmd = New MySqlCommand(sql, cn)
         dr = cmd.ExecuteReader
 
         If dr.Read = True Then
-            supplierID = dr(0).ToString()
-            txtSupplierID.Text = dr(0).ToString()
-            dr.Close()
-            cn.Close()
-        Else
-            supplierID = getNextId()
+            supplierID = dr(0)
         End If
+        dr.Close()
+        cn.Close()
     End Sub
 
-    Private Function getNextId() As Integer
-        dr.Close()
-        Dim nextID As Integer = 1
-
-        sql = "SELECT MAX(SupplierID) AS lastID FROM tblsupplier"
-        cmd = New MySqlCommand(sql, cn)
-        Dim result As Object = cmd.ExecuteScalar()
-
-        If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
-            nextID = CInt(result) + 1
-        End If
-
-        Return nextID
-        cn.Close()
-    End Function
-
+    Private Sub btnSearchSupplier_Click(sender As Object, e As EventArgs) Handles btnSearchSupplier.Click
+        frmListofSuppliers.ShowDialog()
+    End Sub
 End Class

@@ -3,10 +3,12 @@
 Public Class frmRegister
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         Call checkUsername()
+        cn.Close()
     End Sub
 
     Private Sub checkUsername()
         Try
+            cn.Open()
             cmd.Parameters.Clear()
             cmd.Connection = cn
             cmd.CommandText = "Select Username from tblusers where Username = @username"
@@ -20,6 +22,7 @@ Public Class frmRegister
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmRegister(checkUsername): " & ex.Message)
+        Finally
         End Try
     End Sub
 
@@ -47,14 +50,13 @@ Public Class frmRegister
             End If
         Catch ex As Exception
             MsgBox("An error occurred in frmRegister(checkPassword): " & ex.Message)
-        Finally
-            cn.Close()
         End Try
     End Sub
 
 
     Private Sub btnBack_Click_1(sender As Object, e As EventArgs) Handles btnBack.Click
         frmLogin.Show()
+        cn.Close()
         Me.Close()
     End Sub
 

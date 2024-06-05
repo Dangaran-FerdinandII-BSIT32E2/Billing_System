@@ -81,6 +81,7 @@ Partial Class frmAdminDashboard
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(257, 768)
         Me.Panel1.TabIndex = 0
@@ -261,6 +262,7 @@ Partial Class frmAdminDashboard
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(257, 113)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -328,6 +330,7 @@ Partial Class frmAdminDashboard
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(0, 0)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(873, 38)
         Me.Panel8.TabIndex = 14
@@ -409,7 +412,8 @@ Partial Class frmAdminDashboard
         Me.btnSettings.ForeColor = System.Drawing.Color.White
         Me.btnSettings.Image = CType(resources.GetObject("btnSettings.Image"), System.Drawing.Image)
         Me.btnSettings.ImageSize = New System.Drawing.Size(50, 50)
-        Me.btnSettings.Location = New System.Drawing.Point(16, 12)
+        Me.btnSettings.Location = New System.Drawing.Point(21, 15)
+        Me.btnSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSettings.Name = "btnSettings"
         Me.btnSettings.PressedDepth = 20
         Me.btnSettings.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
@@ -426,7 +430,8 @@ Partial Class frmAdminDashboard
         Me.Panel5.Controls.Add(Me.Label3)
         Me.Panel5.Controls.Add(Me.lblDate)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(257, 746)
+        Me.Panel5.Location = New System.Drawing.Point(343, 918)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1109, 22)
         Me.Panel5.TabIndex = 2
@@ -462,7 +467,8 @@ Partial Class frmAdminDashboard
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label4.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(846, 0)
+        Me.Label4.Location = New System.Drawing.Point(1150, 0)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 22)
         Me.Label4.TabIndex = 3
@@ -474,7 +480,8 @@ Partial Class frmAdminDashboard
         Me.lblTime.Dock = System.Windows.Forms.DockStyle.Right
         Me.lblTime.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTime.ForeColor = System.Drawing.Color.White
-        Me.lblTime.Location = New System.Drawing.Point(934, 0)
+        Me.lblTime.Location = New System.Drawing.Point(1261, 0)
+        Me.lblTime.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(43, 22)
         Me.lblTime.TabIndex = 2
@@ -529,6 +536,7 @@ Partial Class frmAdminDashboard
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.Name = "frmAdminDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

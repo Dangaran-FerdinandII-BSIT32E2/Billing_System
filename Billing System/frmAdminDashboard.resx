@@ -660,16 +660,16 @@
   </data>
   <data name="btnNotification.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAHWSURBVGhD7Zm/SsNQGMVbOym0+Gcv6Kabk3QVERwsgjio
-        m6LP0EGhgz6Bk+hTSJ2kOAkOvoGLvoIOiiD1nNyztKQam3zJLdwfHCjk9vud2zYJbUuBQKAYer1eGTlA
-        7hQ+Luvw+IDSp8ggJzo8HqBwBXmPqvfzhlS0zH9Qth7VjqeuZf6Dsg3XOZaGlvkJCk4g+8gj2/4B1+wh
-        fp38KLSEPCH/hc9Z1JhiQZEtJO7ETgovAE2NKwYUWEM+2SYlX8iGxuYLxAtImndiEM6a1/h8gJB37Xva
-        M6YrRT5AuO68JqxKYw9kHec04UYaWyCaQrI4wYfxgUxKZwckvFJZY//xguTIuUw5lM4OSFrOZUpLOjsg
-        aTuXKW3p7KDEuUwJG0kMJc5lSthIYihxLlPCRhJDiXOZEjaSGEqcy5SwkcRQ4lym2G4EghrSjVS20FGT
-        NlsweBl5piUnXpAV6bMBA/kdhN/c8obOY9VIBwbtRCOLZVt1RgdDrt2sQrlSndHBEP4wXTS7qpMODGoi
-        F8hlzqFzUzUCI4FXsIrwAvFbqlruLyg5g3wjw+CxaS33GxS9jSrH09Ey/0FZ/hn6GtXuh3fr8fkzlKDw
-        HHKOPChnyKwOBwKBXCmVfgBxEF/3crqVyQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DwAACw8BkvkDpQAAAdZJREFUaEPtmb9Kw1AYxVs7KbT4Zy/oppuTdBURHCyCOKibos/QQaGDPoGT6FNI
+        naQ4CQ6+gYu+gg6KIPWc3LO0pBqbfMkt3B8cKOT2+53bNgltS4FAoBh6vV4ZOUDuFD4u6/D4gNKnyCAn
+        OjweoHAFeY+q9/OGVLTMf1C2HtWOp65l/oOyDdc5loaW+QkKTiD7yCPb/gHX7CF+nfwotIQ8If+Fz1nU
+        mGJBkS0k7sROCi8ATY0rBhRYQz7ZJiVfyIbG5gvEC0iad2IQzprX+HyAkHfte9ozpitFPkC47rwmrEpj
+        D2Qd5zThRhpbIJpCsjjBh/GBTEpnByS8Ullj//GC5Mi5TDmUzg5IWs5lSks6OyBpO5cpbensoMS5TAkb
+        SQwlzmVK2EhiKHEuU8JGEkOJc5kSNpIYSpzLlLCRxFDiXKbYbgSCGtKNVLbQUZM2WzB4GXmmJSdekBXp
+        swED+R2E39zyhs5j1UgHBu1EI4tlW3VGB0Ou3axCuVKd0cEQ/jBdNLuqkw4MaiIXyGXOoXNTNQIjgVew
+        ivAC8VuqWu4vKDmDfCPD4LFpLfcbFL2NKsfT0TL/QVn+Gfoa1e6Hd+vx+TOUoPAcco48KGfIrA4HAoFc
+        KZV+AHEQX/dyupXJAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

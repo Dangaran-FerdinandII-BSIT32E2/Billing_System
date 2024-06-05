@@ -7,6 +7,7 @@ Public Class frmLogin
 
     Private Sub lblRegister_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lblRegister.LinkClicked
         frmRegister.Show()
+        cn.Close()
         Me.Hide()
     End Sub
 
@@ -40,11 +41,11 @@ Public Class frmLogin
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        cn.Open()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Try
+            cn.Open()
             cmd.Parameters.Clear()
             cmd.Connection = cn
             cmd.CommandText = "Select Username,Role from tblusers where Username= @username and Password = @password and Status='Active'"
@@ -62,6 +63,8 @@ Public Class frmLogin
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmLogin(btnLogin): " & ex.Message)
+        Finally
+            cn.Close()
         End Try
     End Sub
 End Class

@@ -121,6 +121,12 @@
     <Compile Include="frmListProducts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmManageInquiry.Designer.vb">
+      <DependentUpon>frmManageInquiry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageInquiry.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmManageInvoice.Designer.vb">
       <DependentUpon>frmManageInvoice.vb</DependentUpon>
     </Compile>
@@ -182,6 +188,12 @@
     <Compile Include="frmManageUsers.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMessage.Designer.vb">
+      <DependentUpon>frmMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrintInvoice.Designer.vb">
       <DependentUpon>frmPrintInvoice.vb</DependentUpon>
     </Compile>
@@ -236,6 +248,9 @@
     <EmbeddedResource Include="frmListProducts.resx">
       <DependentUpon>frmListProducts.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManageInquiry.resx">
+      <DependentUpon>frmManageInquiry.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManageInvoice.resx">
       <DependentUpon>frmManageInvoice.vb</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageUsers.resx">
       <DependentUpon>frmManageUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessage.resx">
+      <DependentUpon>frmMessage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintInvoice.resx">
       <DependentUpon>frmPrintInvoice.vb</DependentUpon>
