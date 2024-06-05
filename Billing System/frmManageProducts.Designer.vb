@@ -50,14 +50,13 @@ Partial Class frmManageProducts
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.btnSearchSupplierName = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel24 = New System.Windows.Forms.Panel()
         Me.txtSearchSupplierName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel26 = New System.Windows.Forms.Panel()
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.btnSearchSupplier = New Guna.UI2.WinForms.Guna2Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtSellingPrice = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -103,6 +102,7 @@ Partial Class frmManageProducts
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.Panel28 = New System.Windows.Forms.Panel()
         Me.Panel29 = New System.Windows.Forms.Panel()
+        Me.Panel24 = New System.Windows.Forms.Panel()
         Me.Panel13.SuspendLayout()
         Me.PanelCollection.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -348,8 +348,6 @@ Partial Class frmManageProducts
         '
         'Panel23
         '
-        Me.Panel23.Controls.Add(Me.btnSearchSupplierName)
-        Me.Panel23.Controls.Add(Me.Panel24)
         Me.Panel23.Controls.Add(Me.txtSearchSupplierName)
         Me.Panel23.Controls.Add(Me.Panel25)
         Me.Panel23.Controls.Add(Me.Panel26)
@@ -359,34 +357,6 @@ Partial Class frmManageProducts
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(405, 50)
         Me.Panel23.TabIndex = 10
-        '
-        'btnSearchSupplierName
-        '
-        Me.btnSearchSupplierName.BackColor = System.Drawing.Color.Transparent
-        Me.btnSearchSupplierName.BorderRadius = 8
-        Me.btnSearchSupplierName.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSearchSupplierName.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchSupplierName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchSupplierName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSearchSupplierName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchSupplierName.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btnSearchSupplierName.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnSearchSupplierName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSearchSupplierName.ForeColor = System.Drawing.Color.White
-        Me.btnSearchSupplierName.Image = CType(resources.GetObject("btnSearchSupplierName.Image"), System.Drawing.Image)
-        Me.btnSearchSupplierName.Location = New System.Drawing.Point(30, 10)
-        Me.btnSearchSupplierName.Name = "btnSearchSupplierName"
-        Me.btnSearchSupplierName.PressedDepth = 20
-        Me.btnSearchSupplierName.Size = New System.Drawing.Size(41, 30)
-        Me.btnSearchSupplierName.TabIndex = 46
-        '
-        'Panel24
-        '
-        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel24.Location = New System.Drawing.Point(71, 10)
-        Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(10, 30)
-        Me.Panel24.TabIndex = 10
         '
         'txtSearchSupplierName
         '
@@ -446,6 +416,7 @@ Partial Class frmManageProducts
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.White
+        Me.Panel7.Controls.Add(Me.btnSearchSupplier)
         Me.Panel7.Controls.Add(Me.Label5)
         Me.Panel7.Controls.Add(Me.txtSellingPrice)
         Me.Panel7.Controls.Add(Me.Label8)
@@ -467,6 +438,25 @@ Partial Class frmManageProducts
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1089, 297)
         Me.Panel7.TabIndex = 32
+        '
+        'btnSearchSupplier
+        '
+        Me.btnSearchSupplier.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearchSupplier.BorderRadius = 8
+        Me.btnSearchSupplier.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearchSupplier.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchSupplier.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchSupplier.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearchSupplier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearchSupplier.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnSearchSupplier.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearchSupplier.ForeColor = System.Drawing.Color.White
+        Me.btnSearchSupplier.Image = CType(resources.GetObject("btnSearchSupplier.Image"), System.Drawing.Image)
+        Me.btnSearchSupplier.Location = New System.Drawing.Point(461, 84)
+        Me.btnSearchSupplier.Name = "btnSearchSupplier"
+        Me.btnSearchSupplier.PressedDepth = 20
+        Me.btnSearchSupplier.Size = New System.Drawing.Size(41, 34)
+        Me.btnSearchSupplier.TabIndex = 81
         '
         'Label5
         '
@@ -493,7 +483,7 @@ Partial Class frmManageProducts
         Me.txtSellingPrice.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtSellingPrice.ForeColor = System.Drawing.Color.Black
         Me.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSellingPrice.Location = New System.Drawing.Point(527, 173)
+        Me.txtSellingPrice.Location = New System.Drawing.Point(532, 173)
         Me.txtSellingPrice.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSellingPrice.Name = "txtSellingPrice"
         Me.txtSellingPrice.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -508,7 +498,7 @@ Partial Class frmManageProducts
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(524, 150)
+        Me.Label8.Location = New System.Drawing.Point(529, 150)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(104, 19)
         Me.Label8.TabIndex = 78
@@ -561,7 +551,7 @@ Partial Class frmManageProducts
         Me.txtCategory.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtCategory.ForeColor = System.Drawing.Color.Black
         Me.txtCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCategory.Location = New System.Drawing.Point(810, 84)
+        Me.txtCategory.Location = New System.Drawing.Point(815, 84)
         Me.txtCategory.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCategory.Name = "txtCategory"
         Me.txtCategory.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -595,7 +585,7 @@ Partial Class frmManageProducts
         Me.txtDescription.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtDescription.ForeColor = System.Drawing.Color.Black
         Me.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtDescription.Location = New System.Drawing.Point(528, 84)
+        Me.txtDescription.Location = New System.Drawing.Point(533, 84)
         Me.txtDescription.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -610,7 +600,7 @@ Partial Class frmManageProducts
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(807, 61)
+        Me.Label4.Location = New System.Drawing.Point(812, 61)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(79, 19)
         Me.Label4.TabIndex = 72
@@ -633,9 +623,9 @@ Partial Class frmManageProducts
         Me.txtSupplier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSupplier.Name = "txtSupplier"
         Me.txtSupplier.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSupplier.PlaceholderText = "Enter supplier"
+        Me.txtSupplier.PlaceholderText = "Search supplier"
         Me.txtSupplier.SelectedText = ""
-        Me.txtSupplier.Size = New System.Drawing.Size(255, 36)
+        Me.txtSupplier.Size = New System.Drawing.Size(204, 36)
         Me.txtSupplier.TabIndex = 71
         '
         'Label3
@@ -644,7 +634,7 @@ Partial Class frmManageProducts
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(527, 61)
+        Me.Label3.Location = New System.Drawing.Point(532, 61)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(97, 19)
         Me.Label3.TabIndex = 70
@@ -960,6 +950,7 @@ Partial Class frmManageProducts
         Me.Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Panel5.Controls.Add(Me.Label9)
         Me.Panel5.Controls.Add(Me.lblModelNo)
+        Me.Panel5.Controls.Add(Me.Panel24)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel5.Location = New System.Drawing.Point(834, 15)
         Me.Panel5.Name = "Panel5"
@@ -973,7 +964,7 @@ Partial Class frmManageProducts
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(61, 0)
+        Me.Label9.Location = New System.Drawing.Point(51, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(130, 19)
         Me.Label9.TabIndex = 64
@@ -986,7 +977,7 @@ Partial Class frmManageProducts
         Me.lblModelNo.Dock = System.Windows.Forms.DockStyle.Right
         Me.lblModelNo.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblModelNo.ForeColor = System.Drawing.Color.White
-        Me.lblModelNo.Location = New System.Drawing.Point(191, 0)
+        Me.lblModelNo.Location = New System.Drawing.Point(181, 0)
         Me.lblModelNo.Name = "lblModelNo"
         Me.lblModelNo.Size = New System.Drawing.Size(64, 19)
         Me.lblModelNo.TabIndex = 28
@@ -1083,6 +1074,14 @@ Partial Class frmManageProducts
         Me.Panel29.Size = New System.Drawing.Size(265, 15)
         Me.Panel29.TabIndex = 13
         '
+        'Panel24
+        '
+        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel24.Location = New System.Drawing.Point(245, 0)
+        Me.Panel24.Name = "Panel24"
+        Me.Panel24.Size = New System.Drawing.Size(10, 25)
+        Me.Panel24.TabIndex = 36
+        '
         'frmManageProducts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1143,8 +1142,6 @@ Partial Class frmManageProducts
     Friend WithEvents Panel17 As Panel
     Friend WithEvents Panel22 As Panel
     Friend WithEvents Panel23 As Panel
-    Friend WithEvents btnSearchSupplierName As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel24 As Panel
     Friend WithEvents txtSearchSupplierName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel25 As Panel
     Friend WithEvents Panel26 As Panel
@@ -1204,4 +1201,6 @@ Partial Class frmManageProducts
     Friend WithEvents lblModelNo As Label
     Friend WithEvents Panel18 As Panel
     Friend WithEvents Panel43 As Panel
+    Friend WithEvents btnSearchSupplier As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel24 As Panel
 End Class

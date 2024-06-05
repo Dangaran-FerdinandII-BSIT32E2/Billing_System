@@ -22,7 +22,6 @@ Partial Class frmManageRental
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageRental))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -44,8 +43,6 @@ Partial Class frmManageRental
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.btnSearchAvailability = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel24 = New System.Windows.Forms.Panel()
         Me.txtSearchAvailability = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel26 = New System.Windows.Forms.Panel()
@@ -279,8 +276,6 @@ Partial Class frmManageRental
         '
         'Panel23
         '
-        Me.Panel23.Controls.Add(Me.btnSearchAvailability)
-        Me.Panel23.Controls.Add(Me.Panel24)
         Me.Panel23.Controls.Add(Me.txtSearchAvailability)
         Me.Panel23.Controls.Add(Me.Panel25)
         Me.Panel23.Controls.Add(Me.Panel26)
@@ -290,34 +285,6 @@ Partial Class frmManageRental
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(405, 50)
         Me.Panel23.TabIndex = 10
-        '
-        'btnSearchAvailability
-        '
-        Me.btnSearchAvailability.BackColor = System.Drawing.Color.Transparent
-        Me.btnSearchAvailability.BorderRadius = 8
-        Me.btnSearchAvailability.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSearchAvailability.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchAvailability.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchAvailability.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSearchAvailability.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchAvailability.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btnSearchAvailability.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnSearchAvailability.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSearchAvailability.ForeColor = System.Drawing.Color.White
-        Me.btnSearchAvailability.Image = CType(resources.GetObject("btnSearchAvailability.Image"), System.Drawing.Image)
-        Me.btnSearchAvailability.Location = New System.Drawing.Point(30, 10)
-        Me.btnSearchAvailability.Name = "btnSearchAvailability"
-        Me.btnSearchAvailability.PressedDepth = 20
-        Me.btnSearchAvailability.Size = New System.Drawing.Size(41, 30)
-        Me.btnSearchAvailability.TabIndex = 46
-        '
-        'Panel24
-        '
-        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel24.Location = New System.Drawing.Point(71, 10)
-        Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(10, 30)
-        Me.Panel24.TabIndex = 10
         '
         'txtSearchAvailability
         '
@@ -841,8 +808,6 @@ Partial Class frmManageRental
     Friend WithEvents Panel17 As Panel
     Friend WithEvents Panel22 As Panel
     Friend WithEvents Panel23 As Panel
-    Friend WithEvents btnSearchAvailability As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel24 As Panel
     Friend WithEvents txtSearchAvailability As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel25 As Panel
     Friend WithEvents Panel26 As Panel

@@ -43,9 +43,15 @@ Partial Class frmListofSuppliers
         Me.Panel31 = New System.Windows.Forms.Panel()
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlListOfCustomerBody = New System.Windows.Forms.Panel()
-        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader17 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -277,7 +283,7 @@ Partial Class frmListofSuppliers
         'pnlListOfCustomerBody
         '
         Me.pnlListOfCustomerBody.BackColor = System.Drawing.Color.White
-        Me.pnlListOfCustomerBody.Controls.Add(Me.ListView2)
+        Me.pnlListOfCustomerBody.Controls.Add(Me.ListView1)
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel30)
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel8)
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel9)
@@ -290,30 +296,67 @@ Partial Class frmListofSuppliers
         Me.pnlListOfCustomerBody.Size = New System.Drawing.Size(1089, 613)
         Me.pnlListOfCustomerBody.TabIndex = 14
         '
-        'ListView2
+        'ListView1
         '
-        Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader12, Me.ColumnHeader13})
-        Me.ListView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ListView2.GridLines = True
-        Me.ListView2.HideSelection = False
-        Me.ListView2.Location = New System.Drawing.Point(10, 60)
-        Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(1069, 483)
-        Me.ListView2.TabIndex = 35
-        Me.ListView2.UseCompatibleStateImageBehavior = False
-        Me.ListView2.View = System.Windows.Forms.View.Details
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader17})
+        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView1.GridLines = True
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(10, 60)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(1069, 483)
+        Me.ListView1.TabIndex = 36
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader10
+        '
+        Me.ColumnHeader10.Text = "Company Name"
+        Me.ColumnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader10.Width = 180
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "Bank Details"
+        Me.ColumnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader11.Width = 250
         '
         'ColumnHeader12
         '
-        Me.ColumnHeader12.Text = "Company Name"
-        Me.ColumnHeader12.Width = 250
+        Me.ColumnHeader12.Text = "Contact Person"
+        Me.ColumnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader12.Width = 200
         '
         'ColumnHeader13
         '
-        Me.ColumnHeader13.Text = "Equipment Type"
+        Me.ColumnHeader13.Text = "Phone Number"
         Me.ColumnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader13.Width = 180
+        Me.ColumnHeader13.Width = 220
+        '
+        'ColumnHeader14
+        '
+        Me.ColumnHeader14.Text = "Address"
+        Me.ColumnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader14.Width = 350
+        '
+        'ColumnHeader15
+        '
+        Me.ColumnHeader15.Text = "Equipment Type"
+        Me.ColumnHeader15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader15.Width = 180
+        '
+        'ColumnHeader16
+        '
+        Me.ColumnHeader16.Text = "Delivery Terms"
+        Me.ColumnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader16.Width = 180
+        '
+        'ColumnHeader17
+        '
+        Me.ColumnHeader17.Text = "Payment Terms"
+        Me.ColumnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader17.Width = 180
         '
         'Panel8
         '
@@ -419,9 +462,6 @@ Partial Class frmListofSuppliers
     Friend WithEvents Panel31 As Panel
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents pnlListOfCustomerBody As Panel
-    Friend WithEvents ListView2 As ListView
-    Friend WithEvents ColumnHeader12 As ColumnHeader
-    Friend WithEvents ColumnHeader13 As ColumnHeader
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Panel9 As Panel
     Friend WithEvents ColumnHeader2 As ColumnHeader
@@ -432,4 +472,13 @@ Partial Class frmListofSuppliers
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader10 As ColumnHeader
+    Friend WithEvents ColumnHeader11 As ColumnHeader
+    Friend WithEvents ColumnHeader12 As ColumnHeader
+    Friend WithEvents ColumnHeader13 As ColumnHeader
+    Friend WithEvents ColumnHeader14 As ColumnHeader
+    Friend WithEvents ColumnHeader15 As ColumnHeader
+    Friend WithEvents ColumnHeader16 As ColumnHeader
+    Friend WithEvents ColumnHeader17 As ColumnHeader
 End Class
