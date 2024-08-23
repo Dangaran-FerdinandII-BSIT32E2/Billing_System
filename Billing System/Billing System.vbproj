@@ -121,6 +121,12 @@
     <Compile Include="frmListProducts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmLoginV2.Designer.vb">
+      <DependentUpon>frmLoginV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmManageInquiry.Designer.vb">
       <DependentUpon>frmManageInquiry.vb</DependentUpon>
     </Compile>
@@ -206,6 +212,12 @@
     <Compile Include="frmRegister.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmRegisterV2.Designer.vb">
+      <DependentUpon>frmRegisterV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegisterV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTestOnly.Designer.vb">
       <DependentUpon>frmTestOnly.vb</DependentUpon>
     </Compile>
@@ -248,6 +260,9 @@
     <EmbeddedResource Include="frmListProducts.resx">
       <DependentUpon>frmListProducts.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginV2.resx">
+      <DependentUpon>frmLoginV2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManageInquiry.resx">
       <DependentUpon>frmManageInquiry.vb</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegisterV2.resx">
+      <DependentUpon>frmRegisterV2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTestOnly.resx">
       <DependentUpon>frmTestOnly.vb</DependentUpon>
