@@ -91,7 +91,7 @@ Public Class frmManageCustomers
             .Parameters.AddWithValue("@Status", cboStatus.Text)
             .ExecuteNonQuery()
         End With
-        MsgBox("Successfully updated the data!", MsgBoxStyle.Information)
+        MsgBox("Successfully updated the customer!", MsgBoxStyle.Information)
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -241,6 +241,7 @@ Public Class frmManageCustomers
 
     Public Function SearchDatabase(searchTerm As String) As DataTable
         sql = "Select CompanyName,LastName,FirstName,PhoneNumber,Email,Status,CustomerID from tblcustomer where CompanyName LIKE ? OR LastName LIKE ?"
+
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
