@@ -49,6 +49,8 @@ Partial Class frmManageBilling
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnInsert = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.lblProductID = New System.Windows.Forms.Label()
+        Me.lblSuppID = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -71,8 +73,6 @@ Partial Class frmManageBilling
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.lblSuppID = New System.Windows.Forms.Label()
-        Me.lblProductID = New System.Windows.Forms.Label()
         Me.Panel7.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -160,7 +160,7 @@ Partial Class frmManageBilling
         Me.dtpDate.Location = New System.Drawing.Point(736, 137)
         Me.dtpDate.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpDate.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.dtpDate.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtpDate.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         Me.dtpDate.Name = "dtpDate"
         Me.dtpDate.Size = New System.Drawing.Size(313, 44)
         Me.dtpDate.TabIndex = 83
@@ -499,6 +499,34 @@ Partial Class frmManageBilling
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1453, 755)
         Me.Guna2GroupBox1.TabIndex = 15
         '
+        'lblProductID
+        '
+        Me.lblProductID.AutoSize = True
+        Me.lblProductID.BackColor = System.Drawing.Color.Transparent
+        Me.lblProductID.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblProductID.ForeColor = System.Drawing.Color.White
+        Me.lblProductID.Location = New System.Drawing.Point(568, 10)
+        Me.lblProductID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblProductID.Name = "lblProductID"
+        Me.lblProductID.Size = New System.Drawing.Size(157, 29)
+        Me.lblProductID.TabIndex = 39
+        Me.lblProductID.Text = "lblProductID"
+        Me.lblProductID.Visible = False
+        '
+        'lblSuppID
+        '
+        Me.lblSuppID.AutoSize = True
+        Me.lblSuppID.BackColor = System.Drawing.Color.Transparent
+        Me.lblSuppID.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblSuppID.ForeColor = System.Drawing.Color.White
+        Me.lblSuppID.Location = New System.Drawing.Point(323, 4)
+        Me.lblSuppID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSuppID.Name = "lblSuppID"
+        Me.lblSuppID.Size = New System.Drawing.Size(127, 29)
+        Me.lblSuppID.TabIndex = 38
+        Me.lblSuppID.Text = "lblSuppID"
+        Me.lblSuppID.Visible = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -737,32 +765,6 @@ Partial Class frmManageBilling
         '
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink
         Me.ErrorProvider1.ContainerControl = Me
-        '
-        'lblSuppID
-        '
-        Me.lblSuppID.AutoSize = True
-        Me.lblSuppID.BackColor = System.Drawing.Color.Transparent
-        Me.lblSuppID.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.lblSuppID.ForeColor = System.Drawing.Color.White
-        Me.lblSuppID.Location = New System.Drawing.Point(323, 4)
-        Me.lblSuppID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblSuppID.Name = "lblSuppID"
-        Me.lblSuppID.Size = New System.Drawing.Size(178, 29)
-        Me.lblSuppID.TabIndex = 38
-        Me.lblSuppID.Text = "Billing Invoice"
-        '
-        'lblProductID
-        '
-        Me.lblProductID.AutoSize = True
-        Me.lblProductID.BackColor = System.Drawing.Color.Transparent
-        Me.lblProductID.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.lblProductID.ForeColor = System.Drawing.Color.White
-        Me.lblProductID.Location = New System.Drawing.Point(568, 10)
-        Me.lblProductID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblProductID.Name = "lblProductID"
-        Me.lblProductID.Size = New System.Drawing.Size(178, 29)
-        Me.lblProductID.TabIndex = 39
-        Me.lblProductID.Text = "Billing Invoice"
         '
         'frmManageBilling
         '
