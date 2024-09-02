@@ -1,16 +1,18 @@
 ﻿Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
-Public Class frmListProducts
-    Private Sub frmListProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+Public Class frmListCompany
+    Private Sub frmListCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        Call loadProducts()
+        Call loadCustomers()
     End Sub
-    Private Sub loadProducts()
+
+    Private Sub loadCustomers()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT * FROM qryproducts"
+            sql = "SELECT * FROM tblcustomer"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -18,19 +20,17 @@ Public Class frmListProducts
             ListView1.Items.Clear()
 
             Do While dr.Read = True
-                x = New ListViewItem(dr("ProductName").ToString())
-                x.SubItems.Add(dr("CompanyName").ToString())
-                x.SubItems.Add(dr("Description").ToString())
-                x.SubItems.Add(dr("Category").ToString())
-                x.SubItems.Add(dr("Manufacturer").ToString())
-                x.SubItems.Add(dr("YearManufactured").ToString())
-                x.SubItems.Add(dr("PurchasePrice").ToString())
-                x.SubItems.Add(dr("SellingPrice").ToString())
-                x.SubItems.Add(dr("ProductID").ToString())
+                x = New ListViewItem(dr("CompanyName").ToString())
+                x.SubItems.Add(dr("LastName").ToString())
+                x.SubItems.Add(dr("FirstName").ToString())
+                x.SubItems.Add(dr("PhoneNumber").ToString())
+                x.SubItems.Add(dr("Email").ToString())
+                x.SubItems.Add(dr("Status").ToString())
+                x.SubItems.Add(dr("CustomerID").ToString())
                 ListView1.Items.Add(x)
             Loop
         Catch ex As Exception
-            MsgBox("An error occurred frmListProducts(loadProducts): " & ex.Message)
+            MsgBox("An error occurred frmListCompany(loadCustomers): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -45,12 +45,12 @@ Public Class frmListProducts
             End If
 
             If ListView1.SelectedItems.Count > 0 Then
-                frmManageBilling.txtProductName.Text = ListView1.SelectedItems(0).SubItems(0).Text
-                frmManageBilling.lblProductID.Text = ListView1.SelectedItems(0).SubItems(8).Text
+                frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                frmManageBilling.lblSuppID.Text = ListView1.SelectedItems(0).SubItems(6).Text
             End If
 
         Catch ex As Exception
-            MsgBox("An error occurred frmListProducts(SelectedIndexChanged): " & ex.Message)
+            MsgBox("An error occurred frmListCompany(SelectedIndexChanged): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -72,7 +72,7 @@ Public Class frmListProducts
             PopulateListView(dt)
 
         Catch ex As Exception
-            MsgBox("An error occurred frmListProducts(SearchProduct): " & ex.Message)
+            MsgBox("An error occurred frmListCompany(SearchCompany): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -88,11 +88,12 @@ Public Class frmListProducts
     End Sub
 
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "SELECT ProductName, CompanyName, Description, Category, Manufacturer, YearManufactured, PurchasePrice, SellingPrice FROM qryproducts WHERE ProductName LIKE ? OR CompanyName LIKE ?"
+        sql = "SELECT CompanyName, LastName, FirstName, PhoneNumber, Email, Status FROM tblcustomer WHERE CompanyName LIKE ? OR LastName LIKE ? OR FirstName LIKE ?"
 
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
+        cmd.Parameters.Add(New MySqlParameter("searchTerm3", "%" & searchTerm & "%"))
 
         Dim dt As New DataTable
         Dim da As New MySqlDataAdapter(cmd)

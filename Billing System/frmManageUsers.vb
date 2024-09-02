@@ -217,7 +217,7 @@ Public Class frmManageUsers
             .Parameters.AddWithValue("@Status", "Inactive")
             .ExecuteNonQuery()
         End With
-        MsgBox("Successfully added!", MsgBoxStyle.Information)
+        MsgBox("Successfully added!", MsgBoxStyle.Information, "Users")
     End Sub
 
     Private Sub edit()

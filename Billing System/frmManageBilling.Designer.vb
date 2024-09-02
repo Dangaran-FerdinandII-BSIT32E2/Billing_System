@@ -22,11 +22,13 @@ Partial Class frmManageBilling
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageBilling))
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Guna2DateTimePicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.btnSearchCustomer = New Guna.UI2.WinForms.Guna2Button()
+        Me.dtpDate = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.cboSalesman = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.btnSearchProduct = New Guna.UI2.WinForms.Guna2Button()
         Me.txtProductName = New Guna.UI2.WinForms.Guna2TextBox()
@@ -68,6 +70,9 @@ Partial Class frmManageBilling
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.lblSuppID = New System.Windows.Forms.Label()
+        Me.lblProductID = New System.Windows.Forms.Label()
         Me.Panel7.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -75,29 +80,33 @@ Partial Class frmManageBilling
         Me.Panel17.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.Panel11.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.White
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel6.Location = New System.Drawing.Point(1079, 40)
+        Me.Panel6.Location = New System.Drawing.Point(1440, 40)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(10, 573)
+        Me.Panel6.Size = New System.Drawing.Size(13, 715)
         Me.Panel6.TabIndex = 35
         '
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(1069, 15)
+        Me.Panel9.Size = New System.Drawing.Size(1427, 18)
         Me.Panel9.TabIndex = 0
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.White
-        Me.Panel7.Controls.Add(Me.Guna2DateTimePicker1)
+        Me.Panel7.Controls.Add(Me.btnSearchCustomer)
+        Me.Panel7.Controls.Add(Me.dtpDate)
         Me.Panel7.Controls.Add(Me.cboSalesman)
         Me.Panel7.Controls.Add(Me.btnSearchProduct)
         Me.Panel7.Controls.Add(Me.txtProductName)
@@ -115,26 +124,48 @@ Partial Class frmManageBilling
         Me.Panel7.Controls.Add(Me.txtCompanyName)
         Me.Panel7.Controls.Add(Me.Label4)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(10, 40)
+        Me.Panel7.Location = New System.Drawing.Point(13, 40)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1069, 175)
+        Me.Panel7.Size = New System.Drawing.Size(1427, 215)
         Me.Panel7.TabIndex = 35
         '
-        'Guna2DateTimePicker1
+        'btnSearchCustomer
         '
-        Me.Guna2DateTimePicker1.Checked = True
-        Me.Guna2DateTimePicker1.FillColor = System.Drawing.Color.White
-        Me.Guna2DateTimePicker1.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.Guna2DateTimePicker1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Guna2DateTimePicker1.Location = New System.Drawing.Point(552, 111)
-        Me.Guna2DateTimePicker1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker1.Name = "Guna2DateTimePicker1"
-        Me.Guna2DateTimePicker1.Size = New System.Drawing.Size(235, 36)
-        Me.Guna2DateTimePicker1.TabIndex = 83
-        Me.Guna2DateTimePicker1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.Guna2DateTimePicker1.Value = New Date(2024, 5, 29, 14, 58, 8, 655)
+        Me.btnSearchCustomer.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearchCustomer.BorderRadius = 8
+        Me.btnSearchCustomer.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearchCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearchCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearchCustomer.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnSearchCustomer.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearchCustomer.ForeColor = System.Drawing.Color.White
+        Me.btnSearchCustomer.Image = CType(resources.GetObject("btnSearchCustomer.Image"), System.Drawing.Image)
+        Me.btnSearchCustomer.Location = New System.Drawing.Point(314, 38)
+        Me.btnSearchCustomer.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSearchCustomer.Name = "btnSearchCustomer"
+        Me.btnSearchCustomer.PressedDepth = 20
+        Me.btnSearchCustomer.Size = New System.Drawing.Size(55, 44)
+        Me.btnSearchCustomer.TabIndex = 84
+        '
+        'dtpDate
+        '
+        Me.dtpDate.Checked = True
+        Me.dtpDate.FillColor = System.Drawing.Color.White
+        Me.dtpDate.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.dtpDate.ForeColor = System.Drawing.Color.Black
+        Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.dtpDate.Location = New System.Drawing.Point(736, 137)
+        Me.dtpDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtpDate.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.dtpDate.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtpDate.Name = "dtpDate"
+        Me.dtpDate.Size = New System.Drawing.Size(313, 44)
+        Me.dtpDate.TabIndex = 83
+        Me.dtpDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.dtpDate.Value = New Date(2024, 5, 29, 14, 58, 8, 655)
         '
         'cboSalesman
         '
@@ -147,9 +178,10 @@ Partial Class frmManageBilling
         Me.cboSalesman.ForeColor = System.Drawing.Color.Black
         Me.cboSalesman.ItemHeight = 30
         Me.cboSalesman.Items.AddRange(New Object() {"Salesman1", "Salesman2", "Salesman3", "Salesman4", "Salesman5"})
-        Me.cboSalesman.Location = New System.Drawing.Point(812, 31)
+        Me.cboSalesman.Location = New System.Drawing.Point(1083, 38)
+        Me.cboSalesman.Margin = New System.Windows.Forms.Padding(4)
         Me.cboSalesman.Name = "cboSalesman"
-        Me.cboSalesman.Size = New System.Drawing.Size(257, 36)
+        Me.cboSalesman.Size = New System.Drawing.Size(341, 36)
         Me.cboSalesman.TabIndex = 62
         '
         'btnSearchProduct
@@ -165,10 +197,11 @@ Partial Class frmManageBilling
         Me.btnSearchProduct.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSearchProduct.ForeColor = System.Drawing.Color.White
         Me.btnSearchProduct.Image = CType(resources.GetObject("btnSearchProduct.Image"), System.Drawing.Image)
-        Me.btnSearchProduct.Location = New System.Drawing.Point(236, 111)
+        Me.btnSearchProduct.Location = New System.Drawing.Point(315, 137)
+        Me.btnSearchProduct.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearchProduct.Name = "btnSearchProduct"
         Me.btnSearchProduct.PressedDepth = 20
-        Me.btnSearchProduct.Size = New System.Drawing.Size(41, 36)
+        Me.btnSearchProduct.Size = New System.Drawing.Size(55, 44)
         Me.btnSearchProduct.TabIndex = 44
         '
         'txtProductName
@@ -179,17 +212,18 @@ Partial Class frmManageBilling
         Me.txtProductName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtProductName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtProductName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtProductName.Enabled = False
         Me.txtProductName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtProductName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtProductName.ForeColor = System.Drawing.Color.Black
         Me.txtProductName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtProductName.Location = New System.Drawing.Point(1, 111)
-        Me.txtProductName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtProductName.Location = New System.Drawing.Point(1, 137)
+        Me.txtProductName.Margin = New System.Windows.Forms.Padding(5)
         Me.txtProductName.Name = "txtProductName"
         Me.txtProductName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtProductName.PlaceholderText = "Search product name"
         Me.txtProductName.SelectedText = ""
-        Me.txtProductName.Size = New System.Drawing.Size(228, 36)
+        Me.txtProductName.Size = New System.Drawing.Size(304, 44)
         Me.txtProductName.TabIndex = 61
         '
         'Label10
@@ -198,9 +232,10 @@ Partial Class frmManageBilling
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(-3, 88)
+        Me.Label10.Location = New System.Drawing.Point(-4, 108)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(118, 19)
+        Me.Label10.Size = New System.Drawing.Size(144, 24)
         Me.Label10.TabIndex = 60
         Me.Label10.Text = "Product Name"
         '
@@ -216,13 +251,13 @@ Partial Class frmManageBilling
         Me.txtTIN.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtTIN.ForeColor = System.Drawing.Color.Black
         Me.txtTIN.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtTIN.Location = New System.Drawing.Point(812, 111)
-        Me.txtTIN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTIN.Location = New System.Drawing.Point(1083, 137)
+        Me.txtTIN.Margin = New System.Windows.Forms.Padding(5)
         Me.txtTIN.Name = "txtTIN"
         Me.txtTIN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtTIN.PlaceholderText = "Enter TIN"
         Me.txtTIN.SelectedText = ""
-        Me.txtTIN.Size = New System.Drawing.Size(257, 36)
+        Me.txtTIN.Size = New System.Drawing.Size(343, 44)
         Me.txtTIN.TabIndex = 59
         '
         'Label8
@@ -231,9 +266,10 @@ Partial Class frmManageBilling
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(808, 88)
+        Me.Label8.Location = New System.Drawing.Point(1077, 108)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(35, 19)
+        Me.Label8.Size = New System.Drawing.Size(42, 24)
         Me.Label8.TabIndex = 58
         Me.Label8.Text = "TIN"
         '
@@ -243,9 +279,10 @@ Partial Class frmManageBilling
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(808, 8)
+        Me.Label7.Location = New System.Drawing.Point(1077, 10)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(84, 19)
+        Me.Label7.Size = New System.Drawing.Size(101, 24)
         Me.Label7.TabIndex = 56
         Me.Label7.Text = "Salesman"
         '
@@ -255,9 +292,10 @@ Partial Class frmManageBilling
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(548, 88)
+        Me.Label6.Location = New System.Drawing.Point(731, 108)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(44, 19)
+        Me.Label6.Size = New System.Drawing.Size(53, 24)
         Me.Label6.TabIndex = 54
         Me.Label6.Text = "Date"
         '
@@ -273,13 +311,13 @@ Partial Class frmManageBilling
         Me.txtPONo.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtPONo.ForeColor = System.Drawing.Color.Black
         Me.txtPONo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtPONo.Location = New System.Drawing.Point(552, 31)
-        Me.txtPONo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPONo.Location = New System.Drawing.Point(736, 38)
+        Me.txtPONo.Margin = New System.Windows.Forms.Padding(5)
         Me.txtPONo.Name = "txtPONo"
         Me.txtPONo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPONo.PlaceholderText = "Enter purchase order number"
         Me.txtPONo.SelectedText = ""
-        Me.txtPONo.Size = New System.Drawing.Size(235, 36)
+        Me.txtPONo.Size = New System.Drawing.Size(313, 44)
         Me.txtPONo.TabIndex = 53
         '
         'Label5
@@ -288,9 +326,10 @@ Partial Class frmManageBilling
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(548, 8)
+        Me.Label5.Location = New System.Drawing.Point(731, 10)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(103, 19)
+        Me.Label5.Size = New System.Drawing.Size(128, 24)
         Me.Label5.TabIndex = 52
         Me.Label5.Text = "P.O. Number"
         '
@@ -306,13 +345,13 @@ Partial Class frmManageBilling
         Me.txtPrice.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtPrice.ForeColor = System.Drawing.Color.Black
         Me.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtPrice.Location = New System.Drawing.Point(298, 111)
-        Me.txtPrice.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPrice.Location = New System.Drawing.Point(397, 137)
+        Me.txtPrice.Margin = New System.Windows.Forms.Padding(5)
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPrice.PlaceholderText = "Enter price"
         Me.txtPrice.SelectedText = ""
-        Me.txtPrice.Size = New System.Drawing.Size(233, 36)
+        Me.txtPrice.Size = New System.Drawing.Size(311, 44)
         Me.txtPrice.TabIndex = 51
         '
         'Label3
@@ -321,9 +360,10 @@ Partial Class frmManageBilling
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(294, 88)
+        Me.Label3.Location = New System.Drawing.Point(392, 108)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(48, 19)
+        Me.Label3.Size = New System.Drawing.Size(58, 24)
         Me.Label3.TabIndex = 50
         Me.Label3.Text = "Price"
         '
@@ -339,13 +379,13 @@ Partial Class frmManageBilling
         Me.txtTerms.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtTerms.ForeColor = System.Drawing.Color.Black
         Me.txtTerms.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtTerms.Location = New System.Drawing.Point(298, 31)
-        Me.txtTerms.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTerms.Location = New System.Drawing.Point(397, 38)
+        Me.txtTerms.Margin = New System.Windows.Forms.Padding(5)
         Me.txtTerms.Name = "txtTerms"
         Me.txtTerms.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtTerms.PlaceholderText = "Enter terms"
         Me.txtTerms.SelectedText = ""
-        Me.txtTerms.Size = New System.Drawing.Size(233, 36)
+        Me.txtTerms.Size = New System.Drawing.Size(311, 44)
         Me.txtTerms.TabIndex = 49
         '
         'Label2
@@ -354,9 +394,10 @@ Partial Class frmManageBilling
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(294, 8)
+        Me.Label2.Location = New System.Drawing.Point(392, 10)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 19)
+        Me.Label2.Size = New System.Drawing.Size(69, 24)
         Me.Label2.TabIndex = 48
         Me.Label2.Text = "Terms"
         '
@@ -368,17 +409,18 @@ Partial Class frmManageBilling
         Me.txtCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtCompanyName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCompanyName.Enabled = False
         Me.txtCompanyName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCompanyName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtCompanyName.ForeColor = System.Drawing.Color.Black
         Me.txtCompanyName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtCompanyName.Location = New System.Drawing.Point(1, 31)
-        Me.txtCompanyName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCompanyName.Location = New System.Drawing.Point(1, 38)
+        Me.txtCompanyName.Margin = New System.Windows.Forms.Padding(5)
         Me.txtCompanyName.Name = "txtCompanyName"
         Me.txtCompanyName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtCompanyName.PlaceholderText = "Enter company name"
+        Me.txtCompanyName.PlaceholderText = "Search product name"
         Me.txtCompanyName.SelectedText = ""
-        Me.txtCompanyName.Size = New System.Drawing.Size(276, 36)
+        Me.txtCompanyName.Size = New System.Drawing.Size(304, 44)
         Me.txtCompanyName.TabIndex = 45
         '
         'Label4
@@ -387,18 +429,20 @@ Partial Class frmManageBilling
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(-3, 8)
+        Me.Label4.Location = New System.Drawing.Point(-4, 10)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(131, 19)
+        Me.Label4.Size = New System.Drawing.Size(158, 24)
         Me.Label4.TabIndex = 44
         Me.Label4.Text = "Company Name"
         '
         'Panel10
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel10.Location = New System.Drawing.Point(0, 55)
+        Me.Panel10.Location = New System.Drawing.Point(0, 68)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1069, 10)
+        Me.Panel10.Size = New System.Drawing.Size(1427, 12)
         Me.Panel10.TabIndex = 38
         '
         'Panel5
@@ -406,8 +450,9 @@ Partial Class frmManageBilling
         Me.Panel5.BackColor = System.Drawing.Color.White
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel5.Location = New System.Drawing.Point(0, 40)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(10, 573)
+        Me.Panel5.Size = New System.Drawing.Size(13, 715)
         Me.Panel5.TabIndex = 34
         '
         'btnInsert
@@ -424,14 +469,17 @@ Partial Class frmManageBilling
         Me.btnInsert.ForeColor = System.Drawing.Color.White
         Me.btnInsert.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnInsert.Location = New System.Drawing.Point(0, 0)
+        Me.btnInsert.Margin = New System.Windows.Forms.Padding(4)
         Me.btnInsert.Name = "btnInsert"
         Me.btnInsert.PressedDepth = 20
-        Me.btnInsert.Size = New System.Drawing.Size(140, 40)
+        Me.btnInsert.Size = New System.Drawing.Size(187, 50)
         Me.btnInsert.TabIndex = 45
         Me.btnInsert.Text = "Insert"
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.lblProductID)
+        Me.Guna2GroupBox1.Controls.Add(Me.lblSuppID)
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.Controls.Add(Me.ListView1)
         Me.Guna2GroupBox1.Controls.Add(Me.Panel8)
@@ -442,12 +490,13 @@ Partial Class frmManageBilling
         Me.Guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(10, 10)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(13, 12)
+        Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.ShadowDecoration.BorderRadius = 0
         Me.Guna2GroupBox1.ShadowDecoration.Enabled = True
         Me.Guna2GroupBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1089, 613)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1453, 755)
         Me.Guna2GroupBox1.TabIndex = 15
         '
         'Label1
@@ -456,9 +505,10 @@ Partial Class frmManageBilling
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(10, 8)
+        Me.Label1.Location = New System.Drawing.Point(13, 10)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(140, 22)
+        Me.Label1.Size = New System.Drawing.Size(178, 29)
         Me.Label1.TabIndex = 37
         Me.Label1.Text = "Billing Invoice"
         '
@@ -471,9 +521,10 @@ Partial Class frmManageBilling
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
         Me.ListView1.HoverSelection = True
-        Me.ListView1.Location = New System.Drawing.Point(10, 215)
+        Me.ListView1.Location = New System.Drawing.Point(13, 255)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1069, 333)
+        Me.ListView1.Size = New System.Drawing.Size(1427, 420)
         Me.ListView1.TabIndex = 36
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -519,18 +570,20 @@ Partial Class frmManageBilling
         Me.Panel8.Controls.Add(Me.Panel10)
         Me.Panel8.Controls.Add(Me.Panel9)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel8.Location = New System.Drawing.Point(10, 548)
+        Me.Panel8.Location = New System.Drawing.Point(13, 675)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1069, 65)
+        Me.Panel8.Size = New System.Drawing.Size(1427, 80)
         Me.Panel8.TabIndex = 35
         '
         'Panel18
         '
         Me.Panel18.Controls.Add(Me.btnDelete)
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel18.Location = New System.Drawing.Point(929, 15)
+        Me.Panel18.Location = New System.Drawing.Point(1240, 18)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(140, 40)
+        Me.Panel18.Size = New System.Drawing.Size(187, 50)
         Me.Panel18.TabIndex = 43
         '
         'btnDelete
@@ -547,9 +600,10 @@ Partial Class frmManageBilling
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnDelete.Location = New System.Drawing.Point(0, 0)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedDepth = 20
-        Me.btnDelete.Size = New System.Drawing.Size(140, 40)
+        Me.btnDelete.Size = New System.Drawing.Size(187, 50)
         Me.btnDelete.TabIndex = 48
         Me.btnDelete.Text = "Delete"
         '
@@ -557,9 +611,10 @@ Partial Class frmManageBilling
         '
         Me.Panel17.Controls.Add(Me.btnUpdate)
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel17.Location = New System.Drawing.Point(300, 15)
+        Me.Panel17.Location = New System.Drawing.Point(400, 18)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(140, 40)
+        Me.Panel17.Size = New System.Drawing.Size(187, 50)
         Me.Panel17.TabIndex = 43
         '
         'btnUpdate
@@ -576,27 +631,30 @@ Partial Class frmManageBilling
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
         Me.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnUpdate.Location = New System.Drawing.Point(0, 0)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.PressedDepth = 20
-        Me.btnUpdate.Size = New System.Drawing.Size(140, 40)
+        Me.btnUpdate.Size = New System.Drawing.Size(187, 50)
         Me.btnUpdate.TabIndex = 47
         Me.btnUpdate.Text = "Update"
         '
         'Panel15
         '
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel15.Location = New System.Drawing.Point(290, 15)
+        Me.Panel15.Location = New System.Drawing.Point(387, 18)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(10, 40)
+        Me.Panel15.Size = New System.Drawing.Size(13, 50)
         Me.Panel15.TabIndex = 41
         '
         'Panel13
         '
         Me.Panel13.Controls.Add(Me.btnPrint)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel13.Location = New System.Drawing.Point(150, 15)
+        Me.Panel13.Location = New System.Drawing.Point(200, 18)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(140, 40)
+        Me.Panel13.Size = New System.Drawing.Size(187, 50)
         Me.Panel13.TabIndex = 40
         '
         'btnPrint
@@ -613,72 +671,111 @@ Partial Class frmManageBilling
         Me.btnPrint.ForeColor = System.Drawing.Color.White
         Me.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnPrint.Location = New System.Drawing.Point(0, 0)
+        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.PressedDepth = 20
-        Me.btnPrint.Size = New System.Drawing.Size(140, 40)
+        Me.btnPrint.Size = New System.Drawing.Size(187, 50)
         Me.btnPrint.TabIndex = 46
         Me.btnPrint.Text = "Print"
         '
         'Panel12
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel12.Location = New System.Drawing.Point(140, 15)
+        Me.Panel12.Location = New System.Drawing.Point(187, 18)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(10, 40)
+        Me.Panel12.Size = New System.Drawing.Size(13, 50)
         Me.Panel12.TabIndex = 40
         '
         'Panel11
         '
         Me.Panel11.Controls.Add(Me.btnInsert)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel11.Location = New System.Drawing.Point(0, 15)
+        Me.Panel11.Location = New System.Drawing.Point(0, 18)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(140, 40)
+        Me.Panel11.Size = New System.Drawing.Size(187, 50)
         Me.Panel11.TabIndex = 39
         '
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(10, 0)
+        Me.Panel4.Location = New System.Drawing.Point(13, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1089, 10)
+        Me.Panel4.Size = New System.Drawing.Size(1453, 12)
         Me.Panel4.TabIndex = 12
         '
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(10, 623)
+        Me.Panel3.Size = New System.Drawing.Size(13, 767)
         Me.Panel3.TabIndex = 13
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 623)
+        Me.Panel2.Location = New System.Drawing.Point(0, 767)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1099, 10)
+        Me.Panel2.Size = New System.Drawing.Size(1466, 12)
         Me.Panel2.TabIndex = 14
         '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(1099, 0)
+        Me.Panel1.Location = New System.Drawing.Point(1466, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(10, 633)
+        Me.Panel1.Size = New System.Drawing.Size(13, 779)
         Me.Panel1.TabIndex = 11
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'lblSuppID
+        '
+        Me.lblSuppID.AutoSize = True
+        Me.lblSuppID.BackColor = System.Drawing.Color.Transparent
+        Me.lblSuppID.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblSuppID.ForeColor = System.Drawing.Color.White
+        Me.lblSuppID.Location = New System.Drawing.Point(323, 4)
+        Me.lblSuppID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSuppID.Name = "lblSuppID"
+        Me.lblSuppID.Size = New System.Drawing.Size(178, 29)
+        Me.lblSuppID.TabIndex = 38
+        Me.lblSuppID.Text = "Billing Invoice"
+        '
+        'lblProductID
+        '
+        Me.lblProductID.AutoSize = True
+        Me.lblProductID.BackColor = System.Drawing.Color.Transparent
+        Me.lblProductID.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblProductID.ForeColor = System.Drawing.Color.White
+        Me.lblProductID.Location = New System.Drawing.Point(568, 10)
+        Me.lblProductID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblProductID.Name = "lblProductID"
+        Me.lblProductID.Size = New System.Drawing.Size(178, 29)
+        Me.lblProductID.TabIndex = 39
+        Me.lblProductID.Text = "Billing Invoice"
         '
         'frmManageBilling
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1109, 633)
+        Me.ClientSize = New System.Drawing.Size(1479, 779)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmManageBilling"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel7.ResumeLayout(False)
@@ -690,6 +787,7 @@ Partial Class frmManageBilling
         Me.Panel17.ResumeLayout(False)
         Me.Panel13.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -697,7 +795,7 @@ Partial Class frmManageBilling
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents Guna2DateTimePicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents dtpDate As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents cboSalesman As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents btnSearchProduct As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtProductName As Guna.UI2.WinForms.Guna2TextBox
@@ -739,4 +837,8 @@ Partial Class frmManageBilling
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnSearchCustomer As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents lblProductID As Label
+    Friend WithEvents lblSuppID As Label
 End Class
