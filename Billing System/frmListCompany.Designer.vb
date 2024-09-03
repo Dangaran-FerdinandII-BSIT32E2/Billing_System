@@ -80,7 +80,6 @@ Partial Class frmListCompany
         Me.ListView1.GridLines = True
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
-        Me.ListView1.HoverSelection = True
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
         Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"

@@ -46,7 +46,8 @@ Public Class frmListCompany
 
             If ListView1.SelectedItems.Count > 0 Then
                 frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
-                frmManageBilling.lblSuppID.Text = ListView1.SelectedItems(0).SubItems(6).Text
+                frmManageBilling.lblCustID.Text = ListView1.SelectedItems(0).SubItems(6).Text
+                Call frmManageBilling.loadBilling()
             End If
 
         Catch ex As Exception
@@ -59,6 +60,7 @@ Public Class frmListCompany
     End Sub
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+
         Me.Close()
     End Sub
 
