@@ -175,7 +175,6 @@ Partial Class frmManageUsers
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.DisplayIndex = 3
         Me.ColumnHeader4.Text = "Password"
         Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader4.Width = 200
@@ -215,7 +214,6 @@ Partial Class frmManageUsers
         '
         'ColumnHeader5
         '
-        Me.ColumnHeader5.DisplayIndex = 4
         Me.ColumnHeader5.Text = "Username"
         Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader5.Width = 250
@@ -652,7 +650,7 @@ Partial Class frmManageUsers
         Me.cboRole.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.cboRole.ForeColor = System.Drawing.Color.Black
         Me.cboRole.ItemHeight = 30
-        Me.cboRole.Items.AddRange(New Object() {"Role 1", "Role 2", "Role 3", "Role 4", "Role 5"})
+        Me.cboRole.Items.AddRange(New Object() {"Sales", "Finance", "Controller", "Purchaser"})
         Me.cboRole.Location = New System.Drawing.Point(376, 172)
         Me.cboRole.Margin = New System.Windows.Forms.Padding(4)
         Me.cboRole.Name = "cboRole"

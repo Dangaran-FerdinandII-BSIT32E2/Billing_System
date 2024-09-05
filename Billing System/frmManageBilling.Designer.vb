@@ -49,6 +49,7 @@ Partial Class frmManageBilling
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnInsert = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.lblBillID = New System.Windows.Forms.Label()
         Me.lblSuppID = New System.Windows.Forms.Label()
         Me.lblPrice = New System.Windows.Forms.Label()
         Me.lblQty = New System.Windows.Forms.Label()
@@ -76,7 +77,6 @@ Partial Class frmManageBilling
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.lblBillID = New System.Windows.Forms.Label()
         Me.Panel7.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -507,6 +507,20 @@ Partial Class frmManageBilling
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1453, 755)
         Me.Guna2GroupBox1.TabIndex = 15
         '
+        'lblBillID
+        '
+        Me.lblBillID.AutoSize = True
+        Me.lblBillID.BackColor = System.Drawing.Color.Transparent
+        Me.lblBillID.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBillID.ForeColor = System.Drawing.Color.White
+        Me.lblBillID.Location = New System.Drawing.Point(747, 10)
+        Me.lblBillID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblBillID.Name = "lblBillID"
+        Me.lblBillID.Size = New System.Drawing.Size(57, 16)
+        Me.lblBillID.TabIndex = 43
+        Me.lblBillID.Text = "lblBillID"
+        Me.lblBillID.Visible = False
+        '
         'lblSuppID
         '
         Me.lblSuppID.AutoSize = True
@@ -816,20 +830,6 @@ Partial Class frmManageBilling
         '
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink
         Me.ErrorProvider1.ContainerControl = Me
-        '
-        'lblBillID
-        '
-        Me.lblBillID.AutoSize = True
-        Me.lblBillID.BackColor = System.Drawing.Color.Transparent
-        Me.lblBillID.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBillID.ForeColor = System.Drawing.Color.White
-        Me.lblBillID.Location = New System.Drawing.Point(747, 10)
-        Me.lblBillID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblBillID.Name = "lblBillID"
-        Me.lblBillID.Size = New System.Drawing.Size(57, 16)
-        Me.lblBillID.TabIndex = 43
-        Me.lblBillID.Text = "lblBillID"
-        Me.lblBillID.Visible = False
         '
         'frmManageBilling
         '

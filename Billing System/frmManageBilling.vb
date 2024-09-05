@@ -186,4 +186,31 @@ Public Class frmManageBilling
             lblBillID.Text = 0
         End Try
     End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            If lblBillID.Text IsNot Nothing Then
+                If MsgBox("Do you want to delete billing?", vbYesNo) = vbYes Then
+                    sql = "DELETE FROM tblbilling WHERE BillingID = @billid"
+                    cmd = New MySqlCommand(sql, cn)
+                    cmd.Parameters.AddWithValue("@billid", lblBillID.Text)
+                    cmd.ExecuteNonQuery()
+
+                    Call loadBilling()
+
+                    MsgBox("Successfully deleted!", MsgBoxStyle.Information)
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageUsers(btnDelete): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
 End Class
