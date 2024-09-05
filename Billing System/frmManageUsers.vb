@@ -11,7 +11,7 @@ Public Class frmManageUsers
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT * FROM tblusers"
+            sql = "SELECT * FROM tblusers WHERE Role <> 'Admin'"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -19,13 +19,13 @@ Public Class frmManageUsers
             ListView1.Items.Clear()
 
             Do While dr.Read = True
-                x = New ListViewItem(dr("UserID").ToString())
-                x.SubItems.Add(dr("FirstName").ToString())
+                x = New ListViewItem(dr("FirstName").ToString())
                 x.SubItems.Add(dr("LastName").ToString())
                 x.SubItems.Add(dr("Password").ToString())
                 x.SubItems.Add(dr("Username").ToString())
                 x.SubItems.Add(dr("Role").ToString())
                 x.SubItems.Add(dr("Status").ToString())
+                x.SubItems.Add(dr("UserID").ToString())
                 ListView1.Items.Add(x)
             Loop
             dr.Close()
@@ -39,7 +39,7 @@ Public Class frmManageUsers
     End Sub
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
-            txtUserID.Text = ListView1.SelectedItems(0).SubItems(0).Text
+            txtUserID.Text = ListView1.SelectedItems(0).SubItems(6).Text
         End If
 
         btnCreateNew.Enabled = False
