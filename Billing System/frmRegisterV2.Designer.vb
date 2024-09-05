@@ -90,7 +90,7 @@ Partial Class frmRegisterV2
         Me.cboRole.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.cboRole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(207, Byte), Integer))
         Me.cboRole.ItemHeight = 30
-        Me.cboRole.Items.AddRange(New Object() {"Choose your role...", "Role 1", "Role 2", "Role 3"})
+        Me.cboRole.Items.AddRange(New Object() {"Choose your role...", "Sales", "Finance", "Controller", "Purchaser"})
         Me.cboRole.ItemsAppearance.ForeColor = System.Drawing.Color.Black
         Me.cboRole.Location = New System.Drawing.Point(408, 647)
         Me.cboRole.Margin = New System.Windows.Forms.Padding(4)

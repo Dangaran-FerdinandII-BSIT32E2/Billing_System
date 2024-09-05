@@ -1,0 +1,106 @@
+﻿Imports System.Data.OleDb
+Imports MySql.Data.MySqlClient
+
+Public Class frmListCompany
+    Private Sub frmListCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call connection()
+        Call loadCustomers()
+    End Sub
+
+    Private Sub loadCustomers()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+            sql = "SELECT * FROM tblcustomer"
+            cmd = New MySqlCommand(sql, cn)
+            dr = cmd.ExecuteReader
+
+            Dim x As ListViewItem
+            ListView1.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("CompanyName").ToString())
+                x.SubItems.Add(dr("LastName").ToString())
+                x.SubItems.Add(dr("FirstName").ToString())
+                x.SubItems.Add(dr("PhoneNumber").ToString())
+                x.SubItems.Add(dr("Email").ToString())
+                x.SubItems.Add(dr("Status").ToString())
+                x.SubItems.Add(dr("CustomerID").ToString())
+                ListView1.Items.Add(x)
+            Loop
+        Catch ex As Exception
+            MsgBox("An error occurred frmListCompany(loadCustomers): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            If ListView1.SelectedItems.Count > 0 Then
+                frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                frmManageBilling.lblCustID.Text = ListView1.SelectedItems(0).SubItems(6).Text
+                Call frmManageBilling.loadBilling()
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmListCompany(SelectedIndexChanged): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+
+        Me.Close()
+    End Sub
+
+    Private Sub txtSearchProduct_TextChanged(sender As Object, e As EventArgs) Handles txtSearchProduct.TextChanged
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            Dim dt As DataTable = SearchDatabase(txtSearchProduct.Text)
+            PopulateListView(dt)
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmListCompany(SearchCompany): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub PopulateListView(dt As DataTable)
+        ListView1.Items.Clear()
+        For Each row As DataRow In dt.Rows
+            ListView1.Items.Add(New ListViewItem(row.ItemArray.Select(Function(x) x.ToString()).ToArray()))
+        Next
+    End Sub
+
+    Public Function SearchDatabase(searchTerm As String) As DataTable
+        sql = "SELECT CompanyName, LastName, FirstName, PhoneNumber, Email, Status FROM tblcustomer WHERE CompanyName LIKE ? OR LastName LIKE ? OR FirstName LIKE ?"
+
+        cmd = New MySqlCommand(sql, cn)
+        cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
+        cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
+        cmd.Parameters.Add(New MySqlParameter("searchTerm3", "%" & searchTerm & "%"))
+
+        Dim dt As New DataTable
+        Dim da As New MySqlDataAdapter(cmd)
+        da.Fill(dt)
+
+        Return dt
+    End Function
+End Class
