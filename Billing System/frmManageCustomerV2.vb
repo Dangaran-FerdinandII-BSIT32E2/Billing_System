@@ -52,10 +52,6 @@ Public Class frmManageCustomerV2
         End Try
     End Sub
 
-<<<<<<< Updated upstream
-    Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click
-        frmListofOrder.Show()
-=======
     Private Sub txtSearchCustomer_TextChanged(sender As Object, e As EventArgs) Handles txtSearchCustomer.TextChanged
         cn.Close()
         Dim dt As DataTable = SearchDatabase(txtSearchCustomer.Text)
@@ -78,6 +74,5 @@ Public Class frmManageCustomerV2
         For Each row As DataRow In dt.Rows
             ListView1.Items.Add(New ListViewItem(row.ItemArray.Select(Function(x) x.ToString()).ToArray()))
         Next
->>>>>>> Stashed changes
     End Sub
 End Class
