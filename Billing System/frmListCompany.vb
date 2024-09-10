@@ -27,6 +27,7 @@ Public Class frmListCompany
                 x.SubItems.Add(dr("Email").ToString())
                 x.SubItems.Add(dr("Status").ToString())
                 x.SubItems.Add(dr("CustomerID").ToString())
+                x.SubItems.Add(dr("TIN").ToString())
                 ListView1.Items.Add(x)
             Loop
         Catch ex As Exception
@@ -47,6 +48,7 @@ Public Class frmListCompany
             If ListView1.SelectedItems.Count > 0 Then
                 frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
                 frmManageBilling.lblCustID.Text = ListView1.SelectedItems(0).SubItems(6).Text
+                frmManageBilling.txtTIN.Text = ListView1.SelectedItems(0).SubItems(7).Text
                 Call frmManageBilling.loadBilling()
             End If
 

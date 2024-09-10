@@ -57,6 +57,7 @@ Partial Class frmPrintInvoice
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btnPrint = New Guna.UI2.WinForms.Guna2Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblTotalAmount = New System.Windows.Forms.Label()
@@ -88,6 +89,7 @@ Partial Class frmPrintInvoice
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
+        Me.lblCustID = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
@@ -98,10 +100,11 @@ Partial Class frmPrintInvoice
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.lblCustID)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1264, 52)
         Me.Panel1.TabIndex = 0
@@ -121,7 +124,7 @@ Partial Class frmPrintInvoice
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 52)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(13, 810)
         Me.Panel2.TabIndex = 1
@@ -130,7 +133,7 @@ Partial Class frmPrintInvoice
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel3.Location = New System.Drawing.Point(1251, 52)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(13, 798)
         Me.Panel3.TabIndex = 2
@@ -139,7 +142,7 @@ Partial Class frmPrintInvoice
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel4.Location = New System.Drawing.Point(13, 850)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1251, 12)
         Me.Panel4.TabIndex = 3
@@ -447,7 +450,7 @@ Partial Class frmPrintInvoice
         'Panel5
         '
         Me.Panel5.Location = New System.Drawing.Point(735, 52)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(24, 159)
         Me.Panel5.TabIndex = 78
@@ -461,7 +464,7 @@ Partial Class frmPrintInvoice
         Me.Guna2Panel1.Controls.Add(Me.Guna2Panel2)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel1.Location = New System.Drawing.Point(13, 235)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1238, 615)
         Me.Guna2Panel1.TabIndex = 79
@@ -470,6 +473,7 @@ Partial Class frmPrintInvoice
         '
         Me.Guna2Panel4.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel4.BorderThickness = 1
+        Me.Guna2Panel4.Controls.Add(Me.btnCancel)
         Me.Guna2Panel4.Controls.Add(Me.btnPrint)
         Me.Guna2Panel4.Controls.Add(Me.GroupBox1)
         Me.Guna2Panel4.Controls.Add(Me.Label48)
@@ -489,10 +493,30 @@ Partial Class frmPrintInvoice
         Me.Guna2Panel4.Controls.Add(Me.Label30)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel4.Location = New System.Drawing.Point(823, 66)
-        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.Size = New System.Drawing.Size(415, 549)
         Me.Guna2Panel4.TabIndex = 4
+        '
+        'btnCancel
+        '
+        Me.btnCancel.BorderRadius = 8
+        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCancel.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnCancel.Location = New System.Drawing.Point(16, 490)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.PressedDepth = 20
+        Me.btnCancel.Size = New System.Drawing.Size(381, 44)
+        Me.btnCancel.TabIndex = 98
+        Me.btnCancel.Text = "Cancel"
         '
         'btnPrint
         '
@@ -506,8 +530,8 @@ Partial Class frmPrintInvoice
         Me.btnPrint.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnPrint.ForeColor = System.Drawing.Color.White
         Me.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnPrint.Location = New System.Drawing.Point(16, 485)
-        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPrint.Location = New System.Drawing.Point(16, 438)
+        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.PressedDepth = 20
         Me.btnPrint.Size = New System.Drawing.Size(381, 44)
@@ -519,10 +543,10 @@ Partial Class frmPrintInvoice
         Me.GroupBox1.Controls.Add(Me.lblTotalAmount)
         Me.GroupBox1.Controls.Add(Me.Label47)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 342)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 307)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(381, 123)
         Me.GroupBox1.TabIndex = 96
         Me.GroupBox1.TabStop = False
@@ -722,7 +746,7 @@ Partial Class frmPrintInvoice
         Me.Guna2Panel3.Controls.Add(Me.ListView1)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel3.Location = New System.Drawing.Point(0, 66)
-        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.Size = New System.Drawing.Size(823, 549)
         Me.Guna2Panel3.TabIndex = 3
@@ -738,7 +762,7 @@ Partial Class frmPrintInvoice
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(823, 549)
         Me.ListView1.TabIndex = 37
@@ -784,7 +808,7 @@ Partial Class frmPrintInvoice
         Me.Guna2Panel2.Controls.Add(Me.Label29)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.Size = New System.Drawing.Size(1238, 66)
         Me.Guna2Panel2.TabIndex = 2
@@ -837,6 +861,17 @@ Partial Class frmPrintInvoice
         Me.Label29.TabIndex = 83
         Me.Label29.Text = "TERMS:"
         '
+        'lblCustID
+        '
+        Me.lblCustID.AutoSize = True
+        Me.lblCustID.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCustID.Location = New System.Drawing.Point(349, 9)
+        Me.lblCustID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCustID.Name = "lblCustID"
+        Me.lblCustID.Size = New System.Drawing.Size(63, 16)
+        Me.lblCustID.TabIndex = 80
+        Me.lblCustID.Text = "lblCustID"
+        '
         'frmPrintInvoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -877,7 +912,7 @@ Partial Class frmPrintInvoice
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPrintInvoice"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
@@ -961,4 +996,6 @@ Partial Class frmPrintInvoice
     Friend WithEvents lblTotalAmount As Label
     Friend WithEvents Label47 As Label
     Friend WithEvents btnPrint As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents lblCustID As Label
 End Class

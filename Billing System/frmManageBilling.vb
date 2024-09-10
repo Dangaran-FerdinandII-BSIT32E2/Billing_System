@@ -5,7 +5,34 @@ Imports MySql.Data.MySqlClient
 Public Class frmManageBilling
     Private Sub frmManageBilling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+        lblBillingID.Text = nextBillID()
     End Sub
+    Private Function nextBillID() As Integer
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            Dim nextID As Integer = 1
+
+            sql = "SELECT MAX(BillingID) AS lastID FROM tblbilling"
+            cmd = New MySqlCommand(sql, cn)
+            Dim result As Object = cmd.ExecuteScalar()
+
+            If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+                nextID = CInt(result) + 1
+            End If
+
+            Return nextID
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageBilling(nextBillID): " & ex.Message)
+            Return -1
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Function
     Private Sub btnPrint_Click_1(sender As Object, e As EventArgs) Handles btnPrint.Click
         'frmPrintInvoice.ShowDialog()
     End Sub
@@ -42,6 +69,7 @@ Public Class frmManageBilling
                 x.SubItems.Add(dr("SellingPrice").ToString())
                 x.SubItems.Add(dr("Amount").ToString())
                 x.SubItems.Add(dr("OrderID").ToString())
+                x.SubItems.Add(dr("ProductID").ToString())
                 ListView1.Items.Add(x)
             Loop
         Catch ex As Exception
@@ -61,6 +89,7 @@ Public Class frmManageBilling
 
             If ListView1.SelectedItems.Count > 0 Then
                 lblOrderID.Text = ListView1.SelectedItems(0).SubItems(5).Text
+                lblProdID.Text = ListView1.SelectedItems(0).SubItems(6).Text
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(ListView1_SelectedIndexChanged): " & ex.Message)
@@ -173,20 +202,10 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "INSERT INTO tblbilling(CustomerID, SalesMan, TIN, Terms, ProductOrder, Date) VALUES(@CustomerID, @SalesMan, @TIN, @Terms, @ProductOrder, @Date)"
-                cmd = New MySqlCommand(sql, cn)
-                With cmd
-                    .Parameters.AddWithValue("@CustomerID", lblCustID.Text)
-                    .Parameters.AddWithValue("@SalesMan", cboSalesman.Text)
-                    .Parameters.AddWithValue("@TIN", txtTIN.Text)
-                    .Parameters.AddWithValue("@Terms", txtTerms.Text)
-                    .Parameters.AddWithValue("@ProductOrder", txtPONo.Text)
-                    .Parameters.AddWithValue("@Date", dtpDate.Value)
-                    .ExecuteNonQuery()
-                End With
+                Call printBilling() 'forprint
+                Call saveBilling() 'for saving billing information
 
-                Call printBilling()
-
+                MsgBox("Sucessfully saved billing invoice!", MsgBoxStyle.Information, "Billing Invoice")
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(btnPrint): " & ex.Message)
@@ -197,10 +216,6 @@ Public Class frmManageBilling
         End Try
     End Sub
     Private Sub printBilling()
-        For Each listitem As ListViewItem In ListView1.Items
-            Dim X As ListViewItem = listitem.Clone()
-            frmPrintInvoice.ListView1.Items.Add(X)
-        Next
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -223,15 +238,45 @@ Public Class frmManageBilling
                 frmPrintInvoice.lblBusStyle.Text = dr("CompanyName").ToString ' business style
             End If
 
+            frmPrintInvoice.lblCustID.Text = lblCustID.Text
             frmPrintInvoice.lblTerms.Text = txtTerms.Text
             frmPrintInvoice.lblTIN.Text = txtTIN.Text
             frmPrintInvoice.lblSalesman.Text = cboSalesman.Text
             frmPrintInvoice.lblPuchaseNo.Text = txtPONo.Text
             frmPrintInvoice.lblDate.Text = dtpDate.Value.ToString
 
+            For Each listitem As ListViewItem In ListView1.Items 'includes OrderID on SubItem 5
+                Dim X As ListViewItem = listitem.Clone()
+                frmPrintInvoice.ListView1.Items.Add(X)
+            Next
+
             frmPrintInvoice.ShowDialog()
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(printBilling): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub saveBilling()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            For Each order As ListViewItem In ListView1.Items
+                sql = "INSERT INTO tblbillinvoice(BillingID, OrderID, ProductID) VALUES(@BillingID, @OrderID, @ProductID)"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@BillingID", lblBillingID.Text)
+                    .Parameters.AddWithValue("@OrderID", order.SubItems(5).Text)
+                    .Parameters.AddWithValue("@ProductID", order.SubItems(6).Text)
+                    .ExecuteNonQuery()
+                End With
+            Next
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageBilling(saveBilling): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()

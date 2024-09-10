@@ -44,11 +44,6 @@ Partial Class frmManageBilling
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.lblOrderID = New System.Windows.Forms.Label()
-        Me.lblBillID = New System.Windows.Forms.Label()
-        Me.lblSuppID = New System.Windows.Forms.Label()
-        Me.lblPrice = New System.Windows.Forms.Label()
-        Me.lblQty = New System.Windows.Forms.Label()
-        Me.lblProductID = New System.Windows.Forms.Label()
         Me.lblCustID = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -72,6 +67,8 @@ Partial Class frmManageBilling
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.lblBillingID = New System.Windows.Forms.Label()
+        Me.lblProdID = New System.Windows.Forms.Label()
         Me.Panel7.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -361,12 +358,9 @@ Partial Class frmManageBilling
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.lblProdID)
+        Me.Guna2GroupBox1.Controls.Add(Me.lblBillingID)
         Me.Guna2GroupBox1.Controls.Add(Me.lblOrderID)
-        Me.Guna2GroupBox1.Controls.Add(Me.lblBillID)
-        Me.Guna2GroupBox1.Controls.Add(Me.lblSuppID)
-        Me.Guna2GroupBox1.Controls.Add(Me.lblPrice)
-        Me.Guna2GroupBox1.Controls.Add(Me.lblQty)
-        Me.Guna2GroupBox1.Controls.Add(Me.lblProductID)
         Me.Guna2GroupBox1.Controls.Add(Me.lblCustID)
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.Controls.Add(Me.ListView1)
@@ -400,71 +394,6 @@ Partial Class frmManageBilling
         Me.lblOrderID.TabIndex = 44
         Me.lblOrderID.Text = "lblOrderID"
         '
-        'lblBillID
-        '
-        Me.lblBillID.AutoSize = True
-        Me.lblBillID.BackColor = System.Drawing.Color.Transparent
-        Me.lblBillID.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBillID.ForeColor = System.Drawing.Color.White
-        Me.lblBillID.Location = New System.Drawing.Point(747, 10)
-        Me.lblBillID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblBillID.Name = "lblBillID"
-        Me.lblBillID.Size = New System.Drawing.Size(57, 16)
-        Me.lblBillID.TabIndex = 43
-        Me.lblBillID.Text = "lblBillID"
-        '
-        'lblSuppID
-        '
-        Me.lblSuppID.AutoSize = True
-        Me.lblSuppID.BackColor = System.Drawing.Color.Transparent
-        Me.lblSuppID.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSuppID.ForeColor = System.Drawing.Color.White
-        Me.lblSuppID.Location = New System.Drawing.Point(652, 10)
-        Me.lblSuppID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblSuppID.Name = "lblSuppID"
-        Me.lblSuppID.Size = New System.Drawing.Size(69, 16)
-        Me.lblSuppID.TabIndex = 42
-        Me.lblSuppID.Text = "lblSuppID"
-        '
-        'lblPrice
-        '
-        Me.lblPrice.AutoSize = True
-        Me.lblPrice.BackColor = System.Drawing.Color.Transparent
-        Me.lblPrice.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrice.ForeColor = System.Drawing.Color.White
-        Me.lblPrice.Location = New System.Drawing.Point(574, 7)
-        Me.lblPrice.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(56, 16)
-        Me.lblPrice.TabIndex = 41
-        Me.lblPrice.Text = "lblPrice"
-        '
-        'lblQty
-        '
-        Me.lblQty.AutoSize = True
-        Me.lblQty.BackColor = System.Drawing.Color.Transparent
-        Me.lblQty.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQty.ForeColor = System.Drawing.Color.White
-        Me.lblQty.Location = New System.Drawing.Point(512, 7)
-        Me.lblQty.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblQty.Name = "lblQty"
-        Me.lblQty.Size = New System.Drawing.Size(44, 16)
-        Me.lblQty.TabIndex = 40
-        Me.lblQty.Text = "lblQty"
-        '
-        'lblProductID
-        '
-        Me.lblProductID.AutoSize = True
-        Me.lblProductID.BackColor = System.Drawing.Color.Transparent
-        Me.lblProductID.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProductID.ForeColor = System.Drawing.Color.White
-        Me.lblProductID.Location = New System.Drawing.Point(410, 7)
-        Me.lblProductID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblProductID.Name = "lblProductID"
-        Me.lblProductID.Size = New System.Drawing.Size(85, 16)
-        Me.lblProductID.TabIndex = 39
-        Me.lblProductID.Text = "lblProductID"
-        '
         'lblCustID
         '
         Me.lblCustID.AutoSize = True
@@ -477,6 +406,7 @@ Partial Class frmManageBilling
         Me.lblCustID.Size = New System.Drawing.Size(63, 16)
         Me.lblCustID.TabIndex = 38
         Me.lblCustID.Text = "lblCustID"
+        Me.lblCustID.Visible = False
         '
         'Label1
         '
@@ -729,6 +659,32 @@ Partial Class frmManageBilling
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'lblBillingID
+        '
+        Me.lblBillingID.AutoSize = True
+        Me.lblBillingID.BackColor = System.Drawing.Color.Transparent
+        Me.lblBillingID.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBillingID.ForeColor = System.Drawing.Color.White
+        Me.lblBillingID.Location = New System.Drawing.Point(547, 19)
+        Me.lblBillingID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblBillingID.Name = "lblBillingID"
+        Me.lblBillingID.Size = New System.Drawing.Size(77, 16)
+        Me.lblBillingID.TabIndex = 45
+        Me.lblBillingID.Text = "lblBillingID"
+        '
+        'lblProdID
+        '
+        Me.lblProdID.AutoSize = True
+        Me.lblProdID.BackColor = System.Drawing.Color.Transparent
+        Me.lblProdID.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProdID.ForeColor = System.Drawing.Color.White
+        Me.lblProdID.Location = New System.Drawing.Point(671, 7)
+        Me.lblProdID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblProdID.Name = "lblProdID"
+        Me.lblProdID.Size = New System.Drawing.Size(66, 16)
+        Me.lblProdID.TabIndex = 46
+        Me.lblProdID.Text = "lblProdID"
+        '
         'frmManageBilling
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -796,12 +752,9 @@ Partial Class frmManageBilling
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnSearchCustomer As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lblCustID As Label
-    Friend WithEvents lblBillID As Label
-    Friend WithEvents lblSuppID As Label
-    Friend WithEvents lblPrice As Label
-    Friend WithEvents lblQty As Label
-    Friend WithEvents lblProductID As Label
     Friend WithEvents lblOrderID As Label
     Friend WithEvents Printbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents lblBillingID As Label
+    Friend WithEvents lblProdID As Label
 End Class
