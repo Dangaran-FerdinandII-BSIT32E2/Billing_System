@@ -4,6 +4,7 @@
     End Sub
 
     Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click
-        frmListofOrder.Show()
+
+        'frmListofOrder.Show()
     End Sub
 End Class
