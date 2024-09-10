@@ -121,6 +121,12 @@
     <Compile Include="frmListofCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmListofOrder.Designer.vb">
+      <DependentUpon>frmListofOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListofOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmListofSuppliers.Designer.vb">
       <DependentUpon>frmListofSuppliers.vb</DependentUpon>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListofCustomer.resx">
       <DependentUpon>frmListofCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListofOrder.resx">
+      <DependentUpon>frmListofOrder.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListofSuppliers.resx">
       <DependentUpon>frmListofSuppliers.vb</DependentUpon>

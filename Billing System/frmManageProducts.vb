@@ -254,7 +254,7 @@ Public Class frmManageProducts
         PopulateListView(dt)
     End Sub
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "Select * from qryproducts where ProductName Like ? Or Manufacturer Like ?"
+        sql = "Select * from qryproducts where ProductName Like ? Or Manufacturer Like ?" 'CHANGE * TO SPECIFIC
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))

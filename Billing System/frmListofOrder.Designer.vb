@@ -69,6 +69,7 @@ Partial Class frmListofOrder
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.lblCustomerID = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.lblCompanyName = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -102,8 +103,9 @@ Partial Class frmListofOrder
         Me.panelBody.Controls.Add(Me.Panel14)
         Me.panelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBody.Location = New System.Drawing.Point(0, 0)
+        Me.panelBody.Margin = New System.Windows.Forms.Padding(4)
         Me.panelBody.Name = "panelBody"
-        Me.panelBody.Size = New System.Drawing.Size(1028, 609)
+        Me.panelBody.Size = New System.Drawing.Size(1371, 750)
         Me.panelBody.TabIndex = 13
         '
         'Panel11
@@ -111,9 +113,10 @@ Partial Class frmListofOrder
         Me.Panel11.Controls.Add(Me.ListView1)
         Me.Panel11.Controls.Add(Me.Panel1)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel11.Location = New System.Drawing.Point(10, 140)
+        Me.Panel11.Location = New System.Drawing.Point(13, 172)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1008, 459)
+        Me.Panel11.Size = New System.Drawing.Size(1345, 566)
         Me.Panel11.TabIndex = 14
         '
         'ListView1
@@ -126,8 +129,9 @@ Partial Class frmListofOrder
         Me.ListView1.HideSelection = False
         Me.ListView1.HoverSelection = True
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1008, 399)
+        Me.ListView1.Size = New System.Drawing.Size(1345, 492)
         Me.ListView1.TabIndex = 39
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -168,9 +172,10 @@ Partial Class frmListofOrder
         Me.Panel1.Controls.Add(Me.Panel32)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 399)
+        Me.Panel1.Location = New System.Drawing.Point(0, 492)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1008, 60)
+        Me.Panel1.Size = New System.Drawing.Size(1345, 74)
         Me.Panel1.TabIndex = 20
         '
         'Panel34
@@ -178,9 +183,10 @@ Partial Class frmListofOrder
         Me.Panel34.BackColor = System.Drawing.Color.White
         Me.Panel34.Controls.Add(Me.btnOkay)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel34.Location = New System.Drawing.Point(10, 10)
+        Me.Panel34.Location = New System.Drawing.Point(13, 12)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(140, 40)
+        Me.Panel34.Size = New System.Drawing.Size(187, 50)
         Me.Panel34.TabIndex = 18
         '
         'btnOkay
@@ -197,28 +203,31 @@ Partial Class frmListofOrder
         Me.btnOkay.ForeColor = System.Drawing.Color.White
         Me.btnOkay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnOkay.Location = New System.Drawing.Point(0, 0)
+        Me.btnOkay.Margin = New System.Windows.Forms.Padding(4)
         Me.btnOkay.Name = "btnOkay"
         Me.btnOkay.PressedDepth = 20
-        Me.btnOkay.Size = New System.Drawing.Size(140, 40)
+        Me.btnOkay.Size = New System.Drawing.Size(187, 50)
         Me.btnOkay.TabIndex = 57
-        Me.btnOkay.Text = "Okay"
+        Me.btnOkay.Text = "Confirm"
         '
         'Panel33
         '
         Me.Panel33.BackColor = System.Drawing.Color.White
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel33.Location = New System.Drawing.Point(0, 10)
+        Me.Panel33.Location = New System.Drawing.Point(0, 12)
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(10, 40)
+        Me.Panel33.Size = New System.Drawing.Size(13, 50)
         Me.Panel33.TabIndex = 18
         '
         'Panel32
         '
         Me.Panel32.BackColor = System.Drawing.Color.White
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel32.Location = New System.Drawing.Point(0, 50)
+        Me.Panel32.Location = New System.Drawing.Point(0, 62)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(1008, 10)
+        Me.Panel32.Size = New System.Drawing.Size(1345, 12)
         Me.Panel32.TabIndex = 18
         '
         'Panel2
@@ -226,40 +235,45 @@ Partial Class frmListofOrder
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1008, 10)
+        Me.Panel2.Size = New System.Drawing.Size(1345, 12)
         Me.Panel2.TabIndex = 18
         '
         'Panel8
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(10, 130)
+        Me.Panel8.Location = New System.Drawing.Point(13, 160)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1008, 10)
+        Me.Panel8.Size = New System.Drawing.Size(1345, 12)
         Me.Panel8.TabIndex = 7
         '
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel9.Location = New System.Drawing.Point(0, 130)
+        Me.Panel9.Location = New System.Drawing.Point(0, 160)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(10, 469)
+        Me.Panel9.Size = New System.Drawing.Size(13, 578)
         Me.Panel9.TabIndex = 8
         '
         'Panel10
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel10.Location = New System.Drawing.Point(0, 599)
+        Me.Panel10.Location = New System.Drawing.Point(0, 738)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1018, 10)
+        Me.Panel10.Size = New System.Drawing.Size(1358, 12)
         Me.Panel10.TabIndex = 9
         '
         'Panel12
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel12.Location = New System.Drawing.Point(1018, 130)
+        Me.Panel12.Location = New System.Drawing.Point(1358, 160)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(10, 479)
+        Me.Panel12.Size = New System.Drawing.Size(13, 590)
         Me.Panel12.TabIndex = 6
         '
         'Panel14
@@ -272,8 +286,9 @@ Partial Class frmListofOrder
         Me.Panel14.Controls.Add(Me.Panel5)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1028, 130)
+        Me.Panel14.Size = New System.Drawing.Size(1371, 160)
         Me.Panel14.TabIndex = 0
         '
         'Panel25
@@ -288,9 +303,10 @@ Partial Class frmListofOrder
         Me.Panel25.Controls.Add(Me.Panel30)
         Me.Panel25.Controls.Add(Me.Panel31)
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel25.Location = New System.Drawing.Point(0, 82)
+        Me.Panel25.Location = New System.Drawing.Point(0, 100)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(1028, 28)
+        Me.Panel25.Size = New System.Drawing.Size(1371, 34)
         Me.Panel25.TabIndex = 26
         '
         'Panel15
@@ -298,9 +314,10 @@ Partial Class frmListofOrder
         Me.Panel15.BackColor = System.Drawing.Color.Transparent
         Me.Panel15.Controls.Add(Me.lblOrderNo)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel15.Location = New System.Drawing.Point(758, 0)
+        Me.Panel15.Location = New System.Drawing.Point(1009, 0)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(232, 28)
+        Me.Panel15.Size = New System.Drawing.Size(309, 34)
         Me.Panel15.TabIndex = 38
         '
         'lblOrderNo
@@ -311,8 +328,9 @@ Partial Class frmListofOrder
         Me.lblOrderNo.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblOrderNo.ForeColor = System.Drawing.Color.White
         Me.lblOrderNo.Location = New System.Drawing.Point(0, 0)
+        Me.lblOrderNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblOrderNo.Name = "lblOrderNo"
-        Me.lblOrderNo.Size = New System.Drawing.Size(96, 18)
+        Me.lblOrderNo.Size = New System.Drawing.Size(114, 23)
         Me.lblOrderNo.TabIndex = 46
         Me.lblOrderNo.Text = "XXXXXXXX"
         '
@@ -320,9 +338,10 @@ Partial Class frmListofOrder
         '
         Me.Panel18.BackColor = System.Drawing.Color.Transparent
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel18.Location = New System.Drawing.Point(748, 0)
+        Me.Panel18.Location = New System.Drawing.Point(996, 0)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(10, 28)
+        Me.Panel18.Size = New System.Drawing.Size(13, 34)
         Me.Panel18.TabIndex = 37
         '
         'Panel26
@@ -330,9 +349,10 @@ Partial Class frmListofOrder
         Me.Panel26.BackColor = System.Drawing.Color.Transparent
         Me.Panel26.Controls.Add(Me.lblPhoneNumber)
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel26.Location = New System.Drawing.Point(516, 0)
+        Me.Panel26.Location = New System.Drawing.Point(687, 0)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(232, 28)
+        Me.Panel26.Size = New System.Drawing.Size(309, 34)
         Me.Panel26.TabIndex = 36
         '
         'lblPhoneNumber
@@ -343,8 +363,9 @@ Partial Class frmListofOrder
         Me.lblPhoneNumber.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblPhoneNumber.ForeColor = System.Drawing.Color.White
         Me.lblPhoneNumber.Location = New System.Drawing.Point(0, 0)
+        Me.lblPhoneNumber.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPhoneNumber.Name = "lblPhoneNumber"
-        Me.lblPhoneNumber.Size = New System.Drawing.Size(107, 18)
+        Me.lblPhoneNumber.Size = New System.Drawing.Size(131, 23)
         Me.lblPhoneNumber.TabIndex = 46
         Me.lblPhoneNumber.Text = "09123456789"
         '
@@ -352,9 +373,10 @@ Partial Class frmListofOrder
         '
         Me.Panel27.BackColor = System.Drawing.Color.Transparent
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel27.Location = New System.Drawing.Point(506, 0)
+        Me.Panel27.Location = New System.Drawing.Point(674, 0)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(10, 28)
+        Me.Panel27.Size = New System.Drawing.Size(13, 34)
         Me.Panel27.TabIndex = 35
         '
         'Panel28
@@ -362,9 +384,10 @@ Partial Class frmListofOrder
         Me.Panel28.BackColor = System.Drawing.Color.Transparent
         Me.Panel28.Controls.Add(Me.lblEmailAddress)
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel28.Location = New System.Drawing.Point(274, 0)
+        Me.Panel28.Location = New System.Drawing.Point(365, 0)
+        Me.Panel28.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(232, 28)
+        Me.Panel28.Size = New System.Drawing.Size(309, 34)
         Me.Panel28.TabIndex = 34
         '
         'lblEmailAddress
@@ -375,8 +398,9 @@ Partial Class frmListofOrder
         Me.lblEmailAddress.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblEmailAddress.ForeColor = System.Drawing.Color.White
         Me.lblEmailAddress.Location = New System.Drawing.Point(0, 0)
+        Me.lblEmailAddress.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblEmailAddress.Name = "lblEmailAddress"
-        Me.lblEmailAddress.Size = New System.Drawing.Size(155, 18)
+        Me.lblEmailAddress.Size = New System.Drawing.Size(192, 23)
         Me.lblEmailAddress.TabIndex = 45
         Me.lblEmailAddress.Text = "example@gmail.com"
         '
@@ -384,9 +408,10 @@ Partial Class frmListofOrder
         '
         Me.Panel29.BackColor = System.Drawing.Color.Transparent
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel29.Location = New System.Drawing.Point(264, 0)
+        Me.Panel29.Location = New System.Drawing.Point(352, 0)
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(10, 28)
+        Me.Panel29.Size = New System.Drawing.Size(13, 34)
         Me.Panel29.TabIndex = 31
         '
         'Panel30
@@ -394,9 +419,10 @@ Partial Class frmListofOrder
         Me.Panel30.BackColor = System.Drawing.Color.Transparent
         Me.Panel30.Controls.Add(Me.lblContactPerson)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel30.Location = New System.Drawing.Point(10, 0)
+        Me.Panel30.Location = New System.Drawing.Point(13, 0)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(254, 28)
+        Me.Panel30.Size = New System.Drawing.Size(339, 34)
         Me.Panel30.TabIndex = 33
         '
         'lblContactPerson
@@ -407,8 +433,9 @@ Partial Class frmListofOrder
         Me.lblContactPerson.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblContactPerson.ForeColor = System.Drawing.Color.White
         Me.lblContactPerson.Location = New System.Drawing.Point(0, 0)
+        Me.lblContactPerson.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblContactPerson.Name = "lblContactPerson"
-        Me.lblContactPerson.Size = New System.Drawing.Size(114, 18)
+        Me.lblContactPerson.Size = New System.Drawing.Size(143, 23)
         Me.lblContactPerson.TabIndex = 41
         Me.lblContactPerson.Text = "Juan Dela Cruz"
         '
@@ -417,8 +444,9 @@ Partial Class frmListofOrder
         Me.Panel31.BackColor = System.Drawing.Color.Transparent
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel31.Location = New System.Drawing.Point(0, 0)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(10, 28)
+        Me.Panel31.Size = New System.Drawing.Size(13, 34)
         Me.Panel31.TabIndex = 32
         '
         'Panel17
@@ -433,9 +461,10 @@ Partial Class frmListofOrder
         Me.Panel17.Controls.Add(Me.Panel20)
         Me.Panel17.Controls.Add(Me.Panel19)
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel17.Location = New System.Drawing.Point(0, 56)
+        Me.Panel17.Location = New System.Drawing.Point(0, 68)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(1028, 26)
+        Me.Panel17.Size = New System.Drawing.Size(1371, 32)
         Me.Panel17.TabIndex = 26
         '
         'Panel4
@@ -443,9 +472,10 @@ Partial Class frmListofOrder
         Me.Panel4.BackColor = System.Drawing.Color.Transparent
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel4.Location = New System.Drawing.Point(758, 0)
+        Me.Panel4.Location = New System.Drawing.Point(1009, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(232, 26)
+        Me.Panel4.Size = New System.Drawing.Size(309, 32)
         Me.Panel4.TabIndex = 32
         '
         'Label2
@@ -456,8 +486,9 @@ Partial Class frmListofOrder
         Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 19)
+        Me.Label2.Size = New System.Drawing.Size(78, 24)
         Me.Label2.TabIndex = 46
         Me.Label2.Text = "OR No."
         '
@@ -465,9 +496,10 @@ Partial Class frmListofOrder
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(748, 0)
+        Me.Panel3.Location = New System.Drawing.Point(996, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(10, 26)
+        Me.Panel3.Size = New System.Drawing.Size(13, 32)
         Me.Panel3.TabIndex = 31
         '
         'Panel24
@@ -475,9 +507,10 @@ Partial Class frmListofOrder
         Me.Panel24.BackColor = System.Drawing.Color.Transparent
         Me.Panel24.Controls.Add(Me.Label7)
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel24.Location = New System.Drawing.Point(516, 0)
+        Me.Panel24.Location = New System.Drawing.Point(687, 0)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(232, 26)
+        Me.Panel24.Size = New System.Drawing.Size(309, 32)
         Me.Panel24.TabIndex = 30
         '
         'Label7
@@ -488,8 +521,9 @@ Partial Class frmListofOrder
         Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(0, 0)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(124, 19)
+        Me.Label7.Size = New System.Drawing.Size(150, 24)
         Me.Label7.TabIndex = 46
         Me.Label7.Text = "Phone Number"
         '
@@ -497,9 +531,10 @@ Partial Class frmListofOrder
         '
         Me.Panel23.BackColor = System.Drawing.Color.Transparent
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel23.Location = New System.Drawing.Point(506, 0)
+        Me.Panel23.Location = New System.Drawing.Point(674, 0)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(10, 26)
+        Me.Panel23.Size = New System.Drawing.Size(13, 32)
         Me.Panel23.TabIndex = 29
         '
         'Panel22
@@ -507,9 +542,10 @@ Partial Class frmListofOrder
         Me.Panel22.BackColor = System.Drawing.Color.Transparent
         Me.Panel22.Controls.Add(Me.Label5)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel22.Location = New System.Drawing.Point(274, 0)
+        Me.Panel22.Location = New System.Drawing.Point(365, 0)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(232, 26)
+        Me.Panel22.Size = New System.Drawing.Size(309, 32)
         Me.Panel22.TabIndex = 28
         '
         'Label5
@@ -520,8 +556,9 @@ Partial Class frmListofOrder
         Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(118, 19)
+        Me.Label5.Size = New System.Drawing.Size(144, 24)
         Me.Label5.TabIndex = 45
         Me.Label5.Text = "Email Address"
         '
@@ -529,9 +566,10 @@ Partial Class frmListofOrder
         '
         Me.Panel21.BackColor = System.Drawing.Color.Transparent
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel21.Location = New System.Drawing.Point(264, 0)
+        Me.Panel21.Location = New System.Drawing.Point(352, 0)
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(10, 26)
+        Me.Panel21.Size = New System.Drawing.Size(13, 32)
         Me.Panel21.TabIndex = 26
         '
         'Panel20
@@ -539,9 +577,10 @@ Partial Class frmListofOrder
         Me.Panel20.BackColor = System.Drawing.Color.Transparent
         Me.Panel20.Controls.Add(Me.Label1)
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel20.Location = New System.Drawing.Point(10, 0)
+        Me.Panel20.Location = New System.Drawing.Point(13, 0)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(254, 26)
+        Me.Panel20.Size = New System.Drawing.Size(339, 32)
         Me.Panel20.TabIndex = 27
         '
         'Label1
@@ -552,8 +591,9 @@ Partial Class frmListofOrder
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(128, 19)
+        Me.Label1.Size = New System.Drawing.Size(157, 24)
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Contact Person"
         '
@@ -562,38 +602,58 @@ Partial Class frmListofOrder
         Me.Panel19.BackColor = System.Drawing.Color.Transparent
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel19.Location = New System.Drawing.Point(0, 0)
+        Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(10, 26)
+        Me.Panel19.Size = New System.Drawing.Size(13, 32)
         Me.Panel19.TabIndex = 26
         '
         'Panel16
         '
         Me.Panel16.BackColor = System.Drawing.Color.Transparent
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel16.Location = New System.Drawing.Point(0, 46)
+        Me.Panel16.Location = New System.Drawing.Point(0, 56)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(1028, 10)
+        Me.Panel16.Size = New System.Drawing.Size(1371, 12)
         Me.Panel16.TabIndex = 26
         '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Transparent
+        Me.Panel6.Controls.Add(Me.lblCustomerID)
         Me.Panel6.Controls.Add(Me.Panel13)
         Me.Panel6.Controls.Add(Me.lblCompanyName)
         Me.Panel6.Controls.Add(Me.Panel7)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 10)
+        Me.Panel6.Location = New System.Drawing.Point(0, 12)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1028, 36)
+        Me.Panel6.Size = New System.Drawing.Size(1371, 44)
         Me.Panel6.TabIndex = 26
+        '
+        'lblCustomerID
+        '
+        Me.lblCustomerID.AutoSize = True
+        Me.lblCustomerID.BackColor = System.Drawing.Color.Transparent
+        Me.lblCustomerID.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblCustomerID.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCustomerID.ForeColor = System.Drawing.Color.White
+        Me.lblCustomerID.Location = New System.Drawing.Point(206, 0)
+        Me.lblCustomerID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCustomerID.Name = "lblCustomerID"
+        Me.lblCustomerID.Size = New System.Drawing.Size(177, 29)
+        Me.lblCustomerID.TabIndex = 41
+        Me.lblCustomerID.Text = "lblCustomerID"
+        Me.lblCustomerID.Visible = False
         '
         'Panel13
         '
         Me.Panel13.BackColor = System.Drawing.Color.Transparent
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel13.Location = New System.Drawing.Point(1018, 0)
+        Me.Panel13.Location = New System.Drawing.Point(1358, 0)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(10, 36)
+        Me.Panel13.Size = New System.Drawing.Size(13, 44)
         Me.Panel13.TabIndex = 26
         '
         'lblCompanyName
@@ -603,9 +663,10 @@ Partial Class frmListofOrder
         Me.lblCompanyName.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblCompanyName.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.lblCompanyName.ForeColor = System.Drawing.Color.White
-        Me.lblCompanyName.Location = New System.Drawing.Point(10, 0)
+        Me.lblCompanyName.Location = New System.Drawing.Point(13, 0)
+        Me.lblCompanyName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCompanyName.Name = "lblCompanyName"
-        Me.lblCompanyName.Size = New System.Drawing.Size(156, 22)
+        Me.lblCompanyName.Size = New System.Drawing.Size(193, 29)
         Me.lblCompanyName.TabIndex = 40
         Me.lblCompanyName.Text = "Company Name"
         '
@@ -614,8 +675,9 @@ Partial Class frmListofOrder
         Me.Panel7.BackColor = System.Drawing.Color.Transparent
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(10, 36)
+        Me.Panel7.Size = New System.Drawing.Size(13, 44)
         Me.Panel7.TabIndex = 26
         '
         'Panel5
@@ -623,16 +685,18 @@ Partial Class frmListofOrder
         Me.Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1028, 10)
+        Me.Panel5.Size = New System.Drawing.Size(1371, 12)
         Me.Panel5.TabIndex = 26
         '
         'frmListofOrder
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.ClientSize = New System.Drawing.Size(1371, 750)
         Me.Controls.Add(Me.panelBody)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmListofOrder"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.panelBody.ResumeLayout(False)
@@ -715,4 +779,5 @@ Partial Class frmListofOrder
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents lblCustomerID As Label
 End Class

@@ -136,9 +136,9 @@ Partial Class frmListProducts
         Me.Label2.Location = New System.Drawing.Point(13, 18)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(197, 29)
+        Me.Label2.Size = New System.Drawing.Size(170, 29)
         Me.Label2.TabIndex = 32
-        Me.Label2.Text = "List of Products"
+        Me.Label2.Text = "List of Orders"
         '
         'Panel16
         '
@@ -403,7 +403,6 @@ Partial Class frmListProducts
         '
         'ColumnHeader10
         '
-        Me.ColumnHeader10.DisplayIndex = 3
         Me.ColumnHeader10.Text = "Stock"
         Me.ColumnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader10.Width = 180

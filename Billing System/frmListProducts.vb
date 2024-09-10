@@ -47,9 +47,9 @@ Public Class frmListProducts
             End If
 
             If ListView1.SelectedItems.Count > 0 Then
-                frmManageBilling.txtProductName.Text = ListView1.SelectedItems(0).SubItems(0).Text
-                frmManageBilling.lblProductID.Text = ListView1.SelectedItems(0).SubItems(8).Text
-                frmManageBilling.lblSuppID.Text = ListView1.SelectedItems(0).SubItems(10).Text
+                'frmManageBilling.txtProductName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                ' frmManageBilling.lblProductID.Text = ListView1.SelectedItems(0).SubItems(8).Text
+                ' frmManageBilling.lblSuppID.Text = ListView1.SelectedItems(0).SubItems(10).Text
             End If
 
         Catch ex As Exception
@@ -89,7 +89,7 @@ Public Class frmListProducts
 
                 ' Proceed to add to the cart if stock is sufficient
                 If Val(ListView1.SelectedItems(0).SubItems(9).Text) > 0 Then
-                    frmManageBilling.lblQty.Text = Val(j)
+                    ' frmManageBilling.lblQty.Text = Val(j)
                     If cn.State = ConnectionState.Open Then
                         cn.Close()
                     End If
