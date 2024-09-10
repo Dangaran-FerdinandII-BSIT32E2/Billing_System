@@ -115,6 +115,12 @@
     <Compile Include="frmListCompany.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmListofCustomer.Designer.vb">
+      <DependentUpon>frmListofCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListofCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmListofSuppliers.Designer.vb">
       <DependentUpon>frmListofSuppliers.vb</DependentUpon>
     </Compile>
@@ -131,6 +137,12 @@
       <DependentUpon>frmLoginV2.vb</DependentUpon>
     </Compile>
     <Compile Include="frmLoginV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageCustomerV2.Designer.vb">
+      <DependentUpon>frmManageCustomerV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageCustomerV2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmManageInquiry.Designer.vb">
@@ -263,6 +275,9 @@
     <EmbeddedResource Include="frmListCompany.resx">
       <DependentUpon>frmListCompany.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListofCustomer.resx">
+      <DependentUpon>frmListofCustomer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListofSuppliers.resx">
       <DependentUpon>frmListofSuppliers.vb</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoginV2.resx">
       <DependentUpon>frmLoginV2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageCustomerV2.resx">
+      <DependentUpon>frmManageCustomerV2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageInquiry.resx">
       <DependentUpon>frmManageInquiry.vb</DependentUpon>
