@@ -1,91 +1,21 @@
 ﻿Imports System.Data.OleDb
 Imports System.Web.UI.WebControls
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
 Public Class frmManageBilling
     Private Sub frmManageBilling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
     End Sub
     Private Sub btnPrint_Click_1(sender As Object, e As EventArgs) Handles btnPrint.Click
-        frmPrintInvoice.ShowDialog()
+        'frmPrintInvoice.ShowDialog()
     End Sub
 
-    Private Sub btnSearchProduct_Click_1(sender As Object, e As EventArgs) Handles btnSearchProduct.Click
+    Private Sub btnSearchProduct_Click_1(sender As Object, e As EventArgs)
         frmListProducts.ShowDialog()
     End Sub
 
     Private Sub btnSearchCustomer_Click(sender As Object, e As EventArgs) Handles btnSearchCustomer.Click
         frmListCompany.ShowDialog()
-    End Sub
-
-    Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
-        Try
-            Dim filled As Boolean = True
-
-            Dim requiredFields As New Dictionary(Of String, Control) From {
-            {"txtCompanyName", txtCompanyName},
-            {"txtTerms", txtTerms},
-            {"txtPONo", txtPONo},
-            {"cboSalesman", cboSalesman},
-            {"txtProductName", txtProductName},
-            {"txtPrice", txtPrice},
-            {"dtpDate", dtpDate},
-            {"txtTIN", txtTIN}
-        }
-
-            For Each fieldName_controlPair In requiredFields
-                Dim control As Control = fieldName_controlPair.Value
-
-                If control.Text.Trim = "" Then
-                    ErrorProvider1.SetError(control, "This field is required.")
-                    filled = False
-                    Exit For
-                Else
-                    ErrorProvider1.SetError(control, "")
-                End If
-            Next
-
-            If filled Then
-                Try
-                    If cn.State <> ConnectionState.Open Then
-                        cn.Open()
-                    End If
-
-                    sql = "INSERT INTO tblbilling(CustomerID, SupplierID, ProductID, Quantity, Amount, Terms, ProductOrder, Date, SalesMan, TIN) " &
-                        "VALUE(@CustomerID, @SupplierID, @ProductID, @Quantity, @Amount,@Terms, @ProductOrder, @Date, @SalesMan, @TIN)"
-                    cmd = New MySqlCommand(sql, cn)
-                    With cmd
-                        .Parameters.AddWithValue("@CustomerID", lblCustID.Text)
-                        .Parameters.AddWithValue("@SupplierID", lblSuppID.Text)
-                        .Parameters.AddWithValue("@ProductID", lblProductID.Text)
-                        .Parameters.AddWithValue("@Quantity", lblQty.Text)
-                        .Parameters.AddWithValue("@Amount", lblPrice.Text)
-                        .Parameters.AddWithValue("@Terms", txtTerms.Text)
-                        .Parameters.AddWithValue("@ProductOrder", txtPONo.Text)
-                        .Parameters.AddWithValue("@Date", dtpDate.Text)
-                        .Parameters.AddWithValue("@SalesMan", cboSalesman.Text)
-                        .Parameters.AddWithValue("@TIN", txtTIN.Text)
-                        .ExecuteNonQuery()
-                    End With
-
-                    MsgBox("Successfully added!", MsgBoxStyle.Information, "Billing")
-                Catch ex As Exception
-                Finally
-                    If cn.State = ConnectionState.Open Then
-                        cn.Close()
-                    End If
-                End Try
-            End If
-        Catch ex As Exception
-            MsgBox("An error occurred frmManageBilling(btnUpdate): " & ex.Message)
-        Finally
-            Call loadBilling()
-        End Try
-    End Sub
-
-    Private Sub txtPrice_TextChanged(sender As Object, e As EventArgs) Handles txtPrice.TextChanged
-        If Val(txtPrice.Text) > 0 Then
-            lblPrice.Text = Val(txtPrice.Text) * Val(lblQty.Text)
-        End If
     End Sub
     Public Sub loadBilling()
         Try
@@ -93,7 +23,7 @@ Public Class frmManageBilling
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qrybilling WHERE CustomerID = '" & lblCustID.Text & "'"
+            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "')"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -111,7 +41,7 @@ Public Class frmManageBilling
                 x.SubItems.Add(dr("Description").ToString())
                 x.SubItems.Add(dr("SellingPrice").ToString())
                 x.SubItems.Add(dr("Amount").ToString())
-                x.SubItems.Add(dr("BillingID").ToString())
+                x.SubItems.Add(dr("OrderID").ToString())
                 ListView1.Items.Add(x)
             Loop
         Catch ex As Exception
@@ -130,7 +60,7 @@ Public Class frmManageBilling
             End If
 
             If ListView1.SelectedItems.Count > 0 Then
-                lblBillID.Text = ListView1.SelectedItems(0).SubItems(5).Text
+                lblOrderID.Text = ListView1.SelectedItems(0).SubItems(5).Text
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(ListView1_SelectedIndexChanged): " & ex.Message)
@@ -162,7 +92,7 @@ Public Class frmManageBilling
                     End If
 
                     If Val(price) > 0 Then
-                        sql = "UPDATE tblbilling SET Amount=@Amount WHERE BillingID = '" & lblBillID.Text & "'"
+                        sql = "UPDATE tblorder SET Amount=@Amount WHERE OrderID = '" & lblOrderID.Text & "'"
                         cmd = New MySqlCommand(sql, cn)
                         cmd.Parameters.AddWithValue("@Amount", price)
                         cmd.ExecuteNonQuery()
@@ -183,7 +113,7 @@ Public Class frmManageBilling
                 cn.Close()
             End If
             Call loadBilling()
-            lblBillID.Text = 0
+            lblOrderID.Text = 0
         End Try
     End Sub
 
@@ -193,11 +123,11 @@ Public Class frmManageBilling
                 cn.Open()
             End If
 
-            If lblBillID.Text IsNot Nothing Then
-                If MsgBox("Do you want to delete billing?", vbYesNo) = vbYes Then
-                    sql = "DELETE FROM tblbilling WHERE BillingID = @billid"
+            If lblOrderID.Text IsNot Nothing Then
+                If MsgBox("Do you want to delete the order?", vbYesNo) = vbYes Then
+                    sql = "DELETE FROM tblorder WHERE OrderID = @orderid"
                     cmd = New MySqlCommand(sql, cn)
-                    cmd.Parameters.AddWithValue("@billid", lblBillID.Text)
+                    cmd.Parameters.AddWithValue("@orderid", lblOrderID.Text)
                     cmd.ExecuteNonQuery()
 
                     Call loadBilling()
@@ -207,6 +137,101 @@ Public Class frmManageBilling
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageUsers(btnDelete): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub Printbtn_Click(sender As Object, e As EventArgs) Handles Printbtn.Click
+        Try
+            Dim filled As Boolean = True
+
+            Dim requiredFields As New Dictionary(Of String, Control) From {
+            {"txtTerms", txtTerms},
+            {"txtPONo", txtPONo},
+            {"cboSalesman", cboSalesman},
+            {"dtpDate", dtpDate},
+            {"txtTIN", txtTIN}
+        }
+
+            For Each fieldName_controlPair In requiredFields
+                Dim control As Control = fieldName_controlPair.Value
+
+                If control.Text.Trim = "" Then
+                    ErrorProvider1.SetError(control, "This field is required.")
+                    filled = False
+                    Exit For
+                Else
+                    ErrorProvider1.SetError(control, "")
+                End If
+            Next
+
+            If filled Then
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
+
+                sql = "INSERT INTO tblbilling(CustomerID, SalesMan, TIN, Terms, ProductOrder, Date) VALUES(@CustomerID, @SalesMan, @TIN, @Terms, @ProductOrder, @Date)"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@CustomerID", lblCustID.Text)
+                    .Parameters.AddWithValue("@SalesMan", cboSalesman.Text)
+                    .Parameters.AddWithValue("@TIN", txtTIN.Text)
+                    .Parameters.AddWithValue("@Terms", txtTerms.Text)
+                    .Parameters.AddWithValue("@ProductOrder", txtPONo.Text)
+                    .Parameters.AddWithValue("@Date", dtpDate.Value)
+                    .ExecuteNonQuery()
+                End With
+
+                Call printBilling()
+
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageBilling(btnPrint): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub printBilling()
+        For Each listitem As ListViewItem In ListView1.Items
+            Dim X As ListViewItem = listitem.Clone()
+            frmPrintInvoice.ListView1.Items.Add(X)
+        Next
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT * FROM tblcustomer WHERE CustomerID = '" & lblCustID.Text & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            If dr.Read = True Then
+                'left side
+                frmPrintInvoice.lblSoldTo.Text = dr("CompanyName").ToString
+                frmPrintInvoice.lblAddress.Text = dr("Address").ToString
+                frmPrintInvoice.lblDelivery.Text = dr("Delivery").ToString
+                frmPrintInvoice.lblBusStyle.Text = dr("CompanyName").ToString ' business style
+            End If
+
+            frmPrintInvoice.lblTerms.Text = txtTerms.Text
+            frmPrintInvoice.lblTIN.Text = txtTIN.Text
+            frmPrintInvoice.lblSalesman.Text = cboSalesman.Text
+            frmPrintInvoice.lblPuchaseNo.Text = txtPONo.Text
+            frmPrintInvoice.lblDate.Text = dtpDate.Value.ToString
+
+            frmPrintInvoice.ShowDialog()
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageBilling(printBilling): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
