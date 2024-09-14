@@ -5,48 +5,9 @@ Imports MySql.Data.MySqlClient
 Public Class frmManageBilling
     Private Sub frmManageBilling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-<<<<<<< Updated upstream
-        lblBillingID.Text = nextBillID()
-    End Sub
-    Private Function nextBillID() As Integer
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-
-            Dim nextID As Integer = 1
-
-            sql = "SELECT MAX(BillingID) AS lastID FROM tblbilling"
-            cmd = New MySqlCommand(sql, cn)
-            Dim result As Object = cmd.ExecuteScalar()
-
-            If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
-                nextID = CInt(result) + 1
-            End If
-
-            Return nextID
-        Catch ex As Exception
-            MsgBox("An error occurred frmManageBilling(nextBillID): " & ex.Message)
-            Return -1
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
-    End Function
-    Private Sub btnPrint_Click_1(sender As Object, e As EventArgs) Handles btnPrint.Click
-        'frmPrintInvoice.ShowDialog()
-    End Sub
-
-    Private Sub btnSearchProduct_Click_1(sender As Object, e As EventArgs)
-        frmListProducts.ShowDialog()
-    End Sub
-
-=======
         Call loadBilling()
         dtpDate.Text = Now.ToString()
     End Sub
->>>>>>> Stashed changes
     Private Sub btnSearchCustomer_Click(sender As Object, e As EventArgs) Handles btnSearchCustomer.Click
         frmListCompany.ShowDialog()
     End Sub
@@ -236,11 +197,6 @@ Public Class frmManageBilling
                 If cn.State <> ConnectionState.Open Then
                     cn.Open()
                 End If
-
-<<<<<<< Updated upstream
-                Call printBilling() 'forprint
-                Call saveBilling() 'for saving billing information
-=======
                 sql = "INSERT INTO tblbilling(CustomerID, SalesMan, Terms, ProductOrder, Date, Remarks) VALUES(@CustomerID, @SalesMan, @Terms, @ProductOrder, @Date, @Remarks)"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
@@ -254,7 +210,6 @@ Public Class frmManageBilling
                 End With
 
                 Call printBilling()
->>>>>>> Stashed changes
 
                 MsgBox("Sucessfully saved billing invoice!", MsgBoxStyle.Information, "Billing Invoice")
             End If

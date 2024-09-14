@@ -879,4 +879,7 @@ Partial Class frmListofOrder
     Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents ColumnHeader8 As ColumnHeader
 
+    Friend WithEvents lblCustID As Label
+    Friend WithEvents ColumnHeader9 As ColumnHeader
+
 End Class
