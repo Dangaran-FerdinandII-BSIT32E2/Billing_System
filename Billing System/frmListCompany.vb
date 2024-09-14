@@ -49,12 +49,8 @@ Public Class frmListCompany
 
             If ListView1.SelectedItems.Count > 0 Then
                 frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
-<<<<<<< Updated upstream
-                frmManageBilling.lblCustID.Text = ListView1.SelectedItems(0).SubItems(6).Text
-                frmManageBilling.txtTIN.Text = ListView1.SelectedItems(0).SubItems(7).Text
-=======
+
                 frmManageBilling.lblCustID.Text = ListView1.SelectedItems(0).SubItems(8).Text
->>>>>>> Stashed changes
                 Call frmManageBilling.loadBilling()
             End If
 

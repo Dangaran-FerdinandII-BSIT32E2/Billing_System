@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
-Public Class frmManageCustomerV2
-    Private Sub frmManageCustomerV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+Public Class frmManageCustomerV3
+    Private Sub frmManageCustomerV3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadCustomers()
     End Sub

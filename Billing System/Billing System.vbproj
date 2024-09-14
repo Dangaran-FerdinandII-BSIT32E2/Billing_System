@@ -157,6 +157,12 @@
     <Compile Include="frmManageCustomerV2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmManageCustomerV3.Designer.vb">
+      <DependentUpon>frmManageCustomerV3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageCustomerV3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmManageInquiry.Designer.vb">
       <DependentUpon>frmManageInquiry.vb</DependentUpon>
     </Compile>
@@ -307,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageCustomerV2.resx">
       <DependentUpon>frmManageCustomerV2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageCustomerV3.resx">
+      <DependentUpon>frmManageCustomerV3.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageInquiry.resx">
       <DependentUpon>frmManageInquiry.vb</DependentUpon>

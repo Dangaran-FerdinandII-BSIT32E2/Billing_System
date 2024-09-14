@@ -56,7 +56,7 @@
         frmManageCollection.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
-        frmManageCustomerV2.Close()
+        frmManageCustomerV3.Close()
         frmManageUsers.Close()
         frmManageRental.Close()
         frmAdminSettings.Close()
@@ -83,7 +83,7 @@
         frmManageCollection.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
-        frmManageCustomerV2.Close()
+        frmManageCustomerV3.Close()
         frmManageUsers.Close()
         frmManageRental.Close()
         frmAdminSettings.Close()
@@ -111,7 +111,7 @@
         frmManageCollection.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
-        frmManageCustomerV2.Close()
+        frmManageCustomerV3.Close()
         frmManageUsers.Close()
         frmManageRental.Close()
         frmAdminSettings.Close()
@@ -140,7 +140,7 @@
         frmManageCollection.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
-        frmManageCustomerV2.Close()
+        frmManageCustomerV3.Close()
         frmManageUsers.Close()
         frmManageRental.Close()
     End Sub
@@ -156,7 +156,7 @@
         frmManageBilling.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
-        frmManageCustomerV2.Close()
+        frmManageCustomerV3.Close()
         frmManageUsers.Close()
         frmManageRental.Close()
         frmAdminSettings.Close()
@@ -173,7 +173,7 @@
         frmManageBilling.Close()
         frmManageCollection.Close()
         frmManageProducts.Close()
-        frmManageCustomerV2.Close()
+        frmManageCustomerV3.Close()
         frmManageUsers.Close()
         frmManageRental.Close()
         frmAdminSettings.Close()
@@ -190,18 +190,18 @@
         frmManageBilling.Close()
         frmManageCollection.Close()
         frmManageSuppliers.Close()
-        frmManageCustomerV2.Close()
+        frmManageCustomerV3.Close()
         frmManageUsers.Close()
         frmManageRental.Close()
         frmAdminSettings.Close()
     End Sub
 
     Private Sub btnCustomer_Click(sender As Object, e As EventArgs) Handles btnCustomer.Click
-        frmManageCustomerV2.TopLevel = False
-        panelDashboard.Controls.Add(frmManageCustomerV2)
-        frmManageCustomerV2.BringToFront()
-        frmManageCustomerV2.Dock = DockStyle.Fill
-        frmManageCustomerV2.Show()
+        frmManageCustomerV3.TopLevel = False
+        panelDashboard.Controls.Add(frmManageCustomerV3)
+        frmManageCustomerV3.BringToFront()
+        frmManageCustomerV3.Dock = DockStyle.Fill
+        frmManageCustomerV3.Show()
 
         frmManageSales.Close()
         frmManageBilling.Close()
@@ -225,7 +225,7 @@
         frmManageCollection.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
-        frmManageCustomerV2.Close()
+        frmManageCustomerV3.Close()
         frmManageRental.Close()
         frmAdminSettings.Close()
     End Sub
@@ -242,7 +242,7 @@
         frmManageCollection.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
-        frmManageCustomerV2.Close()
+        frmManageCustomerV3.Close()
         frmManageUsers.Close()
         frmAdminSettings.Close()
     End Sub
