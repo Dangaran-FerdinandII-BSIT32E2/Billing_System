@@ -30,9 +30,12 @@ Partial Class frmListofOrder
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.btnOkay = New Guna.UI2.WinForms.Guna2Button()
@@ -72,11 +75,18 @@ Partial Class frmListofOrder
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
+
         Me.Panel35 = New System.Windows.Forms.Panel()
         Me.lblORNo = New System.Windows.Forms.Label()
         Me.Panel36 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblCustomerID = New System.Windows.Forms.Label()
+
+        Me.lblCustID = New System.Windows.Forms.Label()
+        Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.lblORNo = New System.Windows.Forms.Label()
+        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.lblCompanyName = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -127,7 +137,9 @@ Partial Class frmListofOrder
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader5, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8})
+
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader5, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9})
+
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.GridLines = True
@@ -144,49 +156,42 @@ Partial Class frmListofOrder
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Item Name"
-        Me.ColumnHeader1.Width = 250
+        Me.ColumnHeader1.Width = 150
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Description"
-        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader2.Width = 470
+        Me.ColumnHeader2.Width = 150
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Qty"
-        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader5.Width = 150
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Unit"
-        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader3.Width = 70
+        Me.ColumnHeader3.Width = 150
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Price"
-        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader4.Width = 150
         '
+
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "Availability"
         Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader6.Width = 100
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Status"
+
         Me.ColumnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader7.Width = 100
-        '
-        'ColumnHeader8
-        '
-        Me.ColumnHeader8.Text = "Remarks"
+
         Me.ColumnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader8.Width = 100
         '
+
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -332,16 +337,19 @@ Partial Class frmListofOrder
         '
         'lblDateOrdered
         '
+
         Me.lblDateOrdered.AutoSize = True
         Me.lblDateOrdered.BackColor = System.Drawing.Color.Transparent
         Me.lblDateOrdered.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblDateOrdered.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblDateOrdered.ForeColor = System.Drawing.Color.White
         Me.lblDateOrdered.Location = New System.Drawing.Point(0, 0)
+
         Me.lblDateOrdered.Name = "lblDateOrdered"
         Me.lblDateOrdered.Size = New System.Drawing.Size(96, 18)
         Me.lblDateOrdered.TabIndex = 46
         Me.lblDateOrdered.Text = "XXXXXXXX"
+
         '
         'Panel18
         '
@@ -484,7 +492,9 @@ Partial Class frmListofOrder
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(110, 19)
+
+        Me.Label2.Size = New System.Drawing.Size(137, 24)
+
         Me.Label2.TabIndex = 46
         Me.Label2.Text = "Date Ordered"
         '
@@ -605,8 +615,11 @@ Partial Class frmListofOrder
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Transparent
+
+
+        Me.Panel6.Controls.Add(Me.lblCustID)
         Me.Panel6.Controls.Add(Me.Panel35)
-        Me.Panel6.Controls.Add(Me.lblCustomerID)
+
         Me.Panel6.Controls.Add(Me.Panel13)
         Me.Panel6.Controls.Add(Me.lblCompanyName)
         Me.Panel6.Controls.Add(Me.Panel7)
@@ -616,6 +629,7 @@ Partial Class frmListofOrder
         Me.Panel6.Size = New System.Drawing.Size(1028, 36)
         Me.Panel6.TabIndex = 26
         '
+
         'Panel35
         '
         Me.Panel35.Controls.Add(Me.lblORNo)
@@ -661,19 +675,70 @@ Partial Class frmListofOrder
         Me.Label3.TabIndex = 47
         Me.Label3.Text = "No."
         '
-        'lblCustomerID
+        'lblCustID
         '
-        Me.lblCustomerID.AutoSize = True
-        Me.lblCustomerID.BackColor = System.Drawing.Color.Transparent
-        Me.lblCustomerID.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblCustomerID.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.lblCustomerID.ForeColor = System.Drawing.Color.White
-        Me.lblCustomerID.Location = New System.Drawing.Point(166, 0)
-        Me.lblCustomerID.Name = "lblCustomerID"
-        Me.lblCustomerID.Size = New System.Drawing.Size(142, 22)
-        Me.lblCustomerID.TabIndex = 41
-        Me.lblCustomerID.Text = "lblCustomerID"
-        Me.lblCustomerID.Visible = False
+        Me.lblCustID.AutoSize = True
+        Me.lblCustID.BackColor = System.Drawing.Color.Transparent
+        Me.lblCustID.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblCustID.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCustID.ForeColor = System.Drawing.Color.White
+        Me.lblCustID.Location = New System.Drawing.Point(206, 0)
+        Me.lblCustID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCustID.Name = "lblCustID"
+        Me.lblCustID.Size = New System.Drawing.Size(119, 29)
+        Me.lblCustID.TabIndex = 42
+        Me.lblCustID.Text = "lblCustID"
+        Me.lblCustID.Visible = False
+        '
+        'Panel35
+        '
+        Me.Panel35.Controls.Add(Me.lblORNo)
+        Me.Panel35.Controls.Add(Me.Panel36)
+        Me.Panel35.Controls.Add(Me.Label3)
+        Me.Panel35.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel35.Location = New System.Drawing.Point(1085, 0)
+        Me.Panel35.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel35.Name = "Panel35"
+        Me.Panel35.Size = New System.Drawing.Size(273, 44)
+        Me.Panel35.TabIndex = 40
+        '
+        'lblORNo
+        '
+        Me.lblORNo.AutoSize = True
+        Me.lblORNo.BackColor = System.Drawing.Color.Transparent
+        Me.lblORNo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblORNo.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblORNo.ForeColor = System.Drawing.Color.White
+        Me.lblORNo.Location = New System.Drawing.Point(55, 0)
+        Me.lblORNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblORNo.Name = "lblORNo"
+        Me.lblORNo.Size = New System.Drawing.Size(131, 24)
+        Me.lblORNo.TabIndex = 48
+        Me.lblORNo.Text = "xxxxxxxxxxx"
+        '
+        'Panel36
+        '
+        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel36.Location = New System.Drawing.Point(42, 0)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(13, 44)
+        Me.Panel36.TabIndex = 40
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(0, 0)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(42, 24)
+        Me.Label3.TabIndex = 47
+        Me.Label3.Text = "No."
+
         '
         'Panel13
         '
@@ -805,7 +870,7 @@ Partial Class frmListofOrder
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents lblCustomerID As Label
+
     Friend WithEvents Panel36 As Panel
     Friend WithEvents Panel35 As Panel
     Friend WithEvents Label3 As Label
@@ -813,4 +878,5 @@ Partial Class frmListofOrder
     Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents ColumnHeader8 As ColumnHeader
+
 End Class

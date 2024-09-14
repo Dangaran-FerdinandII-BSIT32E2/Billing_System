@@ -1,19 +1,10 @@
 ﻿Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
 Public Class frmManageCustomerV2
-    Private Sub btnViewInfo_Click(sender As Object, e As EventArgs) Handles btnViewInfo.Click
+    Private Sub btnViewInfo_Click(sender As Object, e As EventArgs) Handles btnViewInfo.Click, ListView1.DoubleClick
         If ListView1.SelectedItems.Count > 0 Then
-            frmListofCustomer.lblCustomerID.Text = ListView1.SelectedItems(0).SubItems(4).Text
-            frmListofCustomer.Show()
-        Else
-            MsgBox("Please select a customer from the list!", MsgBoxStyle.Information, "View Info")
-        End If
-    End Sub
-    Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click
-        If ListView1.SelectedItems.Count > 0 Then
-            frmListofOrder.lblCustomerID.Text = ListView1.SelectedItems(0).SubItems(4).Text
-            frmListofOrder.lblCompanyName.Text = ListView1.SelectedItems(0).SubItems(3).Text
-            frmListofOrder.Show()
+            frmCustomerViewInfo_Order.lblCustID.Text = ListView1.SelectedItems(0).SubItems(5).Text
+            frmCustomerViewInfo_Order.ShowDialog()
         Else
             MsgBox("Please select a customer from the list!", MsgBoxStyle.Information, "View Info")
         End If
@@ -29,16 +20,22 @@ Public Class frmManageCustomerV2
             End If
             sql = "SELECT * FROM tblcustomer"
             cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
             dr = cmd.ExecuteReader
 
             Dim x As ListViewItem
             ListView1.Items.Clear()
 
             Do While dr.Read = True
-                x = New ListViewItem(dr("LastName").ToString() + (", ").ToString() + dr("FirstName").ToString())
-                x.SubItems.Add(dr("PhoneNumber").ToString())
+                x = New ListViewItem(dr("CompanyName").ToString())
+                x.SubItems.Add(dr("LastName").ToString() + (", ").ToString() + dr("FirstName").ToString())
+                x.SubItems.Add(dr("Address").ToString())
                 x.SubItems.Add(dr("Email").ToString())
-                x.SubItems.Add(dr("CompanyName").ToString())
+                x.SubItems.Add(dr("PhoneNumber").ToString())
                 x.SubItems.Add(dr("CustomerID").ToString())
                 ListView1.Items.Add(x)
             Loop
@@ -58,7 +55,7 @@ Public Class frmManageCustomerV2
         PopulateListView(dt)
     End Sub
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "SELECT CONCAT(LastName, ', ',+ FirstName), PhoneNumber, Email, CompanyName, CustomerID FROM tblcustomer WHERE LastName LIKE ? Or CompanyName LIKE ?"
+        sql = "SELECT CompanyName, CONCAT(LastName, ', ',+ FirstName), Address, Email, PhoneNumber, CustomerID FROM tblcustomer WHERE LastName LIKE ? Or CompanyName LIKE ?"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))

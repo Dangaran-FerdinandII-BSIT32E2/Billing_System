@@ -8,7 +8,7 @@ Public Class frmListofOrder
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM tblcustomer WHERE CustomerID = '" & lblCustomerID.Text & "'"
+            sql = "SELECT * FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -17,7 +17,7 @@ Public Class frmListofOrder
 
             dr = cmd.ExecuteReader
             If dr.Read = True Then
-                lblContactPerson.Text = (dr("LastName") + (", ") + dr("FirstName")).ToString()
+                lblContactPerson.Text = (dr("LastName").ToString() + (", ") + dr("FirstName").ToString())
                 lblEmailAddress.Text = dr("Email").ToString()
                 lblPhoneNumber.Text = dr("PhoneNumber").ToString()
             End If
@@ -37,7 +37,7 @@ Public Class frmListofOrder
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustomerID.Text & "')"
+            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "')"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then

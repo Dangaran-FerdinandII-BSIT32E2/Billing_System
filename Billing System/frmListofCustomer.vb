@@ -20,12 +20,17 @@ Public Class frmListofCustomer
 
             dr = cmd.ExecuteReader
             If dr.Read = True Then
+                'CompanyInfo
+                txtCompanyName.Text = dr("CompanyName").ToString()
+                txtAddress.Text = dr("Address").ToString()
+                txtDeliveryAddress.Text = dr("Delivery").ToString()
+                txtBusinessStyle.Text = dr("BusinessStyle").ToString()
+                cboStatus.Text = dr("Status").ToString()
+                'ContactInfo
                 txtFirstName.Text = dr("FirstName").ToString()
                 txtLastName.Text = dr("LastName").ToString()
-                txtCompanyName.Text = dr("CompanyName").ToString()
                 txtPhoneNumber.Text = dr("PhoneNumber").ToString()
                 txtEmailAddress.Text = dr("Email").ToString()
-                cboStatus.Text = dr("Status").ToString()
                 txtUsername.Text = dr("Username").ToString()
                 txtPassword.Text = dr("Password").ToString()
             End If
@@ -44,12 +49,15 @@ Public Class frmListofCustomer
             Dim filled As Boolean = True
 
             Dim requiredFields As New Dictionary(Of String, Control) From {
+            {"txtCompanyName", txtCompanyName},
+            {"txtAddress", txtAddress},
+            {"txtDeliveryAddress", txtDeliveryAddress},
+            {"txtBusinessStyle", txtBusinessStyle},
+            {"cboStatus", cboStatus},
             {"txtFirstname", txtFirstName},
             {"txtLastname", txtLastName},
-            {"txtCompanyName", txtCompanyName},
             {"txtPhoneNumber", txtPhoneNumber},
             {"txtEmailAddress", txtEmailAddress},
-            {"cboStatus", cboStatus},
             {"txtUsername", txtUsername},
             {"txtPassword", txtPassword},
             {"txtConfPass", txtConfPass}
@@ -73,15 +81,22 @@ Public Class frmListofCustomer
                 End If
 
                 If txtPassword.Text = txtConfPass.Text Then
-                    sql = "UPDATE tblcustomer SET LastName=@LastName, FirstName=@FirstName, PhoneNumber=@PhoneNumber, Email=@Email, CompanyName=@CompanyName, Status=@Status, Username=@Username, Password=@Password WHERE CustomerID = '" & lblCustomerID.Text & "'"
+                    sql = "UPDATE tblcustomer SET CompanyName=@CompanyName, Address=@Address, Delivery=@Delivery, BusinessStyle=@BusinessStyle, Status=@Status" & 'CompanyInfo
+                        " LastName=@LastName, FirstName=@FirstName, PhoneNumber=@PhoneNumber, Email=@Email, Username=@Username, Password=@Password" & 'ContactInfo
+                        " WHERE CustomerID = '" & lblCustomerID.Text & "'"
                     cmd = New MySqlCommand(sql, cn)
                     With cmd
+                        'CompanyInfo
+                        .Parameters.AddWithValue("@CompanyName", txtCompanyName.Text)
+                        .Parameters.AddWithValue("@Address", txtAddress.Text)
+                        .Parameters.AddWithValue("@Delivery", txtDeliveryAddress.Text)
+                        .Parameters.AddWithValue("@BusinessStyle", txtBusinessStyle.Text)
+                        .Parameters.AddWithValue("@Status", cboStatus.Text)
+                        'ContactInfo
                         .Parameters.AddWithValue("@LastName", txtLastName.Text)
                         .Parameters.AddWithValue("@FirstName", txtFirstName.Text)
                         .Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text)
                         .Parameters.AddWithValue("@Email", txtEmailAddress.Text)
-                        .Parameters.AddWithValue("@CompanyName", txtCompanyName.Text)
-                        .Parameters.AddWithValue("@Status", cboStatus.Text)
                         .Parameters.AddWithValue("@Username", txtUsername.Text)
                         .Parameters.AddWithValue("@Password", txtPassword.Text)
                         .ExecuteNonQuery()
@@ -103,16 +118,6 @@ Public Class frmListofCustomer
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        txtFirstName.Enabled = True
-        txtLastName.Enabled = True
-        txtPhoneNumber.Enabled = True
-        txtEmailAddress.Enabled = True
-        txtCompanyName.Enabled = True
-        cboStatus.Enabled = True
-        txtUsername.Enabled = True
-        txtPassword.Enabled = True
-        txtConfPass.Enabled = True
-
         btnSave.Enabled = True
 
         btnDelete.Enabled = False
@@ -148,5 +153,9 @@ Public Class frmListofCustomer
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
+    End Sub
+
+    Private Sub Guna2TextBox2_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+
     End Sub
 End Class
