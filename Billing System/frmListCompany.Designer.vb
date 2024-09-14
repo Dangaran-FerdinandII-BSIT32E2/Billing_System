@@ -26,10 +26,13 @@ Partial Class frmListCompany
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel33 = New System.Windows.Forms.Panel()
         Me.Panel32 = New System.Windows.Forms.Panel()
         Me.Panel31 = New System.Windows.Forms.Panel()
@@ -73,7 +76,7 @@ Partial Class frmListCompany
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader7})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6, Me.ColumnHeader2, Me.ColumnHeader1, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader10})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
@@ -91,38 +94,47 @@ Partial Class frmListCompany
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "Company Name"
-        Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader6.Width = 200
+        Me.ColumnHeader6.Width = 300
         '
         'ColumnHeader2
         '
-        Me.ColumnHeader2.Text = "Last Name"
-        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader2.Width = 180
+        Me.ColumnHeader2.Text = "Contact Person"
+        Me.ColumnHeader2.Width = 250
         '
-        'ColumnHeader3
+        'ColumnHeader1
         '
-        Me.ColumnHeader3.Text = "First Name"
-        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader3.Width = 180
+        Me.ColumnHeader1.Text = "Address"
+        Me.ColumnHeader1.Width = 350
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "Delivery Address"
+        Me.ColumnHeader8.Width = 350
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Business Style"
+        Me.ColumnHeader9.Width = 200
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Phone Number"
-        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader4.Width = 200
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Email Address"
-        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader5.Width = 250
+        Me.ColumnHeader5.Width = 150
         '
         'ColumnHeader7
         '
-        Me.ColumnHeader7.Text = "Status"
-        Me.ColumnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader7.Text = "Category"
         Me.ColumnHeader7.Width = 150
+        '
+        'ColumnHeader10
+        '
+        Me.ColumnHeader10.Text = "Date Ordered"
+        Me.ColumnHeader10.Width = 150
         '
         'Panel33
         '
@@ -288,9 +300,9 @@ Partial Class frmListCompany
         Me.Label2.Location = New System.Drawing.Point(13, 18)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(217, 29)
+        Me.Label2.Size = New System.Drawing.Size(170, 29)
         Me.Label2.TabIndex = 32
-        Me.Label2.Text = "List of Customers"
+        Me.Label2.Text = "List of Orders"
         '
         'Panel16
         '
@@ -427,8 +439,11 @@ Partial Class frmListCompany
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents ColumnHeader7 As ColumnHeader
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader8 As ColumnHeader
+    Friend WithEvents ColumnHeader9 As ColumnHeader
+    Friend WithEvents ColumnHeader10 As ColumnHeader
 End Class

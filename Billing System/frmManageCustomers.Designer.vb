@@ -115,7 +115,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel26.Location = New System.Drawing.Point(0, 50)
+<<<<<<< Updated upstream
         Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel26.Name = "Panel26"
         Me.Panel26.Size = New System.Drawing.Size(540, 12)
         Me.Panel26.TabIndex = 11
@@ -126,7 +130,11 @@ Partial Class frmManageCustomers
         Me.Panel5.Controls.Add(Me.Panel7)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(13, 401)
+<<<<<<< Updated upstream
         Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1361, 366)
         Me.Panel5.TabIndex = 20
@@ -152,7 +160,11 @@ Partial Class frmManageCustomers
         Me.Panel7.Controls.Add(Me.Panel19)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1361, 366)
         Me.Panel7.TabIndex = 16
@@ -170,7 +182,11 @@ Partial Class frmManageCustomers
         Me.txtCompanyName.ForeColor = System.Drawing.Color.Black
         Me.txtCompanyName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtCompanyName.Location = New System.Drawing.Point(744, 201)
+<<<<<<< Updated upstream
         Me.txtCompanyName.Margin = New System.Windows.Forms.Padding(5)
+=======
+        Me.txtCompanyName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+>>>>>>> Stashed changes
         Me.txtCompanyName.Name = "txtCompanyName"
         Me.txtCompanyName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCompanyName.PlaceholderText = "Enter company name"
@@ -204,7 +220,11 @@ Partial Class frmManageCustomers
         Me.txtPhoneNumber.ForeColor = System.Drawing.Color.Black
         Me.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtPhoneNumber.Location = New System.Drawing.Point(15, 201)
+<<<<<<< Updated upstream
         Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(5)
+=======
+        Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+>>>>>>> Stashed changes
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
         Me.txtPhoneNumber.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPhoneNumber.PlaceholderText = "Enter phone number"
@@ -238,7 +258,11 @@ Partial Class frmManageCustomers
         Me.txtFirstName.ForeColor = System.Drawing.Color.Black
         Me.txtFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtFirstName.Location = New System.Drawing.Point(744, 105)
+<<<<<<< Updated upstream
         Me.txtFirstName.Margin = New System.Windows.Forms.Padding(5)
+=======
+        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+>>>>>>> Stashed changes
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFirstName.PlaceholderText = "Enter first name"
@@ -271,7 +295,11 @@ Partial Class frmManageCustomers
         Me.cboStatus.ItemHeight = 30
         Me.cboStatus.Items.AddRange(New Object() {"Good Payer", "Bad Payer"})
         Me.cboStatus.Location = New System.Drawing.Point(1117, 105)
+<<<<<<< Updated upstream
         Me.cboStatus.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.cboStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(320, 36)
         Me.cboStatus.TabIndex = 55
@@ -289,7 +317,11 @@ Partial Class frmManageCustomers
         Me.txtEmailAddress.ForeColor = System.Drawing.Color.Black
         Me.txtEmailAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtEmailAddress.Location = New System.Drawing.Point(372, 201)
+<<<<<<< Updated upstream
         Me.txtEmailAddress.Margin = New System.Windows.Forms.Padding(5)
+=======
+        Me.txtEmailAddress.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+>>>>>>> Stashed changes
         Me.txtEmailAddress.Name = "txtEmailAddress"
         Me.txtEmailAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtEmailAddress.PlaceholderText = "Enter email address"
@@ -323,7 +355,11 @@ Partial Class frmManageCustomers
         Me.txtLastName.ForeColor = System.Drawing.Color.Black
         Me.txtLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtLastName.Location = New System.Drawing.Point(372, 105)
+<<<<<<< Updated upstream
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(5)
+=======
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+>>>>>>> Stashed changes
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLastName.PlaceholderText = "Enter last name"
@@ -371,7 +407,11 @@ Partial Class frmManageCustomers
         Me.txtCustomerID.ForeColor = System.Drawing.Color.Black
         Me.txtCustomerID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtCustomerID.Location = New System.Drawing.Point(15, 105)
+<<<<<<< Updated upstream
         Me.txtCustomerID.Margin = New System.Windows.Forms.Padding(5)
+=======
+        Me.txtCustomerID.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+>>>>>>> Stashed changes
         Me.txtCustomerID.Name = "txtCustomerID"
         Me.txtCustomerID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCustomerID.PlaceholderText = ""
@@ -410,7 +450,11 @@ Partial Class frmManageCustomers
         Me.Panel30.Controls.Add(Me.Panel31)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel30.Location = New System.Drawing.Point(0, 292)
+<<<<<<< Updated upstream
         Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(1361, 74)
         Me.Panel30.TabIndex = 18
@@ -421,7 +465,11 @@ Partial Class frmManageCustomers
         Me.Panel42.Controls.Add(Me.btnDelete)
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel42.Location = New System.Drawing.Point(961, 12)
+<<<<<<< Updated upstream
         Me.Panel42.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel42.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel42.Name = "Panel42"
         Me.Panel42.Size = New System.Drawing.Size(187, 50)
         Me.Panel42.TabIndex = 18
@@ -440,7 +488,11 @@ Partial Class frmManageCustomers
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnDelete.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedDepth = 20
         Me.btnDelete.Size = New System.Drawing.Size(187, 50)
@@ -452,7 +504,11 @@ Partial Class frmManageCustomers
         Me.Panel41.BackColor = System.Drawing.Color.White
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel41.Location = New System.Drawing.Point(1148, 12)
+<<<<<<< Updated upstream
         Me.Panel41.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel41.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel41.Name = "Panel41"
         Me.Panel41.Size = New System.Drawing.Size(13, 50)
         Me.Panel41.TabIndex = 18
@@ -463,7 +519,11 @@ Partial Class frmManageCustomers
         Me.Panel40.Controls.Add(Me.btnCancel)
         Me.Panel40.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel40.Location = New System.Drawing.Point(1161, 12)
+<<<<<<< Updated upstream
         Me.Panel40.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel40.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel40.Name = "Panel40"
         Me.Panel40.Size = New System.Drawing.Size(187, 50)
         Me.Panel40.TabIndex = 18
@@ -482,7 +542,11 @@ Partial Class frmManageCustomers
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCancel.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
         Me.btnCancel.Size = New System.Drawing.Size(187, 50)
@@ -494,7 +558,11 @@ Partial Class frmManageCustomers
         Me.Panel39.BackColor = System.Drawing.Color.White
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel39.Location = New System.Drawing.Point(1348, 12)
+<<<<<<< Updated upstream
         Me.Panel39.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel39.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel39.Name = "Panel39"
         Me.Panel39.Size = New System.Drawing.Size(13, 50)
         Me.Panel39.TabIndex = 18
@@ -505,7 +573,11 @@ Partial Class frmManageCustomers
         Me.Panel37.Controls.Add(Me.btnSave)
         Me.Panel37.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel37.Location = New System.Drawing.Point(413, 12)
+<<<<<<< Updated upstream
         Me.Panel37.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel37.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel37.Name = "Panel37"
         Me.Panel37.Size = New System.Drawing.Size(187, 50)
         Me.Panel37.TabIndex = 18
@@ -524,7 +596,11 @@ Partial Class frmManageCustomers
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnSave.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.btnSave.Name = "btnSave"
         Me.btnSave.PressedDepth = 20
         Me.btnSave.Size = New System.Drawing.Size(187, 50)
@@ -536,7 +612,11 @@ Partial Class frmManageCustomers
         Me.Panel36.BackColor = System.Drawing.Color.White
         Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel36.Location = New System.Drawing.Point(400, 12)
+<<<<<<< Updated upstream
         Me.Panel36.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel36.Name = "Panel36"
         Me.Panel36.Size = New System.Drawing.Size(13, 50)
         Me.Panel36.TabIndex = 18
@@ -547,7 +627,11 @@ Partial Class frmManageCustomers
         Me.Panel38.Controls.Add(Me.btnEdit)
         Me.Panel38.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel38.Location = New System.Drawing.Point(213, 12)
+<<<<<<< Updated upstream
         Me.Panel38.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel38.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel38.Name = "Panel38"
         Me.Panel38.Size = New System.Drawing.Size(187, 50)
         Me.Panel38.TabIndex = 18
@@ -566,7 +650,11 @@ Partial Class frmManageCustomers
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnEdit.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedDepth = 20
         Me.btnEdit.Size = New System.Drawing.Size(187, 50)
@@ -578,7 +666,11 @@ Partial Class frmManageCustomers
         Me.Panel35.BackColor = System.Drawing.Color.White
         Me.Panel35.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel35.Location = New System.Drawing.Point(200, 12)
+<<<<<<< Updated upstream
         Me.Panel35.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel35.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel35.Name = "Panel35"
         Me.Panel35.Size = New System.Drawing.Size(13, 50)
         Me.Panel35.TabIndex = 18
@@ -589,7 +681,11 @@ Partial Class frmManageCustomers
         Me.Panel34.Controls.Add(Me.btnCreateNew)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel34.Location = New System.Drawing.Point(13, 12)
+<<<<<<< Updated upstream
         Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(187, 50)
         Me.Panel34.TabIndex = 18
@@ -608,7 +704,11 @@ Partial Class frmManageCustomers
         Me.btnCreateNew.ForeColor = System.Drawing.Color.White
         Me.btnCreateNew.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCreateNew.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.btnCreateNew.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.btnCreateNew.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.btnCreateNew.Name = "btnCreateNew"
         Me.btnCreateNew.PressedDepth = 20
         Me.btnCreateNew.Size = New System.Drawing.Size(187, 50)
@@ -620,7 +720,11 @@ Partial Class frmManageCustomers
         Me.Panel33.BackColor = System.Drawing.Color.White
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel33.Location = New System.Drawing.Point(0, 12)
+<<<<<<< Updated upstream
         Me.Panel33.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Size = New System.Drawing.Size(13, 50)
         Me.Panel33.TabIndex = 18
@@ -630,7 +734,11 @@ Partial Class frmManageCustomers
         Me.Panel32.BackColor = System.Drawing.Color.White
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel32.Location = New System.Drawing.Point(0, 62)
+<<<<<<< Updated upstream
         Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(1361, 12)
         Me.Panel32.TabIndex = 18
@@ -640,7 +748,11 @@ Partial Class frmManageCustomers
         Me.Panel31.BackColor = System.Drawing.Color.White
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel31.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel31.Name = "Panel31"
         Me.Panel31.Size = New System.Drawing.Size(1361, 12)
         Me.Panel31.TabIndex = 18
@@ -651,7 +763,11 @@ Partial Class frmManageCustomers
         Me.Panel19.Controls.Add(Me.Panel20)
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel19.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel19.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(1361, 62)
         Me.Panel19.TabIndex = 1
@@ -664,7 +780,11 @@ Partial Class frmManageCustomers
         Me.Panel20.Controls.Add(Me.Panel29)
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel20.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel20.Name = "Panel20"
         Me.Panel20.Size = New System.Drawing.Size(353, 62)
         Me.Panel20.TabIndex = 13
@@ -687,7 +807,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel21.Location = New System.Drawing.Point(0, 18)
+<<<<<<< Updated upstream
         Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel21.Name = "Panel21"
         Me.Panel21.Size = New System.Drawing.Size(13, 32)
         Me.Panel21.TabIndex = 13
@@ -696,7 +820,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel28.Location = New System.Drawing.Point(0, 50)
+<<<<<<< Updated upstream
         Me.Panel28.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel28.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel28.Name = "Panel28"
         Me.Panel28.Size = New System.Drawing.Size(353, 12)
         Me.Panel28.TabIndex = 13
@@ -705,7 +833,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel29.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.Panel29.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel29.Name = "Panel29"
         Me.Panel29.Size = New System.Drawing.Size(353, 18)
         Me.Panel29.TabIndex = 13
@@ -714,7 +846,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel27.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel27.Name = "Panel27"
         Me.Panel27.Size = New System.Drawing.Size(540, 12)
         Me.Panel27.TabIndex = 10
@@ -724,7 +860,11 @@ Partial Class frmManageCustomers
         Me.Panel6.BackColor = System.Drawing.SystemColors.Control
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel6.Location = New System.Drawing.Point(13, 389)
+<<<<<<< Updated upstream
         Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1361, 12)
         Me.Panel6.TabIndex = 21
@@ -733,7 +873,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(13, 62)
+<<<<<<< Updated upstream
         Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1335, 12)
         Me.Panel8.TabIndex = 7
@@ -742,7 +886,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel9.Location = New System.Drawing.Point(0, 62)
+<<<<<<< Updated upstream
         Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(13, 303)
         Me.Panel9.TabIndex = 8
@@ -751,7 +899,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel10.Location = New System.Drawing.Point(0, 365)
+<<<<<<< Updated upstream
         Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1348, 12)
         Me.Panel10.TabIndex = 9
@@ -764,7 +916,11 @@ Partial Class frmManageCustomers
         Me.Panel14.Controls.Add(Me.Panel23)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(1361, 62)
         Me.Panel14.TabIndex = 0
@@ -787,7 +943,11 @@ Partial Class frmManageCustomers
         Me.Panel15.Controls.Add(Me.Panel22)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(353, 62)
         Me.Panel15.TabIndex = 13
@@ -810,7 +970,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel16.Location = New System.Drawing.Point(0, 18)
+<<<<<<< Updated upstream
         Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(13, 32)
         Me.Panel16.TabIndex = 13
@@ -819,7 +983,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel17.Location = New System.Drawing.Point(0, 50)
+<<<<<<< Updated upstream
         Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(353, 12)
         Me.Panel17.TabIndex = 13
@@ -828,7 +996,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(353, 18)
         Me.Panel22.TabIndex = 13
@@ -841,7 +1013,11 @@ Partial Class frmManageCustomers
         Me.Panel23.Controls.Add(Me.Panel27)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel23.Location = New System.Drawing.Point(821, 0)
+<<<<<<< Updated upstream
         Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(540, 62)
         Me.Panel23.TabIndex = 10
@@ -860,7 +1036,11 @@ Partial Class frmManageCustomers
         Me.txtSearchCustomer.ForeColor = System.Drawing.Color.Black
         Me.txtSearchCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtSearchCustomer.Location = New System.Drawing.Point(108, 12)
+<<<<<<< Updated upstream
         Me.txtSearchCustomer.Margin = New System.Windows.Forms.Padding(5)
+=======
+        Me.txtSearchCustomer.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+>>>>>>> Stashed changes
         Me.txtSearchCustomer.Name = "txtSearchCustomer"
         Me.txtSearchCustomer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchCustomer.PlaceholderText = "Search by customer name"
@@ -872,7 +1052,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel25.Location = New System.Drawing.Point(527, 12)
+<<<<<<< Updated upstream
         Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(13, 38)
         Me.Panel25.TabIndex = 12
@@ -923,7 +1107,11 @@ Partial Class frmManageCustomers
         Me.ListView1.HideSelection = False
         Me.ListView1.HoverSelection = True
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(1335, 291)
         Me.ListView1.TabIndex = 35
@@ -935,7 +1123,11 @@ Partial Class frmManageCustomers
         Me.Panel11.Controls.Add(Me.ListView1)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel11.Location = New System.Drawing.Point(13, 74)
+<<<<<<< Updated upstream
         Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(1335, 291)
         Me.Panel11.TabIndex = 14
@@ -951,7 +1143,11 @@ Partial Class frmManageCustomers
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel14)
         Me.pnlListOfCustomerBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlListOfCustomerBody.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.pnlListOfCustomerBody.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.pnlListOfCustomerBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.pnlListOfCustomerBody.Name = "pnlListOfCustomerBody"
         Me.pnlListOfCustomerBody.Size = New System.Drawing.Size(1361, 377)
         Me.pnlListOfCustomerBody.TabIndex = 11
@@ -960,7 +1156,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel12.Location = New System.Drawing.Point(1348, 62)
+<<<<<<< Updated upstream
         Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(13, 315)
         Me.Panel12.TabIndex = 6
@@ -971,7 +1171,11 @@ Partial Class frmManageCustomers
         Me.Panel13.Controls.Add(Me.pnlListOfCustomerBody)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel13.Location = New System.Drawing.Point(13, 12)
+<<<<<<< Updated upstream
         Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(1361, 377)
         Me.Panel13.TabIndex = 22
@@ -980,7 +1184,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 12)
+<<<<<<< Updated upstream
         Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(13, 755)
         Me.Panel3.TabIndex = 18
@@ -989,7 +1197,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 767)
+<<<<<<< Updated upstream
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1374, 12)
         Me.Panel2.TabIndex = 19
@@ -998,7 +1210,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel1.Location = New System.Drawing.Point(1374, 12)
+<<<<<<< Updated upstream
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(13, 767)
         Me.Panel1.TabIndex = 16
@@ -1007,7 +1223,11 @@ Partial Class frmManageCustomers
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
+<<<<<<< Updated upstream
         Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1387, 12)
         Me.Panel4.TabIndex = 17
@@ -1025,7 +1245,11 @@ Partial Class frmManageCustomers
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+<<<<<<< Updated upstream
         Me.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+>>>>>>> Stashed changes
         Me.Name = "frmManageCustomers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel5.ResumeLayout(False)

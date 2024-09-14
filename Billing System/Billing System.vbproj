@@ -109,6 +109,12 @@
     <Compile Include="frmConfirmPayment.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCustomerViewInfo&amp;Order.Designer.vb">
+      <DependentUpon>frmCustomerViewInfo&amp;Order.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerViewInfo&amp;Order.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmListCompany.Designer.vb">
       <DependentUpon>frmListCompany.vb</DependentUpon>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfirmPayment.resx">
       <DependentUpon>frmConfirmPayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerViewInfo&amp;Order.resx">
+      <DependentUpon>frmCustomerViewInfo&amp;Order.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListCompany.resx">
       <DependentUpon>frmListCompany.vb</DependentUpon>

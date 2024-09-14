@@ -5,6 +5,7 @@ Imports MySql.Data.MySqlClient
 Public Class frmManageBilling
     Private Sub frmManageBilling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+<<<<<<< Updated upstream
         lblBillingID.Text = nextBillID()
     End Sub
     Private Function nextBillID() As Integer
@@ -41,6 +42,11 @@ Public Class frmManageBilling
         frmListProducts.ShowDialog()
     End Sub
 
+=======
+        Call loadBilling()
+        dtpDate.Text = Now.ToString()
+    End Sub
+>>>>>>> Stashed changes
     Private Sub btnSearchCustomer_Click(sender As Object, e As EventArgs) Handles btnSearchCustomer.Click
         frmListCompany.ShowDialog()
     End Sub
@@ -50,7 +56,7 @@ Public Class frmManageBilling
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "')"
+            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "') AND Availability = 1"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -74,6 +80,36 @@ Public Class frmManageBilling
             Loop
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(loadBilling): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub lblCustID_TextChanged(sender As Object, e As EventArgs) Handles lblCustID.TextChanged
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT * FROM tblcustomer WHERE CustomerID = '" & lblCustID.Text & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                txtCompanyName.Text = dr("CompanyName").ToString()
+                txtAddress.Text = dr("Address").ToString()
+                txtDeliveryAddress.Text = dr("Delivery").ToString()
+                txtBusinessStyle.Text = dr("BusinessStyle").ToString()
+                txtTIN.Text = dr("TIN").ToString()
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageBilling(lblCustID_TextChanged): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -106,8 +142,8 @@ Public Class frmManageBilling
                 cn.Open()
             End If
             If ListView1.SelectedItems.Count > 0 Then
-                If MsgBox("Do you want to change unit price?", vbYesNo + vbQuestion) = vbYes Then
-                    Dim price As String = InputBox("Enter Price:", "Unit Price")
+                If MsgBox("Do you want to change total amount?", vbYesNo + vbQuestion) = vbYes Then
+                    Dim price As String = InputBox("Enter Amount:", "Amount")
 
                     ' Handle the scenario when the user cancels or closes the input dialog
                     If price = "" Then
@@ -178,11 +214,10 @@ Public Class frmManageBilling
             Dim filled As Boolean = True
 
             Dim requiredFields As New Dictionary(Of String, Control) From {
-            {"txtTerms", txtTerms},
             {"txtPONo", txtPONo},
+            {"txtTerms", txtTerms},
             {"cboSalesman", cboSalesman},
-            {"dtpDate", dtpDate},
-            {"txtTIN", txtTIN}
+            {"dtpDate", dtpDate}
         }
 
             For Each fieldName_controlPair In requiredFields
@@ -202,8 +237,24 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
+<<<<<<< Updated upstream
                 Call printBilling() 'forprint
                 Call saveBilling() 'for saving billing information
+=======
+                sql = "INSERT INTO tblbilling(CustomerID, SalesMan, Terms, ProductOrder, Date, Remarks) VALUES(@CustomerID, @SalesMan, @Terms, @ProductOrder, @Date, @Remarks)"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@CustomerID", lblCustID.Text)
+                    .Parameters.AddWithValue("@SalesMan", cboSalesman.Text)
+                    .Parameters.AddWithValue("@Terms", txtTerms.Text)
+                    .Parameters.AddWithValue("@ProductOrder", txtPONo.Text)
+                    .Parameters.AddWithValue("@Date", dtpDate.Value)
+                    .Parameters.AddWithValue("@Remarks", "0")
+                    .ExecuteNonQuery()
+                End With
+
+                Call printBilling()
+>>>>>>> Stashed changes
 
                 MsgBox("Sucessfully saved billing invoice!", MsgBoxStyle.Information, "Billing Invoice")
             End If

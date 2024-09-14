@@ -30,6 +30,13 @@ Partial Class frmListofOrder
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+<<<<<<< Updated upstream
+=======
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+>>>>>>> Stashed changes
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.btnOkay = New Guna.UI2.WinForms.Guna2Button()
@@ -69,7 +76,15 @@ Partial Class frmListofOrder
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
+<<<<<<< Updated upstream
         Me.lblCustomerID = New System.Windows.Forms.Label()
+=======
+        Me.lblCustID = New System.Windows.Forms.Label()
+        Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.lblORNo = New System.Windows.Forms.Label()
+        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+>>>>>>> Stashed changes
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.lblCompanyName = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -121,7 +136,11 @@ Partial Class frmListofOrder
         '
         'ListView1
         '
+<<<<<<< Updated upstream
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader5, Me.ColumnHeader3, Me.ColumnHeader4})
+=======
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader5, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9})
+>>>>>>> Stashed changes
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.GridLines = True
@@ -139,31 +158,51 @@ Partial Class frmListofOrder
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Item Name"
-        Me.ColumnHeader1.Width = 250
+        Me.ColumnHeader1.Width = 150
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Description"
-        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader2.Width = 470
+        Me.ColumnHeader2.Width = 150
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Qty"
-        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader5.Width = 150
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Unit"
-        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader3.Width = 70
+        Me.ColumnHeader3.Width = 150
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Price"
-        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader4.Width = 150
         '
+<<<<<<< Updated upstream
+=======
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Availability"
+        Me.ColumnHeader6.Width = 150
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Status"
+        Me.ColumnHeader7.Width = 150
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "Remarks"
+        Me.ColumnHeader8.Width = 150
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Ordered Date"
+        Me.ColumnHeader9.Width = 150
+        '
+>>>>>>> Stashed changes
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -322,6 +361,7 @@ Partial Class frmListofOrder
         '
         'lblOrderNo
         '
+<<<<<<< Updated upstream
         Me.lblOrderNo.AutoSize = True
         Me.lblOrderNo.BackColor = System.Drawing.Color.Transparent
         Me.lblOrderNo.Dock = System.Windows.Forms.DockStyle.Left
@@ -333,6 +373,19 @@ Partial Class frmListofOrder
         Me.lblOrderNo.Size = New System.Drawing.Size(114, 23)
         Me.lblOrderNo.TabIndex = 46
         Me.lblOrderNo.Text = "XXXXXXXX"
+=======
+        Me.lblDateOrdered.AutoSize = True
+        Me.lblDateOrdered.BackColor = System.Drawing.Color.Transparent
+        Me.lblDateOrdered.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblDateOrdered.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.lblDateOrdered.ForeColor = System.Drawing.Color.White
+        Me.lblDateOrdered.Location = New System.Drawing.Point(0, 0)
+        Me.lblDateOrdered.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDateOrdered.Name = "lblDateOrdered"
+        Me.lblDateOrdered.Size = New System.Drawing.Size(114, 23)
+        Me.lblDateOrdered.TabIndex = 46
+        Me.lblDateOrdered.Text = "XXXXXXXX"
+>>>>>>> Stashed changes
         '
         'Panel18
         '
@@ -488,7 +541,11 @@ Partial Class frmListofOrder
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
+<<<<<<< Updated upstream
         Me.Label2.Size = New System.Drawing.Size(78, 24)
+=======
+        Me.Label2.Size = New System.Drawing.Size(137, 24)
+>>>>>>> Stashed changes
         Me.Label2.TabIndex = 46
         Me.Label2.Text = "OR No."
         '
@@ -620,7 +677,12 @@ Partial Class frmListofOrder
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Transparent
+<<<<<<< Updated upstream
         Me.Panel6.Controls.Add(Me.lblCustomerID)
+=======
+        Me.Panel6.Controls.Add(Me.lblCustID)
+        Me.Panel6.Controls.Add(Me.Panel35)
+>>>>>>> Stashed changes
         Me.Panel6.Controls.Add(Me.Panel13)
         Me.Panel6.Controls.Add(Me.lblCompanyName)
         Me.Panel6.Controls.Add(Me.Panel7)
@@ -631,6 +693,7 @@ Partial Class frmListofOrder
         Me.Panel6.Size = New System.Drawing.Size(1371, 44)
         Me.Panel6.TabIndex = 26
         '
+<<<<<<< Updated upstream
         'lblCustomerID
         '
         Me.lblCustomerID.AutoSize = True
@@ -645,6 +708,71 @@ Partial Class frmListofOrder
         Me.lblCustomerID.TabIndex = 41
         Me.lblCustomerID.Text = "lblCustomerID"
         Me.lblCustomerID.Visible = False
+=======
+        'lblCustID
+        '
+        Me.lblCustID.AutoSize = True
+        Me.lblCustID.BackColor = System.Drawing.Color.Transparent
+        Me.lblCustID.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblCustID.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCustID.ForeColor = System.Drawing.Color.White
+        Me.lblCustID.Location = New System.Drawing.Point(206, 0)
+        Me.lblCustID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCustID.Name = "lblCustID"
+        Me.lblCustID.Size = New System.Drawing.Size(119, 29)
+        Me.lblCustID.TabIndex = 42
+        Me.lblCustID.Text = "lblCustID"
+        Me.lblCustID.Visible = False
+        '
+        'Panel35
+        '
+        Me.Panel35.Controls.Add(Me.lblORNo)
+        Me.Panel35.Controls.Add(Me.Panel36)
+        Me.Panel35.Controls.Add(Me.Label3)
+        Me.Panel35.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel35.Location = New System.Drawing.Point(1085, 0)
+        Me.Panel35.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel35.Name = "Panel35"
+        Me.Panel35.Size = New System.Drawing.Size(273, 44)
+        Me.Panel35.TabIndex = 40
+        '
+        'lblORNo
+        '
+        Me.lblORNo.AutoSize = True
+        Me.lblORNo.BackColor = System.Drawing.Color.Transparent
+        Me.lblORNo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblORNo.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lblORNo.ForeColor = System.Drawing.Color.White
+        Me.lblORNo.Location = New System.Drawing.Point(55, 0)
+        Me.lblORNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblORNo.Name = "lblORNo"
+        Me.lblORNo.Size = New System.Drawing.Size(131, 24)
+        Me.lblORNo.TabIndex = 48
+        Me.lblORNo.Text = "xxxxxxxxxxx"
+        '
+        'Panel36
+        '
+        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel36.Location = New System.Drawing.Point(42, 0)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(13, 44)
+        Me.Panel36.TabIndex = 40
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(0, 0)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(42, 24)
+        Me.Label3.TabIndex = 47
+        Me.Label3.Text = "No."
+>>>>>>> Stashed changes
         '
         'Panel13
         '
@@ -779,5 +907,17 @@ Partial Class frmListofOrder
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel3 As Panel
+<<<<<<< Updated upstream
     Friend WithEvents lblCustomerID As Label
+=======
+    Friend WithEvents Panel36 As Panel
+    Friend WithEvents Panel35 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblORNo As Label
+    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents ColumnHeader7 As ColumnHeader
+    Friend WithEvents ColumnHeader8 As ColumnHeader
+    Friend WithEvents lblCustID As Label
+    Friend WithEvents ColumnHeader9 As ColumnHeader
+>>>>>>> Stashed changes
 End Class

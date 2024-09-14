@@ -1020,6 +1020,7 @@ Partial Class frmManageUsers
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmManageUsers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "s"
         Me.Panel6.ResumeLayout(False)
         Me.Panel42.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
