@@ -55,6 +55,7 @@ Partial Class frmListCompany
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel26 = New System.Windows.Forms.Panel()
         Me.Panel27 = New System.Windows.Forms.Panel()
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel11.SuspendLayout()
         Me.Panel34.SuspendLayout()
         Me.Panel30.SuspendLayout()
@@ -76,7 +77,7 @@ Partial Class frmListCompany
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6, Me.ColumnHeader2, Me.ColumnHeader1, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader10})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6, Me.ColumnHeader2, Me.ColumnHeader1, Me.ColumnHeader3, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader10})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
@@ -94,22 +95,23 @@ Partial Class frmListCompany
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "Company Name"
-        Me.ColumnHeader6.Width = 300
+        Me.ColumnHeader6.Width = 200
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Contact Person"
-        Me.ColumnHeader2.Width = 250
+        Me.ColumnHeader2.Width = 200
         '
         'ColumnHeader1
         '
+        Me.ColumnHeader1.DisplayIndex = 2
         Me.ColumnHeader1.Text = "Address"
-        Me.ColumnHeader1.Width = 350
+        Me.ColumnHeader1.Width = 200
         '
         'ColumnHeader8
         '
         Me.ColumnHeader8.Text = "Delivery Address"
-        Me.ColumnHeader8.Width = 350
+        Me.ColumnHeader8.Width = 200
         '
         'ColumnHeader9
         '
@@ -124,17 +126,17 @@ Partial Class frmListCompany
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Email Address"
-        Me.ColumnHeader5.Width = 150
+        Me.ColumnHeader5.Width = 200
         '
         'ColumnHeader7
         '
         Me.ColumnHeader7.Text = "Category"
-        Me.ColumnHeader7.Width = 150
+        Me.ColumnHeader7.Width = 200
         '
         'ColumnHeader10
         '
         Me.ColumnHeader10.Text = "Date Ordered"
-        Me.ColumnHeader10.Width = 150
+        Me.ColumnHeader10.Width = 200
         '
         'Panel33
         '
@@ -393,6 +395,12 @@ Partial Class frmListCompany
         Me.Panel27.Size = New System.Drawing.Size(540, 12)
         Me.Panel27.TabIndex = 10
         '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.DisplayIndex = 3
+        Me.ColumnHeader3.Text = "Orders Pending"
+        Me.ColumnHeader3.Width = 200
+        '
         'frmListCompany
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -446,4 +454,5 @@ Partial Class frmListCompany
     Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents ColumnHeader9 As ColumnHeader
     Friend WithEvents ColumnHeader10 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
 End Class

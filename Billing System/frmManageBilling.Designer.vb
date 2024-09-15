@@ -87,7 +87,7 @@ Partial Class frmManageBilling
         Me.Panel6.BackColor = System.Drawing.Color.White
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel6.Location = New System.Drawing.Point(1806, 50)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(17, 879)
         Me.Panel6.TabIndex = 35
@@ -96,7 +96,7 @@ Partial Class frmManageBilling
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1789, 22)
         Me.Panel9.TabIndex = 0
@@ -115,7 +115,7 @@ Partial Class frmManageBilling
         Me.btnSearchCustomer.ForeColor = System.Drawing.Color.White
         Me.btnSearchCustomer.Image = CType(resources.GetObject("btnSearchCustomer.Image"), System.Drawing.Image)
         Me.btnSearchCustomer.Location = New System.Drawing.Point(1279, 2)
-        Me.btnSearchCustomer.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnSearchCustomer.Margin = New System.Windows.Forms.Padding(5)
         Me.btnSearchCustomer.Name = "btnSearchCustomer"
         Me.btnSearchCustomer.PressedDepth = 20
         Me.btnSearchCustomer.Size = New System.Drawing.Size(63, 50)
@@ -147,7 +147,7 @@ Partial Class frmManageBilling
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel10.Location = New System.Drawing.Point(0, 83)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1789, 15)
         Me.Panel10.TabIndex = 38
@@ -157,7 +157,7 @@ Partial Class frmManageBilling
         Me.Panel5.BackColor = System.Drawing.Color.White
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel5.Location = New System.Drawing.Point(0, 50)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(17, 879)
         Me.Panel5.TabIndex = 34
@@ -180,7 +180,7 @@ Partial Class frmManageBilling
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(13, 15)
-        Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.ShadowDecoration.BorderRadius = 0
         Me.Guna2GroupBox1.ShadowDecoration.Enabled = True
@@ -209,7 +209,7 @@ Partial Class frmManageBilling
         Me.Panel7.Controls.Add(Me.Label3)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(17, 50)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1789, 319)
         Me.Panel7.TabIndex = 85
@@ -226,7 +226,7 @@ Partial Class frmManageBilling
         Me.cboSalesman.ItemHeight = 30
         Me.cboSalesman.Items.AddRange(New Object() {"Saavedra", "Blacer", "Almiranez", "Saavedra", "Blacer", "Almiranez"})
         Me.cboSalesman.Location = New System.Drawing.Point(655, 181)
-        Me.cboSalesman.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.cboSalesman.Margin = New System.Windows.Forms.Padding(5)
         Me.cboSalesman.Name = "cboSalesman"
         Me.cboSalesman.Size = New System.Drawing.Size(325, 36)
         Me.cboSalesman.TabIndex = 129
@@ -257,7 +257,7 @@ Partial Class frmManageBilling
         Me.txtPONo.ForeColor = System.Drawing.Color.Black
         Me.txtPONo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtPONo.Location = New System.Drawing.Point(1, 181)
-        Me.txtPONo.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtPONo.Margin = New System.Windows.Forms.Padding(5)
         Me.txtPONo.Name = "txtPONo"
         Me.txtPONo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPONo.PlaceholderText = "Enter purchase order number"
@@ -286,7 +286,7 @@ Partial Class frmManageBilling
         Me.dtpDate.ForeColor = System.Drawing.Color.Black
         Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dtpDate.Location = New System.Drawing.Point(995, 181)
-        Me.dtpDate.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.dtpDate.Margin = New System.Windows.Forms.Padding(5)
         Me.dtpDate.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dtpDate.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         Me.dtpDate.Name = "dtpDate"
@@ -322,7 +322,7 @@ Partial Class frmManageBilling
         Me.txtBusinessStyle.ForeColor = System.Drawing.Color.Black
         Me.txtBusinessStyle.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtBusinessStyle.Location = New System.Drawing.Point(655, 38)
-        Me.txtBusinessStyle.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtBusinessStyle.Margin = New System.Windows.Forms.Padding(5)
         Me.txtBusinessStyle.Name = "txtBusinessStyle"
         Me.txtBusinessStyle.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtBusinessStyle.PlaceholderText = "Enter business style"
@@ -356,7 +356,7 @@ Partial Class frmManageBilling
         Me.txtTIN.ForeColor = System.Drawing.Color.Black
         Me.txtTIN.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtTIN.Location = New System.Drawing.Point(995, 38)
-        Me.txtTIN.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtTIN.Margin = New System.Windows.Forms.Padding(5)
         Me.txtTIN.Name = "txtTIN"
         Me.txtTIN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtTIN.PlaceholderText = "Enter TIN"
@@ -390,7 +390,7 @@ Partial Class frmManageBilling
         Me.txtTerms.ForeColor = System.Drawing.Color.Black
         Me.txtTerms.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtTerms.Location = New System.Drawing.Point(328, 181)
-        Me.txtTerms.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtTerms.Margin = New System.Windows.Forms.Padding(5)
         Me.txtTerms.Name = "txtTerms"
         Me.txtTerms.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtTerms.PlaceholderText = "Enter terms"
@@ -425,7 +425,7 @@ Partial Class frmManageBilling
         Me.txtDeliveryAddress.ForeColor = System.Drawing.Color.Black
         Me.txtDeliveryAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtDeliveryAddress.Location = New System.Drawing.Point(328, 38)
-        Me.txtDeliveryAddress.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtDeliveryAddress.Margin = New System.Windows.Forms.Padding(5)
         Me.txtDeliveryAddress.Multiline = True
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
         Me.txtDeliveryAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -461,7 +461,7 @@ Partial Class frmManageBilling
         Me.txtAddress.ForeColor = System.Drawing.Color.Black
         Me.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtAddress.Location = New System.Drawing.Point(1, 38)
-        Me.txtAddress.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(5)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -485,7 +485,7 @@ Partial Class frmManageBilling
         '
         'lblBillID
         '
-        Me.lblBillID.Location = New System.Drawing.Point(520, 23)
+        Me.lblBillID.Location = New System.Drawing.Point(430, 24)
         Me.lblBillID.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblBillID.Name = "lblBillID"
         Me.lblBillID.Size = New System.Drawing.Size(61, 17)
@@ -529,7 +529,7 @@ Partial Class frmManageBilling
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(17, 369)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(5)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(1789, 462)
@@ -578,7 +578,7 @@ Partial Class frmManageBilling
         Me.Panel8.Controls.Add(Me.Panel9)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel8.Location = New System.Drawing.Point(17, 831)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1789, 98)
         Me.Panel8.TabIndex = 35
@@ -588,7 +588,7 @@ Partial Class frmManageBilling
         Me.Panel18.Controls.Add(Me.btnDelete)
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel18.Location = New System.Drawing.Point(1602, 22)
-        Me.Panel18.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(187, 61)
         Me.Panel18.TabIndex = 43
@@ -607,7 +607,7 @@ Partial Class frmManageBilling
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnDelete.Location = New System.Drawing.Point(0, 0)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedDepth = 20
         Me.btnDelete.Size = New System.Drawing.Size(187, 61)
@@ -619,7 +619,7 @@ Partial Class frmManageBilling
         Me.Panel17.Controls.Add(Me.btnUpdate)
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel17.Location = New System.Drawing.Point(213, 22)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(187, 61)
         Me.Panel17.TabIndex = 43
@@ -638,7 +638,7 @@ Partial Class frmManageBilling
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
         Me.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnUpdate.Location = New System.Drawing.Point(0, 0)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.PressedDepth = 20
         Me.btnUpdate.Size = New System.Drawing.Size(187, 61)
@@ -649,7 +649,7 @@ Partial Class frmManageBilling
         '
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(200, 22)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(13, 61)
         Me.Panel15.TabIndex = 41
@@ -660,7 +660,7 @@ Partial Class frmManageBilling
         Me.Panel13.Controls.Add(Me.btnPrint)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel13.Location = New System.Drawing.Point(13, 22)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(187, 61)
         Me.Panel13.TabIndex = 40
@@ -679,7 +679,7 @@ Partial Class frmManageBilling
         Me.Printbtn.ForeColor = System.Drawing.Color.White
         Me.Printbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Printbtn.Location = New System.Drawing.Point(0, 0)
-        Me.Printbtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Printbtn.Margin = New System.Windows.Forms.Padding(4)
         Me.Printbtn.Name = "Printbtn"
         Me.Printbtn.PressedDepth = 20
         Me.Printbtn.Size = New System.Drawing.Size(187, 61)
@@ -700,7 +700,7 @@ Partial Class frmManageBilling
         Me.btnPrint.ForeColor = System.Drawing.Color.White
         Me.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnPrint.Location = New System.Drawing.Point(0, 0)
-        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.PressedDepth = 20
         Me.btnPrint.Size = New System.Drawing.Size(187, 61)
@@ -711,7 +711,7 @@ Partial Class frmManageBilling
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel12.Location = New System.Drawing.Point(0, 22)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(13, 61)
         Me.Panel12.TabIndex = 40
@@ -733,7 +733,7 @@ Partial Class frmManageBilling
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(13, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1823, 15)
         Me.Panel4.TabIndex = 12
@@ -742,7 +742,7 @@ Partial Class frmManageBilling
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(13, 944)
         Me.Panel3.TabIndex = 13
@@ -751,7 +751,7 @@ Partial Class frmManageBilling
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 944)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1836, 15)
         Me.Panel2.TabIndex = 14
@@ -760,7 +760,7 @@ Partial Class frmManageBilling
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel1.Location = New System.Drawing.Point(1836, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(13, 959)
         Me.Panel1.TabIndex = 11
@@ -781,7 +781,7 @@ Partial Class frmManageBilling
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmManageBilling"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Guna2GroupBox1.ResumeLayout(False)

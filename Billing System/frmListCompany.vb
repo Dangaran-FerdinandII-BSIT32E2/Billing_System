@@ -12,7 +12,7 @@ Public Class frmListCompany
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.* FROM tblcustomer c INNER JOIN(SELECT CustomerID FROM tblorder GROUP BY CustomerID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.OrderCount FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount FROM tblorder WHERE Availability = 1 GROUP BY CustomerID) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -23,13 +23,13 @@ Public Class frmListCompany
                 x = New ListViewItem(dr("CompanyName").ToString())
                 x.SubItems.Add(dr("LastName").ToString() + (", ") + dr("FirstName").ToString())
                 x.SubItems.Add(dr("Address").ToString())
+                x.SubItems.Add(dr("OrderCount").ToString())
                 x.SubItems.Add(dr("Delivery").ToString())
                 x.SubItems.Add(dr("BusinessStyle").ToString())
                 x.SubItems.Add(dr("PhoneNumber").ToString())
                 x.SubItems.Add(dr("Email").ToString())
                 x.SubItems.Add(dr("Status").ToString())
                 x.SubItems.Add(dr("CustomerID").ToString())
-                x.SubItems.Add(dr("TIN").ToString())
                 ListView1.Items.Add(x)
             Loop
         Catch ex As Exception
@@ -49,8 +49,7 @@ Public Class frmListCompany
 
             If ListView1.SelectedItems.Count > 0 Then
                 frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
-
-                frmManageBilling.lblCustID.Text = ListView1.SelectedItems(0).SubItems(8).Text
+                frmManageBilling.lblCustID.Text = ListView1.SelectedItems(0).SubItems(9).Text
                 Call frmManageBilling.loadBilling()
             End If
 
