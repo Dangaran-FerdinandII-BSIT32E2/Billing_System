@@ -269,7 +269,7 @@ Partial Class frmCustomerViewInfo_Order
         'lblOrderID
         '
         Me.lblOrderID.AutoSize = True
-        Me.lblOrderID.Location = New System.Drawing.Point(340, 26)
+        Me.lblOrderID.Location = New System.Drawing.Point(568, 26)
         Me.lblOrderID.Name = "lblOrderID"
         Me.lblOrderID.Size = New System.Drawing.Size(68, 16)
         Me.lblOrderID.TabIndex = 41

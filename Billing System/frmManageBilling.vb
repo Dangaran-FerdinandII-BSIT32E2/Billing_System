@@ -36,6 +36,7 @@ Public Class frmManageBilling
                 x.SubItems.Add(dr("SellingPrice").ToString())
                 x.SubItems.Add(dr("Amount").ToString())
                 x.SubItems.Add(dr("OrderID").ToString())
+                x.SubItems.Add(dr("OrderList").ToString())
                 x.SubItems.Add(dr("ProductID").ToString())
                 ListView1.Items.Add(x)
             Loop
@@ -197,14 +198,14 @@ Public Class frmManageBilling
                 If cn.State <> ConnectionState.Open Then
                     cn.Open()
                 End If
-                sql = "INSERT INTO tblbilling(CustomerID, SalesMan, Terms, ProductOrder, Date, Remarks) VALUES(@CustomerID, @SalesMan, @Terms, @ProductOrder, @Date, @Remarks)"
+                sql = "INSERT INTO tblbilling(CustomerID, SalesMan, Terms, ProductOrder, DatePrinted, Remarks) VALUES(@CustomerID, @SalesMan, @Terms, @ProductOrder, @DatePrinted, @Remarks)"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
                     .Parameters.AddWithValue("@CustomerID", lblCustID.Text)
                     .Parameters.AddWithValue("@SalesMan", cboSalesman.Text)
                     .Parameters.AddWithValue("@Terms", txtTerms.Text)
                     .Parameters.AddWithValue("@ProductOrder", txtPONo.Text)
-                    .Parameters.AddWithValue("@Date", dtpDate.Value)
+                    .Parameters.AddWithValue("@DatePrinted", dtpDate.Value)
                     .Parameters.AddWithValue("@Remarks", "0")
                     .ExecuteNonQuery()
                 End With
@@ -251,7 +252,7 @@ Public Class frmManageBilling
             frmPrintInvoice.lblPuchaseNo.Text = txtPONo.Text
             frmPrintInvoice.lblDate.Text = dtpDate.Value.ToString
 
-            For Each listitem As ListViewItem In ListView1.Items 'includes OrderID on SubItem 5
+            For Each listitem As ListViewItem In ListView1.Items 'includes OrderID on SubItem 5 OrderList sub item 6 productid sub item 7
                 Dim X As ListViewItem = listitem.Clone()
                 frmPrintInvoice.ListView1.Items.Add(X)
             Next
@@ -277,7 +278,7 @@ Public Class frmManageBilling
                 With cmd
                     .Parameters.AddWithValue("@BillingID", lblBillingID.Text)
                     .Parameters.AddWithValue("@OrderID", order.SubItems(5).Text)
-                    .Parameters.AddWithValue("@ProductID", order.SubItems(6).Text)
+                    .Parameters.AddWithValue("@ProductID", order.SubItems(7).Text)
                     .ExecuteNonQuery()
                 End With
             Next

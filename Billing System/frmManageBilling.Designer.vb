@@ -228,7 +228,7 @@ Partial Class frmManageBilling
         Me.cboSalesman.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.cboSalesman.ForeColor = System.Drawing.Color.Black
         Me.cboSalesman.ItemHeight = 30
-        Me.cboSalesman.Items.AddRange(New Object() {"Saavedra", "Blacer", "Almiranez", "Saavedra", "Blacer", "Almiranez"})
+        Me.cboSalesman.Items.AddRange(New Object() {"Saavedra", "Blacer", "Almiranez"})
         Me.cboSalesman.Location = New System.Drawing.Point(655, 181)
         Me.cboSalesman.Margin = New System.Windows.Forms.Padding(5)
         Me.cboSalesman.Name = "cboSalesman"
@@ -499,6 +499,7 @@ Partial Class frmManageBilling
         Me.lblCustID.Size = New System.Drawing.Size(63, 16)
         Me.lblCustID.TabIndex = 38
         Me.lblCustID.Text = "lblCustID"
+        Me.lblCustID.Visible = False
         '
         'Label1
         '
@@ -776,6 +777,7 @@ Partial Class frmManageBilling
         Me.lblOrderID.Size = New System.Drawing.Size(72, 16)
         Me.lblOrderID.TabIndex = 86
         Me.lblOrderID.Text = "lblOrderID"
+        Me.lblOrderID.Visible = False
         '
         'lblProductID
         '
@@ -789,6 +791,7 @@ Partial Class frmManageBilling
         Me.lblProductID.Size = New System.Drawing.Size(85, 16)
         Me.lblProductID.TabIndex = 87
         Me.lblProductID.Text = "lblProductID"
+        Me.lblProductID.Visible = False
         '
         'lblOrderListID
         '
@@ -802,6 +805,7 @@ Partial Class frmManageBilling
         Me.lblOrderListID.Size = New System.Drawing.Size(94, 16)
         Me.lblOrderListID.TabIndex = 88
         Me.lblOrderListID.Text = "lblOrderListID"
+        Me.lblOrderListID.Visible = False
         '
         'frmManageBilling
         '

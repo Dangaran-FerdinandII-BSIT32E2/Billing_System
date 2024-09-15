@@ -22,18 +22,41 @@ Public Class frmPrintInvoice
                 cn.Open()
             End If
 
-            sql = "INSERT INTO tblbilling(CustomerID, SalesMan, Terms, ProductOrder, Date) VALUES(@CustomerID, @SalesMan, @Terms, @ProductOrder, @Date)"
+            sql = "INSERT INTO tblbilling(CustomerID, SalesMan, Terms, ProductOrder, DatePrinted) VALUES(@CustomerID, @SalesMan, @Terms, @ProductOrder, @DatePrinted)"
             cmd = New MySqlCommand(sql, cn)
             With cmd
                 .Parameters.AddWithValue("@CustomerID", lblCustID.Text)
                 .Parameters.AddWithValue("@SalesMan", lblSalesman.Text)
                 .Parameters.AddWithValue("@Terms", lblTerms.Text)
                 .Parameters.AddWithValue("@ProductOrder", lblPuchaseNo.Text)
-                .Parameters.AddWithValue("@Date", frmManageBilling.dtpDate.Value)
+                .Parameters.AddWithValue("@DatePrinted", frmManageBilling.dtpDate.Value)
                 .ExecuteNonQuery()
             End With
+
+            Call updateOrder()
         Catch ex As Exception
             MsgBox("An error occurred frmPrintInvoice(saveBilling): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub updateOrder()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            For Each orderlist As ListViewItem In ListView1.Items
+                sql = "UPDATE tblorder SET DueDate=@DueDate WHERE OrderListID = '" & orderlist.SubItems(6).Text & "'"
+                cmd = New MySqlCommand(sql, cn)
+                cmd.Parameters.AddWithValue("@DueDate", Date.Now.AddDays(5))
+                cmd.ExecuteNonQuery()
+            Next
+        Catch ex As Exception
+            MsgBox("An error occurred frmPrintInvoice(updateOrder): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()

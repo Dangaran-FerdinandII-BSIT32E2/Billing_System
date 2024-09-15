@@ -12,7 +12,7 @@ Public Class frmListCompany
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID FROM tblorder WHERE Availability = 1 AND Status = 1 GROUP BY CustomerID, OrderID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID FROM tblorder WHERE Availability = 1 AND Status = 1 AND DueDate IS NULL GROUP BY CustomerID, OrderID) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
