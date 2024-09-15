@@ -17,7 +17,7 @@ Public Class frmManageBilling
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "') AND Availability = 1"
+            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "' AND OrderID = '" & lblOrderListID.Text & "') And Availability = 1 And Status = 1"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -40,7 +40,7 @@ Public Class frmManageBilling
                 ListView1.Items.Add(x)
             Loop
         Catch ex As Exception
-            MsgBox("An error occurred frmManageBilling(loadBilling): " & ex.Message)
+            MsgBox("An Error occurred frmManageBilling(loadBilling): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -66,7 +66,7 @@ Public Class frmManageBilling
                 txtCompanyName.Text = dr("CompanyName").ToString()
                 txtAddress.Text = dr("Address").ToString()
                 txtDeliveryAddress.Text = dr("Delivery").ToString()
-                txtBusinessStyle.Text = dr("BusinessStyle").ToString()
+                txtBusinessStyle.Text = dr("CompanyName").ToString()
                 txtTIN.Text = dr("TIN").ToString()
             End If
         Catch ex As Exception
@@ -86,7 +86,7 @@ Public Class frmManageBilling
 
             If ListView1.SelectedItems.Count > 0 Then
                 lblOrderID.Text = ListView1.SelectedItems(0).SubItems(5).Text
-                lblProdID.Text = ListView1.SelectedItems(0).SubItems(6).Text
+                lblProductID.Text = ListView1.SelectedItems(0).SubItems(6).Text
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(ListView1_SelectedIndexChanged): " & ex.Message)
@@ -139,7 +139,7 @@ Public Class frmManageBilling
                 cn.Close()
             End If
             Call loadBilling()
-            lblOrderID.Text = 0
+            zzzz.Text = 0
         End Try
     End Sub
 
@@ -149,7 +149,7 @@ Public Class frmManageBilling
                 cn.Open()
             End If
 
-            If lblOrderID.Text IsNot Nothing Then
+            If zzzz.Text IsNot Nothing Then
                 If MsgBox("Do you want to delete the order?", vbYesNo) = vbYes Then
                     sql = "DELETE FROM tblorder WHERE OrderID = @orderid"
                     cmd = New MySqlCommand(sql, cn)

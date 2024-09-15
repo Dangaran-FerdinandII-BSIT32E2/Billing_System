@@ -100,6 +100,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
+        Me.lblstatus = New System.Windows.Forms.Label()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -252,6 +253,7 @@ Partial Class frmCustomerViewInfo_Order
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.White
+        Me.Panel6.Controls.Add(Me.lblstatus)
         Me.Panel6.Controls.Add(Me.lblOrderID)
         Me.Panel6.Controls.Add(Me.Panel34)
         Me.Panel6.Controls.Add(Me.Panel33)
@@ -1052,6 +1054,16 @@ Partial Class frmCustomerViewInfo_Order
         Me.TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
+        'lblstatus
+        '
+        Me.lblstatus.AutoSize = True
+        Me.lblstatus.Location = New System.Drawing.Point(467, 26)
+        Me.lblstatus.Name = "lblstatus"
+        Me.lblstatus.Size = New System.Drawing.Size(48, 16)
+        Me.lblstatus.TabIndex = 42
+        Me.lblstatus.Text = "Label2"
+        Me.lblstatus.Visible = False
+        '
         'frmCustomerViewInfo_Order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1159,4 +1171,5 @@ Partial Class frmCustomerViewInfo_Order
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblCustID As Label
     Friend WithEvents lblOrderID As Label
+    Friend WithEvents lblstatus As Label
 End Class

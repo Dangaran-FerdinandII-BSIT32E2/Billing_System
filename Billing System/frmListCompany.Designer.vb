@@ -24,15 +24,15 @@ Partial Class frmListCompany
     Private Sub InitializeComponent()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.CompanyName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ContactPerson = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Address = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DeliveryAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.BusinessStyle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.PhoneNumber = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.EmailAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Category = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DateOrdered = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel33 = New System.Windows.Forms.Panel()
         Me.Panel32 = New System.Windows.Forms.Panel()
         Me.Panel31 = New System.Windows.Forms.Panel()
@@ -55,7 +55,7 @@ Partial Class frmListCompany
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel26 = New System.Windows.Forms.Panel()
         Me.Panel27 = New System.Windows.Forms.Panel()
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.OrdersPending = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel11.SuspendLayout()
         Me.Panel34.SuspendLayout()
         Me.Panel30.SuspendLayout()
@@ -77,7 +77,7 @@ Partial Class frmListCompany
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6, Me.ColumnHeader2, Me.ColumnHeader1, Me.ColumnHeader3, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader10})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.CompanyName, Me.ContactPerson, Me.PhoneNumber, Me.EmailAddress, Me.OrdersPending, Me.Address, Me.DeliveryAddress, Me.BusinessStyle, Me.Category, Me.DateOrdered})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
@@ -92,51 +92,52 @@ Partial Class frmListCompany
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
-        'ColumnHeader6
+        'CompanyName
         '
-        Me.ColumnHeader6.Text = "Company Name"
-        Me.ColumnHeader6.Width = 200
+        Me.CompanyName.Text = "Company Name"
+        Me.CompanyName.Width = 200
         '
-        'ColumnHeader2
+        'ContactPerson
         '
-        Me.ColumnHeader2.Text = "Contact Person"
-        Me.ColumnHeader2.Width = 200
+        Me.ContactPerson.Text = "Contact Person"
+        Me.ContactPerson.Width = 200
         '
-        'ColumnHeader1
+        'Address
         '
-        Me.ColumnHeader1.DisplayIndex = 2
-        Me.ColumnHeader1.Text = "Address"
-        Me.ColumnHeader1.Width = 200
+        Me.Address.Text = "Address"
+        Me.Address.Width = 200
         '
-        'ColumnHeader8
+        'DeliveryAddress
         '
-        Me.ColumnHeader8.Text = "Delivery Address"
-        Me.ColumnHeader8.Width = 200
+        Me.DeliveryAddress.DisplayIndex = 2
+        Me.DeliveryAddress.Text = "Delivery Address"
+        Me.DeliveryAddress.Width = 200
         '
-        'ColumnHeader9
+        'BusinessStyle
         '
-        Me.ColumnHeader9.Text = "Business Style"
-        Me.ColumnHeader9.Width = 200
+        Me.BusinessStyle.Text = "Business Style"
+        Me.BusinessStyle.Width = 200
         '
-        'ColumnHeader4
+        'PhoneNumber
         '
-        Me.ColumnHeader4.Text = "Phone Number"
-        Me.ColumnHeader4.Width = 200
+        Me.PhoneNumber.Text = "Phone Number"
+        Me.PhoneNumber.Width = 200
         '
-        'ColumnHeader5
+        'EmailAddress
         '
-        Me.ColumnHeader5.Text = "Email Address"
-        Me.ColumnHeader5.Width = 200
+        Me.EmailAddress.DisplayIndex = 4
+        Me.EmailAddress.Text = "Email Address"
+        Me.EmailAddress.Width = 200
         '
-        'ColumnHeader7
+        'Category
         '
-        Me.ColumnHeader7.Text = "Category"
-        Me.ColumnHeader7.Width = 200
+        Me.Category.Text = "Category"
+        Me.Category.Width = 200
         '
-        'ColumnHeader10
+        'DateOrdered
         '
-        Me.ColumnHeader10.Text = "Date Ordered"
-        Me.ColumnHeader10.Width = 200
+        Me.DateOrdered.Text = "Date Ordered"
+        Me.DateOrdered.Width = 200
         '
         'Panel33
         '
@@ -395,11 +396,11 @@ Partial Class frmListCompany
         Me.Panel27.Size = New System.Drawing.Size(540, 12)
         Me.Panel27.TabIndex = 10
         '
-        'ColumnHeader3
+        'OrdersPending
         '
-        Me.ColumnHeader3.DisplayIndex = 3
-        Me.ColumnHeader3.Text = "Orders Pending"
-        Me.ColumnHeader3.Width = 200
+        Me.OrdersPending.DisplayIndex = 3
+        Me.OrdersPending.Text = "Orders Pending"
+        Me.OrdersPending.Width = 200
         '
         'frmListCompany
         '
@@ -445,14 +446,14 @@ Partial Class frmListCompany
     Friend WithEvents Panel26 As Panel
     Friend WithEvents Panel27 As Panel
     Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader6 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents ColumnHeader7 As ColumnHeader
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader8 As ColumnHeader
-    Friend WithEvents ColumnHeader9 As ColumnHeader
-    Friend WithEvents ColumnHeader10 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents CompanyName As ColumnHeader
+    Friend WithEvents ContactPerson As ColumnHeader
+    Friend WithEvents PhoneNumber As ColumnHeader
+    Friend WithEvents EmailAddress As ColumnHeader
+    Friend WithEvents Category As ColumnHeader
+    Friend WithEvents Address As ColumnHeader
+    Friend WithEvents DeliveryAddress As ColumnHeader
+    Friend WithEvents BusinessStyle As ColumnHeader
+    Friend WithEvents DateOrdered As ColumnHeader
+    Friend WithEvents OrdersPending As ColumnHeader
 End Class
