@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmCustomerViewInfo_Order
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmCustomerViewInfo_Order
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCustomerViewInfo_Order))
@@ -45,6 +45,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.lblstatus = New System.Windows.Forms.Label()
         Me.lblOrderID = New System.Windows.Forms.Label()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.btnInsert = New Guna.UI2.WinForms.Guna2Button()
@@ -61,6 +62,10 @@ Partial Class frmCustomerViewInfo_Order
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtLastName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.cboAcctStatus = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPhoneNumber = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtEmailAddress = New Guna.UI2.WinForms.Guna2TextBox()
@@ -80,9 +85,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.txtCompanyName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel30 = New System.Windows.Forms.Panel()
-        Me.Panel42 = New System.Windows.Forms.Panel()
-        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel41 = New System.Windows.Forms.Panel()
         Me.Panel40 = New System.Windows.Forms.Panel()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel39 = New System.Windows.Forms.Panel()
@@ -100,7 +102,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
-        Me.lblstatus = New System.Windows.Forms.Label()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -111,7 +112,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Panel30.SuspendLayout()
-        Me.Panel42.SuspendLayout()
         Me.Panel40.SuspendLayout()
         Me.Panel37.SuspendLayout()
         Me.Panel38.SuspendLayout()
@@ -222,7 +222,7 @@ Partial Class frmCustomerViewInfo_Order
         '
         'ColumnHeader10
         '
-        Me.ColumnHeader10.Text = "Qty"
+        Me.ColumnHeader10.Text = "Quantity"
         Me.ColumnHeader10.Width = 150
         '
         'ColumnHeader11
@@ -265,6 +265,16 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1329, 74)
         Me.Panel6.TabIndex = 21
+        '
+        'lblstatus
+        '
+        Me.lblstatus.AutoSize = True
+        Me.lblstatus.Location = New System.Drawing.Point(467, 26)
+        Me.lblstatus.Name = "lblstatus"
+        Me.lblstatus.Size = New System.Drawing.Size(48, 16)
+        Me.lblstatus.TabIndex = 42
+        Me.lblstatus.Text = "Label2"
+        Me.lblstatus.Visible = False
         '
         'lblOrderID
         '
@@ -448,6 +458,10 @@ Partial Class frmCustomerViewInfo_Order
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtLastName)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.cboAcctStatus)
+        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtPhoneNumber)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txtEmailAddress)
@@ -456,7 +470,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.GroupBox1.Location = New System.Drawing.Point(481, 14)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
@@ -466,19 +480,88 @@ Partial Class frmCustomerViewInfo_Order
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Contact Information"
         '
+        'txtLastName
+        '
+        Me.txtLastName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtLastName.DefaultText = ""
+        Me.txtLastName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtLastName.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtLastName.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtLastName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtLastName.Enabled = False
+        Me.txtLastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtLastName.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtLastName.ForeColor = System.Drawing.Color.Black
+        Me.txtLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtLastName.Location = New System.Drawing.Point(9, 151)
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtLastName.Name = "txtLastName"
+        Me.txtLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtLastName.PlaceholderText = "Enter last name"
+        Me.txtLastName.SelectedText = ""
+        Me.txtLastName.Size = New System.Drawing.Size(417, 44)
+        Me.txtLastName.TabIndex = 118
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(8, 123)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(110, 24)
+        Me.Label9.TabIndex = 117
+        Me.Label9.Text = "Last Name"
+        '
+        'cboAcctStatus
+        '
+        Me.cboAcctStatus.BackColor = System.Drawing.Color.Transparent
+        Me.cboAcctStatus.DisabledState.FillColor = System.Drawing.Color.White
+        Me.cboAcctStatus.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.cboAcctStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboAcctStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboAcctStatus.Enabled = False
+        Me.cboAcctStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboAcctStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboAcctStatus.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.cboAcctStatus.ForeColor = System.Drawing.Color.Black
+        Me.cboAcctStatus.ItemHeight = 30
+        Me.cboAcctStatus.Items.AddRange(New Object() {"Active", "Inactive"})
+        Me.cboAcctStatus.Location = New System.Drawing.Point(12, 419)
+        Me.cboAcctStatus.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboAcctStatus.Name = "cboAcctStatus"
+        Me.cboAcctStatus.Size = New System.Drawing.Size(393, 36)
+        Me.cboAcctStatus.TabIndex = 116
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(8, 376)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(155, 24)
+        Me.Label2.TabIndex = 84
+        Me.Label2.Text = "Account Status"
+        '
         'txtPhoneNumber
         '
         Me.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtPhoneNumber.DefaultText = ""
         Me.txtPhoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtPhoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtPhoneNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtPhoneNumber.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtPhoneNumber.DisabledState.ForeColor = System.Drawing.Color.DimGray
         Me.txtPhoneNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtPhoneNumber.Enabled = False
         Me.txtPhoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPhoneNumber.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtPhoneNumber.ForeColor = System.Drawing.Color.Black
         Me.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtPhoneNumber.Location = New System.Drawing.Point(9, 151)
+        Me.txtPhoneNumber.Location = New System.Drawing.Point(9, 226)
         Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(5)
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
         Me.txtPhoneNumber.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -493,7 +576,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(8, 123)
+        Me.Label6.Location = New System.Drawing.Point(8, 198)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(150, 24)
@@ -505,15 +588,14 @@ Partial Class frmCustomerViewInfo_Order
         Me.txtEmailAddress.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtEmailAddress.DefaultText = ""
         Me.txtEmailAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtEmailAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtEmailAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtEmailAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmailAddress.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtEmailAddress.DisabledState.ForeColor = System.Drawing.Color.DimGray
         Me.txtEmailAddress.Enabled = False
         Me.txtEmailAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtEmailAddress.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtEmailAddress.ForeColor = System.Drawing.Color.Black
         Me.txtEmailAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtEmailAddress.Location = New System.Drawing.Point(9, 242)
+        Me.txtEmailAddress.Location = New System.Drawing.Point(9, 317)
         Me.txtEmailAddress.Margin = New System.Windows.Forms.Padding(5)
         Me.txtEmailAddress.Name = "txtEmailAddress"
         Me.txtEmailAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -528,7 +610,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(8, 213)
+        Me.Label8.Location = New System.Drawing.Point(8, 288)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(144, 24)
@@ -540,9 +622,10 @@ Partial Class frmCustomerViewInfo_Order
         Me.txtFirstName.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtFirstName.DefaultText = ""
         Me.txtFirstName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtFirstName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtFirstName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtFirstName.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtFirstName.DisabledState.ForeColor = System.Drawing.Color.DimGray
         Me.txtFirstName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtFirstName.Enabled = False
         Me.txtFirstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtFirstName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtFirstName.ForeColor = System.Drawing.Color.Black
@@ -565,9 +648,9 @@ Partial Class frmCustomerViewInfo_Order
         Me.Label13.Location = New System.Drawing.Point(8, 38)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(157, 24)
+        Me.Label13.Size = New System.Drawing.Size(112, 24)
         Me.Label13.TabIndex = 76
-        Me.Label13.Text = "Contact Person"
+        Me.Label13.Text = "First Name"
         '
         'Panel5
         '
@@ -592,7 +675,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupBox2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.GroupBox2.Location = New System.Drawing.Point(14, 14)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
@@ -607,9 +690,10 @@ Partial Class frmCustomerViewInfo_Order
         Me.txtBusinessStyle.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtBusinessStyle.DefaultText = ""
         Me.txtBusinessStyle.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtBusinessStyle.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtBusinessStyle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBusinessStyle.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtBusinessStyle.DisabledState.ForeColor = System.Drawing.Color.DimGray
         Me.txtBusinessStyle.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBusinessStyle.Enabled = False
         Me.txtBusinessStyle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtBusinessStyle.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtBusinessStyle.ForeColor = System.Drawing.Color.Black
@@ -641,9 +725,10 @@ Partial Class frmCustomerViewInfo_Order
         Me.txtDeliveryAddress.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtDeliveryAddress.DefaultText = ""
         Me.txtDeliveryAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtDeliveryAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtDeliveryAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDeliveryAddress.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtDeliveryAddress.DisabledState.ForeColor = System.Drawing.Color.DimGray
         Me.txtDeliveryAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDeliveryAddress.Enabled = False
         Me.txtDeliveryAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtDeliveryAddress.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtDeliveryAddress.ForeColor = System.Drawing.Color.Black
@@ -676,9 +761,10 @@ Partial Class frmCustomerViewInfo_Order
         Me.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtAddress.DefaultText = ""
         Me.txtAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtAddress.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtAddress.DisabledState.ForeColor = System.Drawing.Color.DimGray
         Me.txtAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtAddress.Enabled = False
         Me.txtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtAddress.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtAddress.ForeColor = System.Drawing.Color.Black
@@ -709,14 +795,17 @@ Partial Class frmCustomerViewInfo_Order
         'cboStatus
         '
         Me.cboStatus.BackColor = System.Drawing.Color.Transparent
+        Me.cboStatus.DisabledState.FillColor = System.Drawing.Color.White
+        Me.cboStatus.DisabledState.ForeColor = System.Drawing.Color.DimGray
         Me.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboStatus.Enabled = False
         Me.cboStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cboStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cboStatus.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.cboStatus.ForeColor = System.Drawing.Color.Black
         Me.cboStatus.ItemHeight = 30
-        Me.cboStatus.Items.AddRange(New Object() {"Good Payer", "Bad Payer"})
+        Me.cboStatus.Items.AddRange(New Object() {"Credit Positive", "Credit Negative", "Neutral"})
         Me.cboStatus.Location = New System.Drawing.Point(13, 519)
         Me.cboStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.cboStatus.Name = "cboStatus"
@@ -741,9 +830,10 @@ Partial Class frmCustomerViewInfo_Order
         Me.txtCompanyName.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtCompanyName.DefaultText = ""
         Me.txtCompanyName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCompanyName.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtCompanyName.DisabledState.ForeColor = System.Drawing.Color.DimGray
         Me.txtCompanyName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCompanyName.Enabled = False
         Me.txtCompanyName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCompanyName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtCompanyName.ForeColor = System.Drawing.Color.Black
@@ -773,8 +863,6 @@ Partial Class frmCustomerViewInfo_Order
         'Panel30
         '
         Me.Panel30.BackColor = System.Drawing.Color.White
-        Me.Panel30.Controls.Add(Me.Panel42)
-        Me.Panel30.Controls.Add(Me.Panel41)
         Me.Panel30.Controls.Add(Me.Panel40)
         Me.Panel30.Controls.Add(Me.Panel39)
         Me.Panel30.Controls.Add(Me.Panel37)
@@ -789,48 +877,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(1335, 74)
         Me.Panel30.TabIndex = 24
-        '
-        'Panel42
-        '
-        Me.Panel42.BackColor = System.Drawing.Color.White
-        Me.Panel42.Controls.Add(Me.btnDelete)
-        Me.Panel42.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel42.Location = New System.Drawing.Point(935, 12)
-        Me.Panel42.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(187, 50)
-        Me.Panel42.TabIndex = 18
-        '
-        'btnDelete
-        '
-        Me.btnDelete.BorderRadius = 8
-        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDelete.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnDelete.Location = New System.Drawing.Point(0, 0)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.PressedDepth = 20
-        Me.btnDelete.Size = New System.Drawing.Size(187, 50)
-        Me.btnDelete.TabIndex = 58
-        Me.btnDelete.Text = "Delete"
-        '
-        'Panel41
-        '
-        Me.Panel41.BackColor = System.Drawing.Color.White
-        Me.Panel41.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel41.Location = New System.Drawing.Point(1122, 12)
-        Me.Panel41.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(13, 50)
-        Me.Panel41.TabIndex = 18
         '
         'Panel40
         '
@@ -852,7 +898,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnCancel.Enabled = False
         Me.btnCancel.FillColor = System.Drawing.Color.OrangeRed
         Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
@@ -1054,16 +1099,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
-        'lblstatus
-        '
-        Me.lblstatus.AutoSize = True
-        Me.lblstatus.Location = New System.Drawing.Point(467, 26)
-        Me.lblstatus.Name = "lblstatus"
-        Me.lblstatus.Size = New System.Drawing.Size(48, 16)
-        Me.lblstatus.TabIndex = 42
-        Me.lblstatus.Text = "Label2"
-        Me.lblstatus.Visible = False
-        '
         'frmCustomerViewInfo_Order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1086,7 +1121,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.Panel30.ResumeLayout(False)
-        Me.Panel42.ResumeLayout(False)
         Me.Panel40.ResumeLayout(False)
         Me.Panel37.ResumeLayout(False)
         Me.Panel38.ResumeLayout(False)
@@ -1133,9 +1167,6 @@ Partial Class frmCustomerViewInfo_Order
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel30 As Panel
-    Friend WithEvents Panel42 As Panel
-    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel41 As Panel
     Friend WithEvents Panel40 As Panel
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel39 As Panel
@@ -1172,4 +1203,8 @@ Partial Class frmCustomerViewInfo_Order
     Friend WithEvents lblCustID As Label
     Friend WithEvents lblOrderID As Label
     Friend WithEvents lblstatus As Label
+    Friend WithEvents cboAcctStatus As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtLastName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label9 As Label
 End Class

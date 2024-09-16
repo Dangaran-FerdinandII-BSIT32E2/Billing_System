@@ -26,11 +26,12 @@ Partial Class frmListCompany
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.CompanyName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ContactPerson = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.PhoneNumber = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.EmailAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.OrdersPending = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Address = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DeliveryAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.BusinessStyle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.PhoneNumber = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.EmailAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Category = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DateOrdered = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel33 = New System.Windows.Forms.Panel()
@@ -55,7 +56,6 @@ Partial Class frmListCompany
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel26 = New System.Windows.Forms.Panel()
         Me.Panel27 = New System.Windows.Forms.Panel()
-        Me.OrdersPending = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel11.SuspendLayout()
         Me.Panel34.SuspendLayout()
         Me.Panel30.SuspendLayout()
@@ -102,22 +102,6 @@ Partial Class frmListCompany
         Me.ContactPerson.Text = "Contact Person"
         Me.ContactPerson.Width = 200
         '
-        'Address
-        '
-        Me.Address.Text = "Address"
-        Me.Address.Width = 200
-        '
-        'DeliveryAddress
-        '
-        Me.DeliveryAddress.DisplayIndex = 2
-        Me.DeliveryAddress.Text = "Delivery Address"
-        Me.DeliveryAddress.Width = 200
-        '
-        'BusinessStyle
-        '
-        Me.BusinessStyle.Text = "Business Style"
-        Me.BusinessStyle.Width = 200
-        '
         'PhoneNumber
         '
         Me.PhoneNumber.Text = "Phone Number"
@@ -125,9 +109,28 @@ Partial Class frmListCompany
         '
         'EmailAddress
         '
-        Me.EmailAddress.DisplayIndex = 4
         Me.EmailAddress.Text = "Email Address"
         Me.EmailAddress.Width = 200
+        '
+        'OrdersPending
+        '
+        Me.OrdersPending.Text = "Orders Pending"
+        Me.OrdersPending.Width = 200
+        '
+        'Address
+        '
+        Me.Address.Text = "Address"
+        Me.Address.Width = 200
+        '
+        'DeliveryAddress
+        '
+        Me.DeliveryAddress.Text = "Delivery Address"
+        Me.DeliveryAddress.Width = 200
+        '
+        'BusinessStyle
+        '
+        Me.BusinessStyle.Text = "Business Style"
+        Me.BusinessStyle.Width = 200
         '
         'Category
         '
@@ -395,12 +398,6 @@ Partial Class frmListCompany
         Me.Panel27.Name = "Panel27"
         Me.Panel27.Size = New System.Drawing.Size(540, 12)
         Me.Panel27.TabIndex = 10
-        '
-        'OrdersPending
-        '
-        Me.OrdersPending.DisplayIndex = 3
-        Me.OrdersPending.Text = "Orders Pending"
-        Me.OrdersPending.Width = 200
         '
         'frmListCompany
         '
