@@ -79,7 +79,7 @@ Public Class frmManageBilling
         End Try
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -98,7 +98,7 @@ Public Class frmManageBilling
         End Try
     End Sub
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -144,7 +144,7 @@ Public Class frmManageBilling
         End Try
     End Sub
 
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -171,7 +171,7 @@ Public Class frmManageBilling
         End Try
     End Sub
 
-    Private Sub Printbtn_Click(sender As Object, e As EventArgs) Handles Printbtn.Click
+    Private Sub Printbtn_Click(sender As Object, e As EventArgs)
         Try
             Dim filled As Boolean = True
 
