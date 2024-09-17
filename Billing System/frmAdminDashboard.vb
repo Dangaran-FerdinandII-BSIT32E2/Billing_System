@@ -179,7 +179,7 @@
         frmAdminSettings.Close()
     End Sub
 
-    Private Sub btnProduct_Click(sender As Object, e As EventArgs) Handles btnProduct.Click
+    Private Sub btnProduct_Click(sender As Object, e As EventArgs)
         frmManageProducts.TopLevel = False
         panelDashboard.Controls.Add(frmManageProducts)
         frmManageProducts.BringToFront()
