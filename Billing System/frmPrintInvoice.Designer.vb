@@ -23,6 +23,7 @@ Partial Class frmPrintInvoice
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblCustID = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -89,7 +90,7 @@ Partial Class frmPrintInvoice
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.lblCustID = New System.Windows.Forms.Label()
+        Me.lblBillingID = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
@@ -100,6 +101,7 @@ Partial Class frmPrintInvoice
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.lblBillingID)
         Me.Panel1.Controls.Add(Me.lblCustID)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -108,6 +110,18 @@ Partial Class frmPrintInvoice
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1264, 52)
         Me.Panel1.TabIndex = 0
+        '
+        'lblCustID
+        '
+        Me.lblCustID.AutoSize = True
+        Me.lblCustID.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCustID.Location = New System.Drawing.Point(349, 9)
+        Me.lblCustID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCustID.Name = "lblCustID"
+        Me.lblCustID.Size = New System.Drawing.Size(63, 16)
+        Me.lblCustID.TabIndex = 80
+        Me.lblCustID.Text = "lblCustID"
+        Me.lblCustID.Visible = False
         '
         'Label1
         '
@@ -861,16 +875,17 @@ Partial Class frmPrintInvoice
         Me.Label29.TabIndex = 83
         Me.Label29.Text = "TERMS:"
         '
-        'lblCustID
+        'lblBillingID
         '
-        Me.lblCustID.AutoSize = True
-        Me.lblCustID.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCustID.Location = New System.Drawing.Point(349, 9)
-        Me.lblCustID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblCustID.Name = "lblCustID"
-        Me.lblCustID.Size = New System.Drawing.Size(63, 16)
-        Me.lblCustID.TabIndex = 80
-        Me.lblCustID.Text = "lblCustID"
+        Me.lblBillingID.AutoSize = True
+        Me.lblBillingID.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBillingID.Location = New System.Drawing.Point(432, 9)
+        Me.lblBillingID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblBillingID.Name = "lblBillingID"
+        Me.lblBillingID.Size = New System.Drawing.Size(71, 16)
+        Me.lblBillingID.TabIndex = 81
+        Me.lblBillingID.Text = "lblBillingID"
+        Me.lblBillingID.Visible = False
         '
         'frmPrintInvoice
         '
@@ -998,4 +1013,5 @@ Partial Class frmPrintInvoice
     Friend WithEvents btnPrint As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lblCustID As Label
+    Friend WithEvents lblBillingID As Label
 End Class

@@ -55,7 +55,7 @@ Public Class frmCustomerViewInfo_Order
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND Status <> 2"
+            sql = "SELECT * FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND Status <> 3"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -73,7 +73,7 @@ Public Class frmCustomerViewInfo_Order
                 x.SubItems.Add(dr("Unit").ToString())
                 x.SubItems.Add(dr("Amount").ToString())
                 x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) 'subitem5
-                x.SubItems.Add(IIf(dr("Status") = "True", "On hold", IIf(dr("Status") = "False", "On process", "Delivered")).ToString())
+                x.SubItems.Add(IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "On hold", "On process")).ToString())
                 x.SubItems.Add(dr("OrderDate").ToString())
                 x.SubItems.Add(dr("OrderID").ToString()) ' 8
                 x.SubItems.Add(dr("OrderList").ToString()) ' 9
@@ -152,14 +152,14 @@ Public Class frmCustomerViewInfo_Order
                 cn.Open()
             End If
 
-            frmManageBilling.lblCustID.Text = lblCustID.Text
+            frmManageSalesV2.lblCustID.Text = lblCustID.Text
 
             Me.Close()
-            frmManageBilling.TopLevel = False
-            frmAdminDashboard.panelDashboard.Controls.Add(frmManageBilling)
-            frmManageBilling.BringToFront()
-            frmManageBilling.Dock = DockStyle.Fill
-            frmManageBilling.Show()
+            frmManageSalesV2.TopLevel = False
+            frmAdminDashboard.panelDashboard.Controls.Add(frmManageSalesV2)
+            frmManageSalesV2.BringToFront()
+            frmManageSalesV2.Dock = DockStyle.Fill
+            frmManageSalesV2.Show()
 
             frmManageSales.Close()
             frmManageCollection.Close()

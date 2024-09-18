@@ -9,6 +9,7 @@ Public Class frmPrintInvoice
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Call saveBilling()
         ListView1.Items.Clear()
+        MsgBox("Sucessfully saved billing invoice!", MsgBoxStyle.Information, "Billing Invoice")
         Me.Close()
     End Sub
 
@@ -29,7 +30,7 @@ Public Class frmPrintInvoice
                 .Parameters.AddWithValue("@SalesMan", lblSalesman.Text)
                 .Parameters.AddWithValue("@Terms", lblTerms.Text)
                 .Parameters.AddWithValue("@ProductOrder", lblPuchaseNo.Text)
-                .Parameters.AddWithValue("@DatePrinted", frmManageBilling.dtpDate.Value)
+                .Parameters.AddWithValue("@DatePrinted", frmManageSalesV2.dtpDate.Value)
                 .ExecuteNonQuery()
             End With
 
@@ -55,8 +56,39 @@ Public Class frmPrintInvoice
                 cmd.Parameters.AddWithValue("@DueDate", Date.Now.AddDays(5))
                 cmd.ExecuteNonQuery()
             Next
+
+            Call saveBillInvoice()
         Catch ex As Exception
             MsgBox("An error occurred frmPrintInvoice(updateOrder): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub saveBillInvoice()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            For Each order As ListViewItem In ListView1.Items
+                sql = "INSERT INTO tblbillinvoice(BillingID, OrderID, ProductID) VALUES(@BillingID, @OrderID, @ProductID)"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@BillingID", lblBillingID.Text)
+                    .Parameters.AddWithValue("@OrderID", order.SubItems(5).Text)
+                    .Parameters.AddWithValue("@ProductID", order.SubItems(7).Text)
+                    .ExecuteNonQuery()
+                End With
+
+                sql = "UPDATE tblorder SET Status=@Status WHERE OrderID = '" & order.SubItems(5).Text & "'"
+                cmd = New MySqlCommand(sql, cn)
+                cmd.Parameters.AddWithValue("@Status", "2")
+                cmd.ExecuteNonQuery()
+            Next
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageBilling(saveBilling): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()

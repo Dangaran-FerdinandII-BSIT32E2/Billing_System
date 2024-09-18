@@ -51,9 +51,9 @@ Public Class frmListCompany
 
             If ListView1.SelectedItems.Count > 0 Then
                 frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
-                frmManageBilling.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
-                frmManageBilling.lblOrderListID.Text = ListView1.SelectedItems(0).SubItems(11).Text
-                Call frmManageBilling.loadBilling()
+                frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
+                frmManageSalesV2.lblOrderListID.Text = ListView1.SelectedItems(0).SubItems(11).Text
+                Call frmManageSalesV2.loadBilling()
             End If
 
         Catch ex As Exception
