@@ -51,7 +51,7 @@
         frmAnalyticsData.Dock = DockStyle.Fill
         frmAnalyticsData.Show()
 
-        frmManageSales.Close()
+        frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollection.Close()
         frmManageSuppliers.Close()
@@ -73,11 +73,11 @@
         '    isButtonClicked = True
         'End If
 
-        frmManageSales.TopLevel = False
-        panelDashboard.Controls.Add(frmManageSales)
-        frmManageSales.BringToFront()
-        frmManageSales.Dock = DockStyle.Fill
-        frmManageSales.Show()
+        frmManageSalesV2.TopLevel = False
+        panelDashboard.Controls.Add(frmManageSalesV2)
+        frmManageSalesV2.BringToFront()
+        frmManageSalesV2.Dock = DockStyle.Fill
+        frmManageSalesV2.Show()
 
         frmManageBilling.Close()
         frmManageCollection.Close()
@@ -107,7 +107,7 @@
         frmManageBilling.Dock = DockStyle.Fill
         frmManageBilling.Show()
 
-        frmManageSales.Close()
+        frmManageSalesV2.Close()
         frmManageCollection.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
@@ -135,7 +135,7 @@
         frmAdminSettings.Dock = DockStyle.Fill
         frmAdminSettings.Show()
 
-        frmManageSales.Close()
+        frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollection.Close()
         frmManageSuppliers.Close()
@@ -145,14 +145,14 @@
         frmManageRental.Close()
     End Sub
 
-    Private Sub btnCollection_Click(sender As Object, e As EventArgs) Handles btnCollection.Click
+    Private Sub btnCollection_Click(sender As Object, e As EventArgs) 
         frmManageCollection.TopLevel = False
         panelDashboard.Controls.Add(frmManageCollection)
         frmManageCollection.BringToFront()
         frmManageCollection.Dock = DockStyle.Fill
         frmManageCollection.Show()
 
-        frmManageSales.Close()
+        frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
@@ -169,7 +169,7 @@
         frmManageSuppliers.Dock = DockStyle.Fill
         frmManageSuppliers.Show()
 
-        frmManageSales.Close()
+        frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollection.Close()
         frmManageProducts.Close()
@@ -186,7 +186,7 @@
         frmManageProducts.Dock = DockStyle.Fill
         frmManageProducts.Show()
 
-        frmManageSales.Close()
+        frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollection.Close()
         frmManageSuppliers.Close()
@@ -203,7 +203,7 @@
         frmManageCustomerV3.Dock = DockStyle.Fill
         frmManageCustomerV3.Show()
 
-        frmManageSales.Close()
+        frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollection.Close()
         frmManageSuppliers.Close()
@@ -220,7 +220,7 @@
         frmManageUsers.Dock = DockStyle.Fill
         frmManageUsers.Show()
 
-        frmManageSales.Close()
+        frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollection.Close()
         frmManageSuppliers.Close()
@@ -237,7 +237,7 @@
         frmManageRental.Dock = DockStyle.Fill
         frmManageRental.Show()
 
-        frmManageSales.Close()
+        frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollection.Close()
         frmManageSuppliers.Close()
