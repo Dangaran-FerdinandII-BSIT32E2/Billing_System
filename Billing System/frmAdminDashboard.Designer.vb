@@ -29,7 +29,6 @@ Partial Class frmAdminDashboard
         Me.btnRental = New System.Windows.Forms.Button()
         Me.btnCustomer = New System.Windows.Forms.Button()
         Me.btnSupplier = New System.Windows.Forms.Button()
-        Me.btnCollection = New System.Windows.Forms.Button()
         Me.btnBilling = New System.Windows.Forms.Button()
         Me.btnSales = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
@@ -72,14 +71,13 @@ Partial Class frmAdminDashboard
         Me.Panel1.Controls.Add(Me.btnRental)
         Me.Panel1.Controls.Add(Me.btnCustomer)
         Me.Panel1.Controls.Add(Me.btnSupplier)
-        Me.Panel1.Controls.Add(Me.btnCollection)
         Me.Panel1.Controls.Add(Me.btnBilling)
         Me.Panel1.Controls.Add(Me.btnSales)
         Me.Panel1.Controls.Add(Me.btnDashboard)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(257, 768)
         Me.Panel1.TabIndex = 0
@@ -95,7 +93,7 @@ Partial Class frmAdminDashboard
         Me.btnUser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnUser.Image = CType(resources.GetObject("btnUser.Image"), System.Drawing.Image)
         Me.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUser.Location = New System.Drawing.Point(0, 624)
+        Me.btnUser.Location = New System.Drawing.Point(0, 551)
         Me.btnUser.Name = "btnUser"
         Me.btnUser.Size = New System.Drawing.Size(257, 73)
         Me.btnUser.TabIndex = 11
@@ -114,7 +112,7 @@ Partial Class frmAdminDashboard
         Me.btnRental.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnRental.Image = CType(resources.GetObject("btnRental.Image"), System.Drawing.Image)
         Me.btnRental.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRental.Location = New System.Drawing.Point(0, 551)
+        Me.btnRental.Location = New System.Drawing.Point(0, 478)
         Me.btnRental.Name = "btnRental"
         Me.btnRental.Size = New System.Drawing.Size(257, 73)
         Me.btnRental.TabIndex = 10
@@ -133,7 +131,7 @@ Partial Class frmAdminDashboard
         Me.btnCustomer.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnCustomer.Image = CType(resources.GetObject("btnCustomer.Image"), System.Drawing.Image)
         Me.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCustomer.Location = New System.Drawing.Point(0, 478)
+        Me.btnCustomer.Location = New System.Drawing.Point(0, 405)
         Me.btnCustomer.Name = "btnCustomer"
         Me.btnCustomer.Size = New System.Drawing.Size(257, 73)
         Me.btnCustomer.TabIndex = 9
@@ -152,32 +150,13 @@ Partial Class frmAdminDashboard
         Me.btnSupplier.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnSupplier.Image = CType(resources.GetObject("btnSupplier.Image"), System.Drawing.Image)
         Me.btnSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSupplier.Location = New System.Drawing.Point(0, 405)
+        Me.btnSupplier.Location = New System.Drawing.Point(0, 332)
         Me.btnSupplier.Name = "btnSupplier"
         Me.btnSupplier.Size = New System.Drawing.Size(257, 73)
         Me.btnSupplier.TabIndex = 5
         Me.btnSupplier.Text = "     Suppliers"
         Me.btnSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSupplier.UseVisualStyleBackColor = True
-        '
-        'btnCollection
-        '
-        Me.btnCollection.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCollection.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnCollection.FlatAppearance.BorderSize = 0
-        Me.btnCollection.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.btnCollection.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCollection.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCollection.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnCollection.Image = CType(resources.GetObject("btnCollection.Image"), System.Drawing.Image)
-        Me.btnCollection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCollection.Location = New System.Drawing.Point(0, 332)
-        Me.btnCollection.Name = "btnCollection"
-        Me.btnCollection.Size = New System.Drawing.Size(257, 73)
-        Me.btnCollection.TabIndex = 4
-        Me.btnCollection.Text = "     Collection"
-        Me.btnCollection.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCollection.UseVisualStyleBackColor = True
         '
         'btnBilling
         '
@@ -241,7 +220,7 @@ Partial Class frmAdminDashboard
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(257, 113)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -309,7 +288,7 @@ Partial Class frmAdminDashboard
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(873, 38)
         Me.Panel8.TabIndex = 14
@@ -392,7 +371,7 @@ Partial Class frmAdminDashboard
         Me.btnSettings.Image = CType(resources.GetObject("btnSettings.Image"), System.Drawing.Image)
         Me.btnSettings.ImageSize = New System.Drawing.Size(50, 50)
         Me.btnSettings.Location = New System.Drawing.Point(21, 15)
-        Me.btnSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSettings.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSettings.Name = "btnSettings"
         Me.btnSettings.PressedDepth = 20
         Me.btnSettings.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
@@ -410,7 +389,7 @@ Partial Class frmAdminDashboard
         Me.Panel5.Controls.Add(Me.lblDate)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel5.Location = New System.Drawing.Point(257, 746)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1109, 22)
         Me.Panel5.TabIndex = 2
@@ -515,7 +494,7 @@ Partial Class frmAdminDashboard
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Margin = New System.Windows.Forms.Padding(5)
         Me.Name = "frmAdminDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -539,9 +518,7 @@ Partial Class frmAdminDashboard
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnDashboard As Button
     Friend WithEvents btnSupplier As Button
-    Friend WithEvents btnCollection As Button
     Friend WithEvents btnBilling As Button
-    Friend WithEvents btnSales As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents panelDashboard As Panel
@@ -565,4 +542,5 @@ Partial Class frmAdminDashboard
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents lblCount As Label
+    Friend WithEvents btnSales As Button
 End Class

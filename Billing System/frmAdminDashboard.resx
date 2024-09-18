@@ -213,28 +213,6 @@
         Nlu7sAh84kzERsiPk6WpMSqVvvBmuVNdGXUbsIYiovKoK7HWhGH8AZknbNByI3oDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnCollection.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAA8xJREFUaEPtWctrE0EcjvWk2DazCUpBTyJ689DK7qb1ffDoQYuIIgiCeNFmZ0Kj
-        ooUiCD7AP0BbQXsWFalvEdSTii9oRS/1cbCCYkHrQdFvtr+suztj3U3Sbaj54IPMfjPfzJeZ2Weqjv8E
-        s2yDb7YMcdUy+IgkyoM5Q2yS2kSVGseKxmIGA39gG+KXjgh332rKG1S9NtHa0jMX//xTXQA/EeaJtTA/
-        h5rVHjAT+3UD15LxbmqWDOyMsx6d9oM3/kWL8TH/YFEettLOtlxabLeZeBnSxnQeGvbbGb6OhlMeYHLE
-        33lcmtnCErJK5TKFpbo6UYngvWQVD+5MaAyjEh2Pp1I9DWQH9DTIY7q6UYk/Yy2ZRQeWwlmdWRyarLCF
-        7ODnbNXViUOLiT6yiw40uqUzi0OcnX7gD7ko6f7W1IlDOSYaXnSg8zs6s2klxkTDi456kKlkPYjObDpZ
-        D6Izm07WWhBcU76Dz3FduBm6r5qUaHOChhcdUxEEA/9gMrEHtxqN1M3Uo9pBEGKojTmLyD45VDUI419z
-        TWIxWSeLagbBA9dxsg2go7nIKmVnqnM22elRzSDYE21k68LM8lYcfxOuVw5xAvicy4iNZK2iykECmxvP
-        Jdd09com42/JWkU1g5ClByy1F7p6lZCsVdSDaEiWHpQgTHyRT5Dm/L0LdBu6xNZ5Thb1NqD9SKA9SNYq
-        kgyC8mGSIsE2Cp3+9pIkqUg0CBO7SYoEO81X+dtLkqQi4T3yTC4bkieFfEOJ9ldC7WsmCGaFj+GacNd/
-        kxgm6txG29FwW0myVpF0kEpJ1irqQTQkSw8zOgjOXBewD7ptg98La6QPWYZzAOM6jb2kvOwjaxVJBkH5
-        HEkpeTeLQI8COh7IVjfvS1OVlGmIg35dkiQVyc4I30mSC5RPhvRBkly0G3krqNdMEHGeJHdGsHQe+3XU
-        H/XPCI4d8uuSJKnAdFb8ErtEsvSgCSLvt+TL7iI07fdHXEOG5ZLCuPowQz/DOlmrwDrtD1cul2TpQRuk
-        QpK1Cvm5S9egHJKlh7/MyDu5F6B9UrQJ/Rt4HQx8wiuRrPXAdPbqGsUl2XkIB5HLSX4RltrKbFcL+n0f
-        0Bkfb0/nl0vdPasZfMCvS0ptUsjPXTA6U7rfKYdk5UEJwpxdJLnAPjjl1+VMkOQCentAB0lKFpoZOUqS
-        C5Qv+3W5nPxvS3BW2xHQQZKShTojfByD68oxYaN8zK/9IR8wmdNBIT6GdbJOFuEg1SBZJ4sZEwQdXwoP
-        pCIy8Yqsk4WdcZah84e6K3RcYnZfmxm+5jeLffeIj8TlYgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="btnBilling.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -665,6 +643,6 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>40</value>
+    <value>25</value>
   </metadata>
 </root>

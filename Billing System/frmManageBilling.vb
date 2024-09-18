@@ -8,7 +8,7 @@ Public Class frmManageBilling
         Call loadBilling()
         dtpDate.Text = Now.ToString()
     End Sub
-    Private Sub btnSearchCustomer_Click(sender As Object, e As EventArgs) Handles btnSearchCustomer.Click
+    Private Sub btnSearchCustomer_Click(sender As Object, e As EventArgs)
         frmListCompany.ShowDialog()
     End Sub
     Public Sub loadBilling()
@@ -49,7 +49,7 @@ Public Class frmManageBilling
         End Try
     End Sub
 
-    Private Sub lblCustID_TextChanged(sender As Object, e As EventArgs) Handles lblCustID.TextChanged
+    Private Sub lblCustID_TextChanged(sender As Object, e As EventArgs)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -289,5 +289,9 @@ Public Class frmManageBilling
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
+        frmManageCollection.Show()
     End Sub
 End Class
