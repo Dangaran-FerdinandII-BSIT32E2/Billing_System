@@ -68,6 +68,7 @@ Public Class frmManageBilling
         loadBilling(startDate, endDate)
     End Sub
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click, ListView1.DoubleClick
+        frmManageCollection.billingid = ListView1.SelectedItems(0).SubItems(0).Text
         frmManageCollection.ShowDialog()
     End Sub
 End Class

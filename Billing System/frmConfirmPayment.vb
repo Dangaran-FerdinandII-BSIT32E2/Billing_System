@@ -17,7 +17,7 @@ Public Class frmConfirmPayment
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM testdb WHERE ImageID = 1"
+            sql = "SELECT img_payment FROM tblbilling WHERE BillingID = '" & frmManageCollection.billingid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -26,14 +26,33 @@ Public Class frmConfirmPayment
 
             dr = cmd.ExecuteReader
             If dr.Read = True Then
-                Dim pic As Byte() = DirectCast(dr("image"), Byte())
-                Dim ms As New MemoryStream(pic)
-                pbxPayment.Image = Image.FromStream(ms)
+                If dr("img_payment") IsNot DBNull.Value AndAlso dr("img_payment") IsNot Nothing Then
+                    Try
+                        Dim pic As Byte() = DirectCast(dr("img_payment"), Byte())
+                        If pic.Length > 0 Then
+                            'Dim ms As New MemoryStream(pic)
+                            Using ms As New MemoryStream(pic)
+                                pbxPayment.Image = Image.FromStream(ms)
+                            End Using
 
-                btnBrowse.Visible = False
-                btnConfirm.Visible = False
+                            PictureBox2.Visible = False
+                            Label5.Visible = False
+                            Guna2Separator1.Visible = False
+                            Guna2Separator2.Visible = False
+                            Label4.Visible = False
+                            btnBrowse.Visible = False
+                        Else
+                            pbxPayment.Image = Nothing
+                        End If
+
+                    Catch ex As Exception
+                        MsgBox("Error loading image: " & ex.Message)
+                    End Try
+                Else
+                    pbxPayment.Image = Nothing
+                End If
+                dr.Close()
             End If
-            dr.Close()
         Catch ex As Exception
             MsgBox("An error occurred frmConfirmPayment(loadImage): " & ex.Message)
         Finally
@@ -41,9 +60,6 @@ Public Class frmConfirmPayment
                 cn.Close()
             End If
         End Try
-    End Sub
-    Private Sub btnExit_Click_1(sender As Object, e As EventArgs) Handles btnExit.Click
-        Me.Close()
     End Sub
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
         Try
@@ -62,8 +78,15 @@ Public Class frmConfirmPayment
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If
+            PictureBox2.Visible = False
+            Label5.Visible = False
+            Guna2Separator1.Visible = False
+            Guna2Separator2.Visible = False
+            Label4.Visible = False
+            btnBrowse.Visible = False
         End Try
     End Sub
+
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         Try
             If cn.State <> ConnectionState.Open Then
@@ -75,15 +98,35 @@ Public Class frmConfirmPayment
             Dim arrImage() As Byte = mstream.GetBuffer
             mstream.Close()
 
-            sql = "INSERT INTO testdb(image, ImageID) VALUES(@image, @ImageID)"
-            cmd = New MySqlCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@image", arrImage)
-                .Parameters.AddWithValue("@ImageID", "1")
-                .ExecuteNonQuery()
-            End With
+            Dim filled As Boolean = True
 
-            MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
+            Dim requiredFields As New Dictionary(Of String, Control) From {
+            {"txtAmountPaid", txtAmountPaid}
+        }
+
+            For Each fieldName_controlPair In requiredFields
+                Dim control As Control = fieldName_controlPair.Value
+
+                If control.Text.Trim = "" Then
+                    ErrorProvider1.SetError(control, "This field is required.")
+                    filled = False
+                    Exit For
+                Else
+                    ErrorProvider1.SetError(control, "")
+                End If
+            Next
+
+            If filled Then
+                sql = "UPDATE tblbilling SET img_payment=@img_payment, AmtPaid=@AmtPaid WHERE BillingID = '" & frmManageCollection.billingid & "'"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@AmtPaid", txtAmountPaid.Text)
+                    .Parameters.AddWithValue("@img_payment", arrImage)
+                    .ExecuteNonQuery()
+                End With
+
+                MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
+            End If
         Catch ex As Exception
             MsgBox("An error occurred frmConfirmPayment(btnConfirm): " & ex.Message)
         Finally
@@ -91,6 +134,10 @@ Public Class frmConfirmPayment
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
     End Sub
 
     'Private Sub btnEmail_Click(sender As Object, e As EventArgs)

@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -101,6 +116,12 @@
       <DependentUpon>frmAnalyticsData.vb</DependentUpon>
     </Compile>
     <Compile Include="frmAnalyticsData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirmDelivery.Designer.vb">
+      <DependentUpon>frmConfirmDelivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfirmDelivery.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmConfirmPayment.Designer.vb">
@@ -242,6 +263,12 @@
     <Compile Include="frmMessage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPrintBillingInvoice.Designer.vb">
+      <DependentUpon>frmPrintBillingInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintBillingInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrintInvoice.Designer.vb">
       <DependentUpon>frmPrintInvoice.vb</DependentUpon>
     </Compile>
@@ -292,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAnalyticsData.resx">
       <DependentUpon>frmAnalyticsData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirmDelivery.resx">
+      <DependentUpon>frmConfirmDelivery.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfirmPayment.resx">
       <DependentUpon>frmConfirmPayment.vb</DependentUpon>
@@ -362,6 +392,9 @@
     <EmbeddedResource Include="frmMessage.resx">
       <DependentUpon>frmMessage.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintBillingInvoice.resx">
+      <DependentUpon>frmPrintBillingInvoice.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrintInvoice.resx">
       <DependentUpon>frmPrintInvoice.vb</DependentUpon>
     </EmbeddedResource>
@@ -393,6 +426,18 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
