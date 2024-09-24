@@ -39,19 +39,19 @@ Partial Class frmManageCollectionV2
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel41 = New System.Windows.Forms.Panel()
-        Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtDateDelivered = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel40 = New System.Windows.Forms.Panel()
         Me.Panel39 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel38 = New System.Windows.Forms.Panel()
         Me.Panel37 = New System.Windows.Forms.Panel()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtDueDate = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel36 = New System.Windows.Forms.Panel()
         Me.Panel35 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.Panel33 = New System.Windows.Forms.Panel()
-        Me.Guna2TextBox3 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtDateOrdered = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel32 = New System.Windows.Forms.Panel()
         Me.Panel31 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -59,10 +59,6 @@ Partial Class frmManageCollectionV2
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.Panel26 = New System.Windows.Forms.Panel()
         Me.Panel25 = New System.Windows.Forms.Panel()
-        Me.Panel22 = New System.Windows.Forms.Panel()
-        Me.cboFilter = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.Panel24 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Collection = New System.Windows.Forms.TabPage()
@@ -83,7 +79,7 @@ Partial Class frmManageCollectionV2
         Me.Confirmation = New System.Windows.Forms.TabPage()
         Me.panelbodyTab3 = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnBrowse2 = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel64 = New System.Windows.Forms.Panel()
@@ -94,25 +90,25 @@ Partial Class frmManageCollectionV2
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Panel58 = New System.Windows.Forms.Panel()
-        Me.Guna2TextBox7 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtEmployee = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel57 = New System.Windows.Forms.Panel()
         Me.Panel56 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel55 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Guna2TextBox4 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtTotalAmount = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel43 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel44 = New System.Windows.Forms.Panel()
         Me.Panel45 = New System.Windows.Forms.Panel()
-        Me.Guna2TextBox5 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtCompanyName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel46 = New System.Windows.Forms.Panel()
         Me.Panel47 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel48 = New System.Windows.Forms.Panel()
         Me.Panel49 = New System.Windows.Forms.Panel()
-        Me.Guna2TextBox6 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtInvoiceNo = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel50 = New System.Windows.Forms.Panel()
         Me.Panel51 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -121,11 +117,17 @@ Partial Class frmManageCollectionV2
         Me.Panel54 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.txtFilter = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel29 = New System.Windows.Forms.Panel()
+        Me.Panel68 = New System.Windows.Forms.Panel()
+        Me.Panel69 = New System.Windows.Forms.Panel()
+        Me.btnConfirm = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel70 = New System.Windows.Forms.Panel()
+        Me.Panel71 = New System.Windows.Forms.Panel()
+        Me.Panel72 = New System.Windows.Forms.Panel()
+        Me.btnConfirm2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel73 = New System.Windows.Forms.Panel()
+        Me.Panel22 = New System.Windows.Forms.Panel()
         Me.panelBody.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.DeliveryDetails.SuspendLayout()
@@ -141,7 +143,6 @@ Partial Class frmManageCollectionV2
         Me.Panel35.SuspendLayout()
         Me.Panel33.SuspendLayout()
         Me.Panel31.SuspendLayout()
-        Me.Panel22.SuspendLayout()
         Me.Collection.SuspendLayout()
         Me.Panel18.SuspendLayout()
         Me.Panel20.SuspendLayout()
@@ -161,7 +162,10 @@ Partial Class frmManageCollectionV2
         Me.Panel47.SuspendLayout()
         Me.Panel49.SuspendLayout()
         Me.Panel51.SuspendLayout()
-        Me.Panel9.SuspendLayout()
+        Me.Panel68.SuspendLayout()
+        Me.Panel69.SuspendLayout()
+        Me.Panel71.SuspendLayout()
+        Me.Panel72.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelBody
@@ -243,9 +247,9 @@ Partial Class frmManageCollectionV2
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(673, 58)
+        Me.GroupBox1.Location = New System.Drawing.Point(673, 10)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(337, 493)
+        Me.GroupBox1.Size = New System.Drawing.Size(337, 541)
         Me.GroupBox1.TabIndex = 124
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Proof of Delivery"
@@ -287,14 +291,14 @@ Partial Class frmManageCollectionV2
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox1.Location = New System.Drawing.Point(13, 32)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(311, 448)
+        Me.PictureBox1.Size = New System.Drawing.Size(311, 496)
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
         'Panel63
         '
         Me.Panel63.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel63.Location = New System.Drawing.Point(13, 480)
+        Me.Panel63.Location = New System.Drawing.Point(13, 528)
         Me.Panel63.Name = "Panel63"
         Me.Panel63.Size = New System.Drawing.Size(311, 10)
         Me.Panel63.TabIndex = 2
@@ -304,7 +308,7 @@ Partial Class frmManageCollectionV2
         Me.Panel62.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel62.Location = New System.Drawing.Point(324, 32)
         Me.Panel62.Name = "Panel62"
-        Me.Panel62.Size = New System.Drawing.Size(10, 458)
+        Me.Panel62.Size = New System.Drawing.Size(10, 506)
         Me.Panel62.TabIndex = 1
         '
         'Panel61
@@ -312,7 +316,7 @@ Partial Class frmManageCollectionV2
         Me.Panel61.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel61.Location = New System.Drawing.Point(3, 32)
         Me.Panel61.Name = "Panel61"
-        Me.Panel61.Size = New System.Drawing.Size(10, 458)
+        Me.Panel61.Size = New System.Drawing.Size(10, 506)
         Me.Panel61.TabIndex = 1
         '
         'Panel60
@@ -326,22 +330,23 @@ Partial Class frmManageCollectionV2
         'Panel42
         '
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel42.Location = New System.Drawing.Point(663, 58)
+        Me.Panel42.Location = New System.Drawing.Point(663, 10)
         Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(10, 493)
+        Me.Panel42.Size = New System.Drawing.Size(10, 541)
         Me.Panel42.TabIndex = 123
         '
         'Panel30
         '
         Me.Panel30.Controls.Add(Me.GroupBox2)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel30.Location = New System.Drawing.Point(10, 58)
+        Me.Panel30.Location = New System.Drawing.Point(10, 10)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(653, 493)
+        Me.Panel30.Size = New System.Drawing.Size(653, 541)
         Me.Panel30.TabIndex = 122
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Panel68)
         Me.GroupBox2.Controls.Add(Me.Panel41)
         Me.GroupBox2.Controls.Add(Me.Panel40)
         Me.GroupBox2.Controls.Add(Me.Panel39)
@@ -361,42 +366,42 @@ Partial Class frmManageCollectionV2
         Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(653, 493)
+        Me.GroupBox2.Size = New System.Drawing.Size(653, 541)
         Me.GroupBox2.TabIndex = 26
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Deliver Information"
         '
         'Panel41
         '
-        Me.Panel41.Controls.Add(Me.Guna2TextBox2)
+        Me.Panel41.Controls.Add(Me.txtDateDelivered)
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel41.Location = New System.Drawing.Point(13, 206)
         Me.Panel41.Name = "Panel41"
         Me.Panel41.Size = New System.Drawing.Size(627, 35)
         Me.Panel41.TabIndex = 13
         '
-        'Guna2TextBox2
+        'txtDateDelivered
         '
-        Me.Guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox2.DefaultText = ""
-        Me.Guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.White
-        Me.Guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.Guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2TextBox2.Enabled = False
-        Me.Guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox2.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.Guna2TextBox2.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.Guna2TextBox2.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TextBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBox2.Name = "Guna2TextBox2"
-        Me.Guna2TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox2.PlaceholderText = "Enter company name"
-        Me.Guna2TextBox2.SelectedText = ""
-        Me.Guna2TextBox2.Size = New System.Drawing.Size(627, 35)
-        Me.Guna2TextBox2.TabIndex = 108
+        Me.txtDateDelivered.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDateDelivered.DefaultText = ""
+        Me.txtDateDelivered.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDateDelivered.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtDateDelivered.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtDateDelivered.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDateDelivered.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtDateDelivered.Enabled = False
+        Me.txtDateDelivered.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDateDelivered.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtDateDelivered.ForeColor = System.Drawing.Color.Black
+        Me.txtDateDelivered.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtDateDelivered.Location = New System.Drawing.Point(0, 0)
+        Me.txtDateDelivered.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDateDelivered.Name = "txtDateDelivered"
+        Me.txtDateDelivered.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDateDelivered.PlaceholderText = "Enter company name"
+        Me.txtDateDelivered.SelectedText = ""
+        Me.txtDateDelivered.Size = New System.Drawing.Size(627, 35)
+        Me.txtDateDelivered.TabIndex = 108
         '
         'Panel40
         '
@@ -438,35 +443,35 @@ Partial Class frmManageCollectionV2
         '
         'Panel37
         '
-        Me.Panel37.Controls.Add(Me.Guna2TextBox1)
+        Me.Panel37.Controls.Add(Me.txtDueDate)
         Me.Panel37.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel37.Location = New System.Drawing.Point(13, 133)
         Me.Panel37.Name = "Panel37"
         Me.Panel37.Size = New System.Drawing.Size(627, 35)
         Me.Panel37.TabIndex = 9
         '
-        'Guna2TextBox1
+        'txtDueDate
         '
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.White
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2TextBox1.Enabled = False
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox1.PlaceholderText = "Enter company name"
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(627, 35)
-        Me.Guna2TextBox1.TabIndex = 108
+        Me.txtDueDate.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDueDate.DefaultText = ""
+        Me.txtDueDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDueDate.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtDueDate.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtDueDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDueDate.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtDueDate.Enabled = False
+        Me.txtDueDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDueDate.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtDueDate.ForeColor = System.Drawing.Color.Black
+        Me.txtDueDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtDueDate.Location = New System.Drawing.Point(0, 0)
+        Me.txtDueDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDueDate.Name = "txtDueDate"
+        Me.txtDueDate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDueDate.PlaceholderText = "Enter company name"
+        Me.txtDueDate.SelectedText = ""
+        Me.txtDueDate.Size = New System.Drawing.Size(627, 35)
+        Me.txtDueDate.TabIndex = 108
         '
         'Panel36
         '
@@ -508,35 +513,35 @@ Partial Class frmManageCollectionV2
         '
         'Panel33
         '
-        Me.Panel33.Controls.Add(Me.Guna2TextBox3)
+        Me.Panel33.Controls.Add(Me.txtDateOrdered)
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel33.Location = New System.Drawing.Point(13, 60)
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Size = New System.Drawing.Size(627, 35)
         Me.Panel33.TabIndex = 5
         '
-        'Guna2TextBox3
+        'txtDateOrdered
         '
-        Me.Guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox3.DefaultText = ""
-        Me.Guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.White
-        Me.Guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.Guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2TextBox3.Enabled = False
-        Me.Guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox3.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.Guna2TextBox3.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.Guna2TextBox3.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TextBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBox3.Name = "Guna2TextBox3"
-        Me.Guna2TextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox3.PlaceholderText = "Enter company name"
-        Me.Guna2TextBox3.SelectedText = ""
-        Me.Guna2TextBox3.Size = New System.Drawing.Size(627, 35)
-        Me.Guna2TextBox3.TabIndex = 108
+        Me.txtDateOrdered.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDateOrdered.DefaultText = ""
+        Me.txtDateOrdered.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDateOrdered.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtDateOrdered.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtDateOrdered.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDateOrdered.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtDateOrdered.Enabled = False
+        Me.txtDateOrdered.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDateOrdered.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtDateOrdered.ForeColor = System.Drawing.Color.Black
+        Me.txtDateOrdered.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtDateOrdered.Location = New System.Drawing.Point(0, 0)
+        Me.txtDateOrdered.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDateOrdered.Name = "txtDateOrdered"
+        Me.txtDateOrdered.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDateOrdered.PlaceholderText = "Enter company name"
+        Me.txtDateOrdered.SelectedText = ""
+        Me.txtDateOrdered.Size = New System.Drawing.Size(627, 35)
+        Me.txtDateOrdered.TabIndex = 108
         '
         'Panel32
         '
@@ -573,7 +578,7 @@ Partial Class frmManageCollectionV2
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel28.Location = New System.Drawing.Point(3, 32)
         Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(10, 458)
+        Me.Panel28.Size = New System.Drawing.Size(10, 506)
         Me.Panel28.TabIndex = 2
         '
         'Panel27
@@ -581,7 +586,7 @@ Partial Class frmManageCollectionV2
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel27.Location = New System.Drawing.Point(640, 32)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(10, 458)
+        Me.Panel27.Size = New System.Drawing.Size(10, 506)
         Me.Panel27.TabIndex = 1
         '
         'Panel26
@@ -600,51 +605,6 @@ Partial Class frmManageCollectionV2
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(1000, 10)
         Me.Panel25.TabIndex = 31
-        '
-        'Panel22
-        '
-        Me.Panel22.Controls.Add(Me.cboFilter)
-        Me.Panel22.Controls.Add(Me.Panel23)
-        Me.Panel22.Controls.Add(Me.Panel24)
-        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel22.Location = New System.Drawing.Point(10, 0)
-        Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(1000, 58)
-        Me.Panel22.TabIndex = 30
-        '
-        'cboFilter
-        '
-        Me.cboFilter.BackColor = System.Drawing.Color.Transparent
-        Me.cboFilter.Dock = System.Windows.Forms.DockStyle.Left
-        Me.cboFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboFilter.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboFilter.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cboFilter.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cboFilter.ItemHeight = 30
-        Me.cboFilter.Location = New System.Drawing.Point(0, 10)
-        Me.cboFilter.Name = "cboFilter"
-        Me.cboFilter.Size = New System.Drawing.Size(264, 36)
-        Me.cboFilter.TabIndex = 21
-        '
-        'Panel23
-        '
-        Me.Panel23.BackColor = System.Drawing.Color.White
-        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel23.Location = New System.Drawing.Point(0, 48)
-        Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(1000, 10)
-        Me.Panel23.TabIndex = 20
-        '
-        'Panel24
-        '
-        Me.Panel24.BackColor = System.Drawing.Color.White
-        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel24.Location = New System.Drawing.Point(0, 0)
-        Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(1000, 10)
-        Me.Panel24.TabIndex = 19
         '
         'Panel16
         '
@@ -841,14 +801,14 @@ Partial Class frmManageCollectionV2
         Me.panelbodyTab3.Controls.Add(Me.Panel59)
         Me.panelbodyTab3.Controls.Add(Me.Panel13)
         Me.panelbodyTab3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelbodyTab3.Location = New System.Drawing.Point(10, 58)
+        Me.panelbodyTab3.Location = New System.Drawing.Point(10, 10)
         Me.panelbodyTab3.Name = "panelbodyTab3"
-        Me.panelbodyTab3.Size = New System.Drawing.Size(1000, 493)
+        Me.panelbodyTab3.Size = New System.Drawing.Size(1000, 541)
         Me.panelbodyTab3.TabIndex = 30
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.Guna2Button1)
+        Me.GroupBox4.Controls.Add(Me.btnBrowse2)
         Me.GroupBox4.Controls.Add(Me.PictureBox3)
         Me.GroupBox4.Controls.Add(Me.PictureBox4)
         Me.GroupBox4.Controls.Add(Me.Panel64)
@@ -860,32 +820,32 @@ Partial Class frmManageCollectionV2
         Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.GroupBox4.Location = New System.Drawing.Point(663, 0)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(337, 493)
+        Me.GroupBox4.Size = New System.Drawing.Size(337, 541)
         Me.GroupBox4.TabIndex = 125
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Proof of Delivery"
         '
-        'Guna2Button1
+        'btnBrowse2
         '
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 15
-        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.OrangeRed
-        Me.Guna2Button1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button1.Location = New System.Drawing.Point(125, 260)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.PressedDepth = 20
-        Me.Guna2Button1.ShadowDecoration.BorderRadius = 15
-        Me.Guna2Button1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(2)
-        Me.Guna2Button1.Size = New System.Drawing.Size(109, 36)
-        Me.Guna2Button1.TabIndex = 10000013
-        Me.Guna2Button1.Text = "Browse"
+        Me.btnBrowse2.BackColor = System.Drawing.Color.Transparent
+        Me.btnBrowse2.BorderRadius = 15
+        Me.btnBrowse2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBrowse2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnBrowse2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnBrowse2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnBrowse2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnBrowse2.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnBrowse2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBrowse2.ForeColor = System.Drawing.Color.White
+        Me.btnBrowse2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnBrowse2.Location = New System.Drawing.Point(125, 260)
+        Me.btnBrowse2.Name = "btnBrowse2"
+        Me.btnBrowse2.PressedDepth = 20
+        Me.btnBrowse2.ShadowDecoration.BorderRadius = 15
+        Me.btnBrowse2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(2)
+        Me.btnBrowse2.Size = New System.Drawing.Size(109, 36)
+        Me.btnBrowse2.TabIndex = 10000013
+        Me.btnBrowse2.Text = "Browse"
         '
         'PictureBox3
         '
@@ -902,14 +862,14 @@ Partial Class frmManageCollectionV2
         Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox4.Location = New System.Drawing.Point(13, 32)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(311, 448)
+        Me.PictureBox4.Size = New System.Drawing.Size(311, 496)
         Me.PictureBox4.TabIndex = 3
         Me.PictureBox4.TabStop = False
         '
         'Panel64
         '
         Me.Panel64.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel64.Location = New System.Drawing.Point(13, 480)
+        Me.Panel64.Location = New System.Drawing.Point(13, 528)
         Me.Panel64.Name = "Panel64"
         Me.Panel64.Size = New System.Drawing.Size(311, 10)
         Me.Panel64.TabIndex = 2
@@ -919,7 +879,7 @@ Partial Class frmManageCollectionV2
         Me.Panel65.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel65.Location = New System.Drawing.Point(324, 32)
         Me.Panel65.Name = "Panel65"
-        Me.Panel65.Size = New System.Drawing.Size(10, 458)
+        Me.Panel65.Size = New System.Drawing.Size(10, 506)
         Me.Panel65.TabIndex = 1
         '
         'Panel66
@@ -927,7 +887,7 @@ Partial Class frmManageCollectionV2
         Me.Panel66.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel66.Location = New System.Drawing.Point(3, 32)
         Me.Panel66.Name = "Panel66"
-        Me.Panel66.Size = New System.Drawing.Size(10, 458)
+        Me.Panel66.Size = New System.Drawing.Size(10, 506)
         Me.Panel66.TabIndex = 1
         '
         'Panel67
@@ -943,7 +903,7 @@ Partial Class frmManageCollectionV2
         Me.Panel59.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel59.Location = New System.Drawing.Point(653, 0)
         Me.Panel59.Name = "Panel59"
-        Me.Panel59.Size = New System.Drawing.Size(10, 493)
+        Me.Panel59.Size = New System.Drawing.Size(10, 541)
         Me.Panel59.TabIndex = 124
         '
         'Panel13
@@ -952,11 +912,12 @@ Partial Class frmManageCollectionV2
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel13.Location = New System.Drawing.Point(0, 0)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(653, 493)
+        Me.Panel13.Size = New System.Drawing.Size(653, 541)
         Me.Panel13.TabIndex = 123
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Panel71)
         Me.GroupBox3.Controls.Add(Me.Panel58)
         Me.GroupBox3.Controls.Add(Me.Panel57)
         Me.GroupBox3.Controls.Add(Me.Panel56)
@@ -980,42 +941,42 @@ Partial Class frmManageCollectionV2
         Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.GroupBox3.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(653, 493)
+        Me.GroupBox3.Size = New System.Drawing.Size(653, 541)
         Me.GroupBox3.TabIndex = 26
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Information"
         '
         'Panel58
         '
-        Me.Panel58.Controls.Add(Me.Guna2TextBox7)
+        Me.Panel58.Controls.Add(Me.txtEmployee)
         Me.Panel58.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel58.Location = New System.Drawing.Point(13, 279)
         Me.Panel58.Name = "Panel58"
         Me.Panel58.Size = New System.Drawing.Size(627, 35)
         Me.Panel58.TabIndex = 17
         '
-        'Guna2TextBox7
+        'txtEmployee
         '
-        Me.Guna2TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox7.DefaultText = ""
-        Me.Guna2TextBox7.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox7.DisabledState.FillColor = System.Drawing.Color.White
-        Me.Guna2TextBox7.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.Guna2TextBox7.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2TextBox7.Enabled = False
-        Me.Guna2TextBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox7.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.Guna2TextBox7.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.Guna2TextBox7.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TextBox7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBox7.Name = "Guna2TextBox7"
-        Me.Guna2TextBox7.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox7.PlaceholderText = "Enter company name"
-        Me.Guna2TextBox7.SelectedText = ""
-        Me.Guna2TextBox7.Size = New System.Drawing.Size(627, 35)
-        Me.Guna2TextBox7.TabIndex = 108
+        Me.txtEmployee.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtEmployee.DefaultText = ""
+        Me.txtEmployee.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtEmployee.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtEmployee.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtEmployee.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmployee.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtEmployee.Enabled = False
+        Me.txtEmployee.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmployee.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtEmployee.ForeColor = System.Drawing.Color.Black
+        Me.txtEmployee.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtEmployee.Location = New System.Drawing.Point(0, 0)
+        Me.txtEmployee.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEmployee.Name = "txtEmployee"
+        Me.txtEmployee.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEmployee.PlaceholderText = "Enter company name"
+        Me.txtEmployee.SelectedText = ""
+        Me.txtEmployee.Size = New System.Drawing.Size(627, 35)
+        Me.txtEmployee.TabIndex = 108
         '
         'Panel57
         '
@@ -1057,35 +1018,35 @@ Partial Class frmManageCollectionV2
         '
         'Panel14
         '
-        Me.Panel14.Controls.Add(Me.Guna2TextBox4)
+        Me.Panel14.Controls.Add(Me.txtTotalAmount)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(13, 206)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(627, 35)
         Me.Panel14.TabIndex = 13
         '
-        'Guna2TextBox4
+        'txtTotalAmount
         '
-        Me.Guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox4.DefaultText = ""
-        Me.Guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.White
-        Me.Guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.Guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2TextBox4.Enabled = False
-        Me.Guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox4.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.Guna2TextBox4.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.Guna2TextBox4.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TextBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBox4.Name = "Guna2TextBox4"
-        Me.Guna2TextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox4.PlaceholderText = "Enter company name"
-        Me.Guna2TextBox4.SelectedText = ""
-        Me.Guna2TextBox4.Size = New System.Drawing.Size(627, 35)
-        Me.Guna2TextBox4.TabIndex = 108
+        Me.txtTotalAmount.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtTotalAmount.DefaultText = ""
+        Me.txtTotalAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtTotalAmount.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtTotalAmount.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtTotalAmount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtTotalAmount.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtTotalAmount.Enabled = False
+        Me.txtTotalAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtTotalAmount.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtTotalAmount.ForeColor = System.Drawing.Color.Black
+        Me.txtTotalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtTotalAmount.Location = New System.Drawing.Point(0, 0)
+        Me.txtTotalAmount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTotalAmount.Name = "txtTotalAmount"
+        Me.txtTotalAmount.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtTotalAmount.PlaceholderText = "Enter company name"
+        Me.txtTotalAmount.SelectedText = ""
+        Me.txtTotalAmount.Size = New System.Drawing.Size(627, 35)
+        Me.txtTotalAmount.TabIndex = 108
         '
         'Panel15
         '
@@ -1127,35 +1088,35 @@ Partial Class frmManageCollectionV2
         '
         'Panel45
         '
-        Me.Panel45.Controls.Add(Me.Guna2TextBox5)
+        Me.Panel45.Controls.Add(Me.txtCompanyName)
         Me.Panel45.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel45.Location = New System.Drawing.Point(13, 133)
         Me.Panel45.Name = "Panel45"
         Me.Panel45.Size = New System.Drawing.Size(627, 35)
         Me.Panel45.TabIndex = 9
         '
-        'Guna2TextBox5
+        'txtCompanyName
         '
-        Me.Guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox5.DefaultText = ""
-        Me.Guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.White
-        Me.Guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.Guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2TextBox5.Enabled = False
-        Me.Guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox5.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.Guna2TextBox5.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.Guna2TextBox5.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TextBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBox5.Name = "Guna2TextBox5"
-        Me.Guna2TextBox5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox5.PlaceholderText = "Enter company name"
-        Me.Guna2TextBox5.SelectedText = ""
-        Me.Guna2TextBox5.Size = New System.Drawing.Size(627, 35)
-        Me.Guna2TextBox5.TabIndex = 108
+        Me.txtCompanyName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCompanyName.DefaultText = ""
+        Me.txtCompanyName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtCompanyName.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtCompanyName.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtCompanyName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCompanyName.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtCompanyName.Enabled = False
+        Me.txtCompanyName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCompanyName.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtCompanyName.ForeColor = System.Drawing.Color.Black
+        Me.txtCompanyName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtCompanyName.Location = New System.Drawing.Point(0, 0)
+        Me.txtCompanyName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCompanyName.Name = "txtCompanyName"
+        Me.txtCompanyName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtCompanyName.PlaceholderText = "Enter company name"
+        Me.txtCompanyName.SelectedText = ""
+        Me.txtCompanyName.Size = New System.Drawing.Size(627, 35)
+        Me.txtCompanyName.TabIndex = 108
         '
         'Panel46
         '
@@ -1197,35 +1158,35 @@ Partial Class frmManageCollectionV2
         '
         'Panel49
         '
-        Me.Panel49.Controls.Add(Me.Guna2TextBox6)
+        Me.Panel49.Controls.Add(Me.txtInvoiceNo)
         Me.Panel49.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel49.Location = New System.Drawing.Point(13, 60)
         Me.Panel49.Name = "Panel49"
         Me.Panel49.Size = New System.Drawing.Size(627, 35)
         Me.Panel49.TabIndex = 5
         '
-        'Guna2TextBox6
+        'txtInvoiceNo
         '
-        Me.Guna2TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox6.DefaultText = ""
-        Me.Guna2TextBox6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox6.DisabledState.FillColor = System.Drawing.Color.White
-        Me.Guna2TextBox6.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.Guna2TextBox6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2TextBox6.Enabled = False
-        Me.Guna2TextBox6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox6.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.Guna2TextBox6.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.Guna2TextBox6.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TextBox6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBox6.Name = "Guna2TextBox6"
-        Me.Guna2TextBox6.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox6.PlaceholderText = "Enter company name"
-        Me.Guna2TextBox6.SelectedText = ""
-        Me.Guna2TextBox6.Size = New System.Drawing.Size(627, 35)
-        Me.Guna2TextBox6.TabIndex = 108
+        Me.txtInvoiceNo.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtInvoiceNo.DefaultText = ""
+        Me.txtInvoiceNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtInvoiceNo.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtInvoiceNo.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtInvoiceNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtInvoiceNo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtInvoiceNo.Enabled = False
+        Me.txtInvoiceNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtInvoiceNo.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtInvoiceNo.ForeColor = System.Drawing.Color.Black
+        Me.txtInvoiceNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtInvoiceNo.Location = New System.Drawing.Point(0, 0)
+        Me.txtInvoiceNo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtInvoiceNo.Name = "txtInvoiceNo"
+        Me.txtInvoiceNo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtInvoiceNo.PlaceholderText = "Enter company name"
+        Me.txtInvoiceNo.SelectedText = ""
+        Me.txtInvoiceNo.Size = New System.Drawing.Size(627, 35)
+        Me.txtInvoiceNo.TabIndex = 108
         '
         'Panel50
         '
@@ -1262,7 +1223,7 @@ Partial Class frmManageCollectionV2
         Me.Panel52.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel52.Location = New System.Drawing.Point(3, 32)
         Me.Panel52.Name = "Panel52"
-        Me.Panel52.Size = New System.Drawing.Size(10, 458)
+        Me.Panel52.Size = New System.Drawing.Size(10, 506)
         Me.Panel52.TabIndex = 2
         '
         'Panel53
@@ -1270,7 +1231,7 @@ Partial Class frmManageCollectionV2
         Me.Panel53.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel53.Location = New System.Drawing.Point(640, 32)
         Me.Panel53.Name = "Panel53"
-        Me.Panel53.Size = New System.Drawing.Size(10, 458)
+        Me.Panel53.Size = New System.Drawing.Size(10, 506)
         Me.Panel53.TabIndex = 1
         '
         'Panel54
@@ -1292,54 +1253,11 @@ Partial Class frmManageCollectionV2
         '
         'Panel9
         '
-        Me.Panel9.Controls.Add(Me.txtFilter)
-        Me.Panel9.Controls.Add(Me.Panel12)
-        Me.Panel9.Controls.Add(Me.Panel10)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(10, 0)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(1000, 58)
+        Me.Panel9.Size = New System.Drawing.Size(1000, 10)
         Me.Panel9.TabIndex = 28
-        '
-        'txtFilter
-        '
-        Me.txtFilter.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtFilter.DefaultText = ""
-        Me.txtFilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtFilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtFilter.Dock = System.Windows.Forms.DockStyle.Left
-        Me.txtFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFilter.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtFilter.ForeColor = System.Drawing.Color.Black
-        Me.txtFilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtFilter.Location = New System.Drawing.Point(0, 10)
-        Me.txtFilter.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtFilter.Name = "txtFilter"
-        Me.txtFilter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtFilter.PlaceholderText = "Search by company name, invoice number"
-        Me.txtFilter.SelectedText = ""
-        Me.txtFilter.Size = New System.Drawing.Size(338, 38)
-        Me.txtFilter.TabIndex = 47
-        '
-        'Panel12
-        '
-        Me.Panel12.BackColor = System.Drawing.Color.White
-        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel12.Location = New System.Drawing.Point(0, 48)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(1000, 10)
-        Me.Panel12.TabIndex = 20
-        '
-        'Panel10
-        '
-        Me.Panel10.BackColor = System.Drawing.Color.White
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel10.Location = New System.Drawing.Point(0, 0)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1000, 10)
-        Me.Panel10.TabIndex = 19
         '
         'Panel5
         '
@@ -1356,6 +1274,108 @@ Partial Class frmManageCollectionV2
         Me.Panel29.Name = "Panel29"
         Me.Panel29.Size = New System.Drawing.Size(10, 561)
         Me.Panel29.TabIndex = 26
+        '
+        'Panel68
+        '
+        Me.Panel68.Controls.Add(Me.Panel69)
+        Me.Panel68.Controls.Add(Me.Panel70)
+        Me.Panel68.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel68.Location = New System.Drawing.Point(13, 487)
+        Me.Panel68.Name = "Panel68"
+        Me.Panel68.Size = New System.Drawing.Size(627, 51)
+        Me.Panel68.TabIndex = 14
+        '
+        'Panel69
+        '
+        Me.Panel69.Controls.Add(Me.btnConfirm)
+        Me.Panel69.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel69.Location = New System.Drawing.Point(0, 10)
+        Me.Panel69.Name = "Panel69"
+        Me.Panel69.Size = New System.Drawing.Size(140, 41)
+        Me.Panel69.TabIndex = 13
+        '
+        'btnConfirm
+        '
+        Me.btnConfirm.BorderRadius = 8
+        Me.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnConfirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnConfirm.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnConfirm.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnConfirm.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnConfirm.ForeColor = System.Drawing.Color.White
+        Me.btnConfirm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnConfirm.Location = New System.Drawing.Point(0, 0)
+        Me.btnConfirm.Name = "btnConfirm"
+        Me.btnConfirm.PressedDepth = 20
+        Me.btnConfirm.Size = New System.Drawing.Size(140, 41)
+        Me.btnConfirm.TabIndex = 41
+        Me.btnConfirm.Text = "Confirm"
+        '
+        'Panel70
+        '
+        Me.Panel70.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel70.Location = New System.Drawing.Point(0, 0)
+        Me.Panel70.Name = "Panel70"
+        Me.Panel70.Size = New System.Drawing.Size(627, 10)
+        Me.Panel70.TabIndex = 13
+        '
+        'Panel71
+        '
+        Me.Panel71.Controls.Add(Me.Panel72)
+        Me.Panel71.Controls.Add(Me.Panel73)
+        Me.Panel71.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel71.Location = New System.Drawing.Point(13, 487)
+        Me.Panel71.Name = "Panel71"
+        Me.Panel71.Size = New System.Drawing.Size(627, 51)
+        Me.Panel71.TabIndex = 18
+        '
+        'Panel72
+        '
+        Me.Panel72.Controls.Add(Me.btnConfirm2)
+        Me.Panel72.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel72.Location = New System.Drawing.Point(0, 10)
+        Me.Panel72.Name = "Panel72"
+        Me.Panel72.Size = New System.Drawing.Size(140, 41)
+        Me.Panel72.TabIndex = 13
+        '
+        'btnConfirm2
+        '
+        Me.btnConfirm2.BorderRadius = 8
+        Me.btnConfirm2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnConfirm2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnConfirm2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnConfirm2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnConfirm2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnConfirm2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnConfirm2.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnConfirm2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnConfirm2.ForeColor = System.Drawing.Color.White
+        Me.btnConfirm2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnConfirm2.Location = New System.Drawing.Point(0, 0)
+        Me.btnConfirm2.Name = "btnConfirm2"
+        Me.btnConfirm2.PressedDepth = 20
+        Me.btnConfirm2.Size = New System.Drawing.Size(140, 41)
+        Me.btnConfirm2.TabIndex = 41
+        Me.btnConfirm2.Text = "Confirm"
+        '
+        'Panel73
+        '
+        Me.Panel73.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel73.Location = New System.Drawing.Point(0, 0)
+        Me.Panel73.Name = "Panel73"
+        Me.Panel73.Size = New System.Drawing.Size(627, 10)
+        Me.Panel73.TabIndex = 13
+        '
+        'Panel22
+        '
+        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel22.Location = New System.Drawing.Point(10, 0)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(1000, 10)
+        Me.Panel22.TabIndex = 30
         '
         'frmManageCollectionV2
         '
@@ -1385,7 +1405,6 @@ Partial Class frmManageCollectionV2
         Me.Panel33.ResumeLayout(False)
         Me.Panel31.ResumeLayout(False)
         Me.Panel31.PerformLayout()
-        Me.Panel22.ResumeLayout(False)
         Me.Collection.ResumeLayout(False)
         Me.Panel18.ResumeLayout(False)
         Me.Panel20.ResumeLayout(False)
@@ -1409,7 +1428,10 @@ Partial Class frmManageCollectionV2
         Me.Panel49.ResumeLayout(False)
         Me.Panel51.ResumeLayout(False)
         Me.Panel51.PerformLayout()
-        Me.Panel9.ResumeLayout(False)
+        Me.Panel68.ResumeLayout(False)
+        Me.Panel69.ResumeLayout(False)
+        Me.Panel71.ResumeLayout(False)
+        Me.Panel72.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1430,19 +1452,19 @@ Partial Class frmManageCollectionV2
     Friend WithEvents Panel30 As Panel
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Panel41 As Panel
-    Friend WithEvents Guna2TextBox2 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtDateDelivered As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel40 As Panel
     Friend WithEvents Panel39 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel38 As Panel
     Friend WithEvents Panel37 As Panel
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtDueDate As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel36 As Panel
     Friend WithEvents Panel35 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel34 As Panel
     Friend WithEvents Panel33 As Panel
-    Friend WithEvents Guna2TextBox3 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtDateOrdered As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel32 As Panel
     Friend WithEvents Panel31 As Panel
     Friend WithEvents Label8 As Label
@@ -1450,10 +1472,6 @@ Partial Class frmManageCollectionV2
     Friend WithEvents Panel27 As Panel
     Friend WithEvents Panel26 As Panel
     Friend WithEvents Panel25 As Panel
-    Friend WithEvents Panel22 As Panel
-    Friend WithEvents cboFilter As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Panel23 As Panel
-    Friend WithEvents Panel24 As Panel
     Friend WithEvents Panel16 As Panel
     Friend WithEvents Panel17 As Panel
     Friend WithEvents Collection As TabPage
@@ -1474,7 +1492,7 @@ Partial Class frmManageCollectionV2
     Friend WithEvents Confirmation As TabPage
     Friend WithEvents panelbodyTab3 As Panel
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnBrowse2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Panel64 As Panel
@@ -1485,25 +1503,25 @@ Partial Class frmManageCollectionV2
     Friend WithEvents Panel13 As Panel
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Panel58 As Panel
-    Friend WithEvents Guna2TextBox7 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtEmployee As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel57 As Panel
     Friend WithEvents Panel56 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel55 As Panel
     Friend WithEvents Panel14 As Panel
-    Friend WithEvents Guna2TextBox4 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtTotalAmount As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel15 As Panel
     Friend WithEvents Panel43 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel44 As Panel
     Friend WithEvents Panel45 As Panel
-    Friend WithEvents Guna2TextBox5 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtCompanyName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel46 As Panel
     Friend WithEvents Panel47 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel48 As Panel
     Friend WithEvents Panel49 As Panel
-    Friend WithEvents Guna2TextBox6 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtInvoiceNo As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel50 As Panel
     Friend WithEvents Panel51 As Panel
     Friend WithEvents Label5 As Label
@@ -1512,9 +1530,15 @@ Partial Class frmManageCollectionV2
     Friend WithEvents Panel54 As Panel
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents txtFilter As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Panel12 As Panel
-    Friend WithEvents Panel10 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel29 As Panel
+    Friend WithEvents Panel68 As Panel
+    Friend WithEvents Panel69 As Panel
+    Friend WithEvents btnConfirm As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel70 As Panel
+    Friend WithEvents Panel71 As Panel
+    Friend WithEvents Panel72 As Panel
+    Friend WithEvents btnConfirm2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel73 As Panel
+    Friend WithEvents Panel22 As Panel
 End Class
