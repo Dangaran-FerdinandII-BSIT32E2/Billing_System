@@ -37,7 +37,7 @@ Public Class frmManageCollectionV2
                             End Using
 
                             PictureBox2.Visible = False
-                            btnBrowse.Visible = False
+                            btnBrowseDelivery.Visible = False
 
                         Else
                             pbxDelivery.Image = Nothing
@@ -88,7 +88,7 @@ Public Class frmManageCollectionV2
                             End Using
 
                             PictureBox3.Visible = False
-                            btnBrowse.Visible = False
+                            btnBrowsePayment.Visible = False
 
                         Else
                             pbxPayment.Image = Nothing

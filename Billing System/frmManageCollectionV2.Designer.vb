@@ -28,7 +28,7 @@ Partial Class frmManageCollectionV2
         Me.DeliveryDetails = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnBrowse = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnBrowseDelivery = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.pbxDelivery = New System.Windows.Forms.PictureBox()
         Me.Panel63 = New System.Windows.Forms.Panel()
@@ -83,7 +83,7 @@ Partial Class frmManageCollectionV2
         Me.Confirmation = New System.Windows.Forms.TabPage()
         Me.panelbodyTab3 = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnBrowsePayment = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.pbxPayment = New System.Windows.Forms.PictureBox()
         Me.Panel64 = New System.Windows.Forms.Panel()
@@ -237,7 +237,7 @@ Partial Class frmManageCollectionV2
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnBrowse)
+        Me.GroupBox1.Controls.Add(Me.btnBrowseDelivery)
         Me.GroupBox1.Controls.Add(Me.PictureBox2)
         Me.GroupBox1.Controls.Add(Me.pbxDelivery)
         Me.GroupBox1.Controls.Add(Me.Panel63)
@@ -256,28 +256,28 @@ Partial Class frmManageCollectionV2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Proof of Delivery"
         '
-        'btnBrowse
+        'btnBrowseDelivery
         '
-        Me.btnBrowse.BackColor = System.Drawing.Color.Transparent
-        Me.btnBrowse.BorderRadius = 15
-        Me.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBrowse.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnBrowse.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnBrowse.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnBrowse.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnBrowse.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnBrowse.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnBrowse.ForeColor = System.Drawing.Color.White
-        Me.btnBrowse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnBrowse.Location = New System.Drawing.Point(167, 320)
-        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnBrowse.Name = "btnBrowse"
-        Me.btnBrowse.PressedDepth = 20
-        Me.btnBrowse.ShadowDecoration.BorderRadius = 15
-        Me.btnBrowse.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(2)
-        Me.btnBrowse.Size = New System.Drawing.Size(145, 44)
-        Me.btnBrowse.TabIndex = 10000013
-        Me.btnBrowse.Text = "Browse"
+        Me.btnBrowseDelivery.BackColor = System.Drawing.Color.Transparent
+        Me.btnBrowseDelivery.BorderRadius = 15
+        Me.btnBrowseDelivery.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBrowseDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnBrowseDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnBrowseDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnBrowseDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnBrowseDelivery.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnBrowseDelivery.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBrowseDelivery.ForeColor = System.Drawing.Color.White
+        Me.btnBrowseDelivery.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnBrowseDelivery.Location = New System.Drawing.Point(167, 320)
+        Me.btnBrowseDelivery.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBrowseDelivery.Name = "btnBrowseDelivery"
+        Me.btnBrowseDelivery.PressedDepth = 20
+        Me.btnBrowseDelivery.ShadowDecoration.BorderRadius = 15
+        Me.btnBrowseDelivery.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(2)
+        Me.btnBrowseDelivery.Size = New System.Drawing.Size(145, 44)
+        Me.btnBrowseDelivery.TabIndex = 10000013
+        Me.btnBrowseDelivery.Text = "Browse"
         '
         'PictureBox2
         '
@@ -905,7 +905,7 @@ Partial Class frmManageCollectionV2
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.Guna2Button1)
+        Me.GroupBox4.Controls.Add(Me.btnBrowsePayment)
         Me.GroupBox4.Controls.Add(Me.PictureBox3)
         Me.GroupBox4.Controls.Add(Me.pbxPayment)
         Me.GroupBox4.Controls.Add(Me.Panel64)
@@ -924,28 +924,28 @@ Partial Class frmManageCollectionV2
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Proof of Payment"
         '
-        'Guna2Button1
+        'btnBrowsePayment
         '
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 15
-        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.OrangeRed
-        Me.Guna2Button1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button1.Location = New System.Drawing.Point(167, 320)
-        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.PressedDepth = 20
-        Me.Guna2Button1.ShadowDecoration.BorderRadius = 15
-        Me.Guna2Button1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(2)
-        Me.Guna2Button1.Size = New System.Drawing.Size(145, 44)
-        Me.Guna2Button1.TabIndex = 10000013
-        Me.Guna2Button1.Text = "Browse"
+        Me.btnBrowsePayment.BackColor = System.Drawing.Color.Transparent
+        Me.btnBrowsePayment.BorderRadius = 15
+        Me.btnBrowsePayment.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBrowsePayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnBrowsePayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnBrowsePayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnBrowsePayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnBrowsePayment.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnBrowsePayment.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBrowsePayment.ForeColor = System.Drawing.Color.White
+        Me.btnBrowsePayment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnBrowsePayment.Location = New System.Drawing.Point(167, 320)
+        Me.btnBrowsePayment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBrowsePayment.Name = "btnBrowsePayment"
+        Me.btnBrowsePayment.PressedDepth = 20
+        Me.btnBrowsePayment.ShadowDecoration.BorderRadius = 15
+        Me.btnBrowsePayment.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(2)
+        Me.btnBrowsePayment.Size = New System.Drawing.Size(145, 44)
+        Me.btnBrowsePayment.TabIndex = 10000013
+        Me.btnBrowsePayment.Text = "Browse"
         '
         'PictureBox3
         '
@@ -1518,7 +1518,7 @@ Partial Class frmManageCollectionV2
     Friend WithEvents DeliveryDetails As TabPage
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btnBrowse As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnBrowseDelivery As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents pbxDelivery As PictureBox
     Friend WithEvents Panel63 As Panel
@@ -1573,7 +1573,7 @@ Partial Class frmManageCollectionV2
     Friend WithEvents Confirmation As TabPage
     Friend WithEvents panelbodyTab3 As Panel
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnBrowsePayment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents pbxPayment As PictureBox
     Friend WithEvents Panel64 As Panel
