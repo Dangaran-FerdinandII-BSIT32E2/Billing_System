@@ -23,9 +23,10 @@ Public Class frmPrintInvoice
                 cn.Open()
             End If
 
-            sql = "INSERT INTO tblbilling(CustomerID, SalesMan, Terms, ProductOrder, DatePrinted) VALUES(@CustomerID, @SalesMan, @Terms, @ProductOrder, @DatePrinted)"
+            sql = "INSERT INTO tblbilling(BillingID, CustomerID, SalesMan, Terms, ProductOrder, DatePrinted) VALUES(@BillingID, @CustomerID, @SalesMan, @Terms, @ProductOrder, @DatePrinted)"
             cmd = New MySqlCommand(sql, cn)
             With cmd
+                .Parameters.AddWithValue("@BillingID", frmManageSalesV2.lblBillingID.Text)
                 .Parameters.AddWithValue("@CustomerID", lblCustID.Text)
                 .Parameters.AddWithValue("@SalesMan", lblSalesman.Text)
                 .Parameters.AddWithValue("@Terms", lblTerms.Text)
@@ -73,11 +74,12 @@ Public Class frmPrintInvoice
             End If
 
             For Each order As ListViewItem In ListView1.Items
-                sql = "INSERT INTO tblbillinvoice(BillingID, OrderID, ProductID) VALUES(@BillingID, @OrderID, @ProductID)"
+                sql = "INSERT INTO tblbillinvoice(BillingID, OrderID, Amount, ProductID) VALUES(@BillingID, @OrderID, @Amount, @ProductID)"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
-                    .Parameters.AddWithValue("@BillingID", lblBillingID.Text)
+                    .Parameters.AddWithValue("@BillingID", frmManageSalesV2.lblBillingID.Text)
                     .Parameters.AddWithValue("@OrderID", order.SubItems(5).Text)
+                    .Parameters.AddWithValue("@Amount", order.SubItems(4).Text)
                     .Parameters.AddWithValue("@ProductID", order.SubItems(7).Text)
                     .ExecuteNonQuery()
                 End With

@@ -127,7 +127,7 @@ Public Class frmManageCustomerV3
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID FROM tblorder WHERE Status <> 2 AND DueDate IS NULL GROUP BY CustomerID, OrderID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID FROM tblorder WHERE Status <> 2 AND DueDate IS NULL GROUP BY CustomerID) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then

@@ -1,24 +1,64 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.ComponentModel
+Imports System.Data.OleDb
 Imports System.IO
 Imports MySql.Data.MySqlClient
+Imports Mysqlx.Crud
 Public Class frmManageCollectionV2
 
     Public billingid As String
+    Dim d As OpenFileDialog = New OpenFileDialog
     Private Sub frmManageCollectionV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         TabControl2.SelectedTab = DeliveryDetails
+
+        'DELIVERY TAB
         Call loadDeliveryImage()
+        Call loadDeliveryDetails()
+
+        'CONFIRMATION TAB
         Call loadPaymentImage()
+        Call loadPaymentDetails()
     End Sub
 
     'DELIVERY DETAILS TAB
+    Private Sub loadDeliveryDetails()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT DISTINCT tblBilling.DatePrinted, tblOrder.DueDate " &
+                    "FROM  tblBilling " &
+                    "INNER JOIN tblbillinvoice ON tblBilling.BillingID = tblbillinvoice.BillingID " &
+                    "INNER JOIN tblOrder ON tblOrder.OrderID = tblbillinvoice.OrderID " &
+                    "WHERE tblBilling.BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                txtDatePrinted.Text = dr("DatePrinted").ToString
+                txtDueDate.Text = dr("DueDate").ToString
+            End If
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCollectionV2(loadDeliveryDetails): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub loadDeliveryImage()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
 
-            sql = "SELECT imgDelivery FROM tblbilling WHERE BillingID = '" & frmManageCollection.billingid & "'"
+            sql = "SELECT imgDelivery FROM tblbilling WHERE BillingID = '" & billingid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -59,10 +99,130 @@ Public Class frmManageCollectionV2
             End If
         End Try
     End Sub
+
+    Private Sub btnBrowseDelivery_Click(sender As Object, e As EventArgs) Handles btnBrowseDelivery.Click
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            d.Filter = "JPEG(*.jpg; *.jpeg)|*.jpg|PNG(*.png)|*.png"
+
+            If d.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                pbxDelivery.Image = Image.FromFile(d.FileName)
+
+                PictureBox2.Visible = False
+                btnBrowseDelivery.Visible = False
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmConfirmPayment(btnBrowse): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancelDelivery.Click
+        If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
+            pbxDelivery.Image = Nothing
+            PictureBox2.Visible = True
+            btnBrowseDelivery.Visible = True
+        End If
+    End Sub
+
+    Private Sub btnConfirmDelivery_Click(sender As Object, e As EventArgs) Handles btnConfirmDelivery.Click
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
+                Dim mstream As New System.IO.MemoryStream()
+                pbxDelivery.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim arrImage() As Byte = mstream.GetBuffer
+                mstream.Close()
+
+                sql = "UPDATE tblbilling SET imgDelivery=@imgDelivery, DateDelivered=@DateDelivered WHERE BillingID = '" & billingid & "'"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@DateDelivered", dtpDateDelivered.Value.ToString)
+                    .Parameters.AddWithValue("@imgDelivery", arrImage)
+                    .ExecuteNonQuery()
+                End With
+                MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
+
+                Call saveDelivery()
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCollectionV2(btnConfirmDelivery): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub saveDelivery()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "UPDATE tblOrder SET Status=@Status WHERE OrderID IN (SELECT OrderID FROM tblbillinvoice WHERE billingid = '" & billingid & "')"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@Status", 3)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCollectionV2(saveDelivery): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     'COLLECTION TAB
 
 
     'CONFIRMATION TAB
+    Private Sub loadPaymentDetails()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT CompanyName, SalesMan FROM qrybilling WHERE BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+            dr = cmd.ExecuteReader
+
+            If dr.Read = True Then
+                txtCompanyName.Text = dr("CompanyName").ToString()
+                txtEmployee.Text = dr("SalesMan").ToString()
+                txtInvoiceNo.Text = billingid
+            End If
+            dr.Close()
+
+            sql = "SELECT SUM(Amount) FROM tblbillinvoice WHERE BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                txtTotalAmount.Text = dr(0).ToString()
+            End If
+
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCollectionV2(loadPaymentDetails): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub loadPaymentImage()
         Try
             If cn.State <> ConnectionState.Open Then
@@ -109,5 +269,67 @@ Public Class frmManageCollectionV2
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub btnBrowsePayment_Click(sender As Object, e As EventArgs) Handles btnBrowsePayment.Click
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            d.Filter = "JPEG(*.jpg; *.jpeg)|*.jpg|PNG(*.png)|*.png"
+
+            If d.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                pbxPayment.Image = Image.FromFile(d.FileName)
+
+                PictureBox3.Visible = False
+                btnBrowsePayment.Visible = False
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmConfirmPayment(btnBrowse): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnConfirmPayment_Click(sender As Object, e As EventArgs) Handles btnConfirmPayment.Click
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
+                Dim mstream As New System.IO.MemoryStream()
+                pbxPayment.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim arrImage() As Byte = mstream.GetBuffer
+                mstream.Close()
+
+                sql = "UPDATE tblbilling SET imgPayment=@imgPayment, DatePaid=@DatePaid WHERE BillingID = '" & billingid & "'"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@DatePaid", dtpDateDelivered.Value.ToString)
+                    .Parameters.AddWithValue("@imgPayment", arrImage)
+                    .ExecuteNonQuery()
+                End With
+
+                MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCollectionV2(btnConfirmDelivery): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnCancelPayment_Click(sender As Object, e As EventArgs) Handles btnCancelPayment.Click
+        If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
+            pbxPayment.Image = Nothing
+            PictureBox3.Visible = True
+            btnBrowsePayment.Visible = True
+        End If
     End Sub
 End Class

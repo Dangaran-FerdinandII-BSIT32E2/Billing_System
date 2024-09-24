@@ -27,7 +27,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DatePaid FROM qrybilling WHERE Remarks <> 1  AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DatePaid FROM qrybilling WHERE Remarks <> 1 AND DatePaid IS NULL AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
