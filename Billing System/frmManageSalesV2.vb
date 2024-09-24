@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Runtime.InteropServices.ComTypes
 Imports System.Web.UI.WebControls
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
@@ -37,7 +38,7 @@ Public Class frmManageSalesV2
                 x.SubItems.Add(dr("SellingPrice").ToString())
                 x.SubItems.Add(dr("Amount").ToString())
                 x.SubItems.Add(dr("OrderID").ToString())
-                x.SubItems.Add(dr("OrderList").ToString())
+                x.SubItems.Add(dr("OrderListID").ToString())
                 x.SubItems.Add(dr("ProductID").ToString())
                 ListView1.Items.Add(x)
             Loop
@@ -88,7 +89,8 @@ Public Class frmManageSalesV2
 
             If ListView1.SelectedItems.Count > 0 Then
                 lblOrderID.Text = ListView1.SelectedItems(0).SubItems(5).Text
-                lblProductID.Text = ListView1.SelectedItems(0).SubItems(6).Text
+                lblOrderListID.Text = ListView1.SelectedItems(0).SubItems(6).Text
+                lblProductID.Text = ListView1.SelectedItems(0).SubItems(7).Text
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(ListView1_SelectedIndexChanged): " & ex.Message)

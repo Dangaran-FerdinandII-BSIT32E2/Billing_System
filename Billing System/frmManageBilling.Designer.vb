@@ -33,7 +33,7 @@ Partial Class frmManageBilling
         Me.CompanyName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DatePrinted = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Terms = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.DatePaid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DueDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.btnView = New Guna.UI2.WinForms.Guna2Button()
@@ -135,7 +135,7 @@ Partial Class frmManageBilling
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.InvoiceNo, Me.CompanyName, Me.DatePrinted, Me.Terms, Me.DatePaid})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.InvoiceNo, Me.CompanyName, Me.DatePrinted, Me.Terms, Me.DueDate})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
@@ -170,10 +170,10 @@ Partial Class frmManageBilling
         Me.Terms.Text = "Terms"
         Me.Terms.Width = 200
         '
-        'DatePaid
+        'DueDate
         '
-        Me.DatePaid.Text = "Date Paid"
-        Me.DatePaid.Width = 200
+        Me.DueDate.Text = "Due Date"
+        Me.DueDate.Width = 200
         '
         'Panel18
         '
@@ -485,15 +485,18 @@ Partial Class frmManageBilling
         Me.cboFilter.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cboFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cboFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboFilter.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboFilter.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cboFilter.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cboFilter.FocusedColor = System.Drawing.Color.OrangeRed
+        Me.cboFilter.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
+        Me.cboFilter.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.cboFilter.ForeColor = System.Drawing.Color.Black
+        Me.cboFilter.HoverState.BorderColor = System.Drawing.Color.OrangeRed
         Me.cboFilter.ItemHeight = 30
+        Me.cboFilter.Items.AddRange(New Object() {"Filter by...", "Not Delivered", "Not Paid", "Delivered and Paid"})
         Me.cboFilter.Location = New System.Drawing.Point(13, 12)
         Me.cboFilter.Margin = New System.Windows.Forms.Padding(4)
         Me.cboFilter.Name = "cboFilter"
         Me.cboFilter.Size = New System.Drawing.Size(374, 36)
+        Me.cboFilter.StartIndex = 0
         Me.cboFilter.TabIndex = 39
         '
         'Panel13
@@ -653,7 +656,7 @@ Partial Class frmManageBilling
     Friend WithEvents ListView1 As ListView
     Friend WithEvents InvoiceNo As ColumnHeader
     Friend WithEvents CompanyName As ColumnHeader
-    Friend WithEvents DatePaid As ColumnHeader
+    Friend WithEvents DueDate As ColumnHeader
     Friend WithEvents DatePrinted As ColumnHeader
     Friend WithEvents Terms As ColumnHeader
     Friend WithEvents Panel12 As Panel

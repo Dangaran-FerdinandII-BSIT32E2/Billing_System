@@ -944,6 +944,7 @@ Partial Class frmManageCollectionV2
         Me.pbxPayment.Margin = New System.Windows.Forms.Padding(4)
         Me.pbxPayment.Name = "pbxPayment"
         Me.pbxPayment.Size = New System.Drawing.Size(419, 635)
+        Me.pbxPayment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pbxPayment.TabIndex = 3
         Me.pbxPayment.TabStop = False
         '
@@ -1491,6 +1492,7 @@ Partial Class frmManageCollectionV2
         Me.Confirmation.ResumeLayout(False)
         Me.panelbodyTab3.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxPayment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel13.ResumeLayout(False)

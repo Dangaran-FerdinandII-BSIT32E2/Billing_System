@@ -929,6 +929,7 @@ Partial Class frmManageSalesV2
         Me.lblCustID.Size = New System.Drawing.Size(63, 16)
         Me.lblCustID.TabIndex = 95
         Me.lblCustID.Text = "lblCustID"
+        Me.lblCustID.Visible = False
         '
         'ErrorProvider1
         '

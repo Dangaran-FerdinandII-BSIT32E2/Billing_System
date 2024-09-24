@@ -16,7 +16,7 @@ Public Class frmManageBilling
 
         Call loadBilling(startDate, endDate)
     End Sub
-    Private Sub loadBilling(startDate As String, endDate As String)
+    Public Sub loadBilling(startDate As String, endDate As String)
         Try
             Dim startDateTime As DateTime
             Dim endDateTime As DateTime
@@ -69,6 +69,145 @@ Public Class frmManageBilling
     End Sub
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click, ListView1.DoubleClick
         frmManageCollectionV2.billingid = ListView1.SelectedItems(0).SubItems(0).Text
+        frmManageCollectionV2.startDate = startDate
+        frmManageCollectionV2.endDate = endDate
         frmManageCollectionV2.ShowDialog()
+    End Sub
+
+    Private Sub cboFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilter.SelectedIndexChanged
+        If cboFilter.Text = "Not Delivered" Then
+            ListView1.Columns.Clear()
+            ListView1.Columns.Add("Invoice No.")
+            ListView1.Columns.Add("Company Name")
+            ListView1.Columns.Add("Date Printed")
+            ListView1.Columns.Add("Terms")
+            ListView1.Columns.Add("Due Date")
+
+            ListView1.Columns(0).Width = 200
+            ListView1.Columns(1).Width = 200
+            ListView1.Columns(2).Width = 200
+            ListView1.Columns(3).Width = 200
+            ListView1.Columns(4).Width = 200
+
+            Call loadNotDelivered(startDate, endDate)
+
+        ElseIf cboFilter.Text = "Delivered But Not Paid" Then
+            ListView1.Columns.Clear()
+            ListView1.Columns.Add("Invoice No.")
+            ListView1.Columns.Add("Company Name")
+            ListView1.Columns.Add("Date Printed")
+            ListView1.Columns.Add("Terms")
+            ListView1.Columns.Add("Pay Date")
+
+            ListView1.Columns(0).Width = 200
+            ListView1.Columns(1).Width = 200
+            ListView1.Columns(2).Width = 200
+            ListView1.Columns(3).Width = 200
+            ListView1.Columns(4).Width = 200
+
+            Call loadBilling(startDate, endDate)
+        ElseIf cboFilter.Text = "Delivered and Paid" Then
+            ListView1.Columns.Clear()
+            ListView1.Columns.Add("Invoice No.")
+            ListView1.Columns.Add("Company Name")
+            ListView1.Columns.Add("Date Printed")
+            ListView1.Columns.Add("Terms")
+            ListView1.Columns.Add("Due Date")
+            ListView1.Columns.Add("Pay Date")
+
+            ListView1.Columns(0).Width = 200
+            ListView1.Columns(1).Width = 200
+            ListView1.Columns(2).Width = 200
+            ListView1.Columns(3).Width = 200
+            ListView1.Columns(4).Width = 200
+            ListView1.Columns(5).Width = 200
+
+            Call loadEverything(startDate, endDate)
+        End If
+    End Sub
+
+    Private Sub loadNotDelivered(startDate As String, endDate As String)
+        Try
+            Dim startDateTime As DateTime
+            Dim endDateTime As DateTime
+
+            If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
+           DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
+
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DateDelivered FROM qrybilling WHERE Remarks = 0 AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                cmd = New MySqlCommand(sql, cn)
+
+                If Not dr.IsClosed Then
+                    dr.Close()
+                End If
+
+                dr = cmd.ExecuteReader
+                Dim x As ListViewItem
+                ListView1.Items.Clear()
+
+                Do While dr.Read = True
+                    x = New ListViewItem(dr("BillingID").ToString())
+                    x.SubItems.Add(dr("CompanyName").ToString())
+                    x.SubItems.Add(dr("DatePrinted").ToString())
+                    x.SubItems.Add(dr("Terms").ToString())
+                    x.SubItems.Add(If(IsDBNull(dr("DateDelivered")), "Not Yet Delivered", dr("DateDelivered").ToString()))
+                    ListView1.Items.Add(x)
+                Loop
+                dr.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageBilling(loadNotDelivered): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub loadEverything(startDate As String, endDate As String)
+        Try
+            Dim startDateTime As DateTime
+            Dim endDateTime As DateTime
+
+            If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
+           DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
+
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DateDelivered, DatePaid FROM qrybilling WHERE Remarks = 2 AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                cmd = New MySqlCommand(sql, cn)
+
+                If Not dr.IsClosed Then
+                    dr.Close()
+                End If
+
+                dr = cmd.ExecuteReader
+                Dim x As ListViewItem
+                ListView1.Items.Clear()
+
+                Do While dr.Read = True
+                    x = New ListViewItem(dr("BillingID").ToString())
+                    x.SubItems.Add(dr("CompanyName").ToString())
+                    x.SubItems.Add(dr("DatePrinted").ToString())
+                    x.SubItems.Add(dr("Terms").ToString())
+                    x.SubItems.Add(dr("DateDelivered").ToString())
+                    x.SubItems.Add(If(IsDBNull(dr("DatePaid")), "Not Yet Paid", dr("DatePaid").ToString()))
+                    ListView1.Items.Add(x)
+                Loop
+                dr.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageBilling(loadEverything): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 End Class

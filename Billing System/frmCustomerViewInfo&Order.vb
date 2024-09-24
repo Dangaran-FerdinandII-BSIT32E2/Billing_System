@@ -76,7 +76,7 @@ Public Class frmCustomerViewInfo_Order
                 x.SubItems.Add(IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "On hold", "On process")).ToString())
                 x.SubItems.Add(dr("OrderDate").ToString())
                 x.SubItems.Add(dr("OrderID").ToString()) ' 8
-                x.SubItems.Add(dr("OrderList").ToString()) ' 9
+                x.SubItems.Add(dr("OrderListID").ToString()) ' 9
                 ListView1.Items.Add(x)
             Loop
             dr.Close()

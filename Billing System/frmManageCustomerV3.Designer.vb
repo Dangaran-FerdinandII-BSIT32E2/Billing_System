@@ -46,8 +46,8 @@ Partial Class frmManageCustomerV3
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel33 = New System.Windows.Forms.Panel()
         Me.Panel31 = New System.Windows.Forms.Panel()
-        Me.btnViewInfo = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel34 = New System.Windows.Forms.Panel()
+        Me.btnViewInfo = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.cboSalesman = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -295,6 +295,17 @@ Partial Class frmManageCustomerV3
         Me.Panel31.Size = New System.Drawing.Size(1335, 12)
         Me.Panel31.TabIndex = 18
         '
+        'Panel34
+        '
+        Me.Panel34.BackColor = System.Drawing.Color.White
+        Me.Panel34.Controls.Add(Me.btnViewInfo)
+        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel34.Location = New System.Drawing.Point(13, 12)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel34.Name = "Panel34"
+        Me.Panel34.Size = New System.Drawing.Size(187, 50)
+        Me.Panel34.TabIndex = 18
+        '
         'btnViewInfo
         '
         Me.btnViewInfo.BorderRadius = 8
@@ -315,17 +326,6 @@ Partial Class frmManageCustomerV3
         Me.btnViewInfo.Size = New System.Drawing.Size(187, 50)
         Me.btnViewInfo.TabIndex = 57
         Me.btnViewInfo.Text = "View Info"
-        '
-        'Panel34
-        '
-        Me.Panel34.BackColor = System.Drawing.Color.White
-        Me.Panel34.Controls.Add(Me.btnViewInfo)
-        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel34.Location = New System.Drawing.Point(13, 12)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(187, 50)
-        Me.Panel34.TabIndex = 18
         '
         'Panel30
         '
@@ -367,7 +367,7 @@ Partial Class frmManageCustomerV3
         Me.cboSalesman.ForeColor = System.Drawing.Color.Black
         Me.cboSalesman.HoverState.BorderColor = System.Drawing.Color.OrangeRed
         Me.cboSalesman.ItemHeight = 30
-        Me.cboSalesman.Items.AddRange(New Object() {"Filter by", "View Master List", "View Order List"})
+        Me.cboSalesman.Items.AddRange(New Object() {"Filter by", "View Master List", "View Pending Orders"})
         Me.cboSalesman.Location = New System.Drawing.Point(0, 5)
         Me.cboSalesman.Margin = New System.Windows.Forms.Padding(5)
         Me.cboSalesman.Name = "cboSalesman"
@@ -468,7 +468,6 @@ Partial Class frmManageCustomerV3
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Panel33 As Panel
     Friend WithEvents Panel31 As Panel
-    Friend WithEvents btnViewInfo As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel34 As Panel
     Friend WithEvents Panel30 As Panel
     Friend WithEvents MainBody As Panel
@@ -478,4 +477,5 @@ Partial Class frmManageCustomerV3
     Friend WithEvents Panel7 As Panel
     Friend WithEvents cboSalesman As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Panel13 As Panel
+    Friend WithEvents btnViewInfo As Guna.UI2.WinForms.Guna2Button
 End Class

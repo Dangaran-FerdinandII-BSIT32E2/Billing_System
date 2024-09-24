@@ -1,12 +1,16 @@
 ﻿Imports System.ComponentModel
 Imports System.Data.OleDb
 Imports System.IO
+Imports System.Runtime.InteropServices.ComTypes
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.Crud
 Public Class frmManageCollectionV2
 
     Public billingid As String
+    Public startDate As String
+    Public endDate As String
     Dim d As OpenFileDialog = New OpenFileDialog
+
     Private Sub frmManageCollectionV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         TabControl2.SelectedTab = DeliveryDetails
@@ -143,10 +147,11 @@ Public Class frmManageCollectionV2
                 Dim arrImage() As Byte = mstream.GetBuffer
                 mstream.Close()
 
-                sql = "UPDATE tblbilling SET imgDelivery=@imgDelivery, DateDelivered=@DateDelivered WHERE BillingID = '" & billingid & "'"
+                sql = "UPDATE tblbilling SET imgDelivery=@imgDelivery, DateDelivered=@DateDelivered, Remarks=@Remarks WHERE BillingID = '" & billingid & "'"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
-                    .Parameters.AddWithValue("@DateDelivered", dtpDateDelivered.Value.ToString)
+                    .Parameters.AddWithValue("@DateDelivered", dtpDateDelivered.Value)
+                    .Parameters.AddWithValue("@Remarks", "1")
                     .Parameters.AddWithValue("@imgDelivery", arrImage)
                     .ExecuteNonQuery()
                 End With
@@ -306,14 +311,17 @@ Public Class frmManageCollectionV2
                 Dim arrImage() As Byte = mstream.GetBuffer
                 mstream.Close()
 
-                sql = "UPDATE tblbilling SET imgPayment=@imgPayment, DatePaid=@DatePaid WHERE BillingID = '" & billingid & "'"
+                sql = "UPDATE tblbilling SET imgPayment=@imgPayment, DatePaid=@DatePaid, Remarks=@Remarks WHERE BillingID = '" & billingid & "'"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
-                    .Parameters.AddWithValue("@DatePaid", dtpDateDelivered.Value.ToString)
+                    .Parameters.AddWithValue("@DatePaid", dtpDateDelivered.Value)
+                    .Parameters.AddWithValue("@Remarks", "2")
                     .Parameters.AddWithValue("@imgPayment", arrImage)
                     .ExecuteNonQuery()
                 End With
 
+                'Call savePayment()
+                Call frmManageBilling.loadBilling(startDate, endDate)
                 MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
             End If
         Catch ex As Exception
@@ -324,7 +332,25 @@ Public Class frmManageCollectionV2
             End If
         End Try
     End Sub
+    Private Sub savePayment()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
+            sql = "UPDATE tblbilling SET Remarks=@Remarks WHERE OrderID IN (SELECT OrderID FROM tblbillinvoice WHERE billingid = '" & billingid & "')"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@Remarks", "2")
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCollectionV2(savePayment): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub btnCancelPayment_Click(sender As Object, e As EventArgs) Handles btnCancelPayment.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
             pbxPayment.Image = Nothing

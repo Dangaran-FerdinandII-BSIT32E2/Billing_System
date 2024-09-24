@@ -52,9 +52,10 @@ Public Class frmPrintInvoice
             End If
 
             For Each orderlist As ListViewItem In ListView1.Items
-                sql = "UPDATE tblorder SET DueDate=@DueDate WHERE OrderListID = '" & orderlist.SubItems(6).Text & "'"
+                sql = "UPDATE tblorder SET DueDate=@DueDate, Status=@Status WHERE OrderListID = '" & orderlist.SubItems(6).Text & "'"
                 cmd = New MySqlCommand(sql, cn)
                 cmd.Parameters.AddWithValue("@DueDate", Date.Now.AddDays(5))
+                cmd.Parameters.AddWithValue("@Status", "2")
                 cmd.ExecuteNonQuery()
             Next
 
@@ -83,11 +84,6 @@ Public Class frmPrintInvoice
                     .Parameters.AddWithValue("@ProductID", order.SubItems(7).Text)
                     .ExecuteNonQuery()
                 End With
-
-                sql = "UPDATE tblorder SET Status=@Status WHERE OrderID = '" & order.SubItems(5).Text & "'"
-                cmd = New MySqlCommand(sql, cn)
-                cmd.Parameters.AddWithValue("@Status", "2")
-                cmd.ExecuteNonQuery()
             Next
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(saveBilling): " & ex.Message)
