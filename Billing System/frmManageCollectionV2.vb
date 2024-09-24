@@ -247,7 +247,6 @@ Public Class frmManageCollectionV2
                     Try
                         Dim pic As Byte() = DirectCast(dr("imgPayment"), Byte())
                         If pic.Length > 0 Then
-                            'Dim ms As New MemoryStream(pic)
                             Using ms As New MemoryStream(pic)
                                 pbxPayment.Image = Image.FromStream(ms)
                             End Using

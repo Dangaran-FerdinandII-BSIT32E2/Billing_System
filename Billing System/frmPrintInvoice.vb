@@ -1,9 +1,17 @@
 ﻿Imports System.Data.OleDb
+Imports System.IO
+Imports System.Net.Mail
+Imports System.Net.Mime
 Imports MySql.Data.MySqlClient
 Public Class frmPrintInvoice
 
     Private Sub frmPrintVoice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+        Call loadUser()
+    End Sub
+
+    Private Sub loadUser()
+
     End Sub
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
@@ -36,6 +44,8 @@ Public Class frmPrintInvoice
             End With
 
             Call updateOrder()
+            Call saveBillInvoice()
+            Call sendEmail()
         Catch ex As Exception
             MsgBox("An error occurred frmPrintInvoice(saveBilling): " & ex.Message)
         Finally
@@ -59,7 +69,6 @@ Public Class frmPrintInvoice
                 cmd.ExecuteNonQuery()
             Next
 
-            Call saveBillInvoice()
         Catch ex As Exception
             MsgBox("An error occurred frmPrintInvoice(updateOrder): " & ex.Message)
         Finally
@@ -93,4 +102,38 @@ Public Class frmPrintInvoice
             End If
         End Try
     End Sub
+
+    Private Sub sendEmail()
+        Try
+            Dim mail As New MailMessage()
+            Dim smtpServer As New SmtpClient("smtp.gmail.com")
+            mail.From = New MailAddress("dangaranferds@gmail.com")
+            mail.To.Add("2091-22@itmlyceumalabang.onmicrosoft.com")
+            mail.Subject = "Sales Invoice"
+
+            Using screenshot As New Bitmap(Me.ClientRectangle.Width, Me.ClientRectangle.Height)
+                Me.DrawToBitmap(screenshot, Me.ClientRectangle)
+
+                Using memoryStream As New MemoryStream()
+                    screenshot.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                    memoryStream.Position = 0
+
+                    Dim imageAttachment As New Attachment(memoryStream, "PrintedInvoice-SALESNO_" + frmManageSalesV2.lblBillingID.Text + "-.jpeg")
+                    mail.Attachments.Add(imageAttachment)
+
+                    smtpServer.Port = 587
+                    smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "fhqo nbkg zryu psyx")
+                    smtpServer.EnableSsl = True
+                    smtpServer.Send(mail)
+                End Using
+            End Using
+
+            MsgBox("Email sent with form screenshot!")
+
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmConfirmPayment(btnEmail): " & ex.Message)
+        End Try
+    End Sub
+
 End Class

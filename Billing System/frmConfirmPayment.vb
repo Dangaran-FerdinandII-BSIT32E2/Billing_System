@@ -133,32 +133,4 @@ Public Class frmConfirmPayment
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
-
-    'Private Sub btnEmail_Click(sender As Object, e As EventArgs)
-    '    Try
-    '        If cn.State <> ConnectionState.Open Then
-    '            cn.Open()
-    '        End If
-
-    '        Dim mail As New MailMessage
-    '        Dim smtpServer As New SmtpClient("smtp.gmail.com")
-    '        mail.From = New MailAddress(txtFrom.Text)
-    '        mail.To.Add(txtTo.Text)
-    '        mail.Subject = ""
-    '        mail.Body = ""
-
-    '        smtpServer.Port = 587
-    '        smtpServer.Credentials = New System.Net.NetworkCredential(txtFrom.Text, "app_password_Google")
-    '        smtpServer.EnableSsl = True
-    '        smtpServer.Send(mail)
-    '        MsgBox("done!")
-
-    '    Catch ex As Exception
-    '        MsgBox("An error occurred frmConfirmPayment(btnEmail): " & ex.Message)
-    '    Finally
-    '        If cn.State = ConnectionState.Open Then
-    '            cn.Close()
-    '        End If
-    '    End Try
-    'End Sub
 End Class
