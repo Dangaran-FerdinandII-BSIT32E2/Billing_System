@@ -26,7 +26,6 @@ Public Class frmManageCollection
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qrybilling WHERE BillingID = '"  "'"
         Catch ex As Exception
         Finally
             If cn.State = ConnectionState.Open Then

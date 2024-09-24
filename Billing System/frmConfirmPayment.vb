@@ -35,12 +35,6 @@ Public Class frmConfirmPayment
                                 pbxPayment.Image = Image.FromStream(ms)
                             End Using
 
-                            PictureBox2.Visible = False
-                            Label5.Visible = False
-                            Guna2Separator1.Visible = False
-                            Guna2Separator2.Visible = False
-                            Label4.Visible = False
-                            btnBrowse.Visible = False
                         Else
                             pbxPayment.Image = Nothing
                         End If

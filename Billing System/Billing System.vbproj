@@ -130,6 +130,12 @@
     <Compile Include="frmConfirmPayment.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmConfirmPaymentV2.Designer.vb">
+      <DependentUpon>frmConfirmPaymentV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfirmPaymentV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCustomerViewInfo&amp;Order.Designer.vb">
       <DependentUpon>frmCustomerViewInfo&amp;Order.vb</DependentUpon>
     </Compile>
@@ -170,6 +176,12 @@
       <DependentUpon>frmLoginV2.vb</DependentUpon>
     </Compile>
     <Compile Include="frmLoginV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageCollectionV2.Designer.vb">
+      <DependentUpon>frmManageCollectionV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageCollectionV2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmManageCustomerV2.Designer.vb">
@@ -326,6 +338,9 @@
     <EmbeddedResource Include="frmConfirmPayment.resx">
       <DependentUpon>frmConfirmPayment.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirmPaymentV2.resx">
+      <DependentUpon>frmConfirmPaymentV2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerViewInfo&amp;Order.resx">
       <DependentUpon>frmCustomerViewInfo&amp;Order.vb</DependentUpon>
     </EmbeddedResource>
@@ -346,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoginV2.resx">
       <DependentUpon>frmLoginV2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageCollectionV2.resx">
+      <DependentUpon>frmManageCollectionV2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageCustomerV2.resx">
       <DependentUpon>frmManageCustomerV2.vb</DependentUpon>
