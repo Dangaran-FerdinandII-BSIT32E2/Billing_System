@@ -179,6 +179,10 @@ Public Class frmManageSalesV2
             Dim filled As Boolean = True
 
             Dim requiredFields As New Dictionary(Of String, Control) From {
+            {"txtCompanyName", txtCompanyName},
+            {"txtAddress", txtAddress},
+            {"txtDeliveryAddress", txtDeliveryAddress},
+            {"txtBusinessStyle", txtBusinessStyle},
             {"txtPONo", txtPONo},
             {"txtTerms", txtTerms},
             {"cboSalesman", cboSalesman},
@@ -229,26 +233,26 @@ Public Class frmManageSalesV2
 
             If dr.Read = True Then
                 'left side
-                frmPrintInvoice.lblSoldTo.Text = dr("CompanyName").ToString
-                frmPrintInvoice.lblAddress.Text = dr("Address").ToString
-                frmPrintInvoice.lblDelivery.Text = dr("Delivery").ToString
-                frmPrintInvoice.lblBusStyle.Text = dr("CompanyName").ToString ' business style
+                frmPrintSalesInvoice.lblSoldTo.Text = dr("CompanyName").ToString
+                frmPrintSalesInvoice.lblAddress.Text = dr("Address").ToString
+                frmPrintSalesInvoice.lblDelivery.Text = dr("Delivery").ToString
+                frmPrintSalesInvoice.lblBusStyle.Text = dr("CompanyName").ToString ' business style
             End If
 
-            frmPrintInvoice.lblCustID.Text = lblCustID.Text
-            frmPrintInvoice.lblBillingID.Text = lblBillingID.Text
-            frmPrintInvoice.lblTerms.Text = txtTerms.Text
-            frmPrintInvoice.lblTIN.Text = txtTIN.Text
-            frmPrintInvoice.lblSalesman.Text = cboSalesman.Text
-            frmPrintInvoice.lblPuchaseNo.Text = txtPONo.Text
-            frmPrintInvoice.lblDate.Text = dtpDate.Value.ToString
+            frmPrintSalesInvoice.lblCustID.Text = lblCustID.Text
+            frmPrintSalesInvoice.lblBillingID.Text = lblBillingID.Text
+            frmPrintSalesInvoice.lblTerms.Text = txtTerms.Text
+            frmPrintSalesInvoice.lblTIN.Text = txtTIN.Text
+            frmPrintSalesInvoice.lblSalesman.Text = cboSalesman.Text
+            frmPrintSalesInvoice.lblPONo.Text = txtPONo.Text
+            frmPrintSalesInvoice.lblDate.Text = dtpDate.Value.ToString
 
             For Each listitem As ListViewItem In ListView1.Items 'includes OrderID on SubItem 5 OrderList sub item 6 productid sub item 7
                 Dim X As ListViewItem = listitem.Clone()
-                frmPrintInvoice.ListView1.Items.Add(X)
+                frmPrintSalesInvoice.ListView1.Items.Add(X)
             Next
 
-            frmPrintInvoice.ShowDialog()
+            frmPrintSalesInvoice.ShowDialog()
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(printBilling): " & ex.Message)
         Finally
