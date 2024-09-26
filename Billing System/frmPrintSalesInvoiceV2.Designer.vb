@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmPrintBillingInvoice
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmPrintSalesInvoiceV2
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmPrintBillingInvoice
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlBody = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel58 = New System.Windows.Forms.Panel()
@@ -66,6 +66,27 @@ Partial Class frmPrintBillingInvoice
         Me.Label49 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel38 = New System.Windows.Forms.Panel()
+        Me.lblLessTax = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Panel37 = New System.Windows.Forms.Panel()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.lblAddVAT = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.lblTotalSales = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Panel34 = New System.Windows.Forms.Panel()
+        Me.lblZeroRatedSales = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Panel33 = New System.Windows.Forms.Panel()
+        Me.lblVATExempt = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Panel32 = New System.Windows.Forms.Panel()
+        Me.lblVATSales = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelListViewBody = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -141,6 +162,13 @@ Partial Class frmPrintBillingInvoice
         Me.panelTableBody.SuspendLayout()
         Me.Panel31.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.Panel38.SuspendLayout()
+        Me.Panel37.SuspendLayout()
+        Me.Panel36.SuspendLayout()
+        Me.Panel35.SuspendLayout()
+        Me.Panel34.SuspendLayout()
+        Me.Panel33.SuspendLayout()
+        Me.Panel32.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
         Me.panelListViewBody.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
@@ -189,7 +217,7 @@ Partial Class frmPrintBillingInvoice
         Me.pnlBody.Location = New System.Drawing.Point(0, 0)
         Me.pnlBody.Name = "pnlBody"
         Me.pnlBody.Size = New System.Drawing.Size(950, 768)
-        Me.pnlBody.TabIndex = 2
+        Me.pnlBody.TabIndex = 1
         '
         'Panel58
         '
@@ -584,6 +612,13 @@ Partial Class frmPrintBillingInvoice
         'Panel31
         '
         Me.Panel31.Controls.Add(Me.GroupBox1)
+        Me.Panel31.Controls.Add(Me.Panel38)
+        Me.Panel31.Controls.Add(Me.Panel37)
+        Me.Panel31.Controls.Add(Me.Panel36)
+        Me.Panel31.Controls.Add(Me.Panel35)
+        Me.Panel31.Controls.Add(Me.Panel34)
+        Me.Panel31.Controls.Add(Me.Panel33)
+        Me.Panel31.Controls.Add(Me.Panel32)
         Me.Panel31.Location = New System.Drawing.Point(618, 6)
         Me.Panel31.Name = "Panel31"
         Me.Panel31.Size = New System.Drawing.Size(307, 310)
@@ -596,7 +631,7 @@ Partial Class frmPrintBillingInvoice
         Me.GroupBox1.Controls.Add(Me.Label49)
         Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Controls.Add(Me.Panel2)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.GroupBox1.Location = New System.Drawing.Point(0, 245)
         Me.GroupBox1.Name = "GroupBox1"
@@ -650,6 +685,230 @@ Partial Class frmPrintBillingInvoice
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(301, 10)
         Me.Panel2.TabIndex = 40
+        '
+        'Panel38
+        '
+        Me.Panel38.Controls.Add(Me.lblLessTax)
+        Me.Panel38.Controls.Add(Me.Label48)
+        Me.Panel38.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel38.Location = New System.Drawing.Point(0, 210)
+        Me.Panel38.Name = "Panel38"
+        Me.Panel38.Size = New System.Drawing.Size(307, 35)
+        Me.Panel38.TabIndex = 106
+        '
+        'lblLessTax
+        '
+        Me.lblLessTax.AutoSize = True
+        Me.lblLessTax.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblLessTax.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblLessTax.Location = New System.Drawing.Point(127, 0)
+        Me.lblLessTax.Name = "lblLessTax"
+        Me.lblLessTax.Size = New System.Drawing.Size(42, 15)
+        Me.lblLessTax.TabIndex = 54
+        Me.lblLessTax.Text = "XXXXX"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label48.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label48.Location = New System.Drawing.Point(0, 0)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(127, 15)
+        Me.Label48.TabIndex = 49
+        Me.Label48.Text = "Less Withholding Tax:"
+        '
+        'Panel37
+        '
+        Me.Panel37.Controls.Add(Me.lblTotal)
+        Me.Panel37.Controls.Add(Me.Label46)
+        Me.Panel37.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel37.Location = New System.Drawing.Point(0, 175)
+        Me.Panel37.Name = "Panel37"
+        Me.Panel37.Size = New System.Drawing.Size(307, 35)
+        Me.Panel37.TabIndex = 105
+        '
+        'lblTotal
+        '
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblTotal.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblTotal.Location = New System.Drawing.Point(36, 0)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(42, 15)
+        Me.lblTotal.TabIndex = 54
+        Me.lblTotal.Text = "XXXXX"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label46.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label46.Location = New System.Drawing.Point(0, 0)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(36, 15)
+        Me.Label46.TabIndex = 49
+        Me.Label46.Text = "Total:"
+        '
+        'Panel36
+        '
+        Me.Panel36.Controls.Add(Me.lblAddVAT)
+        Me.Panel36.Controls.Add(Me.Label44)
+        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel36.Location = New System.Drawing.Point(0, 140)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(307, 35)
+        Me.Panel36.TabIndex = 105
+        '
+        'lblAddVAT
+        '
+        Me.lblAddVAT.AutoSize = True
+        Me.lblAddVAT.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblAddVAT.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblAddVAT.Location = New System.Drawing.Point(80, 0)
+        Me.lblAddVAT.Name = "lblAddVAT"
+        Me.lblAddVAT.Size = New System.Drawing.Size(42, 15)
+        Me.lblAddVAT.TabIndex = 54
+        Me.lblAddVAT.Text = "XXXXX"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label44.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label44.Location = New System.Drawing.Point(0, 0)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(80, 15)
+        Me.Label44.TabIndex = 49
+        Me.Label44.Text = "Add 12% VAT:"
+        '
+        'Panel35
+        '
+        Me.Panel35.Controls.Add(Me.lblTotalSales)
+        Me.Panel35.Controls.Add(Me.Label42)
+        Me.Panel35.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel35.Location = New System.Drawing.Point(0, 105)
+        Me.Panel35.Name = "Panel35"
+        Me.Panel35.Size = New System.Drawing.Size(307, 35)
+        Me.Panel35.TabIndex = 104
+        '
+        'lblTotalSales
+        '
+        Me.lblTotalSales.AutoSize = True
+        Me.lblTotalSales.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblTotalSales.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblTotalSales.Location = New System.Drawing.Point(71, 0)
+        Me.lblTotalSales.Name = "lblTotalSales"
+        Me.lblTotalSales.Size = New System.Drawing.Size(42, 15)
+        Me.lblTotalSales.TabIndex = 54
+        Me.lblTotalSales.Text = "XXXXX"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label42.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label42.Location = New System.Drawing.Point(0, 0)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(71, 15)
+        Me.Label42.TabIndex = 49
+        Me.Label42.Text = "Total Sales:"
+        '
+        'Panel34
+        '
+        Me.Panel34.Controls.Add(Me.lblZeroRatedSales)
+        Me.Panel34.Controls.Add(Me.Label40)
+        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel34.Location = New System.Drawing.Point(0, 70)
+        Me.Panel34.Name = "Panel34"
+        Me.Panel34.Size = New System.Drawing.Size(307, 35)
+        Me.Panel34.TabIndex = 103
+        '
+        'lblZeroRatedSales
+        '
+        Me.lblZeroRatedSales.AutoSize = True
+        Me.lblZeroRatedSales.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblZeroRatedSales.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblZeroRatedSales.Location = New System.Drawing.Point(106, 0)
+        Me.lblZeroRatedSales.Name = "lblZeroRatedSales"
+        Me.lblZeroRatedSales.Size = New System.Drawing.Size(42, 15)
+        Me.lblZeroRatedSales.TabIndex = 54
+        Me.lblZeroRatedSales.Text = "XXXXX"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label40.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label40.Location = New System.Drawing.Point(0, 0)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(106, 15)
+        Me.Label40.TabIndex = 49
+        Me.Label40.Text = "Zero Rated Sales:"
+        '
+        'Panel33
+        '
+        Me.Panel33.Controls.Add(Me.lblVATExempt)
+        Me.Panel33.Controls.Add(Me.Label38)
+        Me.Panel33.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel33.Location = New System.Drawing.Point(0, 35)
+        Me.Panel33.Name = "Panel33"
+        Me.Panel33.Size = New System.Drawing.Size(307, 35)
+        Me.Panel33.TabIndex = 101
+        '
+        'lblVATExempt
+        '
+        Me.lblVATExempt.AutoSize = True
+        Me.lblVATExempt.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblVATExempt.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblVATExempt.Location = New System.Drawing.Point(108, 0)
+        Me.lblVATExempt.Name = "lblVATExempt"
+        Me.lblVATExempt.Size = New System.Drawing.Size(42, 15)
+        Me.lblVATExempt.TabIndex = 54
+        Me.lblVATExempt.Text = "XXXXX"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label38.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label38.Location = New System.Drawing.Point(0, 0)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(108, 15)
+        Me.Label38.TabIndex = 49
+        Me.Label38.Text = "VAT-Exempt Sales:"
+        '
+        'Panel32
+        '
+        Me.Panel32.Controls.Add(Me.lblVATSales)
+        Me.Panel32.Controls.Add(Me.Label35)
+        Me.Panel32.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel32.Location = New System.Drawing.Point(0, 0)
+        Me.Panel32.Name = "Panel32"
+        Me.Panel32.Size = New System.Drawing.Size(307, 35)
+        Me.Panel32.TabIndex = 100
+        '
+        'lblVATSales
+        '
+        Me.lblVATSales.AutoSize = True
+        Me.lblVATSales.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblVATSales.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblVATSales.Location = New System.Drawing.Point(87, 0)
+        Me.lblVATSales.Name = "lblVATSales"
+        Me.lblVATSales.Size = New System.Drawing.Size(42, 15)
+        Me.lblVATSales.TabIndex = 54
+        Me.lblVATSales.Text = "XXXXX"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label35.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label35.Location = New System.Drawing.Point(0, 0)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(87, 15)
+        Me.Label35.TabIndex = 49
+        Me.Label35.Text = "VATable Sales:"
         '
         'Guna2Panel5
         '
@@ -1237,11 +1496,11 @@ Partial Class frmPrintBillingInvoice
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(372, 3)
+        Me.Label1.Location = New System.Drawing.Point(394, 3)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(174, 19)
+        Me.Label1.Size = New System.Drawing.Size(133, 19)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "BILLING STATEMENT"
+        Me.Label1.Text = "SALES INVOICE"
         '
         'Guna2Panel2
         '
@@ -1286,15 +1545,14 @@ Partial Class frmPrintBillingInvoice
         Me.pnlHeader.Size = New System.Drawing.Size(950, 51)
         Me.pnlHeader.TabIndex = 0
         '
-        'frmPrintBillingInvoice
+        'frmPrintSalesInvoiceV2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(950, 768)
         Me.Controls.Add(Me.pnlBody)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.MaximizeBox = False
-        Me.Name = "frmPrintBillingInvoice"
+        Me.Name = "frmPrintSalesInvoiceV2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.pnlBody.ResumeLayout(False)
         Me.Panel58.ResumeLayout(False)
@@ -1319,6 +1577,20 @@ Partial Class frmPrintBillingInvoice
         Me.Panel31.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.Panel38.ResumeLayout(False)
+        Me.Panel38.PerformLayout()
+        Me.Panel37.ResumeLayout(False)
+        Me.Panel37.PerformLayout()
+        Me.Panel36.ResumeLayout(False)
+        Me.Panel36.PerformLayout()
+        Me.Panel35.ResumeLayout(False)
+        Me.Panel35.PerformLayout()
+        Me.Panel34.ResumeLayout(False)
+        Me.Panel34.PerformLayout()
+        Me.Panel33.ResumeLayout(False)
+        Me.Panel33.PerformLayout()
+        Me.Panel32.ResumeLayout(False)
+        Me.Panel32.PerformLayout()
         Me.Guna2Panel5.ResumeLayout(False)
         Me.panelListViewBody.ResumeLayout(False)
         Me.Guna2Panel4.ResumeLayout(False)
@@ -1402,6 +1674,27 @@ Partial Class frmPrintBillingInvoice
     Friend WithEvents Label49 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel38 As Panel
+    Friend WithEvents lblLessTax As Label
+    Friend WithEvents Label48 As Label
+    Friend WithEvents Panel37 As Panel
+    Friend WithEvents lblTotal As Label
+    Friend WithEvents Label46 As Label
+    Friend WithEvents Panel36 As Panel
+    Friend WithEvents lblAddVAT As Label
+    Friend WithEvents Label44 As Label
+    Friend WithEvents Panel35 As Panel
+    Friend WithEvents lblTotalSales As Label
+    Friend WithEvents Label42 As Label
+    Friend WithEvents Panel34 As Panel
+    Friend WithEvents lblZeroRatedSales As Label
+    Friend WithEvents Label40 As Label
+    Friend WithEvents Panel33 As Panel
+    Friend WithEvents lblVATExempt As Label
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Panel32 As Panel
+    Friend WithEvents lblVATSales As Label
+    Friend WithEvents Label35 As Label
     Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents panelListViewBody As Panel
     Friend WithEvents ListView1 As ListView
