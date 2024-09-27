@@ -233,26 +233,27 @@ Public Class frmManageSalesV2
 
             If dr.Read = True Then
                 'left side
-                frmPrintSalesInvoice.lblSoldTo.Text = dr("CompanyName").ToString
-                frmPrintSalesInvoice.lblAddress.Text = dr("Address").ToString
-                frmPrintSalesInvoice.lblDelivery.Text = dr("Delivery").ToString
-                frmPrintSalesInvoice.lblBusStyle.Text = dr("CompanyName").ToString ' business style
+                frmPrintSalesInvoiceV2.lblSoldTo.Text = dr("CompanyName").ToString
+                frmPrintSalesInvoiceV2.lblAddress.Text = dr("Address").ToString
+                frmPrintSalesInvoiceV2.lblDelivery.Text = dr("Delivery").ToString
+                frmPrintSalesInvoiceV2.lblBusStyle.Text = dr("CompanyName").ToString ' business style
             End If
 
-            frmPrintSalesInvoice.lblCustID.Text = lblCustID.Text
-            frmPrintSalesInvoice.lblBillingID.Text = lblBillingID.Text
-            frmPrintSalesInvoice.lblTerms.Text = txtTerms.Text
-            frmPrintSalesInvoice.lblTIN.Text = txtTIN.Text
-            frmPrintSalesInvoice.lblSalesman.Text = cboSalesman.Text
-            frmPrintSalesInvoice.lblPONo.Text = txtPONo.Text
-            frmPrintSalesInvoice.lblDate.Text = dtpDate.Value.ToString
+            frmPrintSalesInvoiceV2.custid = lblCustID.Text
+            frmPrintSalesInvoiceV2.billid = lblBillingID.Text
+            frmPrintSalesInvoiceV2.lblTerms.Text = txtTerms.Text
+            frmPrintSalesInvoiceV2.lblTIN.Text = txtTIN.Text
+            frmPrintSalesInvoiceV2.lblSalesman.Text = cboSalesman.Text
+            frmPrintSalesInvoiceV2.lblPONo.Text = txtPONo.Text
+            frmPrintSalesInvoiceV2.lblDate.Text = dtpDate.Value.ToString
 
             For Each listitem As ListViewItem In ListView1.Items 'includes OrderID on SubItem 5 OrderList sub item 6 productid sub item 7
                 Dim X As ListViewItem = listitem.Clone()
-                frmPrintSalesInvoice.ListView1.Items.Add(X)
+                frmPrintSalesInvoiceV2.ListView1.Items.Add(X)
             Next
 
-            frmPrintSalesInvoice.ShowDialog()
+            frmAdminDashboard.Hide()
+            frmPrintSalesInvoiceV2.ShowDialog()
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(printBilling): " & ex.Message)
         Finally
