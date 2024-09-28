@@ -252,7 +252,6 @@ Public Class frmManageSalesV2
                 frmPrintSalesInvoiceV2.ListView1.Items.Add(X)
             Next
 
-            frmAdminDashboard.Hide()
             frmPrintSalesInvoiceV2.ShowDialog()
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(printBilling): " & ex.Message)

@@ -57,6 +57,7 @@ Public Class frmLoginV2
                     frmAdminDashboard.lblRole.Text = dr("Role").ToString()
                     frmAdminDashboard.lblUsername.Text = dr("Username").ToString
                     MsgBox("Logging In!", MsgBoxStyle.Information)
+                    Me.Hide()
                     frmAdminDashboard.ShowDialog()
                     dr.Close()
                 Else

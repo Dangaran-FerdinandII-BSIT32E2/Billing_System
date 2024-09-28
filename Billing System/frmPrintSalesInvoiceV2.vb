@@ -18,7 +18,9 @@ Public Class frmPrintSalesInvoiceV2
         Me.Close()
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-
+        'Call saveBilling()
+        Call printfile()
+        Call sendEmail()
     End Sub
     Private Sub saveBilling()
         Try

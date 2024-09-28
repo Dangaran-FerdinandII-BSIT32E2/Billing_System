@@ -152,18 +152,17 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.lblSoldTo = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.pnlHeader = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PageSetupDialog1 = New System.Windows.Forms.PageSetupDialog()
+        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnlBody.SuspendLayout()
         Me.Panel58.SuspendLayout()
         Me.Panel40.SuspendLayout()
@@ -232,12 +231,11 @@ Partial Class frmPrintSalesInvoiceV2
         Me.pnlBody.Controls.Add(Me.Guna2Panel2)
         Me.pnlBody.Controls.Add(Me.Guna2Panel1)
         Me.pnlBody.Controls.Add(Me.Guna2Panel3)
-        Me.pnlBody.Controls.Add(Me.pnlHeader)
         Me.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlBody.Location = New System.Drawing.Point(0, 0)
         Me.pnlBody.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlBody.Name = "pnlBody"
-        Me.pnlBody.Size = New System.Drawing.Size(1267, 945)
+        Me.pnlBody.Size = New System.Drawing.Size(1267, 970)
         Me.pnlBody.TabIndex = 1
         '
         'Panel58
@@ -245,10 +243,10 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel58.BackColor = System.Drawing.Color.White
         Me.Panel58.Controls.Add(Me.btnPrint)
         Me.Panel58.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel58.Location = New System.Drawing.Point(867, 885)
+        Me.Panel58.Location = New System.Drawing.Point(867, 832)
         Me.Panel58.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel58.Name = "Panel58"
-        Me.Panel58.Size = New System.Drawing.Size(187, 48)
+        Me.Panel58.Size = New System.Drawing.Size(187, 126)
         Me.Panel58.TabIndex = 62
         '
         'btnPrint
@@ -275,10 +273,10 @@ Partial Class frmPrintSalesInvoiceV2
         '
         Me.Panel57.BackColor = System.Drawing.Color.White
         Me.Panel57.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel57.Location = New System.Drawing.Point(1054, 885)
+        Me.Panel57.Location = New System.Drawing.Point(1054, 832)
         Me.Panel57.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel57.Name = "Panel57"
-        Me.Panel57.Size = New System.Drawing.Size(13, 48)
+        Me.Panel57.Size = New System.Drawing.Size(13, 126)
         Me.Panel57.TabIndex = 61
         '
         'Panel40
@@ -286,10 +284,10 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel40.BackColor = System.Drawing.Color.White
         Me.Panel40.Controls.Add(Me.btnCancel)
         Me.Panel40.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel40.Location = New System.Drawing.Point(1067, 885)
+        Me.Panel40.Location = New System.Drawing.Point(1067, 832)
         Me.Panel40.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(187, 48)
+        Me.Panel40.Size = New System.Drawing.Size(187, 126)
         Me.Panel40.TabIndex = 60
         '
         'btnCancel
@@ -309,7 +307,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(187, 48)
+        Me.btnCancel.Size = New System.Drawing.Size(187, 126)
         Me.btnCancel.TabIndex = 57
         Me.btnCancel.Text = "Cancel"
         '
@@ -321,7 +319,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel49.Controls.Add(Me.Panel54)
         Me.Panel49.Controls.Add(Me.Label69)
         Me.Panel49.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel49.Location = New System.Drawing.Point(13, 851)
+        Me.Panel49.Location = New System.Drawing.Point(13, 798)
         Me.Panel49.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel49.Name = "Panel49"
         Me.Panel49.Size = New System.Drawing.Size(1241, 34)
@@ -419,7 +417,7 @@ Partial Class frmPrintSalesInvoiceV2
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(13, 836)
+        Me.Panel6.Location = New System.Drawing.Point(13, 783)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1241, 15)
@@ -436,7 +434,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel41.Controls.Add(Me.Panel44)
         Me.Panel41.Controls.Add(Me.Label56)
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel41.Location = New System.Drawing.Point(13, 798)
+        Me.Panel41.Location = New System.Drawing.Point(13, 745)
         Me.Panel41.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel41.Name = "Panel41"
         Me.Panel41.Size = New System.Drawing.Size(1241, 38)
@@ -617,7 +615,7 @@ Partial Class frmPrintSalesInvoiceV2
         '
         Me.Panel39.Controls.Add(Me.Label50)
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel39.Location = New System.Drawing.Point(13, 773)
+        Me.Panel39.Location = New System.Drawing.Point(13, 720)
         Me.Panel39.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel39.Name = "Panel39"
         Me.Panel39.Size = New System.Drawing.Size(1241, 25)
@@ -638,7 +636,7 @@ Partial Class frmPrintSalesInvoiceV2
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(13, 767)
+        Me.Panel5.Location = New System.Drawing.Point(13, 714)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1241, 6)
@@ -651,7 +649,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.panelTableBody.CustomBorderColor = System.Drawing.Color.Black
         Me.panelTableBody.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 2, 2)
         Me.panelTableBody.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelTableBody.Location = New System.Drawing.Point(13, 373)
+        Me.panelTableBody.Location = New System.Drawing.Point(13, 320)
         Me.panelTableBody.Margin = New System.Windows.Forms.Padding(4)
         Me.panelTableBody.Name = "panelTableBody"
         Me.panelTableBody.Size = New System.Drawing.Size(1241, 394)
@@ -1069,7 +1067,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Guna2Panel4.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel4.CustomBorderThickness = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel4.Location = New System.Drawing.Point(13, 299)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(13, 246)
         Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.Size = New System.Drawing.Size(1241, 74)
@@ -1163,7 +1161,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel23.Controls.Add(Me.Panel26)
         Me.Panel23.Controls.Add(Me.Label29)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel23.Location = New System.Drawing.Point(13, 265)
+        Me.Panel23.Location = New System.Drawing.Point(13, 212)
         Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(1241, 34)
@@ -1282,7 +1280,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel19.Controls.Add(Me.Panel22)
         Me.Panel19.Controls.Add(Me.Label24)
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel19.Location = New System.Drawing.Point(13, 231)
+        Me.Panel19.Location = New System.Drawing.Point(13, 178)
         Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(1241, 34)
@@ -1387,7 +1385,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel10.Controls.Add(Me.Panel18)
         Me.Panel10.Controls.Add(Me.Label18)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel10.Location = New System.Drawing.Point(13, 197)
+        Me.Panel10.Location = New System.Drawing.Point(13, 144)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1241, 34)
@@ -1501,7 +1499,7 @@ Partial Class frmPrintSalesInvoiceV2
         'Panel30
         '
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel30.Location = New System.Drawing.Point(13, 191)
+        Me.Panel30.Location = New System.Drawing.Point(13, 138)
         Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(1241, 6)
@@ -1515,7 +1513,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel12.Controls.Add(Me.Panel15)
         Me.Panel12.Controls.Add(Me.Label12)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel12.Location = New System.Drawing.Point(13, 157)
+        Me.Panel12.Location = New System.Drawing.Point(13, 104)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(1241, 34)
@@ -1634,10 +1632,10 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel7.Controls.Add(Me.Panel8)
         Me.Panel7.Controls.Add(Me.Label2)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(13, 123)
+        Me.Panel7.Location = New System.Drawing.Point(13, 60)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1241, 34)
+        Me.Panel7.Size = New System.Drawing.Size(1241, 44)
         Me.Panel7.TabIndex = 10
         '
         'Panel11
@@ -1648,7 +1646,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel11.Location = New System.Drawing.Point(861, 0)
         Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(707, 34)
+        Me.Panel11.Size = New System.Drawing.Size(707, 44)
         Me.Panel11.TabIndex = 53
         '
         'lblDate
@@ -1668,7 +1666,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Label6.AutoSize = True
         Me.Label6.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label6.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(0, 2)
+        Me.Label6.Location = New System.Drawing.Point(0, 12)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(711, 16)
@@ -1694,18 +1692,18 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel9.Location = New System.Drawing.Point(758, 0)
         Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(53, 34)
+        Me.Panel9.Size = New System.Drawing.Size(53, 44)
         Me.Panel9.TabIndex = 8
         '
         'Panel8
         '
+        Me.Panel8.Controls.Add(Me.Guna2Panel6)
         Me.Panel8.Controls.Add(Me.lblSoldTo)
-        Me.Panel8.Controls.Add(Me.Label3)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel8.Location = New System.Drawing.Point(78, 0)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(680, 34)
+        Me.Panel8.Size = New System.Drawing.Size(680, 44)
         Me.Panel8.TabIndex = 51
         '
         'lblSoldTo
@@ -1719,19 +1717,6 @@ Partial Class frmPrintSalesInvoiceV2
         Me.lblSoldTo.Size = New System.Drawing.Size(53, 17)
         Me.lblSoldTo.TabIndex = 53
         Me.lblSoldTo.Text = "XXXXX"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(0, 2)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(796, 16)
-        Me.Label3.TabIndex = 52
-        Me.Label3.Text = "_________________________________________________________________________________" &
-    "_________________-"
         '
         'Label2
         '
@@ -1749,58 +1734,11 @@ Partial Class frmPrintSalesInvoiceV2
         '
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(13, 63)
+        Me.Panel4.Location = New System.Drawing.Point(13, 0)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1241, 60)
         Me.Panel4.TabIndex = 7
-        '
-        'Guna2Panel2
-        '
-        Me.Guna2Panel2.BorderThickness = 1
-        Me.Guna2Panel2.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel2.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 1, 0)
-        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel2.Location = New System.Drawing.Point(1254, 63)
-        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(13, 870)
-        Me.Guna2Panel2.TabIndex = 2
-        '
-        'Guna2Panel1
-        '
-        Me.Guna2Panel1.BorderThickness = 1
-        Me.Guna2Panel1.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel1.CustomBorderThickness = New System.Windows.Forms.Padding(1, 0, 0, 0)
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 63)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(13, 870)
-        Me.Guna2Panel1.TabIndex = 1
-        '
-        'Guna2Panel3
-        '
-        Me.Guna2Panel3.BorderThickness = 1
-        Me.Guna2Panel3.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel3.CustomBorderThickness = New System.Windows.Forms.Padding(1, 0, 1, 1)
-        Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 933)
-        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(4)
-        Me.Guna2Panel3.Name = "Guna2Panel3"
-        Me.Guna2Panel3.Size = New System.Drawing.Size(1267, 12)
-        Me.Guna2Panel3.TabIndex = 3
-        '
-        'pnlHeader
-        '
-        Me.pnlHeader.CustomBorderColor = System.Drawing.Color.Black
-        Me.pnlHeader.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 1, 0)
-        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
-        Me.pnlHeader.Margin = New System.Windows.Forms.Padding(4)
-        Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(1267, 63)
-        Me.pnlHeader.TabIndex = 0
         '
         'Label1
         '
@@ -1812,6 +1750,42 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Label1.Size = New System.Drawing.Size(160, 24)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "SALES INVOICE"
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.BorderThickness = 1
+        Me.Guna2Panel2.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel2.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 1, 0)
+        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Guna2Panel2.Location = New System.Drawing.Point(1254, 0)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.Size = New System.Drawing.Size(13, 958)
+        Me.Guna2Panel2.TabIndex = 2
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.BorderThickness = 1
+        Me.Guna2Panel1.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel1.CustomBorderThickness = New System.Windows.Forms.Padding(1, 0, 0, 0)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(13, 958)
+        Me.Guna2Panel1.TabIndex = 1
+        '
+        'Guna2Panel3
+        '
+        Me.Guna2Panel3.BorderThickness = 1
+        Me.Guna2Panel3.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel3.CustomBorderThickness = New System.Windows.Forms.Padding(1, 0, 1, 1)
+        Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 958)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel3.Name = "Guna2Panel3"
+        Me.Guna2Panel3.Size = New System.Drawing.Size(1267, 12)
+        Me.Guna2Panel3.TabIndex = 3
         '
         'PrintForm1
         '
@@ -1825,11 +1799,22 @@ Partial Class frmPrintSalesInvoiceV2
         '
         Me.PrintDialog1.UseEXDialog = True
         '
+        'Guna2Panel6
+        '
+        Me.Guna2Panel6.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel6.BorderThickness = 2
+        Me.Guna2Panel6.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel6.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 18)
+        Me.Guna2Panel6.Name = "Guna2Panel6"
+        Me.Guna2Panel6.Size = New System.Drawing.Size(680, 10)
+        Me.Guna2Panel6.TabIndex = 54
+        '
         'frmPrintSalesInvoiceV2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1267, 945)
+        Me.ClientSize = New System.Drawing.Size(1267, 970)
         Me.Controls.Add(Me.pnlBody)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -1937,13 +1922,11 @@ Partial Class frmPrintSalesInvoiceV2
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel8 As Panel
     Friend WithEvents lblSoldTo As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents pnlHeader As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Panel16 As Panel
     Friend WithEvents lblTerms As Label
@@ -2057,4 +2040,5 @@ Partial Class frmPrintSalesInvoiceV2
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PageSetupDialog1 As PageSetupDialog
+    Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
 End Class
