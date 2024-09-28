@@ -357,4 +357,5 @@ Public Class frmManageCollectionV2
             btnBrowsePayment.Visible = True
         End If
     End Sub
+
 End Class
