@@ -186,8 +186,9 @@ Partial Class frmPrintBillingInvoice
         Me.Label33.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label33.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.Location = New System.Drawing.Point(0, 0)
+        Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(383, 14)
+        Me.Label33.Size = New System.Drawing.Size(505, 16)
         Me.Label33.TabIndex = 87
         Me.Label33.Text = "described remain the property if RAMBIC CORPORATION until are fully pair for."
         '
@@ -197,8 +198,9 @@ Partial Class frmPrintBillingInvoice
         Me.Label18.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label18.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label18.Location = New System.Drawing.Point(0, 0)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(67, 15)
+        Me.Label18.Size = New System.Drawing.Size(82, 17)
         Me.Label18.TabIndex = 48
         Me.Label18.Text = "DELIVERY:"
         '
@@ -208,8 +210,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblDelivery.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblDelivery.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblDelivery.Location = New System.Drawing.Point(0, 0)
+        Me.lblDelivery.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDelivery.Name = "lblDelivery"
-        Me.lblDelivery.Size = New System.Drawing.Size(42, 15)
+        Me.lblDelivery.Size = New System.Drawing.Size(53, 17)
         Me.lblDelivery.TabIndex = 53
         Me.lblDelivery.Text = "XXXXX"
         '
@@ -220,10 +223,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel10.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel10.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel10.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel10.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel10.Name = "Guna2Panel10"
-        Me.Guna2Panel10.Size = New System.Drawing.Size(505, 20)
+        Me.Guna2Panel10.Size = New System.Drawing.Size(673, 25)
         Me.Guna2Panel10.TabIndex = 57
         '
         'Label15
@@ -231,18 +234,20 @@ Partial Class frmPrintBillingInvoice
         Me.Label15.AutoSize = True
         Me.Label15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label15.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label15.Location = New System.Drawing.Point(612, 0)
+        Me.Label15.Location = New System.Drawing.Point(808, 0)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(51, 15)
+        Me.Label15.Size = New System.Drawing.Size(63, 17)
         Me.Label15.TabIndex = 52
         Me.Label15.Text = "TERMS:"
         '
         'Panel17
         '
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel17.Location = New System.Drawing.Point(572, 0)
+        Me.Panel17.Location = New System.Drawing.Point(755, 0)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(40, 36)
+        Me.Panel17.Size = New System.Drawing.Size(53, 44)
         Me.Panel17.TabIndex = 8
         '
         'Panel18
@@ -250,9 +255,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel18.Controls.Add(Me.lblDelivery)
         Me.Panel18.Controls.Add(Me.Guna2Panel10)
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel18.Location = New System.Drawing.Point(67, 0)
+        Me.Panel18.Location = New System.Drawing.Point(82, 0)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(505, 36)
+        Me.Panel18.Size = New System.Drawing.Size(673, 44)
         Me.Panel18.TabIndex = 51
         '
         'lblTerms
@@ -261,8 +267,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblTerms.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblTerms.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblTerms.Location = New System.Drawing.Point(0, 0)
+        Me.lblTerms.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTerms.Name = "lblTerms"
-        Me.lblTerms.Size = New System.Drawing.Size(42, 15)
+        Me.lblTerms.Size = New System.Drawing.Size(53, 17)
         Me.lblTerms.TabIndex = 53
         Me.lblTerms.Text = "XXXXX"
         '
@@ -273,10 +280,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel11.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel11.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel11.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel11.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel11.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel11.Name = "Guna2Panel11"
-        Me.Guna2Panel11.Size = New System.Drawing.Size(530, 20)
+        Me.Guna2Panel11.Size = New System.Drawing.Size(707, 25)
         Me.Guna2Panel11.TabIndex = 57
         '
         'Panel16
@@ -284,9 +291,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel16.Controls.Add(Me.lblTerms)
         Me.Panel16.Controls.Add(Me.Guna2Panel11)
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel16.Location = New System.Drawing.Point(663, 0)
+        Me.Panel16.Location = New System.Drawing.Point(871, 0)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(530, 36)
+        Me.Panel16.Size = New System.Drawing.Size(707, 44)
         Me.Panel16.TabIndex = 53
         '
         'Panel10
@@ -297,9 +305,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel10.Controls.Add(Me.Panel18)
         Me.Panel10.Controls.Add(Me.Label18)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel10.Location = New System.Drawing.Point(10, 121)
+        Me.Panel10.Location = New System.Drawing.Point(13, 148)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(930, 36)
+        Me.Panel10.Size = New System.Drawing.Size(1241, 44)
         Me.Panel10.TabIndex = 18
         '
         'Guna2Panel12
@@ -309,10 +318,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel12.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel12.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel12.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel12.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel12.Name = "Guna2Panel12"
-        Me.Guna2Panel12.Size = New System.Drawing.Size(572, 20)
+        Me.Guna2Panel12.Size = New System.Drawing.Size(763, 25)
         Me.Guna2Panel12.TabIndex = 58
         '
         'Panel12
@@ -323,9 +332,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel12.Controls.Add(Me.Panel15)
         Me.Panel12.Controls.Add(Me.Label12)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel12.Location = New System.Drawing.Point(10, 85)
+        Me.Panel12.Location = New System.Drawing.Point(13, 104)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(930, 36)
+        Me.Panel12.Size = New System.Drawing.Size(1241, 44)
         Me.Panel12.TabIndex = 11
         '
         'Panel13
@@ -333,9 +343,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel13.Controls.Add(Me.lblPONo)
         Me.Panel13.Controls.Add(Me.Guna2Panel9)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel13.Location = New System.Drawing.Point(664, 0)
+        Me.Panel13.Location = New System.Drawing.Point(870, 0)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(530, 36)
+        Me.Panel13.Size = New System.Drawing.Size(707, 44)
         Me.Panel13.TabIndex = 53
         '
         'lblPONo
@@ -344,8 +355,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblPONo.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblPONo.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblPONo.Location = New System.Drawing.Point(0, 0)
+        Me.lblPONo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPONo.Name = "lblPONo"
-        Me.lblPONo.Size = New System.Drawing.Size(42, 15)
+        Me.lblPONo.Size = New System.Drawing.Size(53, 17)
         Me.lblPONo.TabIndex = 53
         Me.lblPONo.Text = "XXXXX"
         '
@@ -356,10 +368,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel9.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel9.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel9.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel9.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel9.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel9.Name = "Guna2Panel9"
-        Me.Guna2Panel9.Size = New System.Drawing.Size(530, 20)
+        Me.Guna2Panel9.Size = New System.Drawing.Size(707, 25)
         Me.Guna2Panel9.TabIndex = 57
         '
         'Label9
@@ -367,18 +379,20 @@ Partial Class frmPrintBillingInvoice
         Me.Label9.AutoSize = True
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label9.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label9.Location = New System.Drawing.Point(612, 0)
+        Me.Label9.Location = New System.Drawing.Point(804, 0)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(52, 15)
+        Me.Label9.Size = New System.Drawing.Size(66, 17)
         Me.Label9.TabIndex = 52
         Me.Label9.Text = "P.O. NO:"
         '
         'Panel14
         '
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel14.Location = New System.Drawing.Point(572, 0)
+        Me.Panel14.Location = New System.Drawing.Point(751, 0)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(40, 36)
+        Me.Panel14.Size = New System.Drawing.Size(53, 44)
         Me.Panel14.TabIndex = 8
         '
         'Panel15
@@ -386,9 +400,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel15.Controls.Add(Me.lblAddress)
         Me.Panel15.Controls.Add(Me.Guna2Panel8)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel15.Location = New System.Drawing.Point(118, 0)
+        Me.Panel15.Location = New System.Drawing.Point(146, 0)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(454, 36)
+        Me.Panel15.Size = New System.Drawing.Size(605, 44)
         Me.Panel15.TabIndex = 51
         '
         'lblAddress
@@ -397,8 +412,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblAddress.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblAddress.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblAddress.Location = New System.Drawing.Point(0, 0)
+        Me.lblAddress.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblAddress.Name = "lblAddress"
-        Me.lblAddress.Size = New System.Drawing.Size(42, 15)
+        Me.lblAddress.Size = New System.Drawing.Size(53, 17)
         Me.lblAddress.TabIndex = 53
         Me.lblAddress.Text = "XXXXX"
         '
@@ -409,10 +425,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel8.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel8.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel8.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel8.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel8.Name = "Guna2Panel8"
-        Me.Guna2Panel8.Size = New System.Drawing.Size(454, 20)
+        Me.Guna2Panel8.Size = New System.Drawing.Size(605, 25)
         Me.Guna2Panel8.TabIndex = 56
         '
         'Label12
@@ -421,8 +437,9 @@ Partial Class frmPrintBillingInvoice
         Me.Label12.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label12.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label12.Location = New System.Drawing.Point(0, 0)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(118, 15)
+        Me.Label12.Size = New System.Drawing.Size(146, 17)
         Me.Label12.TabIndex = 48
         Me.Label12.Text = "ADDRESS/SHIP TO:"
         '
@@ -431,9 +448,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel20.Controls.Add(Me.lblSalesman)
         Me.Panel20.Controls.Add(Me.Guna2Panel13)
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel20.Location = New System.Drawing.Point(679, 0)
+        Me.Panel20.Location = New System.Drawing.Point(894, 0)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(530, 36)
+        Me.Panel20.Size = New System.Drawing.Size(707, 44)
         Me.Panel20.TabIndex = 53
         '
         'lblSalesman
@@ -442,8 +460,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblSalesman.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblSalesman.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblSalesman.Location = New System.Drawing.Point(0, 0)
+        Me.lblSalesman.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSalesman.Name = "lblSalesman"
-        Me.lblSalesman.Size = New System.Drawing.Size(42, 15)
+        Me.lblSalesman.Size = New System.Drawing.Size(53, 17)
         Me.lblSalesman.TabIndex = 53
         Me.lblSalesman.Text = "XXXXX"
         '
@@ -454,10 +473,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel13.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel13.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel13.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel13.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel13.Name = "Guna2Panel13"
-        Me.Guna2Panel13.Size = New System.Drawing.Size(530, 20)
+        Me.Guna2Panel13.Size = New System.Drawing.Size(707, 25)
         Me.Guna2Panel13.TabIndex = 59
         '
         'Label21
@@ -465,9 +484,10 @@ Partial Class frmPrintBillingInvoice
         Me.Label21.AutoSize = True
         Me.Label21.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label21.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label21.Location = New System.Drawing.Point(612, 0)
+        Me.Label21.Location = New System.Drawing.Point(816, 0)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(67, 15)
+        Me.Label21.Size = New System.Drawing.Size(78, 17)
         Me.Label21.TabIndex = 52
         Me.Label21.Text = "Salesman:"
         '
@@ -478,10 +498,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel19.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel19.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel19.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel19.Location = New System.Drawing.Point(0, 13)
-        Me.Guna2Panel19.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel19.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel19.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel19.Name = "Guna2Panel19"
-        Me.Guna2Panel19.Size = New System.Drawing.Size(318, 15)
+        Me.Guna2Panel19.Size = New System.Drawing.Size(424, 18)
         Me.Guna2Panel19.TabIndex = 100
         '
         'Label32
@@ -490,8 +510,9 @@ Partial Class frmPrintBillingInvoice
         Me.Label32.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label32.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.Location = New System.Drawing.Point(0, 0)
+        Me.Label32.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(910, 14)
+        Me.Label32.Size = New System.Drawing.Size(1184, 16)
         Me.Label32.TabIndex = 86
         Me.Label32.Text = "of collection. In case of suit, parties expressly submit themselves to the jurisd" &
     "iction to the Courts of the City of Muntinlupa for any legal action arising out " &
@@ -502,9 +523,10 @@ Partial Class frmPrintBillingInvoice
         Me.Label31.AutoSize = True
         Me.Label31.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label31.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(47, 0)
+        Me.Label31.Location = New System.Drawing.Point(60, 0)
+        Me.Label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(875, 14)
+        Me.Label31.Size = New System.Drawing.Size(1136, 16)
         Me.Label31.TabIndex = 85
         Me.Label31.Text = "Interest at 12% per annum will be charged on all accounts overdue until time of s" &
     "tatement. An additional sum equal to 25% of the account will be charged for atto" &
@@ -516,8 +538,9 @@ Partial Class frmPrintBillingInvoice
         Me.Label30.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label30.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.Location = New System.Drawing.Point(0, 0)
+        Me.Label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(47, 14)
+        Me.Label30.Size = New System.Drawing.Size(60, 16)
         Me.Label30.TabIndex = 84
         Me.Label30.Text = "TERMS:"
         '
@@ -529,9 +552,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel23.Controls.Add(Me.Panel26)
         Me.Panel23.Controls.Add(Me.Label29)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel23.Location = New System.Drawing.Point(10, 193)
+        Me.Panel23.Location = New System.Drawing.Point(13, 236)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(930, 36)
+        Me.Panel23.Size = New System.Drawing.Size(1241, 44)
         Me.Panel23.TabIndex = 20
         '
         'Panel24
@@ -539,9 +563,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel24.Controls.Add(Me.lblTIN)
         Me.Panel24.Controls.Add(Me.Guna2Panel15)
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel24.Location = New System.Drawing.Point(641, 0)
+        Me.Panel24.Location = New System.Drawing.Point(842, 0)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(530, 36)
+        Me.Panel24.Size = New System.Drawing.Size(707, 44)
         Me.Panel24.TabIndex = 53
         '
         'lblTIN
@@ -550,8 +575,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblTIN.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblTIN.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblTIN.Location = New System.Drawing.Point(0, 0)
+        Me.lblTIN.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTIN.Name = "lblTIN"
-        Me.lblTIN.Size = New System.Drawing.Size(42, 15)
+        Me.lblTIN.Size = New System.Drawing.Size(53, 17)
         Me.lblTIN.TabIndex = 53
         Me.lblTIN.Text = "XXXXX"
         '
@@ -562,10 +588,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel15.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel15.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel15.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel15.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel15.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel15.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel15.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel15.Name = "Guna2Panel15"
-        Me.Guna2Panel15.Size = New System.Drawing.Size(530, 20)
+        Me.Guna2Panel15.Size = New System.Drawing.Size(707, 25)
         Me.Guna2Panel15.TabIndex = 59
         '
         'Label26
@@ -573,18 +599,20 @@ Partial Class frmPrintBillingInvoice
         Me.Label26.AutoSize = True
         Me.Label26.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label26.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label26.Location = New System.Drawing.Point(612, 0)
+        Me.Label26.Location = New System.Drawing.Point(808, 0)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(29, 15)
+        Me.Label26.Size = New System.Drawing.Size(34, 17)
         Me.Label26.TabIndex = 52
         Me.Label26.Text = "TIN:"
         '
         'Panel25
         '
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel25.Location = New System.Drawing.Point(572, 0)
+        Me.Panel25.Location = New System.Drawing.Point(755, 0)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(40, 36)
+        Me.Panel25.Size = New System.Drawing.Size(53, 44)
         Me.Panel25.TabIndex = 8
         '
         'Panel26
@@ -592,9 +620,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel26.Controls.Add(Me.lblBusStyle)
         Me.Panel26.Controls.Add(Me.Guna2Panel14)
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel26.Location = New System.Drawing.Point(75, 0)
+        Me.Panel26.Location = New System.Drawing.Point(92, 0)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(497, 36)
+        Me.Panel26.Size = New System.Drawing.Size(663, 44)
         Me.Panel26.TabIndex = 51
         '
         'lblBusStyle
@@ -603,8 +632,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblBusStyle.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblBusStyle.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblBusStyle.Location = New System.Drawing.Point(0, 0)
+        Me.lblBusStyle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblBusStyle.Name = "lblBusStyle"
-        Me.lblBusStyle.Size = New System.Drawing.Size(42, 15)
+        Me.lblBusStyle.Size = New System.Drawing.Size(53, 17)
         Me.lblBusStyle.TabIndex = 53
         Me.lblBusStyle.Text = "XXXXX"
         '
@@ -615,10 +645,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel14.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel14.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel14.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel14.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel14.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel14.Name = "Guna2Panel14"
-        Me.Guna2Panel14.Size = New System.Drawing.Size(497, 20)
+        Me.Guna2Panel14.Size = New System.Drawing.Size(663, 25)
         Me.Guna2Panel14.TabIndex = 59
         '
         'Label29
@@ -627,8 +657,9 @@ Partial Class frmPrintBillingInvoice
         Me.Label29.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label29.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label29.Location = New System.Drawing.Point(0, 0)
+        Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(75, 15)
+        Me.Label29.Size = New System.Drawing.Size(92, 17)
         Me.Label29.TabIndex = 48
         Me.Label29.Text = "BUS STYLE:"
         '
@@ -638,16 +669,18 @@ Partial Class frmPrintBillingInvoice
         Me.Label24.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label24.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.Location = New System.Drawing.Point(0, 0)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(0, 18)
+        Me.Label24.Size = New System.Drawing.Size(0, 23)
         Me.Label24.TabIndex = 48
         '
         'Panel21
         '
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel21.Location = New System.Drawing.Point(572, 0)
+        Me.Panel21.Location = New System.Drawing.Point(763, 0)
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(40, 36)
+        Me.Panel21.Size = New System.Drawing.Size(53, 44)
         Me.Panel21.TabIndex = 8
         '
         'Panel22
@@ -655,8 +688,9 @@ Partial Class frmPrintBillingInvoice
         Me.Panel22.Controls.Add(Me.Guna2Panel12)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(572, 36)
+        Me.Panel22.Size = New System.Drawing.Size(763, 44)
         Me.Panel22.TabIndex = 51
         '
         'Panel19
@@ -667,18 +701,20 @@ Partial Class frmPrintBillingInvoice
         Me.Panel19.Controls.Add(Me.Panel22)
         Me.Panel19.Controls.Add(Me.Label24)
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel19.Location = New System.Drawing.Point(10, 157)
+        Me.Panel19.Location = New System.Drawing.Point(13, 192)
+        Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(930, 36)
+        Me.Panel19.Size = New System.Drawing.Size(1241, 44)
         Me.Panel19.TabIndex = 19
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(403, 7)
+        Me.Label1.Location = New System.Drawing.Point(537, 9)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(174, 19)
+        Me.Label1.Size = New System.Drawing.Size(214, 24)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "BILLING STATEMENT"
         '
@@ -689,8 +725,9 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel1.CustomBorderThickness = New System.Windows.Forms.Padding(1, 0, 0, 0)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(10, 760)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(13, 936)
         Me.Guna2Panel1.TabIndex = 1
         '
         'Guna2Panel3
@@ -699,9 +736,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel3.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel3.CustomBorderThickness = New System.Windows.Forms.Padding(1, 0, 1, 1)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 760)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 936)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel3.Name = "Guna2Panel3"
-        Me.Guna2Panel3.Size = New System.Drawing.Size(950, 10)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(1267, 12)
         Me.Guna2Panel3.TabIndex = 3
         '
         'PrintForm1
@@ -722,9 +760,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel2.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel2.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 1, 0)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel2.Location = New System.Drawing.Point(940, 0)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(1254, 0)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(10, 760)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(13, 936)
         Me.Guna2Panel2.TabIndex = 2
         '
         'Panel11
@@ -732,9 +771,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel11.Controls.Add(Me.lblDate)
         Me.Panel11.Controls.Add(Me.Guna2Panel7)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel11.Location = New System.Drawing.Point(652, 0)
+        Me.Panel11.Location = New System.Drawing.Point(861, 0)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(530, 36)
+        Me.Panel11.Size = New System.Drawing.Size(707, 44)
         Me.Panel11.TabIndex = 53
         '
         'lblDate
@@ -743,8 +783,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblDate.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblDate.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblDate.Location = New System.Drawing.Point(0, 0)
+        Me.lblDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(42, 15)
+        Me.lblDate.Size = New System.Drawing.Size(53, 17)
         Me.lblDate.TabIndex = 53
         Me.lblDate.Text = "XXXXX"
         '
@@ -755,10 +796,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel7.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel7.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel7.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel7.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel7.Name = "Guna2Panel7"
-        Me.Guna2Panel7.Size = New System.Drawing.Size(530, 20)
+        Me.Guna2Panel7.Size = New System.Drawing.Size(707, 25)
         Me.Guna2Panel7.TabIndex = 55
         '
         'Guna2Panel16
@@ -768,10 +809,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel16.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel16.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel16.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel16.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel16.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel16.Location = New System.Drawing.Point(0, 20)
+        Me.Guna2Panel16.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel16.Name = "Guna2Panel16"
-        Me.Guna2Panel16.Size = New System.Drawing.Size(146, 15)
+        Me.Guna2Panel16.Size = New System.Drawing.Size(195, 18)
         Me.Guna2Panel16.TabIndex = 60
         '
         'Label4
@@ -779,18 +820,20 @@ Partial Class frmPrintBillingInvoice
         Me.Label4.AutoSize = True
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label4.Location = New System.Drawing.Point(612, 0)
+        Me.Label4.Location = New System.Drawing.Point(811, 0)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 15)
+        Me.Label4.Size = New System.Drawing.Size(50, 17)
         Me.Label4.TabIndex = 52
         Me.Label4.Text = "DATE:"
         '
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel9.Location = New System.Drawing.Point(572, 0)
+        Me.Panel9.Location = New System.Drawing.Point(758, 0)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(40, 36)
+        Me.Panel9.Size = New System.Drawing.Size(53, 44)
         Me.Panel9.TabIndex = 8
         '
         'Panel8
@@ -798,9 +841,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel8.Controls.Add(Me.lblSoldTo)
         Me.Panel8.Controls.Add(Me.Guna2Panel6)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel8.Location = New System.Drawing.Point(62, 0)
+        Me.Panel8.Location = New System.Drawing.Point(78, 0)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(510, 36)
+        Me.Panel8.Size = New System.Drawing.Size(680, 44)
         Me.Panel8.TabIndex = 51
         '
         'lblSoldTo
@@ -809,8 +853,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblSoldTo.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblSoldTo.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblSoldTo.Location = New System.Drawing.Point(0, 0)
+        Me.lblSoldTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSoldTo.Name = "lblSoldTo"
-        Me.lblSoldTo.Size = New System.Drawing.Size(42, 15)
+        Me.lblSoldTo.Size = New System.Drawing.Size(53, 17)
         Me.lblSoldTo.TabIndex = 53
         Me.lblSoldTo.Text = "XXXXX"
         '
@@ -820,10 +865,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel6.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel6.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.Size = New System.Drawing.Size(510, 20)
+        Me.Guna2Panel6.Size = New System.Drawing.Size(680, 25)
         Me.Guna2Panel6.TabIndex = 54
         '
         'Guna2Panel17
@@ -833,10 +878,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel17.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel17.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel17.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel17.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel17.Location = New System.Drawing.Point(0, 20)
+        Me.Guna2Panel17.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel17.Name = "Guna2Panel17"
-        Me.Guna2Panel17.Size = New System.Drawing.Size(183, 15)
+        Me.Guna2Panel17.Size = New System.Drawing.Size(244, 18)
         Me.Guna2Panel17.TabIndex = 61
         '
         'Guna2Panel18
@@ -847,19 +892,20 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel18.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel18.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel18.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel18.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel18.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel18.Location = New System.Drawing.Point(0, 20)
+        Me.Guna2Panel18.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel18.Name = "Guna2Panel18"
-        Me.Guna2Panel18.Size = New System.Drawing.Size(284, 15)
+        Me.Guna2Panel18.Size = New System.Drawing.Size(420, 18)
         Me.Guna2Panel18.TabIndex = 61
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label5.Location = New System.Drawing.Point(74, 3)
+        Me.Label5.Location = New System.Drawing.Point(99, 4)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(139, 15)
+        Me.Label5.Size = New System.Drawing.Size(183, 18)
         Me.Label5.TabIndex = 98
         Me.Label5.Text = "RAMBIC CORPORATION"
         '
@@ -870,10 +916,10 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel20.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel20.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel20.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel20.Location = New System.Drawing.Point(0, 13)
-        Me.Guna2Panel20.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel20.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel20.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel20.Name = "Guna2Panel20"
-        Me.Guna2Panel20.Size = New System.Drawing.Size(373, 15)
+        Me.Guna2Panel20.Size = New System.Drawing.Size(497, 18)
         Me.Guna2Panel20.TabIndex = 101
         '
         'Label2
@@ -882,8 +928,9 @@ Partial Class frmPrintBillingInvoice
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 15)
+        Me.Label2.Size = New System.Drawing.Size(78, 17)
         Me.Label2.TabIndex = 48
         Me.Label2.Text = "SOLD TO:"
         '
@@ -895,34 +942,38 @@ Partial Class frmPrintBillingInvoice
         Me.Panel7.Controls.Add(Me.Panel8)
         Me.Panel7.Controls.Add(Me.Label2)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(10, 49)
+        Me.Panel7.Location = New System.Drawing.Point(13, 60)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(930, 36)
+        Me.Panel7.Size = New System.Drawing.Size(1241, 44)
         Me.Panel7.TabIndex = 10
         '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(10, 0)
+        Me.Panel4.Location = New System.Drawing.Point(13, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(930, 49)
+        Me.Panel4.Size = New System.Drawing.Size(1241, 60)
         Me.Panel4.TabIndex = 7
         '
         'Panel29
         '
         Me.Panel29.Controls.Add(Me.Label33)
-        Me.Panel29.Location = New System.Drawing.Point(8, 39)
+        Me.Panel29.Location = New System.Drawing.Point(11, 48)
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(920, 15)
+        Me.Panel29.Size = New System.Drawing.Size(1227, 18)
         Me.Panel29.TabIndex = 110
         '
         'Panel31
         '
         Me.Panel31.Controls.Add(Me.GroupBox1)
-        Me.Panel31.Location = New System.Drawing.Point(618, 6)
+        Me.Panel31.Location = New System.Drawing.Point(824, 7)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(307, 310)
+        Me.Panel31.Size = New System.Drawing.Size(409, 382)
         Me.Panel31.TabIndex = 82
         '
         'GroupBox1
@@ -934,9 +985,11 @@ Partial Class frmPrintBillingInvoice
         Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 245)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 302)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(307, 65)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Size = New System.Drawing.Size(409, 80)
         Me.GroupBox1.TabIndex = 107
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Total Amount Due"
@@ -946,18 +999,20 @@ Partial Class frmPrintBillingInvoice
         Me.lblTotalAmount.AutoSize = True
         Me.lblTotalAmount.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblTotalAmount.Font = New System.Drawing.Font("Arial", 14.0!)
-        Me.lblTotalAmount.Location = New System.Drawing.Point(86, 27)
+        Me.lblTotalAmount.Location = New System.Drawing.Point(112, 34)
+        Me.lblTotalAmount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalAmount.Name = "lblTotalAmount"
-        Me.lblTotalAmount.Size = New System.Drawing.Size(166, 22)
+        Me.lblTotalAmount.Size = New System.Drawing.Size(192, 27)
         Me.lblTotalAmount.TabIndex = 98
         Me.lblTotalAmount.Text = "XXXXXXXXXXXX"
         '
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(76, 27)
+        Me.Panel3.Location = New System.Drawing.Point(99, 34)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(10, 35)
+        Me.Panel3.Size = New System.Drawing.Size(13, 42)
         Me.Panel3.TabIndex = 98
         '
         'Label49
@@ -965,34 +1020,38 @@ Partial Class frmPrintBillingInvoice
         Me.Label49.AutoSize = True
         Me.Label49.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label49.Font = New System.Drawing.Font("Arial", 14.0!)
-        Me.Label49.Location = New System.Drawing.Point(53, 27)
+        Me.Label49.Location = New System.Drawing.Point(71, 34)
+        Me.Label49.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(23, 22)
+        Me.Label49.Size = New System.Drawing.Size(28, 27)
         Me.Label49.TabIndex = 97
         Me.Label49.Text = "₱"
         '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(3, 27)
+        Me.Panel1.Location = New System.Drawing.Point(4, 34)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(50, 35)
+        Me.Panel1.Size = New System.Drawing.Size(67, 42)
         Me.Panel1.TabIndex = 39
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(3, 17)
+        Me.Panel2.Location = New System.Drawing.Point(4, 22)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(301, 10)
+        Me.Panel2.Size = New System.Drawing.Size(401, 12)
         Me.Panel2.TabIndex = 40
         '
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(10, 609)
+        Me.Panel5.Location = New System.Drawing.Point(13, 748)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(930, 10)
+        Me.Panel5.Size = New System.Drawing.Size(1241, 12)
         Me.Panel5.TabIndex = 23
         '
         'panelTableBody
@@ -1002,9 +1061,10 @@ Partial Class frmPrintBillingInvoice
         Me.panelTableBody.CustomBorderColor = System.Drawing.Color.Black
         Me.panelTableBody.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 2, 2)
         Me.panelTableBody.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelTableBody.Location = New System.Drawing.Point(10, 289)
+        Me.panelTableBody.Location = New System.Drawing.Point(13, 354)
+        Me.panelTableBody.Margin = New System.Windows.Forms.Padding(4)
         Me.panelTableBody.Name = "panelTableBody"
-        Me.panelTableBody.Size = New System.Drawing.Size(930, 320)
+        Me.panelTableBody.Size = New System.Drawing.Size(1241, 394)
         Me.panelTableBody.TabIndex = 22
         '
         'Guna2Panel5
@@ -1014,16 +1074,18 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel5.CustomBorderThickness = New System.Windows.Forms.Padding(2, 0, 2, 2)
         Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel5.Name = "Guna2Panel5"
-        Me.Guna2Panel5.Size = New System.Drawing.Size(614, 320)
+        Me.Guna2Panel5.Size = New System.Drawing.Size(819, 394)
         Me.Guna2Panel5.TabIndex = 0
         '
         'panelListViewBody
         '
         Me.panelListViewBody.Controls.Add(Me.ListView1)
-        Me.panelListViewBody.Location = New System.Drawing.Point(4, 0)
+        Me.panelListViewBody.Location = New System.Drawing.Point(5, 0)
+        Me.panelListViewBody.Margin = New System.Windows.Forms.Padding(4)
         Me.panelListViewBody.Name = "panelListViewBody"
-        Me.panelListViewBody.Size = New System.Drawing.Size(606, 298)
+        Me.panelListViewBody.Size = New System.Drawing.Size(808, 367)
         Me.panelListViewBody.TabIndex = 8
         '
         'ListView1
@@ -1036,8 +1098,9 @@ Partial Class frmPrintBillingInvoice
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(606, 298)
+        Me.ListView1.Size = New System.Drawing.Size(808, 367)
         Me.ListView1.TabIndex = 38
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -1077,8 +1140,9 @@ Partial Class frmPrintBillingInvoice
         Me.Label50.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label50.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label50.Location = New System.Drawing.Point(0, 0)
+        Me.Label50.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(417, 15)
+        Me.Label50.Size = New System.Drawing.Size(492, 17)
         Me.Label50.TabIndex = 50
         Me.Label50.Text = "Received in good order and condition terms herein specified and accepted."
         '
@@ -1086,9 +1150,10 @@ Partial Class frmPrintBillingInvoice
         '
         Me.Panel39.Controls.Add(Me.Label50)
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel39.Location = New System.Drawing.Point(10, 619)
+        Me.Panel39.Location = New System.Drawing.Point(13, 760)
+        Me.Panel39.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel39.Name = "Panel39"
-        Me.Panel39.Size = New System.Drawing.Size(930, 20)
+        Me.Panel39.Size = New System.Drawing.Size(1241, 25)
         Me.Panel39.TabIndex = 24
         '
         'Label56
@@ -1097,8 +1162,9 @@ Partial Class frmPrintBillingInvoice
         Me.Label56.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label56.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label56.Location = New System.Drawing.Point(0, 0)
+        Me.Label56.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(53, 15)
+        Me.Label56.Size = New System.Drawing.Size(64, 17)
         Me.Label56.TabIndex = 48
         Me.Label56.Text = "D.R. No:"
         '
@@ -1108,8 +1174,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblDRNo.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblDRNo.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblDRNo.Location = New System.Drawing.Point(0, 0)
+        Me.lblDRNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDRNo.Name = "lblDRNo"
-        Me.lblDRNo.Size = New System.Drawing.Size(42, 15)
+        Me.lblDRNo.Size = New System.Drawing.Size(53, 17)
         Me.lblDRNo.TabIndex = 53
         Me.lblDRNo.Text = "XXXXX"
         '
@@ -1118,18 +1185,20 @@ Partial Class frmPrintBillingInvoice
         Me.Label.AutoSize = True
         Me.Label.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label.Location = New System.Drawing.Point(209, 0)
+        Me.Label.Location = New System.Drawing.Point(272, 0)
+        Me.Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label.Name = "Label"
-        Me.Label.Size = New System.Drawing.Size(132, 15)
+        Me.Label.Size = New System.Drawing.Size(156, 17)
         Me.Label.TabIndex = 52
         Me.Label.Text = "Billed and Checked by:"
         '
         'Panel43
         '
         Me.Panel43.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel43.Location = New System.Drawing.Point(199, 0)
+        Me.Panel43.Location = New System.Drawing.Point(259, 0)
+        Me.Panel43.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel43.Name = "Panel43"
-        Me.Panel43.Size = New System.Drawing.Size(10, 31)
+        Me.Panel43.Size = New System.Drawing.Size(13, 38)
         Me.Panel43.TabIndex = 8
         '
         'Panel44
@@ -1137,9 +1206,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel44.Controls.Add(Me.lblDRNo)
         Me.Panel44.Controls.Add(Me.Guna2Panel16)
         Me.Panel44.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel44.Location = New System.Drawing.Point(53, 0)
+        Me.Panel44.Location = New System.Drawing.Point(64, 0)
+        Me.Panel44.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel44.Name = "Panel44"
-        Me.Panel44.Size = New System.Drawing.Size(146, 31)
+        Me.Panel44.Size = New System.Drawing.Size(195, 38)
         Me.Panel44.TabIndex = 51
         '
         'lblCheckedBy
@@ -1148,8 +1218,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblCheckedBy.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblCheckedBy.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblCheckedBy.Location = New System.Drawing.Point(0, 0)
+        Me.lblCheckedBy.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCheckedBy.Name = "lblCheckedBy"
-        Me.lblCheckedBy.Size = New System.Drawing.Size(42, 15)
+        Me.lblCheckedBy.Size = New System.Drawing.Size(53, 17)
         Me.lblCheckedBy.TabIndex = 53
         Me.lblCheckedBy.Text = "XXXXX"
         '
@@ -1158,18 +1229,20 @@ Partial Class frmPrintBillingInvoice
         Me.Label57.AutoSize = True
         Me.Label57.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label57.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label57.Location = New System.Drawing.Point(534, 0)
+        Me.Label57.Location = New System.Drawing.Point(685, 0)
+        Me.Label57.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(112, 15)
+        Me.Label57.Size = New System.Drawing.Size(136, 17)
         Me.Label57.TabIndex = 55
         Me.Label57.Text = "Credit Approved By:"
         '
         'Panel45
         '
         Me.Panel45.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel45.Location = New System.Drawing.Point(524, 0)
+        Me.Panel45.Location = New System.Drawing.Point(672, 0)
+        Me.Panel45.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel45.Name = "Panel45"
-        Me.Panel45.Size = New System.Drawing.Size(10, 31)
+        Me.Panel45.Size = New System.Drawing.Size(13, 38)
         Me.Panel45.TabIndex = 54
         '
         'Panel42
@@ -1177,9 +1250,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel42.Controls.Add(Me.lblCheckedBy)
         Me.Panel42.Controls.Add(Me.Guna2Panel17)
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel42.Location = New System.Drawing.Point(341, 0)
+        Me.Panel42.Location = New System.Drawing.Point(428, 0)
+        Me.Panel42.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(183, 31)
+        Me.Panel42.Size = New System.Drawing.Size(244, 38)
         Me.Panel42.TabIndex = 53
         '
         'lblApprovedBy
@@ -1188,8 +1262,9 @@ Partial Class frmPrintBillingInvoice
         Me.lblApprovedBy.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblApprovedBy.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblApprovedBy.Location = New System.Drawing.Point(0, 0)
+        Me.lblApprovedBy.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblApprovedBy.Name = "lblApprovedBy"
-        Me.lblApprovedBy.Size = New System.Drawing.Size(42, 15)
+        Me.lblApprovedBy.Size = New System.Drawing.Size(53, 17)
         Me.lblApprovedBy.TabIndex = 53
         Me.lblApprovedBy.Text = "XXXXX"
         '
@@ -1218,17 +1293,19 @@ Partial Class frmPrintBillingInvoice
         Me.pnlBody.Controls.Add(Me.Guna2Panel3)
         Me.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlBody.Location = New System.Drawing.Point(0, 0)
+        Me.pnlBody.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlBody.Name = "pnlBody"
-        Me.pnlBody.Size = New System.Drawing.Size(950, 770)
+        Me.pnlBody.Size = New System.Drawing.Size(1267, 948)
         Me.pnlBody.TabIndex = 2
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label10.Location = New System.Drawing.Point(115, 706)
+        Me.Label10.Location = New System.Drawing.Point(153, 869)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(131, 15)
+        Me.Label10.Size = New System.Drawing.Size(162, 18)
         Me.Label10.TabIndex = 99
         Me.Label10.Text = "Customer's Signature"
         '
@@ -1237,9 +1314,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel58.BackColor = System.Drawing.Color.White
         Me.Panel58.Controls.Add(Me.btnPrint)
         Me.Panel58.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel58.Location = New System.Drawing.Point(650, 718)
+        Me.Panel58.Location = New System.Drawing.Point(867, 882)
+        Me.Panel58.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel58.Name = "Panel58"
-        Me.Panel58.Size = New System.Drawing.Size(140, 42)
+        Me.Panel58.Size = New System.Drawing.Size(187, 54)
         Me.Panel58.TabIndex = 62
         '
         'btnPrint
@@ -1256,9 +1334,10 @@ Partial Class frmPrintBillingInvoice
         Me.btnPrint.ForeColor = System.Drawing.Color.White
         Me.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnPrint.Location = New System.Drawing.Point(0, 0)
+        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.PressedDepth = 20
-        Me.btnPrint.Size = New System.Drawing.Size(140, 42)
+        Me.btnPrint.Size = New System.Drawing.Size(187, 54)
         Me.btnPrint.TabIndex = 57
         Me.btnPrint.Text = "Print"
         '
@@ -1266,9 +1345,10 @@ Partial Class frmPrintBillingInvoice
         '
         Me.Panel57.BackColor = System.Drawing.Color.White
         Me.Panel57.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel57.Location = New System.Drawing.Point(790, 718)
+        Me.Panel57.Location = New System.Drawing.Point(1054, 882)
+        Me.Panel57.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel57.Name = "Panel57"
-        Me.Panel57.Size = New System.Drawing.Size(10, 42)
+        Me.Panel57.Size = New System.Drawing.Size(13, 54)
         Me.Panel57.TabIndex = 61
         '
         'Panel40
@@ -1276,9 +1356,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel40.BackColor = System.Drawing.Color.White
         Me.Panel40.Controls.Add(Me.btnCancel)
         Me.Panel40.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel40.Location = New System.Drawing.Point(800, 718)
+        Me.Panel40.Location = New System.Drawing.Point(1067, 882)
+        Me.Panel40.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(140, 42)
+        Me.Panel40.Size = New System.Drawing.Size(187, 54)
         Me.Panel40.TabIndex = 60
         '
         'btnCancel
@@ -1295,9 +1376,10 @@ Partial Class frmPrintBillingInvoice
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCancel.Location = New System.Drawing.Point(0, 0)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(140, 42)
+        Me.btnCancel.Size = New System.Drawing.Size(187, 54)
         Me.btnCancel.TabIndex = 57
         Me.btnCancel.Text = "Cancel"
         '
@@ -1309,18 +1391,20 @@ Partial Class frmPrintBillingInvoice
         Me.Panel49.Controls.Add(Me.Panel54)
         Me.Panel49.Controls.Add(Me.Label69)
         Me.Panel49.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel49.Location = New System.Drawing.Point(10, 690)
+        Me.Panel49.Location = New System.Drawing.Point(13, 848)
+        Me.Panel49.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel49.Name = "Panel49"
-        Me.Panel49.Size = New System.Drawing.Size(930, 28)
+        Me.Panel49.Size = New System.Drawing.Size(1241, 34)
         Me.Panel49.TabIndex = 59
         '
         'Panel50
         '
         Me.Panel50.Controls.Add(Me.Guna2Panel20)
         Me.Panel50.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel50.Location = New System.Drawing.Point(557, 0)
+        Me.Panel50.Location = New System.Drawing.Point(739, 0)
+        Me.Panel50.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel50.Name = "Panel50"
-        Me.Panel50.Size = New System.Drawing.Size(373, 28)
+        Me.Panel50.Size = New System.Drawing.Size(497, 34)
         Me.Panel50.TabIndex = 57
         '
         'Label63
@@ -1328,27 +1412,30 @@ Partial Class frmPrintBillingInvoice
         Me.Label63.AutoSize = True
         Me.Label63.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label63.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label63.Location = New System.Drawing.Point(534, 0)
+        Me.Label63.Location = New System.Drawing.Point(710, 0)
+        Me.Label63.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(23, 15)
+        Me.Label63.Size = New System.Drawing.Size(29, 17)
         Me.Label63.TabIndex = 55
         Me.Label63.Text = "By:"
         '
         'Panel53
         '
         Me.Panel53.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel53.Location = New System.Drawing.Point(341, 0)
+        Me.Panel53.Location = New System.Drawing.Point(453, 0)
+        Me.Panel53.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel53.Name = "Panel53"
-        Me.Panel53.Size = New System.Drawing.Size(193, 28)
+        Me.Panel53.Size = New System.Drawing.Size(257, 34)
         Me.Panel53.TabIndex = 8
         '
         'Panel54
         '
         Me.Panel54.Controls.Add(Me.Guna2Panel19)
         Me.Panel54.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel54.Location = New System.Drawing.Point(23, 0)
+        Me.Panel54.Location = New System.Drawing.Point(29, 0)
+        Me.Panel54.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel54.Name = "Panel54"
-        Me.Panel54.Size = New System.Drawing.Size(318, 28)
+        Me.Panel54.Size = New System.Drawing.Size(424, 34)
         Me.Panel54.TabIndex = 51
         '
         'Label69
@@ -1357,17 +1444,19 @@ Partial Class frmPrintBillingInvoice
         Me.Label69.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label69.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label69.Location = New System.Drawing.Point(0, 0)
+        Me.Label69.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(23, 15)
+        Me.Label69.Size = New System.Drawing.Size(29, 17)
         Me.Label69.TabIndex = 48
         Me.Label69.Text = "By:"
         '
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(10, 670)
+        Me.Panel6.Location = New System.Drawing.Point(13, 823)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(930, 20)
+        Me.Panel6.Size = New System.Drawing.Size(1241, 25)
         Me.Panel6.TabIndex = 58
         '
         'Panel41
@@ -1381,9 +1470,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel41.Controls.Add(Me.Panel44)
         Me.Panel41.Controls.Add(Me.Label56)
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel41.Location = New System.Drawing.Point(10, 639)
+        Me.Panel41.Location = New System.Drawing.Point(13, 785)
+        Me.Panel41.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(930, 31)
+        Me.Panel41.Size = New System.Drawing.Size(1241, 38)
         Me.Panel41.TabIndex = 25
         '
         'Panel46
@@ -1391,9 +1481,10 @@ Partial Class frmPrintBillingInvoice
         Me.Panel46.Controls.Add(Me.lblApprovedBy)
         Me.Panel46.Controls.Add(Me.Guna2Panel18)
         Me.Panel46.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel46.Location = New System.Drawing.Point(646, 0)
+        Me.Panel46.Location = New System.Drawing.Point(821, 0)
+        Me.Panel46.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel46.Name = "Panel46"
-        Me.Panel46.Size = New System.Drawing.Size(284, 31)
+        Me.Panel46.Size = New System.Drawing.Size(420, 38)
         Me.Panel46.TabIndex = 56
         '
         'Guna2Panel4
@@ -1404,35 +1495,38 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel4.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel4.CustomBorderThickness = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel4.Location = New System.Drawing.Point(10, 229)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(13, 280)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel4.Name = "Guna2Panel4"
-        Me.Guna2Panel4.Size = New System.Drawing.Size(930, 60)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(1241, 74)
         Me.Guna2Panel4.TabIndex = 21
         '
         'Panel28
         '
         Me.Panel28.Controls.Add(Me.Label32)
-        Me.Panel28.Location = New System.Drawing.Point(8, 24)
+        Me.Panel28.Location = New System.Drawing.Point(11, 30)
+        Me.Panel28.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(920, 15)
+        Me.Panel28.Size = New System.Drawing.Size(1227, 18)
         Me.Panel28.TabIndex = 109
         '
         'Panel27
         '
         Me.Panel27.Controls.Add(Me.Label31)
         Me.Panel27.Controls.Add(Me.Label30)
-        Me.Panel27.Location = New System.Drawing.Point(7, 8)
+        Me.Panel27.Location = New System.Drawing.Point(9, 10)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(920, 15)
+        Me.Panel27.Size = New System.Drawing.Size(1227, 18)
         Me.Panel27.TabIndex = 108
         '
         'frmPrintBillingInvoice
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(950, 770)
+        Me.ClientSize = New System.Drawing.Size(1267, 948)
         Me.Controls.Add(Me.pnlBody)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "frmPrintBillingInvoice"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

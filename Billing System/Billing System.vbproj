@@ -248,6 +248,12 @@
     <Compile Include="frmManageRental.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmManageRentalV2.Designer.vb">
+      <DependentUpon>frmManageRentalV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageRentalV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmManageSales.Designer.vb">
       <DependentUpon>frmManageSales.vb</DependentUpon>
     </Compile>
@@ -409,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageRental.resx">
       <DependentUpon>frmManageRental.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageRentalV2.resx">
+      <DependentUpon>frmManageRentalV2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageSales.resx">
       <DependentUpon>frmManageSales.vb</DependentUpon>

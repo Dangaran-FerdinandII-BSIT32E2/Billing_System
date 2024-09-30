@@ -22,6 +22,7 @@ Public Class frmManageCollectionV2
         'CONFIRMATION TAB
         Call loadPaymentImage()
         Call loadPaymentDetails()
+
     End Sub
 
     'DELIVERY DETAILS TAB
@@ -358,4 +359,37 @@ Public Class frmManageCollectionV2
         End If
     End Sub
 
+    Private Sub btnPrintDelivery_Click(sender As Object, e As EventArgs) Handles btnPrintDelivery.Click
+
+    End Sub
+
+    Private Sub btnPrintPayment_Click(sender As Object, e As EventArgs) Handles btnPrintPayment.Click
+        frmPrintBillingInvoice.billingid = billingid
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT DISTINCT CustomerID FROM tblbillinvoice JOIN tblorder ON tblorder.OrderID = tblbillinvoice.OrderID " &
+                    "WHERE tblbillinvoice.BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                frmPrintBillingInvoice.custid = dr("CustomerID").ToString()
+            End If
+
+            frmPrintBillingInvoice.ShowDialog()
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCollectionV2(btnPrintPayment): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
 End Class

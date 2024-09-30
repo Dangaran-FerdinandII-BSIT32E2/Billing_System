@@ -18,9 +18,10 @@ Public Class frmPrintSalesInvoiceV2
         Me.Close()
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-        'Call saveBilling()
+        Call saveBilling()
         Call printfile()
         Call sendEmail()
+        Me.Close()
     End Sub
     Private Sub saveBilling()
         Try
@@ -131,17 +132,21 @@ Public Class frmPrintSalesInvoiceV2
     End Sub
     Private Sub printfile()
 
+        Me.FormBorderStyle = FormBorderStyle.None
+
         PageSetupDialog1.Document = PrintDocument1
         PageSetupDialog1.PrinterSettings.DefaultPageSettings.Landscape = True
         PrintForm1.PrinterSettings = PageSetupDialog1.PrinterSettings
 
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 0)
         PrintForm1.Print(Me, PowerPacks.Printing.PrintForm.PrintOption.CompatibleModeFullWindow)
-        Me.PrintForm1.Print()
 
         Using bitmap As New Bitmap(Me.ClientRectangle.Width, Me.ClientRectangle.Height)
+            btnPrint.Visible = False
+            btnCancel.Visible = False
             Me.DrawToBitmap(bitmap, Me.ClientRectangle)
             bitmap.Save("PrintedInvoice.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg)
+            Me.PrintForm1.Print()
         End Using
 
     End Sub
