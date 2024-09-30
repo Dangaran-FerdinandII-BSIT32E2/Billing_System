@@ -121,6 +121,7 @@ Public Class frmPrintBillingInvoice
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Call printfile()
         Call sendEmail()
+        Me.Close()
     End Sub
 
     Private Sub sendEmail()

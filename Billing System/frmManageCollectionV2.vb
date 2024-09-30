@@ -22,7 +22,6 @@ Public Class frmManageCollectionV2
         'CONFIRMATION TAB
         Call loadPaymentImage()
         Call loadPaymentDetails()
-
     End Sub
 
     'DELIVERY DETAILS TAB
@@ -255,8 +254,11 @@ Public Class frmManageCollectionV2
                             PictureBox3.Visible = False
                             btnBrowsePayment.Visible = False
 
+                            btnPrintPayment.Enabled = True
+
                         Else
                             pbxPayment.Image = Nothing
+                            btnPrintPayment.Enabled = False
                         End If
 
                     Catch ex As Exception
@@ -264,6 +266,7 @@ Public Class frmManageCollectionV2
                     End Try
                 Else
                     pbxPayment.Image = Nothing
+                    btnPrintPayment.Enabled = False
                 End If
                 dr.Close()
             End If
