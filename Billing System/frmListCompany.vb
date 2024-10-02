@@ -110,4 +110,15 @@ Public Class frmListCompany
 
         Return dt
     End Function
+
+    Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
+        If MsgBox("Add a walk-in customer?", vbYesNo + vbQuestion) = vbYes Then
+            Dim companyname As String = InputBox("Add company name:")
+            frmManageSalesV2.txtCompanyName.Text = companyname
+            frmManageSalesV2.txtAddress.Enabled = True
+            frmManageSalesV2.txtDeliveryAddress.Enabled = True
+            frmManageSalesV2.txtBusinessStyle.Enabled = True
+            Me.Close()
+        End If
+    End Sub
 End Class

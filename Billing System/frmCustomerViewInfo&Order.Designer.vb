@@ -42,6 +42,9 @@ Partial Class frmCustomerViewInfo_Order
         Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.btnViewOrder = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblstatus = New System.Windows.Forms.Label()
         Me.lblOrderID = New System.Windows.Forms.Label()
         Me.Panel34 = New System.Windows.Forms.Panel()
@@ -99,12 +102,10 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.btnViewOrder = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.Panel6.SuspendLayout()
+        Me.Panel15.SuspendLayout()
         Me.Panel34.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -116,7 +117,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel37.SuspendLayout()
         Me.Panel38.SuspendLayout()
         Me.TabControl2.SuspendLayout()
-        Me.Panel15.SuspendLayout()
         Me.SuspendLayout()
         '
         'ColumnHeader13
@@ -229,7 +229,7 @@ Partial Class frmCustomerViewInfo_Order
         'ColumnHeader16
         '
         Me.ColumnHeader16.Text = "Status"
-        Me.ColumnHeader16.Width = 150
+        Me.ColumnHeader16.Width = 300
         '
         'ColumnHeader18
         '
@@ -253,6 +253,46 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1329, 74)
         Me.Panel6.TabIndex = 21
+        '
+        'Panel15
+        '
+        Me.Panel15.BackColor = System.Drawing.Color.White
+        Me.Panel15.Controls.Add(Me.btnViewOrder)
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel15.Location = New System.Drawing.Point(213, 12)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(187, 50)
+        Me.Panel15.TabIndex = 58
+        '
+        'btnViewOrder
+        '
+        Me.btnViewOrder.BorderRadius = 8
+        Me.btnViewOrder.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnViewOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnViewOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnViewOrder.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnViewOrder.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnViewOrder.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnViewOrder.ForeColor = System.Drawing.Color.White
+        Me.btnViewOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnViewOrder.Location = New System.Drawing.Point(0, 0)
+        Me.btnViewOrder.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnViewOrder.Name = "btnViewOrder"
+        Me.btnViewOrder.PressedDepth = 20
+        Me.btnViewOrder.Size = New System.Drawing.Size(187, 50)
+        Me.btnViewOrder.TabIndex = 57
+        Me.btnViewOrder.Text = "View"
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel1.Location = New System.Drawing.Point(200, 12)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(13, 50)
+        Me.Guna2Panel1.TabIndex = 43
         '
         'lblstatus
         '
@@ -304,7 +344,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.btnInsert.PressedDepth = 20
         Me.btnInsert.Size = New System.Drawing.Size(187, 50)
         Me.btnInsert.TabIndex = 57
-        Me.btnInsert.Text = "Insert"
+        Me.btnInsert.Text = "Create Invoice"
         '
         'Panel33
         '
@@ -1087,46 +1127,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
-        'Guna2Panel1
-        '
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel1.Location = New System.Drawing.Point(200, 12)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(13, 50)
-        Me.Guna2Panel1.TabIndex = 43
-        '
-        'Panel15
-        '
-        Me.Panel15.BackColor = System.Drawing.Color.White
-        Me.Panel15.Controls.Add(Me.btnViewOrder)
-        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel15.Location = New System.Drawing.Point(213, 12)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(187, 50)
-        Me.Panel15.TabIndex = 58
-        '
-        'btnViewOrder
-        '
-        Me.btnViewOrder.BorderRadius = 8
-        Me.btnViewOrder.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnViewOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnViewOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnViewOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnViewOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnViewOrder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnViewOrder.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnViewOrder.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnViewOrder.ForeColor = System.Drawing.Color.White
-        Me.btnViewOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnViewOrder.Location = New System.Drawing.Point(0, 0)
-        Me.btnViewOrder.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnViewOrder.Name = "btnViewOrder"
-        Me.btnViewOrder.PressedDepth = 20
-        Me.btnViewOrder.Size = New System.Drawing.Size(187, 50)
-        Me.btnViewOrder.TabIndex = 57
-        Me.btnViewOrder.Text = "View"
-        '
         'frmCustomerViewInfo_Order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1139,6 +1139,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.TabPage2.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
+        Me.Panel15.ResumeLayout(False)
         Me.Panel34.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1153,7 +1154,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel37.ResumeLayout(False)
         Me.Panel38.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
-        Me.Panel15.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

@@ -90,11 +90,11 @@ Public Class frmCustomerViewInfo_Order
                 x = New ListViewItem(dr("OrderID").ToString())
                 x.SubItems.Add(dr("TotalPrice").ToString())
                 x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) '2
-                x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Urgent", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "On hold", "On process")).ToString())) '3
+                x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Priority Order", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "Item on Hand", "Item on Process")).ToString())) '3
                 x.SubItems.Add(dr("OrderDate").ToString()) ' 4
 
                 ' Check if the status is "Urgent" and set the text color accordingly
-                If x.SubItems(3).Text = "Urgent" Then
+                If x.SubItems(3).Text = "Priority Order" Then
                     x.ForeColor = Color.Red
                 End If
 
@@ -144,26 +144,26 @@ Public Class frmCustomerViewInfo_Order
             sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderID = '" & lblOrderID.Text & "'"
             cmd = New MySqlCommand(sql, cn)
             'for status 2 = delivered, 1 = on hold, 0 = process
-            If avail = "No" And status = "On process" Then
-                If MsgBox("Is the product available?", vbYesNo + vbQuestion) = vbYes Then
+            If avail = "No" And status = "Item on Process" Then
+                If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
                     cmd.Parameters.AddWithValue("@Availability", True)
                     cmd.Parameters.AddWithValue("@Status", "0")
                     cmd.ExecuteNonQuery()
                 End If
-            ElseIf avail = "No" And status = "Urgent" Then
-                If MsgBox("Is the product available?", vbYesNo + vbQuestion) = vbYes Then
+            ElseIf avail = "No" And status = "Priority Order" Then
+                If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
                     cmd.Parameters.AddWithValue("@Availability", True)
                     cmd.Parameters.AddWithValue("@Status", "4")
                     cmd.ExecuteNonQuery()
                 End If
-            ElseIf avail = "Yes" And status = "On process" Then
-                If MsgBox("Is the product on hold?", vbYesNo + vbQuestion) = vbYes Then
+            ElseIf avail = "Yes" And status = "Item on Process" Then
+                If MsgBox("Is the item on hand?", vbYesNo + vbQuestion) = vbYes Then
                     cmd.Parameters.AddWithValue("@Availability", True)
                     cmd.Parameters.AddWithValue("@Status", "1")
                     cmd.ExecuteNonQuery()
                 End If
-            ElseIf avail = "Yes" And status = "On hold" Then
-                MsgBox("The product is already on hold.", vbInformation, "Order Information")
+            ElseIf avail = "Yes" And status = "Item on Hand" Then
+                MsgBox("The item is already on hand.", vbInformation, "Order Information")
             End If
 
             Call loadOrder()
