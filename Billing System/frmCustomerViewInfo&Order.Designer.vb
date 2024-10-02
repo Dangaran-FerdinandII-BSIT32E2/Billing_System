@@ -37,9 +37,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -102,6 +99,9 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.btnViewOrder = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -116,6 +116,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel37.SuspendLayout()
         Me.Panel38.SuspendLayout()
         Me.TabControl2.SuspendLayout()
+        Me.Panel15.SuspendLayout()
         Me.SuspendLayout()
         '
         'ColumnHeader13
@@ -195,7 +196,7 @@ Partial Class frmCustomerViewInfo_Order
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader18})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader8, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader18})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
@@ -212,23 +213,8 @@ Partial Class frmCustomerViewInfo_Order
         '
         'ColumnHeader8
         '
-        Me.ColumnHeader8.Text = "Item Name"
+        Me.ColumnHeader8.Text = "OrderID"
         Me.ColumnHeader8.Width = 150
-        '
-        'ColumnHeader9
-        '
-        Me.ColumnHeader9.Text = "Description"
-        Me.ColumnHeader9.Width = 150
-        '
-        'ColumnHeader10
-        '
-        Me.ColumnHeader10.Text = "Quantity"
-        Me.ColumnHeader10.Width = 150
-        '
-        'ColumnHeader11
-        '
-        Me.ColumnHeader11.Text = "Unit"
-        Me.ColumnHeader11.Width = 150
         '
         'ColumnHeader14
         '
@@ -248,11 +234,13 @@ Partial Class frmCustomerViewInfo_Order
         'ColumnHeader18
         '
         Me.ColumnHeader18.Text = "Ordered Date"
-        Me.ColumnHeader18.Width = 150
+        Me.ColumnHeader18.Width = 300
         '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.White
+        Me.Panel6.Controls.Add(Me.Panel15)
+        Me.Panel6.Controls.Add(Me.Guna2Panel1)
         Me.Panel6.Controls.Add(Me.lblstatus)
         Me.Panel6.Controls.Add(Me.lblOrderID)
         Me.Panel6.Controls.Add(Me.Panel34)
@@ -1099,6 +1087,46 @@ Partial Class frmCustomerViewInfo_Order
         Me.TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel1.Location = New System.Drawing.Point(200, 12)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(13, 50)
+        Me.Guna2Panel1.TabIndex = 43
+        '
+        'Panel15
+        '
+        Me.Panel15.BackColor = System.Drawing.Color.White
+        Me.Panel15.Controls.Add(Me.btnViewOrder)
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel15.Location = New System.Drawing.Point(213, 12)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(187, 50)
+        Me.Panel15.TabIndex = 58
+        '
+        'btnViewOrder
+        '
+        Me.btnViewOrder.BorderRadius = 8
+        Me.btnViewOrder.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnViewOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnViewOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnViewOrder.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnViewOrder.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnViewOrder.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnViewOrder.ForeColor = System.Drawing.Color.White
+        Me.btnViewOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnViewOrder.Location = New System.Drawing.Point(0, 0)
+        Me.btnViewOrder.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnViewOrder.Name = "btnViewOrder"
+        Me.btnViewOrder.PressedDepth = 20
+        Me.btnViewOrder.Size = New System.Drawing.Size(187, 50)
+        Me.btnViewOrder.TabIndex = 57
+        Me.btnViewOrder.Text = "View"
+        '
         'frmCustomerViewInfo_Order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1125,6 +1153,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel37.ResumeLayout(False)
         Me.Panel38.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
+        Me.Panel15.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1143,9 +1172,6 @@ Partial Class frmCustomerViewInfo_Order
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader8 As ColumnHeader
-    Friend WithEvents ColumnHeader9 As ColumnHeader
-    Friend WithEvents ColumnHeader10 As ColumnHeader
-    Friend WithEvents ColumnHeader11 As ColumnHeader
     Friend WithEvents ColumnHeader14 As ColumnHeader
     Friend WithEvents ColumnHeader15 As ColumnHeader
     Friend WithEvents ColumnHeader16 As ColumnHeader
@@ -1207,4 +1233,7 @@ Partial Class frmCustomerViewInfo_Order
     Friend WithEvents Label2 As Label
     Friend WithEvents txtLastName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents Panel15 As Panel
+    Friend WithEvents btnViewOrder As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 End Class

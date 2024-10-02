@@ -4,13 +4,33 @@ Public Class frmCustomerViewInfo_Order
 
     Dim acctstatus As Boolean
     Dim status1 As Integer
+    Dim orderid As String
     Private Sub frmCustomerViewInfo_Order_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadInformation()
-        Call loadOrder()
         TabControl2.SelectedTab = TabPage1
+        Call loadOrderListView()
     End Sub
 
+    Private Sub loadOrderListView()
+        orderid = "lblOrderID"
+        ListView1.Columns.Clear()
+        ListView1.Columns.Add("OrderID")
+        ListView1.Columns.Add("Price")
+        ListView1.Columns.Add("Availability")
+        ListView1.Columns.Add("Status")
+        ListView1.Columns.Add("Ordered Date")
+
+        'widths
+        ListView1.Columns(0).Width = 150
+        ListView1.Columns(1).Width = 150
+        ListView1.Columns(2).Width = 150
+        ListView1.Columns(3).Width = 150
+        ListView1.Columns(4).Width = 300
+
+        btnViewOrder.Text = "View"
+        Call loadOrder()
+    End Sub
     'Customer Tab
     Private Sub loadInformation()
         Try
@@ -55,7 +75,7 @@ Public Class frmCustomerViewInfo_Order
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND Status <> 3"
+            sql = "SELECT *, SUM(Amount) AS TotalPrice FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND Status <> 3 GROUP BY OrderID"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -67,18 +87,21 @@ Public Class frmCustomerViewInfo_Order
             ListView1.Items.Clear()
 
             Do While dr.Read = True
-                x = New ListViewItem(dr("Unit").ToString())
-                x.SubItems.Add(dr("Description").ToString())
-                x.SubItems.Add(dr("Quantity").ToString())
-                x.SubItems.Add(dr("Unit").ToString())
-                x.SubItems.Add(dr("Amount").ToString())
-                x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) 'subitem5
-                x.SubItems.Add(IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "On hold", "On process")).ToString())
-                x.SubItems.Add(dr("OrderDate").ToString())
-                x.SubItems.Add(dr("OrderID").ToString()) ' 8
-                x.SubItems.Add(dr("OrderListID").ToString()) ' 9
+                x = New ListViewItem(dr("OrderID").ToString())
+                x.SubItems.Add(dr("TotalPrice").ToString())
+                x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) '2
+                x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Urgent", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "On hold", "On process")).ToString())) '3
+                x.SubItems.Add(dr("OrderDate").ToString()) ' 4
+
+                ' Check if the status is "Urgent" and set the text color accordingly
+                If x.SubItems(3).Text = "Urgent" Then
+                    x.ForeColor = Color.Red
+                End If
+
+
                 ListView1.Items.Add(x)
             Loop
+
             dr.Close()
         Catch ex As Exception
             MsgBox("An error occurred frmCustomerViewInfo_Order(loadOrder): " & ex.Message)
@@ -97,10 +120,11 @@ Public Class frmCustomerViewInfo_Order
                 cn.Open()
             End If
 
-            If ListView1.SelectedItems.Count > 0 Then
-                lblOrderID.Text = ListView1.SelectedItems(0).SubItems(9).Text
-                avail = ListView1.SelectedItems(0).SubItems(5).Text
-                status = ListView1.SelectedItems(0).SubItems(6).Text
+            If ListView1.SelectedItems.Count > 0 And btnViewOrder.Text = "View" Then
+                orderid = ListView1.SelectedItems(0).SubItems(0).Text
+                lblOrderID.Text = orderid
+                avail = ListView1.SelectedItems(0).SubItems(2).Text
+                status = ListView1.SelectedItems(0).SubItems(3).Text
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmCustomerViewInfo_Order(ListView1_SelectedIndexChanged): " & ex.Message)
@@ -117,13 +141,19 @@ Public Class frmCustomerViewInfo_Order
                 cn.Open()
             End If
 
-            sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderListID = '" & lblOrderID.Text & "'"
+            sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderID = '" & lblOrderID.Text & "'"
             cmd = New MySqlCommand(sql, cn)
             'for status 2 = delivered, 1 = on hold, 0 = process
             If avail = "No" And status = "On process" Then
                 If MsgBox("Is the product available?", vbYesNo + vbQuestion) = vbYes Then
                     cmd.Parameters.AddWithValue("@Availability", True)
                     cmd.Parameters.AddWithValue("@Status", "0")
+                    cmd.ExecuteNonQuery()
+                End If
+            ElseIf avail = "No" And status = "Urgent" Then
+                If MsgBox("Is the product available?", vbYesNo + vbQuestion) = vbYes Then
+                    cmd.Parameters.AddWithValue("@Availability", True)
+                    cmd.Parameters.AddWithValue("@Status", "4")
                     cmd.ExecuteNonQuery()
                 End If
             ElseIf avail = "Yes" And status = "On process" Then
@@ -152,23 +182,29 @@ Public Class frmCustomerViewInfo_Order
                 cn.Open()
             End If
 
-            frmManageSalesV2.lblCustID.Text = lblCustID.Text
+            If ListView1.SelectedItems.Count > 0 Or orderid IsNot Nothing Then
+                frmManageSalesV2.lblCustID.Text = lblCustID.Text
+                frmManageSalesV2.orderid = orderid
 
-            Me.Close()
-            frmManageSalesV2.TopLevel = False
-            frmAdminDashboard.panelDashboard.Controls.Add(frmManageSalesV2)
-            frmManageSalesV2.BringToFront()
-            frmManageSalesV2.Dock = DockStyle.Fill
-            frmManageSalesV2.Show()
+                Me.Close()
+                frmManageSalesV2.TopLevel = False
+                frmAdminDashboard.panelDashboard.Controls.Add(frmManageSalesV2)
+                frmManageSalesV2.BringToFront()
+                frmManageSalesV2.Dock = DockStyle.Fill
+                frmManageSalesV2.Show()
 
-            frmManageSales.Close()
-            frmManageCollection.Close()
-            frmManageSuppliers.Close()
-            frmManageProducts.Close()
-            frmManageCustomerV2.Close()
-            frmManageUsers.Close()
-            frmManageRental.Close()
-            frmAdminSettings.Close()
+                frmManageSales.Close()
+                frmManageCollection.Close()
+                frmManageSuppliers.Close()
+                frmManageProducts.Close()
+                frmManageCustomerV2.Close()
+                frmManageUsers.Close()
+                frmManageRental.Close()
+                frmAdminSettings.Close()
+            Else
+                MsgBox("Please select an order!", MsgBoxStyle.Critical, "Insert Error")
+            End If
+
         Catch ex As Exception
             MsgBox("An error occurred frmCustomerViewInfo_Order(btnInsert): " & ex.Message)
         Finally
@@ -303,5 +339,85 @@ Public Class frmCustomerViewInfo_Order
 
         Call disableAll()
         Call loadInformation()
+    End Sub
+
+    Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            If btnViewOrder.Text = "View" Then
+                Call viewOrders()
+            Else
+                ListView1.Columns.Clear()
+                ListView1.Columns.Add("OrderID")
+                ListView1.Columns.Add("Price")
+                ListView1.Columns.Add("Availability")
+                ListView1.Columns.Add("Status")
+                ListView1.Columns.Add("Ordered Date")
+
+                'widths
+                ListView1.Columns(0).Width = 150
+                ListView1.Columns(1).Width = 150
+                ListView1.Columns(2).Width = 150
+                ListView1.Columns(3).Width = 150
+                ListView1.Columns(4).Width = 300
+
+                btnViewOrder.Text = "View"
+
+                Call loadOrder()
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmCustomerViewInfo_Order(btnViewOrder): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub viewOrders()
+        Try
+
+            If ListView1.SelectedItems.Count > 0 Then
+
+                ListView1.Columns.Clear()
+                ListView1.Columns.Add("Unit")
+                ListView1.Columns.Add("Description")
+                ListView1.Columns.Add("Quantity")
+                ListView1.Columns.Add("Amount")
+
+                'widths
+                ListView1.Columns(0).Width = 200
+                ListView1.Columns(1).Width = 200
+                ListView1.Columns(2).Width = 200
+                ListView1.Columns(3).Width = 200
+
+                sql = "SELECT * FROM qryorder WHERE OrderID = '" & lblOrderID.Text & "'"
+                cmd = New MySqlCommand(sql, cn)
+
+                If Not dr.IsClosed Then
+                    dr.Close()
+                End If
+
+                dr = cmd.ExecuteReader
+                Dim x As ListViewItem
+                ListView1.Items.Clear()
+
+                Do While dr.Read = True
+                    x = New ListViewItem(dr("Unit").ToString())
+                    x.SubItems.Add(dr("Description").ToString())
+                    x.SubItems.Add(dr("Quantity").ToString())
+                    x.SubItems.Add(dr("Amount").ToString())
+                    ListView1.Items.Add(x)
+                Loop
+
+                btnViewOrder.Text = "Back"
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmCustomerViewInfo_Order(viewOrders): " & ex.Message)
+        End Try
     End Sub
 End Class

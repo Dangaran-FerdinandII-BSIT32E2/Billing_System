@@ -44,7 +44,9 @@ Public Class frmManageCustomerV3
         If ListView1.SelectedItems.Count > 0 Then
             If cboSalesman.Text = "View Master List" Or cboSalesman.Text = "Filter by" Then
                 frmCustomerViewInfo_Order.lblCustID.Text = ListView1.SelectedItems(0).SubItems(5).Text
-            ElseIf cboSalesman.Text = "View Order List" Then
+            ElseIf cboSalesman.Text = "View Inactive Users" Then
+                frmCustomerViewInfo_Order.lblCustID.Text = ListView1.SelectedItems(0).SubItems(3).Text
+            ElseIf cboSalesman.Text = "View Pending Orders" Then
                 frmCustomerViewInfo_Order.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
             End If
             frmCustomerViewInfo_Order.ShowDialog()
@@ -58,7 +60,15 @@ Public Class frmManageCustomerV3
         PopulateListView(dt)
     End Sub
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "SELECT CompanyName, CONCAT(LastName, ', ',+ FirstName), Address, Email, PhoneNumber, CustomerID FROM tblcustomer WHERE LastName LIKE ? Or CompanyName LIKE ?"
+        'If cboSalesman.Text = "Filter by" Or cboSalesman.Text = "View Master List" Then
+        '    sql = "SELECT CompanyName, CONCAT(LastName, ', ', + FirstName), Address, Email, PhoneNumber, CustomerID FROM tblcustomer WHERE LastName LIKE ? Or CompanyName LIKE ?"
+        'ElseIf cboSalesman.Text = "View Inactive Users" Then
+        '    sql = "SELECT CompanyName, CONCAT(LastName, ', ', + FirstName), Address, CustomerID FROM tblcustomer WHERE LastName LIKE ? Or CompanyName LIKE ? AND AcctStatus = 0"
+        'ElseIf cboSalesman.Text = "View Pending Orders" Then
+        '    sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID FROM tblorder WHERE Status <> 2 AND  Status <> 3 AND DueDate IS NULL GROUP BY CustomerID) o ON c.CustomerID = o.CustomerID WHERE LastName LIKE ? Or CompanyName LIKE ?"
+        'End If
+
+        sql = "SELECT CompanyName, CONCAT(LastName, ', ', + FirstName), Address, Email, PhoneNumber, CustomerID FROM tblcustomer WHERE LastName LIKE ? Or CompanyName LIKE ?"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
@@ -119,7 +129,20 @@ Public Class frmManageCustomerV3
             ListView1.Columns(9).Width = 200
 
             Call loadOrder()
+        ElseIf cboSalesman.Text = "View Inactive Users" Then
+            ListView1.Columns.Clear()
+            ListView1.Columns.Add("Company Name")
+            ListView1.Columns.Add("Contact Person")
+            ListView1.Columns.Add("Address")
+
+            'widths
+            ListView1.Columns(0).Width = 250
+            ListView1.Columns(1).Width = 200
+            ListView1.Columns(2).Width = 400
+
+            Call loadInactiveUsers()
         End If
+        txtSearchCustomer.Clear()
     End Sub
 
     Private Sub loadOrder()
@@ -161,5 +184,49 @@ Public Class frmManageCustomerV3
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub loadInactiveUsers()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+            sql = "SELECT * FROM tblcustomer WHERE AcctStatus = 0"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            Dim x As ListViewItem
+            ListView1.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("CompanyName").ToString())
+                x.SubItems.Add(dr("LastName").ToString() + (", ").ToString() + dr("FirstName").ToString())
+                x.SubItems.Add(dr("Address").ToString())
+                x.SubItems.Add(dr("CustomerID").ToString())
+                ListView1.Items.Add(x)
+            Loop
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("An error occurred frmListCompany(loadInactiveUsers): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        If cboSalesman.Text = "View Master List" Or cboSalesman.Text = "Filter by" Then
+            Call loadCustomers()
+        ElseIf cboSalesman.Text = "View Pending Orders" Then
+            Call loadOrder()
+        ElseIf cboSalesman.Text = "View Inactive Users" Then
+            Call loadInactiveUsers()
+        End If
     End Sub
 End Class

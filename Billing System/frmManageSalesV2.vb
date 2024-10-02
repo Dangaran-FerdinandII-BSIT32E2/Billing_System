@@ -4,6 +4,8 @@ Imports System.Web.UI.WebControls
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
 Public Class frmManageSalesV2
+
+    Public orderid As String
     Private Sub frmManageBilling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadBilling()
@@ -19,7 +21,7 @@ Public Class frmManageSalesV2
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "') And Availability = 1 And Status = 1"
+            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "' AND OrderID = '" & orderid & "') And Availability = 1 And Status <> 3"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -36,7 +38,7 @@ Public Class frmManageSalesV2
                 x.SubItems.Add(dr("Unit").ToString())
                 x.SubItems.Add(dr("Description").ToString())
                 x.SubItems.Add(dr("SellingPrice").ToString())
-                x.SubItems.Add(dr("Amount").ToString())
+                x.SubItems.Add("₱ " + dr("Amount").ToString())
                 x.SubItems.Add(dr("OrderID").ToString())
                 x.SubItems.Add(dr("OrderListID").ToString())
                 x.SubItems.Add(dr("ProductID").ToString())

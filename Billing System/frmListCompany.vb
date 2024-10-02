@@ -12,7 +12,7 @@ Public Class frmListCompany
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Availability = 1 AND Status = 1 AND DueDate IS NULL GROUP BY CustomerID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Availability = 1 AND Status = 1 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -53,7 +53,7 @@ Public Class frmListCompany
             If ListView1.SelectedItems.Count > 0 Then
                 frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
                 frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
-                frmManageSalesV2.lblOrderListID.Text = ListView1.SelectedItems(0).SubItems(11).Text
+                frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(11).Text
                 Call frmManageSalesV2.loadBilling()
             End If
 

@@ -32,65 +32,98 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel58 = New System.Windows.Forms.Panel()
+        Me.btnPrint = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel57 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel40 = New System.Windows.Forms.Panel()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lblSoldTo = New System.Windows.Forms.Label()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblDate = New System.Windows.Forms.Label()
+        Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.lblSoldTo = New System.Windows.Forms.Label()
+        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lblAddress = New System.Windows.Forms.Label()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblPONo = New System.Windows.Forms.Label()
+        Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.lblAddress = New System.Windows.Forms.Label()
+        Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Panel18 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lblDelivery = New System.Windows.Forms.Label()
-        Me.Panel17 = New System.Windows.Forms.Panel()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblTerms = New System.Windows.Forms.Label()
+        Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.lblDelivery = New System.Windows.Forms.Label()
+        Me.Guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.Panel19 = New System.Windows.Forms.Panel()
-        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.lblSalesman = New System.Windows.Forms.Label()
+        Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Panel21 = New System.Windows.Forms.Panel()
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.Guna2Panel12 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Panel21 = New System.Windows.Forms.Panel()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Panel20 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lblSalesman = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
         Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Panel26 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel14 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lblBusStyle = New System.Windows.Forms.Label()
-        Me.Panel25 = New System.Windows.Forms.Panel()
-        Me.Label26 = New System.Windows.Forms.Label()
         Me.Panel24 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel15 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblTIN = New System.Windows.Forms.Label()
+        Me.Guna2Panel15 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Panel25 = New System.Windows.Forms.Panel()
+        Me.Panel26 = New System.Windows.Forms.Panel()
+        Me.lblBusStyle = New System.Windows.Forms.Label()
+        Me.Guna2Panel14 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label29 = New System.Windows.Forms.Label()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Panel27 = New System.Windows.Forms.Panel()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Panel28 = New System.Windows.Forms.Panel()
-        Me.Label32 = New System.Windows.Forms.Label()
         Me.Panel29 = New System.Windows.Forms.Panel()
         Me.Label33 = New System.Windows.Forms.Label()
+        Me.Panel28 = New System.Windows.Forms.Panel()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Panel27 = New System.Windows.Forms.Panel()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
         Me.panelTableBody = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Panel31 = New System.Windows.Forms.Panel()
+        Me.Panel38 = New System.Windows.Forms.Panel()
+        Me.lblLessTax = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Panel37 = New System.Windows.Forms.Panel()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.lblAddVAT = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.lblTotalSales = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Panel34 = New System.Windows.Forms.Panel()
+        Me.lblZeroRatedSales = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Panel33 = New System.Windows.Forms.Panel()
+        Me.lblVATExempt = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Panel32 = New System.Windows.Forms.Panel()
+        Me.lblVATSales = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblTotalAmount = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelListViewBody = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -99,113 +132,80 @@ Partial Class frmPrintSalesInvoiceV2
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Panel31 = New System.Windows.Forms.Panel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label49 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lblTotalAmount = New System.Windows.Forms.Label()
-        Me.Panel32 = New System.Windows.Forms.Panel()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.lblVATSales = New System.Windows.Forms.Label()
-        Me.Panel33 = New System.Windows.Forms.Panel()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.lblVATExempt = New System.Windows.Forms.Label()
-        Me.Panel34 = New System.Windows.Forms.Panel()
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.lblZeroRatedSales = New System.Windows.Forms.Label()
-        Me.Panel35 = New System.Windows.Forms.Panel()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.lblTotalSales = New System.Windows.Forms.Label()
-        Me.Panel36 = New System.Windows.Forms.Panel()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.lblAddVAT = New System.Windows.Forms.Label()
-        Me.Panel37 = New System.Windows.Forms.Panel()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.lblTotal = New System.Windows.Forms.Label()
-        Me.Panel38 = New System.Windows.Forms.Panel()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.lblLessTax = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel39 = New System.Windows.Forms.Panel()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Panel41 = New System.Windows.Forms.Panel()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Panel44 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel16 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lblDRNo = New System.Windows.Forms.Label()
-        Me.Panel43 = New System.Windows.Forms.Panel()
-        Me.Label = New System.Windows.Forms.Label()
-        Me.Panel42 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel17 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lblCheckedBy = New System.Windows.Forms.Label()
-        Me.Panel45 = New System.Windows.Forms.Panel()
-        Me.Label57 = New System.Windows.Forms.Label()
         Me.Panel46 = New System.Windows.Forms.Panel()
+        Me.lblApprovedBy = New System.Windows.Forms.Label()
         Me.Guna2Panel18 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblApprovedBy = New System.Windows.Forms.Label()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.Panel45 = New System.Windows.Forms.Panel()
+        Me.Panel42 = New System.Windows.Forms.Panel()
+        Me.lblCheckedBy = New System.Windows.Forms.Label()
+        Me.Guna2Panel17 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label = New System.Windows.Forms.Label()
+        Me.Panel43 = New System.Windows.Forms.Panel()
+        Me.Panel44 = New System.Windows.Forms.Panel()
+        Me.lblDRNo = New System.Windows.Forms.Label()
+        Me.Guna2Panel16 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label56 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel49 = New System.Windows.Forms.Panel()
-        Me.Label69 = New System.Windows.Forms.Label()
-        Me.Panel54 = New System.Windows.Forms.Panel()
-        Me.Guna2Panel19 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Panel53 = New System.Windows.Forms.Panel()
-        Me.Label63 = New System.Windows.Forms.Label()
         Me.Panel50 = New System.Windows.Forms.Panel()
         Me.Guna2Panel20 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Panel40 = New System.Windows.Forms.Panel()
+        Me.Label63 = New System.Windows.Forms.Label()
+        Me.Panel53 = New System.Windows.Forms.Panel()
+        Me.Panel54 = New System.Windows.Forms.Panel()
+        Me.Guna2Panel19 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label69 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.pnlBody = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btnPrint = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel57 = New System.Windows.Forms.Panel()
-        Me.Panel58 = New System.Windows.Forms.Panel()
         Me.Panel4.SuspendLayout()
+        Me.Panel58.SuspendLayout()
+        Me.Panel40.SuspendLayout()
         Me.Panel7.SuspendLayout()
-        Me.Panel8.SuspendLayout()
         Me.Panel11.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         Me.Panel12.SuspendLayout()
-        Me.Panel15.SuspendLayout()
         Me.Panel13.SuspendLayout()
+        Me.Panel15.SuspendLayout()
         Me.Panel10.SuspendLayout()
-        Me.Panel18.SuspendLayout()
         Me.Panel16.SuspendLayout()
+        Me.Panel18.SuspendLayout()
         Me.Panel19.SuspendLayout()
-        Me.Panel22.SuspendLayout()
         Me.Panel20.SuspendLayout()
+        Me.Panel22.SuspendLayout()
         Me.Panel23.SuspendLayout()
-        Me.Panel26.SuspendLayout()
         Me.Panel24.SuspendLayout()
+        Me.Panel26.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
-        Me.Panel27.SuspendLayout()
-        Me.Panel28.SuspendLayout()
         Me.Panel29.SuspendLayout()
+        Me.Panel28.SuspendLayout()
+        Me.Panel27.SuspendLayout()
         Me.panelTableBody.SuspendLayout()
+        Me.Panel31.SuspendLayout()
+        Me.Panel38.SuspendLayout()
+        Me.Panel37.SuspendLayout()
+        Me.Panel36.SuspendLayout()
+        Me.Panel35.SuspendLayout()
+        Me.Panel34.SuspendLayout()
+        Me.Panel33.SuspendLayout()
+        Me.Panel32.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
         Me.panelListViewBody.SuspendLayout()
-        Me.Panel31.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.Panel32.SuspendLayout()
-        Me.Panel33.SuspendLayout()
-        Me.Panel34.SuspendLayout()
-        Me.Panel35.SuspendLayout()
-        Me.Panel36.SuspendLayout()
-        Me.Panel37.SuspendLayout()
-        Me.Panel38.SuspendLayout()
         Me.Panel39.SuspendLayout()
         Me.Panel41.SuspendLayout()
-        Me.Panel44.SuspendLayout()
-        Me.Panel42.SuspendLayout()
         Me.Panel46.SuspendLayout()
         Me.Guna2Panel18.SuspendLayout()
+        Me.Panel42.SuspendLayout()
+        Me.Panel44.SuspendLayout()
         Me.Panel49.SuspendLayout()
-        Me.Panel54.SuspendLayout()
         Me.Panel50.SuspendLayout()
-        Me.Panel40.SuspendLayout()
+        Me.Panel54.SuspendLayout()
         Me.pnlBody.SuspendLayout()
-        Me.Panel58.SuspendLayout()
         Me.SuspendLayout()
         '
         'PrintForm1
@@ -269,6 +269,48 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel4.Size = New System.Drawing.Size(1241, 60)
         Me.Panel4.TabIndex = 7
         '
+        'Panel58
+        '
+        Me.Panel58.BackColor = System.Drawing.Color.White
+        Me.Panel58.Controls.Add(Me.btnPrint)
+        Me.Panel58.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel58.Location = New System.Drawing.Point(854, 0)
+        Me.Panel58.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel58.Name = "Panel58"
+        Me.Panel58.Size = New System.Drawing.Size(187, 60)
+        Me.Panel58.TabIndex = 64
+        '
+        'btnPrint
+        '
+        Me.btnPrint.BorderRadius = 8
+        Me.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnPrint.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnPrint.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnPrint.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnPrint.ForeColor = System.Drawing.Color.White
+        Me.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnPrint.Location = New System.Drawing.Point(0, 0)
+        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.PressedDepth = 20
+        Me.btnPrint.Size = New System.Drawing.Size(187, 60)
+        Me.btnPrint.TabIndex = 57
+        Me.btnPrint.Text = "Print"
+        '
+        'Panel57
+        '
+        Me.Panel57.BackColor = System.Drawing.Color.White
+        Me.Panel57.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel57.Location = New System.Drawing.Point(1041, 0)
+        Me.Panel57.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel57.Name = "Panel57"
+        Me.Panel57.Size = New System.Drawing.Size(13, 60)
+        Me.Panel57.TabIndex = 63
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -279,6 +321,38 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Label1.Size = New System.Drawing.Size(160, 24)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "SALES INVOICE"
+        '
+        'Panel40
+        '
+        Me.Panel40.BackColor = System.Drawing.Color.White
+        Me.Panel40.Controls.Add(Me.btnCancel)
+        Me.Panel40.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel40.Location = New System.Drawing.Point(1054, 0)
+        Me.Panel40.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel40.Name = "Panel40"
+        Me.Panel40.Size = New System.Drawing.Size(187, 60)
+        Me.Panel40.TabIndex = 60
+        '
+        'btnCancel
+        '
+        Me.btnCancel.BorderRadius = 8
+        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnCancel.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnCancel.Location = New System.Drawing.Point(0, 0)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.PressedDepth = 20
+        Me.btnCancel.Size = New System.Drawing.Size(187, 60)
+        Me.btnCancel.TabIndex = 57
+        Me.btnCancel.Text = "Cancel"
         '
         'Panel7
         '
@@ -294,74 +368,6 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel7.Size = New System.Drawing.Size(1241, 44)
         Me.Panel7.TabIndex = 10
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label2.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(78, 17)
-        Me.Label2.TabIndex = 48
-        Me.Label2.Text = "SOLD TO:"
-        '
-        'Panel8
-        '
-        Me.Panel8.Controls.Add(Me.lblSoldTo)
-        Me.Panel8.Controls.Add(Me.Guna2Panel6)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel8.Location = New System.Drawing.Point(78, 0)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(680, 44)
-        Me.Panel8.TabIndex = 51
-        '
-        'Guna2Panel6
-        '
-        Me.Guna2Panel6.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel6.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel6.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 19)
-        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.Size = New System.Drawing.Size(680, 25)
-        Me.Guna2Panel6.TabIndex = 54
-        '
-        'lblSoldTo
-        '
-        Me.lblSoldTo.AutoSize = True
-        Me.lblSoldTo.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblSoldTo.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblSoldTo.Location = New System.Drawing.Point(0, 0)
-        Me.lblSoldTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblSoldTo.Name = "lblSoldTo"
-        Me.lblSoldTo.Size = New System.Drawing.Size(53, 17)
-        Me.lblSoldTo.TabIndex = 53
-        Me.lblSoldTo.Text = "XXXXX"
-        '
-        'Panel9
-        '
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel9.Location = New System.Drawing.Point(758, 0)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(53, 44)
-        Me.Panel9.TabIndex = 8
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label4.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label4.Location = New System.Drawing.Point(811, 0)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(50, 17)
-        Me.Label4.TabIndex = 52
-        Me.Label4.Text = "DATE:"
-        '
         'Panel11
         '
         Me.Panel11.Controls.Add(Me.lblDate)
@@ -372,6 +378,18 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(707, 44)
         Me.Panel11.TabIndex = 53
+        '
+        'lblDate
+        '
+        Me.lblDate.AutoSize = True
+        Me.lblDate.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblDate.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblDate.Location = New System.Drawing.Point(0, 0)
+        Me.lblDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(53, 17)
+        Me.lblDate.TabIndex = 53
+        Me.lblDate.Text = "XXXXX"
         '
         'Guna2Panel7
         '
@@ -386,17 +404,73 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Guna2Panel7.Size = New System.Drawing.Size(707, 25)
         Me.Guna2Panel7.TabIndex = 55
         '
-        'lblDate
+        'Label4
         '
-        Me.lblDate.AutoSize = True
-        Me.lblDate.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblDate.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblDate.Location = New System.Drawing.Point(0, 0)
-        Me.lblDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(53, 17)
-        Me.lblDate.TabIndex = 53
-        Me.lblDate.Text = "XXXXX"
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label4.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label4.Location = New System.Drawing.Point(811, 0)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(50, 17)
+        Me.Label4.TabIndex = 52
+        Me.Label4.Text = "DATE:"
+        '
+        'Panel9
+        '
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel9.Location = New System.Drawing.Point(758, 0)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(53, 44)
+        Me.Panel9.TabIndex = 8
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.lblSoldTo)
+        Me.Panel8.Controls.Add(Me.Guna2Panel6)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel8.Location = New System.Drawing.Point(78, 0)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(680, 44)
+        Me.Panel8.TabIndex = 51
+        '
+        'lblSoldTo
+        '
+        Me.lblSoldTo.AutoSize = True
+        Me.lblSoldTo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblSoldTo.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblSoldTo.Location = New System.Drawing.Point(0, 0)
+        Me.lblSoldTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSoldTo.Name = "lblSoldTo"
+        Me.lblSoldTo.Size = New System.Drawing.Size(53, 17)
+        Me.lblSoldTo.TabIndex = 53
+        Me.lblSoldTo.Text = "XXXXX"
+        '
+        'Guna2Panel6
+        '
+        Me.Guna2Panel6.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel6.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel6.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel6.Name = "Guna2Panel6"
+        Me.Guna2Panel6.Size = New System.Drawing.Size(680, 25)
+        Me.Guna2Panel6.TabIndex = 54
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label2.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(78, 17)
+        Me.Label2.TabIndex = 48
+        Me.Label2.Text = "SOLD TO:"
         '
         'Panel12
         '
@@ -412,75 +486,6 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel12.Size = New System.Drawing.Size(1241, 44)
         Me.Panel12.TabIndex = 11
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label12.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label12.Location = New System.Drawing.Point(0, 0)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(146, 17)
-        Me.Label12.TabIndex = 48
-        Me.Label12.Text = "ADDRESS/SHIP TO:"
-        '
-        'Panel15
-        '
-        Me.Panel15.Controls.Add(Me.lblAddress)
-        Me.Panel15.Controls.Add(Me.Guna2Panel8)
-        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel15.Location = New System.Drawing.Point(146, 0)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(605, 44)
-        Me.Panel15.TabIndex = 51
-        '
-        'Guna2Panel8
-        '
-        Me.Guna2Panel8.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel8.BorderThickness = 2
-        Me.Guna2Panel8.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel8.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel8.Location = New System.Drawing.Point(0, 19)
-        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Guna2Panel8.Name = "Guna2Panel8"
-        Me.Guna2Panel8.Size = New System.Drawing.Size(605, 25)
-        Me.Guna2Panel8.TabIndex = 56
-        '
-        'lblAddress
-        '
-        Me.lblAddress.AutoSize = True
-        Me.lblAddress.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblAddress.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblAddress.Location = New System.Drawing.Point(0, 0)
-        Me.lblAddress.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblAddress.Name = "lblAddress"
-        Me.lblAddress.Size = New System.Drawing.Size(53, 17)
-        Me.lblAddress.TabIndex = 53
-        Me.lblAddress.Text = "XXXXX"
-        '
-        'Panel14
-        '
-        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel14.Location = New System.Drawing.Point(751, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(53, 44)
-        Me.Panel14.TabIndex = 8
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label9.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label9.Location = New System.Drawing.Point(804, 0)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(66, 17)
-        Me.Label9.TabIndex = 52
-        Me.Label9.Text = "P.O. NO:"
-        '
         'Panel13
         '
         Me.Panel13.Controls.Add(Me.lblPONo)
@@ -491,6 +496,18 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(707, 44)
         Me.Panel13.TabIndex = 53
+        '
+        'lblPONo
+        '
+        Me.lblPONo.AutoSize = True
+        Me.lblPONo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblPONo.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblPONo.Location = New System.Drawing.Point(0, 0)
+        Me.lblPONo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPONo.Name = "lblPONo"
+        Me.lblPONo.Size = New System.Drawing.Size(53, 17)
+        Me.lblPONo.TabIndex = 53
+        Me.lblPONo.Text = "XXXXX"
         '
         'Guna2Panel9
         '
@@ -505,17 +522,74 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Guna2Panel9.Size = New System.Drawing.Size(707, 25)
         Me.Guna2Panel9.TabIndex = 57
         '
-        'lblPONo
+        'Label9
         '
-        Me.lblPONo.AutoSize = True
-        Me.lblPONo.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblPONo.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblPONo.Location = New System.Drawing.Point(0, 0)
-        Me.lblPONo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblPONo.Name = "lblPONo"
-        Me.lblPONo.Size = New System.Drawing.Size(53, 17)
-        Me.lblPONo.TabIndex = 53
-        Me.lblPONo.Text = "XXXXX"
+        Me.Label9.AutoSize = True
+        Me.Label9.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label9.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label9.Location = New System.Drawing.Point(804, 0)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(66, 17)
+        Me.Label9.TabIndex = 52
+        Me.Label9.Text = "P.O. NO:"
+        '
+        'Panel14
+        '
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel14.Location = New System.Drawing.Point(751, 0)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(53, 44)
+        Me.Panel14.TabIndex = 8
+        '
+        'Panel15
+        '
+        Me.Panel15.Controls.Add(Me.lblAddress)
+        Me.Panel15.Controls.Add(Me.Guna2Panel8)
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel15.Location = New System.Drawing.Point(146, 0)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(605, 44)
+        Me.Panel15.TabIndex = 51
+        '
+        'lblAddress
+        '
+        Me.lblAddress.AutoSize = True
+        Me.lblAddress.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblAddress.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblAddress.Location = New System.Drawing.Point(0, 0)
+        Me.lblAddress.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblAddress.Name = "lblAddress"
+        Me.lblAddress.Size = New System.Drawing.Size(53, 17)
+        Me.lblAddress.TabIndex = 53
+        Me.lblAddress.Text = "XXXXX"
+        '
+        'Guna2Panel8
+        '
+        Me.Guna2Panel8.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel8.BorderThickness = 2
+        Me.Guna2Panel8.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel8.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2Panel8.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel8.Name = "Guna2Panel8"
+        Me.Guna2Panel8.Size = New System.Drawing.Size(605, 25)
+        Me.Guna2Panel8.TabIndex = 56
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label12.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label12.Location = New System.Drawing.Point(0, 0)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(146, 17)
+        Me.Label12.TabIndex = 48
+        Me.Label12.Text = "ADDRESS/SHIP TO:"
         '
         'Panel10
         '
@@ -531,75 +605,6 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel10.Size = New System.Drawing.Size(1241, 44)
         Me.Panel10.TabIndex = 18
         '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label18.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label18.Location = New System.Drawing.Point(0, 0)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(82, 17)
-        Me.Label18.TabIndex = 48
-        Me.Label18.Text = "DELIVERY:"
-        '
-        'Panel18
-        '
-        Me.Panel18.Controls.Add(Me.lblDelivery)
-        Me.Panel18.Controls.Add(Me.Guna2Panel10)
-        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel18.Location = New System.Drawing.Point(82, 0)
-        Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(673, 44)
-        Me.Panel18.TabIndex = 51
-        '
-        'Guna2Panel10
-        '
-        Me.Guna2Panel10.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel10.BorderThickness = 2
-        Me.Guna2Panel10.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel10.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.Guna2Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel10.Location = New System.Drawing.Point(0, 19)
-        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Guna2Panel10.Name = "Guna2Panel10"
-        Me.Guna2Panel10.Size = New System.Drawing.Size(673, 25)
-        Me.Guna2Panel10.TabIndex = 57
-        '
-        'lblDelivery
-        '
-        Me.lblDelivery.AutoSize = True
-        Me.lblDelivery.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblDelivery.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblDelivery.Location = New System.Drawing.Point(0, 0)
-        Me.lblDelivery.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblDelivery.Name = "lblDelivery"
-        Me.lblDelivery.Size = New System.Drawing.Size(53, 17)
-        Me.lblDelivery.TabIndex = 53
-        Me.lblDelivery.Text = "XXXXX"
-        '
-        'Panel17
-        '
-        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel17.Location = New System.Drawing.Point(755, 0)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(53, 44)
-        Me.Panel17.TabIndex = 8
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label15.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label15.Location = New System.Drawing.Point(808, 0)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(63, 17)
-        Me.Label15.TabIndex = 52
-        Me.Label15.Text = "TERMS:"
-        '
         'Panel16
         '
         Me.Panel16.Controls.Add(Me.lblTerms)
@@ -610,6 +615,18 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(707, 44)
         Me.Panel16.TabIndex = 53
+        '
+        'lblTerms
+        '
+        Me.lblTerms.AutoSize = True
+        Me.lblTerms.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblTerms.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblTerms.Location = New System.Drawing.Point(0, 0)
+        Me.lblTerms.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTerms.Name = "lblTerms"
+        Me.lblTerms.Size = New System.Drawing.Size(53, 17)
+        Me.lblTerms.TabIndex = 53
+        Me.lblTerms.Text = "XXXXX"
         '
         'Guna2Panel11
         '
@@ -624,17 +641,74 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Guna2Panel11.Size = New System.Drawing.Size(707, 25)
         Me.Guna2Panel11.TabIndex = 57
         '
-        'lblTerms
+        'Label15
         '
-        Me.lblTerms.AutoSize = True
-        Me.lblTerms.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblTerms.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblTerms.Location = New System.Drawing.Point(0, 0)
-        Me.lblTerms.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTerms.Name = "lblTerms"
-        Me.lblTerms.Size = New System.Drawing.Size(53, 17)
-        Me.lblTerms.TabIndex = 53
-        Me.lblTerms.Text = "XXXXX"
+        Me.Label15.AutoSize = True
+        Me.Label15.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label15.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label15.Location = New System.Drawing.Point(808, 0)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(63, 17)
+        Me.Label15.TabIndex = 52
+        Me.Label15.Text = "TERMS:"
+        '
+        'Panel17
+        '
+        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel17.Location = New System.Drawing.Point(755, 0)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel17.Name = "Panel17"
+        Me.Panel17.Size = New System.Drawing.Size(53, 44)
+        Me.Panel17.TabIndex = 8
+        '
+        'Panel18
+        '
+        Me.Panel18.Controls.Add(Me.lblDelivery)
+        Me.Panel18.Controls.Add(Me.Guna2Panel10)
+        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel18.Location = New System.Drawing.Point(82, 0)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel18.Name = "Panel18"
+        Me.Panel18.Size = New System.Drawing.Size(673, 44)
+        Me.Panel18.TabIndex = 51
+        '
+        'lblDelivery
+        '
+        Me.lblDelivery.AutoSize = True
+        Me.lblDelivery.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblDelivery.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblDelivery.Location = New System.Drawing.Point(0, 0)
+        Me.lblDelivery.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDelivery.Name = "lblDelivery"
+        Me.lblDelivery.Size = New System.Drawing.Size(53, 17)
+        Me.lblDelivery.TabIndex = 53
+        Me.lblDelivery.Text = "XXXXX"
+        '
+        'Guna2Panel10
+        '
+        Me.Guna2Panel10.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel10.BorderThickness = 2
+        Me.Guna2Panel10.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel10.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2Panel10.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel10.Name = "Guna2Panel10"
+        Me.Guna2Panel10.Size = New System.Drawing.Size(673, 25)
+        Me.Guna2Panel10.TabIndex = 57
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label18.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label18.Location = New System.Drawing.Point(0, 0)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(82, 17)
+        Me.Label18.TabIndex = 48
+        Me.Label18.Text = "DELIVERY:"
         '
         'Panel19
         '
@@ -650,16 +724,62 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel19.Size = New System.Drawing.Size(1241, 44)
         Me.Panel19.TabIndex = 19
         '
-        'Label24
+        'Panel20
         '
-        Me.Label24.AutoSize = True
-        Me.Label24.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label24.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(0, 0)
-        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(0, 23)
-        Me.Label24.TabIndex = 48
+        Me.Panel20.Controls.Add(Me.lblSalesman)
+        Me.Panel20.Controls.Add(Me.Guna2Panel13)
+        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel20.Location = New System.Drawing.Point(894, 0)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel20.Name = "Panel20"
+        Me.Panel20.Size = New System.Drawing.Size(707, 44)
+        Me.Panel20.TabIndex = 53
+        '
+        'lblSalesman
+        '
+        Me.lblSalesman.AutoSize = True
+        Me.lblSalesman.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblSalesman.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblSalesman.Location = New System.Drawing.Point(0, 0)
+        Me.lblSalesman.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSalesman.Name = "lblSalesman"
+        Me.lblSalesman.Size = New System.Drawing.Size(53, 17)
+        Me.lblSalesman.TabIndex = 53
+        Me.lblSalesman.Text = "XXXXX"
+        '
+        'Guna2Panel13
+        '
+        Me.Guna2Panel13.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel13.BorderThickness = 2
+        Me.Guna2Panel13.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel13.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2Panel13.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel13.Name = "Guna2Panel13"
+        Me.Guna2Panel13.Size = New System.Drawing.Size(707, 25)
+        Me.Guna2Panel13.TabIndex = 59
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label21.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label21.Location = New System.Drawing.Point(816, 0)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(78, 17)
+        Me.Label21.TabIndex = 52
+        Me.Label21.Text = "Salesman:"
+        '
+        'Panel21
+        '
+        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel21.Location = New System.Drawing.Point(763, 0)
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel21.Name = "Panel21"
+        Me.Panel21.Size = New System.Drawing.Size(53, 44)
+        Me.Panel21.TabIndex = 8
         '
         'Panel22
         '
@@ -684,62 +804,16 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Guna2Panel12.Size = New System.Drawing.Size(763, 25)
         Me.Guna2Panel12.TabIndex = 58
         '
-        'Panel21
+        'Label24
         '
-        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel21.Location = New System.Drawing.Point(763, 0)
-        Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(53, 44)
-        Me.Panel21.TabIndex = 8
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label21.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label21.Location = New System.Drawing.Point(816, 0)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(78, 17)
-        Me.Label21.TabIndex = 52
-        Me.Label21.Text = "Salesman:"
-        '
-        'Panel20
-        '
-        Me.Panel20.Controls.Add(Me.lblSalesman)
-        Me.Panel20.Controls.Add(Me.Guna2Panel13)
-        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel20.Location = New System.Drawing.Point(894, 0)
-        Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(707, 44)
-        Me.Panel20.TabIndex = 53
-        '
-        'Guna2Panel13
-        '
-        Me.Guna2Panel13.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel13.BorderThickness = 2
-        Me.Guna2Panel13.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel13.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.Guna2Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel13.Location = New System.Drawing.Point(0, 19)
-        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Guna2Panel13.Name = "Guna2Panel13"
-        Me.Guna2Panel13.Size = New System.Drawing.Size(707, 25)
-        Me.Guna2Panel13.TabIndex = 59
-        '
-        'lblSalesman
-        '
-        Me.lblSalesman.AutoSize = True
-        Me.lblSalesman.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblSalesman.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblSalesman.Location = New System.Drawing.Point(0, 0)
-        Me.lblSalesman.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblSalesman.Name = "lblSalesman"
-        Me.lblSalesman.Size = New System.Drawing.Size(53, 17)
-        Me.lblSalesman.TabIndex = 53
-        Me.lblSalesman.Text = "XXXXX"
+        Me.Label24.AutoSize = True
+        Me.Label24.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label24.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(0, 0)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(0, 23)
+        Me.Label24.TabIndex = 48
         '
         'Panel23
         '
@@ -755,75 +829,6 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel23.Size = New System.Drawing.Size(1241, 44)
         Me.Panel23.TabIndex = 20
         '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label29.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label29.Location = New System.Drawing.Point(0, 0)
-        Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(92, 17)
-        Me.Label29.TabIndex = 48
-        Me.Label29.Text = "BUS STYLE:"
-        '
-        'Panel26
-        '
-        Me.Panel26.Controls.Add(Me.lblBusStyle)
-        Me.Panel26.Controls.Add(Me.Guna2Panel14)
-        Me.Panel26.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel26.Location = New System.Drawing.Point(92, 0)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(663, 44)
-        Me.Panel26.TabIndex = 51
-        '
-        'Guna2Panel14
-        '
-        Me.Guna2Panel14.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel14.BorderThickness = 2
-        Me.Guna2Panel14.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel14.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.Guna2Panel14.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel14.Location = New System.Drawing.Point(0, 19)
-        Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Guna2Panel14.Name = "Guna2Panel14"
-        Me.Guna2Panel14.Size = New System.Drawing.Size(663, 25)
-        Me.Guna2Panel14.TabIndex = 59
-        '
-        'lblBusStyle
-        '
-        Me.lblBusStyle.AutoSize = True
-        Me.lblBusStyle.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblBusStyle.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblBusStyle.Location = New System.Drawing.Point(0, 0)
-        Me.lblBusStyle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblBusStyle.Name = "lblBusStyle"
-        Me.lblBusStyle.Size = New System.Drawing.Size(53, 17)
-        Me.lblBusStyle.TabIndex = 53
-        Me.lblBusStyle.Text = "XXXXX"
-        '
-        'Panel25
-        '
-        Me.Panel25.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel25.Location = New System.Drawing.Point(755, 0)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(53, 44)
-        Me.Panel25.TabIndex = 8
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label26.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label26.Location = New System.Drawing.Point(808, 0)
-        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(34, 17)
-        Me.Label26.TabIndex = 52
-        Me.Label26.Text = "TIN:"
-        '
         'Panel24
         '
         Me.Panel24.Controls.Add(Me.lblTIN)
@@ -834,6 +839,18 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel24.Name = "Panel24"
         Me.Panel24.Size = New System.Drawing.Size(707, 44)
         Me.Panel24.TabIndex = 53
+        '
+        'lblTIN
+        '
+        Me.lblTIN.AutoSize = True
+        Me.lblTIN.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblTIN.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblTIN.Location = New System.Drawing.Point(0, 0)
+        Me.lblTIN.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTIN.Name = "lblTIN"
+        Me.lblTIN.Size = New System.Drawing.Size(53, 17)
+        Me.lblTIN.TabIndex = 53
+        Me.lblTIN.Text = "XXXXX"
         '
         'Guna2Panel15
         '
@@ -848,17 +865,74 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Guna2Panel15.Size = New System.Drawing.Size(707, 25)
         Me.Guna2Panel15.TabIndex = 59
         '
-        'lblTIN
+        'Label26
         '
-        Me.lblTIN.AutoSize = True
-        Me.lblTIN.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblTIN.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblTIN.Location = New System.Drawing.Point(0, 0)
-        Me.lblTIN.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTIN.Name = "lblTIN"
-        Me.lblTIN.Size = New System.Drawing.Size(53, 17)
-        Me.lblTIN.TabIndex = 53
-        Me.lblTIN.Text = "XXXXX"
+        Me.Label26.AutoSize = True
+        Me.Label26.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label26.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label26.Location = New System.Drawing.Point(808, 0)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(34, 17)
+        Me.Label26.TabIndex = 52
+        Me.Label26.Text = "TIN:"
+        '
+        'Panel25
+        '
+        Me.Panel25.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel25.Location = New System.Drawing.Point(755, 0)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel25.Name = "Panel25"
+        Me.Panel25.Size = New System.Drawing.Size(53, 44)
+        Me.Panel25.TabIndex = 8
+        '
+        'Panel26
+        '
+        Me.Panel26.Controls.Add(Me.lblBusStyle)
+        Me.Panel26.Controls.Add(Me.Guna2Panel14)
+        Me.Panel26.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel26.Location = New System.Drawing.Point(92, 0)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel26.Name = "Panel26"
+        Me.Panel26.Size = New System.Drawing.Size(663, 44)
+        Me.Panel26.TabIndex = 51
+        '
+        'lblBusStyle
+        '
+        Me.lblBusStyle.AutoSize = True
+        Me.lblBusStyle.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblBusStyle.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblBusStyle.Location = New System.Drawing.Point(0, 0)
+        Me.lblBusStyle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblBusStyle.Name = "lblBusStyle"
+        Me.lblBusStyle.Size = New System.Drawing.Size(53, 17)
+        Me.lblBusStyle.TabIndex = 53
+        Me.lblBusStyle.Text = "XXXXX"
+        '
+        'Guna2Panel14
+        '
+        Me.Guna2Panel14.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel14.BorderThickness = 2
+        Me.Guna2Panel14.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel14.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel14.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2Panel14.Location = New System.Drawing.Point(0, 19)
+        Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel14.Name = "Guna2Panel14"
+        Me.Guna2Panel14.Size = New System.Drawing.Size(663, 25)
+        Me.Guna2Panel14.TabIndex = 59
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label29.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label29.Location = New System.Drawing.Point(0, 0)
+        Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(92, 17)
+        Me.Label29.TabIndex = 48
+        Me.Label29.Text = "BUS STYLE:"
         '
         'Guna2Panel4
         '
@@ -874,41 +948,26 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Guna2Panel4.Size = New System.Drawing.Size(1241, 74)
         Me.Guna2Panel4.TabIndex = 21
         '
-        'Panel27
+        'Panel29
         '
-        Me.Panel27.Controls.Add(Me.Label31)
-        Me.Panel27.Controls.Add(Me.Label30)
-        Me.Panel27.Location = New System.Drawing.Point(9, 10)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(1227, 18)
-        Me.Panel27.TabIndex = 108
+        Me.Panel29.Controls.Add(Me.Label33)
+        Me.Panel29.Location = New System.Drawing.Point(11, 48)
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel29.Name = "Panel29"
+        Me.Panel29.Size = New System.Drawing.Size(1227, 18)
+        Me.Panel29.TabIndex = 110
         '
-        'Label30
+        'Label33
         '
-        Me.Label30.AutoSize = True
-        Me.Label30.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label30.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(0, 0)
-        Me.Label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(60, 16)
-        Me.Label30.TabIndex = 84
-        Me.Label30.Text = "TERMS:"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label31.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(60, 0)
-        Me.Label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(1136, 16)
-        Me.Label31.TabIndex = 85
-        Me.Label31.Text = "Interest at 12% per annum will be charged on all accounts overdue until time of s" &
-    "tatement. An additional sum equal to 25% of the account will be charged for atto" &
-    "rney's fee and cost"
+        Me.Label33.AutoSize = True
+        Me.Label33.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label33.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(0, 0)
+        Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(505, 16)
+        Me.Label33.TabIndex = 87
+        Me.Label33.Text = "described remain the property if RAMBIC CORPORATION until are fully pair for."
         '
         'Panel28
         '
@@ -933,26 +992,41 @@ Partial Class frmPrintSalesInvoiceV2
     "iction to the Courts of the City of Muntinlupa for any legal action arising out " &
     "of this transaction. All goods herein"
         '
-        'Panel29
+        'Panel27
         '
-        Me.Panel29.Controls.Add(Me.Label33)
-        Me.Panel29.Location = New System.Drawing.Point(11, 48)
-        Me.Panel29.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(1227, 18)
-        Me.Panel29.TabIndex = 110
+        Me.Panel27.Controls.Add(Me.Label31)
+        Me.Panel27.Controls.Add(Me.Label30)
+        Me.Panel27.Location = New System.Drawing.Point(9, 10)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel27.Name = "Panel27"
+        Me.Panel27.Size = New System.Drawing.Size(1227, 18)
+        Me.Panel27.TabIndex = 108
         '
-        'Label33
+        'Label31
         '
-        Me.Label33.AutoSize = True
-        Me.Label33.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label33.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(0, 0)
-        Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(505, 16)
-        Me.Label33.TabIndex = 87
-        Me.Label33.Text = "described remain the property if RAMBIC CORPORATION until are fully pair for."
+        Me.Label31.AutoSize = True
+        Me.Label31.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label31.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.Location = New System.Drawing.Point(60, 0)
+        Me.Label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(1136, 16)
+        Me.Label31.TabIndex = 85
+        Me.Label31.Text = "Interest at 12% per annum will be charged on all accounts overdue until time of s" &
+    "tatement. An additional sum equal to 25% of the account will be charged for atto" &
+    "rney's fee and cost"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label30.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(0, 0)
+        Me.Label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(60, 16)
+        Me.Label30.TabIndex = 84
+        Me.Label30.Text = "TERMS:"
         '
         'panelTableBody
         '
@@ -966,6 +1040,343 @@ Partial Class frmPrintSalesInvoiceV2
         Me.panelTableBody.Name = "panelTableBody"
         Me.panelTableBody.Size = New System.Drawing.Size(1241, 394)
         Me.panelTableBody.TabIndex = 22
+        '
+        'Panel31
+        '
+        Me.Panel31.Controls.Add(Me.Panel38)
+        Me.Panel31.Controls.Add(Me.Panel37)
+        Me.Panel31.Controls.Add(Me.Panel36)
+        Me.Panel31.Controls.Add(Me.Panel35)
+        Me.Panel31.Controls.Add(Me.Panel34)
+        Me.Panel31.Controls.Add(Me.Panel33)
+        Me.Panel31.Controls.Add(Me.Panel32)
+        Me.Panel31.Controls.Add(Me.GroupBox1)
+        Me.Panel31.Location = New System.Drawing.Point(824, 7)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel31.Name = "Panel31"
+        Me.Panel31.Size = New System.Drawing.Size(409, 382)
+        Me.Panel31.TabIndex = 82
+        '
+        'Panel38
+        '
+        Me.Panel38.Controls.Add(Me.lblLessTax)
+        Me.Panel38.Controls.Add(Me.Label48)
+        Me.Panel38.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel38.Location = New System.Drawing.Point(0, 258)
+        Me.Panel38.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel38.Name = "Panel38"
+        Me.Panel38.Size = New System.Drawing.Size(409, 43)
+        Me.Panel38.TabIndex = 114
+        '
+        'lblLessTax
+        '
+        Me.lblLessTax.AutoSize = True
+        Me.lblLessTax.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblLessTax.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLessTax.Location = New System.Drawing.Point(150, 0)
+        Me.lblLessTax.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblLessTax.Name = "lblLessTax"
+        Me.lblLessTax.Size = New System.Drawing.Size(53, 17)
+        Me.lblLessTax.TabIndex = 54
+        Me.lblLessTax.Text = "XXXXX"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label48.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label48.Location = New System.Drawing.Point(0, 0)
+        Me.Label48.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(150, 17)
+        Me.Label48.TabIndex = 49
+        Me.Label48.Text = "Less Withholding Tax:"
+        '
+        'Panel37
+        '
+        Me.Panel37.Controls.Add(Me.lblTotal)
+        Me.Panel37.Controls.Add(Me.Label46)
+        Me.Panel37.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel37.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel37.Location = New System.Drawing.Point(0, 215)
+        Me.Panel37.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel37.Name = "Panel37"
+        Me.Panel37.Size = New System.Drawing.Size(409, 43)
+        Me.Panel37.TabIndex = 113
+        '
+        'lblTotal
+        '
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblTotal.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.Location = New System.Drawing.Point(42, 0)
+        Me.lblTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(53, 17)
+        Me.lblTotal.TabIndex = 54
+        Me.lblTotal.Text = "XXXXX"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label46.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.Location = New System.Drawing.Point(0, 0)
+        Me.Label46.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(42, 17)
+        Me.Label46.TabIndex = 49
+        Me.Label46.Text = "Total:"
+        '
+        'Panel36
+        '
+        Me.Panel36.Controls.Add(Me.lblAddVAT)
+        Me.Panel36.Controls.Add(Me.Label44)
+        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel36.Location = New System.Drawing.Point(0, 172)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(409, 43)
+        Me.Panel36.TabIndex = 112
+        '
+        'lblAddVAT
+        '
+        Me.lblAddVAT.AutoSize = True
+        Me.lblAddVAT.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblAddVAT.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAddVAT.Location = New System.Drawing.Point(97, 0)
+        Me.lblAddVAT.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblAddVAT.Name = "lblAddVAT"
+        Me.lblAddVAT.Size = New System.Drawing.Size(53, 17)
+        Me.lblAddVAT.TabIndex = 54
+        Me.lblAddVAT.Text = "XXXXX"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label44.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(0, 0)
+        Me.Label44.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(97, 17)
+        Me.Label44.TabIndex = 49
+        Me.Label44.Text = "Add 12% VAT:"
+        '
+        'Panel35
+        '
+        Me.Panel35.Controls.Add(Me.lblTotalSales)
+        Me.Panel35.Controls.Add(Me.Label42)
+        Me.Panel35.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel35.Location = New System.Drawing.Point(0, 129)
+        Me.Panel35.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel35.Name = "Panel35"
+        Me.Panel35.Size = New System.Drawing.Size(409, 43)
+        Me.Panel35.TabIndex = 111
+        '
+        'lblTotalSales
+        '
+        Me.lblTotalSales.AutoSize = True
+        Me.lblTotalSales.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblTotalSales.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalSales.Location = New System.Drawing.Point(83, 0)
+        Me.lblTotalSales.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTotalSales.Name = "lblTotalSales"
+        Me.lblTotalSales.Size = New System.Drawing.Size(53, 17)
+        Me.lblTotalSales.TabIndex = 54
+        Me.lblTotalSales.Text = "XXXXX"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label42.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.Location = New System.Drawing.Point(0, 0)
+        Me.Label42.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(83, 17)
+        Me.Label42.TabIndex = 49
+        Me.Label42.Text = "Total Sales:"
+        '
+        'Panel34
+        '
+        Me.Panel34.Controls.Add(Me.lblZeroRatedSales)
+        Me.Panel34.Controls.Add(Me.Label40)
+        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel34.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel34.Location = New System.Drawing.Point(0, 86)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel34.Name = "Panel34"
+        Me.Panel34.Size = New System.Drawing.Size(409, 43)
+        Me.Panel34.TabIndex = 110
+        '
+        'lblZeroRatedSales
+        '
+        Me.lblZeroRatedSales.AutoSize = True
+        Me.lblZeroRatedSales.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblZeroRatedSales.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblZeroRatedSales.Location = New System.Drawing.Point(125, 0)
+        Me.lblZeroRatedSales.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblZeroRatedSales.Name = "lblZeroRatedSales"
+        Me.lblZeroRatedSales.Size = New System.Drawing.Size(53, 17)
+        Me.lblZeroRatedSales.TabIndex = 54
+        Me.lblZeroRatedSales.Text = "XXXXX"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label40.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(0, 0)
+        Me.Label40.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(125, 17)
+        Me.Label40.TabIndex = 49
+        Me.Label40.Text = "Zero Rated Sales:"
+        '
+        'Panel33
+        '
+        Me.Panel33.Controls.Add(Me.lblVATExempt)
+        Me.Panel33.Controls.Add(Me.Label38)
+        Me.Panel33.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel33.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel33.Location = New System.Drawing.Point(0, 43)
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel33.Name = "Panel33"
+        Me.Panel33.Size = New System.Drawing.Size(409, 43)
+        Me.Panel33.TabIndex = 109
+        '
+        'lblVATExempt
+        '
+        Me.lblVATExempt.AutoSize = True
+        Me.lblVATExempt.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblVATExempt.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVATExempt.Location = New System.Drawing.Point(132, 0)
+        Me.lblVATExempt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblVATExempt.Name = "lblVATExempt"
+        Me.lblVATExempt.Size = New System.Drawing.Size(53, 17)
+        Me.lblVATExempt.TabIndex = 54
+        Me.lblVATExempt.Text = "XXXXX"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label38.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.Location = New System.Drawing.Point(0, 0)
+        Me.Label38.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(132, 17)
+        Me.Label38.TabIndex = 49
+        Me.Label38.Text = "VAT-Exempt Sales:"
+        '
+        'Panel32
+        '
+        Me.Panel32.Controls.Add(Me.lblVATSales)
+        Me.Panel32.Controls.Add(Me.Label35)
+        Me.Panel32.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel32.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel32.Location = New System.Drawing.Point(0, 0)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel32.Name = "Panel32"
+        Me.Panel32.Size = New System.Drawing.Size(409, 43)
+        Me.Panel32.TabIndex = 108
+        '
+        'lblVATSales
+        '
+        Me.lblVATSales.AutoSize = True
+        Me.lblVATSales.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblVATSales.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVATSales.Location = New System.Drawing.Point(103, 0)
+        Me.lblVATSales.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblVATSales.Name = "lblVATSales"
+        Me.lblVATSales.Size = New System.Drawing.Size(53, 17)
+        Me.lblVATSales.TabIndex = 54
+        Me.lblVATSales.Text = "XXXXX"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label35.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Location = New System.Drawing.Point(0, 0)
+        Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(103, 17)
+        Me.Label35.TabIndex = 49
+        Me.Label35.Text = "VATable Sales:"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.lblTotalAmount)
+        Me.GroupBox1.Controls.Add(Me.Panel3)
+        Me.GroupBox1.Controls.Add(Me.Label49)
+        Me.GroupBox1.Controls.Add(Me.Panel1)
+        Me.GroupBox1.Controls.Add(Me.Panel2)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 302)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Size = New System.Drawing.Size(409, 80)
+        Me.GroupBox1.TabIndex = 107
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Total Amount Due"
+        '
+        'lblTotalAmount
+        '
+        Me.lblTotalAmount.AutoSize = True
+        Me.lblTotalAmount.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblTotalAmount.Font = New System.Drawing.Font("Arial", 14.0!)
+        Me.lblTotalAmount.Location = New System.Drawing.Point(112, 34)
+        Me.lblTotalAmount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTotalAmount.Name = "lblTotalAmount"
+        Me.lblTotalAmount.Size = New System.Drawing.Size(192, 27)
+        Me.lblTotalAmount.TabIndex = 98
+        Me.lblTotalAmount.Text = "XXXXXXXXXXXX"
+        '
+        'Panel3
+        '
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel3.Location = New System.Drawing.Point(99, 34)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(13, 42)
+        Me.Panel3.TabIndex = 98
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label49.Font = New System.Drawing.Font("Arial", 14.0!)
+        Me.Label49.Location = New System.Drawing.Point(71, 34)
+        Me.Label49.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(28, 27)
+        Me.Label49.TabIndex = 97
+        Me.Label49.Text = "₱"
+        '
+        'Panel1
+        '
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Location = New System.Drawing.Point(4, 34)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(67, 42)
+        Me.Panel1.TabIndex = 39
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(4, 22)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(401, 12)
+        Me.Panel2.TabIndex = 40
         '
         'Guna2Panel5
         '
@@ -1034,343 +1445,6 @@ Partial Class frmPrintSalesInvoiceV2
         Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader4.Width = 146
         '
-        'Panel31
-        '
-        Me.Panel31.Controls.Add(Me.Panel38)
-        Me.Panel31.Controls.Add(Me.Panel37)
-        Me.Panel31.Controls.Add(Me.Panel36)
-        Me.Panel31.Controls.Add(Me.Panel35)
-        Me.Panel31.Controls.Add(Me.Panel34)
-        Me.Panel31.Controls.Add(Me.Panel33)
-        Me.Panel31.Controls.Add(Me.Panel32)
-        Me.Panel31.Controls.Add(Me.GroupBox1)
-        Me.Panel31.Location = New System.Drawing.Point(824, 7)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(409, 382)
-        Me.Panel31.TabIndex = 82
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.lblTotalAmount)
-        Me.GroupBox1.Controls.Add(Me.Panel3)
-        Me.GroupBox1.Controls.Add(Me.Label49)
-        Me.GroupBox1.Controls.Add(Me.Panel1)
-        Me.GroupBox1.Controls.Add(Me.Panel2)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 302)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(409, 80)
-        Me.GroupBox1.TabIndex = 107
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Total Amount Due"
-        '
-        'Panel2
-        '
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(4, 22)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(401, 12)
-        Me.Panel2.TabIndex = 40
-        '
-        'Panel1
-        '
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(4, 34)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(67, 42)
-        Me.Panel1.TabIndex = 39
-        '
-        'Label49
-        '
-        Me.Label49.AutoSize = True
-        Me.Label49.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label49.Font = New System.Drawing.Font("Arial", 14.0!)
-        Me.Label49.Location = New System.Drawing.Point(71, 34)
-        Me.Label49.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(28, 27)
-        Me.Label49.TabIndex = 97
-        Me.Label49.Text = "₱"
-        '
-        'Panel3
-        '
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(99, 34)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(13, 42)
-        Me.Panel3.TabIndex = 98
-        '
-        'lblTotalAmount
-        '
-        Me.lblTotalAmount.AutoSize = True
-        Me.lblTotalAmount.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblTotalAmount.Font = New System.Drawing.Font("Arial", 14.0!)
-        Me.lblTotalAmount.Location = New System.Drawing.Point(112, 34)
-        Me.lblTotalAmount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTotalAmount.Name = "lblTotalAmount"
-        Me.lblTotalAmount.Size = New System.Drawing.Size(192, 27)
-        Me.lblTotalAmount.TabIndex = 98
-        Me.lblTotalAmount.Text = "XXXXXXXXXXXX"
-        '
-        'Panel32
-        '
-        Me.Panel32.Controls.Add(Me.lblVATSales)
-        Me.Panel32.Controls.Add(Me.Label35)
-        Me.Panel32.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel32.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel32.Location = New System.Drawing.Point(0, 0)
-        Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(409, 43)
-        Me.Panel32.TabIndex = 108
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label35.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(0, 0)
-        Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(103, 17)
-        Me.Label35.TabIndex = 49
-        Me.Label35.Text = "VATable Sales:"
-        '
-        'lblVATSales
-        '
-        Me.lblVATSales.AutoSize = True
-        Me.lblVATSales.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblVATSales.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVATSales.Location = New System.Drawing.Point(103, 0)
-        Me.lblVATSales.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblVATSales.Name = "lblVATSales"
-        Me.lblVATSales.Size = New System.Drawing.Size(53, 17)
-        Me.lblVATSales.TabIndex = 54
-        Me.lblVATSales.Text = "XXXXX"
-        '
-        'Panel33
-        '
-        Me.Panel33.Controls.Add(Me.lblVATExempt)
-        Me.Panel33.Controls.Add(Me.Label38)
-        Me.Panel33.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel33.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel33.Location = New System.Drawing.Point(0, 43)
-        Me.Panel33.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(409, 43)
-        Me.Panel33.TabIndex = 109
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label38.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(0, 0)
-        Me.Label38.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(132, 17)
-        Me.Label38.TabIndex = 49
-        Me.Label38.Text = "VAT-Exempt Sales:"
-        '
-        'lblVATExempt
-        '
-        Me.lblVATExempt.AutoSize = True
-        Me.lblVATExempt.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblVATExempt.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVATExempt.Location = New System.Drawing.Point(132, 0)
-        Me.lblVATExempt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblVATExempt.Name = "lblVATExempt"
-        Me.lblVATExempt.Size = New System.Drawing.Size(53, 17)
-        Me.lblVATExempt.TabIndex = 54
-        Me.lblVATExempt.Text = "XXXXX"
-        '
-        'Panel34
-        '
-        Me.Panel34.Controls.Add(Me.lblZeroRatedSales)
-        Me.Panel34.Controls.Add(Me.Label40)
-        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel34.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel34.Location = New System.Drawing.Point(0, 86)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(409, 43)
-        Me.Panel34.TabIndex = 110
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label40.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(0, 0)
-        Me.Label40.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(125, 17)
-        Me.Label40.TabIndex = 49
-        Me.Label40.Text = "Zero Rated Sales:"
-        '
-        'lblZeroRatedSales
-        '
-        Me.lblZeroRatedSales.AutoSize = True
-        Me.lblZeroRatedSales.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblZeroRatedSales.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblZeroRatedSales.Location = New System.Drawing.Point(125, 0)
-        Me.lblZeroRatedSales.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblZeroRatedSales.Name = "lblZeroRatedSales"
-        Me.lblZeroRatedSales.Size = New System.Drawing.Size(53, 17)
-        Me.lblZeroRatedSales.TabIndex = 54
-        Me.lblZeroRatedSales.Text = "XXXXX"
-        '
-        'Panel35
-        '
-        Me.Panel35.Controls.Add(Me.lblTotalSales)
-        Me.Panel35.Controls.Add(Me.Label42)
-        Me.Panel35.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel35.Location = New System.Drawing.Point(0, 129)
-        Me.Panel35.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel35.Name = "Panel35"
-        Me.Panel35.Size = New System.Drawing.Size(409, 43)
-        Me.Panel35.TabIndex = 111
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label42.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(0, 0)
-        Me.Label42.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(83, 17)
-        Me.Label42.TabIndex = 49
-        Me.Label42.Text = "Total Sales:"
-        '
-        'lblTotalSales
-        '
-        Me.lblTotalSales.AutoSize = True
-        Me.lblTotalSales.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblTotalSales.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalSales.Location = New System.Drawing.Point(83, 0)
-        Me.lblTotalSales.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTotalSales.Name = "lblTotalSales"
-        Me.lblTotalSales.Size = New System.Drawing.Size(53, 17)
-        Me.lblTotalSales.TabIndex = 54
-        Me.lblTotalSales.Text = "XXXXX"
-        '
-        'Panel36
-        '
-        Me.Panel36.Controls.Add(Me.lblAddVAT)
-        Me.Panel36.Controls.Add(Me.Label44)
-        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel36.Location = New System.Drawing.Point(0, 172)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(409, 43)
-        Me.Panel36.TabIndex = 112
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label44.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(0, 0)
-        Me.Label44.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(97, 17)
-        Me.Label44.TabIndex = 49
-        Me.Label44.Text = "Add 12% VAT:"
-        '
-        'lblAddVAT
-        '
-        Me.lblAddVAT.AutoSize = True
-        Me.lblAddVAT.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblAddVAT.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAddVAT.Location = New System.Drawing.Point(97, 0)
-        Me.lblAddVAT.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblAddVAT.Name = "lblAddVAT"
-        Me.lblAddVAT.Size = New System.Drawing.Size(53, 17)
-        Me.lblAddVAT.TabIndex = 54
-        Me.lblAddVAT.Text = "XXXXX"
-        '
-        'Panel37
-        '
-        Me.Panel37.Controls.Add(Me.lblTotal)
-        Me.Panel37.Controls.Add(Me.Label46)
-        Me.Panel37.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel37.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel37.Location = New System.Drawing.Point(0, 215)
-        Me.Panel37.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel37.Name = "Panel37"
-        Me.Panel37.Size = New System.Drawing.Size(409, 43)
-        Me.Panel37.TabIndex = 113
-        '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label46.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(0, 0)
-        Me.Label46.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(42, 17)
-        Me.Label46.TabIndex = 49
-        Me.Label46.Text = "Total:"
-        '
-        'lblTotal
-        '
-        Me.lblTotal.AutoSize = True
-        Me.lblTotal.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblTotal.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.Location = New System.Drawing.Point(42, 0)
-        Me.lblTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(53, 17)
-        Me.lblTotal.TabIndex = 54
-        Me.lblTotal.Text = "XXXXX"
-        '
-        'Panel38
-        '
-        Me.Panel38.Controls.Add(Me.lblLessTax)
-        Me.Panel38.Controls.Add(Me.Label48)
-        Me.Panel38.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel38.Location = New System.Drawing.Point(0, 258)
-        Me.Panel38.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel38.Name = "Panel38"
-        Me.Panel38.Size = New System.Drawing.Size(409, 43)
-        Me.Panel38.TabIndex = 114
-        '
-        'Label48
-        '
-        Me.Label48.AutoSize = True
-        Me.Label48.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label48.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.Location = New System.Drawing.Point(0, 0)
-        Me.Label48.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(150, 17)
-        Me.Label48.TabIndex = 49
-        Me.Label48.Text = "Less Withholding Tax:"
-        '
-        'lblLessTax
-        '
-        Me.lblLessTax.AutoSize = True
-        Me.lblLessTax.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblLessTax.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLessTax.Location = New System.Drawing.Point(150, 0)
-        Me.lblLessTax.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblLessTax.Name = "lblLessTax"
-        Me.lblLessTax.Size = New System.Drawing.Size(53, 17)
-        Me.lblLessTax.TabIndex = 54
-        Me.lblLessTax.Text = "XXXXX"
-        '
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
@@ -1419,132 +1493,6 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel41.Size = New System.Drawing.Size(1241, 38)
         Me.Panel41.TabIndex = 25
         '
-        'Label56
-        '
-        Me.Label56.AutoSize = True
-        Me.Label56.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label56.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label56.Location = New System.Drawing.Point(0, 0)
-        Me.Label56.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(64, 17)
-        Me.Label56.TabIndex = 48
-        Me.Label56.Text = "D.R. No:"
-        '
-        'Panel44
-        '
-        Me.Panel44.Controls.Add(Me.lblDRNo)
-        Me.Panel44.Controls.Add(Me.Guna2Panel16)
-        Me.Panel44.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel44.Location = New System.Drawing.Point(64, 0)
-        Me.Panel44.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel44.Name = "Panel44"
-        Me.Panel44.Size = New System.Drawing.Size(195, 38)
-        Me.Panel44.TabIndex = 51
-        '
-        'Guna2Panel16
-        '
-        Me.Guna2Panel16.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel16.BorderThickness = 2
-        Me.Guna2Panel16.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel16.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.Guna2Panel16.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel16.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel16.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Guna2Panel16.Name = "Guna2Panel16"
-        Me.Guna2Panel16.Size = New System.Drawing.Size(195, 18)
-        Me.Guna2Panel16.TabIndex = 60
-        '
-        'lblDRNo
-        '
-        Me.lblDRNo.AutoSize = True
-        Me.lblDRNo.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblDRNo.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblDRNo.Location = New System.Drawing.Point(0, 0)
-        Me.lblDRNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblDRNo.Name = "lblDRNo"
-        Me.lblDRNo.Size = New System.Drawing.Size(53, 17)
-        Me.lblDRNo.TabIndex = 53
-        Me.lblDRNo.Text = "XXXXX"
-        '
-        'Panel43
-        '
-        Me.Panel43.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel43.Location = New System.Drawing.Point(259, 0)
-        Me.Panel43.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel43.Name = "Panel43"
-        Me.Panel43.Size = New System.Drawing.Size(13, 38)
-        Me.Panel43.TabIndex = 8
-        '
-        'Label
-        '
-        Me.Label.AutoSize = True
-        Me.Label.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label.Location = New System.Drawing.Point(272, 0)
-        Me.Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label.Name = "Label"
-        Me.Label.Size = New System.Drawing.Size(156, 17)
-        Me.Label.TabIndex = 52
-        Me.Label.Text = "Billed and Checked by:"
-        '
-        'Panel42
-        '
-        Me.Panel42.Controls.Add(Me.lblCheckedBy)
-        Me.Panel42.Controls.Add(Me.Guna2Panel17)
-        Me.Panel42.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel42.Location = New System.Drawing.Point(428, 0)
-        Me.Panel42.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(244, 38)
-        Me.Panel42.TabIndex = 53
-        '
-        'Guna2Panel17
-        '
-        Me.Guna2Panel17.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel17.BorderThickness = 2
-        Me.Guna2Panel17.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel17.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.Guna2Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel17.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel17.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Guna2Panel17.Name = "Guna2Panel17"
-        Me.Guna2Panel17.Size = New System.Drawing.Size(244, 18)
-        Me.Guna2Panel17.TabIndex = 61
-        '
-        'lblCheckedBy
-        '
-        Me.lblCheckedBy.AutoSize = True
-        Me.lblCheckedBy.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblCheckedBy.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblCheckedBy.Location = New System.Drawing.Point(0, 0)
-        Me.lblCheckedBy.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblCheckedBy.Name = "lblCheckedBy"
-        Me.lblCheckedBy.Size = New System.Drawing.Size(53, 17)
-        Me.lblCheckedBy.TabIndex = 53
-        Me.lblCheckedBy.Text = "XXXXX"
-        '
-        'Panel45
-        '
-        Me.Panel45.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel45.Location = New System.Drawing.Point(672, 0)
-        Me.Panel45.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel45.Name = "Panel45"
-        Me.Panel45.Size = New System.Drawing.Size(13, 38)
-        Me.Panel45.TabIndex = 54
-        '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label57.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label57.Location = New System.Drawing.Point(685, 0)
-        Me.Label57.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(136, 17)
-        Me.Label57.TabIndex = 55
-        Me.Label57.Text = "Credit Approved By:"
-        '
         'Panel46
         '
         Me.Panel46.Controls.Add(Me.lblApprovedBy)
@@ -1555,6 +1503,18 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel46.Name = "Panel46"
         Me.Panel46.Size = New System.Drawing.Size(420, 38)
         Me.Panel46.TabIndex = 56
+        '
+        'lblApprovedBy
+        '
+        Me.lblApprovedBy.AutoSize = True
+        Me.lblApprovedBy.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblApprovedBy.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblApprovedBy.Location = New System.Drawing.Point(0, 0)
+        Me.lblApprovedBy.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblApprovedBy.Name = "lblApprovedBy"
+        Me.lblApprovedBy.Size = New System.Drawing.Size(53, 17)
+        Me.lblApprovedBy.TabIndex = 53
+        Me.lblApprovedBy.Text = "XXXXX"
         '
         'Guna2Panel18
         '
@@ -1581,17 +1541,131 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Label5.TabIndex = 98
         Me.Label5.Text = "RAMBIC CORPORATION"
         '
-        'lblApprovedBy
+        'Label57
         '
-        Me.lblApprovedBy.AutoSize = True
-        Me.lblApprovedBy.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblApprovedBy.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblApprovedBy.Location = New System.Drawing.Point(0, 0)
-        Me.lblApprovedBy.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblApprovedBy.Name = "lblApprovedBy"
-        Me.lblApprovedBy.Size = New System.Drawing.Size(53, 17)
-        Me.lblApprovedBy.TabIndex = 53
-        Me.lblApprovedBy.Text = "XXXXX"
+        Me.Label57.AutoSize = True
+        Me.Label57.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label57.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label57.Location = New System.Drawing.Point(685, 0)
+        Me.Label57.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(136, 17)
+        Me.Label57.TabIndex = 55
+        Me.Label57.Text = "Credit Approved By:"
+        '
+        'Panel45
+        '
+        Me.Panel45.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel45.Location = New System.Drawing.Point(672, 0)
+        Me.Panel45.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel45.Name = "Panel45"
+        Me.Panel45.Size = New System.Drawing.Size(13, 38)
+        Me.Panel45.TabIndex = 54
+        '
+        'Panel42
+        '
+        Me.Panel42.Controls.Add(Me.lblCheckedBy)
+        Me.Panel42.Controls.Add(Me.Guna2Panel17)
+        Me.Panel42.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel42.Location = New System.Drawing.Point(428, 0)
+        Me.Panel42.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel42.Name = "Panel42"
+        Me.Panel42.Size = New System.Drawing.Size(244, 38)
+        Me.Panel42.TabIndex = 53
+        '
+        'lblCheckedBy
+        '
+        Me.lblCheckedBy.AutoSize = True
+        Me.lblCheckedBy.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblCheckedBy.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblCheckedBy.Location = New System.Drawing.Point(0, 0)
+        Me.lblCheckedBy.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCheckedBy.Name = "lblCheckedBy"
+        Me.lblCheckedBy.Size = New System.Drawing.Size(53, 17)
+        Me.lblCheckedBy.TabIndex = 53
+        Me.lblCheckedBy.Text = "XXXXX"
+        '
+        'Guna2Panel17
+        '
+        Me.Guna2Panel17.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel17.BorderThickness = 2
+        Me.Guna2Panel17.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel17.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2Panel17.Location = New System.Drawing.Point(0, 20)
+        Me.Guna2Panel17.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel17.Name = "Guna2Panel17"
+        Me.Guna2Panel17.Size = New System.Drawing.Size(244, 18)
+        Me.Guna2Panel17.TabIndex = 61
+        '
+        'Label
+        '
+        Me.Label.AutoSize = True
+        Me.Label.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label.Location = New System.Drawing.Point(272, 0)
+        Me.Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label.Name = "Label"
+        Me.Label.Size = New System.Drawing.Size(156, 17)
+        Me.Label.TabIndex = 52
+        Me.Label.Text = "Billed and Checked by:"
+        '
+        'Panel43
+        '
+        Me.Panel43.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel43.Location = New System.Drawing.Point(259, 0)
+        Me.Panel43.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel43.Name = "Panel43"
+        Me.Panel43.Size = New System.Drawing.Size(13, 38)
+        Me.Panel43.TabIndex = 8
+        '
+        'Panel44
+        '
+        Me.Panel44.Controls.Add(Me.lblDRNo)
+        Me.Panel44.Controls.Add(Me.Guna2Panel16)
+        Me.Panel44.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel44.Location = New System.Drawing.Point(64, 0)
+        Me.Panel44.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel44.Name = "Panel44"
+        Me.Panel44.Size = New System.Drawing.Size(195, 38)
+        Me.Panel44.TabIndex = 51
+        '
+        'lblDRNo
+        '
+        Me.lblDRNo.AutoSize = True
+        Me.lblDRNo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblDRNo.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.lblDRNo.Location = New System.Drawing.Point(0, 0)
+        Me.lblDRNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDRNo.Name = "lblDRNo"
+        Me.lblDRNo.Size = New System.Drawing.Size(53, 17)
+        Me.lblDRNo.TabIndex = 53
+        Me.lblDRNo.Text = "XXXXX"
+        '
+        'Guna2Panel16
+        '
+        Me.Guna2Panel16.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel16.BorderThickness = 2
+        Me.Guna2Panel16.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel16.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel16.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2Panel16.Location = New System.Drawing.Point(0, 20)
+        Me.Guna2Panel16.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel16.Name = "Guna2Panel16"
+        Me.Guna2Panel16.Size = New System.Drawing.Size(195, 18)
+        Me.Guna2Panel16.TabIndex = 60
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label56.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label56.Location = New System.Drawing.Point(0, 0)
+        Me.Label56.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(64, 17)
+        Me.Label56.TabIndex = 48
+        Me.Label56.Text = "D.R. No:"
         '
         'Panel6
         '
@@ -1616,17 +1690,49 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel49.Size = New System.Drawing.Size(1241, 34)
         Me.Panel49.TabIndex = 59
         '
-        'Label69
+        'Panel50
         '
-        Me.Label69.AutoSize = True
-        Me.Label69.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label69.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label69.Location = New System.Drawing.Point(0, 0)
-        Me.Label69.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(29, 17)
-        Me.Label69.TabIndex = 48
-        Me.Label69.Text = "By:"
+        Me.Panel50.Controls.Add(Me.Guna2Panel20)
+        Me.Panel50.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel50.Location = New System.Drawing.Point(739, 0)
+        Me.Panel50.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel50.Name = "Panel50"
+        Me.Panel50.Size = New System.Drawing.Size(497, 34)
+        Me.Panel50.TabIndex = 57
+        '
+        'Guna2Panel20
+        '
+        Me.Guna2Panel20.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel20.BorderThickness = 2
+        Me.Guna2Panel20.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel20.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel20.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2Panel20.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel20.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel20.Name = "Guna2Panel20"
+        Me.Guna2Panel20.Size = New System.Drawing.Size(497, 18)
+        Me.Guna2Panel20.TabIndex = 101
+        '
+        'Label63
+        '
+        Me.Label63.AutoSize = True
+        Me.Label63.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label63.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label63.Location = New System.Drawing.Point(710, 0)
+        Me.Label63.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label63.Name = "Label63"
+        Me.Label63.Size = New System.Drawing.Size(29, 17)
+        Me.Label63.TabIndex = 55
+        Me.Label63.Text = "By:"
+        '
+        'Panel53
+        '
+        Me.Panel53.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel53.Location = New System.Drawing.Point(453, 0)
+        Me.Panel53.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel53.Name = "Panel53"
+        Me.Panel53.Size = New System.Drawing.Size(257, 34)
+        Me.Panel53.TabIndex = 8
         '
         'Panel54
         '
@@ -1651,60 +1757,17 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Guna2Panel19.Size = New System.Drawing.Size(424, 18)
         Me.Guna2Panel19.TabIndex = 100
         '
-        'Panel53
+        'Label69
         '
-        Me.Panel53.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel53.Location = New System.Drawing.Point(453, 0)
-        Me.Panel53.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel53.Name = "Panel53"
-        Me.Panel53.Size = New System.Drawing.Size(257, 34)
-        Me.Panel53.TabIndex = 8
-        '
-        'Label63
-        '
-        Me.Label63.AutoSize = True
-        Me.Label63.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label63.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label63.Location = New System.Drawing.Point(710, 0)
-        Me.Label63.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(29, 17)
-        Me.Label63.TabIndex = 55
-        Me.Label63.Text = "By:"
-        '
-        'Panel50
-        '
-        Me.Panel50.Controls.Add(Me.Guna2Panel20)
-        Me.Panel50.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel50.Location = New System.Drawing.Point(739, 0)
-        Me.Panel50.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel50.Name = "Panel50"
-        Me.Panel50.Size = New System.Drawing.Size(497, 34)
-        Me.Panel50.TabIndex = 57
-        '
-        'Guna2Panel20
-        '
-        Me.Guna2Panel20.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel20.BorderThickness = 2
-        Me.Guna2Panel20.CustomBorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel20.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.Guna2Panel20.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel20.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel20.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Guna2Panel20.Name = "Guna2Panel20"
-        Me.Guna2Panel20.Size = New System.Drawing.Size(497, 18)
-        Me.Guna2Panel20.TabIndex = 101
-        '
-        'Panel40
-        '
-        Me.Panel40.BackColor = System.Drawing.Color.White
-        Me.Panel40.Controls.Add(Me.btnCancel)
-        Me.Panel40.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel40.Location = New System.Drawing.Point(1054, 0)
-        Me.Panel40.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(187, 60)
-        Me.Panel40.TabIndex = 60
+        Me.Label69.AutoSize = True
+        Me.Label69.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label69.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label69.Location = New System.Drawing.Point(0, 0)
+        Me.Label69.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label69.Name = "Label69"
+        Me.Label69.Size = New System.Drawing.Size(29, 17)
+        Me.Label69.TabIndex = 48
+        Me.Label69.Text = "By:"
         '
         'Label10
         '
@@ -1744,156 +1807,93 @@ Partial Class frmPrintSalesInvoiceV2
         Me.pnlBody.Size = New System.Drawing.Size(1267, 948)
         Me.pnlBody.TabIndex = 1
         '
-        'btnPrint
-        '
-        Me.btnPrint.BorderRadius = 8
-        Me.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnPrint.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnPrint.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnPrint.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnPrint.ForeColor = System.Drawing.Color.White
-        Me.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnPrint.Location = New System.Drawing.Point(0, 0)
-        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.PressedDepth = 20
-        Me.btnPrint.Size = New System.Drawing.Size(187, 60)
-        Me.btnPrint.TabIndex = 57
-        Me.btnPrint.Text = "Print"
-        '
-        'btnCancel
-        '
-        Me.btnCancel.BorderRadius = 8
-        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnCancel.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCancel.Location = New System.Drawing.Point(0, 0)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(187, 60)
-        Me.btnCancel.TabIndex = 57
-        Me.btnCancel.Text = "Cancel"
-        '
-        'Panel57
-        '
-        Me.Panel57.BackColor = System.Drawing.Color.White
-        Me.Panel57.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel57.Location = New System.Drawing.Point(1041, 0)
-        Me.Panel57.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel57.Name = "Panel57"
-        Me.Panel57.Size = New System.Drawing.Size(13, 60)
-        Me.Panel57.TabIndex = 63
-        '
-        'Panel58
-        '
-        Me.Panel58.BackColor = System.Drawing.Color.White
-        Me.Panel58.Controls.Add(Me.btnPrint)
-        Me.Panel58.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel58.Location = New System.Drawing.Point(854, 0)
-        Me.Panel58.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel58.Name = "Panel58"
-        Me.Panel58.Size = New System.Drawing.Size(187, 60)
-        Me.Panel58.TabIndex = 64
-        '
         'frmPrintSalesInvoiceV2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1267, 948)
         Me.Controls.Add(Me.pnlBody)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPrintSalesInvoiceV2"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.Panel58.ResumeLayout(False)
+        Me.Panel40.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
-        Me.Panel15.ResumeLayout(False)
-        Me.Panel15.PerformLayout()
         Me.Panel13.ResumeLayout(False)
         Me.Panel13.PerformLayout()
+        Me.Panel15.ResumeLayout(False)
+        Me.Panel15.PerformLayout()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
-        Me.Panel18.ResumeLayout(False)
-        Me.Panel18.PerformLayout()
         Me.Panel16.ResumeLayout(False)
         Me.Panel16.PerformLayout()
+        Me.Panel18.ResumeLayout(False)
+        Me.Panel18.PerformLayout()
         Me.Panel19.ResumeLayout(False)
         Me.Panel19.PerformLayout()
-        Me.Panel22.ResumeLayout(False)
         Me.Panel20.ResumeLayout(False)
         Me.Panel20.PerformLayout()
+        Me.Panel22.ResumeLayout(False)
         Me.Panel23.ResumeLayout(False)
         Me.Panel23.PerformLayout()
-        Me.Panel26.ResumeLayout(False)
-        Me.Panel26.PerformLayout()
         Me.Panel24.ResumeLayout(False)
         Me.Panel24.PerformLayout()
+        Me.Panel26.ResumeLayout(False)
+        Me.Panel26.PerformLayout()
         Me.Guna2Panel4.ResumeLayout(False)
-        Me.Panel27.ResumeLayout(False)
-        Me.Panel27.PerformLayout()
-        Me.Panel28.ResumeLayout(False)
-        Me.Panel28.PerformLayout()
         Me.Panel29.ResumeLayout(False)
         Me.Panel29.PerformLayout()
+        Me.Panel28.ResumeLayout(False)
+        Me.Panel28.PerformLayout()
+        Me.Panel27.ResumeLayout(False)
+        Me.Panel27.PerformLayout()
         Me.panelTableBody.ResumeLayout(False)
-        Me.Guna2Panel5.ResumeLayout(False)
-        Me.panelListViewBody.ResumeLayout(False)
         Me.Panel31.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.Panel32.ResumeLayout(False)
-        Me.Panel32.PerformLayout()
-        Me.Panel33.ResumeLayout(False)
-        Me.Panel33.PerformLayout()
-        Me.Panel34.ResumeLayout(False)
-        Me.Panel34.PerformLayout()
-        Me.Panel35.ResumeLayout(False)
-        Me.Panel35.PerformLayout()
-        Me.Panel36.ResumeLayout(False)
-        Me.Panel36.PerformLayout()
-        Me.Panel37.ResumeLayout(False)
-        Me.Panel37.PerformLayout()
         Me.Panel38.ResumeLayout(False)
         Me.Panel38.PerformLayout()
+        Me.Panel37.ResumeLayout(False)
+        Me.Panel37.PerformLayout()
+        Me.Panel36.ResumeLayout(False)
+        Me.Panel36.PerformLayout()
+        Me.Panel35.ResumeLayout(False)
+        Me.Panel35.PerformLayout()
+        Me.Panel34.ResumeLayout(False)
+        Me.Panel34.PerformLayout()
+        Me.Panel33.ResumeLayout(False)
+        Me.Panel33.PerformLayout()
+        Me.Panel32.ResumeLayout(False)
+        Me.Panel32.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.Guna2Panel5.ResumeLayout(False)
+        Me.panelListViewBody.ResumeLayout(False)
         Me.Panel39.ResumeLayout(False)
         Me.Panel39.PerformLayout()
         Me.Panel41.ResumeLayout(False)
         Me.Panel41.PerformLayout()
-        Me.Panel44.ResumeLayout(False)
-        Me.Panel44.PerformLayout()
-        Me.Panel42.ResumeLayout(False)
-        Me.Panel42.PerformLayout()
         Me.Panel46.ResumeLayout(False)
         Me.Panel46.PerformLayout()
         Me.Guna2Panel18.ResumeLayout(False)
         Me.Guna2Panel18.PerformLayout()
+        Me.Panel42.ResumeLayout(False)
+        Me.Panel42.PerformLayout()
+        Me.Panel44.ResumeLayout(False)
+        Me.Panel44.PerformLayout()
         Me.Panel49.ResumeLayout(False)
         Me.Panel49.PerformLayout()
-        Me.Panel54.ResumeLayout(False)
         Me.Panel50.ResumeLayout(False)
-        Me.Panel40.ResumeLayout(False)
+        Me.Panel54.ResumeLayout(False)
         Me.pnlBody.ResumeLayout(False)
         Me.pnlBody.PerformLayout()
-        Me.Panel58.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
