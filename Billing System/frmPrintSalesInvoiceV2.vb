@@ -12,6 +12,7 @@ Public Class frmPrintSalesInvoiceV2
 
     Private Sub frmPrintSalesInvoiceV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+        Call calculateReceipt()
     End Sub
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         ListView1.Items.Clear()
@@ -149,6 +150,25 @@ Public Class frmPrintSalesInvoiceV2
             Me.PrintForm1.Print()
         End Using
 
+    End Sub
+
+    Private Sub calculateReceipt()
+        Try
+            Dim totalAmount = 0
+
+            For Each amount As ListViewItem In ListView1.Items
+                totalAmount += amount.SubItems(4).Text
+            Next
+            lblTotalAmount.Text = totalAmount
+            lblTotal.Text = totalAmount
+
+            lblVATSales.Text = totalAmount - (totalAmount * 0.12)
+            lblTotalSales.Text = lblVATSales.Text
+
+            lblAddVAT.Text = (totalAmount * 0.12)
+        Catch ex As Exception
+            MsgBox("An error occurred frmPrintBillingInvoice(calculateTotalAmt): " & ex.Message)
+        End Try
     End Sub
 
 End Class

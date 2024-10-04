@@ -36,12 +36,16 @@ Partial Class frmManageSalesV2
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel30 = New System.Windows.Forms.Panel()
+        Me.Panel26 = New System.Windows.Forms.Panel()
+        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.Panel24 = New System.Windows.Forms.Panel()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.btnPrint = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel33 = New System.Windows.Forms.Panel()
@@ -89,8 +93,10 @@ Partial Class frmManageSalesV2
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelBody.SuspendLayout()
         Me.Panel30.SuspendLayout()
+        Me.Panel26.SuspendLayout()
         Me.Panel20.SuspendLayout()
         Me.Panel22.SuspendLayout()
+        Me.Panel23.SuspendLayout()
         Me.Panel34.SuspendLayout()
         Me.Panel19.SuspendLayout()
         Me.Panel9.SuspendLayout()
@@ -199,6 +205,8 @@ Partial Class frmManageSalesV2
         'Panel30
         '
         Me.Panel30.BackColor = System.Drawing.Color.White
+        Me.Panel30.Controls.Add(Me.Panel26)
+        Me.Panel30.Controls.Add(Me.Panel25)
         Me.Panel30.Controls.Add(Me.Panel20)
         Me.Panel30.Controls.Add(Me.Panel21)
         Me.Panel30.Controls.Add(Me.Panel22)
@@ -213,6 +221,50 @@ Partial Class frmManageSalesV2
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(1427, 74)
         Me.Panel30.TabIndex = 93
+        '
+        'Panel26
+        '
+        Me.Panel26.BackColor = System.Drawing.Color.White
+        Me.Panel26.Controls.Add(Me.Guna2TextBox1)
+        Me.Panel26.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel26.Location = New System.Drawing.Point(413, 12)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel26.Name = "Panel26"
+        Me.Panel26.Size = New System.Drawing.Size(269, 50)
+        Me.Panel26.TabIndex = 24
+        '
+        'Guna2TextBox1
+        '
+        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox1.DefaultText = ""
+        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.White
+        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2TextBox1.Enabled = False
+        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox1.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2TextBox1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(5)
+        Me.Guna2TextBox1.Name = "Guna2TextBox1"
+        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox1.PlaceholderText = "Enter amount"
+        Me.Guna2TextBox1.SelectedText = ""
+        Me.Guna2TextBox1.Size = New System.Drawing.Size(269, 50)
+        Me.Guna2TextBox1.TabIndex = 124
+        '
+        'Panel25
+        '
+        Me.Panel25.BackColor = System.Drawing.Color.White
+        Me.Panel25.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel25.Location = New System.Drawing.Point(400, 12)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel25.Name = "Panel25"
+        Me.Panel25.Size = New System.Drawing.Size(13, 50)
+        Me.Panel25.TabIndex = 23
         '
         'Panel20
         '
@@ -244,7 +296,7 @@ Partial Class frmManageSalesV2
         Me.btnDelete.PressedDepth = 20
         Me.btnDelete.Size = New System.Drawing.Size(187, 50)
         Me.btnDelete.TabIndex = 57
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "Cancel"
         '
         'Panel21
         '
@@ -286,17 +338,28 @@ Partial Class frmManageSalesV2
         Me.btnUpdate.PressedDepth = 20
         Me.btnUpdate.Size = New System.Drawing.Size(187, 50)
         Me.btnUpdate.TabIndex = 57
-        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.Text = "Add Discount"
         '
         'Panel23
         '
         Me.Panel23.BackColor = System.Drawing.Color.White
+        Me.Panel23.Controls.Add(Me.Panel24)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel23.Location = New System.Drawing.Point(200, 12)
         Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(13, 50)
         Me.Panel23.TabIndex = 19
+        '
+        'Panel24
+        '
+        Me.Panel24.BackColor = System.Drawing.Color.White
+        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel24.Location = New System.Drawing.Point(0, 0)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel24.Name = "Panel24"
+        Me.Panel24.Size = New System.Drawing.Size(13, 50)
+        Me.Panel24.TabIndex = 20
         '
         'Panel34
         '
@@ -948,8 +1011,10 @@ Partial Class frmManageSalesV2
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.PanelBody.ResumeLayout(False)
         Me.Panel30.ResumeLayout(False)
+        Me.Panel26.ResumeLayout(False)
         Me.Panel20.ResumeLayout(False)
         Me.Panel22.ResumeLayout(False)
+        Me.Panel23.ResumeLayout(False)
         Me.Panel34.ResumeLayout(False)
         Me.Panel19.ResumeLayout(False)
         Me.Panel19.PerformLayout()
@@ -1026,4 +1091,8 @@ Partial Class frmManageSalesV2
     Friend WithEvents lblCustID As Label
     Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents lblBillingID As Label
+    Friend WithEvents Panel26 As Panel
+    Friend WithEvents Panel25 As Panel
+    Friend WithEvents Panel24 As Panel
+    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
 End Class

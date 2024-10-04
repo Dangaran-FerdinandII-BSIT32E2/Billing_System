@@ -1,18 +1,26 @@
 ﻿Imports System.Data.OleDb
+Imports System.Globalization
 Imports MySql.Data.MySqlClient
 Public Class frmCustomerViewInfo_Order
 
     Dim acctstatus As Boolean
     Dim status1 As Integer
     Dim orderid As String
+
+    Dim startDate As String
+    Dim endDate As String
     Private Sub frmCustomerViewInfo_Order_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadInformation()
-        TabControl2.SelectedTab = TabPage1
+
+        TabControl2.SelectedTab = TabPage2
+
+
         Call loadOrderListView()
     End Sub
 
     Private Sub loadOrderListView()
+
         orderid = "lblOrderID"
         ListView1.Columns.Clear()
         ListView1.Columns.Add("OrderID")
@@ -29,7 +37,15 @@ Public Class frmCustomerViewInfo_Order
         ListView1.Columns(4).Width = 300
 
         btnViewOrder.Text = "View"
-        Call loadOrder()
+
+        DateFilter1.Text = DateTime.Now.AddDays(-5)
+        startDate = DateFilter1.Text
+
+        DateFilter2.Text = DateTime.Now.AddDays(+5)
+        endDate = DateFilter2.Text
+
+
+        Call loadOrder(startDate, endDate)
     End Sub
     'Customer Tab
     Private Sub loadInformation()
@@ -56,6 +72,7 @@ Public Class frmCustomerViewInfo_Order
                 txtFirstName.Text = dr("FirstName").ToString()
                 txtPhoneNumber.Text = dr("PhoneNumber").ToString()
                 txtEmailAddress.Text = dr("Email").ToString()
+                txtRole.Text = dr("EmployeeRole").ToString()
                 cboAcctStatus.Text = (If(dr("AcctStatus") = "True", "Active", "Inactive").ToString())
             End If
             dr.Close()
@@ -69,40 +86,44 @@ Public Class frmCustomerViewInfo_Order
     End Sub
 
     'Order Tab
-    Private Sub loadOrder()
+    Private Sub loadOrder(startDate As String, endDate As String)
         Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
 
-            sql = "SELECT *, SUM(Amount) AS TotalPrice FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND Status <> 3 GROUP BY OrderID"
-            cmd = New MySqlCommand(sql, cn)
+            Dim startDateTime As DateTime
+            Dim endDateTime As DateTime
 
-            If Not dr.IsClosed Then
-                dr.Close()
-            End If
-
-            dr = cmd.ExecuteReader
-            Dim x As ListViewItem
-            ListView1.Items.Clear()
-
-            Do While dr.Read = True
-                x = New ListViewItem(dr("OrderID").ToString())
-                x.SubItems.Add(dr("TotalPrice").ToString())
-                x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) '2
-                x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Priority Order", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "Item on Hand", "Item on Process")).ToString())) '3
-                x.SubItems.Add(dr("OrderDate").ToString()) ' 4
-
-                ' Check if the status is "Urgent" and set the text color accordingly
-                If x.SubItems(3).Text = "Priority Order" Then
-                    x.ForeColor = Color.Red
+            If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
+           DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
                 End If
 
+                sql = "SELECT *, SUM(Amount) AS TotalPrice FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND Status <> 3 AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' GROUP BY OrderID"
+                cmd = New MySqlCommand(sql, cn)
 
-                ListView1.Items.Add(x)
-            Loop
+                If Not dr.IsClosed Then
+                    dr.Close()
+                End If
 
-            dr.Close()
+                dr = cmd.ExecuteReader
+                Dim x As ListViewItem
+                ListView1.Items.Clear()
+
+                Do While dr.Read = True
+                    x = New ListViewItem(dr("OrderID").ToString())
+                    x.SubItems.Add(dr("TotalPrice").ToString())
+                    x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) '2
+                    x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Priority Order", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "Item on Hand", "Item on Process")).ToString())) '3
+                    x.SubItems.Add(dr("OrderDate").ToString()) ' 4
+
+                    ' Check if the status is "Urgent" and set the text color accordingly
+                    If x.SubItems(3).Text = "Priority Order" Then
+                        x.ForeColor = Color.Red
+                    End If
+                    ListView1.Items.Add(x)
+                Loop
+                dr.Close()
+            End If
         Catch ex As Exception
             MsgBox("An error occurred frmCustomerViewInfo_Order(loadOrder): " & ex.Message)
         Finally
@@ -110,6 +131,16 @@ Public Class frmCustomerViewInfo_Order
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs) Handles DateFilter1.TextChanged
+        startDate = DateFilter1.Text
+        loadOrder(startDate, endDate)
+    End Sub
+
+    Private Sub DateFilter2_TextChanged(sender As Object, e As EventArgs) Handles DateFilter2.TextChanged
+        endDate = DateFilter2.Text
+        loadOrder(startDate, endDate)
     End Sub
 
     Dim avail As String
@@ -166,7 +197,7 @@ Public Class frmCustomerViewInfo_Order
                 MsgBox("The item is already on hand.", vbInformation, "Order Information")
             End If
 
-            Call loadOrder()
+            Call loadOrder(startDate, endDate)
         Catch ex As Exception
             MsgBox("An error occurred frmCustomerViewInfo_Order(updateInfo): " & ex.Message)
         Finally
@@ -366,7 +397,7 @@ Public Class frmCustomerViewInfo_Order
 
                 btnViewOrder.Text = "View"
 
-                Call loadOrder()
+                Call loadOrder(startDate, endDate)
             End If
 
         Catch ex As Exception

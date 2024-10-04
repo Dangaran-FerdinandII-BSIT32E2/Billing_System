@@ -1077,9 +1077,9 @@ Partial Class frmPrintSalesInvoiceV2
         Me.lblLessTax.Location = New System.Drawing.Point(150, 0)
         Me.lblLessTax.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblLessTax.Name = "lblLessTax"
-        Me.lblLessTax.Size = New System.Drawing.Size(53, 17)
+        Me.lblLessTax.Size = New System.Drawing.Size(36, 17)
         Me.lblLessTax.TabIndex = 54
-        Me.lblLessTax.Text = "XXXXX"
+        Me.lblLessTax.Text = "0.00"
         '
         'Label48
         '
@@ -1221,9 +1221,9 @@ Partial Class frmPrintSalesInvoiceV2
         Me.lblZeroRatedSales.Location = New System.Drawing.Point(125, 0)
         Me.lblZeroRatedSales.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblZeroRatedSales.Name = "lblZeroRatedSales"
-        Me.lblZeroRatedSales.Size = New System.Drawing.Size(53, 17)
+        Me.lblZeroRatedSales.Size = New System.Drawing.Size(36, 17)
         Me.lblZeroRatedSales.TabIndex = 54
-        Me.lblZeroRatedSales.Text = "XXXXX"
+        Me.lblZeroRatedSales.Text = "0.00"
         '
         'Label40
         '
@@ -1257,9 +1257,9 @@ Partial Class frmPrintSalesInvoiceV2
         Me.lblVATExempt.Location = New System.Drawing.Point(132, 0)
         Me.lblVATExempt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVATExempt.Name = "lblVATExempt"
-        Me.lblVATExempt.Size = New System.Drawing.Size(53, 17)
+        Me.lblVATExempt.Size = New System.Drawing.Size(36, 17)
         Me.lblVATExempt.TabIndex = 54
-        Me.lblVATExempt.Text = "XXXXX"
+        Me.lblVATExempt.Text = "0.00"
         '
         'Label38
         '
@@ -1404,7 +1404,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5, Me.ColumnHeader4})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListView1.GridLines = True
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False

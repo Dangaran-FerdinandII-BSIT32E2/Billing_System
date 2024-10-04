@@ -46,8 +46,8 @@ Public Class frmListofSuppliers
             cmd.Parameters.AddWithValue("SupplierID", lblSupplierID.Text)
             dr = cmd.ExecuteReader
             If dr.Read = True Then
-                frmManageProducts.txtSupplier.Text = dr("CompanyName").ToString()
-                frmManageProducts.txtSupplierID.Text = dr("SupplierID").ToString()
+                frmManageSuppliers.txtSupplier.Text = dr("CompanyName").ToString()
+                frmManageSuppliers.txtSupplierID.Text = dr("SupplierID").ToString()
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmListofSuppliers(lblSupplierIDTextChange): " & ex.Message)
