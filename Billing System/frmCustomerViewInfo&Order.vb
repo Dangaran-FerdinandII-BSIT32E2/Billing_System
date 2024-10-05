@@ -187,6 +187,12 @@ Public Class frmCustomerViewInfo_Order
                     cmd.Parameters.AddWithValue("@Status", "4")
                     cmd.ExecuteNonQuery()
                 End If
+            ElseIf avail = "No" And status = "Item on Hand" Then
+                If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
+                    cmd.Parameters.AddWithValue("@Availability", True)
+                    cmd.Parameters.AddWithValue("@Status", "1")
+                    cmd.ExecuteNonQuery()
+                End If
             ElseIf avail = "Yes" And status = "Item on Process" Then
                 If MsgBox("Is the item on hand?", vbYesNo + vbQuestion) = vbYes Then
                     cmd.Parameters.AddWithValue("@Availability", True)

@@ -21,9 +21,7 @@ Public Class frmListofSuppliers
             x.SubItems.Add(dr("ContactPerson").ToString())
             x.SubItems.Add(dr("PhoneNumber").ToString())
             x.SubItems.Add(dr("Address").ToString())
-            x.SubItems.Add(dr("EquipmentType").ToString())
             x.SubItems.Add(dr("DeliveryTerms").ToString())
-            x.SubItems.Add(dr("PaymentTerms").ToString())
             x.SubItems.Add(dr("SupplierID").ToString())
 
             ListView1.Items.Add(x)
@@ -34,7 +32,7 @@ Public Class frmListofSuppliers
 
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
-            lblSupplierID.Text = ListView1.SelectedItems(0).SubItems(8).Text
+            lblSupplierID.Text = ListView1.SelectedItems(0).SubItems(6).Text
         End If
     End Sub
 

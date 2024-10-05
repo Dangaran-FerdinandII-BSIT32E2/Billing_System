@@ -501,70 +501,79 @@ Public Class frmManageSuppliers
                 End If
                 If MsgBox("Do you want to save?", vbYesNo) = vbYes Then
                     Call getSupplierId()
-                    Dim mstream As New System.IO.MemoryStream()
-                    pbxProduct.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
-                    Dim arrImage() As Byte = mstream.GetBuffer
-                    mstream.Close()
-                    If btnCreateNewProduct.Enabled = True And btnEditProduct.Enabled = False Then 'IF CREATE NEW
+                    If pbxProduct.Image Is Nothing Then
+                        MsgBox("Please upload na image!", MsgBoxStyle.Critical, "Image Error")
+                    Else
+                        Dim mstream As New System.IO.MemoryStream()
+                        pbxProduct.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                        Dim arrImage() As Byte = mstream.GetBuffer
+                        mstream.Close()
+                        If btnCreateNewProduct.Enabled = True And btnEditProduct.Enabled = False And txtSupplierID.Text IsNot Nothing Then 'IF CREATE NEW
 
-                        sql = "INSERT INTO tblproduct(ProductName, Description, Stock, Category, Manufacturer, PurchasePrice, SellingPrice, SupplierID, Image) " &
+
+                            sql = "INSERT INTO tblproduct(ProductName, Description, Stock, Category, Manufacturer, PurchasePrice, SellingPrice, SupplierID, Image) " &
                                "Values(@ProductName, @Description, @Stock, @Category, @Manufacturer, @PurchasePrice, @SellingPrice, @SupplierID, @Image)"
-                        cmd = New MySqlCommand(sql, cn)
+                            cmd = New MySqlCommand(sql, cn)
 
-                        With cmd
-                            .Parameters.AddWithValue("@ProductName", txtProductName.Text)
-                            .Parameters.AddWithValue("@Description", txtDescription.Text)
-                            .Parameters.AddWithValue("@Stock", "Pre-Order") 'UPDATE
-                            .Parameters.AddWithValue("@SupplierID", supplierID)
-                            .Parameters.AddWithValue("@Category", txtCategory.Text)
-                            .Parameters.AddWithValue("@Manufacturer", txtManufacturer.Text)
-                            .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
-                            .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
-                            .Parameters.AddWithValue("@Image", arrImage)
-                            .ExecuteNonQuery()
-                        End With
+                            With cmd
+                                .Parameters.AddWithValue("@ProductName", txtProductName.Text)
+                                .Parameters.AddWithValue("@Description", txtDescription.Text)
+                                .Parameters.AddWithValue("@Stock", "Pre-Order") 'UPDATE
+                                .Parameters.AddWithValue("@SupplierID", txtSupplierID.Text)
+                                .Parameters.AddWithValue("@Category", txtCategory.Text)
+                                .Parameters.AddWithValue("@Manufacturer", txtManufacturer.Text)
+                                .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
+                                .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
+                                .Parameters.AddWithValue("@Image", arrImage)
+                                .ExecuteNonQuery()
+                            End With
 
-                        MsgBox("Successfully created!", MsgBoxStyle.Information)
-                    ElseIf btnCreateNewProduct.Enabled = False And btnEditProduct.Enabled = True Then 'IF EDIT
-                        sql = "UPDATE tblproduct SET ProductName=@ProductName, Description=@Description, " &
-                            "Stock=@Stock, Category=@Category, Manufacturer=@Manufacturer, " &
-                            "PurchasePrice=@PurchasePrice, SellingPrice=@SellingPrice, SupplierID=@SupplierID, Image=@Image " &
-                            "WHERE ProductID = '" & txtProductId.Text & "'"
-                        cmd = New MySqlCommand(sql, cn)
-                        With cmd
-                            .Parameters.AddWithValue("@ProductName", txtProductName.Text)
-                            .Parameters.AddWithValue("@Description", txtDescription.Text)
-                            .Parameters.AddWithValue("@Stock", "Pre-Order") 'UPDATE
-                            .Parameters.AddWithValue("@SupplierID", txtSupplierID.Text) 'NEEDS UPDATE
-                            .Parameters.AddWithValue("@Category", txtCategory.Text)
-                            .Parameters.AddWithValue("@Manufacturer", txtManufacturer.Text)
-                            .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
-                            .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
-                            .Parameters.AddWithValue("@Image", arrImage)
-                            .ExecuteNonQuery()
-                        End With
+                            MsgBox("Successfully created!", MsgBoxStyle.Information)
+                        ElseIf btnCreateNewProduct.Enabled = False And btnEditProduct.Enabled = True Then 'IF EDIT
+                            sql = "UPDATE tblproduct SET ProductName=@ProductName, Description=@Description, " &
+                        "Stock=@Stock, Category=@Category, Manufacturer=@Manufacturer, " &
+                        "PurchasePrice=@PurchasePrice, SellingPrice=@SellingPrice, SupplierID=@SupplierID, Image=@Image " &
+                        "WHERE ProductID = '" & txtProductId.Text & "'"
+                            cmd = New MySqlCommand(sql, cn)
+                            With cmd
+                                .Parameters.AddWithValue("@ProductName", txtProductName.Text)
+                                .Parameters.AddWithValue("@Description", txtDescription.Text)
+                                .Parameters.AddWithValue("@Stock", "Pre-Order") 'UPDATE
+                                .Parameters.AddWithValue("@SupplierID", txtSupplierID.Text) 'NEEDS UPDATE
+                                .Parameters.AddWithValue("@Category", txtCategory.Text)
+                                .Parameters.AddWithValue("@Manufacturer", txtManufacturer.Text)
+                                .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
+                                .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
+                                .Parameters.AddWithValue("@Image", arrImage)
+                                .ExecuteNonQuery()
+                            End With
 
-                        sql = "UPDATE tblsupplier SET CompanyName=@CompanyName WHERE SupplierID = '" & txtSupplierID.Text & "'"
-                        cmd = New MySqlCommand(sql, cn)
-                        With cmd
-                            .Parameters.AddWithValue("@CompanyName", txtSupplier.Text)
-                            .ExecuteNonQuery()
-                        End With
+                            sql = "UPDATE tblsupplier SET CompanyName=@CompanyName WHERE SupplierID = '" & txtSupplierID.Text & "'"
+                            cmd = New MySqlCommand(sql, cn)
+                            With cmd
+                                .Parameters.AddWithValue("@CompanyName", txtSupplier.Text)
+                                .ExecuteNonQuery()
+                            End With
 
-                        MsgBox("Successfully updated the data!", MsgBoxStyle.Information)
+                            MsgBox("Successfully updated the data!", MsgBoxStyle.Information)
+                        Else
+                            If txtSupplierID.Text Is Nothing Then
+                                MsgBox("Select a supplier!", MsgBoxStyle.Critical, "Supplier Error")
+                            End If
+                        End If
+                        Call loadProducts()
+                        Call clearAllProduct()
+                        Call disableAllProduct()
+
+                        btnCreateNewProduct.Enabled = True
+
+                        btnEditProduct.Enabled = False
+                        btnSaveProduct.Enabled = False
+                        btnDeleteProduct.Enabled = False
+                        btnCancelProduct.Enabled = False
+
+                        pbxProduct.Image = Nothing
                     End If
-                    Call loadProducts()
-                    Call clearAllProduct()
-                    Call disableAllProduct()
-
-                    btnCreateNewProduct.Enabled = True
-
-                    btnEditProduct.Enabled = False
-                    btnSaveProduct.Enabled = False
-                    btnDeleteProduct.Enabled = False
-                    btnCancelProduct.Enabled = False
-
-                    pbxProduct.Image = Nothing
                 End If
             Catch ex As Exception
                 MsgBox("An Error occurred frmManageSuppliers(btnSaveProduct_Click): " & ex.Message)

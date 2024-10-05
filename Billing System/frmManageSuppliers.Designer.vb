@@ -1658,9 +1658,9 @@ Partial Class frmManageSuppliers
         Me.txtSupplierID.Location = New System.Drawing.Point(579, 17)
         Me.txtSupplierID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.txtSupplierID.Name = "txtSupplierID"
-        Me.txtSupplierID.Size = New System.Drawing.Size(21, 24)
+        Me.txtSupplierID.Size = New System.Drawing.Size(0, 24)
         Me.txtSupplierID.TabIndex = 82
-        Me.txtSupplierID.Text = "x"
+        Me.txtSupplierID.Visible = False
         '
         'txtProductId
         '
@@ -1671,9 +1671,9 @@ Partial Class frmManageSuppliers
         Me.txtProductId.Location = New System.Drawing.Point(549, 17)
         Me.txtProductId.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.txtProductId.Name = "txtProductId"
-        Me.txtProductId.Size = New System.Drawing.Size(21, 24)
+        Me.txtProductId.Size = New System.Drawing.Size(0, 24)
         Me.txtProductId.TabIndex = 81
-        Me.txtProductId.Text = "x"
+        Me.txtProductId.Visible = False
         '
         'Panel62
         '

@@ -66,6 +66,9 @@ Partial Class frmCustomerViewInfo_Order
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtRole = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.cboAcctStatus = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtLastName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -105,9 +108,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.cboAcctStatus = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.txtRole = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -566,6 +566,60 @@ Partial Class frmCustomerViewInfo_Order
         Me.GroupBox1.TabIndex = 27
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Contact Information"
+        '
+        'txtRole
+        '
+        Me.txtRole.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtRole.DefaultText = ""
+        Me.txtRole.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtRole.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtRole.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtRole.Enabled = False
+        Me.txtRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtRole.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtRole.ForeColor = System.Drawing.Color.Black
+        Me.txtRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtRole.Location = New System.Drawing.Point(9, 415)
+        Me.txtRole.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtRole.Name = "txtRole"
+        Me.txtRole.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtRole.PlaceholderText = "Enter role"
+        Me.txtRole.SelectedText = ""
+        Me.txtRole.Size = New System.Drawing.Size(417, 44)
+        Me.txtRole.TabIndex = 121
+        '
+        'cboAcctStatus
+        '
+        Me.cboAcctStatus.BackColor = System.Drawing.Color.Transparent
+        Me.cboAcctStatus.DisabledState.FillColor = System.Drawing.Color.White
+        Me.cboAcctStatus.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.cboAcctStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboAcctStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboAcctStatus.Enabled = False
+        Me.cboAcctStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboAcctStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboAcctStatus.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.cboAcctStatus.ForeColor = System.Drawing.Color.Black
+        Me.cboAcctStatus.ItemHeight = 30
+        Me.cboAcctStatus.Items.AddRange(New Object() {"Active", "Inactive"})
+        Me.cboAcctStatus.Location = New System.Drawing.Point(12, 523)
+        Me.cboAcctStatus.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboAcctStatus.Name = "cboAcctStatus"
+        Me.cboAcctStatus.Size = New System.Drawing.Size(393, 36)
+        Me.cboAcctStatus.TabIndex = 120
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(8, 480)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(155, 24)
+        Me.Label11.TabIndex = 119
+        Me.Label11.Text = "Account Status"
         '
         'txtLastName
         '
@@ -1165,60 +1219,6 @@ Partial Class frmCustomerViewInfo_Order
         Me.TabControl2.TabIndex = 16
         Me.TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(8, 480)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(155, 24)
-        Me.Label11.TabIndex = 119
-        Me.Label11.Text = "Account Status"
-        '
-        'cboAcctStatus
-        '
-        Me.cboAcctStatus.BackColor = System.Drawing.Color.Transparent
-        Me.cboAcctStatus.DisabledState.FillColor = System.Drawing.Color.White
-        Me.cboAcctStatus.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.cboAcctStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboAcctStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboAcctStatus.Enabled = False
-        Me.cboAcctStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboAcctStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboAcctStatus.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.cboAcctStatus.ForeColor = System.Drawing.Color.Black
-        Me.cboAcctStatus.ItemHeight = 30
-        Me.cboAcctStatus.Items.AddRange(New Object() {"Active", "Inactive"})
-        Me.cboAcctStatus.Location = New System.Drawing.Point(12, 523)
-        Me.cboAcctStatus.Margin = New System.Windows.Forms.Padding(4)
-        Me.cboAcctStatus.Name = "cboAcctStatus"
-        Me.cboAcctStatus.Size = New System.Drawing.Size(393, 36)
-        Me.cboAcctStatus.TabIndex = 120
-        '
-        'txtRole
-        '
-        Me.txtRole.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtRole.DefaultText = ""
-        Me.txtRole.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtRole.DisabledState.FillColor = System.Drawing.Color.White
-        Me.txtRole.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.txtRole.Enabled = False
-        Me.txtRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtRole.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtRole.ForeColor = System.Drawing.Color.Black
-        Me.txtRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtRole.Location = New System.Drawing.Point(9, 415)
-        Me.txtRole.Margin = New System.Windows.Forms.Padding(5)
-        Me.txtRole.Name = "txtRole"
-        Me.txtRole.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtRole.PlaceholderText = "Enter role"
-        Me.txtRole.SelectedText = ""
-        Me.txtRole.Size = New System.Drawing.Size(417, 44)
-        Me.txtRole.TabIndex = 121
         '
         'frmCustomerViewInfo_Order
         '

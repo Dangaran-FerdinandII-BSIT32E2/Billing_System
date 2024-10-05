@@ -94,7 +94,7 @@ Partial Class frmAdminDashboard
         Me.btnUser.Image = CType(resources.GetObject("btnUser.Image"), System.Drawing.Image)
         Me.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnUser.Location = New System.Drawing.Point(0, 679)
-        Me.btnUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUser.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUser.Name = "btnUser"
         Me.btnUser.Size = New System.Drawing.Size(343, 90)
         Me.btnUser.TabIndex = 11
@@ -114,7 +114,7 @@ Partial Class frmAdminDashboard
         Me.btnRental.Image = CType(resources.GetObject("btnRental.Image"), System.Drawing.Image)
         Me.btnRental.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRental.Location = New System.Drawing.Point(0, 589)
-        Me.btnRental.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRental.Margin = New System.Windows.Forms.Padding(4)
         Me.btnRental.Name = "btnRental"
         Me.btnRental.Size = New System.Drawing.Size(343, 90)
         Me.btnRental.TabIndex = 10
@@ -134,7 +134,7 @@ Partial Class frmAdminDashboard
         Me.btnCustomer.Image = CType(resources.GetObject("btnCustomer.Image"), System.Drawing.Image)
         Me.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomer.Location = New System.Drawing.Point(0, 499)
-        Me.btnCustomer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCustomer.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCustomer.Name = "btnCustomer"
         Me.btnCustomer.Size = New System.Drawing.Size(343, 90)
         Me.btnCustomer.TabIndex = 9
@@ -154,7 +154,7 @@ Partial Class frmAdminDashboard
         Me.btnSupplier.Image = CType(resources.GetObject("btnSupplier.Image"), System.Drawing.Image)
         Me.btnSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSupplier.Location = New System.Drawing.Point(0, 409)
-        Me.btnSupplier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSupplier.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSupplier.Name = "btnSupplier"
         Me.btnSupplier.Size = New System.Drawing.Size(343, 90)
         Me.btnSupplier.TabIndex = 5
@@ -174,7 +174,7 @@ Partial Class frmAdminDashboard
         Me.btnBilling.Image = CType(resources.GetObject("btnBilling.Image"), System.Drawing.Image)
         Me.btnBilling.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBilling.Location = New System.Drawing.Point(0, 319)
-        Me.btnBilling.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBilling.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBilling.Name = "btnBilling"
         Me.btnBilling.Size = New System.Drawing.Size(343, 90)
         Me.btnBilling.TabIndex = 3
@@ -194,7 +194,7 @@ Partial Class frmAdminDashboard
         Me.btnSales.Image = CType(resources.GetObject("btnSales.Image"), System.Drawing.Image)
         Me.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSales.Location = New System.Drawing.Point(0, 229)
-        Me.btnSales.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSales.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSales.Name = "btnSales"
         Me.btnSales.Size = New System.Drawing.Size(343, 90)
         Me.btnSales.TabIndex = 2
@@ -214,7 +214,7 @@ Partial Class frmAdminDashboard
         Me.btnDashboard.Image = CType(resources.GetObject("btnDashboard.Image"), System.Drawing.Image)
         Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDashboard.Location = New System.Drawing.Point(0, 139)
-        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Size = New System.Drawing.Size(343, 90)
         Me.btnDashboard.TabIndex = 1
@@ -244,7 +244,7 @@ Partial Class frmAdminDashboard
         Me.Panel2.Controls.Add(Me.Panel7)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(343, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1478, 139)
         Me.Panel2.TabIndex = 1
@@ -255,7 +255,7 @@ Partial Class frmAdminDashboard
         Me.Panel3.Controls.Add(Me.lblUsername)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel3.Location = New System.Drawing.Point(609, 47)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(555, 50)
         Me.Panel3.TabIndex = 11
@@ -291,7 +291,7 @@ Partial Class frmAdminDashboard
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel9.Location = New System.Drawing.Point(0, 97)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1164, 42)
         Me.Panel9.TabIndex = 15
@@ -312,7 +312,7 @@ Partial Class frmAdminDashboard
         Me.Panel6.Controls.Add(Me.btnNotification)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel6.Location = New System.Drawing.Point(1164, 0)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(157, 139)
         Me.Panel6.TabIndex = 13
@@ -337,7 +337,7 @@ Partial Class frmAdminDashboard
         Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.Red
         Me.Guna2CirclePictureBox1.ImageRotate = 0!
         Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(81, 27)
-        Me.Guna2CirclePictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2CirclePictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(40, 37)
@@ -358,7 +358,7 @@ Partial Class frmAdminDashboard
         Me.btnNotification.Image = CType(resources.GetObject("btnNotification.Image"), System.Drawing.Image)
         Me.btnNotification.ImageSize = New System.Drawing.Size(50, 50)
         Me.btnNotification.Location = New System.Drawing.Point(21, 15)
-        Me.btnNotification.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnNotification.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNotification.Name = "btnNotification"
         Me.btnNotification.PressedDepth = 20
         Me.btnNotification.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
@@ -370,7 +370,7 @@ Partial Class frmAdminDashboard
         Me.Panel7.Controls.Add(Me.btnSettings)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel7.Location = New System.Drawing.Point(1321, 0)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(157, 139)
         Me.Panel7.TabIndex = 12
@@ -388,7 +388,7 @@ Partial Class frmAdminDashboard
         Me.btnSettings.Image = CType(resources.GetObject("btnSettings.Image"), System.Drawing.Image)
         Me.btnSettings.ImageSize = New System.Drawing.Size(50, 50)
         Me.btnSettings.Location = New System.Drawing.Point(28, 18)
-        Me.btnSettings.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnSettings.Margin = New System.Windows.Forms.Padding(5)
         Me.btnSettings.Name = "btnSettings"
         Me.btnSettings.PressedDepth = 20
         Me.btnSettings.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
@@ -406,7 +406,7 @@ Partial Class frmAdminDashboard
         Me.Panel5.Controls.Add(Me.lblDate)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel5.Location = New System.Drawing.Point(343, 918)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1478, 27)
         Me.Panel5.TabIndex = 2
@@ -496,7 +496,7 @@ Partial Class frmAdminDashboard
         Me.panelDashboard.BackColor = System.Drawing.SystemColors.Control
         Me.panelDashboard.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelDashboard.Location = New System.Drawing.Point(343, 139)
-        Me.panelDashboard.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panelDashboard.Margin = New System.Windows.Forms.Padding(4)
         Me.panelDashboard.Name = "panelDashboard"
         Me.panelDashboard.Size = New System.Drawing.Size(1478, 779)
         Me.panelDashboard.TabIndex = 3

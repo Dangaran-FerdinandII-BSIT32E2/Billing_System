@@ -103,7 +103,7 @@ Public Class frmManageSalesV2
         End Try
     End Sub
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click, ListView1.DoubleClick
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
