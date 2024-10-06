@@ -22,7 +22,9 @@ Public Class frmLoginV2
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Try
-            cn.Open()
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
             Dim filled As Boolean = True
 
@@ -44,7 +46,7 @@ Public Class frmLoginV2
             Next
 
             If filled Then
-                sql = "SELECT Username, Role, Password FROM tblusers WHERE Username =  @username AND Password = @password AND Status = 'Active'"
+                sql = "SELECT Username, Role, Password FROM tblusers WHERE Username = @username AND Password = @password AND Status = 'Active'"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
                     .Parameters.AddWithValue("@username", txtUsername.Text)
@@ -56,10 +58,13 @@ Public Class frmLoginV2
                 If dr.Read = True Then
                     frmAdminDashboard.lblRole.Text = dr("Role").ToString()
                     frmAdminDashboard.lblUsername.Text = dr("Username").ToString
+                    If cn.State = ConnectionState.Open Then
+                        cn.Close()
+                    End If
+                    dr.Close()
                     MsgBox("Logging In!", MsgBoxStyle.Information)
                     Me.Hide()
                     frmAdminDashboard.ShowDialog()
-                    dr.Close()
                 Else
                     MsgBox("Account does not exist! Please contact the administrator.", MsgBoxStyle.Critical, "Error in Login!")
                 End If
@@ -67,7 +72,9 @@ Public Class frmLoginV2
         Catch ex As Exception
             MsgBox("An error occurred frmLogin(btnLogin): " & ex.Message)
         Finally
-            cn.Close()
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
         End Try
     End Sub
 End Class

@@ -72,7 +72,7 @@ Public Class frmCustomerViewInfo_Order
                 txtFirstName.Text = dr("FirstName").ToString()
                 txtPhoneNumber.Text = dr("PhoneNumber").ToString()
                 txtEmailAddress.Text = dr("Email").ToString()
-                txtRole.Text = dr("EmployeeRole").ToString()
+                txtRole.Text = dr("EmployeePosition").ToString()
                 cboAcctStatus.Text = (If(dr("AcctStatus") = "True", "Active", "Inactive").ToString())
             End If
             dr.Close()

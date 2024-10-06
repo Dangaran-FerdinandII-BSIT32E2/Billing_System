@@ -1,9 +1,13 @@
 ﻿Imports System.Data.OleDb
+Imports System.Web.UI
 Imports MySql.Data.MySqlClient
+Imports Mysqlx.XDevAPI.Common
 Public Class frmManageCustomerV3
     Private Sub frmManageCustomerV3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadCustomers()
+        Dim dt As DataTable = SearchDatabase("")
+        PopulateListView(dt)
     End Sub
     Public Sub loadCustomers()
         Try
@@ -55,29 +59,53 @@ Public Class frmManageCustomerV3
         End If
     End Sub
     Private Sub txtSearchCustomer_TextChanged(sender As Object, e As EventArgs) Handles txtSearchCustomer.TextChanged
-        cn.Close()
-        Dim dt As DataTable = SearchDatabase(txtSearchCustomer.Text)
-        PopulateListView(dt)
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+            Dim dt As DataTable = SearchDatabase(txtSearchCustomer.Text)
+            PopulateListView(dt)
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCustomerV3(SearchDatabase): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        'If cboSalesman.Text = "Filter by" Or cboSalesman.Text = "View Master List" Then
-        '    sql = "SELECT CompanyName, CONCAT(LastName, ', ', + FirstName), Address, Email, PhoneNumber, CustomerID FROM tblcustomer WHERE LastName LIKE ? Or CompanyName LIKE ?"
-        'ElseIf cboSalesman.Text = "View Inactive Users" Then
-        '    sql = "SELECT CompanyName, CONCAT(LastName, ', ', + FirstName), Address, CustomerID FROM tblcustomer WHERE LastName LIKE ? Or CompanyName LIKE ? AND AcctStatus = 0"
-        'ElseIf cboSalesman.Text = "View Pending Orders" Then
-        '    sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID FROM tblorder WHERE Status <> 2 AND  Status <> 3 AND DueDate IS NULL GROUP BY CustomerID) o ON c.CustomerID = o.CustomerID WHERE LastName LIKE ? Or CompanyName LIKE ?"
-        'End If
 
-        sql = "SELECT CompanyName, CONCAT(LastName, ', ', + FirstName), Address, Email, PhoneNumber, CustomerID FROM tblcustomer WHERE LastName LIKE ? Or CompanyName LIKE ?"
-        cmd = New MySqlCommand(sql, cn)
-        cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
-        cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
+        If cboSalesman.Text = "View Master List" Or cboSalesman.Text = "Filter by" Then
+            sql = "SELECT CompanyName, CONCAT(LastName, ', ', FirstName) AS FullName, Address, Email, PhoneNumber, CustomerID " &
+                      "FROM tblcustomer WHERE LastName LIKE @searchTerm1 OR CompanyName LIKE @searchTerm2"
+        ElseIf cboSalesman.Text = "View Inactive Users" Then
+            sql = "SELECT CompanyName, CONCAT(LastName, ', ', FirstName) AS FullName, Address, CustomerID " &
+                      "FROM tblcustomer WHERE (LastName LIKE @searchTerm1 OR CompanyName LIKE @searchTerm2) AND AcctStatus = 0"
+        ElseIf cboSalesman.Text = "View Pending Orders" Then
+            sql = "SELECT c.CompanyName, CONCAT(c.LastName, ', ', c.FirstName) AS FullName, c.PhoneNumber, c.Email, " &
+                  "o.OrderCount, " &
+                  "CASE o.Status " &
+                  "WHEN 1 THEN 'Order On hand' " &
+                  "WHEN 0 THEN 'Order On process' " &
+                  "ELSE 'Unknown' END AS OrderStatus, " &
+                  "c.Address, c.Delivery, o.DateOrdered, o.CustomerID, o.OrderID " &
+                  "FROM tblcustomer c INNER JOIN (SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, Status, OrderID " &
+                  "FROM tblorder WHERE Status <> 2 AND Status <> 3 AND DueDate IS NULL GROUP BY CustomerID) o " &
+                  "ON c.CustomerID = o.CustomerID WHERE LastName LIKE @searchTerm1 OR CompanyName LIKE @searchTerm2"
 
-        Dim dt As New DataTable
-        Dim da As New MySqlDataAdapter(cmd)
-        da.Fill(dt)
+        End If
 
-        Return dt
+        Using cmd As New MySqlCommand(sql, cn)
+            cmd.Parameters.Add(New MySqlParameter("@searchTerm1", "%" & searchTerm & "%"))
+            cmd.Parameters.Add(New MySqlParameter("@searchTerm2", "%" & searchTerm & "%"))
+
+            Dim dt As New DataTable
+            Dim da As New MySqlDataAdapter(cmd)
+            da.Fill(dt)
+            dr.Close()
+            Return dt
+        End Using
+
     End Function
     Private Sub PopulateListView(dt As DataTable)
         ListView1.Items.Clear()
@@ -87,7 +115,7 @@ Public Class frmManageCustomerV3
     End Sub
 
     Private Sub cboSalesman_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSalesman.SelectedIndexChanged
-        If cboSalesman.Text = "View Master List" Then
+        If cboSalesman.Text = "View Master List" Or cboSalesman.Text = "Filter by" Then
             ListView1.Columns.Clear()
             ListView1.Columns.Add("Company Name")
             ListView1.Columns.Add("Contact Person")
@@ -150,7 +178,16 @@ Public Class frmManageCustomerV3
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID FROM tblorder WHERE Status <> 2 AND  Status <> 3 AND DueDate IS NULL GROUP BY CustomerID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.CompanyName, CONCAT(c.LastName, ', ', c.FirstName) AS FullName, c.PhoneNumber, c.Email, " &
+                  "o.OrderCount, " &
+                  "CASE o.Status " &
+                  "WHEN 1 THEN 'Order On hand' " &
+                  "WHEN 0 THEN 'Order On process' " &
+                  "ELSE 'Unknown' END AS OrderStatus, " &
+                  "c.Address, c.Delivery, o.DateOrdered, o.CustomerID, o.OrderID " &
+                  "FROM tblcustomer c INNER JOIN (SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, Status, OrderID " &
+                  "FROM tblorder WHERE Status <> 2 AND Status <> 3 AND DueDate IS NULL GROUP BY CustomerID) o " &
+                  "ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -164,11 +201,11 @@ Public Class frmManageCustomerV3
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("CompanyName").ToString())
-                x.SubItems.Add(dr("LastName").ToString() + (", ") + dr("FirstName").ToString())
+                x.SubItems.Add(dr("FullName").ToString())
                 x.SubItems.Add(dr("PhoneNumber").ToString())
                 x.SubItems.Add(dr("Email").ToString())
                 x.SubItems.Add(dr("OrderCount").ToString())
-                x.SubItems.Add(If(dr("Status") = "1", "On hold", "On process").ToString())
+                x.SubItems.Add(dr("OrderStatus").ToString())
                 x.SubItems.Add(dr("Address").ToString())
                 x.SubItems.Add(dr("Delivery").ToString())
                 x.SubItems.Add(dr("CompanyName").ToString()) 'business style

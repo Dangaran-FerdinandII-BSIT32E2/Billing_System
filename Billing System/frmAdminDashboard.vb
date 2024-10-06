@@ -163,11 +163,11 @@
     End Sub
 
     Private Sub btnSupplier_Click(sender As Object, e As EventArgs) Handles btnSupplier.Click
-        frmManageSuppliers.TopLevel = False
-        panelDashboard.Controls.Add(frmManageSuppliers)
-        frmManageSuppliers.BringToFront()
-        frmManageSuppliers.Dock = DockStyle.Fill
-        frmManageSuppliers.Show()
+        frmManageSupplierProduct.TopLevel = False
+        panelDashboard.Controls.Add(frmManageSupplierProduct)
+        frmManageSupplierProduct.BringToFront()
+        frmManageSupplierProduct.Dock = DockStyle.Fill
+        frmManageSupplierProduct.Show()
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()

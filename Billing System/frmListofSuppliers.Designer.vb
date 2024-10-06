@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmListofSuppliers
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmListofSuppliers
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.txtSearchCompanyName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -39,7 +39,6 @@ Partial Class frmListofSuppliers
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.Panel32 = New System.Windows.Forms.Panel()
         Me.Panel30 = New System.Windows.Forms.Panel()
-        Me.lblSupplierID = New System.Windows.Forms.Label()
         Me.Panel33 = New System.Windows.Forms.Panel()
         Me.Panel31 = New System.Windows.Forms.Panel()
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -262,7 +261,6 @@ Partial Class frmListofSuppliers
         'Panel30
         '
         Me.Panel30.BackColor = System.Drawing.Color.White
-        Me.Panel30.Controls.Add(Me.lblSupplierID)
         Me.Panel30.Controls.Add(Me.Panel34)
         Me.Panel30.Controls.Add(Me.Panel33)
         Me.Panel30.Controls.Add(Me.Panel32)
@@ -273,16 +271,6 @@ Partial Class frmListofSuppliers
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(1426, 74)
         Me.Panel30.TabIndex = 19
-        '
-        'lblSupplierID
-        '
-        Me.lblSupplierID.AutoSize = True
-        Me.lblSupplierID.Location = New System.Drawing.Point(250, 26)
-        Me.lblSupplierID.Name = "lblSupplierID"
-        Me.lblSupplierID.Size = New System.Drawing.Size(48, 16)
-        Me.lblSupplierID.TabIndex = 19
-        Me.lblSupplierID.Text = "Label1"
-        Me.lblSupplierID.Visible = False
         '
         'Panel33
         '
@@ -346,49 +334,41 @@ Partial Class frmListofSuppliers
         'ColumnHeader10
         '
         Me.ColumnHeader10.Text = "Company Name"
-        Me.ColumnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader10.Width = 180
         '
         'ColumnHeader11
         '
         Me.ColumnHeader11.Text = "Bank Details"
-        Me.ColumnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader11.Width = 250
         '
         'ColumnHeader12
         '
         Me.ColumnHeader12.Text = "Contact Person"
-        Me.ColumnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader12.Width = 200
         '
         'ColumnHeader13
         '
         Me.ColumnHeader13.Text = "Phone Number"
-        Me.ColumnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader13.Width = 220
         '
         'ColumnHeader14
         '
         Me.ColumnHeader14.Text = "Address"
-        Me.ColumnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader14.Width = 350
         '
         'ColumnHeader15
         '
         Me.ColumnHeader15.Text = "Equipment Type"
-        Me.ColumnHeader15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader15.Width = 180
         '
         'ColumnHeader16
         '
         Me.ColumnHeader16.Text = "Delivery Terms"
-        Me.ColumnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader16.Width = 180
         '
         'ColumnHeader17
         '
         Me.ColumnHeader17.Text = "Payment Terms"
-        Me.ColumnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader17.Width = 180
         '
         'Panel8
@@ -472,7 +452,6 @@ Partial Class frmListofSuppliers
         Me.Panel23.ResumeLayout(False)
         Me.Panel34.ResumeLayout(False)
         Me.Panel30.ResumeLayout(False)
-        Me.Panel30.PerformLayout()
         Me.pnlListOfCustomerBody.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -518,5 +497,4 @@ Partial Class frmListofSuppliers
     Friend WithEvents ColumnHeader15 As ColumnHeader
     Friend WithEvents ColumnHeader16 As ColumnHeader
     Friend WithEvents ColumnHeader17 As ColumnHeader
-    Friend WithEvents lblSupplierID As Label
 End Class
