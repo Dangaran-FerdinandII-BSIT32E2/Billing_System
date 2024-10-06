@@ -98,8 +98,8 @@ Partial Class frmPrintSalesInvoiceV2
         Me.panelTableBody = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel31 = New System.Windows.Forms.Panel()
         Me.Panel38 = New System.Windows.Forms.Panel()
-        Me.lblLessTax = New System.Windows.Forms.Label()
-        Me.Label48 = New System.Windows.Forms.Label()
+        Me.lblPriceAdjusted = New System.Windows.Forms.Label()
+        Me.lblAdjustPrice = New System.Windows.Forms.Label()
         Me.Panel37 = New System.Windows.Forms.Panel()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label46 = New System.Windows.Forms.Label()
@@ -1059,8 +1059,8 @@ Partial Class frmPrintSalesInvoiceV2
         '
         'Panel38
         '
-        Me.Panel38.Controls.Add(Me.lblLessTax)
-        Me.Panel38.Controls.Add(Me.Label48)
+        Me.Panel38.Controls.Add(Me.lblPriceAdjusted)
+        Me.Panel38.Controls.Add(Me.lblAdjustPrice)
         Me.Panel38.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel38.Location = New System.Drawing.Point(0, 258)
@@ -1069,29 +1069,29 @@ Partial Class frmPrintSalesInvoiceV2
         Me.Panel38.Size = New System.Drawing.Size(409, 43)
         Me.Panel38.TabIndex = 114
         '
-        'lblLessTax
+        'lblPriceAdjusted
         '
-        Me.lblLessTax.AutoSize = True
-        Me.lblLessTax.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblLessTax.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLessTax.Location = New System.Drawing.Point(150, 0)
-        Me.lblLessTax.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblLessTax.Name = "lblLessTax"
-        Me.lblLessTax.Size = New System.Drawing.Size(36, 17)
-        Me.lblLessTax.TabIndex = 54
-        Me.lblLessTax.Text = "0.00"
+        Me.lblPriceAdjusted.AutoSize = True
+        Me.lblPriceAdjusted.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblPriceAdjusted.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPriceAdjusted.Location = New System.Drawing.Point(106, 0)
+        Me.lblPriceAdjusted.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPriceAdjusted.Name = "lblPriceAdjusted"
+        Me.lblPriceAdjusted.Size = New System.Drawing.Size(36, 17)
+        Me.lblPriceAdjusted.TabIndex = 54
+        Me.lblPriceAdjusted.Text = "0.00"
         '
-        'Label48
+        'lblAdjustPrice
         '
-        Me.Label48.AutoSize = True
-        Me.Label48.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label48.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.Location = New System.Drawing.Point(0, 0)
-        Me.Label48.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(150, 17)
-        Me.Label48.TabIndex = 49
-        Me.Label48.Text = "Less Withholding Tax:"
+        Me.lblAdjustPrice.AutoSize = True
+        Me.lblAdjustPrice.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblAdjustPrice.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAdjustPrice.Location = New System.Drawing.Point(0, 0)
+        Me.lblAdjustPrice.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblAdjustPrice.Name = "lblAdjustPrice"
+        Me.lblAdjustPrice.Size = New System.Drawing.Size(106, 17)
+        Me.lblAdjustPrice.TabIndex = 49
+        Me.lblAdjustPrice.Text = "Adjusted Price:"
         '
         'Panel37
         '
@@ -1937,8 +1937,8 @@ Partial Class frmPrintSalesInvoiceV2
     Friend WithEvents panelTableBody As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Panel31 As Panel
     Friend WithEvents Panel38 As Panel
-    Friend WithEvents lblLessTax As Label
-    Friend WithEvents Label48 As Label
+    Friend WithEvents lblPriceAdjusted As Label
+    Friend WithEvents lblAdjustPrice As Label
     Friend WithEvents Panel37 As Panel
     Friend WithEvents lblTotal As Label
     Friend WithEvents Label46 As Label

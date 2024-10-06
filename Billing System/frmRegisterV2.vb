@@ -10,7 +10,10 @@ Public Class frmRegisterV2
 
     Private Sub btnCreateAccount_Click(sender As Object, e As EventArgs) Handles btnCreateAccount.Click
         Try
-            cn.Open()
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
             Dim filled As Boolean = True
 
             Dim requiredFields As New Dictionary(Of String, Control) From {
@@ -52,7 +55,9 @@ Public Class frmRegisterV2
         Catch ex As Exception
             MsgBox("An error occurred frmRegister(btnCreateAccount): " & ex.Message)
         Finally
-            cn.Close()
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
         End Try
     End Sub
 

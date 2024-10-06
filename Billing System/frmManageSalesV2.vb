@@ -204,10 +204,25 @@ Public Class frmManageSalesV2
             Next
 
             If filled Then
-                If cn.State <> ConnectionState.Open Then
-                    cn.Open()
-                End If
+                If cboAdjust.SelectedIndex <> 0 Then
+                    Dim adjustedValue As Double
 
+                    If cboAdjust.Text = "Add Discount" Then
+                        If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue >= 0 AndAlso adjustedValue <= 100 Then
+                            frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Discount:"
+                            frmPrintSalesInvoiceV2.priceadjust = adjustedValue
+                        Else
+                            MsgBox("Invalid discount!", MsgBoxStyle.Critical)
+                        End If
+                    ElseIf cboAdjust.Text = "Add Mark Up" Then
+                        If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue >= 0 AndAlso adjustedValue <= 100 Then
+                            frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Mark Up:"
+                            frmPrintSalesInvoiceV2.priceadjust = adjustedValue
+                        Else
+                            MsgBox("Invalid markup!", MsgBoxStyle.Critical)
+                        End If
+                    End If
+                End If
                 Call printBilling()
             End If
         Catch ex As Exception
@@ -224,22 +239,12 @@ Public Class frmManageSalesV2
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM tblcustomer WHERE CustomerID = '" & lblCustID.Text & "'"
-            cmd = New MySqlCommand(sql, cn)
 
-            If Not dr.IsClosed Then
-                dr.Close()
-            End If
-
-            dr = cmd.ExecuteReader
-
-            If dr.Read = True Then
-                'left side
-                frmPrintSalesInvoiceV2.lblSoldTo.Text = dr("CompanyName").ToString
-                frmPrintSalesInvoiceV2.lblAddress.Text = dr("Address").ToString
-                frmPrintSalesInvoiceV2.lblDelivery.Text = dr("Delivery").ToString
-                frmPrintSalesInvoiceV2.lblBusStyle.Text = dr("CompanyName").ToString ' business style
-            End If
+            'left side
+            frmPrintSalesInvoiceV2.lblSoldTo.Text = txtCompanyName.Text
+            frmPrintSalesInvoiceV2.lblAddress.Text = txtAddress.Text
+            frmPrintSalesInvoiceV2.lblDelivery.Text = txtDeliveryAddress.Text
+            frmPrintSalesInvoiceV2.lblBusStyle.Text = txtCompanyName.Text
 
             frmPrintSalesInvoiceV2.custid = lblCustID.Text
             frmPrintSalesInvoiceV2.billid = lblBillingID.Text
@@ -296,4 +301,17 @@ Public Class frmManageSalesV2
 
         End Try
     End Function
+
+    Private Sub cboAdjust_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAdjust.SelectedIndexChanged
+        If cboAdjust.SelectedIndex <> 0 Then
+            txtAmount.Enabled = True
+        Else
+            txtAmount.Clear()
+            txtAmount.Enabled = False
+        End If
+    End Sub
+
+    Private Sub txtCompanyName_TextChanged(sender As Object, e As EventArgs) Handles txtCompanyName.TextChanged
+        txtBusinessStyle.Text = txtCompanyName.Text
+    End Sub
 End Class

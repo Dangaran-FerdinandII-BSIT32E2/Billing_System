@@ -9,6 +9,7 @@ Imports Microsoft.VisualBasic.PowerPacks.Printing
 Public Class frmPrintSalesInvoiceV2
     Public custid As String
     Public billid As String
+    Public priceadjust As Double
 
     Private Sub frmPrintSalesInvoiceV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
@@ -159,13 +160,36 @@ Public Class frmPrintSalesInvoiceV2
             For Each amount As ListViewItem In ListView1.Items
                 totalAmount += amount.SubItems(4).Text
             Next
-            lblTotalAmount.Text = totalAmount
+
             lblTotal.Text = totalAmount
 
             lblVATSales.Text = totalAmount - (totalAmount * 0.12)
             lblTotalSales.Text = lblVATSales.Text
 
             lblAddVAT.Text = (totalAmount * 0.12)
+
+            lblPriceAdjusted.Text = frmManageSalesV2.txtAmount.Text
+
+            If lblAdjustPrice.Text = "Discount:" Then
+                If frmManageSalesV2.txtAmount.Text.Contains("%") Then
+                    priceadjust /= 100
+                    lblTotalAmount.Text = (totalAmount - (totalAmount * priceadjust)).ToString("N2")
+                Else
+                    lblTotalAmount.Text = totalAmount - Val(lblPriceAdjusted.Text)
+                End If
+
+            ElseIf lblAdjustPrice.Text = "Mark Up:" Then
+                If frmManageSalesV2.txtAmount.Text.Contains("%") Then
+                    priceadjust /= 100
+                    lblTotalAmount.Text = (totalAmount + (totalAmount * priceadjust)).ToString("N2")
+                Else
+                    lblTotalAmount.Text = totalAmount + Val(lblPriceAdjusted.Text)
+                End If
+            Else
+                lblTotalAmount.Text = totalAmount
+            End If
+
+
         Catch ex As Exception
             MsgBox("An error occurred frmPrintBillingInvoice(calculateTotalAmt): " & ex.Message)
         End Try

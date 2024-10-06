@@ -103,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnection.vb" />
+    <Compile Include="frmAddNewCustomer.Designer.vb">
+      <DependentUpon>frmAddNewCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddNewCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAdminDashboard.Designer.vb">
       <DependentUpon>frmAdminDashboard.vb</DependentUpon>
     </Compile>
@@ -137,6 +143,12 @@
       <DependentUpon>frmConfirmPaymentV2.vb</DependentUpon>
     </Compile>
     <Compile Include="frmConfirmPaymentV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateNewSupplier.Designer.vb">
+      <DependentUpon>frmCreateNewSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateNewSupplier.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCustomerViewInfo&amp;Order.Designer.vb">
@@ -236,6 +248,12 @@
     <Compile Include="frmManageCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmManagePOS.Designer.vb">
+      <DependentUpon>frmManagePOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManagePOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmManageProducts.Designer.vb">
       <DependentUpon>frmManageProducts.vb</DependentUpon>
     </Compile>
@@ -296,6 +314,12 @@
     <Compile Include="frmPrintInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPrintInvoice2.Designer.vb">
+      <DependentUpon>frmPrintInvoice2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintInvoice2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrintSalesInvoice.Designer.vb">
       <DependentUpon>frmPrintSalesInvoice.vb</DependentUpon>
     </Compile>
@@ -344,6 +368,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAddNewCustomer.resx">
+      <DependentUpon>frmAddNewCustomer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdminDashboard.resx">
       <DependentUpon>frmAdminDashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfirmPaymentV2.resx">
       <DependentUpon>frmConfirmPaymentV2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateNewSupplier.resx">
+      <DependentUpon>frmCreateNewSupplier.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerViewInfo&amp;Order.resx">
       <DependentUpon>frmCustomerViewInfo&amp;Order.vb</DependentUpon>
@@ -410,6 +440,9 @@
     <EmbeddedResource Include="frmManageCustomers.resx">
       <DependentUpon>frmManageCustomers.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManagePOS.resx">
+      <DependentUpon>frmManagePOS.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManageProducts.resx">
       <DependentUpon>frmManageProducts.vb</DependentUpon>
     </EmbeddedResource>
@@ -439,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintInvoice.resx">
       <DependentUpon>frmPrintInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintInvoice2.resx">
+      <DependentUpon>frmPrintInvoice2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintSalesInvoice.resx">
       <DependentUpon>frmPrintSalesInvoice.vb</DependentUpon>
