@@ -6,8 +6,6 @@ Public Class frmManageCustomerV3
     Private Sub frmManageCustomerV3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadCustomers()
-        Dim dt As DataTable = SearchDatabase("")
-        PopulateListView(dt)
     End Sub
     Public Sub loadCustomers()
         Try
@@ -57,21 +55,6 @@ Public Class frmManageCustomerV3
         Else
             MsgBox("Please select a customer from the list!", MsgBoxStyle.Information, "View Info")
         End If
-    End Sub
-    Private Sub txtSearchCustomer_TextChanged(sender As Object, e As EventArgs) Handles txtSearchCustomer.TextChanged
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-            Dim dt As DataTable = SearchDatabase(txtSearchCustomer.Text)
-            PopulateListView(dt)
-        Catch ex As Exception
-            MsgBox("An error occurred frmManageCustomerV3(SearchDatabase): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
     End Sub
     Public Function SearchDatabase(searchTerm As String) As DataTable
 
@@ -267,7 +250,19 @@ Public Class frmManageCustomerV3
         End If
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+            Dim dt As DataTable = SearchDatabase(txtSearchCustomer.Text)
+            PopulateListView(dt)
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCustomerV3(SearchDatabase): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 End Class

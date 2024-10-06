@@ -57,6 +57,8 @@ Partial Class frmManageCustomerV3
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel32 = New System.Windows.Forms.Panel()
         Me.MainBody = New System.Windows.Forms.Panel()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.btnSearch = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel23.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -208,6 +210,8 @@ Partial Class frmManageCustomerV3
         'Panel14
         '
         Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Panel14.Controls.Add(Me.btnSearch)
+        Me.Panel14.Controls.Add(Me.Panel16)
         Me.Panel14.Controls.Add(Me.Label2)
         Me.Panel14.Controls.Add(Me.Panel23)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
@@ -448,6 +452,37 @@ Partial Class frmManageCustomerV3
         Me.MainBody.Size = New System.Drawing.Size(1361, 755)
         Me.MainBody.TabIndex = 38
         '
+        'Panel16
+        '
+        Me.Panel16.BackColor = System.Drawing.Color.White
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel16.Location = New System.Drawing.Point(810, 0)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(11, 62)
+        Me.Panel16.TabIndex = 33
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BorderRadius = 8
+        Me.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearch.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnSearch.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnSearch.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearch.ForeColor = System.Drawing.Color.White
+        Me.btnSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnSearch.Location = New System.Drawing.Point(623, 0)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.PressedDepth = 20
+        Me.btnSearch.Size = New System.Drawing.Size(187, 62)
+        Me.btnSearch.TabIndex = 58
+        Me.btnSearch.Text = "Search"
+        '
         'frmManageCustomerV3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -509,4 +544,6 @@ Partial Class frmManageCustomerV3
     Friend WithEvents btnViewInfo As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel6 As Panel
     Friend WithEvents btnRefresh As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnSearch As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel16 As Panel
 End Class
