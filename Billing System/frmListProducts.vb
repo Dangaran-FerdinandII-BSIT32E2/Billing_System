@@ -1,4 +1,4 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.Data.SqlClient
 Imports MySql.Data.MySqlClient
 Public Class frmListProducts
     Private Sub frmListProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -10,7 +10,7 @@ Public Class frmListProducts
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT * FROM qryproducts"
+            sql = "SELECT * FROM qryproducts ORDER BY ProductName ASC"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -23,11 +23,10 @@ Public Class frmListProducts
                 x.SubItems.Add(dr("Description").ToString())
                 x.SubItems.Add(dr("Category").ToString())
                 x.SubItems.Add(dr("Manufacturer").ToString())
-                x.SubItems.Add(dr("YearManufactured").ToString())
+                x.SubItems.Add(dr("ModelNumber").ToString())
                 x.SubItems.Add(dr("PurchasePrice").ToString())
                 x.SubItems.Add(dr("SellingPrice").ToString()) '7
                 x.SubItems.Add(dr("ProductID").ToString())
-                x.SubItems.Add(dr("Stock").ToString())
                 x.SubItems.Add(dr("SupplierID").ToString())
                 ListView1.Items.Add(x)
             Loop
@@ -94,7 +93,7 @@ Public Class frmListProducts
     End Sub
 
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "SELECT ProductName, CompanyName, Description, Category, Manufacturer, YearManufactured, PurchasePrice, SellingPrice FROM qryproducts WHERE ProductName LIKE ? OR CompanyName LIKE ?"
+        sql = "SELECT ProductName, CompanyName, Description, Category, Manufacturer, ModelNumber, PurchasePrice, SellingPrice, ProductID, SupplierID FROM qryproducts WHERE ProductName LIKE ? OR CompanyName LIKE ? ORDER BY ProductName ASC"
 
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))

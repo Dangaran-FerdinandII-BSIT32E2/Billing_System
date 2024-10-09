@@ -1,4 +1,5 @@
-﻿Public Class frmAdminDashboard
+﻿Imports System.Data.SqlClient
+Public Class frmAdminDashboard
     Private isFormBeingDragged As Boolean = False
     Private mouseDownX As Integer
     Private mouseDownY As Integer
@@ -145,7 +146,7 @@
         frmManageRental.Close()
     End Sub
 
-    Private Sub btnCollection_Click(sender As Object, e As EventArgs) 
+    Private Sub btnCollection_Click(sender As Object, e As EventArgs)
         frmManageCollection.TopLevel = False
         panelDashboard.Controls.Add(frmManageCollection)
         frmManageCollection.BringToFront()
@@ -231,11 +232,11 @@
     End Sub
 
     Private Sub btnRental_Click(sender As Object, e As EventArgs) Handles btnRental.Click
-        frmManageRental.TopLevel = False
-        panelDashboard.Controls.Add(frmManageRental)
-        frmManageRental.BringToFront()
-        frmManageRental.Dock = DockStyle.Fill
-        frmManageRental.Show()
+        frmManageRentalV2.TopLevel = False
+        panelDashboard.Controls.Add(frmManageRentalV2)
+        frmManageRentalV2.BringToFront()
+        frmManageRentalV2.Dock = DockStyle.Fill
+        frmManageRentalV2.Show()
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()

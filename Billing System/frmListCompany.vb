@@ -114,6 +114,7 @@ Public Class frmListCompany
     Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
         If MsgBox("Add walk-in orders?", vbYesNo + vbQuestion) = vbYes Then
             Me.Close()
+            frmManagePOS.isRental = False
             frmManagePOS.ShowDialog()
         End If
     End Sub

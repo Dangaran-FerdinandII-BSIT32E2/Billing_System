@@ -3,6 +3,7 @@ Imports System.Runtime.InteropServices.ComTypes
 Imports System.Web.UI.WebControls
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
+Imports System.Data.SqlClient
 Public Class frmManageSalesV2
 
     Public orderid As String
@@ -206,24 +207,33 @@ Public Class frmManageSalesV2
             If filled Then
                 If cboAdjust.SelectedIndex <> 0 Then
                     Dim adjustedValue As Double
-
-                    If cboAdjust.Text = "Add Discount" Then
-                        If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue >= 0 AndAlso adjustedValue <= 100 Then
-                            frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Discount:"
-                            frmPrintSalesInvoiceV2.priceadjust = adjustedValue
-                        Else
-                            MsgBox("Invalid discount!", MsgBoxStyle.Critical)
+                    If txtAmount.TextLength > 0 Then
+                        frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = True
+                        If cboAdjust.Text = "Add Discount" Then
+                            If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue > 0 AndAlso adjustedValue <= 100 Then
+                                frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Discount:"
+                                frmPrintSalesInvoiceV2.priceadjust = adjustedValue
+                                Call printBilling()
+                            Else
+                                MsgBox("Invalid discount!", MsgBoxStyle.Critical)
+                            End If
+                        ElseIf cboAdjust.Text = "Add Mark Up" Then
+                            If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue > 0 AndAlso adjustedValue <= 100 Then
+                                frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Mark Up:"
+                                frmPrintSalesInvoiceV2.priceadjust = adjustedValue
+                                Call printBilling()
+                            Else
+                                MsgBox("Invalid markup!", MsgBoxStyle.Critical)
+                            End If
                         End If
-                    ElseIf cboAdjust.Text = "Add Mark Up" Then
-                        If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue >= 0 AndAlso adjustedValue <= 100 Then
-                            frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Mark Up:"
-                            frmPrintSalesInvoiceV2.priceadjust = adjustedValue
-                        Else
-                            MsgBox("Invalid markup!", MsgBoxStyle.Critical)
-                        End If
+                    Else
+                        frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
+                        Call printBilling()
                     End If
+                Else
+                    frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
+                    Call printBilling()
                 End If
-                Call printBilling()
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(btnPrint): " & ex.Message)

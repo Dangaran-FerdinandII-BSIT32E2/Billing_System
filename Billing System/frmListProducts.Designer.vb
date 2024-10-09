@@ -37,7 +37,6 @@ Partial Class frmListProducts
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlListOfCustomerBody = New System.Windows.Forms.Panel()
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.Panel34 = New System.Windows.Forms.Panel()
@@ -55,7 +54,6 @@ Partial Class frmListProducts
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel14.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel23.SuspendLayout()
@@ -229,12 +227,6 @@ Partial Class frmListProducts
         Me.Panel8.Size = New System.Drawing.Size(1426, 12)
         Me.Panel8.TabIndex = 7
         '
-        'ColumnHeader8
-        '
-        Me.ColumnHeader8.Text = "Selling Price"
-        Me.ColumnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader8.Width = 150
-        '
         'pnlListOfCustomerBody
         '
         Me.pnlListOfCustomerBody.BackColor = System.Drawing.Color.White
@@ -340,7 +332,7 @@ Partial Class frmListProducts
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader9, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader10})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader9, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader6})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
@@ -362,50 +354,37 @@ Partial Class frmListProducts
         'ColumnHeader9
         '
         Me.ColumnHeader9.Text = "Supplier Name"
-        Me.ColumnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader9.Width = 180
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Description"
-        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader2.Width = 350
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Category"
-        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader3.Width = 200
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Manufacturer"
-        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader4.Width = 220
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Model Number"
-        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader5.Width = 345
         '
         'ColumnHeader6
         '
-        Me.ColumnHeader6.Text = "Year Manufactured"
-        Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader6.Text = "Selling Price"
         Me.ColumnHeader6.Width = 200
         '
         'ColumnHeader7
         '
         Me.ColumnHeader7.Text = "Purchase Price"
-        Me.ColumnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader7.Width = 180
-        '
-        'ColumnHeader10
-        '
-        Me.ColumnHeader10.Text = "Stock"
-        Me.ColumnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader10.Width = 180
         '
         'frmListProducts
         '
@@ -444,7 +423,6 @@ Partial Class frmListProducts
     Friend WithEvents Panel25 As Panel
     Friend WithEvents Panel27 As Panel
     Friend WithEvents Panel8 As Panel
-    Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents pnlListOfCustomerBody As Panel
     Friend WithEvents Panel30 As Panel
     Friend WithEvents Panel34 As Panel
@@ -462,5 +440,4 @@ Partial Class frmListProducts
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents ColumnHeader7 As ColumnHeader
-    Friend WithEvents ColumnHeader10 As ColumnHeader
 End Class

@@ -214,7 +214,7 @@ Public Class frmManageSupplierProduct
                     sql = "DELETE FROM tblproduct WHERE ProductID = @item"
                     cmd = New MySqlCommand(sql, cn)
                     With cmd
-                        .Parameters.AddWithValue("@item", ListView1.SelectedItems(0).SubItems(7).Text)
+                        .Parameters.AddWithValue("@item", ListView2.SelectedItems(0).SubItems(7).Text)
                         .ExecuteNonQuery()
                     End With
                     MsgBox("Product successfully deleted!", MsgBoxStyle.Information, "Delete Status")
@@ -260,5 +260,10 @@ Public Class frmManageSupplierProduct
         For Each row As DataRow In dt.Rows
             ListView2.Items.Add(New ListViewItem(row.ItemArray.Select(Function(x) x.ToString()).ToArray()))
         Next
+    End Sub
+
+    Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.SelectedIndexChanged
+        btnEditProduct.Enabled = True
+        btnDeleteProduct.Enabled = True
     End Sub
 End Class

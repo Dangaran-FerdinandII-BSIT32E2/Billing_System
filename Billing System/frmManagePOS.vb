@@ -1,9 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Mysqlx.Crud
+Imports System.Data.SqlClient
 Public Class frmManagePOS
 
     Public productid As String
     Dim totalamount As Integer
+    Public isRental As Boolean? = False
     Private Sub btnSearchSupplier_Click(sender As Object, e As EventArgs) Handles btnSearchSupplier.Click
         frmListProducts.ShowDialog()
         btnCancel.Enabled = True
@@ -36,8 +38,13 @@ Public Class frmManagePOS
             If filled Then
                 If Not IsNumeric(txtQty.Text) Then
                     MsgBox("Invalid number!", MsgBoxStyle.Critical)
+                ElseIf Val(txtQty.text) > 100 Or Val(txtQty.text) < 0 Then
+                    MsgBox("Amount is invalid!", MsgBoxStyle.Critical)
                 ElseIf MsgBox("Do you want to add item?", vbYesNo + vbQuestion) = vbYes Then
 
+                    If txtQty.Text = "0" Then
+                        txtQty.Text = 1
+                    End If
 
                     Dim x As ListViewItem
 
@@ -70,10 +77,6 @@ Public Class frmManagePOS
                 cn.Open()
             End If
 
-            If txtQty.Text = "0" Then
-                txtQty.Text = 1
-            End If
-
             Dim sellingprice As Integer = (txtQty.Text * txtAmt.Text)
 
             lblTotalSales.Text += sellingprice
@@ -82,7 +85,7 @@ Public Class frmManagePOS
             lblGrandTotal.Text += sellingprice
 
         Catch ex As Exception
-            MsgBox("An error occurred frmManagePOS(btnInsert_Click): " & ex.Message)
+            MsgBox("An error occurred frmManagePOS(getTotalAmount): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -143,26 +146,18 @@ Public Class frmManagePOS
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
-            ListView1.Items.Clear()
-            lblTotalProductSold.Text = "0"
-            lblGrandTotal.Text = "0.00"
-            lblTotalSales.Text = "0.00"
-            lblVATSales.Text = "0.00"
-            lblVAT.Text = "0.00"
-            Call clearAll()
-            btnCancel.Enabled = False
+            Call closeForm()
         End If
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-
             If MsgBox("Do you want to save?", vbYesNo + vbQuestion) = vbYes Then
                 For Each listitem As ListViewItem In ListView1.Items 'includes ProductID as ListView1.SubItems(4)
-
                     sql = "SELECT ProductName, Description, SellingPrice, ProductID FROM qryproducts WHERE ProductID = '" & listitem.SubItems(4).Text & "'"
                     cmd = New MySqlCommand(sql, cn)
 
@@ -171,20 +166,35 @@ Public Class frmManagePOS
                     End If
 
                     dr = cmd.ExecuteReader
+                    If isRental Then
+                        While dr.Read
+                            Dim X As ListViewItem = frmManageRentalV2.ListView1.Items.Add(listitem.SubItems(2).Text)
+                            X.SubItems.Add(dr("ProductName").ToString())
+                            X.SubItems.Add(dr("Description").ToString())
+                            X.SubItems.Add(dr("SellingPrice").ToString())
+                            X.SubItems.Add(listitem.SubItems(3).Text)
+                            X.SubItems.Add(dr("ProductID").ToString()) '5
+                        End While
+                        frmManageRentalV2.txtCompanyName.Enabled = True
+                        frmManageRentalV2.txtDeliveryAddress.Enabled = True
+                        frmManageRentalV2.txtAddress.Enabled = True
+                    Else
+                        While dr.Read
+                            Dim X As ListViewItem = frmManageSalesV2.ListView1.Items.Add(listitem.SubItems(2).Text)
+                            X.SubItems.Add(dr("ProductName").ToString())
+                            X.SubItems.Add(dr("Description").ToString())
+                            X.SubItems.Add(dr("SellingPrice").ToString())
+                            X.SubItems.Add(listitem.SubItems(3).Text)
+                            X.SubItems.Add(dr("ProductID").ToString()) '5
+                        End While
+                        frmManageSalesV2.txtCompanyName.Enabled = True
+                        frmManageSalesV2.txtDeliveryAddress.Enabled = True
+                        frmManageSalesV2.txtAddress.Enabled = True
+                    End If
 
-                    While dr.Read
-                        Dim X As ListViewItem = frmManageSalesV2.ListView1.Items.Add(listitem.SubItems(2).Text)
-                        X.SubItems.Add(dr("ProductName").ToString())
-                        X.SubItems.Add(dr("Description").ToString())
-                        X.SubItems.Add(dr("SellingPrice").ToString())
-                        X.SubItems.Add(listitem.SubItems(3).Text)
-                        X.SubItems.Add(dr("ProductID").ToString()) '5
-                    End While
                 Next
+                Call closeForm()
                 Me.Close()
-                frmManageSalesV2.txtCompanyName.Enabled = True
-                frmManageSalesV2.txtDeliveryAddress.Enabled = True
-                frmManageSalesV2.txtAddress.Enabled = True
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(printBilling): " & ex.Message)
@@ -194,4 +204,16 @@ Public Class frmManagePOS
             End If
         End Try
     End Sub
+    Private Sub closeForm()
+        ListView1.Items.Clear()
+        lblTotalProductSold.Text = "0"
+        lblGrandTotal.Text = "0.00"
+        lblTotalSales.Text = "0.00"
+        lblVATSales.Text = "0.00"
+        lblVAT.Text = "0.00"
+        Call clearAll()
+        btnCancel.Enabled = False
+    End Sub
+
+
 End Class

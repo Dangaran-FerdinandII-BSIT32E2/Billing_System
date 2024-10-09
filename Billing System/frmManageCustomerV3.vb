@@ -1,7 +1,7 @@
-﻿Imports System.Data.OleDb
+﻿'Imports System.Data.OleDb
 Imports System.Web.UI
 Imports MySql.Data.MySqlClient
-Imports Mysqlx.XDevAPI.Common
+'Imports Mysqlx.XDevAPI.Common
 Public Class frmManageCustomerV3
     Private Sub frmManageCustomerV3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
@@ -55,6 +55,27 @@ Public Class frmManageCustomerV3
         Else
             MsgBox("Please select a customer from the list!", MsgBoxStyle.Information, "View Info")
         End If
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles txtSearchCustomer.TextChanged
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            Dim dt As DataTable = SearchDatabase(txtSearchCustomer.Text)
+            PopulateListView(dt)
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCustomerV3(SearchDatabase): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
     Public Function SearchDatabase(searchTerm As String) As DataTable
 
@@ -250,19 +271,7 @@ Public Class frmManageCustomerV3
         End If
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-            Dim dt As DataTable = SearchDatabase(txtSearchCustomer.Text)
-            PopulateListView(dt)
-        Catch ex As Exception
-            MsgBox("An error occurred frmManageCustomerV3(SearchDatabase): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
+    Private Sub txtSearchCustomer_TextChanged(sender As Object, e As EventArgs) Handles txtSearchCustomer.TextChanged
+
     End Sub
 End Class
