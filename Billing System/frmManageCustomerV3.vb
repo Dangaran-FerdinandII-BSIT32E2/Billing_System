@@ -118,7 +118,7 @@ Public Class frmManageCustomerV3
         Next
     End Sub
 
-    Private Sub cboSalesman_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSalesman.SelectedIndexChanged
+    Private Sub cboSalesman_SelectedIndexChanged(sender As Object, e As EventArgs)
         If cboSalesman.Text = "View Master List" Or cboSalesman.Text = "Filter by" Then
             ListView1.Columns.Clear()
             ListView1.Columns.Add("Company Name")
