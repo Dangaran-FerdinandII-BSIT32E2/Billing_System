@@ -250,7 +250,7 @@ Public Class frmManageCustomerV3
         End If
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
