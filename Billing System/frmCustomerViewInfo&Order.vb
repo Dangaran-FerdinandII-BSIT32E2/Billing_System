@@ -98,7 +98,7 @@ Public Class frmCustomerViewInfo_Order
                     cn.Open()
                 End If
 
-                sql = "SELECT *, SUM(Amount) AS TotalPrice FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND Status <> 3 AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' GROUP BY OrderID"
+                sql = "SELECT *, SUM(Amount) AS TotalPrice FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' GROUP BY OrderID"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -113,7 +113,7 @@ Public Class frmCustomerViewInfo_Order
                     x = New ListViewItem(dr("OrderID").ToString())
                     x.SubItems.Add(dr("TotalPrice").ToString())
                     x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) '2
-                    x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Priority Order", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "Item on Hand", "Item on Process")).ToString())) '3
+                    x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Priority Order", IIf(dr("Status").ToString() = "3", "Delivered", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "Item on Hand", "Item on Process")).ToString()))) '3
                     x.SubItems.Add(dr("OrderDate").ToString()) ' 4
 
                     ' Check if the status is "Urgent" and set the text color accordingly
