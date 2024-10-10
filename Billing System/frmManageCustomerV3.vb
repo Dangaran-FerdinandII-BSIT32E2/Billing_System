@@ -57,7 +57,7 @@ Public Class frmManageCustomerV3
         End If
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles txtSearchCustomer.TextChanged
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -118,7 +118,7 @@ Public Class frmManageCustomerV3
         Next
     End Sub
 
-    Private Sub cboSalesman_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cboSalesman_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSalesman.SelectedIndexChanged
         If cboSalesman.Text = "View Master List" Or cboSalesman.Text = "Filter by" Then
             ListView1.Columns.Clear()
             ListView1.Columns.Add("Company Name")
@@ -261,7 +261,7 @@ Public Class frmManageCustomerV3
         End Try
     End Sub
 
-    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click, Timer1.Tick
         If cboSalesman.Text = "View Master List" Or cboSalesman.Text = "Filter by" Then
             Call loadCustomers()
         ElseIf cboSalesman.Text = "View Pending Orders" Then
@@ -269,9 +269,5 @@ Public Class frmManageCustomerV3
         ElseIf cboSalesman.Text = "View Inactive Users" Then
             Call loadInactiveUsers()
         End If
-    End Sub
-
-    Private Sub txtSearchCustomer_TextChanged(sender As Object, e As EventArgs) Handles txtSearchCustomer.TextChanged
-
     End Sub
 End Class

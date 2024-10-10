@@ -170,21 +170,14 @@ Public Class frmPrintSalesInvoiceV2
 
             lblPriceAdjusted.Text = frmManageSalesV2.txtAmount.Text
 
-            If lblAdjustPrice.Text = "Discount:" Then
-                If frmManageSalesV2.txtAmount.Text.Contains("%") Then
-                    priceadjust /= 100
-                    lblTotalAmount.Text = (totalAmount - (totalAmount * priceadjust)).ToString("N2")
-                Else
-                    lblTotalAmount.Text = totalAmount - Val(lblPriceAdjusted.Text)
-                End If
+            If frmManageSalesV2.cboFormat.Text = "In Percent" Then
+                priceadjust = totalAmount * (priceadjust / 100)
+            End If
 
+            If lblAdjustPrice.Text = "Discount:" Then
+                lblTotalAmount.Text = (totalAmount - priceadjust).ToString("N2")
             ElseIf lblAdjustPrice.Text = "Mark Up:" Then
-                If frmManageSalesV2.txtAmount.Text.Contains("%") Then
-                    priceadjust /= 100
-                    lblTotalAmount.Text = (totalAmount + (totalAmount * priceadjust)).ToString("N2")
-                Else
-                    lblTotalAmount.Text = totalAmount + Val(lblPriceAdjusted.Text)
-                End If
+                lblTotalAmount.Text = (totalAmount + priceadjust).ToString("N2")
             Else
                 lblTotalAmount.Text = totalAmount
             End If

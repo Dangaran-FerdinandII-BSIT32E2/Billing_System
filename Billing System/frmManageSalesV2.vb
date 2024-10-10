@@ -151,30 +151,9 @@ Public Class frmManageSalesV2
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
+        If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
 
-            If lblOrderID.Text IsNot Nothing Then
-                If MsgBox("Do you want to delete the order?", vbYesNo) = vbYes Then
-                    sql = "DELETE FROM tblorder WHERE OrderID = @orderid"
-                    cmd = New MySqlCommand(sql, cn)
-                    cmd.Parameters.AddWithValue("@orderid", lblOrderID.Text)
-                    cmd.ExecuteNonQuery()
-
-                    Call loadBilling()
-
-                    MsgBox("Successfully deleted!", MsgBoxStyle.Information)
-                End If
-            End If
-        Catch ex As Exception
-            MsgBox("An error occurred frmManageUsers(btnDelete): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
+        End If
     End Sub
 
     Private Sub Printbtn_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
@@ -315,9 +294,13 @@ Public Class frmManageSalesV2
     Private Sub cboAdjust_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAdjust.SelectedIndexChanged
         If cboAdjust.SelectedIndex <> 0 Then
             txtAmount.Enabled = True
+            cboFormat.Visible = True
+            cboFormat.Enabled = True
         Else
             txtAmount.Clear()
             txtAmount.Enabled = False
+            cboFormat.Visible = False
+            cboFormat.Enabled = False
         End If
     End Sub
 
