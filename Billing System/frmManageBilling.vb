@@ -84,10 +84,14 @@ Public Class frmManageBilling
         loadBilling(startDate, endDate)
     End Sub
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click, ListView1.DoubleClick
-        frmManageCollectionV2.billingid = ListView1.SelectedItems(0).SubItems(0).Text
-        frmManageCollectionV2.startDate = startDate
-        frmManageCollectionV2.endDate = endDate
-        frmManageCollectionV2.ShowDialog()
+        If ListView1.SelectedItems.Count > 0 Then
+            frmManageCollectionV2.billingid = ListView1.SelectedItems(0).SubItems(0).Text
+            frmManageCollectionV2.startDate = startDate
+            frmManageCollectionV2.endDate = endDate
+            frmManageCollectionV2.ShowDialog()
+        Else
+            MsgBox("Please select a billing invoice!", MsgBoxStyle.Information, "Selection Error")
+        End If
     End Sub
 
     Private Sub cboFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilter.SelectedIndexChanged

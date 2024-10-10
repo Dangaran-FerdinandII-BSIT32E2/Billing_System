@@ -24,6 +24,18 @@ Public Class frmManageCollectionV2
         Call loadPaymentDetails()
     End Sub
 
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+            pbxDelivery.Image = Nothing
+            PictureBox2.Visible = True
+            btnBrowseDelivery.Visible = True
+
+            pbxPayment.Image = Nothing
+            PictureBox3.Visible = True
+            btnBrowsePayment.Visible = True
+        End If
+    End Sub
+
     'DELIVERY DETAILS TAB
     Private Sub loadDeliveryDetails()
         Try
@@ -81,6 +93,8 @@ Public Class frmManageCollectionV2
 
                         Else
                             pbxDelivery.Image = Nothing
+                            PictureBox2.Visible = True
+                            btnBrowseDelivery.Visible = True
                         End If
 
                     Catch ex As Exception
@@ -88,6 +102,8 @@ Public Class frmManageCollectionV2
                     End Try
                 Else
                     pbxDelivery.Image = Nothing
+                    PictureBox2.Visible = True
+                    btnBrowseDelivery.Visible = True
                 End If
                 dr.Close()
             End If
@@ -255,6 +271,8 @@ Public Class frmManageCollectionV2
                         Else
                             pbxPayment.Image = Nothing
                             btnPrintPayment.Enabled = False
+                            PictureBox3.Visible = True
+                            btnBrowsePayment.Visible = True
                         End If
 
                     Catch ex As Exception
@@ -263,6 +281,8 @@ Public Class frmManageCollectionV2
                 Else
                     pbxPayment.Image = Nothing
                     btnPrintPayment.Enabled = False
+                    PictureBox3.Visible = True
+                    btnBrowsePayment.Visible = True
                 End If
                 dr.Close()
             End If

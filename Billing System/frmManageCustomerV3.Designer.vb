@@ -375,6 +375,7 @@ Partial Class frmManageCustomerV3
         Me.btnViewInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnViewInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnViewInfo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnViewInfo.Enabled = False
         Me.btnViewInfo.FillColor = System.Drawing.Color.OrangeRed
         Me.btnViewInfo.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnViewInfo.ForeColor = System.Drawing.Color.White

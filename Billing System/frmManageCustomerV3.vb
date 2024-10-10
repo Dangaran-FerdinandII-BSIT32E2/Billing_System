@@ -270,4 +270,10 @@ Public Class frmManageCustomerV3
             Call loadInactiveUsers()
         End If
     End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+        If ListView1.SelectedItems.Count > 0 Then
+            btnViewInfo.Enabled = True
+        End If
+    End Sub
 End Class
