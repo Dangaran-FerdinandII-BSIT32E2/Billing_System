@@ -1080,6 +1080,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.lblPriceAdjusted.Size = New System.Drawing.Size(36, 17)
         Me.lblPriceAdjusted.TabIndex = 54
         Me.lblPriceAdjusted.Text = "0.00"
+        Me.lblPriceAdjusted.Visible = False
         '
         'lblAdjustPrice
         '
@@ -1092,6 +1093,7 @@ Partial Class frmPrintSalesInvoiceV2
         Me.lblAdjustPrice.Size = New System.Drawing.Size(106, 17)
         Me.lblAdjustPrice.TabIndex = 49
         Me.lblAdjustPrice.Text = "Adjusted Price:"
+        Me.lblAdjustPrice.Visible = False
         '
         'Panel37
         '

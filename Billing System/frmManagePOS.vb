@@ -173,7 +173,9 @@ Public Class frmManagePOS
                             X.SubItems.Add(dr("Description").ToString())
                             X.SubItems.Add(dr("SellingPrice").ToString())
                             X.SubItems.Add(listitem.SubItems(3).Text)
-                            X.SubItems.Add(dr("ProductID").ToString()) '5
+                            X.SubItems.Add("0") '5
+                            X.SubItems.Add("0") '6
+                            X.SubItems.Add(dr("ProductID").ToString()) '7
                         End While
                         frmManageRentalV2.txtCompanyName.Enabled = True
                         frmManageRentalV2.txtDeliveryAddress.Enabled = True
@@ -185,13 +187,15 @@ Public Class frmManagePOS
                             X.SubItems.Add(dr("Description").ToString())
                             X.SubItems.Add(dr("SellingPrice").ToString())
                             X.SubItems.Add(listitem.SubItems(3).Text)
-                            X.SubItems.Add(dr("ProductID").ToString()) '5
+                            X.SubItems.Add("0") '5
+                            X.SubItems.Add("0") '6
+                            X.SubItems.Add(dr("ProductID").ToString()) '7
                         End While
+                        frmPrintSalesInvoiceV2.walkin = True
                         frmManageSalesV2.txtCompanyName.Enabled = True
                         frmManageSalesV2.txtDeliveryAddress.Enabled = True
                         frmManageSalesV2.txtAddress.Enabled = True
                     End If
-
                 Next
                 Call closeForm()
                 Me.Close()

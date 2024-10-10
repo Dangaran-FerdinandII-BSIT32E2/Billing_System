@@ -52,6 +52,7 @@ Public Class frmListProducts
 
                 frmManagePOS.txtQty.Enabled = True
                 frmManagePOS.btnInsert.Enabled = True
+                frmManagePOS.txtQty.Text = "1"
 
                 Me.Close()
             Else

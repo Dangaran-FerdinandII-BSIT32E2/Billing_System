@@ -7,6 +7,8 @@ Imports System.Data.SqlClient
 Public Class frmManageSalesV2
 
     Public orderid As String
+    Dim adjustedValue As Double
+    Dim trueadjustedvalue As String
     Private Sub frmManageBilling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadBilling()
@@ -185,9 +187,9 @@ Public Class frmManageSalesV2
 
             If filled Then
                 If cboAdjust.SelectedIndex <> 0 Then
-                    Dim adjustedValue As Double
                     If txtAmount.TextLength > 0 Then
                         frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = True
+                        frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = True
                         If cboAdjust.Text = "Add Discount" Then
                             If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue > 0 AndAlso adjustedValue <= 100 Then
                                 frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Discount:"
@@ -207,10 +209,12 @@ Public Class frmManageSalesV2
                         End If
                     Else
                         frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
+                        frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = False
                         Call printBilling()
                     End If
                 Else
                     frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
+                    frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = False
                     Call printBilling()
                 End If
             End If
@@ -228,6 +232,13 @@ Public Class frmManageSalesV2
                 cn.Open()
             End If
 
+            If cboFormat.Text = "In Percent" Then
+                frmPrintSalesInvoiceV2.format = True
+                trueadjustedvalue = (adjustedValue / 100).ToString("P")
+            Else
+                frmPrintSalesInvoiceV2.format = False
+                trueadjustedvalue = adjustedValue
+            End If
 
             'left side
             frmPrintSalesInvoiceV2.lblSoldTo.Text = txtCompanyName.Text
@@ -242,6 +253,10 @@ Public Class frmManageSalesV2
             frmPrintSalesInvoiceV2.lblSalesman.Text = cboSalesman.Text
             frmPrintSalesInvoiceV2.lblPONo.Text = txtPONo.Text
             frmPrintSalesInvoiceV2.lblDate.Text = dtpDate.Value.ToString
+
+            frmPrintSalesInvoiceV2.textamount = trueadjustedvalue
+            frmPrintSalesInvoiceV2.printdate = dtpDate.Value.ToString
+            frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddDays(5).ToString
 
             For Each listitem As ListViewItem In ListView1.Items 'includes OrderID on SubItem 5 OrderList sub item 6 productid sub item 7
                 Dim X As ListViewItem = listitem.Clone()

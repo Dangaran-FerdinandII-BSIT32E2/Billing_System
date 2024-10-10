@@ -7,9 +7,15 @@ Imports System.Windows.Forms.Form
 Imports MySql.Data.MySqlClient
 Imports Microsoft.VisualBasic.PowerPacks.Printing
 Public Class frmPrintSalesInvoiceV2
+
     Public custid As String
     Public billid As String
     Public priceadjust As Double
+    Public textamount As String
+    Public format As Boolean? = False
+    Public walkin As Boolean? = False
+    Public printdate As DateTime
+    Public adjusteddate As datetime
 
     Private Sub frmPrintSalesInvoiceV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
@@ -23,6 +29,7 @@ Public Class frmPrintSalesInvoiceV2
         Call saveBilling()
         Call printfile()
         Call sendEmail()
+        ListView1.Items.Clear()
         Me.Close()
     End Sub
     Private Sub saveBilling()
@@ -31,19 +38,26 @@ Public Class frmPrintSalesInvoiceV2
                 cn.Open()
             End If
 
-            sql = "INSERT INTO tblbilling(BillingID, CustomerID, SalesMan, Terms, ProductOrder, DatePrinted) VALUES(@BillingID, @CustomerID, @SalesMan, @Terms, @ProductOrder, @DatePrinted)"
+            sql = "INSERT INTO tblbilling(BillingID, CustomerID, CompanyName, SalesMan, Terms, ProductOrder, DatePrinted, DueDate, Discount, Markup, FinalPrice) VALUES(@BillingID, @CustomerID, @CompanyName, @SalesMan, @Terms, @ProductOrder, @DatePrinted, @DueDate, @Discount, @Markup, @FinalPrice)"
             cmd = New MySqlCommand(sql, cn)
             With cmd
-                .Parameters.AddWithValue("@BillingID", frmManageSalesV2.lblBillingID.Text)
-                .Parameters.AddWithValue("@CustomerID", custid)
+                .Parameters.AddWithValue("@BillingID", billid)
+                .Parameters.AddWithValue("@CustomerID", If(walkin, "2", If(Label1.Text = "SALES INVOICE", custid, "1")))
+                .Parameters.AddWithValue("@CompanyName", lblSoldTo.Text)
                 .Parameters.AddWithValue("@SalesMan", lblSalesman.Text)
                 .Parameters.AddWithValue("@Terms", lblTerms.Text)
                 .Parameters.AddWithValue("@ProductOrder", lblPONo.Text)
-                .Parameters.AddWithValue("@DatePrinted", frmManageSalesV2.dtpDate.Value)
+                .Parameters.AddWithValue("@DatePrinted", printdate)
+                .Parameters.AddWithValue("@DueDate", adjusteddate)
+                .Parameters.AddWithValue("@Discount", If(lblAdjustPrice.Text = "Discount:", lblPriceAdjusted.Text, DBNull.Value))
+                .Parameters.AddWithValue("@Markup", If(lblAdjustPrice.Text = "Mark Up:", lblPriceAdjusted.Text, DBNull.Value))
+                .Parameters.AddWithValue("@FinalPrice", lblTotalAmount.Text.Replace(",", ""))
                 .ExecuteNonQuery()
             End With
 
-            Call updateOrder()
+            If walkin = False Then
+                Call updateOrder()
+            End If
             Call saveBillInvoice()
         Catch ex As Exception
             MsgBox("An error occurred frmPrintInvoice(saveBilling): " & ex.Message)
@@ -86,7 +100,7 @@ Public Class frmPrintSalesInvoiceV2
                 sql = "INSERT INTO tblbillinvoice(BillingID, OrderID, Amount, ProductID) VALUES(@BillingID, @OrderID, @Amount, @ProductID)"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
-                    .Parameters.AddWithValue("@BillingID", frmManageSalesV2.lblBillingID.Text)
+                    .Parameters.AddWithValue("@BillingID", billid)
                     .Parameters.AddWithValue("@OrderID", order.SubItems(5).Text)
                     .Parameters.AddWithValue("@Amount", order.SubItems(4).Text)
                     .Parameters.AddWithValue("@ProductID", order.SubItems(7).Text)
@@ -150,7 +164,9 @@ Public Class frmPrintSalesInvoiceV2
             bitmap.Save("PrintedInvoice.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg)
             Me.PrintForm1.Print()
         End Using
-
+        Me.FormBorderStyle = FormBorderStyle.Sizable
+        btnPrint.Visible = True
+        btnCancel.Visible = True
     End Sub
 
     Private Sub calculateReceipt()
@@ -168,10 +184,9 @@ Public Class frmPrintSalesInvoiceV2
 
             lblAddVAT.Text = (totalAmount * 0.12)
 
-            lblPriceAdjusted.Text = frmManageSalesV2.txtAmount.Text
-
-            If frmManageSalesV2.cboFormat.Text = "In Percent" Then
+            If format Then
                 priceadjust = totalAmount * (priceadjust / 100)
+                lblPriceAdjusted.Text = priceadjust
             End If
 
             If lblAdjustPrice.Text = "Discount:" Then

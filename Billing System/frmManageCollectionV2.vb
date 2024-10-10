@@ -31,11 +31,7 @@ Public Class frmManageCollectionV2
                 cn.Open()
             End If
 
-            sql = "SELECT DISTINCT tblBilling.DatePrinted, tblOrder.DueDate " &
-                    "FROM  tblBilling " &
-                    "INNER JOIN tblbillinvoice ON tblBilling.BillingID = tblbillinvoice.BillingID " &
-                    "INNER JOIN tblOrder ON tblOrder.OrderID = tblbillinvoice.OrderID " &
-                    "WHERE tblBilling.BillingID = '" & billingid & "'"
+            sql = "SELECT DISTINCT DatePrinted, DueDate FROM tblBilling WHERE BillingID = '" & billingid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then

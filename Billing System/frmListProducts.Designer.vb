@@ -52,8 +52,8 @@ Partial Class frmListProducts
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel14.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel23.SuspendLayout()
@@ -376,15 +376,15 @@ Partial Class frmListProducts
         Me.ColumnHeader5.Text = "Model Number"
         Me.ColumnHeader5.Width = 345
         '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Selling Price"
-        Me.ColumnHeader6.Width = 200
-        '
         'ColumnHeader7
         '
         Me.ColumnHeader7.Text = "Purchase Price"
         Me.ColumnHeader7.Width = 180
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Selling Price"
+        Me.ColumnHeader6.Width = 200
         '
         'frmListProducts
         '

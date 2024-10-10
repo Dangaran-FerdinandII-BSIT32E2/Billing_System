@@ -16,6 +16,21 @@ Public Class frmManageBilling
 
         Call loadBilling(startDate, endDate)
     End Sub
+
+    Private Sub AddButtonsToListView()
+        For i As Integer = 0 To ListView1.Items.Count - 1
+            Dim btn As New Button
+            btn.Text = "Click Me"
+            btn.Location = New Point(ListView1.Items(i).Bounds.Right + 5, ListView1.Items(i).Bounds.Top)
+            AddHandler btn.Click, AddressOf Button_Click
+            Me.Controls.Add(btn)
+        Next
+    End Sub
+
+    Private Sub Button_Click(sender As Object, e As EventArgs)
+        ' Get the corresponding list item based on the button clicked (logic needed)
+        ' Then perform the desired action based on the list item data
+    End Sub
     Public Sub loadBilling(startDate As String, endDate As String)
         Try
             Dim startDateTime As DateTime
@@ -47,6 +62,7 @@ Public Class frmManageBilling
                     ListView1.Items.Add(x)
                 Loop
                 dr.Close()
+                Call AddButtonsToListView()
             End If
 
         Catch ex As Exception

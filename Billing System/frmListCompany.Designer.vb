@@ -232,7 +232,7 @@ Partial Class frmListCompany
         Me.Panel2.Location = New System.Drawing.Point(213, 12)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(187, 50)
+        Me.Panel2.Size = New System.Drawing.Size(274, 50)
         Me.Panel2.TabIndex = 20
         '
         'btnCreateNew
@@ -252,9 +252,9 @@ Partial Class frmListCompany
         Me.btnCreateNew.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCreateNew.Name = "btnCreateNew"
         Me.btnCreateNew.PressedDepth = 20
-        Me.btnCreateNew.Size = New System.Drawing.Size(187, 50)
+        Me.btnCreateNew.Size = New System.Drawing.Size(274, 50)
         Me.btnCreateNew.TabIndex = 57
-        Me.btnCreateNew.Text = "Create New"
+        Me.btnCreateNew.Text = "Add Walk-In Customer"
         '
         'Panel1
         '
