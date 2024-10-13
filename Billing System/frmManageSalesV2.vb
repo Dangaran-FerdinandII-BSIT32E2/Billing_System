@@ -217,6 +217,9 @@ Public Class frmManageSalesV2
                     frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = False
                     Call printBilling()
                 End If
+
+                btnAddOrder.Visible = False
+                txtCompanyName.PlaceholderText = "Search Company"
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(btnPrint): " & ex.Message)
@@ -321,5 +324,11 @@ Public Class frmManageSalesV2
 
     Private Sub txtCompanyName_TextChanged(sender As Object, e As EventArgs) Handles txtCompanyName.TextChanged
         txtBusinessStyle.Text = txtCompanyName.Text
+    End Sub
+
+    Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
+        If MsgBox("Do you want to add items?", vbYesNo + vbQuestion, "Walk-In Status") = vbYes Then
+            frmManagePOS.ShowDialog()
+        End If
     End Sub
 End Class

@@ -11,6 +11,16 @@ Public Class frmManagePOS
         btnCancel.Enabled = True
     End Sub
 
+    Private Sub frmManagePOS_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+            txtAmt.Clear()
+            txtProduct.Clear()
+            txtQty.Clear()
+            ListView1.Items.Clear()
+
+        End If
+    End Sub
+
     Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
         Try
             If cn.State <> ConnectionState.Open Then

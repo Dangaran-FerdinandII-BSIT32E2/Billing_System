@@ -115,7 +115,9 @@ Public Class frmListCompany
         If MsgBox("Add walk-in orders?", vbYesNo + vbQuestion) = vbYes Then
             Me.Close()
             frmManagePOS.isRental = False
-            frmManagePOS.ShowDialog()
+            frmManageSalesV2.btnAddOrder.Visible = True
+            frmManageSalesV2.txtCompanyName.PlaceholderText = "Enter Company Name"
+            frmManageSalesV2.txtCompanyName.Enabled = True
         End If
     End Sub
 End Class

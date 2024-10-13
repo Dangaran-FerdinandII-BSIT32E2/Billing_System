@@ -1,9 +1,11 @@
 ﻿Imports System.Data.SqlClient
+Imports MySql.Data.MySqlClient
 Public Class frmAdminDashboard
     Private isFormBeingDragged As Boolean = False
     Private mouseDownX As Integer
     Private mouseDownY As Integer
     'Private isButtonClicked As Boolean = False
+
 
     Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel2.MouseDown
         If e.Button = MouseButtons.Left Then
@@ -28,7 +30,35 @@ Public Class frmAdminDashboard
             temp = Nothing
         End If
     End Sub
+
+    Private Sub loadNotification() Handles Timer2.Tick
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT COUNT(InquiryID) AS TotalInquiries FROM tblinquiry"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                lblCount.Text = dr("TotalInquiries").ToString()
+            End If
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("An error occurred frmAdminDashboard(loadNotification): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call loadNotification()
         'Call connection()
         frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("May", 50000)
         frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("June", 100000)

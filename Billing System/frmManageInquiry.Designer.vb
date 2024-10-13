@@ -31,10 +31,14 @@ Partial Class frmManageInquiry
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlListOfCustomerBody = New System.Windows.Forms.Panel()
         Me.Panel30 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnShow = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -61,6 +65,7 @@ Partial Class frmManageInquiry
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlListOfCustomerBody.SuspendLayout()
         Me.Panel30.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel34.SuspendLayout()
         Me.Panel14.SuspendLayout()
@@ -112,7 +117,6 @@ Partial Class frmManageInquiry
         'ColumnHeader13
         '
         Me.ColumnHeader13.Text = "Company Name"
-        Me.ColumnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader13.Width = 250
         '
         'ColumnHeader12
@@ -120,31 +124,36 @@ Partial Class frmManageInquiry
         Me.ColumnHeader12.Text = "Name"
         Me.ColumnHeader12.Width = 250
         '
-        'ListView2
+        'ListView1
         '
-        Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader10})
-        Me.ListView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ListView2.GridLines = True
-        Me.ListView2.HideSelection = False
-        Me.ListView2.Location = New System.Drawing.Point(13, 74)
-        Me.ListView2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(1426, 594)
-        Me.ListView2.TabIndex = 35
-        Me.ListView2.UseCompatibleStateImageBehavior = False
-        Me.ListView2.View = System.Windows.Forms.View.Details
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader10, Me.ColumnHeader11})
+        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView1.FullRowSelect = True
+        Me.ListView1.GridLines = True
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(13, 74)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(1426, 594)
+        Me.ListView1.TabIndex = 35
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader10
         '
         Me.ColumnHeader10.Text = "Date"
-        Me.ColumnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader10.Width = 200
+        Me.ColumnHeader10.Width = 250
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "Status"
+        Me.ColumnHeader11.Width = 250
         '
         'pnlListOfCustomerBody
         '
         Me.pnlListOfCustomerBody.BackColor = System.Drawing.Color.White
-        Me.pnlListOfCustomerBody.Controls.Add(Me.ListView2)
+        Me.pnlListOfCustomerBody.Controls.Add(Me.ListView1)
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel30)
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel8)
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel9)
@@ -153,7 +162,7 @@ Partial Class frmManageInquiry
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel14)
         Me.pnlListOfCustomerBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlListOfCustomerBody.Location = New System.Drawing.Point(0, 0)
-        Me.pnlListOfCustomerBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlListOfCustomerBody.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlListOfCustomerBody.Name = "pnlListOfCustomerBody"
         Me.pnlListOfCustomerBody.Size = New System.Drawing.Size(1452, 754)
         Me.pnlListOfCustomerBody.TabIndex = 15
@@ -161,6 +170,8 @@ Partial Class frmManageInquiry
         'Panel30
         '
         Me.Panel30.BackColor = System.Drawing.Color.White
+        Me.Panel30.Controls.Add(Me.Panel4)
+        Me.Panel30.Controls.Add(Me.Panel1)
         Me.Panel30.Controls.Add(Me.Panel3)
         Me.Panel30.Controls.Add(Me.Panel2)
         Me.Panel30.Controls.Add(Me.Panel34)
@@ -168,17 +179,59 @@ Partial Class frmManageInquiry
         Me.Panel30.Controls.Add(Me.Panel31)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel30.Location = New System.Drawing.Point(13, 668)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(1426, 74)
         Me.Panel30.TabIndex = 19
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.White
+        Me.Panel4.Controls.Add(Me.btnDelete)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel4.Location = New System.Drawing.Point(400, 12)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(187, 50)
+        Me.Panel4.TabIndex = 39
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BorderRadius = 8
+        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDelete.Enabled = False
+        Me.btnDelete.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnDelete.Location = New System.Drawing.Point(0, 0)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.PressedDepth = 20
+        Me.btnDelete.Size = New System.Drawing.Size(187, 50)
+        Me.btnDelete.TabIndex = 57
+        Me.btnDelete.Text = "Delete"
+        '
+        'Panel1
+        '
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Location = New System.Drawing.Point(387, 12)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(13, 50)
+        Me.Panel1.TabIndex = 38
         '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.btnShow)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(200, 12)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(187, 50)
         Me.Panel3.TabIndex = 37
@@ -192,12 +245,13 @@ Partial Class frmManageInquiry
         Me.btnShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnShow.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnShow.Enabled = False
         Me.btnShow.FillColor = System.Drawing.Color.OrangeRed
         Me.btnShow.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnShow.ForeColor = System.Drawing.Color.White
         Me.btnShow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnShow.Location = New System.Drawing.Point(0, 0)
-        Me.btnShow.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnShow.Margin = New System.Windows.Forms.Padding(4)
         Me.btnShow.Name = "btnShow"
         Me.btnShow.PressedDepth = 20
         Me.btnShow.Size = New System.Drawing.Size(187, 50)
@@ -208,7 +262,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(187, 12)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(13, 50)
         Me.Panel2.TabIndex = 37
@@ -219,7 +273,7 @@ Partial Class frmManageInquiry
         Me.Panel34.Controls.Add(Me.btnConfirm)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel34.Location = New System.Drawing.Point(0, 12)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(187, 50)
         Me.Panel34.TabIndex = 18
@@ -233,12 +287,13 @@ Partial Class frmManageInquiry
         Me.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnConfirm.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnConfirm.Enabled = False
         Me.btnConfirm.FillColor = System.Drawing.Color.OrangeRed
         Me.btnConfirm.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnConfirm.ForeColor = System.Drawing.Color.White
         Me.btnConfirm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnConfirm.Location = New System.Drawing.Point(0, 0)
-        Me.btnConfirm.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnConfirm.Margin = New System.Windows.Forms.Padding(4)
         Me.btnConfirm.Name = "btnConfirm"
         Me.btnConfirm.PressedDepth = 20
         Me.btnConfirm.Size = New System.Drawing.Size(187, 50)
@@ -250,7 +305,7 @@ Partial Class frmManageInquiry
         Me.Panel32.BackColor = System.Drawing.Color.White
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel32.Location = New System.Drawing.Point(0, 62)
-        Me.Panel32.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(1426, 12)
         Me.Panel32.TabIndex = 18
@@ -260,7 +315,7 @@ Partial Class frmManageInquiry
         Me.Panel31.BackColor = System.Drawing.Color.White
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel31.Location = New System.Drawing.Point(0, 0)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel31.Name = "Panel31"
         Me.Panel31.Size = New System.Drawing.Size(1426, 12)
         Me.Panel31.TabIndex = 18
@@ -269,7 +324,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(13, 62)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1426, 12)
         Me.Panel8.TabIndex = 7
@@ -278,7 +333,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel9.Location = New System.Drawing.Point(0, 62)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(13, 680)
         Me.Panel9.TabIndex = 8
@@ -287,7 +342,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel10.Location = New System.Drawing.Point(0, 742)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1439, 12)
         Me.Panel10.TabIndex = 9
@@ -296,7 +351,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel12.Location = New System.Drawing.Point(1439, 62)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(13, 692)
         Me.Panel12.TabIndex = 6
@@ -308,7 +363,7 @@ Partial Class frmManageInquiry
         Me.Panel14.Controls.Add(Me.Panel23)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(1452, 62)
         Me.Panel14.TabIndex = 0
@@ -321,7 +376,7 @@ Partial Class frmManageInquiry
         Me.Panel15.Controls.Add(Me.Panel22)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(353, 62)
         Me.Panel15.TabIndex = 13
@@ -344,7 +399,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel16.Location = New System.Drawing.Point(0, 18)
-        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(13, 32)
         Me.Panel16.TabIndex = 13
@@ -353,7 +408,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel17.Location = New System.Drawing.Point(0, 50)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(353, 12)
         Me.Panel17.TabIndex = 13
@@ -362,7 +417,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(353, 18)
         Me.Panel22.TabIndex = 13
@@ -375,7 +430,7 @@ Partial Class frmManageInquiry
         Me.Panel23.Controls.Add(Me.Panel27)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel23.Location = New System.Drawing.Point(912, 0)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(540, 62)
         Me.Panel23.TabIndex = 10
@@ -394,7 +449,7 @@ Partial Class frmManageInquiry
         Me.txtSearchCompanyName.ForeColor = System.Drawing.Color.Black
         Me.txtSearchCompanyName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtSearchCompanyName.Location = New System.Drawing.Point(108, 12)
-        Me.txtSearchCompanyName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtSearchCompanyName.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearchCompanyName.Name = "txtSearchCompanyName"
         Me.txtSearchCompanyName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchCompanyName.PlaceholderText = "Search by company name"
@@ -406,7 +461,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel25.Location = New System.Drawing.Point(527, 12)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(13, 38)
         Me.Panel25.TabIndex = 12
@@ -415,7 +470,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel26.Location = New System.Drawing.Point(0, 50)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel26.Name = "Panel26"
         Me.Panel26.Size = New System.Drawing.Size(540, 12)
         Me.Panel26.TabIndex = 11
@@ -424,7 +479,7 @@ Partial Class frmManageInquiry
         '
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel27.Location = New System.Drawing.Point(0, 0)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel27.Name = "Panel27"
         Me.Panel27.Size = New System.Drawing.Size(540, 12)
         Me.Panel27.TabIndex = 10
@@ -448,11 +503,12 @@ Partial Class frmManageInquiry
         Me.ClientSize = New System.Drawing.Size(1452, 754)
         Me.Controls.Add(Me.pnlListOfCustomerBody)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmManageInquiry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.pnlListOfCustomerBody.ResumeLayout(False)
         Me.Panel30.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel34.ResumeLayout(False)
         Me.Panel14.ResumeLayout(False)
@@ -472,7 +528,7 @@ Partial Class frmManageInquiry
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader13 As ColumnHeader
     Friend WithEvents ColumnHeader12 As ColumnHeader
-    Friend WithEvents ListView2 As ListView
+    Friend WithEvents ListView1 As ListView
     Friend WithEvents pnlListOfCustomerBody As Panel
     Friend WithEvents Panel30 As Panel
     Friend WithEvents Panel34 As Panel
@@ -500,4 +556,8 @@ Partial Class frmManageInquiry
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnShow As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ColumnHeader11 As ColumnHeader
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel1 As Panel
 End Class
