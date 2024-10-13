@@ -24,7 +24,7 @@ Public Class frmManageCollectionV2
         Call loadPaymentDetails()
     End Sub
 
-    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub frmManageCollectionV2_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
             pbxDelivery.Image = Nothing
             PictureBox2.Visible = True

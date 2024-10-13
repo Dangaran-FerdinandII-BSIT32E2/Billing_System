@@ -65,10 +65,6 @@ Public Class frmManageSupplierProduct
             If ListView1.SelectedItems.Count > 0 And checkForeignKey() = False Then
                 If MsgBox("Do you want to delete?", vbYesNo) = vbYes Then
 
-                    If Not dr.IsClosed Then
-                        dr.Close()
-                    End If
-
                     sql = "DELETE FROM tblsupplier WHERE SupplierID = @item and ContactPerson = '" & ListView1.SelectedItems(0).SubItems(2).Text & "'"
                     cmd = New MySqlCommand(sql, cn)
                     cmd.Parameters.AddWithValue("@item", ListView1.SelectedItems(0).SubItems(6).Text)

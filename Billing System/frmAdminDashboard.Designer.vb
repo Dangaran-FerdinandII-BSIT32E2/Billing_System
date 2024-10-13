@@ -54,6 +54,7 @@ Partial Class frmAdminDashboard
         Me.lblDate = New System.Windows.Forms.Label()
         Me.panelDashboard = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -506,6 +507,11 @@ Partial Class frmAdminDashboard
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 30000
+        '
         'frmAdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -565,4 +571,5 @@ Partial Class frmAdminDashboard
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents lblCount As Label
     Friend WithEvents btnSales As Button
+    Friend WithEvents Timer2 As Timer
 End Class
