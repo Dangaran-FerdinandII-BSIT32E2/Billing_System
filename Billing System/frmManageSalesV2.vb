@@ -152,9 +152,16 @@ Public Class frmManageSalesV2
         End Try
     End Sub
 
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
-
+            txtAddress.Clear()
+            txtDeliveryAddress.Clear()
+            txtBusinessStyle.Clear()
+            txtTIN.Clear()
+            txtPONo.Clear()
+            txtTerms.Clear()
+            cboSalesman.SelectedIndex = -1
+            ListView1.Items.Clear()
         End If
     End Sub
 
@@ -189,7 +196,7 @@ Public Class frmManageSalesV2
                 If cboAdjust.SelectedIndex <> 0 Then
                     If txtAmount.TextLength > 0 Then
                         frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = True
-                        frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = True
+                        frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = True
                         If cboAdjust.Text = "Add Discount" Then
                             If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue > 0 AndAlso adjustedValue <= 100 Then
                                 frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Discount:"
@@ -209,12 +216,12 @@ Public Class frmManageSalesV2
                         End If
                     Else
                         frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
-                        frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = False
+                        frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
                         Call printBilling()
                     End If
                 Else
                     frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
-                    frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = False
+                    frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
                     Call printBilling()
                 End If
 

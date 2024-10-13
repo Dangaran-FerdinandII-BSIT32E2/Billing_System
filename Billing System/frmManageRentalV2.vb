@@ -44,7 +44,7 @@ Public Class frmManageRentalV2
                     Dim adjustedValue As Double
                     If txtAmount.TextLength > 0 Then
                         frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = True
-                        frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = True
+                        frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = True
                         If cboAdjust.Text = "Add Discount" Then
                             If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue > 0 AndAlso adjustedValue <= 100 Then
                                 frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Discount:"

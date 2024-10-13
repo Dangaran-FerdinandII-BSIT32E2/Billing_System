@@ -379,7 +379,7 @@ Public Class frmManageCollectionV2
     End Sub
 
     Private Sub btnPrintDelivery_Click(sender As Object, e As EventArgs) Handles btnPrintDelivery.Click
-
+        frmPrintDeliveryReceipt.ShowDialog()
     End Sub
 
     Private Sub btnPrintPayment_Click(sender As Object, e As EventArgs) Handles btnPrintPayment.Click

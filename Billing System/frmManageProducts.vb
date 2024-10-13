@@ -47,7 +47,7 @@ Public Class frmManageProducts
             txtDescription.Clear()
             txtCategory.Clear()
             txtType.Clear()
-            txtTerms.Clear()
+            'txtTerms.Clear()'
             txtPurchasePrice.Clear()
             txtSellingPrice.Clear()
         End If
@@ -213,7 +213,7 @@ Public Class frmManageProducts
             txtDescription.Clear()
             txtCategory.Clear()
             txtType.Clear()
-            txtTerms.Clear()
+            'txtTerms.Clear()
             txtPurchasePrice.Clear()
             txtSellingPrice.Clear()
             productid = Nothing

@@ -187,6 +187,14 @@ Public Class frmManageSupplierProduct
     End Sub
 
     Private Sub btnAddNewProduct_Click(sender As Object, e As EventArgs) Handles btnAddNewProduct.Click
+        'frmManageProducts.lblManageProduct.Text = "Add Product"
+        'frmManageProducts.txtProductName.Clear()
+        'frmManageProducts.txtDescription.Clear()
+        'frmManageProducts.txtCategory.Clear()
+        'frmManageProducts.txtType.Clear()
+        'frmManageProducts.txtPurchasePrice.Clear()
+        'frmManageProducts.txtSellingPrice.Clear()
+        'frmManageProducts.pbxProduct.Image
         frmManageProducts.ShowDialog()
     End Sub
 
