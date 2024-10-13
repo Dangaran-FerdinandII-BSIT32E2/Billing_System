@@ -12,10 +12,8 @@ Public Class frmCustomerViewInfo_Order
     Private Sub frmCustomerViewInfo_Order_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadInformation()
-
+        btnSave.Enabled = False
         TabControl2.SelectedTab = TabPage2
-
-
         Call loadOrderListView()
     End Sub
 
@@ -133,12 +131,12 @@ Public Class frmCustomerViewInfo_Order
         End Try
     End Sub
 
-    Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs) Handles DateFilter1.TextChanged
+    Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs)
         startDate = DateFilter1.Text
         loadOrder(startDate, endDate)
     End Sub
 
-    Private Sub DateFilter2_TextChanged(sender As Object, e As EventArgs) Handles DateFilter2.TextChanged
+    Private Sub DateFilter2_TextChanged(sender As Object, e As EventArgs)
         endDate = DateFilter2.Text
         loadOrder(startDate, endDate)
     End Sub
@@ -355,6 +353,7 @@ Public Class frmCustomerViewInfo_Order
                     btnEdit.Enabled = True
 
                     btnSave.Enabled = False
+                    Call disableAll()
                     Call loadInformation()
                 Catch ex As Exception
                     MsgBox("An error occurred frmCustomerViewInfo_Order(Saving Information): " & ex.Message)

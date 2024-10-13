@@ -165,14 +165,14 @@ Public Class frmPrintBillingInvoice
 
         Using bitmap As New Bitmap(Me.ClientRectangle.Width, Me.ClientRectangle.Height)
             btnPrint.Visible = False
-            btnCancel.Visible = False
+            'btnCancel.Visible = False'
             Me.DrawToBitmap(bitmap, Me.ClientRectangle)
             bitmap.Save("PrintedBilling.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg)
             Me.PrintForm1.Print()
         End Using
 
     End Sub
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         ListView1.Items.Clear()
         Me.Close()
     End Sub

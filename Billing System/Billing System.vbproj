@@ -320,6 +320,12 @@
     <Compile Include="frmPrintBillingInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPrintDeliveryReceipt.Designer.vb">
+      <DependentUpon>frmPrintDeliveryReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDeliveryReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrintInvoice.Designer.vb">
       <DependentUpon>frmPrintInvoice.vb</DependentUpon>
     </Compile>
@@ -487,6 +493,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintBillingInvoice.resx">
       <DependentUpon>frmPrintBillingInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDeliveryReceipt.resx">
+      <DependentUpon>frmPrintDeliveryReceipt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintInvoice.resx">
       <DependentUpon>frmPrintInvoice.vb</DependentUpon>
