@@ -21,7 +21,7 @@ Public Class frmPrintSalesInvoiceV2
         Call connection()
         Call calculateReceipt()
     End Sub
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         ListView1.Items.Clear()
         Me.Close()
     End Sub
@@ -49,8 +49,8 @@ Public Class frmPrintSalesInvoiceV2
                 .Parameters.AddWithValue("@ProductOrder", lblPONo.Text)
                 .Parameters.AddWithValue("@DatePrinted", printdate)
                 .Parameters.AddWithValue("@DueDate", adjusteddate)
-                .Parameters.AddWithValue("@Discount", If(lblAdjustPrice.Text = "Discount:", lblPriceAdjusted.Text, DBNull.Value))
-                .Parameters.AddWithValue("@Markup", If(lblAdjustPrice.Text = "Mark Up:", lblPriceAdjusted.Text, DBNull.Value))
+                .Parameters.AddWithValue("@Discount", If(lblAdjustPrice.Text = "Discount:", lblAdjustPrice.Text, DBNull.Value))
+                .Parameters.AddWithValue("@Markup", If(lblAdjustPrice.Text = "Mark Up:", lblAdjustPrice.Text, DBNull.Value))
                 .Parameters.AddWithValue("@FinalPrice", lblTotalAmount.Text.Replace(",", ""))
                 .ExecuteNonQuery()
             End With
@@ -121,6 +121,7 @@ Public Class frmPrintSalesInvoiceV2
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
             mail.From = New MailAddress("dangaranferds@gmail.com")
+            'mail.To.Add("2718-21@itmlyceumalabang.onmicrosoft.com")
             mail.To.Add("2091-22@itmlyceumalabang.onmicrosoft.com")
             mail.Subject = "Sales Invoice"
 
@@ -159,14 +160,14 @@ Public Class frmPrintSalesInvoiceV2
 
         Using bitmap As New Bitmap(Me.ClientRectangle.Width, Me.ClientRectangle.Height)
             btnPrint.Visible = False
-            btnCancel.Visible = False
+            'btnCancel.Visible = False
             Me.DrawToBitmap(bitmap, Me.ClientRectangle)
             bitmap.Save("PrintedInvoice.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg)
             Me.PrintForm1.Print()
         End Using
         Me.FormBorderStyle = FormBorderStyle.Sizable
         btnPrint.Visible = True
-        btnCancel.Visible = True
+        'btnCancel.Visible = True
     End Sub
 
     Private Sub calculateReceipt()
@@ -186,7 +187,7 @@ Public Class frmPrintSalesInvoiceV2
 
             If format Then
                 priceadjust = totalAmount * (priceadjust / 100)
-                lblPriceAdjusted.Text = priceadjust
+                lblAdjustPrice.Text = priceadjust
             End If
 
             If lblAdjustPrice.Text = "Discount:" Then
