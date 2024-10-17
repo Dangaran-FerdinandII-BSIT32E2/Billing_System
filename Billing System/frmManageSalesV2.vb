@@ -195,11 +195,11 @@ Public Class frmManageSalesV2
             If filled Then
                 If cboAdjust.SelectedIndex <> 0 Then
                     If txtAmount.TextLength > 0 Then
-                        frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = True
+                        frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = True
                         frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = True
                         If cboAdjust.Text = "Add Discount" Then
                             If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue > 0 AndAlso adjustedValue <= 100 Then
-                                frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Discount:"
+                                frmPrintSalesInvoiceV2.lblPriceAdjusted.Text = "Discount:"
                                 frmPrintSalesInvoiceV2.priceadjust = adjustedValue
                                 Call printBilling()
                             Else
@@ -207,7 +207,7 @@ Public Class frmManageSalesV2
                             End If
                         ElseIf cboAdjust.Text = "Add Mark Up" Then
                             If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue > 0 AndAlso adjustedValue <= 100 Then
-                                frmPrintSalesInvoiceV2.lblAdjustPrice.Text = "Mark Up:"
+                                frmPrintSalesInvoiceV2.lblPriceAdjusted.Text = "Mark Up:"
                                 frmPrintSalesInvoiceV2.priceadjust = adjustedValue
                                 Call printBilling()
                             Else
@@ -215,17 +215,17 @@ Public Class frmManageSalesV2
                             End If
                         End If
                     Else
-                        frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
+                        frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = False
                         frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
                         Call printBilling()
                     End If
                 Else
-                    frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
+                    frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = False
                     frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
                     Call printBilling()
                 End If
 
-                btnAddOrder.Visible = False
+                'btnAddOrder.Visible = False
                 txtCompanyName.PlaceholderText = "Search Company"
             End If
         Catch ex As Exception
@@ -245,7 +245,7 @@ Public Class frmManageSalesV2
             If cboFormat.Text = "In Percent" Then
                 frmPrintSalesInvoiceV2.format = True
                 trueadjustedvalue = (adjustedValue / 100).ToString("P")
-            Else
+            ElseIf cboFormat.Text = "In Whole Number" Then
                 frmPrintSalesInvoiceV2.format = False
                 trueadjustedvalue = adjustedValue
             End If

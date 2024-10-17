@@ -17,6 +17,12 @@ Public Class frmCustomerViewInfo_Order
         Call loadOrderListView()
     End Sub
 
+    Private Sub frmClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+            'clear all
+        End If
+    End Sub
+
     Private Sub loadOrderListView()
 
         orderid = "lblOrderID"
@@ -85,58 +91,60 @@ Public Class frmCustomerViewInfo_Order
 
     'Order Tab
     Private Sub loadOrder(startDate As String, endDate As String)
-        Try
+        If btnViewOrder.Text = "View" Then
+            Try
 
-            Dim startDateTime As DateTime
-            Dim endDateTime As DateTime
+                Dim startDateTime As DateTime
+                Dim endDateTime As DateTime
 
-            If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
-           DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                If cn.State <> ConnectionState.Open Then
-                    cn.Open()
-                End If
+                If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
+               DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
+                    If cn.State <> ConnectionState.Open Then
+                        cn.Open()
+                    End If
 
-                sql = "SELECT *, SUM(Amount) AS TotalPrice FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' GROUP BY OrderID"
-                cmd = New MySqlCommand(sql, cn)
+                    sql = "SELECT *, SUM(Amount) AS TotalPrice, MIN(Availability) AS Available FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' GROUP BY OrderID"
+                    cmd = New MySqlCommand(sql, cn)
 
-                If Not dr.IsClosed Then
+                    If Not dr.IsClosed Then
+                        dr.Close()
+                    End If
+
+                    dr = cmd.ExecuteReader
+                    Dim x As ListViewItem
+                    ListView1.Items.Clear()
+
+                    Do While dr.Read = True
+                        x = New ListViewItem(dr("OrderID").ToString())
+                        x.SubItems.Add(dr("TotalPrice").ToString())
+                        x.SubItems.Add(If(dr("Available"), "Yes", "No")) '2
+                        x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Priority Order", IIf(dr("Status").ToString() = "3", "Delivered", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "Item on Hand", "Item on Process")).ToString()))) '3
+                        x.SubItems.Add(dr("OrderDate").ToString()) ' 4
+
+                        ' Check if the status is "Urgent" and set the text color accordingly
+                        If x.SubItems(3).Text = "Priority Order" Then
+                            x.ForeColor = Color.Red
+                        End If
+                        ListView1.Items.Add(x)
+                    Loop
                     dr.Close()
                 End If
-
-                dr = cmd.ExecuteReader
-                Dim x As ListViewItem
-                ListView1.Items.Clear()
-
-                Do While dr.Read = True
-                    x = New ListViewItem(dr("OrderID").ToString())
-                    x.SubItems.Add(dr("TotalPrice").ToString())
-                    x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) '2
-                    x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Priority Order", IIf(dr("Status").ToString() = "3", "Delivered", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "Item on Hand", "Item on Process")).ToString()))) '3
-                    x.SubItems.Add(dr("OrderDate").ToString()) ' 4
-
-                    ' Check if the status is "Urgent" and set the text color accordingly
-                    If x.SubItems(3).Text = "Priority Order" Then
-                        x.ForeColor = Color.Red
-                    End If
-                    ListView1.Items.Add(x)
-                Loop
-                dr.Close()
-            End If
-        Catch ex As Exception
-            MsgBox("An error occurred frmCustomerViewInfo_Order(loadOrder): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
+            Catch ex As Exception
+                MsgBox("An error occurred frmCustomerViewInfo_Order(loadOrder): " & ex.Message)
+            Finally
+                If cn.State = ConnectionState.Open Then
+                    cn.Close()
+                End If
+            End Try
+        End If
     End Sub
 
-    Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs)
+    Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs) Handles DateFilter1.ValueChanged
         startDate = DateFilter1.Text
         loadOrder(startDate, endDate)
     End Sub
 
-    Private Sub DateFilter2_TextChanged(sender As Object, e As EventArgs)
+    Private Sub DateFilter2_TextChanged(sender As Object, e As EventArgs) Handles DateFilter2.ValueChanged
         endDate = DateFilter2.Text
         loadOrder(startDate, endDate)
     End Sub
@@ -165,50 +173,52 @@ Public Class frmCustomerViewInfo_Order
     End Sub
 
     Private Sub updateInfo(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
+        If btnViewOrder.Text = "Back" Then
+            Try
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
 
-            sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderID = '" & lblOrderID.Text & "'"
-            cmd = New MySqlCommand(sql, cn)
-            'for status 2 = delivered, 1 = on hold, 0 = process
-            If avail = "No" And status = "Item on Process" Then
-                If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
-                    cmd.Parameters.AddWithValue("@Availability", True)
-                    cmd.Parameters.AddWithValue("@Status", "0")
-                    cmd.ExecuteNonQuery()
+                sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderListID = '" & ListView1.SelectedItems(0).SubItems(6).Text & "'"
+                cmd = New MySqlCommand(sql, cn)
+                'for status 2 = delivered, 1 = on hold, 0 = process
+                If avail = "No" And status = "Item on Process" Then
+                    If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
+                        cmd.Parameters.AddWithValue("@Availability", True)
+                        cmd.Parameters.AddWithValue("@Status", "0")
+                        cmd.ExecuteNonQuery()
+                    End If
+                ElseIf avail = "No" And status = "Priority Order" Then
+                    If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
+                        cmd.Parameters.AddWithValue("@Availability", True)
+                        cmd.Parameters.AddWithValue("@Status", "4")
+                        cmd.ExecuteNonQuery()
+                    End If
+                ElseIf avail = "No" And status = "Item on Hand" Then
+                    If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
+                        cmd.Parameters.AddWithValue("@Availability", True)
+                        cmd.Parameters.AddWithValue("@Status", "1")
+                        cmd.ExecuteNonQuery()
+                    End If
+                ElseIf avail = "Yes" And status = "Item on Process" Then
+                    If MsgBox("Is the item on hand?", vbYesNo + vbQuestion) = vbYes Then
+                        cmd.Parameters.AddWithValue("@Availability", True)
+                        cmd.Parameters.AddWithValue("@Status", "1")
+                        cmd.ExecuteNonQuery()
+                    End If
+                ElseIf avail = "Yes" And status = "Item on Hand" Then
+                    MsgBox("The item is already on hand.", vbInformation, "Order Information")
                 End If
-            ElseIf avail = "No" And status = "Priority Order" Then
-                If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
-                    cmd.Parameters.AddWithValue("@Availability", True)
-                    cmd.Parameters.AddWithValue("@Status", "4")
-                    cmd.ExecuteNonQuery()
-                End If
-            ElseIf avail = "No" And status = "Item on Hand" Then
-                If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
-                    cmd.Parameters.AddWithValue("@Availability", True)
-                    cmd.Parameters.AddWithValue("@Status", "1")
-                    cmd.ExecuteNonQuery()
-                End If
-            ElseIf avail = "Yes" And status = "Item on Process" Then
-                If MsgBox("Is the item on hand?", vbYesNo + vbQuestion) = vbYes Then
-                    cmd.Parameters.AddWithValue("@Availability", True)
-                    cmd.Parameters.AddWithValue("@Status", "1")
-                    cmd.ExecuteNonQuery()
-                End If
-            ElseIf avail = "Yes" And status = "Item on Hand" Then
-                MsgBox("The item is already on hand.", vbInformation, "Order Information")
-            End If
 
-            Call loadOrder(startDate, endDate)
-        Catch ex As Exception
-            MsgBox("An error occurred frmCustomerViewInfo_Order(updateInfo): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
+                Call viewOrders()
+            Catch ex As Exception
+                MsgBox("An error occurred frmCustomerViewInfo_Order(updateInfo): " & ex.Message)
+            Finally
+                If cn.State = ConnectionState.Open Then
+                    cn.Close()
+                End If
+            End Try
+        End If
     End Sub
 
     Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
@@ -424,12 +434,16 @@ Public Class frmCustomerViewInfo_Order
                 ListView1.Columns.Add("Description")
                 ListView1.Columns.Add("Quantity")
                 ListView1.Columns.Add("Amount")
+                ListView1.Columns.Add("Availability")
+                ListView1.Columns.Add("Status")
 
                 'widths
                 ListView1.Columns(0).Width = 200
                 ListView1.Columns(1).Width = 200
                 ListView1.Columns(2).Width = 200
                 ListView1.Columns(3).Width = 200
+                ListView1.Columns(4).Width = 200
+                ListView1.Columns(5).Width = 200
 
                 sql = "SELECT * FROM qryorder WHERE OrderID = '" & lblOrderID.Text & "'"
                 cmd = New MySqlCommand(sql, cn)
@@ -447,6 +461,9 @@ Public Class frmCustomerViewInfo_Order
                     x.SubItems.Add(dr("Description").ToString())
                     x.SubItems.Add(dr("Quantity").ToString())
                     x.SubItems.Add(dr("Amount").ToString())
+                    x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) '2
+                    x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Priority Order", IIf(dr("Status").ToString() = "3", "Delivered", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "Item on Hand", "Item on Process")).ToString()))) '3
+                    x.SubItems.Add(dr("OrderListID").ToString())
                     ListView1.Items.Add(x)
                 Loop
 

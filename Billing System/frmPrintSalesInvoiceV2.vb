@@ -30,6 +30,7 @@ Public Class frmPrintSalesInvoiceV2
         Call printfile()
         Call sendEmail()
         ListView1.Items.Clear()
+        frmManageSalesV2.btnAddOrder.Visible = False
         Me.Close()
     End Sub
     Private Sub saveBilling()
@@ -121,9 +122,9 @@ Public Class frmPrintSalesInvoiceV2
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
             mail.From = New MailAddress("dangaranferds@gmail.com")
-            'mail.To.Add("2718-21@itmlyceumalabang.onmicrosoft.com")
-            mail.To.Add("2091-22@itmlyceumalabang.onmicrosoft.com")
-            mail.Subject = "Sales Invoice"
+            mail.To.Add("2718-21@itmlyceumalabang.onmicrosoft.com")
+            'mail.To.Add("2091-22@itmlyceumalabang.onmicrosoft.com")
+            mail.Subject = "Service Invoice FOR" + DateTime.Now
 
             Using memoryStream As New MemoryStream()
                 Using image As Image = Image.FromFile("PrintedInvoice.jpeg")
@@ -187,12 +188,13 @@ Public Class frmPrintSalesInvoiceV2
 
             If format Then
                 priceadjust = totalAmount * (priceadjust / 100)
-                lblAdjustPrice.Text = priceadjust
             End If
 
-            If lblAdjustPrice.Text = "Discount:" Then
+            lblAdjustPrice.Text = priceadjust
+
+            If lblPriceAdjusted.Text = "Discount:" Then
                 lblTotalAmount.Text = (totalAmount - priceadjust).ToString("N2")
-            ElseIf lblAdjustPrice.Text = "Mark Up:" Then
+            ElseIf lblPriceAdjusted.Text = "Mark Up:" Then
                 lblTotalAmount.Text = (totalAmount + priceadjust).ToString("N2")
             Else
                 lblTotalAmount.Text = totalAmount
@@ -202,6 +204,16 @@ Public Class frmPrintSalesInvoiceV2
         Catch ex As Exception
             MsgBox("An error occurred frmPrintBillingInvoice(calculateTotalAmt): " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub frmClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+            ListView1.Items.Clear()
+            lblAdjustPrice.Text = ""
+            If walkin Then
+                frmManageSalesV2.btnAddOrder.Visible = True
+            End If
+        End If
     End Sub
 
 End Class

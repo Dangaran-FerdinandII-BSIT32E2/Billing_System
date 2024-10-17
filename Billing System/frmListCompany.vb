@@ -118,6 +118,8 @@ Public Class frmListCompany
             frmManageSalesV2.btnAddOrder.Visible = True
             frmManageSalesV2.txtCompanyName.PlaceholderText = "Enter Company Name"
             frmManageSalesV2.txtCompanyName.Enabled = True
+            frmManageSalesV2.txtAddress.Enabled = True
+            frmManageSalesV2.txtDeliveryAddress.Enabled = True
         End If
     End Sub
 End Class

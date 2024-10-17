@@ -17,7 +17,6 @@ Public Class frmManagePOS
             txtProduct.Clear()
             txtQty.Clear()
             ListView1.Items.Clear()
-
         End If
     End Sub
 
@@ -190,6 +189,7 @@ Public Class frmManagePOS
                         frmManageRentalV2.txtCompanyName.Enabled = True
                         frmManageRentalV2.txtDeliveryAddress.Enabled = True
                         frmManageRentalV2.txtAddress.Enabled = True
+                        frmManageRentalV2.btnPrint.Enabled = True
                     Else
                         While dr.Read
                             Dim X As ListViewItem = frmManageSalesV2.ListView1.Items.Add(listitem.SubItems(2).Text)
@@ -205,6 +205,7 @@ Public Class frmManagePOS
                         frmManageSalesV2.txtCompanyName.Enabled = True
                         frmManageSalesV2.txtDeliveryAddress.Enabled = True
                         frmManageSalesV2.txtAddress.Enabled = True
+                        frmManageSalesV2.btnPrint.Enabled = True
                     End If
                 Next
                 Call closeForm()
