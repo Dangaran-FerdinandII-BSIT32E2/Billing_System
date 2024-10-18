@@ -156,19 +156,18 @@ Public Class frmPrintSalesInvoiceV2
         PageSetupDialog1.PrinterSettings.DefaultPageSettings.Landscape = True
         PrintForm1.PrinterSettings = PageSetupDialog1.PrinterSettings
 
-        PrintForm1.PrinterSettings.DefaultPageSettings.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 0)
-        PrintForm1.Print(Me, PowerPacks.Printing.PrintForm.PrintOption.CompatibleModeFullWindow)
-
-        Using bitmap As New Bitmap(Me.ClientRectangle.Width, Me.ClientRectangle.Height)
-            btnPrint.Visible = False
-            'btnCancel.Visible = False
-            Me.DrawToBitmap(bitmap, Me.ClientRectangle)
-            bitmap.Save("PrintedInvoice.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg)
-            Me.PrintForm1.Print()
-        End Using
+        'PrintForm1.PrinterSettings.DefaultPageSettings.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 0)
+        'PrintForm1.Print(Me, PowerPacks.Printing.PrintForm.PrintOption.CompatibleModeFullWindow)
+        If PrintForm1.PrinterSettings.IsValid Then
+            Using bitmap As New Bitmap(Me.ClientRectangle.Width, Me.ClientRectangle.Height)
+                btnPrint.Visible = False
+                Me.DrawToBitmap(bitmap, Me.ClientRectangle)
+                bitmap.Save("PrintedInvoice.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg)
+                PrintForm1.Print()
+            End Using
+        End If
         Me.FormBorderStyle = FormBorderStyle.Sizable
         btnPrint.Visible = True
-        'btnCancel.Visible = True
     End Sub
 
     Private Sub calculateReceipt()
@@ -216,4 +215,16 @@ Public Class frmPrintSalesInvoiceV2
         End If
     End Sub
 
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        Dim printableArea As Rectangle = e.MarginBounds
+        Dim desiredWidth As Integer = 300
+        Dim desiredHeight As Integer = 200
+
+        Dim scaleX As Single = desiredWidth / printableArea.Width
+        Dim scaleY As Single = desiredHeight / printableArea.Height
+
+        e.Graphics.ScaleTransform(scaleX, scaleY)
+
+        e.HasMorePages = False
+    End Sub
 End Class

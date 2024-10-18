@@ -25,7 +25,6 @@ Partial Class frmPrintSalesInvoiceV2
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrintSalesInvoiceV2))
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
-        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PageSetupDialog1 = New System.Windows.Forms.PageSetupDialog()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -237,9 +236,8 @@ Partial Class frmPrintSalesInvoiceV2
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
         '
-        'PrintDialog1
+        'PrintDocument1
         '
-        Me.PrintDialog1.UseEXDialog = True
         '
         'Panel4
         '
@@ -2161,7 +2159,6 @@ Partial Class frmPrintSalesInvoiceV2
 
     End Sub
     Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
-    Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PageSetupDialog1 As PageSetupDialog
     Friend WithEvents Panel3 As Panel
