@@ -2,6 +2,8 @@
 Imports MySql.Data.MySqlClient
 
 Public Class frmListCompany
+
+    Public manageOrder As Boolean? = False
     Private Sub frmListCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadCustomers()
@@ -12,7 +14,7 @@ Public Class frmListCompany
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Availability = 1 AND Status = 1 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Availability = 1 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -51,10 +53,17 @@ Public Class frmListCompany
             End If
 
             If ListView1.SelectedItems.Count > 0 Then
-                frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
-                frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
-                frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(11).Text
-                Call frmManageSalesV2.loadBilling()
+
+                If Not manageOrder Then
+                    frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                    frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
+                    frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(11).Text
+                    Call frmManageSalesV2.loadBilling()
+                Else
+                    frmManageOrder.txtSearchOrder.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                    frmManageOrder.orderid = ListView1.SelectedItems(0).SubItems(11).Text
+                    Call frmManageOrder.viewOrders()
+                End If
             End If
 
         Catch ex As Exception
@@ -67,7 +76,9 @@ Public Class frmListCompany
     End Sub
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
-
+        If manageOrder Then
+            manageOrder = False
+        End If
         Me.Close()
     End Sub
 

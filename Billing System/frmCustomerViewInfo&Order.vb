@@ -118,7 +118,7 @@ Public Class frmCustomerViewInfo_Order
                         x = New ListViewItem(dr("OrderID").ToString())
                         x.SubItems.Add(dr("TotalPrice").ToString())
                         x.SubItems.Add(If(dr("Available"), "Yes", "No")) '2
-                        x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Priority Order", IIf(dr("Status").ToString() = "3", "Delivered", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "Item on Hand", "Item on Process")).ToString()))) '3
+                        x.SubItems.Add(GetStatusText(dr("Status").ToString)) '3
                         x.SubItems.Add(dr("OrderDate").ToString()) ' 4
 
                         ' Check if the status is "Urgent" and set the text color accordingly
@@ -138,6 +138,17 @@ Public Class frmCustomerViewInfo_Order
             End Try
         End If
     End Sub
+
+    Private Function GetStatusText(status As String) As String
+        Select Case status
+            Case "5" : Return "Cancelled Order"
+            Case "4" : Return "Priority Order"
+            Case "3" : Return "Delivered"
+            Case "2" : Return "Ready for Shipment"
+            Case "1" : Return "Item on Hand"
+            Case Else : Return "Item on Process"
+        End Select
+    End Function
 
     Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs) Handles DateFilter1.ValueChanged
         startDate = DateFilter1.Text
@@ -462,7 +473,7 @@ Public Class frmCustomerViewInfo_Order
                     x.SubItems.Add(dr("Quantity").ToString())
                     x.SubItems.Add(dr("Amount").ToString())
                     x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) '2
-                    x.SubItems.Add(IIf(dr("Status").ToString() = "4", "Priority Order", IIf(dr("Status").ToString() = "3", "Delivered", IIf(dr("Status").ToString() = "2", "Ready for Shipment", IIf(dr("Status").ToString() = 1, "Item on Hand", "Item on Process")).ToString()))) '3
+                    x.SubItems.Add(GetStatusText(dr("Status").ToString))
                     x.SubItems.Add(dr("OrderListID").ToString())
                     ListView1.Items.Add(x)
                 Loop
