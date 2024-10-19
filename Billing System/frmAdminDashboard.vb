@@ -31,7 +31,7 @@ Public Class frmAdminDashboard
         End If
     End Sub
 
-    Private Sub loadNotification() Handles Timer2.Tick
+    Public Sub loadNotification() Handles Timer2.Tick
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()

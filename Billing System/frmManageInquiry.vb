@@ -83,6 +83,7 @@ Public Class frmManageInquiry
                 cmd.ExecuteNonQuery()
                 MsgBox("Deleted!", MsgBoxStyle.Information, "Delete Status")
                 Call loadInquiries()
+                Call frmAdminDashboard.loadNotification()
             Catch ex As Exception
                 MsgBox("An error occurred frmManageInquiry(btnConfirm_Click): " & ex.Message)
             Finally

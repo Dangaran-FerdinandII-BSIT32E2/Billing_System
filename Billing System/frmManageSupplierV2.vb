@@ -119,4 +119,15 @@ Public Class frmManageSupplierV2
             txtDeliveryTermsSupp.Clear()
         End If
     End Sub
+
+    Private Sub frmClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+            txtCompanyNameSupp.Clear()
+            txtBankDetailsSupp.Clear()
+            txtContactPersonSupp.Clear()
+            txtPhoneNumberSupp.Clear()
+            txtAddress.Clear()
+            txtDeliveryTermsSupp.Clear()
+        End If
+    End Sub
 End Class
