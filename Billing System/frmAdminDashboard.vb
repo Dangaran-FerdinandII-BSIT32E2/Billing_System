@@ -1,6 +1,13 @@
 ﻿Imports System.Data.SqlClient
 Imports MySql.Data.MySqlClient
+Imports Guna.UI2.WinForms
+
 Public Class frmAdminDashboard
+    Dim removeThickness As New Padding(0, 0, 0, 0) 'use to remove border left
+    Dim addThickness As New Padding(5, 0, 0, 0) 'use to add border left
+    Dim addColor As Color = Color.OrangeRed 'use to filled color border left
+    Dim removeColor As Color = Color.Empty 'use to removed filled color border left
+
     Private isFormBeingDragged As Boolean = False
     Private mouseDownX As Integer
     Private mouseDownY As Integer
@@ -59,6 +66,10 @@ Public Class frmAdminDashboard
     End Sub
     Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call loadNotification()
+
+        'btnDashboard.CustomBorderThickness = addThickness
+        'btnDashboard.CustomBorderColor = addColor
+
         'Call connection()
         frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("May", 50000)
         frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("June", 100000)
@@ -82,9 +93,21 @@ Public Class frmAdminDashboard
         frmAnalyticsData.Dock = DockStyle.Fill
         frmAnalyticsData.Show()
 
+        btnDashboard.FillColor = Color.Black
+        btnSales.FillColor = Color.Empty
+        'btnDashboard.CustomBorderThickness = addThickness
+        'btnDashboard.CustomBorderColor = addColor
+
+        'Dim buttons() As Guna2Button = {btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+
+        'For Each btn In buttons
+        '    btn.CustomBorderThickness = removeThickness
+        '    btn.CustomBorderColor = removeColor
+        'Next
+
         frmManageSalesV2.Close()
         frmManageBilling.Close()
-        frmManageCollection.Close()
+        frmManageCollectionV3.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
@@ -94,6 +117,9 @@ Public Class frmAdminDashboard
     End Sub
 
     Private Sub btnSales_Click(sender As Object, e As EventArgs) Handles btnSales.Click
+        btnSales.FillColor = Color.Black
+
+
         'If isButtonClicked Then
         '    ' Button clicked before, set back to original color
         '    btnSales.BackColor = Color.White  ' Replace with your original color
@@ -104,6 +130,16 @@ Public Class frmAdminDashboard
         '    isButtonClicked = True
         'End If
 
+        'btnSales.CustomBorderThickness = addThickness
+        'btnSales.CustomBorderColor = addColor
+
+        'Dim buttons() As Guna2Button = {btnDashboard, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+
+        'For Each btn In buttons
+        '    btn.CustomBorderThickness = removeThickness
+        '    btn.CustomBorderColor = removeColor
+        'Next
+
         frmManageSalesV2.TopLevel = False
         panelDashboard.Controls.Add(frmManageSalesV2)
         frmManageSalesV2.BringToFront()
@@ -111,7 +147,7 @@ Public Class frmAdminDashboard
         frmManageSalesV2.Show()
 
         frmManageBilling.Close()
-        frmManageCollection.Close()
+        frmManageCollectionV3.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
@@ -139,7 +175,7 @@ Public Class frmAdminDashboard
         frmManageBilling.Show()
 
         frmManageSalesV2.Close()
-        frmManageCollection.Close()
+        frmManageCollectionV3.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
@@ -168,7 +204,7 @@ Public Class frmAdminDashboard
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()
-        frmManageCollection.Close()
+        frmManageCollectionV3.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
@@ -176,12 +212,12 @@ Public Class frmAdminDashboard
         frmManageRental.Close()
     End Sub
 
-    Private Sub btnCollection_Click(sender As Object, e As EventArgs)
-        frmManageCollection.TopLevel = False
-        panelDashboard.Controls.Add(frmManageCollection)
-        frmManageCollection.BringToFront()
-        frmManageCollection.Dock = DockStyle.Fill
-        frmManageCollection.Show()
+    Private Sub btnCollection_Click(sender As Object, e As EventArgs) Handles btnCollection.Click
+        frmManageCollectionV3.TopLevel = False
+        panelDashboard.Controls.Add(frmManageCollectionV3)
+        frmManageCollectionV3.BringToFront()
+        frmManageCollectionV3.Dock = DockStyle.Fill
+        frmManageCollectionV3.Show()
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()
@@ -202,7 +238,7 @@ Public Class frmAdminDashboard
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()
-        frmManageCollection.Close()
+        frmManageCollectionV3.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
@@ -219,7 +255,7 @@ Public Class frmAdminDashboard
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()
-        frmManageCollection.Close()
+        frmManageCollectionV3.Close()
         frmManageSuppliers.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
@@ -236,7 +272,7 @@ Public Class frmAdminDashboard
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()
-        frmManageCollection.Close()
+        frmManageCollectionV3.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageUsers.Close()
@@ -253,7 +289,7 @@ Public Class frmAdminDashboard
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()
-        frmManageCollection.Close()
+        frmManageCollectionV3.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
@@ -270,7 +306,7 @@ Public Class frmAdminDashboard
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()
-        frmManageCollection.Close()
+        frmManageCollectionV3.Close()
         frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
@@ -280,5 +316,22 @@ Public Class frmAdminDashboard
 
     Private Sub btnNotification_Click(sender As Object, e As EventArgs) Handles btnNotification.Click
         frmManageInquiry.ShowDialog()
+    End Sub
+
+    Private Sub btnOrder_Click(sender As Object, e As EventArgs) Handles btnOrder.Click
+        frmManageOrder.TopLevel = False
+        panelDashboard.Controls.Add(frmManageOrder)
+        frmManageOrder.BringToFront()
+        frmManageOrder.Dock = DockStyle.Fill
+        frmManageOrder.Show()
+
+        frmManageSalesV2.Close()
+        frmManageBilling.Close()
+        frmManageCollectionV3.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageCustomerV3.Close()
+        frmManageUsers.Close()
+        frmAdminSettings.Close()
     End Sub
 End Class

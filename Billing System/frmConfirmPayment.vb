@@ -73,10 +73,10 @@ Public Class frmConfirmPayment
                 cn.Close()
             End If
             PictureBox2.Visible = False
-            Label5.Visible = False
-            Guna2Separator1.Visible = False
-            Guna2Separator2.Visible = False
-            Label4.Visible = False
+            'Label5.Visible = False
+            'Guna2Separator1.Visible = False
+            'Guna2Separator2.Visible = False
+            'Label4.Visible = False
             btnBrowse.Visible = False
         End Try
     End Sub
@@ -130,7 +130,7 @@ Public Class frmConfirmPayment
         End Try
     End Sub
 
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+    Private Sub btnExit_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 End Class
