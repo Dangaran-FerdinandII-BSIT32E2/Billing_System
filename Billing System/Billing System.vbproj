@@ -115,6 +115,12 @@
     <Compile Include="frmAdminDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAdminDashboardV2.Designer.vb">
+      <DependentUpon>frmAdminDashboardV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminDashboardV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAdminSettings.Designer.vb">
       <DependentUpon>frmAdminSettings.vb</DependentUpon>
     </Compile>
@@ -197,6 +203,12 @@
       <DependentUpon>frmManageCollectionV2.vb</DependentUpon>
     </Compile>
     <Compile Include="frmManageCollectionV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageCollectionV3.Designer.vb">
+      <DependentUpon>frmManageCollectionV3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageCollectionV3.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmManageCustomerV2.Designer.vb">
@@ -314,6 +326,12 @@
     <Compile Include="frmMessage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmManageOrder.Designer.vb">
+      <DependentUpon>frmManageOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrintBillingInvoice.Designer.vb">
       <DependentUpon>frmPrintBillingInvoice.vb</DependentUpon>
     </Compile>
@@ -392,6 +410,9 @@
     <EmbeddedResource Include="frmAdminDashboard.resx">
       <DependentUpon>frmAdminDashboard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminDashboardV2.resx">
+      <DependentUpon>frmAdminDashboardV2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdminSettings.resx">
       <DependentUpon>frmAdminSettings.vb</DependentUpon>
     </EmbeddedResource>
@@ -433,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageCollectionV2.resx">
       <DependentUpon>frmManageCollectionV2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageCollectionV3.resx">
+      <DependentUpon>frmManageCollectionV3.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageCustomerV2.resx">
       <DependentUpon>frmManageCustomerV2.vb</DependentUpon>
@@ -490,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMessage.resx">
       <DependentUpon>frmMessage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageOrder.resx">
+      <DependentUpon>frmManageOrder.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintBillingInvoice.resx">
       <DependentUpon>frmPrintBillingInvoice.vb</DependentUpon>
