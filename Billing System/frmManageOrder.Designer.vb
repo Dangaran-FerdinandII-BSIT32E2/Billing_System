@@ -61,6 +61,7 @@ Partial Class frmManageOrder
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.ordersid = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblOrder = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnSearchOrder = New Guna.UI2.WinForms.Guna2Button()
@@ -517,6 +518,7 @@ Partial Class frmManageOrder
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Panel9.Controls.Add(Me.ordersid)
         Me.Panel9.Controls.Add(Me.lblOrder)
         Me.Panel9.Controls.Add(Me.Panel5)
         Me.Panel9.Controls.Add(Me.Panel14)
@@ -526,6 +528,15 @@ Partial Class frmManageOrder
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1453, 62)
         Me.Panel9.TabIndex = 4
+        '
+        'ordersid
+        '
+        Me.ordersid.BackColor = System.Drawing.Color.Transparent
+        Me.ordersid.Location = New System.Drawing.Point(671, 22)
+        Me.ordersid.Name = "ordersid"
+        Me.ordersid.Size = New System.Drawing.Size(53, 18)
+        Me.ordersid.TabIndex = 15
+        Me.ordersid.Text = "ordersid"
         '
         'lblOrder
         '
@@ -769,4 +780,5 @@ Partial Class frmManageOrder
     Friend WithEvents Panel28 As Panel
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lblOrder As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents ordersid As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

@@ -42,13 +42,18 @@ Public Class frmManageOrder
 
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
-            btnCreateInvoice.Enabled = True
-            btnViewOrder.Enabled = True
-            btnCancel.Enabled = True
-            orderid = ListView1.SelectedItems(0).SubItems(0).Text
-
-            If btnViewOrder.Text = "Back" Then
+            If ListView1.SelectedItems(0).SubItems.Count <> 7 Then
+                btnCreateInvoice.Enabled = True
+                btnViewOrder.Enabled = True
+                btnCancel.Enabled = True
+                orderid = ListView1.SelectedItems(0).SubItems(0).Text
+                ordersid.Text = orderid
+                status = ListView1.SelectedItems(0).SubItems(3).Text
+            End If
+            If btnViewOrder.Text = "Back" And ListView1.SelectedItems(0).SubItems.Count = 7 Then
                 lblOrder.Text = ListView1.SelectedItems(0).SubItems(6).Text
+                avail = ListView1.SelectedItems(0).SubItems(4).Text
+                status = ListView1.SelectedItems(0).SubItems(5).Text
             End If
         End If
     End Sub
@@ -59,6 +64,7 @@ Public Class frmManageOrder
                 cn.Open()
             End If
 
+            status = Nothing
             If btnViewOrder.Text = "View Items" Then
 
                 ListView1.Columns.Clear()
@@ -101,6 +107,7 @@ Public Class frmManageOrder
                 Call loadFilteredOrders(startDate, endDate)
             End If
 
+
         Catch ex As Exception
             MsgBox("An error occurred frmManageOrder(btnViewOrder): " & ex.Message)
         Finally
@@ -112,7 +119,6 @@ Public Class frmManageOrder
 
     Public Sub viewOrders()
         Try
-
             sql = "SELECT * FROM qryorder WHERE OrderID = '" & orderid & "'"
             cmd = New MySqlCommand(sql, cn)
 
@@ -138,7 +144,7 @@ Public Class frmManageOrder
             btnCreateInvoice.Text = "Update Item"
             btnViewOrder.Text = "Back"
         Catch ex As Exception
-            MsgBox("An error occurred frmCustomerViewInfo_Order(viewOrders): " & ex.Message)
+            MsgBox("An error occurred frmManageOrder(viewOrders): " & ex.Message)
         End Try
     End Sub
 
@@ -212,7 +218,7 @@ Public Class frmManageOrder
 
     Private Sub btnCreateInvoice_Click(sender As Object, e As EventArgs) Handles btnCreateInvoice.Click
         If ListView1.SelectedItems.Count > 0 Then
-            If btnCreateInvoice.Text = "Create Invoice" And ListView1.SelectedItems(0).SubItems(3).Text = "Item on Hand" Then
+            If btnCreateInvoice.Text = "Create Invoice" And status = "Item on Hand" Then
 
 
                 frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(5).Text
@@ -233,6 +239,7 @@ Public Class frmManageOrder
                 frmManageUsers.Close()
                 frmManageRental.Close()
                 frmAdminSettings.Close()
+            Else
                 MsgBox("Please select an available and on-hand order!", MsgBoxStyle.Critical, "Order Error")
             End If
         End If
@@ -242,51 +249,97 @@ Public Class frmManageOrder
     Dim avail As String
     Dim status As String
     Private Sub updateInfo(sender As Object, e As EventArgs) Handles ListView1.DoubleClick, btnCreateInvoice.Click
-        If btnViewOrder.Text = "Back" And btnCreateInvoice.Text = "Update Item" Then
-            Try
-                If cn.State <> ConnectionState.Open Then
-                    cn.Open()
-                End If
+        If ListView1.SelectedItems.Count > 0 Then
+            If btnViewOrder.Text = "Back" And ListView1.SelectedItems(0).SubItems.Count = 7 Then
+                Try
+                    If cn.State <> ConnectionState.Open Then
+                        cn.Open()
+                    End If
 
-                sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderListID = '" & ListView1.SelectedItems(0).SubItems(6).Text & "'"
-                cmd = New MySqlCommand(sql, cn)
-                'for status 2 = delivered, 1 = on hold, 0 = process
-                If avail = "No" And status = "Item on Process" Then
-                    If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
-                        cmd.Parameters.AddWithValue("@Availability", True)
-                        cmd.Parameters.AddWithValue("@Status", "0")
-                        cmd.ExecuteNonQuery()
+                    sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderListID = '" & ListView1.SelectedItems(0).SubItems(6).Text & "'"
+                    cmd = New MySqlCommand(sql, cn)
+                    'for status 2 = delivered, 1 = on hold, 0 = process
+                    If avail = "No" And status = "Item on Process" Then
+                        If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
+                            cmd.Parameters.AddWithValue("@Availability", True)
+                            cmd.Parameters.AddWithValue("@Status", "0")
+                            cmd.ExecuteNonQuery()
+                        End If
+                    ElseIf avail = "No" And status = "Priority Order" Then
+                        If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
+                            cmd.Parameters.AddWithValue("@Availability", True)
+                            cmd.Parameters.AddWithValue("@Status", "4")
+                            cmd.ExecuteNonQuery()
+                        End If
+                    ElseIf avail = "No" And status = "Item on Hand" Then
+                        If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
+                            cmd.Parameters.AddWithValue("@Availability", True)
+                            cmd.Parameters.AddWithValue("@Status", "1")
+                            cmd.ExecuteNonQuery()
+                        End If
+                    ElseIf avail = "Yes" And status = "Item on Process" Then
+                        If MsgBox("Is the item on hand?", vbYesNo + vbQuestion) = vbYes Then
+                            cmd.Parameters.AddWithValue("@Availability", True)
+                            cmd.Parameters.AddWithValue("@Status", "1")
+                            cmd.ExecuteNonQuery()
+                        End If
+                    ElseIf avail = "Yes" And status = "Item on Hand" Then
+                        MsgBox("The item is already on hand.", vbInformation, "Order Information")
                     End If
-                ElseIf avail = "No" And status = "Priority Order" Then
-                    If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
-                        cmd.Parameters.AddWithValue("@Availability", True)
-                        cmd.Parameters.AddWithValue("@Status", "4")
-                        cmd.ExecuteNonQuery()
-                    End If
-                ElseIf avail = "No" And status = "Item on Hand" Then
-                    If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
-                        cmd.Parameters.AddWithValue("@Availability", True)
-                        cmd.Parameters.AddWithValue("@Status", "1")
-                        cmd.ExecuteNonQuery()
-                    End If
-                ElseIf avail = "Yes" And status = "Item on Process" Then
-                    If MsgBox("Is the item on hand?", vbYesNo + vbQuestion) = vbYes Then
-                        cmd.Parameters.AddWithValue("@Availability", True)
-                        cmd.Parameters.AddWithValue("@Status", "1")
-                        cmd.ExecuteNonQuery()
-                    End If
-                ElseIf avail = "Yes" And status = "Item on Hand" Then
-                    MsgBox("The item is already on hand.", vbInformation, "Order Information")
-                End If
 
-                Call viewOrders()
-            Catch ex As Exception
-                MsgBox("An error occurred frmCustomerViewInfo_Order(updateInfo): " & ex.Message)
-            Finally
-                If cn.State = ConnectionState.Open Then
-                    cn.Close()
+                    Call viewOrders()
+                Catch ex As Exception
+                    MsgBox("An error occurred frmManageOrder(updateInfo): " & ex.Message)
+                Finally
+                    If cn.State = ConnectionState.Open Then
+                        cn.Close()
+                    End If
+                End Try
+            End If
+        Else
+            MsgBox("Please select an order item to update!", MsgBoxStyle.Critical, "Update Error")
+        End If
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        If ListView1.SelectedItems.Count > 0 Then
+            If MsgBox("Do you want to cancel the order?", vbQuestion + vbYesNo) = vbYes Then
+                If status <> "Cancelled Order" Then
+                    Try
+                        If cn.State <> ConnectionState.Open Then
+                            cn.Open()
+                        End If
+
+                        If btnViewOrder.Text = "View Items" Then 'whole order
+                            sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderID = '" & orderid & "'"
+                            cmd = New MySqlCommand(sql, cn)
+                            cmd.Parameters.AddWithValue("@Availability", False)
+                            cmd.Parameters.AddWithValue("@Status", 5)
+                            cmd.ExecuteNonQuery()
+
+                            Call loadFilteredOrders(startDate, endDate)
+                        ElseIf btnViewOrder.Text = "Back" Then 'separate item
+                            sql = "UPDATE tblorder SET Status=@Status WHERE OrderListID = '" & ListView1.SelectedItems(0).SubItems(6).Text & "'"
+                            cmd = New MySqlCommand(sql, cn)
+                            cmd.Parameters.AddWithValue("@Availability", False)
+                            cmd.Parameters.AddWithValue("@Status", 5)
+                            cmd.ExecuteNonQuery()
+
+                            Call viewOrders()
+                        End If
+
+                        MsgBox("Order is successfully cancelled!", MsgBoxStyle.Information, "Cancel Order")
+                    Catch ex As Exception
+                        MsgBox("An error occurred frmManageOrder(btnCancel_Click): " & ex.Message)
+                    Finally
+                        If cn.State = ConnectionState.Open Then
+                            cn.Close()
+                        End If
+                    End Try
+                Else
+                    MsgBox("Order is already cancelled!", MsgBoxStyle.Critical, "Cancel Order")
                 End If
-            End Try
+            End If
         End If
     End Sub
 End Class
