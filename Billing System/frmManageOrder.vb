@@ -8,6 +8,8 @@ Public Class frmManageOrder
 
     Dim startDate As String
     Dim endDate As String
+
+    Dim orderingform As Boolean? = False
     Private Sub frmManageOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
 
@@ -58,7 +60,7 @@ Public Class frmManageOrder
         End If
     End Sub
 
-    Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click
+    Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click, ListView1.DoubleClick
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -82,6 +84,8 @@ Public Class frmManageOrder
                 ListView1.Columns(3).Width = 200
                 ListView1.Columns(4).Width = 200
                 ListView1.Columns(5).Width = 200
+
+                orderingform = False
                 Call viewOrders()
             Else
                 ListView1.Columns.Clear()
@@ -104,9 +108,11 @@ Public Class frmManageOrder
                 btnViewOrder.Enabled = False
                 btnCreateInvoice.Enabled = False
 
+                orderingform = True
+
                 Call loadFilteredOrders(startDate, endDate)
             End If
-
+            formboolean.Text = orderingform
 
         Catch ex As Exception
             MsgBox("An error occurred frmManageOrder(btnViewOrder): " & ex.Message)
@@ -249,55 +255,57 @@ Public Class frmManageOrder
     Dim avail As String
     Dim status As String
     Private Sub updateInfo(sender As Object, e As EventArgs) Handles ListView1.DoubleClick, btnCreateInvoice.Click
-        If ListView1.SelectedItems.Count > 0 Then
-            If btnViewOrder.Text = "Back" And ListView1.SelectedItems(0).SubItems.Count = 7 Then
-                Try
-                    If cn.State <> ConnectionState.Open Then
-                        cn.Open()
-                    End If
+        If orderingform Then
+            If ListView1.SelectedItems.Count > 0 Then
+                If btnViewOrder.Text = "Back" And ListView1.SelectedItems(0).SubItems.Count = 7 Then
+                    Try
+                        If cn.State <> ConnectionState.Open Then
+                            cn.Open()
+                        End If
 
-                    sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderListID = '" & ListView1.SelectedItems(0).SubItems(6).Text & "'"
-                    cmd = New MySqlCommand(sql, cn)
-                    'for status 2 = delivered, 1 = on hold, 0 = process
-                    If avail = "No" And status = "Item on Process" Then
-                        If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
-                            cmd.Parameters.AddWithValue("@Availability", True)
-                            cmd.Parameters.AddWithValue("@Status", "0")
-                            cmd.ExecuteNonQuery()
+                        sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderListID = '" & ListView1.SelectedItems(0).SubItems(6).Text & "'"
+                        cmd = New MySqlCommand(sql, cn)
+                        'for status 2 = delivered, 1 = on hold, 0 = process
+                        If avail = "No" And status = "Item on Process" Then
+                            If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
+                                cmd.Parameters.AddWithValue("@Availability", True)
+                                cmd.Parameters.AddWithValue("@Status", "0")
+                                cmd.ExecuteNonQuery()
+                            End If
+                        ElseIf avail = "No" And status = "Priority Order" Then
+                            If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
+                                cmd.Parameters.AddWithValue("@Availability", True)
+                                cmd.Parameters.AddWithValue("@Status", "4")
+                                cmd.ExecuteNonQuery()
+                            End If
+                        ElseIf avail = "No" And status = "Item on Hand" Then
+                            If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
+                                cmd.Parameters.AddWithValue("@Availability", True)
+                                cmd.Parameters.AddWithValue("@Status", "1")
+                                cmd.ExecuteNonQuery()
+                            End If
+                        ElseIf avail = "Yes" And status = "Item on Process" Then
+                            If MsgBox("Is the item on hand?", vbYesNo + vbQuestion) = vbYes Then
+                                cmd.Parameters.AddWithValue("@Availability", True)
+                                cmd.Parameters.AddWithValue("@Status", "1")
+                                cmd.ExecuteNonQuery()
+                            End If
+                        ElseIf avail = "Yes" And status = "Item on Hand" Then
+                            MsgBox("The item is already on hand.", vbInformation, "Order Information")
                         End If
-                    ElseIf avail = "No" And status = "Priority Order" Then
-                        If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
-                            cmd.Parameters.AddWithValue("@Availability", True)
-                            cmd.Parameters.AddWithValue("@Status", "4")
-                            cmd.ExecuteNonQuery()
-                        End If
-                    ElseIf avail = "No" And status = "Item on Hand" Then
-                        If MsgBox("Is the item available?", vbYesNo + vbQuestion) = vbYes Then
-                            cmd.Parameters.AddWithValue("@Availability", True)
-                            cmd.Parameters.AddWithValue("@Status", "1")
-                            cmd.ExecuteNonQuery()
-                        End If
-                    ElseIf avail = "Yes" And status = "Item on Process" Then
-                        If MsgBox("Is the item on hand?", vbYesNo + vbQuestion) = vbYes Then
-                            cmd.Parameters.AddWithValue("@Availability", True)
-                            cmd.Parameters.AddWithValue("@Status", "1")
-                            cmd.ExecuteNonQuery()
-                        End If
-                    ElseIf avail = "Yes" And status = "Item on Hand" Then
-                        MsgBox("The item is already on hand.", vbInformation, "Order Information")
-                    End If
 
-                    Call viewOrders()
-                Catch ex As Exception
-                    MsgBox("An error occurred frmManageOrder(updateInfo): " & ex.Message)
-                Finally
-                    If cn.State = ConnectionState.Open Then
-                        cn.Close()
-                    End If
-                End Try
+                        Call viewOrders()
+                    Catch ex As Exception
+                        MsgBox("An error occurred frmManageOrder(updateInfo): " & ex.Message)
+                    Finally
+                        If cn.State = ConnectionState.Open Then
+                            cn.Close()
+                        End If
+                    End Try
+                End If
+            Else
+                MsgBox("Please select an order item to update!", MsgBoxStyle.Critical, "Update Error")
             End If
-        Else
-            MsgBox("Please select an order item to update!", MsgBoxStyle.Critical, "Update Error")
         End If
     End Sub
 

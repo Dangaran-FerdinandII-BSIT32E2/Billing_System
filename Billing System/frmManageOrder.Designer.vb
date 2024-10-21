@@ -75,6 +75,7 @@ Partial Class frmManageOrder
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.formboolean = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.panelBody.SuspendLayout()
         Me.Panel21.SuspendLayout()
         Me.Panel28.SuspendLayout()
@@ -518,6 +519,7 @@ Partial Class frmManageOrder
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Panel9.Controls.Add(Me.formboolean)
         Me.Panel9.Controls.Add(Me.ordersid)
         Me.Panel9.Controls.Add(Me.lblOrder)
         Me.Panel9.Controls.Add(Me.Panel5)
@@ -696,6 +698,15 @@ Partial Class frmManageOrder
         Me.Panel16.Size = New System.Drawing.Size(227, 18)
         Me.Panel16.TabIndex = 13
         '
+        'formboolean
+        '
+        Me.formboolean.BackColor = System.Drawing.Color.Transparent
+        Me.formboolean.Location = New System.Drawing.Point(491, 22)
+        Me.formboolean.Name = "formboolean"
+        Me.formboolean.Size = New System.Drawing.Size(110, 18)
+        Me.formboolean.TabIndex = 16
+        Me.formboolean.Text = "Guna2HtmlLabel1"
+        '
         'frmManageOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -781,4 +792,5 @@ Partial Class frmManageOrder
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lblOrder As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents ordersid As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents formboolean As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class
