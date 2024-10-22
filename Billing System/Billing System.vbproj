@@ -326,6 +326,12 @@
     <Compile Include="frmManageOrder.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPaymentInformation.Designer.vb">
+      <DependentUpon>frmPaymentInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrintBillingInvoice.Designer.vb">
       <DependentUpon>frmPrintBillingInvoice.vb</DependentUpon>
     </Compile>
@@ -508,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageOrder.resx">
       <DependentUpon>frmManageOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentInformation.resx">
+      <DependentUpon>frmPaymentInformation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintBillingInvoice.resx">
       <DependentUpon>frmPrintBillingInvoice.vb</DependentUpon>
