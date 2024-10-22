@@ -3,7 +3,7 @@
 
     End Sub
 
-    Private Sub btnShow_Click(sender As Object, e As EventArgs) Handles btnShow.Click
-        frmManageInvoice.Show()
+    Private Sub btnShow_Click(sender As Object, e As EventArgs) Handles btnView.Click
+        frmPaymentInformation.Show()
     End Sub
 End Class

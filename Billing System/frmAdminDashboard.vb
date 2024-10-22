@@ -93,8 +93,8 @@ Public Class frmAdminDashboard
         frmAnalyticsData.Dock = DockStyle.Fill
         frmAnalyticsData.Show()
 
-        btnDashboard.FillColor = Color.Black
-        btnSales.FillColor = Color.Empty
+        'btnDashboard.FillColor = Color.Black
+        'btnSales.FillColor = Color.Empty
         'btnDashboard.CustomBorderThickness = addThickness
         'btnDashboard.CustomBorderColor = addColor
 
@@ -117,7 +117,7 @@ Public Class frmAdminDashboard
     End Sub
 
     Private Sub btnSales_Click(sender As Object, e As EventArgs) Handles btnSales.Click
-        btnSales.FillColor = Color.Black
+        'btnSales.FillColor = Color.Black
 
 
         'If isButtonClicked Then
