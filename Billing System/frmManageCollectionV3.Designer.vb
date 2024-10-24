@@ -429,7 +429,7 @@ Partial Class frmManageCollectionV3
         Me.cboFilter.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.cboFilter.ForeColor = System.Drawing.Color.Black
         Me.cboFilter.ItemHeight = 30
-        Me.cboFilter.Items.AddRange(New Object() {"Default", "Paid", "Not Paid"})
+        Me.cboFilter.Items.AddRange(New Object() {"Default", "In Debt", "Paid"})
         Me.cboFilter.Location = New System.Drawing.Point(500, 31)
         Me.cboFilter.Margin = New System.Windows.Forms.Padding(5)
         Me.cboFilter.Name = "cboFilter"

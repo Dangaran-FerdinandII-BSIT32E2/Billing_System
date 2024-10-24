@@ -20,7 +20,7 @@ Public Class frmManageCollectionV3
         Call loadCollections(startDate, endDate)
     End Sub
 
-    Private Sub loadCollections(startDate As String, endDate As String)
+    Public Sub loadCollections(startDate As String, endDate As String)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -31,11 +31,11 @@ Public Class frmManageCollectionV3
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
                DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT * FROM qrybilling WHERE DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' AND DateDelivered IS NOT NULL "
+                sql = "SELECT * FROM qrybilling WHERE DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' AND DateDelivered IS NOT NULL"
 
 
                 If cboFilter.SelectedIndex > 0 Then
-                    sql += "AND Remarks = @Remarks "
+                    sql += " AND Remarks = @Remarks"
                 End If
 
                 cmd = New MySqlCommand(sql, cn)
@@ -55,7 +55,7 @@ Public Class frmManageCollectionV3
                 Do While dr.Read = True
                     x = New ListViewItem(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("FinalPrice").ToString())
-                    x.SubItems.Add(GetRemarkText(dr("Remarks").ToString))
+                    x.SubItems.Add(If(dr("Remarks"), "Paid", "In Debt"))
                     x.SubItems.Add(dr("BillingID").ToString()) '3
                     x.SubItems.Add(dr("CustomerID").ToString) '4
                     ListView1.Items.Add(x)
@@ -72,13 +72,6 @@ Public Class frmManageCollectionV3
         End Try
     End Sub
 
-    Private Function GetRemarkText(status As String) As String
-        Select Case status
-            Case "1" : Return "Paid"
-            Case Else : Return "Not Paid"
-        End Select
-    End Function
-
     Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs) Handles DateFilter1.ValueChanged
         startDate = DateFilter1.Text
         loadCollections(startDate, endDate)
@@ -88,9 +81,10 @@ Public Class frmManageCollectionV3
         endDate = DateFilter2.Text
         loadCollections(startDate, endDate)
     End Sub
-    Private Sub btnShow_Click(sender As Object, e As EventArgs) Handles btnShow.Click
+    Private Sub btnShow_Click(sender As Object, e As EventArgs) Handles btnShow.Click, ListView1.DoubleClick
         If ListView1.SelectedItems.Count > 0 Then
             frmPaymentInformation.billingid = ListView1.SelectedItems(0).SubItems(3).Text
+            frmPaymentInformation.customerid = ListView1.SelectedItems(0).SubItems(4).Text
             frmPaymentInformation.Show()
         End If
     End Sub
@@ -130,7 +124,7 @@ Public Class frmManageCollectionV3
                 Do While dr.Read = True
                     x = New ListViewItem(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("FinalPrice").ToString())
-                    x.SubItems.Add(If(dr("Remarks"), "Paid", "Not Paid"))
+                    x.SubItems.Add(If(dr("Remarks"), "Paid", "In Debt"))
                     x.SubItems.Add(dr("BillingID").ToString()) '3
                     x.SubItems.Add(dr("CustomerID").ToString) '4
                     ListView1.Items.Add(x)
@@ -154,5 +148,9 @@ Public Class frmManageCollectionV3
     Private Sub btnSearchCompany_Click(sender As Object, e As EventArgs) Handles btnSearchCompany.Click
         frmListCompany.manageCollection = True
         frmListCompany.ShowDialog()
+    End Sub
+
+    Private Sub cboFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilter.SelectedIndexChanged
+        Call loadCollections(startDate, endDate)
     End Sub
 End Class
