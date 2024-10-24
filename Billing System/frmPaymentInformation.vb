@@ -1,5 +1,7 @@
 ﻿Public Class frmPaymentInformation
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
+    Public billingid As String
+
+    Private Sub frmPaymentInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

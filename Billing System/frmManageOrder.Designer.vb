@@ -61,6 +61,7 @@ Partial Class frmManageOrder
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.formboolean = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.ordersid = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblOrder = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -75,7 +76,6 @@ Partial Class frmManageOrder
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.formboolean = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.panelBody.SuspendLayout()
         Me.Panel21.SuspendLayout()
         Me.Panel28.SuspendLayout()
@@ -531,6 +531,16 @@ Partial Class frmManageOrder
         Me.Panel9.Size = New System.Drawing.Size(1453, 62)
         Me.Panel9.TabIndex = 4
         '
+        'formboolean
+        '
+        Me.formboolean.BackColor = System.Drawing.Color.Transparent
+        Me.formboolean.Location = New System.Drawing.Point(491, 22)
+        Me.formboolean.Name = "formboolean"
+        Me.formboolean.Size = New System.Drawing.Size(110, 18)
+        Me.formboolean.TabIndex = 16
+        Me.formboolean.Text = "Guna2HtmlLabel1"
+        Me.formboolean.Visible = False
+        '
         'ordersid
         '
         Me.ordersid.BackColor = System.Drawing.Color.Transparent
@@ -539,6 +549,7 @@ Partial Class frmManageOrder
         Me.ordersid.Size = New System.Drawing.Size(53, 18)
         Me.ordersid.TabIndex = 15
         Me.ordersid.Text = "ordersid"
+        Me.ordersid.Visible = False
         '
         'lblOrder
         '
@@ -548,6 +559,7 @@ Partial Class frmManageOrder
         Me.lblOrder.Size = New System.Drawing.Size(51, 18)
         Me.lblOrder.TabIndex = 14
         Me.lblOrder.Text = "lblOrder"
+        Me.lblOrder.Visible = False
         '
         'Panel5
         '
@@ -697,15 +709,6 @@ Partial Class frmManageOrder
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(227, 18)
         Me.Panel16.TabIndex = 13
-        '
-        'formboolean
-        '
-        Me.formboolean.BackColor = System.Drawing.Color.Transparent
-        Me.formboolean.Location = New System.Drawing.Point(491, 22)
-        Me.formboolean.Name = "formboolean"
-        Me.formboolean.Size = New System.Drawing.Size(110, 18)
-        Me.formboolean.TabIndex = 16
-        Me.formboolean.Text = "Guna2HtmlLabel1"
         '
         'frmManageOrder
         '

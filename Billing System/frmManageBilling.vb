@@ -42,7 +42,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DatePaid FROM qrybilling WHERE Remarks <> 1 AND DatePaid IS NULL AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms FROM qrybilling WHERE Remarks <> 1 AND DatePaid IS NULL AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -58,7 +58,6 @@ Public Class frmManageBilling
                     x.SubItems.Add(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("DatePrinted").ToString())
                     x.SubItems.Add(dr("Terms").ToString())
-                    x.SubItems.Add(If(IsDBNull(dr("DatePaid")), "Not Yet Paid", dr("DatePaid").ToString()))
                     ListView1.Items.Add(x)
                 Loop
                 dr.Close()

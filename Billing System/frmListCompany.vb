@@ -4,11 +4,58 @@ Imports MySql.Data.MySqlClient
 Public Class frmListCompany
 
     Public manageOrder As Boolean? = False
+    Public manageCollection As Boolean? = False
     Private Sub frmListCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        Call loadCustomers()
+        If manageCollection Then
+            Call loadCollections()
+        Else
+            Call loadCustomers()
+        End If
     End Sub
+    Private Sub loadCollections()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+            ListView1.Columns.Clear()
+            ListView1.Columns.Add("Company Name")
+            ListView1.Columns.Add("Total Amount Due")
+            ListView1.Columns.Add("Remarks")
 
+            'widths
+            ListView1.Columns(0).Width = 150
+            ListView1.Columns(1).Width = 150
+            ListView1.Columns(2).Width = 150
+
+            sql = "SELECT CompanyName, FinalPrice, Remarks, CustomerID FROM qrybilling WHERE DateDelivered IS NOT NULL"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            Dim x As ListViewItem
+            ListView1.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("CompanyName").ToString())
+                x.SubItems.Add(dr("FinalPrice").ToString())
+                x.SubItems.Add(If(dr("Remarks"), "Paid", "Not Paid"))
+                x.SubItems.Add(dr("CustomerID").ToString())
+                ListView1.Items.Add(x)
+            Loop
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("An error occurred frmListCompany(loadCollections): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub loadCustomers()
         Try
             If cn.State <> ConnectionState.Open Then
@@ -37,6 +84,7 @@ Public Class frmListCompany
                 x.SubItems.Add(dr("OrderListID").ToString())
                 ListView1.Items.Add(x)
             Loop
+            dr.Close()
         Catch ex As Exception
             MsgBox("An error occurred frmListCompany(loadCustomers): " & ex.Message)
         Finally
@@ -54,15 +102,18 @@ Public Class frmListCompany
 
             If ListView1.SelectedItems.Count > 0 Then
 
-                If Not manageOrder Then
+                If manageOrder Then
+                    frmManageOrder.txtSearchOrder.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                    frmManageOrder.orderid = ListView1.SelectedItems(0).SubItems(11).Text
+                    Call frmManageOrder.viewOrders()
+                ElseIf manageCollection Then
+                    frmManageCollectionV3.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                    frmManageCollectionV3.customerid = ListView1.SelectedItems(0).SubItems(3).Text
+                Else
                     frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
                     frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
                     frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(11).Text
                     Call frmManageSalesV2.loadBilling()
-                Else
-                    frmManageOrder.txtSearchOrder.Text = ListView1.SelectedItems(0).SubItems(0).Text
-                    frmManageOrder.orderid = ListView1.SelectedItems(0).SubItems(11).Text
-                    Call frmManageOrder.viewOrders()
                 End If
             End If
 
