@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmManageOrder
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmManageOrder
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmManageOrder))
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -61,9 +61,6 @@ Partial Class frmManageOrder
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.formboolean = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.ordersid = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lblOrder = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnSearchOrder = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -519,9 +516,6 @@ Partial Class frmManageOrder
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Panel9.Controls.Add(Me.formboolean)
-        Me.Panel9.Controls.Add(Me.ordersid)
-        Me.Panel9.Controls.Add(Me.lblOrder)
         Me.Panel9.Controls.Add(Me.Panel5)
         Me.Panel9.Controls.Add(Me.Panel14)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
@@ -530,36 +524,6 @@ Partial Class frmManageOrder
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1453, 62)
         Me.Panel9.TabIndex = 4
-        '
-        'formboolean
-        '
-        Me.formboolean.BackColor = System.Drawing.Color.Transparent
-        Me.formboolean.Location = New System.Drawing.Point(491, 22)
-        Me.formboolean.Name = "formboolean"
-        Me.formboolean.Size = New System.Drawing.Size(110, 18)
-        Me.formboolean.TabIndex = 16
-        Me.formboolean.Text = "Guna2HtmlLabel1"
-        Me.formboolean.Visible = False
-        '
-        'ordersid
-        '
-        Me.ordersid.BackColor = System.Drawing.Color.Transparent
-        Me.ordersid.Location = New System.Drawing.Point(671, 22)
-        Me.ordersid.Name = "ordersid"
-        Me.ordersid.Size = New System.Drawing.Size(53, 18)
-        Me.ordersid.TabIndex = 15
-        Me.ordersid.Text = "ordersid"
-        Me.ordersid.Visible = False
-        '
-        'lblOrder
-        '
-        Me.lblOrder.BackColor = System.Drawing.Color.Transparent
-        Me.lblOrder.Location = New System.Drawing.Point(395, 18)
-        Me.lblOrder.Name = "lblOrder"
-        Me.lblOrder.Size = New System.Drawing.Size(51, 18)
-        Me.lblOrder.TabIndex = 14
-        Me.lblOrder.Text = "lblOrder"
-        Me.lblOrder.Visible = False
         '
         'Panel5
         '
@@ -735,7 +699,6 @@ Partial Class frmManageOrder
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
         Me.Panel9.ResumeLayout(False)
-        Me.Panel9.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
@@ -793,7 +756,4 @@ Partial Class frmManageOrder
     Friend WithEvents cboFilter As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Panel28 As Panel
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents lblOrder As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents ordersid As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents formboolean As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class
