@@ -217,7 +217,7 @@ Public Class frmPaymentInformation
 
                 dr = cmd.ExecuteReader
                 If dr.Read = True Then
-                    Dim pic As Byte() = DirectCast(dr("imgDelivery"), Byte())
+                    Dim pic As Byte() = DirectCast(dr("imgPayment"), Byte())
                     If pic.Length > 0 Then
                         'Dim ms As New MemoryStream(pic)
                         Using ms As New MemoryStream(pic)

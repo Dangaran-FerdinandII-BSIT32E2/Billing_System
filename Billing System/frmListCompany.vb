@@ -18,6 +18,7 @@ Public Class frmListCompany
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
+
             ListView1.Columns.Clear()
             ListView1.Columns.Add("Company Name")
             ListView1.Columns.Add("Total Amount Due")
@@ -61,7 +62,7 @@ Public Class frmListCompany
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Availability = 1 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Availability = 1 AND Status <> 5 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -176,6 +177,16 @@ Public Class frmListCompany
     Private Sub btnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
         If MsgBox("Add walk-in orders?", vbYesNo + vbQuestion) = vbYes Then
             Me.Close()
+            frmManageSalesV2.ListView1.Items.Clear()
+            frmManageSalesV2.txtCompanyName.Clear()
+            frmManageSalesV2.txtAddress.Clear()
+            frmManageSalesV2.txtDeliveryAddress.Clear()
+            frmManageSalesV2.txtBusinessStyle.Clear()
+            frmManageSalesV2.txtTIN.Clear()
+            frmManageSalesV2.txtPONo.Clear()
+            frmManageSalesV2.txtTerms.Clear()
+            frmManageSalesV2.cboSalesman.SelectedIndex = -1
+
             frmManagePOS.isRental = False
             frmManageSalesV2.btnAddOrder.Visible = True
             frmManageSalesV2.txtCompanyName.PlaceholderText = "Enter Company Name"

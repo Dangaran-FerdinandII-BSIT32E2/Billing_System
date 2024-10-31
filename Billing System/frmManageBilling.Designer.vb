@@ -491,7 +491,7 @@ Partial Class frmManageBilling
         Me.cboFilter.ForeColor = System.Drawing.Color.Black
         Me.cboFilter.HoverState.BorderColor = System.Drawing.Color.OrangeRed
         Me.cboFilter.ItemHeight = 30
-        Me.cboFilter.Items.AddRange(New Object() {"Filter by...", "Not Delivered", "Not Paid", "Delivered and Paid"})
+        Me.cboFilter.Items.AddRange(New Object() {"Filter by...", "Not Delivered", "Delivered"})
         Me.cboFilter.Location = New System.Drawing.Point(13, 12)
         Me.cboFilter.Margin = New System.Windows.Forms.Padding(4)
         Me.cboFilter.Name = "cboFilter"
