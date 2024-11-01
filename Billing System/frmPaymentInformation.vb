@@ -31,6 +31,7 @@ Public Class frmPaymentInformation
             End If
 
             dr = cmd.ExecuteReader
+
             Dim x As ListViewItem
             ListView1.Items.Clear()
 
@@ -41,6 +42,7 @@ Public Class frmPaymentInformation
                 totalPaid += Convert.ToDouble(dr("AmtPaid"))
             Loop
 
+            dr.Close()
             Call loadInformation()
         Catch ex As Exception
             MsgBox("An error occurred frmPaymentInformation(loadPayment): " & ex.Message)
@@ -76,7 +78,7 @@ Public Class frmPaymentInformation
                 Call updateRemark()
             End If
         Catch ex As Exception
-            MsgBox("An error occurred frmPaymentInformation(loadPayment): " & ex.Message)
+            MsgBox("An error occurred frmPaymentInformation(loadInformation): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -252,6 +254,35 @@ Public Class frmPaymentInformation
             btnUpload.Enabled = True
 
             btnCancel.Enabled = False
+        End If
+    End Sub
+
+    Private Sub txtUnpaidAmount_TextChanged(sender As Object, e As EventArgs) Handles txtUnpaidAmount.TextChanged
+        If Val(txtUnpaidAmount.Text) = 0 Then
+            btnSave.Enabled = False
+            btnUpload.Enabled = False
+            txtPaidAmount.Text = "Billing Statement is paid!"
+        Else
+            btnSave.Enabled = True
+            btnUpload.Enabled = True
+            txtPaidAmount.Clear()
+        End If
+    End Sub
+
+    Private Sub frmPaymentInformation_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+            pbxDelivery.Image = Nothing
+            btnUpload.Visible = True
+            PictureBox2.Visible = True
+
+            btnSave.Enabled = False
+            txtPaidAmount.Enabled = False
+            btnUpload.Enabled = True
+            btnCancel.Enabled = False
+
+            txtCompanyName.Clear()
+            txtUnpaidAmount.Clear()
+            txtPaidAmount.Clear()
         End If
     End Sub
 End Class

@@ -274,7 +274,7 @@ Partial Class frmPaymentInformation
         Me.txtPaidAmount.DefaultText = ""
         Me.txtPaidAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtPaidAmount.DisabledState.FillColor = System.Drawing.Color.White
-        Me.txtPaidAmount.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtPaidAmount.DisabledState.ForeColor = System.Drawing.Color.Black
         Me.txtPaidAmount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtPaidAmount.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtPaidAmount.Enabled = False
@@ -340,7 +340,7 @@ Partial Class frmPaymentInformation
         Me.txtUnpaidAmount.DefaultText = ""
         Me.txtUnpaidAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtUnpaidAmount.DisabledState.FillColor = System.Drawing.Color.White
-        Me.txtUnpaidAmount.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtUnpaidAmount.DisabledState.ForeColor = System.Drawing.Color.Black
         Me.txtUnpaidAmount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtUnpaidAmount.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtUnpaidAmount.Enabled = False
@@ -406,7 +406,7 @@ Partial Class frmPaymentInformation
         Me.txtCompanyName.DefaultText = ""
         Me.txtCompanyName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtCompanyName.DisabledState.FillColor = System.Drawing.Color.White
-        Me.txtCompanyName.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtCompanyName.DisabledState.ForeColor = System.Drawing.Color.Black
         Me.txtCompanyName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtCompanyName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtCompanyName.Enabled = False
