@@ -2,10 +2,12 @@
 Imports System.Web.UI.WebControls
 Imports MySql.Data.MySqlClient
 Public Class frmLoginV2
-
+    Public userid As String
+    Public username As String
     Private Sub frmLoginV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call callConnection()
     End Sub
+
     Public Sub callConnection()
         Call connection()
     End Sub
@@ -46,7 +48,7 @@ Public Class frmLoginV2
             Next
 
             If filled Then
-                sql = "SELECT Username, Role, Password FROM tblusers WHERE Username = @username AND Password = @password AND Status = 'Active'"
+                sql = "SELECT UserID, Username, Role, Password FROM tblusers WHERE Username = @username AND Password = @password AND Status = 'Active'"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
                     .Parameters.AddWithValue("@username", txtUsername.Text)
@@ -56,12 +58,15 @@ Public Class frmLoginV2
 
                 dr = cmd.ExecuteReader
                 If dr.Read = True Then
+                    userid = dr("UserID").ToString()
+                    username = dr("Username").ToString()
                     frmAdminDashboard.lblRole.Text = dr("Role").ToString()
-                    frmAdminDashboard.lblUsername.Text = dr("Username").ToString
+                    frmAdminDashboard.lblUsername.Text = dr("Username").ToString()
                     If cn.State = ConnectionState.Open Then
                         cn.Close()
                     End If
                     dr.Close()
+                    Call loadActivity()
                     Me.Hide()
                     frmAdminDashboard.ShowDialog()
                 Else
@@ -70,6 +75,29 @@ Public Class frmLoginV2
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmLogin(btnLogin): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub loadActivity()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", userid)
+                .Parameters.AddWithValue("@Username", username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "LOGIN")
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmLogin(loadActivity): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()

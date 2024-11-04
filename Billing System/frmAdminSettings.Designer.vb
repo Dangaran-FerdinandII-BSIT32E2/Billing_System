@@ -51,7 +51,7 @@ Partial Class frmAdminSettings
         Me.Panel14.Controls.Add(Me.Panel15)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(1453, 62)
         Me.Panel14.TabIndex = 0
@@ -64,7 +64,7 @@ Partial Class frmAdminSettings
         Me.Panel15.Controls.Add(Me.Panel22)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(353, 62)
         Me.Panel15.TabIndex = 13
@@ -87,7 +87,7 @@ Partial Class frmAdminSettings
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel16.Location = New System.Drawing.Point(0, 18)
-        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(13, 32)
         Me.Panel16.TabIndex = 13
@@ -96,7 +96,7 @@ Partial Class frmAdminSettings
         '
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel17.Location = New System.Drawing.Point(0, 50)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(353, 12)
         Me.Panel17.TabIndex = 13
@@ -105,7 +105,7 @@ Partial Class frmAdminSettings
         '
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(353, 18)
         Me.Panel22.TabIndex = 13
@@ -117,7 +117,7 @@ Partial Class frmAdminSettings
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel14)
         Me.pnlListOfCustomerBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlListOfCustomerBody.Location = New System.Drawing.Point(13, 12)
-        Me.pnlListOfCustomerBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlListOfCustomerBody.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlListOfCustomerBody.Name = "pnlListOfCustomerBody"
         Me.pnlListOfCustomerBody.Size = New System.Drawing.Size(1453, 755)
         Me.pnlListOfCustomerBody.TabIndex = 17
@@ -128,7 +128,7 @@ Partial Class frmAdminSettings
         Me.Panel11.Controls.Add(Me.Panel7)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel11.Location = New System.Drawing.Point(0, 62)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(1453, 693)
         Me.Panel11.TabIndex = 14
@@ -138,7 +138,7 @@ Partial Class frmAdminSettings
         Me.Panel18.BackColor = System.Drawing.Color.White
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel18.Location = New System.Drawing.Point(340, 0)
-        Me.Panel18.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(1113, 693)
         Me.Panel18.TabIndex = 19
@@ -149,7 +149,7 @@ Partial Class frmAdminSettings
         Me.Panel7.Controls.Add(Me.btnLogout)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(340, 693)
         Me.Panel7.TabIndex = 15
@@ -171,7 +171,7 @@ Partial Class frmAdminSettings
         Me.btnLogout.ImageOffset = New System.Drawing.Point(10, 0)
         Me.btnLogout.ImageSize = New System.Drawing.Size(30, 30)
         Me.btnLogout.Location = New System.Drawing.Point(0, 628)
-        Me.btnLogout.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLogout.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(340, 65)
         Me.btnLogout.TabIndex = 9
@@ -181,7 +181,7 @@ Partial Class frmAdminSettings
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(13, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1453, 12)
         Me.Panel4.TabIndex = 14
@@ -190,7 +190,7 @@ Partial Class frmAdminSettings
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(13, 767)
         Me.Panel3.TabIndex = 15
@@ -199,7 +199,7 @@ Partial Class frmAdminSettings
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 767)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1466, 12)
         Me.Panel2.TabIndex = 16
@@ -208,7 +208,7 @@ Partial Class frmAdminSettings
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel1.Location = New System.Drawing.Point(1466, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(13, 779)
         Me.Panel1.TabIndex = 13
@@ -224,7 +224,7 @@ Partial Class frmAdminSettings
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmAdminSettings"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel14.ResumeLayout(False)

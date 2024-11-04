@@ -1,10 +1,9 @@
-﻿Imports System.Data.OleDb
-Imports System.Web.UI.WebControls
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 Public Class frmManageUsers
     Private Sub frmManageUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadUsers()
+        Call loadActivity()
     End Sub
     Private Sub loadUsers()
         Try
@@ -117,7 +116,7 @@ Public Class frmManageUsers
         cboRole.SelectedIndex = -1
         cboStatus.SelectedIndex = -1
     End Sub
-    Private Sub btnOkay_Click_1(sender As Object, e As EventArgs) Handles btnOkay.Click
+    Private Sub btnOkay_Click(sender As Object, e As EventArgs) Handles btnOkay.Click
         TabControl2.SelectedTab = TabPage1
     End Sub
 
@@ -265,6 +264,43 @@ Public Class frmManageUsers
             btnSave.Enabled = False
             btnDelete.Enabled = False
             btnCancel.Enabled = False
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    'ACTIVITY LOG
+    Private Sub loadActivity() Handles Timer1.Tick
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT * FROM tblactivity"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            Dim y As ListViewItem
+            ListView2.Items.Clear()
+
+            Do While dr.Read = True
+                y = New ListViewItem(StrConv(dr("Username").ToString, VbStrConv.ProperCase))
+                y.SubItems.Add(dr("Action").ToString)
+
+                Dim dateTimeValue As DateTime = Convert.ToDateTime(dr("DateTime"))
+
+                y.SubItems.Add(dateTimeValue.ToString("MMMM dd, yyyy"))
+                y.SubItems.Add(dateTimeValue.ToString("hh:mm:ss tt"))
+                ListView2.Items.Add(y)
+            Loop
+        Catch ex As Exception
+            MsgBox("An error occurred frmLogin(loadActivity): " & ex.Message)
+        Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If

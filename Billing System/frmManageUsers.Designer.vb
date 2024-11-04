@@ -91,6 +91,7 @@ Partial Class frmManageUsers
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel6.SuspendLayout()
         Me.Panel42.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -145,37 +146,31 @@ Partial Class frmManageUsers
         'ColumnHeader9
         '
         Me.ColumnHeader9.Text = "Activity"
-        Me.ColumnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader9.Width = 250
         '
         'ColumnHeader10
         '
         Me.ColumnHeader10.Text = "Time"
-        Me.ColumnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader10.Width = 200
         '
         'ColumnHeader11
         '
         Me.ColumnHeader11.Text = "Date"
-        Me.ColumnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader11.Width = 250
         '
         'ColumnHeader7
         '
         Me.ColumnHeader7.Text = "Status"
-        Me.ColumnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader7.Width = 150
         '
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "Role"
-        Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader6.Width = 150
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Password"
-        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader4.Width = 200
         '
         'Panel42
@@ -214,7 +209,6 @@ Partial Class frmManageUsers
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Username"
-        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader5.Width = 250
         '
         'Panel41
@@ -460,7 +454,6 @@ Partial Class frmManageUsers
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "First Name"
-        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader2.Width = 180
         '
         'Panel36
@@ -526,7 +519,6 @@ Partial Class frmManageUsers
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Last Name"
-        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader3.Width = 200
         '
         'Panel11
@@ -1006,6 +998,11 @@ Partial Class frmManageUsers
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 30000
+        '
         'frmManageUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1111,4 +1108,5 @@ Partial Class frmManageUsers
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents Timer1 As Timer
 End Class
