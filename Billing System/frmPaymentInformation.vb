@@ -67,14 +67,15 @@ Public Class frmPaymentInformation
 
             dr = cmd.ExecuteReader
 
-            If dr.Read = True Then
-                txtCompanyName.Text = dr(0).ToString
-                txtUnpaidAmount.Text = (dr(1) - totalPaid).ToString
-                totalDebt = dr(1)
+            If dr.HasRows Then
+                If dr.Read = True Then
+                    txtCompanyName.Text = dr("CompanyName").ToString()
+                    txtUnpaidAmount.Text = (dr("FinalPrice") - totalPaid).ToString()
+                End If
             End If
             dr.Close()
 
-            If totalDebt = totalPaid Then
+            If Convert.ToDouble(txtUnpaidAmount.Text) = totalPaid Then
                 Call updateRemark()
             End If
         Catch ex As Exception

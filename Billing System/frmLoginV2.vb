@@ -62,7 +62,6 @@ Public Class frmLoginV2
                         cn.Close()
                     End If
                     dr.Close()
-                    MsgBox("Logging In!", MsgBoxStyle.Information)
                     Me.Hide()
                     frmAdminDashboard.ShowDialog()
                 Else
