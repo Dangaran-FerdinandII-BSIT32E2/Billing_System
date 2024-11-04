@@ -192,7 +192,6 @@ Public Class frmManageUsers
                     btnSave.Enabled = False
                     btnDelete.Enabled = False
                     btnCancel.Enabled = False
-
                     If cn.State = ConnectionState.Open Then
                         cn.Close()
                     End If
@@ -217,8 +216,31 @@ Public Class frmManageUsers
             .ExecuteNonQuery()
         End With
         MsgBox("Successfully added!", MsgBoxStyle.Information, "Users")
+        Call loadUserActivity()
     End Sub
+    Private Sub loadUserActivity()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
+                .Parameters.AddWithValue("@Username", frmLoginV2.username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "ADDED NEW USER " + txtUsername.Text)
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageUsers(loadUserActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub edit()
         sql = "UPDATE tblusers SET FirstName=@FirstName, LastName=@LastName, Password=@Password, Username=@Username, Role=@Role, Status=@Status WHERE UserID = '" & txtUserID.Text & "'"
         cmd = New MySqlCommand(sql, cn)
@@ -232,6 +254,31 @@ Public Class frmManageUsers
             .ExecuteNonQuery()
         End With
         MsgBox("Successfully updated the user!", MsgBoxStyle.Information)
+        Call loadEditActivity()
+    End Sub
+
+    Private Sub loadEditActivity()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
+                .Parameters.AddWithValue("@Username", frmLoginV2.username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "EDITED USER " + txtUsername.Text)
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageUsers(loadEditActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click

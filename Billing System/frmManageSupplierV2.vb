@@ -51,6 +51,7 @@ Public Class frmManageSupplierV2
                         .Parameters.AddWithValue("@DeliveryTerms", txtDeliveryTermsSupp.Text)
                         .ExecuteNonQuery()
                     End With
+                    Call loadActivity()
                     MsgBox("Supplier successfully saved!", MsgBoxStyle.Information, "Supplier Insert")
                     Call frmManageSupplierProduct.loadSuppliers()
                     supplierid = Nothing
@@ -119,7 +120,29 @@ Public Class frmManageSupplierV2
             txtDeliveryTermsSupp.Clear()
         End If
     End Sub
+    Private Sub loadActivity()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
+                .Parameters.AddWithValue("@Username", frmLoginV2.username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "SAVED SUPPLIER " + txtCompanyNameSupp.Text)
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmMessage(loadActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub frmClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
             txtCompanyNameSupp.Clear()

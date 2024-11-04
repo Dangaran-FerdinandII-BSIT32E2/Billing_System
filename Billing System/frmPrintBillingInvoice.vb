@@ -121,6 +121,7 @@ Public Class frmPrintBillingInvoice
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Call printfile()
         Call sendEmail()
+        Call loadActivity()
         Me.Close()
     End Sub
 
@@ -172,8 +173,28 @@ Public Class frmPrintBillingInvoice
         End Using
 
     End Sub
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
-        ListView1.Items.Clear()
-        Me.Close()
+
+    Private Sub loadActivity()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
+                .Parameters.AddWithValue("@Username", frmLoginV2.username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "PRINT BILLING STATEMENT")
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmPrintBillingInvoice(loadActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 End Class

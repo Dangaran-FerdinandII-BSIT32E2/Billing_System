@@ -31,6 +31,7 @@ Public Class frmPrintSalesInvoiceV2
         Call sendEmail()
         ListView1.Items.Clear()
         frmManageSalesV2.btnAddOrder.Visible = False
+        Call loadActivity()
         Me.Close()
     End Sub
     Private Sub saveBilling()
@@ -61,7 +62,7 @@ Public Class frmPrintSalesInvoiceV2
             End If
             Call saveBillInvoice()
         Catch ex As Exception
-            MsgBox("An error occurred frmPrintInvoice(saveBilling): " & ex.Message)
+            MsgBox("An error occurred frmPrintSalesInvoiceV2(saveBilling): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -84,7 +85,7 @@ Public Class frmPrintSalesInvoiceV2
             Next
 
         Catch ex As Exception
-            MsgBox("An error occurred frmPrintInvoice(updateOrder): " & ex.Message)
+            MsgBox("An error occurred frmPrintSalesInvoiceV2(updateOrder): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -109,7 +110,7 @@ Public Class frmPrintSalesInvoiceV2
                 End With
             Next
         Catch ex As Exception
-            MsgBox("An error occurred frmManageBilling(saveBilling): " & ex.Message)
+            MsgBox("An error occurred frmPrintSalesInvoiceV2(saveBillInvoice): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -145,7 +146,7 @@ Public Class frmPrintSalesInvoiceV2
 
 
         Catch ex As Exception
-            MsgBox("An error occurred frmConfirmPayment(btnEmail): " & ex.Message)
+            MsgBox("An error occurred frmPrintSalesInvoiceV2(sendEmail): " & ex.Message)
         End Try
     End Sub
     Private Sub printfile()
@@ -201,7 +202,7 @@ Public Class frmPrintSalesInvoiceV2
 
 
         Catch ex As Exception
-            MsgBox("An error occurred frmPrintBillingInvoice(calculateTotalAmt): " & ex.Message)
+            MsgBox("An error occurred frmPrintSalesInvoiceV2(calculateReceipt): " & ex.Message)
         End Try
     End Sub
 
@@ -226,5 +227,28 @@ Public Class frmPrintSalesInvoiceV2
         e.Graphics.ScaleTransform(scaleX, scaleY)
 
         e.HasMorePages = False
+    End Sub
+    Private Sub loadActivity()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
+                .Parameters.AddWithValue("@Username", frmLoginV2.username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "PRINT SALES INVOICE")
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmPrintSalesInvoiceV2(loadActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 End Class

@@ -115,7 +115,7 @@ Public Class frmManageProducts
                                 .ExecuteNonQuery()
                             End With
                         End Using
-
+                        Call loadActivity()
                         MsgBox("Product successfully saved!", MsgBoxStyle.Information, "Product Insert")
                         Call frmManageSupplierProduct.loadProducts()
                         productid = Nothing
@@ -132,7 +132,29 @@ Public Class frmManageProducts
             End Try
         End If
     End Sub
+    Private Sub loadActivity()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
+                .Parameters.AddWithValue("@Username", frmLoginV2.username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "SAVED PRODUCT " + txtProductName.Text)
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmMessage(loadActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
 
     Private Sub loadImage()
         Try
