@@ -5,45 +5,45 @@ Public Class frmManageUsers
         Call connection()
         Call loadUsers()
         Call loadActivity()
-        'Call loadReport()
+        Call loadReport()
     End Sub
 
-    'Private Sub loadReport()
-    '    Dim rptDS As ReportDataSource
-    '    Me.ReportViewer1.RefreshReport()
+    Private Sub loadReport()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
 
-    '    Try
-    '        With ReportViewer1.LocalReport
-    '            .ReportPath = Application.StartupPath & "\Reports\Report1.rdlc"
-    '            .DataSources.Clear()
-    '        End With
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\Report1.rdlc"
+                .DataSources.Clear()
+            End With
 
-    '        Dim ds As New DataSet1
-    '        Dim da As New MySqlDataAdapter
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
 
-    '        If cn.State <> ConnectionState.Open Then
-    '            cn.Open()
-    '        End If
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
-    '        da.SelectCommand = New MySqlCommand("SELECT UserID, FirstName, LastName, Password, Username, Role, Status from tblusers", cn)
-    '        da.Fill(ds.Tables("dtUsers"))
+            da.SelectCommand = New MySqlCommand("SELECT UserID, FirstName, LastName, Password, Username, Role, Status FROM tblusers", cn)
+            da.Fill(ds.Tables("dtUsers"))
 
-    '        If cn.State = ConnectionState.Open Then
-    '            cn.Close()
-    '        End If
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
 
-    '        rptDS = New ReportDataSource("DataSet1", ds.Tables("dtUsers"))
-    '        ReportViewer1.LocalReport.DataSources.Add(rptDS)
-    '        ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-    '        ReportViewer1.ZoomMode = ZoomMode.Percent
-    '        ReportViewer1.ZoomPercent = 100
+            rptDS = New ReportDataSource("DataSet1", ds.Tables("dtUsers"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
 
-    '    Catch ex As Exception
-    '        If cn.State = ConnectionState.Open Then
-    '            cn.Close()
-    '        End If
-    '    End Try
-    'End Sub
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
 
     Private Sub loadUsers()
         Try
