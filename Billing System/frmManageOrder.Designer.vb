@@ -29,7 +29,6 @@ Partial Class frmManageOrder
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.panelBody = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -73,6 +72,7 @@ Partial Class frmManageOrder
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.panelBody.SuspendLayout()
         Me.Panel21.SuspendLayout()
         Me.Panel28.SuspendLayout()
@@ -142,7 +142,7 @@ Partial Class frmManageOrder
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader8, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader18})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader18})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
@@ -156,11 +156,6 @@ Partial Class frmManageOrder
         Me.ListView1.TabIndex = 41
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader8
-        '
-        Me.ColumnHeader8.Text = "OrderID"
-        Me.ColumnHeader8.Width = 150
         '
         'ColumnHeader14
         '
@@ -674,6 +669,11 @@ Partial Class frmManageOrder
         Me.Panel16.Size = New System.Drawing.Size(227, 18)
         Me.Panel16.TabIndex = 13
         '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Company Name"
+        Me.ColumnHeader1.Width = 300
+        '
         'frmManageOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -738,7 +738,6 @@ Partial Class frmManageOrder
     Friend WithEvents Panel23 As Panel
     Friend WithEvents Panel24 As Panel
     Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents ColumnHeader14 As ColumnHeader
     Friend WithEvents ColumnHeader15 As ColumnHeader
     Friend WithEvents ColumnHeader16 As ColumnHeader
@@ -756,4 +755,5 @@ Partial Class frmManageOrder
     Friend WithEvents cboFilter As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Panel28 As Panel
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ColumnHeader1 As ColumnHeader
 End Class

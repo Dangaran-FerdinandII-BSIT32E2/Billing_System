@@ -249,6 +249,7 @@ Public Class frmManageOrder
                     x.SubItems.Add(If(dr("Available"), "Yes", "No")) '2
                     x.SubItems.Add(GetStatusText(dr("Status").ToString))
                     x.SubItems.Add(dr("OrderDate").ToString()) ' 4
+                    x.SubItems.Add(dr("OrderID").ToString)
                     x.SubItems.Add(dr("CustomerID").ToString)
 
                     ' Check if the status is "Urgent" and set the text color accordingly

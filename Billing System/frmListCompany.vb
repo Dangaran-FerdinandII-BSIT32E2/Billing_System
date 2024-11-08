@@ -62,7 +62,7 @@ Public Class frmListCompany
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Availability = 1 AND Status <> 5 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Availability = 1 AND Status = 1 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -131,6 +131,7 @@ Public Class frmListCompany
         If manageOrder Then
             manageOrder = False
         End If
+        frmManageSalesV2.btnPrint.Enabled = True
         Me.Close()
     End Sub
 
