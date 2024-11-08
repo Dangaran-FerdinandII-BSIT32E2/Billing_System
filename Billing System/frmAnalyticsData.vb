@@ -10,7 +10,8 @@ Public Class frmAnalyticsData
         Call connection()
         Call getDebt()
         Call getPaid()
-        lblReceivable.Text = "₱" + (debt - paid).ToString
+        Dim totalDebt As Double = debt - paid
+        lblReceivable.Text = If(totalDebt = 0, "No account receivable?", "₱" + totalDebt.ToString)
         Call getOverdue()
     End Sub
 
@@ -30,7 +31,11 @@ Public Class frmAnalyticsData
             dr = cmd.ExecuteReader
 
             If dr.Read = True Then
-                debt = Convert.ToDouble(dr("Debt"))
+                If IsDBNull(dr("Debt")) Then
+                    Exit Sub
+                Else
+                    debt = Convert.ToDouble(dr("Debt"))
+                End If
             End If
         Catch ex As Exception
             MsgBox("An error occured at frmAnalyticsData(getDebt): " & ex.Message)
@@ -57,12 +62,16 @@ Public Class frmAnalyticsData
 
             Chart1.Series("Sales").Points.Clear()
             While dr.Read()
-                Dim month As String = Convert.ToDateTime(dr("Month") & "-01").ToString("MMM yyyy")
-                Dim amount As Double = Convert.ToDouble(dr("Paid"))
+                If IsDBNull(dr("Paid")) Then
+                    Exit Sub
+                Else
+                    Dim month As String = Convert.ToDateTime(dr("Month") & "-01").ToString("MMM yyyy")
+                    Dim amount As Double = Convert.ToDouble(dr("Paid"))
 
-                ' Add the data point
-                Chart1.Series("Sales").Points.AddXY(month, amount)
-                paid = Convert.ToDouble(dr("Paid"))
+                    ' Add the data point
+                    Chart1.Series("Sales").Points.AddXY(month, amount)
+                    paid = Convert.ToDouble(dr("Paid"))
+                End If
             End While
 
         Catch ex As Exception
@@ -87,6 +96,10 @@ Public Class frmAnalyticsData
             End If
 
             dr = cmd.ExecuteReader
+
+            If Not dr.HasRows Then
+                Exit Sub
+            End If
 
             Dim x As ListViewItem
             ListView1.Items.Clear()
@@ -131,16 +144,24 @@ Public Class frmAnalyticsData
             End If
             dr = cmd.ExecuteReader
 
+            If Not dr.HasRows Then
+                Exit Sub
+            End If
+
             ' Clear existing data
             Chart1.Series("Sales").Points.Clear()
 
             ' Add data points to the chart
             While dr.Read()
-                Dim month As String = Convert.ToDateTime(dr("Month") & "-01").ToString("MMM yyyy")
-                Dim amount As Double = Convert.ToDouble(dr("Paid"))
+                If IsDBNull(dr("Paid")) Then
+                    Exit Sub
+                Else
+                    Dim month As String = Convert.ToDateTime(dr("Month") & "-01").ToString("MMM yyyy")
+                    Dim amount As Double = Convert.ToDouble(dr("Paid"))
 
-                ' Add the data point
-                Chart1.Series("Payments").Points.AddXY(month, amount)
+                    ' Add the data point
+                    Chart1.Series("Payments").Points.AddXY(month, amount)
+                End If
             End While
 
             ' Configure chart appearance

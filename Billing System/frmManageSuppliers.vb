@@ -136,7 +136,7 @@ Public Class frmManageSuppliers
                             .Parameters.AddWithValue("@BankDetails", txtBankDetailsSupp.Text)
                             .ExecuteNonQuery()
                         End With
-
+                        Call loadCreateNew()
                         MsgBox("Successfully created!", MsgBoxStyle.Information)
                     ElseIf btnCreateNewSupp.Enabled = False And btnEditSupp.Enabled = True Then 'IF EDIT
                         sql = "UPDATE tblsupplier SET CompanyName=@CompanyName, ContactPerson=@ContactPerson, " &
@@ -754,6 +754,30 @@ Public Class frmManageSuppliers
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageSuppliers(btnUploadImage_Click): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub loadCreateNew()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
+                .Parameters.AddWithValue("@Username", frmLoginV2.username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "CREATED NEW SUPPLIER!")
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmMessage(loadActivity): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
