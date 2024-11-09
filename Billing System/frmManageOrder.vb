@@ -114,6 +114,8 @@ Public Class frmManageOrder
         End If
     End Sub
     Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click, ListView1.DoubleClick
+        frmListofCustomerOrder.Show()
+
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
