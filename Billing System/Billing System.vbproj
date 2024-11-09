@@ -195,6 +195,12 @@
     <Compile Include="frmListofCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmListofCustomerOrder.Designer.vb">
+      <DependentUpon>frmListofCustomerOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListofCustomerOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmListofOrder.Designer.vb">
       <DependentUpon>frmListofOrder.vb</DependentUpon>
     </Compile>
@@ -394,6 +400,18 @@
     <Compile Include="frmPrintSalesInvoiceV2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmQuotation.Designer.vb">
+      <DependentUpon>frmQuotation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuotation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuotationComment.Designer.vb">
+      <DependentUpon>frmQuotationComment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuotationComment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRegister.Designer.vb">
       <DependentUpon>frmRegister.vb</DependentUpon>
     </Compile>
@@ -462,6 +480,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListofCustomer.resx">
       <DependentUpon>frmListofCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListofCustomerOrder.resx">
+      <DependentUpon>frmListofCustomerOrder.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListofOrder.resx">
       <DependentUpon>frmListofOrder.vb</DependentUpon>
@@ -561,6 +582,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintSalesInvoiceV2.resx">
       <DependentUpon>frmPrintSalesInvoiceV2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuotation.resx">
+      <DependentUpon>frmQuotation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuotationComment.resx">
+      <DependentUpon>frmQuotationComment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.vb</DependentUpon>
