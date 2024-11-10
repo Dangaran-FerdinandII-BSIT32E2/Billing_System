@@ -106,7 +106,7 @@ Public Class frmListCompany
                 If manageOrder Then
                     frmManageOrder.txtSearchOrder.Text = ListView1.SelectedItems(0).SubItems(0).Text
                     frmManageOrder.orderid = ListView1.SelectedItems(0).SubItems(11).Text
-                    Call frmManageOrder.viewOrders()
+                    'ACall frmManageOrder.viewOrders()
                 ElseIf manageCollection Then
                     frmManageCollectionV3.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
                     frmManageCollectionV3.customerid = ListView1.SelectedItems(0).SubItems(3).Text
