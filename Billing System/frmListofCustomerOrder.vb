@@ -34,21 +34,6 @@ Public Class frmListofCustomerOrder
                 dr.Close()
             End If
 
-            Dim dt As New DataTable
-            Dim da As New MySqlDataAdapter(cmd)
-            da.Fill(dt)
-
-            DataGridView1.DataSource = dt
-            DataGridView1.Columns("OrderListID").Visible = False
-
-            For i As Integer = 0 To DataGridView1.Columns.Count - 1
-                If i = 0 Then
-                    DataGridView1.Columns(0).Width = 30
-                Else
-                    DataGridView1.Columns(i).Width = 150
-                End If
-            Next
-
         Catch ex As Exception
             MsgBox("An error occurred frmListofCustomerOrder(loadOrder): " & ex.Message)
         Finally
@@ -64,9 +49,6 @@ Public Class frmListofCustomerOrder
                 cn.Open()
             End If
 
-            Dim updatedCount = 0
-
-            sql = "UPDATE tblorder"
         Catch ex As Exception
             MsgBox("An error occurred frmListofCustomerOrder(btnUpdateOrder_Click): " & ex.Message)
         Finally
