@@ -11,7 +11,7 @@ Public Class frmAnalyticsData
         Call getDebt()
         Call getPaid()
         Dim totalDebt As Double = debt - paid
-        lblReceivable.Text = If(totalDebt = 0, "No account receivable?", "₱" + totalDebt.ToString)
+        lblReceivable.Text = If(totalDebt = 0, "No Account in Deb", "₱" + totalDebt.ToString)
         Call getOverdue()
     End Sub
 

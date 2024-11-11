@@ -23,9 +23,9 @@ Partial Class frmAnalyticsData
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -140,27 +140,27 @@ Partial Class frmAnalyticsData
         '
         Me.Chart1.BorderlineWidth = 5
         Me.Chart1.BorderSkin.BorderColor = System.Drawing.Color.Red
-        ChartArea1.AxisX.Title = "Months"
-        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        ChartArea1.AxisY.Title = "Revenue"
-        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
+        ChartArea3.AxisX.Title = "Months"
+        ChartArea3.AxisX.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        ChartArea3.AxisY.Title = "Revenue"
+        ChartArea3.AxisY.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        ChartArea3.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea3)
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Legend1.IsTextAutoFit = False
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        Legend3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Legend3.IsTextAutoFit = False
+        Legend3.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend3)
         Me.Chart1.Location = New System.Drawing.Point(13, 62)
         Me.Chart1.Margin = New System.Windows.Forms.Padding(4)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
         Me.Chart1.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.OrangeRed}
-        Series1.ChartArea = "ChartArea1"
-        Series1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series1.Legend = "Legend1"
-        Series1.Name = "Sales"
-        Me.Chart1.Series.Add(Series1)
+        Series3.ChartArea = "ChartArea1"
+        Series3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series3.Legend = "Legend1"
+        Series3.Name = "Sales"
+        Me.Chart1.Series.Add(Series3)
         Me.Chart1.Size = New System.Drawing.Size(1427, 351)
         Me.Chart1.TabIndex = 34
         '
@@ -379,7 +379,7 @@ Partial Class frmAnalyticsData
         Me.Panel19.Location = New System.Drawing.Point(25, 95)
         Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(416, 59)
+        Me.Panel19.Size = New System.Drawing.Size(509, 59)
         Me.Panel19.TabIndex = 33
         '
         'lblReceivable
@@ -387,12 +387,12 @@ Partial Class frmAnalyticsData
         Me.lblReceivable.AutoSize = True
         Me.lblReceivable.BackColor = System.Drawing.Color.Transparent
         Me.lblReceivable.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblReceivable.Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Bold)
+        Me.lblReceivable.Font = New System.Drawing.Font("Arial", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReceivable.ForeColor = System.Drawing.Color.White
         Me.lblReceivable.Location = New System.Drawing.Point(0, 0)
         Me.lblReceivable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblReceivable.Name = "lblReceivable"
-        Me.lblReceivable.Size = New System.Drawing.Size(53, 59)
+        Me.lblReceivable.Size = New System.Drawing.Size(31, 33)
         Me.lblReceivable.TabIndex = 34
         Me.lblReceivable.Text = "0"
         '

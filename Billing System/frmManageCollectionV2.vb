@@ -144,22 +144,27 @@ Public Class frmManageCollectionV2
             End If
 
             If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
-                Dim mstream As New System.IO.MemoryStream()
-                pbxDelivery.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
-                Dim arrImage() As Byte = mstream.GetBuffer
-                mstream.Close()
+                If pbxDelivery.Image IsNot Nothing Then
+                    Dim mstream As New System.IO.MemoryStream()
+                    pbxDelivery.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                    Dim arrImage() As Byte = mstream.GetBuffer
+                    mstream.Close()
 
-                sql = "UPDATE tblbilling SET imgDelivery=@imgDelivery, DateDelivered=@DateDelivered, Remarks=@Remarks WHERE BillingID = '" & billingid & "'"
-                cmd = New MySqlCommand(sql, cn)
-                With cmd
-                    .Parameters.AddWithValue("@DateDelivered", dtpDateDelivered.Value)
-                    .Parameters.AddWithValue("@Remarks", "1")
-                    .Parameters.AddWithValue("@imgDelivery", arrImage)
-                    .ExecuteNonQuery()
-                End With
-                MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
+                    sql = "UPDATE tblbilling SET imgDelivery=@imgDelivery, DateDelivered=@DateDelivered, Remarks=@Remarks WHERE BillingID = '" & billingid & "'"
+                    cmd = New MySqlCommand(sql, cn)
+                    With cmd
+                        .Parameters.AddWithValue("@DateDelivered", dtpDateDelivered.Value)
+                        .Parameters.AddWithValue("@Remarks", "1")
+                        .Parameters.AddWithValue("@imgDelivery", arrImage)
+                        .ExecuteNonQuery()
+                    End With
+                    MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
 
-                Call saveDelivery()
+                    Call saveDelivery()
+                Else
+                    MsgBox("Please upload an image!", MsgBoxStyle.Critical, "Upload Error")
+                End If
+
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageCollectionV2(btnConfirmDelivery): " & ex.Message)
