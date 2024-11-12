@@ -6,6 +6,7 @@ Public Class frmManageBilling
 
     Dim startDate As String
     Dim endDate As String
+
     Private Sub frmManageBilling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         DateFilter1.Text = DateTime.Now.AddDays(-5)
@@ -42,7 +43,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DueDate FROM qrybilling WHERE Remarks <> 1 AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms FROM qrybilling WHERE Remarks <> 1 AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -58,7 +59,6 @@ Public Class frmManageBilling
                     x.SubItems.Add(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("DatePrinted").ToString())
                     x.SubItems.Add(dr("Terms").ToString())
-                    x.SubItems.Add(dr("DueDate").ToString())
                     ListView1.Items.Add(x)
                 Loop
                 dr.Close()
@@ -139,7 +139,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DateDelivered FROM qrybilling WHERE Remarks <> 1 AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DateDelivered FROM qrybilling WHERE Remarks <> 1 AND DateDelivered ISNOT NULL AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -181,7 +181,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DueDate, DateDelivered FROM qrybilling WHERE Remarks = 0 AND DateDelivered IS NULL AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DateDelivered FROM qrybilling WHERE Remarks = 0 AND DateDelivered IS NULL AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -197,7 +197,6 @@ Public Class frmManageBilling
                     x.SubItems.Add(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("DatePrinted").ToString())
                     x.SubItems.Add(dr("Terms").ToString())
-                    x.SubItems.Add(dr("DueDate").ToString())
                     x.SubItems.Add(If(IsDBNull(dr("DateDelivered")), "Not Yet Delivered", dr("DateDelivered").ToString()))
                     ListView1.Items.Add(x)
                 Loop
@@ -206,6 +205,58 @@ Public Class frmManageBilling
 
         Catch ex As Exception
             MsgBox("An error occurred frmManageBilling(loadNotDelivered): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnSearchCompanyName_Click(sender As Object, e As EventArgs) Handles btnSearchCompanyName.Click
+        frmListCompany.manageBilling = True
+        frmListCompany.ShowDialog()
+    End Sub
+
+    Public customerid As String
+    Private Sub txtCompanyName_TextChanged(sender As Object, e As EventArgs) Handles txtCompanyName.TextChanged
+        Call loadSpecific(startDate, endDate)
+    End Sub
+
+    Private Sub loadSpecific(startDate As String, endDate As String)
+        Try
+            Dim startDateTime As DateTime
+            Dim endDateTime As DateTime
+
+            If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
+           DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
+
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms FROM qrybilling WHERE Remarks <> 1 AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' AND CustomerID = '" & customerid & "'"
+                cmd = New MySqlCommand(sql, cn)
+
+                If Not dr.IsClosed Then
+                    dr.Close()
+                End If
+
+                dr = cmd.ExecuteReader
+                Dim x As ListViewItem
+                ListView1.Items.Clear()
+
+                Do While dr.Read = True
+                    x = New ListViewItem(dr("BillingID").ToString())
+                    x.SubItems.Add(dr("CompanyName").ToString())
+                    x.SubItems.Add(dr("DatePrinted").ToString())
+                    x.SubItems.Add(dr("Terms").ToString())
+                    ListView1.Items.Add(x)
+                Loop
+                dr.Close()
+                Call AddButtonsToListView()
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageBilling(loadBilling): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()

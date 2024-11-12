@@ -3,11 +3,14 @@ Imports MySql.Data.MySqlClient
 
 Public Class frmListCompany
 
-    Public manageOrder As Boolean? = False
-    Public manageCollection As Boolean? = False
+    Public manageOrder As Boolean = False
+    Public manageCollection As Boolean = False
+    Public manageBilling As Boolean = False
     Private Sub frmListCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        If manageCollection Then
+        btnAddNew.Visible = True
+        If manageCollection Or manageBilling Then
+            btnAddNew.Visible = False
             Call loadCollections()
         Else
             Call loadCustomers()
@@ -29,7 +32,7 @@ Public Class frmListCompany
             ListView1.Columns(1).Width = 150
             ListView1.Columns(2).Width = 150
 
-            sql = "SELECT CompanyName, FinalPrice, Remarks, CustomerID FROM qrybilling WHERE DateDelivered IS NOT NULL"
+            sql = "SELECT MIN(CompanyName) AS CompanyName, SUM(FinalPrice) AS FinalPrice, MIN(Remarks) As Remarks, CustomerID FROM qrybilling"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -104,16 +107,21 @@ Public Class frmListCompany
             If ListView1.SelectedItems.Count > 0 Then
 
                 If manageOrder Then
-                    frmManageOrder.txtSearchOrder.Text = ListView1.SelectedItems(0).SubItems(0).Text
                     frmManageOrder.orderid = ListView1.SelectedItems(0).SubItems(11).Text
+                    frmManageOrder.txtSearchOrder.Text = ListView1.SelectedItems(0).SubItems(0).Text
                     'ACall frmManageOrder.viewOrders()
+
                 ElseIf manageCollection Then
-                    frmManageCollectionV3.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
                     frmManageCollectionV3.customerid = ListView1.SelectedItems(0).SubItems(3).Text
-                Else
+                    frmManageCollectionV3.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+
+                ElseIf manageBilling Then
+                    frmManageBilling.customerid = ListView1.SelectedItems(0).SubItems(3).Text
                     frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                Else
                     frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
                     frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(11).Text
+                    frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
                     Call frmManageSalesV2.loadBilling()
                 End If
             End If

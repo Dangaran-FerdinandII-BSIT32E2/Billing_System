@@ -18,6 +18,7 @@ Public Class frmListofCustomerOrder
     Private Sub frmListofCustomerOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadOrder()
+        Call loadComment()
     End Sub
 
     Private Sub loadOrder()
@@ -65,6 +66,36 @@ Public Class frmListofCustomerOrder
             Case Else : Return "Item on Process"
         End Select
     End Function
+    Private Sub loadComment()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT MIN(Comment) AS Comment FROM qryorder where OrderID = '" & orderid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            If dr.Read = True Then
+                If Not IsDBNull(dr("Comment")) Then
+                    lblNotifQuatation.Visible = True
+                Else
+                    lblNotifQuatation.Visible = False
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmListofCustomerOrder(loadComment): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub btnUpdateOrder_Click(sender As Object, e As EventArgs) Handles btnUpdateOrder.Click
         If ListView1.SelectedItems.Count > 0 Then
             Try

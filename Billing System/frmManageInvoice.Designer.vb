@@ -129,32 +129,36 @@ Partial Class frmManageInvoice
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1109, 10)
+        Me.Panel1.Size = New System.Drawing.Size(1479, 12)
         Me.Panel1.TabIndex = 0
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 623)
+        Me.Panel2.Location = New System.Drawing.Point(0, 767)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1109, 10)
+        Me.Panel2.Size = New System.Drawing.Size(1479, 12)
         Me.Panel2.TabIndex = 1
         '
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(1099, 10)
+        Me.Panel3.Location = New System.Drawing.Point(1466, 12)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(10, 613)
+        Me.Panel3.Size = New System.Drawing.Size(13, 755)
         Me.Panel3.TabIndex = 1
         '
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel4.Location = New System.Drawing.Point(0, 10)
+        Me.Panel4.Location = New System.Drawing.Point(0, 12)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(10, 613)
+        Me.Panel4.Size = New System.Drawing.Size(13, 755)
         Me.Panel4.TabIndex = 1
         '
         'panelManageInvoice
@@ -162,9 +166,10 @@ Partial Class frmManageInvoice
         Me.panelManageInvoice.BackColor = System.Drawing.Color.White
         Me.panelManageInvoice.Controls.Add(Me.panelBody)
         Me.panelManageInvoice.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelManageInvoice.Location = New System.Drawing.Point(10, 10)
+        Me.panelManageInvoice.Location = New System.Drawing.Point(13, 12)
+        Me.panelManageInvoice.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelManageInvoice.Name = "panelManageInvoice"
-        Me.panelManageInvoice.Size = New System.Drawing.Size(1089, 344)
+        Me.panelManageInvoice.Size = New System.Drawing.Size(1453, 423)
         Me.panelManageInvoice.TabIndex = 27
         '
         'panelBody
@@ -178,17 +183,19 @@ Partial Class frmManageInvoice
         Me.panelBody.Controls.Add(Me.Panel14)
         Me.panelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBody.Location = New System.Drawing.Point(0, 0)
+        Me.panelBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelBody.Name = "panelBody"
-        Me.panelBody.Size = New System.Drawing.Size(1089, 344)
+        Me.panelBody.Size = New System.Drawing.Size(1453, 423)
         Me.panelBody.TabIndex = 12
         '
         'Panel11
         '
         Me.Panel11.Controls.Add(Me.ListView1)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel11.Location = New System.Drawing.Point(10, 140)
+        Me.Panel11.Location = New System.Drawing.Point(13, 172)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1069, 194)
+        Me.Panel11.Size = New System.Drawing.Size(1427, 239)
         Me.Panel11.TabIndex = 14
         '
         'ListView1
@@ -201,8 +208,9 @@ Partial Class frmManageInvoice
         Me.ListView1.HideSelection = False
         Me.ListView1.HoverSelection = True
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1069, 194)
+        Me.ListView1.Size = New System.Drawing.Size(1427, 239)
         Me.ListView1.TabIndex = 37
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -221,33 +229,37 @@ Partial Class frmManageInvoice
         'Panel8
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(10, 130)
+        Me.Panel8.Location = New System.Drawing.Point(13, 160)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1069, 10)
+        Me.Panel8.Size = New System.Drawing.Size(1427, 12)
         Me.Panel8.TabIndex = 7
         '
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel9.Location = New System.Drawing.Point(0, 130)
+        Me.Panel9.Location = New System.Drawing.Point(0, 160)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(10, 204)
+        Me.Panel9.Size = New System.Drawing.Size(13, 251)
         Me.Panel9.TabIndex = 8
         '
         'Panel10
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel10.Location = New System.Drawing.Point(0, 334)
+        Me.Panel10.Location = New System.Drawing.Point(0, 411)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1079, 10)
+        Me.Panel10.Size = New System.Drawing.Size(1440, 12)
         Me.Panel10.TabIndex = 9
         '
         'Panel12
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel12.Location = New System.Drawing.Point(1079, 130)
+        Me.Panel12.Location = New System.Drawing.Point(1440, 160)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(10, 214)
+        Me.Panel12.Size = New System.Drawing.Size(13, 263)
         Me.Panel12.TabIndex = 6
         '
         'Panel14
@@ -260,8 +272,9 @@ Partial Class frmManageInvoice
         Me.Panel14.Controls.Add(Me.Panel5)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1089, 130)
+        Me.Panel14.Size = New System.Drawing.Size(1453, 160)
         Me.Panel14.TabIndex = 0
         '
         'Panel25
@@ -274,9 +287,10 @@ Partial Class frmManageInvoice
         Me.Panel25.Controls.Add(Me.Panel30)
         Me.Panel25.Controls.Add(Me.Panel31)
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel25.Location = New System.Drawing.Point(0, 82)
+        Me.Panel25.Location = New System.Drawing.Point(0, 100)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(1089, 28)
+        Me.Panel25.Size = New System.Drawing.Size(1453, 34)
         Me.Panel25.TabIndex = 26
         '
         'Panel26
@@ -284,9 +298,10 @@ Partial Class frmManageInvoice
         Me.Panel26.BackColor = System.Drawing.Color.Transparent
         Me.Panel26.Controls.Add(Me.lblContactPerson)
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel26.Location = New System.Drawing.Point(516, 0)
+        Me.Panel26.Location = New System.Drawing.Point(687, 0)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(232, 28)
+        Me.Panel26.Size = New System.Drawing.Size(309, 34)
         Me.Panel26.TabIndex = 36
         '
         'lblContactPerson
@@ -297,8 +312,9 @@ Partial Class frmManageInvoice
         Me.lblContactPerson.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblContactPerson.ForeColor = System.Drawing.Color.White
         Me.lblContactPerson.Location = New System.Drawing.Point(0, 0)
+        Me.lblContactPerson.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblContactPerson.Name = "lblContactPerson"
-        Me.lblContactPerson.Size = New System.Drawing.Size(114, 18)
+        Me.lblContactPerson.Size = New System.Drawing.Size(143, 23)
         Me.lblContactPerson.TabIndex = 46
         Me.lblContactPerson.Text = "Juan Dela Cruz"
         '
@@ -306,9 +322,10 @@ Partial Class frmManageInvoice
         '
         Me.Panel27.BackColor = System.Drawing.Color.Transparent
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel27.Location = New System.Drawing.Point(506, 0)
+        Me.Panel27.Location = New System.Drawing.Point(674, 0)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(10, 28)
+        Me.Panel27.Size = New System.Drawing.Size(13, 34)
         Me.Panel27.TabIndex = 35
         '
         'Panel28
@@ -316,9 +333,10 @@ Partial Class frmManageInvoice
         Me.Panel28.BackColor = System.Drawing.Color.Transparent
         Me.Panel28.Controls.Add(Me.lblPhoneNumber)
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel28.Location = New System.Drawing.Point(274, 0)
+        Me.Panel28.Location = New System.Drawing.Point(365, 0)
+        Me.Panel28.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(232, 28)
+        Me.Panel28.Size = New System.Drawing.Size(309, 34)
         Me.Panel28.TabIndex = 34
         '
         'lblPhoneNumber
@@ -329,8 +347,9 @@ Partial Class frmManageInvoice
         Me.lblPhoneNumber.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblPhoneNumber.ForeColor = System.Drawing.Color.White
         Me.lblPhoneNumber.Location = New System.Drawing.Point(0, 0)
+        Me.lblPhoneNumber.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPhoneNumber.Name = "lblPhoneNumber"
-        Me.lblPhoneNumber.Size = New System.Drawing.Size(107, 18)
+        Me.lblPhoneNumber.Size = New System.Drawing.Size(131, 23)
         Me.lblPhoneNumber.TabIndex = 45
         Me.lblPhoneNumber.Text = "09123456789"
         '
@@ -338,9 +357,10 @@ Partial Class frmManageInvoice
         '
         Me.Panel29.BackColor = System.Drawing.Color.Transparent
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel29.Location = New System.Drawing.Point(264, 0)
+        Me.Panel29.Location = New System.Drawing.Point(352, 0)
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(10, 28)
+        Me.Panel29.Size = New System.Drawing.Size(13, 34)
         Me.Panel29.TabIndex = 31
         '
         'Panel30
@@ -348,9 +368,10 @@ Partial Class frmManageInvoice
         Me.Panel30.BackColor = System.Drawing.Color.Transparent
         Me.Panel30.Controls.Add(Me.lblEmailAdress)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel30.Location = New System.Drawing.Point(10, 0)
+        Me.Panel30.Location = New System.Drawing.Point(13, 0)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(254, 28)
+        Me.Panel30.Size = New System.Drawing.Size(339, 34)
         Me.Panel30.TabIndex = 33
         '
         'lblEmailAdress
@@ -361,8 +382,9 @@ Partial Class frmManageInvoice
         Me.lblEmailAdress.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblEmailAdress.ForeColor = System.Drawing.Color.White
         Me.lblEmailAdress.Location = New System.Drawing.Point(0, 0)
+        Me.lblEmailAdress.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblEmailAdress.Name = "lblEmailAdress"
-        Me.lblEmailAdress.Size = New System.Drawing.Size(155, 18)
+        Me.lblEmailAdress.Size = New System.Drawing.Size(192, 23)
         Me.lblEmailAdress.TabIndex = 41
         Me.lblEmailAdress.Text = "example@gmail.com"
         '
@@ -371,8 +393,9 @@ Partial Class frmManageInvoice
         Me.Panel31.BackColor = System.Drawing.Color.Transparent
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel31.Location = New System.Drawing.Point(0, 0)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(10, 28)
+        Me.Panel31.Size = New System.Drawing.Size(13, 34)
         Me.Panel31.TabIndex = 32
         '
         'Panel17
@@ -385,9 +408,10 @@ Partial Class frmManageInvoice
         Me.Panel17.Controls.Add(Me.Panel20)
         Me.Panel17.Controls.Add(Me.Panel19)
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel17.Location = New System.Drawing.Point(0, 56)
+        Me.Panel17.Location = New System.Drawing.Point(0, 68)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(1089, 26)
+        Me.Panel17.Size = New System.Drawing.Size(1453, 32)
         Me.Panel17.TabIndex = 26
         '
         'Panel24
@@ -395,9 +419,10 @@ Partial Class frmManageInvoice
         Me.Panel24.BackColor = System.Drawing.Color.Transparent
         Me.Panel24.Controls.Add(Me.Label7)
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel24.Location = New System.Drawing.Point(516, 0)
+        Me.Panel24.Location = New System.Drawing.Point(687, 0)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(232, 26)
+        Me.Panel24.Size = New System.Drawing.Size(309, 32)
         Me.Panel24.TabIndex = 30
         '
         'Label7
@@ -408,8 +433,9 @@ Partial Class frmManageInvoice
         Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(0, 0)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(116, 18)
+        Me.Label7.Size = New System.Drawing.Size(146, 23)
         Me.Label7.TabIndex = 46
         Me.Label7.Text = "Contact Person"
         '
@@ -417,9 +443,10 @@ Partial Class frmManageInvoice
         '
         Me.Panel23.BackColor = System.Drawing.Color.Transparent
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel23.Location = New System.Drawing.Point(506, 0)
+        Me.Panel23.Location = New System.Drawing.Point(674, 0)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(10, 26)
+        Me.Panel23.Size = New System.Drawing.Size(13, 32)
         Me.Panel23.TabIndex = 29
         '
         'Panel22
@@ -427,9 +454,10 @@ Partial Class frmManageInvoice
         Me.Panel22.BackColor = System.Drawing.Color.Transparent
         Me.Panel22.Controls.Add(Me.Label5)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel22.Location = New System.Drawing.Point(274, 0)
+        Me.Panel22.Location = New System.Drawing.Point(365, 0)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(232, 26)
+        Me.Panel22.Size = New System.Drawing.Size(309, 32)
         Me.Panel22.TabIndex = 28
         '
         'Label5
@@ -440,8 +468,9 @@ Partial Class frmManageInvoice
         Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(112, 18)
+        Me.Label5.Size = New System.Drawing.Size(139, 23)
         Me.Label5.TabIndex = 45
         Me.Label5.Text = "Phone Number"
         '
@@ -449,9 +478,10 @@ Partial Class frmManageInvoice
         '
         Me.Panel21.BackColor = System.Drawing.Color.Transparent
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel21.Location = New System.Drawing.Point(264, 0)
+        Me.Panel21.Location = New System.Drawing.Point(352, 0)
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(10, 26)
+        Me.Panel21.Size = New System.Drawing.Size(13, 32)
         Me.Panel21.TabIndex = 26
         '
         'Panel20
@@ -459,9 +489,10 @@ Partial Class frmManageInvoice
         Me.Panel20.BackColor = System.Drawing.Color.Transparent
         Me.Panel20.Controls.Add(Me.Label1)
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel20.Location = New System.Drawing.Point(10, 0)
+        Me.Panel20.Location = New System.Drawing.Point(13, 0)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(254, 26)
+        Me.Panel20.Size = New System.Drawing.Size(339, 32)
         Me.Panel20.TabIndex = 27
         '
         'Label1
@@ -472,8 +503,9 @@ Partial Class frmManageInvoice
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(110, 18)
+        Me.Label1.Size = New System.Drawing.Size(136, 23)
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Email Address"
         '
@@ -482,17 +514,19 @@ Partial Class frmManageInvoice
         Me.Panel19.BackColor = System.Drawing.Color.Transparent
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel19.Location = New System.Drawing.Point(0, 0)
+        Me.Panel19.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(10, 26)
+        Me.Panel19.Size = New System.Drawing.Size(13, 32)
         Me.Panel19.TabIndex = 26
         '
         'Panel16
         '
         Me.Panel16.BackColor = System.Drawing.Color.Transparent
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel16.Location = New System.Drawing.Point(0, 46)
+        Me.Panel16.Location = New System.Drawing.Point(0, 56)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(1089, 10)
+        Me.Panel16.Size = New System.Drawing.Size(1453, 12)
         Me.Panel16.TabIndex = 26
         '
         'Panel6
@@ -503,9 +537,10 @@ Partial Class frmManageInvoice
         Me.Panel6.Controls.Add(Me.lblCompanyName)
         Me.Panel6.Controls.Add(Me.Panel7)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 10)
+        Me.Panel6.Location = New System.Drawing.Point(0, 12)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1089, 36)
+        Me.Panel6.Size = New System.Drawing.Size(1453, 44)
         Me.Panel6.TabIndex = 26
         '
         'Panel15
@@ -513,9 +548,10 @@ Partial Class frmManageInvoice
         Me.Panel15.BackColor = System.Drawing.Color.Transparent
         Me.Panel15.Controls.Add(Me.btnDownloadInvoice)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel15.Location = New System.Drawing.Point(655, 0)
+        Me.Panel15.Location = New System.Drawing.Point(875, 0)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(424, 36)
+        Me.Panel15.Size = New System.Drawing.Size(565, 44)
         Me.Panel15.TabIndex = 26
         '
         'btnDownloadInvoice
@@ -532,10 +568,11 @@ Partial Class frmManageInvoice
         Me.btnDownloadInvoice.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnDownloadInvoice.ForeColor = System.Drawing.Color.White
         Me.btnDownloadInvoice.Image = CType(resources.GetObject("btnDownloadInvoice.Image"), System.Drawing.Image)
-        Me.btnDownloadInvoice.Location = New System.Drawing.Point(202, 0)
+        Me.btnDownloadInvoice.Location = New System.Drawing.Point(269, 0)
+        Me.btnDownloadInvoice.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnDownloadInvoice.Name = "btnDownloadInvoice"
         Me.btnDownloadInvoice.PressedDepth = 20
-        Me.btnDownloadInvoice.Size = New System.Drawing.Size(222, 36)
+        Me.btnDownloadInvoice.Size = New System.Drawing.Size(296, 44)
         Me.btnDownloadInvoice.TabIndex = 61
         Me.btnDownloadInvoice.Text = "Download all invoices"
         '
@@ -543,9 +580,10 @@ Partial Class frmManageInvoice
         '
         Me.Panel13.BackColor = System.Drawing.Color.Transparent
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel13.Location = New System.Drawing.Point(1079, 0)
+        Me.Panel13.Location = New System.Drawing.Point(1440, 0)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(10, 36)
+        Me.Panel13.Size = New System.Drawing.Size(13, 44)
         Me.Panel13.TabIndex = 26
         '
         'lblCompanyName
@@ -555,9 +593,10 @@ Partial Class frmManageInvoice
         Me.lblCompanyName.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblCompanyName.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.lblCompanyName.ForeColor = System.Drawing.Color.White
-        Me.lblCompanyName.Location = New System.Drawing.Point(10, 0)
+        Me.lblCompanyName.Location = New System.Drawing.Point(13, 0)
+        Me.lblCompanyName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCompanyName.Name = "lblCompanyName"
-        Me.lblCompanyName.Size = New System.Drawing.Size(156, 22)
+        Me.lblCompanyName.Size = New System.Drawing.Size(193, 29)
         Me.lblCompanyName.TabIndex = 40
         Me.lblCompanyName.Text = "Company Name"
         '
@@ -566,8 +605,9 @@ Partial Class frmManageInvoice
         Me.Panel7.BackColor = System.Drawing.Color.Transparent
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(10, 36)
+        Me.Panel7.Size = New System.Drawing.Size(13, 44)
         Me.Panel7.TabIndex = 26
         '
         'Panel5
@@ -575,16 +615,18 @@ Partial Class frmManageInvoice
         Me.Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1089, 10)
+        Me.Panel5.Size = New System.Drawing.Size(1453, 12)
         Me.Panel5.TabIndex = 26
         '
         'Panel18
         '
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel18.Location = New System.Drawing.Point(10, 354)
+        Me.Panel18.Location = New System.Drawing.Point(13, 435)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(1089, 10)
+        Me.Panel18.Size = New System.Drawing.Size(1453, 12)
         Me.Panel18.TabIndex = 28
         '
         'panelSummary
@@ -597,9 +639,10 @@ Partial Class frmManageInvoice
         Me.panelSummary.Controls.Add(Me.Panel37)
         Me.panelSummary.Controls.Add(Me.Panel38)
         Me.panelSummary.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelSummary.Location = New System.Drawing.Point(10, 364)
+        Me.panelSummary.Location = New System.Drawing.Point(13, 447)
+        Me.panelSummary.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelSummary.Name = "panelSummary"
-        Me.panelSummary.Size = New System.Drawing.Size(1089, 259)
+        Me.panelSummary.Size = New System.Drawing.Size(1453, 320)
         Me.panelSummary.TabIndex = 29
         '
         'Panel33
@@ -608,9 +651,10 @@ Partial Class frmManageInvoice
         Me.Panel33.Controls.Add(Me.Panel45)
         Me.Panel33.Controls.Add(Me.Panel44)
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel33.Location = New System.Drawing.Point(10, 60)
+        Me.Panel33.Location = New System.Drawing.Point(13, 74)
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(1069, 189)
+        Me.Panel33.Size = New System.Drawing.Size(1427, 234)
         Me.Panel33.TabIndex = 14
         '
         'ListView2
@@ -623,8 +667,9 @@ Partial Class frmManageInvoice
         Me.ListView2.HideSelection = False
         Me.ListView2.HoverSelection = True
         Me.ListView2.Location = New System.Drawing.Point(0, 0)
+        Me.ListView2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(561, 189)
+        Me.ListView2.Size = New System.Drawing.Size(750, 234)
         Me.ListView2.TabIndex = 40
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
@@ -644,9 +689,10 @@ Partial Class frmManageInvoice
         '
         Me.Panel45.BackColor = System.Drawing.Color.White
         Me.Panel45.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel45.Location = New System.Drawing.Point(561, 0)
+        Me.Panel45.Location = New System.Drawing.Point(750, 0)
+        Me.Panel45.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel45.Name = "Panel45"
-        Me.Panel45.Size = New System.Drawing.Size(10, 189)
+        Me.Panel45.Size = New System.Drawing.Size(13, 234)
         Me.Panel45.TabIndex = 19
         '
         'Panel44
@@ -657,18 +703,20 @@ Partial Class frmManageInvoice
         Me.Panel44.Controls.Add(Me.Panel47)
         Me.Panel44.Controls.Add(Me.Panel46)
         Me.Panel44.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel44.Location = New System.Drawing.Point(571, 0)
+        Me.Panel44.Location = New System.Drawing.Point(763, 0)
+        Me.Panel44.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel44.Name = "Panel44"
-        Me.Panel44.Size = New System.Drawing.Size(498, 189)
+        Me.Panel44.Size = New System.Drawing.Size(664, 234)
         Me.Panel44.TabIndex = 19
         '
         'Panel53
         '
         Me.Panel53.BackColor = System.Drawing.Color.White
         Me.Panel53.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel53.Location = New System.Drawing.Point(0, 133)
+        Me.Panel53.Location = New System.Drawing.Point(0, 164)
+        Me.Panel53.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel53.Name = "Panel53"
-        Me.Panel53.Size = New System.Drawing.Size(498, 6)
+        Me.Panel53.Size = New System.Drawing.Size(664, 9)
         Me.Panel53.TabIndex = 20
         '
         'Panel52
@@ -677,8 +725,9 @@ Partial Class frmManageInvoice
         Me.Panel52.Controls.Add(Me.GroupBox1)
         Me.Panel52.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel52.Location = New System.Drawing.Point(0, 0)
+        Me.Panel52.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel52.Name = "Panel52"
-        Me.Panel52.Size = New System.Drawing.Size(498, 133)
+        Me.Panel52.Size = New System.Drawing.Size(664, 164)
         Me.Panel52.TabIndex = 20
         '
         'GroupBox1
@@ -689,8 +738,10 @@ Partial Class frmManageInvoice
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(498, 133)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(664, 164)
         Me.GroupBox1.TabIndex = 99
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Total Sum"
@@ -700,9 +751,10 @@ Partial Class frmManageInvoice
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(97, 51)
+        Me.Label8.Location = New System.Drawing.Point(129, 63)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(344, 45)
+        Me.Label8.Size = New System.Drawing.Size(421, 57)
         Me.Label8.TabIndex = 100
         Me.Label8.Text = "XXXXXXXXXXXX"
         '
@@ -711,9 +763,10 @@ Partial Class frmManageInvoice
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(42, 52)
+        Me.Label9.Location = New System.Drawing.Point(56, 64)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(47, 45)
+        Me.Label9.Size = New System.Drawing.Size(58, 57)
         Me.Label9.TabIndex = 99
         Me.Label9.Text = "₱"
         '
@@ -721,9 +774,10 @@ Partial Class frmManageInvoice
         '
         Me.Panel47.BackColor = System.Drawing.Color.White
         Me.Panel47.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel47.Location = New System.Drawing.Point(0, 139)
+        Me.Panel47.Location = New System.Drawing.Point(0, 173)
+        Me.Panel47.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel47.Name = "Panel47"
-        Me.Panel47.Size = New System.Drawing.Size(498, 10)
+        Me.Panel47.Size = New System.Drawing.Size(664, 12)
         Me.Panel47.TabIndex = 20
         '
         'Panel46
@@ -734,9 +788,10 @@ Partial Class frmManageInvoice
         Me.Panel46.Controls.Add(Me.Panel49)
         Me.Panel46.Controls.Add(Me.Panel48)
         Me.Panel46.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel46.Location = New System.Drawing.Point(0, 149)
+        Me.Panel46.Location = New System.Drawing.Point(0, 185)
+        Me.Panel46.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel46.Name = "Panel46"
-        Me.Panel46.Size = New System.Drawing.Size(498, 40)
+        Me.Panel46.Size = New System.Drawing.Size(664, 49)
         Me.Panel46.TabIndex = 20
         '
         'Panel51
@@ -744,9 +799,10 @@ Partial Class frmManageInvoice
         Me.Panel51.BackColor = System.Drawing.Color.White
         Me.Panel51.Controls.Add(Me.btnCancel)
         Me.Panel51.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel51.Location = New System.Drawing.Point(358, 0)
+        Me.Panel51.Location = New System.Drawing.Point(477, 0)
+        Me.Panel51.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel51.Name = "Panel51"
-        Me.Panel51.Size = New System.Drawing.Size(140, 40)
+        Me.Panel51.Size = New System.Drawing.Size(187, 49)
         Me.Panel51.TabIndex = 20
         '
         'btnCancel
@@ -763,9 +819,10 @@ Partial Class frmManageInvoice
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCancel.Location = New System.Drawing.Point(0, 0)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(140, 40)
+        Me.btnCancel.Size = New System.Drawing.Size(187, 49)
         Me.btnCancel.TabIndex = 62
         Me.btnCancel.Text = "Cancel"
         '
@@ -774,9 +831,10 @@ Partial Class frmManageInvoice
         Me.Panel50.BackColor = System.Drawing.Color.White
         Me.Panel50.Controls.Add(Me.btnInsert)
         Me.Panel50.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel50.Location = New System.Drawing.Point(150, 0)
+        Me.Panel50.Location = New System.Drawing.Point(200, 0)
+        Me.Panel50.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel50.Name = "Panel50"
-        Me.Panel50.Size = New System.Drawing.Size(140, 40)
+        Me.Panel50.Size = New System.Drawing.Size(187, 49)
         Me.Panel50.TabIndex = 20
         '
         'btnInsert
@@ -793,9 +851,10 @@ Partial Class frmManageInvoice
         Me.btnInsert.ForeColor = System.Drawing.Color.White
         Me.btnInsert.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnInsert.Location = New System.Drawing.Point(0, 0)
+        Me.btnInsert.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnInsert.Name = "btnInsert"
         Me.btnInsert.PressedDepth = 20
-        Me.btnInsert.Size = New System.Drawing.Size(140, 40)
+        Me.btnInsert.Size = New System.Drawing.Size(187, 49)
         Me.btnInsert.TabIndex = 61
         Me.btnInsert.Text = "Insert"
         '
@@ -804,9 +863,10 @@ Partial Class frmManageInvoice
         Me.Panel49.BackColor = System.Drawing.Color.White
         Me.Panel49.Cursor = System.Windows.Forms.Cursors.Default
         Me.Panel49.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel49.Location = New System.Drawing.Point(140, 0)
+        Me.Panel49.Location = New System.Drawing.Point(187, 0)
+        Me.Panel49.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel49.Name = "Panel49"
-        Me.Panel49.Size = New System.Drawing.Size(10, 40)
+        Me.Panel49.Size = New System.Drawing.Size(13, 49)
         Me.Panel49.TabIndex = 20
         '
         'Panel48
@@ -815,8 +875,9 @@ Partial Class frmManageInvoice
         Me.Panel48.Controls.Add(Me.btnPayNow)
         Me.Panel48.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel48.Location = New System.Drawing.Point(0, 0)
+        Me.Panel48.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel48.Name = "Panel48"
-        Me.Panel48.Size = New System.Drawing.Size(140, 40)
+        Me.Panel48.Size = New System.Drawing.Size(187, 49)
         Me.Panel48.TabIndex = 20
         '
         'btnPayNow
@@ -833,42 +894,47 @@ Partial Class frmManageInvoice
         Me.btnPayNow.ForeColor = System.Drawing.Color.White
         Me.btnPayNow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnPayNow.Location = New System.Drawing.Point(0, 0)
+        Me.btnPayNow.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnPayNow.Name = "btnPayNow"
         Me.btnPayNow.PressedDepth = 20
-        Me.btnPayNow.Size = New System.Drawing.Size(140, 40)
+        Me.btnPayNow.Size = New System.Drawing.Size(187, 49)
         Me.btnPayNow.TabIndex = 59
         Me.btnPayNow.Text = "Pay Now"
         '
         'Panel34
         '
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel34.Location = New System.Drawing.Point(10, 50)
+        Me.Panel34.Location = New System.Drawing.Point(13, 62)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(1069, 10)
+        Me.Panel34.Size = New System.Drawing.Size(1427, 12)
         Me.Panel34.TabIndex = 7
         '
         'Panel35
         '
         Me.Panel35.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel35.Location = New System.Drawing.Point(0, 50)
+        Me.Panel35.Location = New System.Drawing.Point(0, 62)
+        Me.Panel35.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel35.Name = "Panel35"
-        Me.Panel35.Size = New System.Drawing.Size(10, 199)
+        Me.Panel35.Size = New System.Drawing.Size(13, 246)
         Me.Panel35.TabIndex = 8
         '
         'Panel36
         '
         Me.Panel36.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel36.Location = New System.Drawing.Point(0, 249)
+        Me.Panel36.Location = New System.Drawing.Point(0, 308)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(1079, 10)
+        Me.Panel36.Size = New System.Drawing.Size(1440, 12)
         Me.Panel36.TabIndex = 9
         '
         'Panel37
         '
         Me.Panel37.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel37.Location = New System.Drawing.Point(1079, 50)
+        Me.Panel37.Location = New System.Drawing.Point(1440, 62)
+        Me.Panel37.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel37.Name = "Panel37"
-        Me.Panel37.Size = New System.Drawing.Size(10, 209)
+        Me.Panel37.Size = New System.Drawing.Size(13, 258)
         Me.Panel37.TabIndex = 6
         '
         'Panel38
@@ -877,8 +943,9 @@ Partial Class frmManageInvoice
         Me.Panel38.Controls.Add(Me.Panel39)
         Me.Panel38.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel38.Location = New System.Drawing.Point(0, 0)
+        Me.Panel38.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel38.Name = "Panel38"
-        Me.Panel38.Size = New System.Drawing.Size(1089, 50)
+        Me.Panel38.Size = New System.Drawing.Size(1453, 62)
         Me.Panel38.TabIndex = 0
         '
         'Panel39
@@ -889,8 +956,9 @@ Partial Class frmManageInvoice
         Me.Panel39.Controls.Add(Me.Panel42)
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel39.Location = New System.Drawing.Point(0, 0)
+        Me.Panel39.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel39.Name = "Panel39"
-        Me.Panel39.Size = New System.Drawing.Size(265, 50)
+        Me.Panel39.Size = New System.Drawing.Size(353, 62)
         Me.Panel39.TabIndex = 13
         '
         'Label2
@@ -900,41 +968,45 @@ Partial Class frmManageInvoice
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(10, 15)
+        Me.Label2.Location = New System.Drawing.Point(13, 18)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(99, 22)
+        Me.Label2.Size = New System.Drawing.Size(121, 29)
         Me.Label2.TabIndex = 32
         Me.Label2.Text = "Summary"
         '
         'Panel40
         '
         Me.Panel40.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel40.Location = New System.Drawing.Point(0, 15)
+        Me.Panel40.Location = New System.Drawing.Point(0, 18)
+        Me.Panel40.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(10, 25)
+        Me.Panel40.Size = New System.Drawing.Size(13, 32)
         Me.Panel40.TabIndex = 13
         '
         'Panel41
         '
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel41.Location = New System.Drawing.Point(0, 40)
+        Me.Panel41.Location = New System.Drawing.Point(0, 50)
+        Me.Panel41.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(265, 10)
+        Me.Panel41.Size = New System.Drawing.Size(353, 12)
         Me.Panel41.TabIndex = 13
         '
         'Panel42
         '
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel42.Location = New System.Drawing.Point(0, 0)
+        Me.Panel42.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(265, 15)
+        Me.Panel42.Size = New System.Drawing.Size(353, 18)
         Me.Panel42.TabIndex = 13
         '
         'frmManageInvoice
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1109, 633)
+        Me.ClientSize = New System.Drawing.Size(1479, 779)
         Me.Controls.Add(Me.panelSummary)
         Me.Controls.Add(Me.Panel18)
         Me.Controls.Add(Me.panelManageInvoice)
@@ -943,6 +1015,7 @@ Partial Class frmManageInvoice
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmManageInvoice"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.panelManageInvoice.ResumeLayout(False)

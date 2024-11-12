@@ -33,7 +33,6 @@ Partial Class frmManageBilling
         Me.CompanyName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DatePrinted = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Terms = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.DueDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.btnView = New Guna.UI2.WinForms.Guna2Button()
@@ -135,7 +134,7 @@ Partial Class frmManageBilling
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.InvoiceNo, Me.CompanyName, Me.DatePrinted, Me.Terms, Me.DueDate})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.InvoiceNo, Me.CompanyName, Me.DatePrinted, Me.Terms})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
@@ -169,11 +168,6 @@ Partial Class frmManageBilling
         '
         Me.Terms.Text = "Terms"
         Me.Terms.Width = 200
-        '
-        'DueDate
-        '
-        Me.DueDate.Text = "Due Date"
-        Me.DueDate.Width = 200
         '
         'Panel18
         '
@@ -656,7 +650,6 @@ Partial Class frmManageBilling
     Friend WithEvents ListView1 As ListView
     Friend WithEvents InvoiceNo As ColumnHeader
     Friend WithEvents CompanyName As ColumnHeader
-    Friend WithEvents DueDate As ColumnHeader
     Friend WithEvents DatePrinted As ColumnHeader
     Friend WithEvents Terms As ColumnHeader
     Friend WithEvents Panel12 As Panel

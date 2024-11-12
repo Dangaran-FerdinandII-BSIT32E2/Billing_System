@@ -1,5 +1,6 @@
 ﻿Imports System.Windows.Forms.DataVisualization.Charting
 Imports MySql.Data.MySqlClient
+
 Public Class frmAnalyticsData
 
     Dim debt As Double = 0.0

@@ -123,7 +123,6 @@ Public Class frmPrintSalesInvoiceV2
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
             mail.From = New MailAddress("dangaranferds@gmail.com")
-            'mail.To.Add("2718-21@itmlyceumalabang.onmicrosoft.com")
             mail.To.Add("2091-22@itmlyceumalabang.onmicrosoft.com")
             mail.Subject = "Service Invoice FOR" + DateTime.Now
 

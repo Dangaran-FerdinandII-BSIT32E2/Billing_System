@@ -67,7 +67,9 @@ Public Class frmListofCustomer
                 Dim control As Control = fieldName_controlPair.Value
 
                 If control.Text.Trim = "" Then
+                    ErrorProvider1.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft)
                     ErrorProvider1.SetError(control, "This field is required.")
+                    MsgBox("Please fill out all fields!", MsgBoxStyle.Critical, "Empty Inputs")
                     filled = False
                     Exit For
                 Else

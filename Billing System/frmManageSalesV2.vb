@@ -4,6 +4,7 @@ Imports System.Web.UI.WebControls
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
 Imports System.Data.SqlClient
+Imports System.Net.Mime.MediaTypeNames
 Public Class frmManageSalesV2
 
     Public orderid As String
@@ -184,7 +185,9 @@ Public Class frmManageSalesV2
                 Dim control As Control = fieldName_controlPair.Value
 
                 If control.Text.Trim = "" Then
+                    ErrorProvider1.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft)
                     ErrorProvider1.SetError(control, "This field is required.")
+                    MsgBox("Please fill out all fields!", MsgBoxStyle.Critical, "Empty Inputs")
                     filled = False
                     Exit For
                 Else
@@ -266,7 +269,24 @@ Public Class frmManageSalesV2
 
             frmPrintSalesInvoiceV2.textamount = trueadjustedvalue
             frmPrintSalesInvoiceV2.printdate = dtpDate.Value.ToString
-            frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddDays(5).ToString
+
+            'add date based on terms
+
+            Dim terms = TermParser.ParseTerms(txtTerms.Text)
+
+            For Each term In terms
+                Select Case term.Unit
+                    Case "day"
+                        frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddDays(term.Number).ToString
+                        MsgBox(dtpDate.Value.AddDays(term.Number).ToString)
+                    Case "month"
+                        frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddMonths(term.Number).ToString
+                        MsgBox(dtpDate.Value.AddMonths(term.Number).ToString)
+                    Case "year"
+                        frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddYears(term.Number).ToString
+                        MsgBox(dtpDate.Value.AddMonths(term.Number).ToString)
+                End Select
+            Next
 
             For Each listitem As ListViewItem In ListView1.Items 'includes OrderID on SubItem 5 OrderList sub item 6 productid sub item 7
                 Dim X As ListViewItem = listitem.Clone()
