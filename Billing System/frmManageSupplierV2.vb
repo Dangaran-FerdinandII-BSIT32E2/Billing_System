@@ -4,38 +4,38 @@ Public Class frmManageSupplierV2
     Public supplierid As Integer? = Nothing
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If MsgBox("Do you want to save?", vbYesNo + vbQuestion) = vbYes Then
-            Try
-                If cn.State <> ConnectionState.Open Then
-                    cn.Open()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            Dim filled As Boolean = True
+
+            Dim requiredFields As New Dictionary(Of String, Control) From {
+            {"txtCompanyNameSupp", txtCompanyNameSupp},
+            {"txtBankDetailsSupp", txtBankDetailsSupp},
+            {"txtContactPersonSupp", txtContactPersonSupp},
+            {"txtPhoneNumberSupp", txtPhoneNumberSupp},
+            {"txtAddress", txtAddress},
+            {"txtDeliveryTermsSupp", txtDeliveryTermsSupp}
+        }
+
+            For Each fieldName_controlPair In requiredFields
+                Dim control As Control = fieldName_controlPair.Value
+
+                If control.Text.Trim = "" Then
+                    ErrorProvider1.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft)
+                    ErrorProvider1.SetError(control, "This field is required.")
+                    MsgBox("Please fill out all fields!", MsgBoxStyle.Critical, "Empty Inputs")
+                    filled = False
+                    Exit For
+                Else
+                    ErrorProvider1.SetError(control, "")
                 End If
+            Next
 
-                Dim filled As Boolean = True
-
-                Dim requiredFields As New Dictionary(Of String, Control) From {
-                {"txtCompanyNameSupp", txtCompanyNameSupp},
-                {"txtBankDetailsSupp", txtBankDetailsSupp},
-                {"txtContactPersonSupp", txtContactPersonSupp},
-                {"txtPhoneNumberSupp", txtPhoneNumberSupp},
-                {"txtAddress", txtAddress},
-                {"txtDeliveryTermsSupp", txtDeliveryTermsSupp}
-            }
-
-                For Each fieldName_controlPair In requiredFields
-                    Dim control As Control = fieldName_controlPair.Value
-
-                    If control.Text.Trim = "" Then
-                        ErrorProvider1.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft)
-                        ErrorProvider1.SetError(control, "This field is required.")
-                        MsgBox("Please fill out all fields!", MsgBoxStyle.Critical, "Empty Inputs")
-                        filled = False
-                        Exit For
-                    Else
-                        ErrorProvider1.SetError(control, "")
-                    End If
-                Next
-
-                If filled Then
+            If filled Then
+                If MsgBox("Do you want to save?", vbYesNo + vbQuestion) = vbYes Then
                     If supplierid Is Nothing Then
                         sql = "INSERT INTO tblsupplier(CompanyName, BankDetails, ContactPerson, PhoneNumber, Address, DeliveryTerms) VALUES(@CompanyName, @BankDetails, @ContactPerson, @PhoneNumber, @Address, @DeliveryTerms)"
 
@@ -59,25 +59,27 @@ Public Class frmManageSupplierV2
                     supplierid = Nothing
                     Me.Close()
                 End If
-            Catch ex As Exception
-                MsgBox("An error occurred frmManageSupplierV2(btnSave_Click): " & ex.Message)
-            Finally
-                If cn.State = ConnectionState.Open Then
-                    cn.Close()
-                End If
-            End Try
-        End If
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageSupplierV2(btnSave_Click): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
-
+    Private Sub clear()
+        txtCompanyNameSupp.Clear()
+        txtBankDetailsSupp.Clear()
+        txtContactPersonSupp.Clear()
+        txtPhoneNumberSupp.Clear()
+        txtAddress.Clear()
+        txtDeliveryTermsSupp.Clear()
+        supplierid = Nothing
+    End Sub
     Private Sub btnCancelSupp_Click(sender As Object, e As EventArgs) Handles btnCancelSupp.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
-            txtCompanyNameSupp.Clear()
-            txtBankDetailsSupp.Clear()
-            txtContactPersonSupp.Clear()
-            txtPhoneNumberSupp.Clear()
-            txtAddress.Clear()
-            txtDeliveryTermsSupp.Clear()
-            supplierid = Nothing
+            Call clear()
             Me.Close()
         End If
     End Sub
@@ -114,12 +116,7 @@ Public Class frmManageSupplierV2
                 End If
             End Try
         Else
-            txtCompanyNameSupp.Clear()
-            txtBankDetailsSupp.Clear()
-            txtContactPersonSupp.Clear()
-            txtPhoneNumberSupp.Clear()
-            txtAddress.Clear()
-            txtDeliveryTermsSupp.Clear()
+            Call clear()
         End If
     End Sub
     Private Sub loadActivity()
@@ -147,12 +144,7 @@ Public Class frmManageSupplierV2
     End Sub
     Private Sub frmClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
-            txtCompanyNameSupp.Clear()
-            txtBankDetailsSupp.Clear()
-            txtContactPersonSupp.Clear()
-            txtPhoneNumberSupp.Clear()
-            txtAddress.Clear()
-            txtDeliveryTermsSupp.Clear()
+            Call clear()
         End If
     End Sub
 End Class

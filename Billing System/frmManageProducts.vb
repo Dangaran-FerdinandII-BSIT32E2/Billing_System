@@ -43,15 +43,25 @@ Public Class frmManageProducts
                 End If
             End Try
         Else
-            txtProductName.Clear()
-            txtDescription.Clear()
-            txtCategory.Clear()
-            txtType.Clear()
-            'txtTerms.Clear()'
-            txtPurchasePrice.Clear()
-            txtSellingPrice.Clear()
+            Call clear()
         End If
         Call loadImage()
+    End Sub
+    Private Sub clear()
+        productid = Nothing
+        supplierid = Nothing
+
+        txtProductName.Clear()
+        txtDescription.Clear()
+        txtCategory.Clear()
+        txtType.Clear()
+        txtPurchasePrice.Clear()
+        txtSellingPrice.Clear()
+        txtSupplier.Clear()
+
+        pbxProduct.Image = Nothing
+        btnBrowse.Visible = True
+        PictureBox2.Visible = True
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If MsgBox("Do you want to save?", vbYesNo + vbQuestion) = vbYes Then
@@ -232,20 +242,14 @@ Public Class frmManageProducts
 
     Private Sub btnCancelSupp_Click(sender As Object, e As EventArgs) Handles btnCancelSupp.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
-            txtSupplier.Clear()
-            txtProductName.Clear()
-            txtDescription.Clear()
-            txtCategory.Clear()
-            txtType.Clear()
-            'txtTerms.Clear()
-            txtPurchasePrice.Clear()
-            txtSellingPrice.Clear()
-            productid = Nothing
-            supplierid = Nothing
-            pbxProduct.Image = Nothing
-            btnBrowse.Visible = True
-            PictureBox2.Visible = True
+            Call clear()
             Me.Close()
+        End If
+    End Sub
+
+    Private Sub frmManageProducts_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+            Call clear()
         End If
     End Sub
 End Class
