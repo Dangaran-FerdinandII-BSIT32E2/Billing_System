@@ -3,6 +3,7 @@
 Public Class GSMController
     Private serialPort As SerialPort
     Private Const DEFAULT_TIMEOUT As Integer = 3000 ' 3 seconds timeout
+    Private gsmController As GSMController
 
     Public Sub New(portName As String, baudRate As Integer)
         serialPort = New SerialPort() With {
@@ -18,21 +19,25 @@ Public Class GSMController
 
     Public Function Initialize() As Boolean
         Try
-            If Not serialPort.IsOpen Then
-                serialPort.Open()
-            End If
+            For Each portName As String In SerialPort.GetPortNames
+                gsmController = New GSMController(portName, 9600)
+                If Not serialPort.IsOpen Then
+                    serialPort.Open()
+                End If
 
-            ' Test AT command to check if module is responding
-            If Not SendCommand("AT", "OK") Then
-                Return False
-            End If
+                ' Test AT command to check if module is responding
+                If Not SendCommand("AT", "OK") Then
+                    Return False
+                End If
 
-            ' Set SMS text mode
-            If Not SendCommand("AT+CMGF=1", "OK") Then
-                Return False
-            End If
+                ' Set SMS text mode
+                If Not SendCommand("AT+CMGF=1", "OK") Then
+                    Return False
+                End If
 
-            Return True
+                Return True
+            Next
+            Return False
         Catch ex As Exception
             Console.WriteLine($"Error initializing GSM module: {ex.Message}")
             Return False
@@ -61,6 +66,28 @@ Public Class GSMController
             Return False
         End Try
     End Function
+    Public Function SendSMSWithRetry(phoneNumber As String, message As String) As Boolean
+        Const MaxRetries As Integer = 3
+        Dim retryCount As Integer = 0
+
+        While retryCount < MaxRetries
+            Try
+                If SendSMS(phoneNumber, message) Then
+                    Return True
+                End If
+            Catch ex As Exception
+                ' Log the error
+                Console.WriteLine($"Attempt {retryCount + 1} failed: {ex.Message}")
+            End Try
+
+            retryCount += 1
+            If retryCount < MaxRetries Then
+                System.Threading.Thread.Sleep(2000) ' Wait 2 seconds before retry
+            End If
+        End While
+
+        Return False
+    End Function
 
     Private Function SendCommand(command As String, expectedResponse As String) As Boolean
         Try
@@ -75,6 +102,8 @@ Public Class GSMController
             Return False
         End Try
     End Function
+
+
 
     Public Sub Close()
         If serialPort IsNot Nothing AndAlso serialPort.IsOpen Then
