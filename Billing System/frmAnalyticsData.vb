@@ -16,8 +16,8 @@ Public Class frmAnalyticsData
     Private Sub frmAnalyticsData_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call calculateData()
-        Call checkOverdue()
         Call reloadSMS()
+        Call checkOverdue()
         If overdue Then
             Call overdueSMS()
         End If
@@ -292,7 +292,7 @@ Public Class frmAnalyticsData
                 cn.Open()
             End If
 
-            sql = "UPDATE tblbilling SET SentSMS = 0, SentSMSDate = DATE_ADD(CURDATE(), INTERVAL 7 DAY) WHERE Remarks = 0 AND DATE_FORMAT(DueDate, '%M %d, %Y') < DATE_FORMAT(CURDATE(), '%M %d, %Y')"
+            sql = "UPDATE tblbilling SET SentSMS = 0, SentSMSDate = DATE_ADD(CURDATE(), INTERVAL 7 DAY) WHERE Remarks = 0 AND DATE_FORMAT(DueDate, '%M %d, %Y') < DATE_FORMAT(CURDATE(), '%M %d, %Y') AND DATE_FORMAT(SentSMSDate, '%M %d, %Y') = DATE_FORMAT(CURDATE(), '%M %d, %Y')"
             cmd = New MySqlCommand(sql, cn)
 
             Dim result As Integer = cmd.ExecuteNonQuery
@@ -321,7 +321,8 @@ Public Class frmAnalyticsData
             sql = "SELECT b.BillingID AS BillingID, b.CustomerID As CustomerID, c.PhoneNumber AS PhoneNumber, " &
                     "b.SentSMS As SentSMS, DATE_FORMAT((b.SENTSMSDate), '%M %d, %Y') AS SentSMSDate, DATE_FORMAT((b.DueDate), '%M %d, %Y') AS DueDate, b.FinalPrice AS Price " &
                     "FROM tblbilling b INNER Join tblcustomer c ON b.CustomerID = c.CustomerID " &
-                    "WHERE (DATE(b.DueDate) = DATE(CURDATE() - INTERVAL 1 DAY) OR WEEK(b.DueDate) < WEEK(CURDATE()) AND DATE(b.SENTSMSDate) = DATE(CURDATE())) AND b.SentSMS = 0 AND b.Remarks = 0"
+                    "WHERE (WEEK(b.DueDate) < WEEK(CURDATE()) " &
+                    "AND DATE(b.SENTSMSDate) = DATE(CURDATE() + INTERVAL 7 DAY)) AND b.SentSMS = 0 AND b.Remarks = 0"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -331,10 +332,10 @@ Public Class frmAnalyticsData
             dr = cmd.ExecuteReader
 
             While dr.Read = True
-                Dim month As String = Date.ParseExact(dr("DueDate").ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture).ToString("MMMM")
-
-                sendingOverdue(dr("PhoneNumber").ToString, month, dr("Price").ToString)
+                sendingOverdue(dr("PhoneNumber").ToString, dr("DueDate").ToString, dr("Price").ToString)
+                updateOverdue(dr("BillingID").ToString)
             End While
+
         Catch ex As Exception
             MsgBox("An error occured at frmAnalyticsData(overdueSMS): " & ex.Message)
         Finally
@@ -349,11 +350,20 @@ Public Class frmAnalyticsData
             gsmController = New GSMController(portName, 9600)
 
             If gsmController.Initialize Then
-                Dim message As String = "Your billing statement for the month of " & month & " totalling ₱" & price & " is past due." & vbCrLf & "If the bill is not settled promptly, there will be a possible field visit to your main office to discuss the matter further." & vbCrLf & vbCrLf & "From Rambic Corporation, with loves <3 <3"
+                Dim message As String = "Your billing statement for " & month & " totalling ₱" & price & " is past due." & vbCrLf & "If the bill is not settled promptly, there will be a possible field visit to your main office to discuss the matter further." & vbCrLf & vbCrLf & "From Rambic Corporation, with loves <3 <3"
                 gsmController.SendSMS(phoneNumber, message)
             Else
                 MsgBox("SMS texting is not initialized! System can not send SMS. Please contact support.")
             End If
         Next
+    End Sub
+
+    Private Sub updateOverdue(billingid As String)
+        Using cn As New MySqlConnection("server=localhost;user=root;password=;database=dbbilling")
+            cn.Open()
+            sql = "UPDATE tblbilling SET SentSMS = 1 WHERE BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.ExecuteNonQuery()
+        End Using
     End Sub
 End Class
