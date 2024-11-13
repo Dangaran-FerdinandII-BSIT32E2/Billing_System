@@ -231,7 +231,7 @@ Public Class frmAnalyticsData
 
             While dr.Read = True
                 Dim message As String = "Your billing statement is due on " & dr("DueDate").ToString & "." & vbCrLf & "Please pay within the timeframe to avoid any possible problems!" & vbCrLf & vbCrLf & "From Rambic Corporation"
-                gsmController.SendSMSWithRetry(dr("PhoneNumber").ToString, message)
+                'gsmController.SendSMSWithRetry(dr("PhoneNumber").ToString, message)
 
                 updateSMS(dr("BillingID").ToString)
             End While
@@ -327,7 +327,7 @@ Public Class frmAnalyticsData
             While dr.Read = True
                 Dim message As String = "Your billing statement for " & dr("DueDate").ToString & " totalling " & dr("Price").ToString & " Pesos is past due." & vbCrLf & "If the bill is not settled promptly, there will be a possible field visit to your main office to discuss the matter further." & vbCrLf & vbCrLf & "From Rambic Corporation, with loves <3 <3"
                 'gsmController.SendSMSWithRetry(dr("PhoneNumber").ToString, message)
-
+                'SENDS TWICE
                 updateOverdue(dr("BillingID").ToString)
             End While
 

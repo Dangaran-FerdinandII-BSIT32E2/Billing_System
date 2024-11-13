@@ -1,48 +1,26 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Microsoft.Reporting.WinForms
+Imports Mysqlx.Crud
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class frmManageUsers
+
+    Dim startDate As String
+    Dim endDate As String
     Private Sub frmManageUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadUsers()
         Call loadActivity()
+
+        'REPORT GENERATION
+
+        DateFilter1.Text = DateTime.Now.AddDays(-5)
+        startDate = DateFilter1.Text
+
+        DateFilter2.Text = DateTime.Now.AddDays(+5)
+        endDate = DateFilter2.Text
+
+        Call loadChoices()
         Call loadReport()
-    End Sub
-
-    Private Sub loadReport()
-        Dim rptDS As ReportDataSource
-        Me.ReportViewer1.RefreshReport()
-
-        Try
-            With ReportViewer1.LocalReport
-                .ReportPath = Application.StartupPath & "\Reports\Report1.rdlc"
-                .DataSources.Clear()
-            End With
-
-            Dim ds As New DataSet1
-            Dim da As New MySqlDataAdapter
-
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-
-            da.SelectCommand = New MySqlCommand("SELECT UserID, FirstName, LastName, Password, Username, Role, Status FROM tblusers", cn)
-            da.Fill(ds.Tables("dtUsers"))
-
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-
-            rptDS = New ReportDataSource("DataSet1", ds.Tables("dtUsers"))
-            ReportViewer1.LocalReport.DataSources.Add(rptDS)
-            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-            ReportViewer1.ZoomMode = ZoomMode.Percent
-            ReportViewer1.ZoomPercent = 100
-
-        Catch ex As Exception
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
     End Sub
 
     Private Sub loadUsers()
@@ -390,6 +368,175 @@ Public Class frmManageUsers
         Catch ex As Exception
             MsgBox("An error occurred frmLogin(loadActivity): " & ex.Message)
         Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    'REPORT GEN
+    Private Sub loadReport()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\Report1.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT UserID, FirstName, LastName, Password, Username, Role, Status FROM tblusers", cn)
+            da.Fill(ds.Tables("dtUsers"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("DataSet1", ds.Tables("dtUsers"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub loadChoices()
+        cboMenu.Items.AddRange(New String() {"Dashboard", "Billing", "Orders", "Customers", "Suppliers", "Rental", "Admin"})
+        cboMenu.SelectedIndex = 0
+
+        ' Initialize the second ComboBox with some default values
+        updatecboOptions("Dashboard")
+    End Sub
+    Private Sub updatecboOptions(selectedOption As String)
+        cboOptions.Items.Clear()
+
+        Select Case selectedOption
+            Case "Dashboard"
+                cboOptions.Items.AddRange(New String() {"Overview of Sales Performance", "Monthly Sales Trends", "Top Products Sold"})
+            Case "Billing"
+                cboOptions.Items.AddRange(New String() {"Sales Report", "Payment Status"})
+            Case "Orders"
+                cboOptions.Items.AddRange(New String() {"Order Reports", "Order Fullfillment", "Order Trends"})
+            Case "Customers"
+                cboOptions.Items.AddRange(New String() {"Customer Reports", "Purchase Behavior", "Customer Segmentation"})
+            Case "Suppliers"
+                cboOptions.Items.AddRange(New String() {"Supplier Reports", "Purchase Orders", "Supplier Trends"})
+            Case "Rental"
+                cboOptions.Items.AddRange(New String() {"Rental Reports", "Rental Trends"})
+            Case "Admin"
+                cboOptions.Items.AddRange(New String() {"Activity Reports"})
+        End Select
+    End Sub
+    Private Sub cboOptions_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboOptions.SelectedIndexChanged
+        Select Case cboOptions.SelectedItem
+            'dashboard
+            Case "Overview of Sales Performance"
+                generateOverviewSalesPerformance()
+            Case "Monthly Sales Trends"
+                generateMonthlySalesTrends
+            Case "Top Products Sold"
+                'billing
+            Case "Sales Report"
+            Case "Payment Status"
+                'orders
+            Case "Order Reports"
+            Case "Order Fullfillment"
+            Case "Order Trends"
+                'customers
+            Case "Customer Reports"
+            Case "Purchase Behavior"
+            Case "Customer Segmentation"
+                'suppliers
+            Case "Supplier Reports"
+            Case "Purchase Orders"
+            Case "Supplier Trends"
+                'rental
+            Case "Rental Reports"
+            Case "Rental Trends"
+                'admin
+            Case "Activity Reports"
+        End Select
+    End Sub
+
+    Private Sub generateOverviewSalesPerformance()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\reportDashboardOverview.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT * FROM tblbilling", cn)
+            da.Fill(ds.Tables("dtBilling"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("dtDashboardOverview", ds.Tables("dtBilling"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub generateMonthlySalesTrends()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\reportMonthlyTrends.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT * FROM tblbilling GROUP BY MONTH(DatePrinted)", cn)
+            da.Fill(ds.Tables("dtBilling"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("dtSalesOverview", ds.Tables("dtBilling"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If

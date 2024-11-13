@@ -129,6 +129,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet1.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAddNewCustomer.Designer.vb">
       <DependentUpon>frmAddNewCustomer.vb</DependentUpon>
     </Compile>
@@ -616,6 +619,8 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="reportDashboardOverview.rdlc" />
+    <EmbeddedResource Include="reportMonthlyTrends.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSet1.xsc">
