@@ -15,6 +15,7 @@ Public Class frmAnalyticsData
     Dim overdue As Boolean = False
     Private Sub frmAnalyticsData_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+        Call initializeSMS
         Call calculateData()
         Call reloadSMS()
         Call checkOverdue()
@@ -199,12 +200,18 @@ Public Class frmAnalyticsData
             End If
         End Try
     End Sub
-    Private Sub sendSMS()
-        Try
+
+    Private Sub initializeSMS()
+        For Each portName As String In SerialPort.GetPortNames
+            gsmController = New GSMController(portName, 9600)
+
             If Not gsmController.Initialize Then
                 MsgBox("SMS texting is not initialized! System can not send SMS. Please contact support.")
             End If
-
+        Next
+    End Sub
+    Private Sub sendSMS()
+        Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
@@ -300,10 +307,6 @@ Public Class frmAnalyticsData
 
     Private Sub overdueSMS()
         Try
-            If Not gsmController.Initialize Then
-                MsgBox("SMS texting is not initialized! System can not send SMS. Please contact support.")
-            End If
-
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
@@ -323,9 +326,12 @@ Public Class frmAnalyticsData
 
             While dr.Read = True
                 Dim message As String = "Your billing statement for " & dr("DueDate").ToString & " totalling " & dr("Price").ToString & " Pesos is past due." & vbCrLf & "If the bill is not settled promptly, there will be a possible field visit to your main office to discuss the matter further." & vbCrLf & vbCrLf & "From Rambic Corporation, with loves <3 <3"
-                gsmController.SendSMSWithRetry(dr("PhoneNumber").ToString, message)
+                'gsmController.SendSMSWithRetry(dr("PhoneNumber").ToString, message)
+                Dim sendOverdue As Boolean = gsmController.SendSMSWithRetry(dr("PhoneNumber").ToString, message)
 
-                updateOverdue(dr("BillingID").ToString)
+                If sendOverdue Then
+                    updateOverdue(dr("BillingID").ToString)
+                End If
             End While
 
         Catch ex As Exception

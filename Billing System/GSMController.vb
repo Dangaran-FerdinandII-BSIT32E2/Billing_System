@@ -19,25 +19,21 @@ Public Class GSMController
 
     Public Function Initialize() As Boolean
         Try
-            For Each portName As String In SerialPort.GetPortNames
-                gsmController = New GSMController(portName, 9600)
-                If Not serialPort.IsOpen Then
-                    serialPort.Open()
-                End If
+            If Not serialPort.IsOpen Then
+                serialPort.Open()
+            End If
 
-                ' Test AT command to check if module is responding
-                If Not SendCommand("AT", "OK") Then
-                    Return False
-                End If
+            ' Test AT command to check if module is responding
+            If Not SendCommand("AT", "OK") Then
+                Return False
+            End If
 
-                ' Set SMS text mode
-                If Not SendCommand("AT+CMGF=1", "OK") Then
-                    Return False
-                End If
+            ' Set SMS text mode
+            If Not SendCommand("AT+CMGF=1", "OK") Then
+                Return False
+            End If
 
-                Return True
-            Next
-            Return False
+            Return True
         Catch ex As Exception
             Console.WriteLine($"Error initializing GSM module: {ex.Message}")
             Return False
