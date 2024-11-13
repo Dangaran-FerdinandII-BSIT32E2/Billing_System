@@ -327,11 +327,8 @@ Public Class frmAnalyticsData
             While dr.Read = True
                 Dim message As String = "Your billing statement for " & dr("DueDate").ToString & " totalling " & dr("Price").ToString & " Pesos is past due." & vbCrLf & "If the bill is not settled promptly, there will be a possible field visit to your main office to discuss the matter further." & vbCrLf & vbCrLf & "From Rambic Corporation, with loves <3 <3"
                 'gsmController.SendSMSWithRetry(dr("PhoneNumber").ToString, message)
-                Dim sendOverdue As Boolean = gsmController.SendSMSWithRetry(dr("PhoneNumber").ToString, message)
 
-                If sendOverdue Then
-                    updateOverdue(dr("BillingID").ToString)
-                End If
+                updateOverdue(dr("BillingID").ToString)
             End While
 
         Catch ex As Exception
@@ -346,9 +343,13 @@ Public Class frmAnalyticsData
     Private Sub updateOverdue(billingid As String)
         Using cn As New MySqlConnection("server=localhost;user=root;password=;database=dbbilling")
             cn.Open()
-            sql = "UPDATE tblbilling SET SentSMS = 1 WHERE BillingID = '" & billingid & "'"
-            cmd = New MySqlCommand(sql, cn)
-            cmd.ExecuteNonQuery()
+            sql = "UPDATE tblbilling SET SentSMS=@SentSMS WHERE BillingID = '" & billingid & "'"
+            Using cmd As New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@SentSMS", True)
+                    .ExecuteNonQuery()
+                End With
+            End Using
         End Using
     End Sub
 
