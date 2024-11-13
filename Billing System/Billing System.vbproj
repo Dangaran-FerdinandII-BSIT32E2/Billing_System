@@ -94,7 +94,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\MySql.Data\v4.0_8.4.0.0__c5687fc88969c44d\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
@@ -370,10 +372,10 @@
     <Compile Include="frmPrintBillingInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrintBillingStatement.Designer.vb">
-      <DependentUpon>frmPrintBillingStatement.vb</DependentUpon>
+    <Compile Include="frmPrintBlankBillingStatement.Designer.vb">
+      <DependentUpon>frmPrintBlankBillingStatement.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPrintBillingStatement.vb">
+    <Compile Include="frmPrintBlankBillingStatement.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrintDeliveryReceipt.Designer.vb">
@@ -576,8 +578,8 @@
     <EmbeddedResource Include="frmPrintBillingInvoice.resx">
       <DependentUpon>frmPrintBillingInvoice.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintBillingStatement.resx">
-      <DependentUpon>frmPrintBillingStatement.vb</DependentUpon>
+    <EmbeddedResource Include="frmPrintBlankBillingStatement.resx">
+      <DependentUpon>frmPrintBlankBillingStatement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintDeliveryReceipt.resx">
       <DependentUpon>frmPrintDeliveryReceipt.vb</DependentUpon>
