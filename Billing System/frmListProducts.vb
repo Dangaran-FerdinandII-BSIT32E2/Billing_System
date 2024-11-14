@@ -39,7 +39,7 @@ Public Class frmListProducts
         End Try
     End Sub
 
-    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click, ListView1.DoubleClick
+    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()

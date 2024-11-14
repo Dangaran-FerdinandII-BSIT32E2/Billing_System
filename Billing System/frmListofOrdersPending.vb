@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
 
-Public Class frmListCompany
+Public Class frmListofOrdersPending
 
     Public manageOrder As Boolean = False
     Public manageCollection As Boolean = False
@@ -184,7 +184,7 @@ Public Class frmListCompany
     End Function
 
     Private Sub btnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
-        If MsgBox("Add walk-in orders?", vbYesNo + vbQuestion) = vbYes Then
+        If MsgBox("Do you want to add Customer walk-in Order?", vbYesNo + vbQuestion, "Add Order") = vbYes Then
             Me.Close()
             frmManageSalesV2.ListView1.Items.Clear()
             frmManageSalesV2.txtCompanyName.Clear()

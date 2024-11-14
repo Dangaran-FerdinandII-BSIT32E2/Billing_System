@@ -249,11 +249,11 @@ Public Class frmCustomerViewInfo_Order
                 frmManageSalesV2.Dock = DockStyle.Fill
                 frmManageSalesV2.Show()
 
-                frmManageSales.Close()
-                frmManageCollection.Close()
+                frmManageSalesV2.Close()
+                frmManageCollectionV3.Close()
                 frmManageSuppliers.Close()
                 frmManageProducts.Close()
-                frmManageCustomerV2.Close()
+                'frmManageCustomerV3.Close()
                 frmManageUsers.Close()
                 frmManageRental.Close()
                 frmAdminSettings.Close()

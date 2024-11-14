@@ -114,8 +114,8 @@ Public Class frmManageOrder
     End Sub
 
     Private Sub btnSearchOrder_Click(sender As Object, e As EventArgs) Handles btnSearchOrder.Click
-        frmListCompany.manageOrder = True
-        frmListCompany.ShowDialog()
+        frmListofOrdersPending.manageOrder = True
+        frmListofOrdersPending.ShowDialog()
     End Sub
 
     Private Sub btnCreateInvoice_Click(sender As Object, e As EventArgs) Handles btnCreateInvoice.Click
@@ -133,11 +133,11 @@ Public Class frmManageOrder
                 frmManageSalesV2.Dock = DockStyle.Fill
                 frmManageSalesV2.Show()
 
-                frmManageSales.Close()
-                frmManageCollection.Close()
+                frmManageSalesV2.Close()
+                frmManageCollectionV3.Close()
                 frmManageSuppliers.Close()
                 frmManageProducts.Close()
-                frmManageCustomerV2.Close()
+                'frmManageCustomerV3.Close()
                 frmManageUsers.Close()
                 frmManageRental.Close()
                 frmAdminSettings.Close()

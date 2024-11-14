@@ -4,7 +4,7 @@ Imports System.IO
 Imports System.Runtime.InteropServices.ComTypes
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.Crud
-Public Class frmManageCollectionV2
+Public Class frmDeliveryInformation
 
     Public billingid As String
     Public startDate As String
