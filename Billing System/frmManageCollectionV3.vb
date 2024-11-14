@@ -146,8 +146,8 @@ Public Class frmManageCollectionV3
     End Sub
 
     Private Sub btnSearchCompany_Click(sender As Object, e As EventArgs) Handles btnSearchCompany.Click
-        frmListCompany.manageCollection = True
-        frmListCompany.ShowDialog()
+        frmListofOrdersPending.manageCollection = True
+        frmListofOrdersPending.ShowDialog()
     End Sub
 
     Private Sub cboFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilter.SelectedIndexChanged

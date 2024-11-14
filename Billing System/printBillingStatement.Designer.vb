@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmPrintBillingStatement
+Partial Class Print_BlankBillingStatement
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -266,14 +266,14 @@ Partial Class frmPrintBillingStatement
         Me.lblSoldTo.TabIndex = 54
         Me.lblSoldTo.Text = "lblSoldTo"
         '
-        'frmPrintBillingStatement
+        'Print_BlankBillingStatement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(693, 749)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "frmPrintBillingStatement"
+        Me.Name = "Print_BlankBillingStatement"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

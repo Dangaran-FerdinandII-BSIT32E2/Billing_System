@@ -17,7 +17,7 @@ Public Class frmManageSalesV2
         lblBillingID.Text = getBillingID()
     End Sub
     Private Sub btnSearchCustomer_Click(sender As Object, e As EventArgs) Handles btnSearchCustomer.Click
-        frmListCompany.ShowDialog()
+        frmListofOrdersPending.ShowDialog()
     End Sub
     Public Sub loadBilling()
         Try
