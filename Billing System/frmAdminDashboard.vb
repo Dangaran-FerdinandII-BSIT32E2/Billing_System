@@ -64,20 +64,12 @@ Public Class frmAdminDashboard
             End If
         End Try
     End Sub
+
     Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call loadNotification()
 
-        'btnDashboard.CustomBorderThickness = addThickness
-        'btnDashboard.CustomBorderColor = addColor
-
-        'Call connection()
-        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("May", 50000)
-        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("June", 100000)
-        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("July", 200000)
-        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("August", 300000)
-        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("September", 500000)
-        frmAnalyticsData.Chart1.Series("Sales").Points.AddXY("October", 1000000)
-
+        btnDashboard.CustomBorderThickness = addThickness
+        btnDashboard.CustomBorderColor = addColor
 
         frmAnalyticsData.TopLevel = False
         panelDashboard.Controls.Add(frmAnalyticsData)
@@ -86,6 +78,7 @@ Public Class frmAdminDashboard
         frmAnalyticsData.Show()
     End Sub
 
+    'DASHBOARD MODULE
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         frmAnalyticsData.TopLevel = False
         panelDashboard.Controls.Add(frmAnalyticsData)
@@ -93,125 +86,86 @@ Public Class frmAdminDashboard
         frmAnalyticsData.Dock = DockStyle.Fill
         frmAnalyticsData.Show()
 
-        'btnDashboard.FillColor = Color.Black
-        'btnSales.FillColor = Color.Empty
-        'btnDashboard.CustomBorderThickness = addThickness
-        'btnDashboard.CustomBorderColor = addColor
+        'color button indicator
+        btnDashboard.CustomBorderThickness = addThickness
+        btnDashboard.CustomBorderColor = addColor
 
-        'Dim buttons() As Guna2Button = {btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+        'remove color indicator
+        Dim buttons() As Guna2Button = {btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
 
-        'For Each btn In buttons
-        '    btn.CustomBorderThickness = removeThickness
-        '    btn.CustomBorderColor = removeColor
-        'Next
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSuppliers.Close()
+        frmManageSupplierProduct.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
-        frmManageRental.Close()
+        frmManageRentalV2.Close()
         frmAdminSettings.Close()
     End Sub
 
+    'SALES MODULE
     Private Sub btnSales_Click(sender As Object, e As EventArgs) Handles btnSales.Click
-        'btnSales.FillColor = Color.Black
-
-
-        'If isButtonClicked Then
-        '    ' Button clicked before, set back to original color
-        '    btnSales.BackColor = Color.White  ' Replace with your original color
-        '    isButtonClicked = False
-        'Else
-        '    ' Button clicked first time, set new color
-        '    btnSales.BackColor = Color.FromArgb(228, 228, 228)
-        '    isButtonClicked = True
-        'End If
-
-        'btnSales.CustomBorderThickness = addThickness
-        'btnSales.CustomBorderColor = addColor
-
-        'Dim buttons() As Guna2Button = {btnDashboard, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
-
-        'For Each btn In buttons
-        '    btn.CustomBorderThickness = removeThickness
-        '    btn.CustomBorderColor = removeColor
-        'Next
-
         frmManageSalesV2.TopLevel = False
         panelDashboard.Controls.Add(frmManageSalesV2)
         frmManageSalesV2.BringToFront()
         frmManageSalesV2.Dock = DockStyle.Fill
         frmManageSalesV2.Show()
 
+        btnSales.CustomBorderThickness = addThickness
+        btnSales.CustomBorderColor = addColor
+
+        Dim buttons() As Guna2Button = {btnDashboard, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSuppliers.Close()
+        frmManageSupplierProduct.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
-        frmManageRental.Close()
+        frmManageRentalV2.Close()
         frmAdminSettings.Close()
     End Sub
 
-    Private Sub btnBilling_Click_1(sender As Object, e As EventArgs) Handles btnBilling.Click
-        'If isButtonClicked Then
-        '    ' Button clicked before, set back to original color
-        '    btnBilling.BackColor = Color.White  ' Replace with your original color
-        '    isButtonClicked = False
-        'Else
-        '    ' Button clicked first time, set new color
-        '    btnBilling.BackColor = Color.FromArgb(228, 228, 228)
-        '    btnSales.BackColor = Color.White
-        '    isButtonClicked = True
-        'End If
-
+    'BILLING MODULE
+    Private Sub btnBilling_Click(sender As Object, e As EventArgs) Handles btnBilling.Click
         frmManageBilling.TopLevel = False
         panelDashboard.Controls.Add(frmManageBilling)
         frmManageBilling.BringToFront()
         frmManageBilling.Dock = DockStyle.Fill
         frmManageBilling.Show()
 
+        btnBilling.CustomBorderThickness = addThickness
+        btnBilling.CustomBorderColor = addColor
+
+        Dim buttons() As Guna2Button = {btnDashboard, btnSales, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
         frmManageSalesV2.Close()
         frmManageCollectionV3.Close()
-        frmManageSuppliers.Close()
+        frmManageSupplierProduct.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
-        frmManageRental.Close()
+        frmManageRentalV2.Close()
         frmAdminSettings.Close()
     End Sub
 
-
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        lblTime.Text = Now.ToShortTimeString
-        lblDate.Text = Now.ToLongDateString
-    End Sub
-
-    'Private Sub btnLogout_Click(sender As Object, e As EventArgs) 
-    '    Me.Close()
-    'End Sub
-
-    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
-        frmAdminSettings.TopLevel = False
-        panelDashboard.Controls.Add(frmAdminSettings)
-        frmAdminSettings.BringToFront()
-        frmAdminSettings.Dock = DockStyle.Fill
-        frmAdminSettings.Show()
-
-        frmManageSalesV2.Close()
-        frmManageBilling.Close()
-        frmManageCollectionV3.Close()
-        frmManageSuppliers.Close()
-        frmManageProducts.Close()
-        frmManageCustomerV3.Close()
-        frmManageUsers.Close()
-        frmManageRental.Close()
-    End Sub
-
+    'COLLECTION MODULE
     Private Sub btnCollection_Click(sender As Object, e As EventArgs) Handles btnCollection.Click
         frmManageCollectionV3.TopLevel = False
         panelDashboard.Controls.Add(frmManageCollectionV3)
@@ -219,105 +173,27 @@ Public Class frmAdminDashboard
         frmManageCollectionV3.Dock = DockStyle.Fill
         frmManageCollectionV3.Show()
 
+        btnCollection.CustomBorderThickness = addThickness
+        btnCollection.CustomBorderColor = addColor
+
+        Dim buttons() As Guna2Button = {btnDashboard, btnSales, btnBilling, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
         frmManageSalesV2.Close()
         frmManageBilling.Close()
-        frmManageSuppliers.Close()
+        frmManageSupplierProduct.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
-        frmManageRental.Close()
+        frmManageRentalV2.Close()
         frmAdminSettings.Close()
     End Sub
 
-    Private Sub btnSupplier_Click(sender As Object, e As EventArgs) Handles btnSupplier.Click
-        frmManageSupplierProduct.TopLevel = False
-        panelDashboard.Controls.Add(frmManageSupplierProduct)
-        frmManageSupplierProduct.BringToFront()
-        frmManageSupplierProduct.Dock = DockStyle.Fill
-        frmManageSupplierProduct.Show()
-
-        frmManageSalesV2.Close()
-        frmManageBilling.Close()
-        frmManageCollectionV3.Close()
-        frmManageProducts.Close()
-        frmManageCustomerV3.Close()
-        frmManageUsers.Close()
-        frmManageRental.Close()
-        frmAdminSettings.Close()
-    End Sub
-
-    Private Sub btnProduct_Click(sender As Object, e As EventArgs)
-        frmManageProducts.TopLevel = False
-        panelDashboard.Controls.Add(frmManageProducts)
-        frmManageProducts.BringToFront()
-        frmManageProducts.Dock = DockStyle.Fill
-        frmManageProducts.Show()
-
-        frmManageSalesV2.Close()
-        frmManageBilling.Close()
-        frmManageCollectionV3.Close()
-        frmManageSuppliers.Close()
-        frmManageCustomerV3.Close()
-        frmManageUsers.Close()
-        frmManageRental.Close()
-        frmAdminSettings.Close()
-    End Sub
-
-    Private Sub btnCustomer_Click(sender As Object, e As EventArgs) Handles btnCustomer.Click
-        frmManageCustomerV3.TopLevel = False
-        panelDashboard.Controls.Add(frmManageCustomerV3)
-        frmManageCustomerV3.BringToFront()
-        frmManageCustomerV3.Dock = DockStyle.Fill
-        frmManageCustomerV3.Show()
-
-        frmManageSalesV2.Close()
-        frmManageBilling.Close()
-        frmManageCollectionV3.Close()
-        frmManageSuppliers.Close()
-        frmManageProducts.Close()
-        frmManageUsers.Close()
-        frmManageRental.Close()
-        frmAdminSettings.Close()
-    End Sub
-
-    Private Sub btnUser_Click(sender As Object, e As EventArgs) Handles btnUser.Click
-        frmManageUsers.TopLevel = False
-        panelDashboard.Controls.Add(frmManageUsers)
-        frmManageUsers.BringToFront()
-        frmManageUsers.Dock = DockStyle.Fill
-        frmManageUsers.Show()
-
-        frmManageSalesV2.Close()
-        frmManageBilling.Close()
-        frmManageCollectionV3.Close()
-        frmManageSuppliers.Close()
-        frmManageProducts.Close()
-        frmManageCustomerV3.Close()
-        frmManageRental.Close()
-        frmAdminSettings.Close()
-    End Sub
-
-    Private Sub btnRental_Click(sender As Object, e As EventArgs) Handles btnRental.Click
-        frmManageRentalV2.TopLevel = False
-        panelDashboard.Controls.Add(frmManageRentalV2)
-        frmManageRentalV2.BringToFront()
-        frmManageRentalV2.Dock = DockStyle.Fill
-        frmManageRentalV2.Show()
-
-        frmManageSalesV2.Close()
-        frmManageBilling.Close()
-        frmManageCollectionV3.Close()
-        frmManageSuppliers.Close()
-        frmManageProducts.Close()
-        frmManageCustomerV3.Close()
-        frmManageUsers.Close()
-        frmAdminSettings.Close()
-    End Sub
-
-    Private Sub btnNotification_Click(sender As Object, e As EventArgs) Handles btnNotification.Click
-        frmManageInquiry.ShowDialog()
-    End Sub
-
+    'ORDER MODULE
     Private Sub btnOrder_Click(sender As Object, e As EventArgs) Handles btnOrder.Click
         frmManageOrder.TopLevel = False
         panelDashboard.Controls.Add(frmManageOrder)
@@ -325,13 +201,174 @@ Public Class frmAdminDashboard
         frmManageOrder.Dock = DockStyle.Fill
         frmManageOrder.Show()
 
+        btnOrder.CustomBorderThickness = addThickness
+        btnOrder.CustomBorderColor = addColor
+
+        'btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser
+        Dim buttons() As Guna2Button = {btnDashboard, btnSales, btnBilling, btnCollection, btnCustomer, btnSupplier, btnUser, btnRental}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
         frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSuppliers.Close()
+        frmManageSupplierProduct.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
         frmAdminSettings.Close()
+    End Sub
+
+    'CUSTOMER MODULE
+    Private Sub btnCustomer_Click(sender As Object, e As EventArgs) Handles btnCustomer.Click
+        frmManageCustomerV3.TopLevel = False
+        panelDashboard.Controls.Add(frmManageCustomerV3)
+        frmManageCustomerV3.BringToFront()
+        frmManageCustomerV3.Dock = DockStyle.Fill
+        frmManageCustomerV3.Show()
+
+        btnCustomer.CustomBorderThickness = addThickness
+        btnCustomer.CustomBorderColor = addColor
+
+        'Dim buttons() As Guna2Button = {btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+        Dim buttons() As Guna2Button = {btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnSupplier, btnRental, btnUser}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
+        frmManageSalesV2.Close()
+        frmManageBilling.Close()
+        frmManageCollectionV3.Close()
+        frmManageSupplierProduct.Close()
+        frmManageProducts.Close()
+        frmManageUsers.Close()
+        frmManageRentalV2.Close()
+        frmAdminSettings.Close()
+    End Sub
+
+    'SUPPLIER MODULE
+    Private Sub btnSupplier_Click(sender As Object, e As EventArgs) Handles btnSupplier.Click
+        frmManageSupplierProduct.TopLevel = False
+        panelDashboard.Controls.Add(frmManageSupplierProduct)
+        frmManageSupplierProduct.BringToFront()
+        frmManageSupplierProduct.Dock = DockStyle.Fill
+        frmManageSupplierProduct.Show()
+
+        btnSupplier.CustomBorderThickness = addThickness
+        btnSupplier.CustomBorderColor = addColor
+
+        Dim buttons() As Guna2Button = {btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnRental, btnUser}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
+        frmManageSalesV2.Close()
+        frmManageBilling.Close()
+        frmManageCollectionV3.Close()
+        frmManageProducts.Close()
+        frmManageCustomerV3.Close()
+        frmManageUsers.Close()
+        frmManageRentalV2.Close()
+        frmAdminSettings.Close()
+    End Sub
+
+    'RENTAL MODULE
+    Private Sub btnRental_Click(sender As Object, e As EventArgs) Handles btnRental.Click
+        frmManageRentalV2.TopLevel = False
+        panelDashboard.Controls.Add(frmManageRentalV2)
+        frmManageRentalV2.BringToFront()
+        frmManageRentalV2.Dock = DockStyle.Fill
+        frmManageRentalV2.Show()
+
+        btnRental.CustomBorderThickness = addThickness
+        btnRental.CustomBorderColor = addColor
+
+        'btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser
+        Dim buttons() As Guna2Button = {btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnUser}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
+        frmManageSalesV2.Close()
+        frmManageBilling.Close()
+        frmManageCollectionV3.Close()
+        frmManageSupplierProduct.Close()
+        frmManageProducts.Close()
+        frmManageCustomerV3.Close()
+        frmManageUsers.Close()
+        frmAdminSettings.Close()
+    End Sub
+
+    'ADMIN MODULE
+    Private Sub btnUser_Click(sender As Object, e As EventArgs) Handles btnUser.Click
+        frmManageUsers.TopLevel = False
+        panelDashboard.Controls.Add(frmManageUsers)
+        frmManageUsers.BringToFront()
+        frmManageUsers.Dock = DockStyle.Fill
+        frmManageUsers.Show()
+
+        btnUser.CustomBorderThickness = addThickness
+        btnUser.CustomBorderColor = addColor
+
+        'btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser
+        Dim buttons() As Guna2Button = {btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
+        frmManageSalesV2.Close()
+        frmManageBilling.Close()
+        frmManageCollectionV3.Close()
+        frmManageSupplierProduct.Close()
+        frmManageProducts.Close()
+        frmManageCustomerV3.Close()
+        frmManageRentalV2.Close()
+        frmAdminSettings.Close()
+    End Sub
+
+    'SETTINGS MODULE
+    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
+        frmAdminSettings.TopLevel = False
+        panelDashboard.Controls.Add(frmAdminSettings)
+        frmAdminSettings.BringToFront()
+        frmAdminSettings.Dock = DockStyle.Fill
+        frmAdminSettings.Show()
+
+        'btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser
+        Dim buttons() As Guna2Button = {btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
+        frmManageSalesV2.Close()
+        frmManageBilling.Close()
+        frmManageCollectionV3.Close()
+        frmManageSupplierProduct.Close()
+        frmManageProducts.Close()
+        frmManageCustomerV3.Close()
+        frmManageUsers.Close()
+        frmManageRentalV2.Close()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        lblTime.Text = Now.ToShortTimeString
+        lblDate.Text = Now.ToLongDateString
+    End Sub
+
+    Private Sub btnNotification_Click(sender As Object, e As EventArgs) Handles btnNotification.Click
+        frmManageInquiry.ShowDialog()
     End Sub
 End Class

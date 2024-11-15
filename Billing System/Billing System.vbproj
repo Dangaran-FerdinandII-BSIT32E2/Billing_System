@@ -206,6 +206,12 @@
     <Compile Include="frmManageCollectionV3.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmManageCustomerV3.Designer.vb">
+      <DependentUpon>frmManageCustomerV3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageCustomerV3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmManageInquiry.Designer.vb">
       <DependentUpon>frmManageInquiry.vb</DependentUpon>
     </Compile>
@@ -230,12 +236,6 @@
     <Compile Include="frmManageProducts.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmManageRental.Designer.vb">
-      <DependentUpon>frmManageRental.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmManageRental.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmManageRentalV2.Designer.vb">
       <DependentUpon>frmManageRentalV2.vb</DependentUpon>
     </Compile>
@@ -252,12 +252,6 @@
       <DependentUpon>frmManageSupplierProduct.vb</DependentUpon>
     </Compile>
     <Compile Include="frmManageSupplierProduct.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmManageSuppliers.Designer.vb">
-      <DependentUpon>frmManageSuppliers.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmManageSuppliers.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmManageSupplierV2.Designer.vb">
@@ -324,24 +318,6 @@
       <DependentUpon>frmPrintDeliveryReceipt.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPrintDeliveryReceipt.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrintInvoice.Designer.vb">
-      <DependentUpon>frmPrintInvoice.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmPrintInvoice.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrintInvoice2.Designer.vb">
-      <DependentUpon>frmPrintInvoice2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmPrintInvoice2.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrintSalesInvoice.Designer.vb">
-      <DependentUpon>frmPrintSalesInvoice.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmPrintSalesInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrintSalesInvoiceV2.Designer.vb">
@@ -430,6 +406,9 @@
     <EmbeddedResource Include="frmManageCollectionV3.resx">
       <DependentUpon>frmManageCollectionV3.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManageCustomerV3.resx">
+      <DependentUpon>frmManageCustomerV3.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManageInquiry.resx">
       <DependentUpon>frmManageInquiry.vb</DependentUpon>
     </EmbeddedResource>
@@ -442,9 +421,6 @@
     <EmbeddedResource Include="frmManageProducts.resx">
       <DependentUpon>frmManageProducts.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmManageRental.resx">
-      <DependentUpon>frmManageRental.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmManageRentalV2.resx">
       <DependentUpon>frmManageRentalV2.vb</DependentUpon>
     </EmbeddedResource>
@@ -453,9 +429,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageSupplierProduct.resx">
       <DependentUpon>frmManageSupplierProduct.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmManageSuppliers.resx">
-      <DependentUpon>frmManageSuppliers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageSupplierV2.resx">
       <DependentUpon>frmManageSupplierV2.vb</DependentUpon>
@@ -489,15 +462,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintDeliveryReceipt.resx">
       <DependentUpon>frmPrintDeliveryReceipt.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintInvoice.resx">
-      <DependentUpon>frmPrintInvoice.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintInvoice2.resx">
-      <DependentUpon>frmPrintInvoice2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintSalesInvoice.resx">
-      <DependentUpon>frmPrintSalesInvoice.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintSalesInvoiceV2.resx">
       <DependentUpon>frmPrintSalesInvoiceV2.vb</DependentUpon>
