@@ -86,6 +86,7 @@ Public Class frmManageBilling
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click, ListView1.DoubleClick
         If ListView1.SelectedItems.Count > 0 Then
             frmDeliveryInformation.billingid = ListView1.SelectedItems(0).SubItems(0).Text
+            frmDeliveryInformation.lblCompanyName.Text = ListView1.SelectedItems(0).SubItems(1).Text
             frmDeliveryInformation.startDate = startDate
             frmDeliveryInformation.endDate = endDate
             frmDeliveryInformation.ShowDialog()

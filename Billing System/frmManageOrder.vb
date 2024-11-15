@@ -42,6 +42,7 @@ Public Class frmManageOrder
     End Sub
     Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click, ListView1.DoubleClick
         If ListView1.SelectedItems.Count > 0 Then
+            frmListofCustomerOrder.lblCompanyName.Text = ListView1.SelectedItems(0).SubItems(1).Text
             frmListofCustomerOrder.ShowDialog()
         Else
             MsgBox("Please select an order!", MsgBoxStyle.Critical, "View Order Error")

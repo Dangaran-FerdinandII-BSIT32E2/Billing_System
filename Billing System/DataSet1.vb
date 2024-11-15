@@ -1,4 +1,7 @@
 ﻿Partial Class DataSet1
+    Partial Public Class dtProductOrderDataTable
+    End Class
+
     Partial Public Class dtSupplierDataTable
         Private Sub dtSupplierDataTable_dtSupplierRowChanging(sender As Object, e As dtSupplierRowChangeEvent) Handles Me.dtSupplierRowChanging
 

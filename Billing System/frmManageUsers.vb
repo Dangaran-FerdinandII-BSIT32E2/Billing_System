@@ -411,12 +411,30 @@ Public Class frmManageUsers
             End If
         End Try
     End Sub
+    Private Sub cboMenu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboMenu.SelectedIndexChanged
+        cboOptions.Items.Clear()
 
+        Select Case cboMenu.SelectedIndex
+            Case 0
+                cboOptions.Items.AddRange(New String() {"Overview of Sales Performance", "Monthly Sales Trends", "Top Products Sold"})
+            Case 1
+                cboOptions.Items.AddRange(New String() {"Sales Report", "Payment Status"})
+            Case 2
+                cboOptions.Items.AddRange(New String() {"Order Reports", "Order Fullfillment", "Order Trends"})
+            Case 3
+                cboOptions.Items.AddRange(New String() {"Customer Reports", "Purchase Behavior", "Customer Segmentation"})
+            Case 4
+                cboOptions.Items.AddRange(New String() {"Supplier Reports", "Purchase Orders", "Supplier Trends"})
+            Case 5
+                cboOptions.Items.AddRange(New String() {"Rental Reports", "Rental Trends"})
+            Case 6
+                cboOptions.Items.AddRange(New String() {"Activity Reports"})
+        End Select
+    End Sub
     Private Sub loadChoices()
         cboMenu.Items.AddRange(New String() {"Dashboard", "Billing", "Orders", "Customers", "Suppliers", "Rental", "Admin"})
         cboMenu.SelectedIndex = 0
 
-        ' Initialize the second ComboBox with some default values
         updatecboOptions("Dashboard")
     End Sub
     Private Sub updatecboOptions(selectedOption As String)
@@ -445,11 +463,14 @@ Public Class frmManageUsers
             Case "Overview of Sales Performance"
                 generateOverviewSalesPerformance()
             Case "Monthly Sales Trends"
-                generateMonthlySalesTrends
+                generateMonthlySalesTrends()
             Case "Top Products Sold"
+                generateTopSoldProducts()
                 'billing
             Case "Sales Report"
+                generateSalesReport()
             Case "Payment Status"
+                generatePaymentStatus()
                 'orders
             Case "Order Reports"
             Case "Order Fullfillment"
@@ -523,7 +544,7 @@ Public Class frmManageUsers
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT * FROM tblbilling GROUP BY MONTH(DatePrinted)", cn)
+            da.SelectCommand = New MySqlCommand("SELECT * FROM tblbillizng GROUP BY MONTH(DatePrinted)", cn)
             da.Fill(ds.Tables("dtBilling"))
 
             If cn.State = ConnectionState.Open Then
@@ -531,6 +552,115 @@ Public Class frmManageUsers
             End If
 
             rptDS = New ReportDataSource("dtSalesOverview", ds.Tables("dtBilling"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub generateTopSoldProducts()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\reportTopProductSold.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT tblProduct.ProductID, tblProduct.ProductName, SUM(tblOrder.Quantity) AS Quantity FROM tblorder INNER JOIN tblProduct ON tblOrder.ProductID = tblProduct.ProductID GROUP BY tblProduct.ProductID ORDER BY  Quantity DESC", cn)
+            da.Fill(ds.Tables("dtProductOrder"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("dtTopProductsSold", ds.Tables("dtProductOrder"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub generateSalesReport()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\reportSalesReport.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT s.CompanyName, p.ProductName, SUM(o.Quantity) AS Quantity, SUM(o.Amount) AS TotalPrice FROM tblsupplier s INNER JOIN tblproduct p ON p.SupplierID = s.SupplierID INNER JOIN tblorder o ON o.ProductID = p.ProductID GROUP BY p.ProductName ORDER BY o.Quantity", cn)
+            da.Fill(ds.Tables("dtSalesReport"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("dtSalesReport", ds.Tables("dtSalesReport"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub generatePaymentStatus()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\reportPaymentStatus.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT CompanyName, Sum(FinalPrice) AS FinalPrice FROM tblbilling WHERE Remarks = 0 GROUP BY CompanyName", cn)
+            da.Fill(ds.Tables("dtPaymentStatus"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("dtPaymentStatus", ds.Tables("dtPaymentStatus"))
             ReportViewer1.LocalReport.DataSources.Add(rptDS)
             ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
             ReportViewer1.ZoomMode = ZoomMode.Percent

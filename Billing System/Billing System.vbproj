@@ -487,6 +487,9 @@
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="reportDashboardOverview.rdlc" />
     <EmbeddedResource Include="reportMonthlyTrends.rdlc" />
+    <EmbeddedResource Include="reportPaymentStatus.rdlc" />
+    <EmbeddedResource Include="reportSalesReport.rdlc" />
+    <EmbeddedResource Include="reportTopProductSold.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSet1.xsc">
