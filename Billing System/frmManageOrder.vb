@@ -135,11 +135,11 @@ Public Class frmManageOrder
 
                 frmManageSalesV2.Close()
                 frmManageCollectionV3.Close()
-                frmManageSuppliers.Close()
+                frmManageSupplierProduct.Close()
                 frmManageProducts.Close()
                 'frmManageCustomerV3.Close()
                 frmManageUsers.Close()
-                frmManageRental.Close()
+                frmManageRentalV2.Close()
                 frmAdminSettings.Close()
             Else
                 MsgBox("Please select an available and on-hand order!", MsgBoxStyle.Critical, "Order Error")

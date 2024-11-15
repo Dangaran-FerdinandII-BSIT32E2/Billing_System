@@ -2,6 +2,7 @@
 Imports System.Web.UI
 Imports MySql.Data.MySqlClient
 'Imports Mysqlx.XDevAPI.Common
+'made changes to inlclude vb file
 Public Class frmManageCustomerV3
     Private Sub frmManageCustomerV3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
