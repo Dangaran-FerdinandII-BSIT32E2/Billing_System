@@ -423,7 +423,7 @@ Public Class frmManageUsers
             Case 2
                 cboOptions.Items.AddRange(New String() {"Order Reports", "Order Fullfillment", "Order Trends"})
             Case 3
-                cboOptions.Items.AddRange(New String() {"Customer Reports", "Purchase Behavior", "Customer Segmentation"})
+                cboOptions.Items.AddRange(New String() {"Customer Reports", "Purchase Behavior"})
             Case 4
                 cboOptions.Items.AddRange(New String() {"Supplier Reports", "Purchase Orders", "Supplier Trends"})
             Case 5
@@ -449,7 +449,7 @@ Public Class frmManageUsers
             Case "Orders"
                 cboOptions.Items.AddRange(New String() {"Order Reports", "Order Fullfillment", "Order Trends"})
             Case "Customers"
-                cboOptions.Items.AddRange(New String() {"Customer Reports", "Purchase Behavior", "Customer Segmentation"})
+                cboOptions.Items.AddRange(New String() {"Customer Reports", "Purchase Behavior"})
             Case "Suppliers"
                 cboOptions.Items.AddRange(New String() {"Supplier Reports", "Purchase Orders", "Supplier Trends"})
             Case "Rental"
@@ -483,12 +483,16 @@ Public Class frmManageUsers
                 generateOrderTrends()
                 'customers
             Case "Customer Reports"
+                generateCustomerReport()
             Case "Purchase Behavior"
-            Case "Customer Segmentation"
+                generatePurchaseBehavior()
                 'suppliers
             Case "Supplier Reports"
+                generateSupplierReports
             Case "Purchase Orders"
+                generatePurchaseOrders
             Case "Supplier Trends"
+                generateSupplierTrends
                 'rental
             Case "Rental Reports"
                 generateRentalReports()
@@ -786,6 +790,193 @@ Public Class frmManageUsers
             End If
 
             rptDS = New ReportDataSource("dtOrderTrends", ds.Tables("dtOrderReports"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+            MessageBox.Show("Error generating report: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub generateCustomerReport()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\reportCustomerReports.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT * FROM tblcustomer WHERE CustomerID <> 1 AND CustomerID <> 2 ORDER BY AcctStatus ASC", cn)
+            da.Fill(ds.Tables("dtCustomer"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("dtCustomerReport", ds.Tables("dtCustomer"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+            MessageBox.Show("Error generating report: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub generatePurchaseBehavior()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\reportPurchaseBehavior.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT tblcustomer.*, COUNT(tblorder.Quantity) AS Quantity, SUM(tblorder.Amount) AS AmtSpent FROM tblcustomer, tblorder, tblproduct WHERE tblorder.CustomerID = tblcustomer.CustomerID AND tblorder.ProductID = tblproduct.ProductID GROUP BY tblcustomer.CustomerID", cn)
+            da.Fill(ds.Tables("dtPurchaseBehavior"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("dtPurchaseBehavior", ds.Tables("dtPurchaseBehavior"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+            MessageBox.Show("Error generating report: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub generateSupplierReports()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\reportSupplierReports.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT * FROM tblsupplier", cn)
+            da.Fill(ds.Tables("dtSupplier"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("dtSupplierReport", ds.Tables("dtSupplier"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+            MessageBox.Show("Error generating report: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub generatePurchaseOrders()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\reportPurchaseOrder.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT tblsupplier.SupplierID, tblsupplier.CompanyName, SUM(tblorder.Amount) AS Amount, SUM(tblorder.Quantity) AS Quantity FROM tblsupplier INNER JOIN tblproduct ON tblproduct.SupplierID = tblsupplier.SupplierID INNER JOIN tblorder ON tblproduct.ProductID = tblorder.ProductID GROUP BY tblsupplier.SupplierID", cn)
+            da.Fill(ds.Tables("dtPurchaseOrder"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("dtPurchaseOrder", ds.Tables("dtPurchaseOrder"))
+            ReportViewer1.LocalReport.DataSources.Add(rptDS)
+            ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            ReportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent
+            ReportViewer1.ZoomPercent = 100
+
+        Catch ex As Exception
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+            MessageBox.Show("Error generating report: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub generateSupplierTrends()
+        Dim rptDS As ReportDataSource
+        Me.ReportViewer1.RefreshReport()
+
+        Try
+            With ReportViewer1.LocalReport
+                .ReportPath = Application.StartupPath & "\Reports\reportSupplierTrends.rdlc"
+                .DataSources.Clear()
+            End With
+
+            Dim ds As New DataSet1
+            Dim da As New MySqlDataAdapter
+
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            da.SelectCommand = New MySqlCommand("SELECT tblsupplier.SupplierID, tblsupplier.CompanyName, SUM(tblorder.Amount) AS Amount, SUM(tblorder.Quantity) AS Quantity, tblorder.DateOrdered FROM tblsupplier INNER JOIN tblproduct ON tblproduct.SupplierID = tblsupplier.SupplierID INNER JOIN tblorder ON tblproduct.ProductID = tblorder.ProductID GROUP BY tblsupplier.SupplierID, MONTH(tblorder.DateOrdered) ORDER BY MONTH(tblorder.DateOrdered)", cn)
+            da.Fill(ds.Tables("dtPurchaseOrder"))
+
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+
+            rptDS = New ReportDataSource("dtSupplierTrends", ds.Tables("dtPurchaseOrder"))
             ReportViewer1.LocalReport.DataSources.Add(rptDS)
             ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
             ReportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent

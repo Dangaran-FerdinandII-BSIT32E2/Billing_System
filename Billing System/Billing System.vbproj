@@ -485,15 +485,20 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="reportCustomerReports.rdlc" />
     <EmbeddedResource Include="reportDashboardOverview.rdlc" />
     <EmbeddedResource Include="reportMonthlyTrends.rdlc" />
     <EmbeddedResource Include="reportOrderFullfillment.rdlc" />
     <EmbeddedResource Include="reportOrderReports.rdlc" />
     <EmbeddedResource Include="reportOrderTrends.rdlc" />
     <EmbeddedResource Include="reportPaymentStatus.rdlc" />
+    <EmbeddedResource Include="reportPurchaseBehavior.rdlc" />
+    <EmbeddedResource Include="reportPurchaseOrder.rdlc" />
     <EmbeddedResource Include="reportRentalReports.rdlc" />
     <EmbeddedResource Include="reportRentalTrends.rdlc" />
     <EmbeddedResource Include="reportSalesReport.rdlc" />
+    <EmbeddedResource Include="reportSupplierReports.rdlc" />
+    <EmbeddedResource Include="reportSupplierTrends.rdlc" />
     <EmbeddedResource Include="reportTopProductSold.rdlc" />
     <EmbeddedResource Include="reportUserActivityLogs.rdlc" />
   </ItemGroup>
