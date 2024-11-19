@@ -243,8 +243,9 @@ Public Class frmManageCollectionV3
         For Each number As ListViewItem In ListView2.Items
             Dim phoneNumber As String = number.SubItems(8).Text
             Dim dueDate As String = number.SubItems(4).Text
+            Dim price As String = number.SubItems(3).Text
 
-            Dim message As String = "Your billing statement is due on " & dueDate & "." & vbCrLf & "Please pay within the timeframe to avoid any possible problems!" & vbCrLf & vbCrLf & "From Rambic Corporation"
+            Dim message As String = "Your billing statement worth " & price & " pesos is due on " & dueDate & "." & vbCrLf & "Please pay within the timeframe to avoid any possible problems!" & vbCrLf & vbCrLf & "From Rambic Corporation"
             gsmController.SendSMSWithRetry(phoneNumber, message)
 
             updateSMS(number.SubItems(1).Text)
