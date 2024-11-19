@@ -18,20 +18,6 @@ Public Class frmManageBilling
         Call loadBilling(startDate, endDate)
     End Sub
 
-    Private Sub AddButtonsToListView()
-        For i As Integer = 0 To ListView1.Items.Count - 1
-            Dim btn As New Button
-            btn.Text = "Click Me"
-            btn.Location = New Point(ListView1.Items(i).Bounds.Right + 5, ListView1.Items(i).Bounds.Top)
-            AddHandler btn.Click, AddressOf Button_Click
-            Me.Controls.Add(btn)
-        Next
-    End Sub
-
-    Private Sub Button_Click(sender As Object, e As EventArgs)
-        ' Get the corresponding list item based on the button clicked (logic needed)
-        ' Then perform the desired action based on the list item data
-    End Sub
     Public Sub loadBilling(startDate As String, endDate As String)
         Try
             Dim startDateTime As DateTime
@@ -43,7 +29,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms FROM qrybilling WHERE Remarks <> 1 AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms FROM tblbilling WHERE Remarks = 0 AND DatePrinted BETWEEN '" & startDateTime.ToString("yyyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyyy-MM-dd") & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -62,7 +48,7 @@ Public Class frmManageBilling
                     ListView1.Items.Add(x)
                 Loop
                 dr.Close()
-                Call AddButtonsToListView()
+                ' Call AddButtonsToListView()
             End If
 
         Catch ex As Exception
@@ -74,15 +60,29 @@ Public Class frmManageBilling
         End Try
     End Sub
 
-    Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs) Handles DateFilter1.TextChanged
+    Private Sub AddButtonsToListView()
+        For i As Integer = 0 To ListView1.Items.Count - 1
+            Dim btn As New Button
+            btn.Text = "Click Me"
+            btn.Location = New Point(ListView1.Items(i).Bounds.Right + 5, ListView1.Items(i).Bounds.Top)
+            AddHandler btn.Click, AddressOf Button_Click
+            Me.Controls.Add(btn)
+        Next
+    End Sub
+
+    Private Sub Button_Click(sender As Object, e As EventArgs)
+        ' Get the corresponding list item based on the button clicked (logic needed)
+        ' Then perform the desired action based on the list item data
+    End Sub
+    Private Sub DateFilter1_ValueChanged(sender As Object, e As EventArgs) Handles DateFilter1.ValueChanged
         startDate = DateFilter1.Text
         loadBilling(startDate, endDate)
     End Sub
-
-    Private Sub DateFilter2_TextChanged(sender As Object, e As EventArgs) Handles DateFilter2.TextChanged
+    Private Sub DateFilter2_ValueChanged(sender As Object, e As EventArgs) Handles DateFilter2.ValueChanged
         endDate = DateFilter2.Text
         loadBilling(startDate, endDate)
     End Sub
+
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click, ListView1.DoubleClick
         If ListView1.SelectedItems.Count > 0 Then
             frmDeliveryInformation.billingid = ListView1.SelectedItems(0).SubItems(0).Text
@@ -127,6 +127,19 @@ Public Class frmManageBilling
             ListView1.Columns(4).Width = 200
 
             Call loadDelivered(startDate, endDate)
+        ElseIf cboFilter.Text = "Default" Then
+            ListView1.Columns.Clear()
+            ListView1.Columns.Add("ID")
+            ListView1.Columns.Add("Company Name")
+            ListView1.Columns.Add("Date Printed")
+            ListView1.Columns.Add("Terms")
+
+            ListView1.Columns(0).Width = 200
+            ListView1.Columns(1).Width = 200
+            ListView1.Columns(2).Width = 200
+            ListView1.Columns(3).Width = 200
+
+            Call loadBilling(startDate, endDate)
         End If
     End Sub
     Private Sub loadDelivered(startDate As String, endDate As String)
@@ -140,7 +153,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DateDelivered FROM qrybilling WHERE Remarks <> 1 AND DateDelivered ISNOT NULL AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms, DateDelivered FROM qrybilling WHERE Remarks <> 1 AND DateDelivered IS NOT NULL AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -160,11 +173,11 @@ Public Class frmManageBilling
                     ListView1.Items.Add(x)
                 Loop
                 dr.Close()
-                Call AddButtonsToListView()
+                ' Call AddButtonsToListView()
             End If
 
         Catch ex As Exception
-            MsgBox("An error occurred frmManageBilling(loadBilling): " & ex.Message)
+            MsgBox("An error occurred frmManageBilling(loadDelivered): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -253,11 +266,11 @@ Public Class frmManageBilling
                     ListView1.Items.Add(x)
                 Loop
                 dr.Close()
-                Call AddButtonsToListView()
+                '  Call AddButtonsToListView()
             End If
 
         Catch ex As Exception
-            MsgBox("An error occurred frmManageBilling(loadBilling): " & ex.Message)
+            MsgBox("An error occurred frmManageBilling(loadSpecific): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()

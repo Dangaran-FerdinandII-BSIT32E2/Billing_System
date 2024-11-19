@@ -32,7 +32,14 @@ Public Class frmListofOrdersPending
             ListView1.Columns(1).Width = 150
             ListView1.Columns(2).Width = 150
 
-            sql = "SELECT MIN(CompanyName) AS CompanyName, SUM(FinalPrice) AS FinalPrice, MIN(Remarks) As Remarks, CustomerID FROM qrybilling"
+            sql = "SELECT MIN(CompanyName) AS CompanyName, SUM(FinalPrice) AS FinalPrice, MIN(Remarks) As Remarks, CustomerID FROM qrybilling "
+
+            If manageBilling Then
+                sql += "WHERE DateDelivered IS NULL"
+            ElseIf manageCollection Then
+                sql += "WHERE DateDelivered IS NOT NULL"
+            End If
+
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -202,6 +209,14 @@ Public Class frmListofOrdersPending
             frmManageSalesV2.txtCompanyName.Enabled = True
             frmManageSalesV2.txtAddress.Enabled = True
             frmManageSalesV2.txtDeliveryAddress.Enabled = True
+        End If
+    End Sub
+
+    Private Sub frmListofOrdersPending_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+            manageCollection = False
+            manageBilling = False
+            manageOrder = False
         End If
     End Sub
 End Class
