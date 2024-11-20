@@ -217,6 +217,8 @@ Public Class frmListofOrdersPending
             manageCollection = False
             manageBilling = False
             manageOrder = False
+
+            Label2.Text = "List of Orders Pending"
         End If
     End Sub
 End Class

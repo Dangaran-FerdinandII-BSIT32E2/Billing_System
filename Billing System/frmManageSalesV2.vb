@@ -107,62 +107,9 @@ Public Class frmManageSalesV2
         End Try
     End Sub
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-            If ListView1.SelectedItems.Count > 0 Then
-                If MsgBox("Do you want to change total amount?", vbYesNo + vbQuestion) = vbYes Then
-                    Dim price As String = InputBox("Enter Amount:", "Amount")
-
-                    ' Handle the scenario when the user cancels or closes the input dialog
-                    If price = "" Then
-                        Return
-                    End If
-
-                    ' Check if input is valid
-                    If String.IsNullOrEmpty(price) OrElse Val(price) <= 0 Then
-                        MsgBox("Please enter a valid price!", MsgBoxStyle.Critical, "Error in Unit Price")
-                        Return
-                    End If
-
-                    If Val(price) > 0 Then
-                        sql = "UPDATE tblorder SET Amount=@Amount WHERE OrderID = '" & lblOrderID.Text & "'"
-                        cmd = New MySqlCommand(sql, cn)
-                        cmd.Parameters.AddWithValue("@Amount", price)
-                        cmd.ExecuteNonQuery()
-
-                        If cn.State = ConnectionState.Open Then
-                            cn.Close()
-                        End If
-                        MsgBox("Price updated successfully!")
-                    End If
-                End If
-            Else
-                MsgBox("Please select a billing invoice!", MsgBoxStyle.Information, "Updating Billing")
-            End If
-        Catch ex As Exception
-            MsgBox("An error occurred frmManageBilling(btnUpdate): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-            Call loadBilling()
-            lblOrderID.Text = 0
-        End Try
-    End Sub
-
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
-            txtAddress.Clear()
-            txtDeliveryAddress.Clear()
-            txtBusinessStyle.Clear()
-            txtTIN.Clear()
-            txtPONo.Clear()
-            txtTerms.Clear()
-            cboSalesman.SelectedIndex = -1
-            ListView1.Items.Clear()
+            Call clearText()
         End If
     End Sub
 
@@ -278,13 +225,10 @@ Public Class frmManageSalesV2
                 Select Case term.Unit
                     Case "day"
                         frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddDays(term.Number).ToString
-                        MsgBox(dtpDate.Value.AddDays(term.Number).ToString)
                     Case "month"
                         frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddMonths(term.Number).ToString
-                        MsgBox(dtpDate.Value.AddMonths(term.Number).ToString)
                     Case "year"
                         frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddYears(term.Number).ToString
-                        MsgBox(dtpDate.Value.AddMonths(term.Number).ToString)
                 End Select
             Next
 
@@ -357,5 +301,22 @@ Public Class frmManageSalesV2
         If MsgBox("Do you want to add items?", vbYesNo + vbQuestion, "Walk-In Status") = vbYes Then
             frmManagePOS.ShowDialog()
         End If
+    End Sub
+
+    Public Sub clearText()
+        txtCompanyName.Clear()
+        txtAddress.Clear()
+        txtDeliveryAddress.Clear()
+        txtBusinessStyle.Clear()
+        txtTIN.Clear()
+        txtTerms.Clear()
+        txtPONo.Clear()
+        txtAmount.Clear()
+
+        cboSalesman.SelectedIndex = -1
+        cboFormat.SelectedIndex = -1
+        cboAdjust.SelectedIndex = -1
+
+        ListView1.Items.Clear()
     End Sub
 End Class

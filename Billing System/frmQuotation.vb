@@ -35,11 +35,13 @@ Public Class frmQuotation
                         btnBrowse.Visible = False
 
                         btnCancel.Enabled = True
+                        btnSend.Enabled = False
                     Else
                         PictureBox1.Image = Nothing
                         PictureBox2.Visible = True
                         btnBrowse.Visible = True
                         btnCancel.Enabled = False
+                        btnSend.Enabled = True
                     End If
                 End If
             Else
@@ -47,6 +49,7 @@ Public Class frmQuotation
                 PictureBox2.Visible = True
                 btnBrowse.Visible = True
                 btnCancel.Enabled = False
+                btnSend.Enabled = True
             End If
 
         Catch ex As Exception
@@ -79,8 +82,8 @@ Public Class frmQuotation
                 cn.Open()
             End If
 
-            If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
-                If PictureBox1.Image IsNot Nothing Then
+            If PictureBox1.Image IsNot Nothing Then
+                If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
                     sql = "UPDATE tblorder SET QuotationImg=@QuotationImg WHERE OrderID = '" & orderid & "'"
                     cmd = New MySqlCommand(sql, cn)
                     With cmd
@@ -93,9 +96,9 @@ Public Class frmQuotation
                     End With
                     MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
                     Call loadImage()
-                Else
-                    MsgBox("Please upload a picture!", MsgBoxStyle.Critical, "Upload Error")
                 End If
+            Else
+                MsgBox("Please upload a picture!", MsgBoxStyle.Critical, "Upload Error")
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmQuotation(btnSend_Click): " & ex.Message)
@@ -111,5 +114,6 @@ Public Class frmQuotation
         PictureBox2.Visible = True
         btnBrowse.Visible = True
         btnCancel.Enabled = False
+        btnSend.Enabled = True
     End Sub
 End Class

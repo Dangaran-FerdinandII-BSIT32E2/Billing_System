@@ -162,6 +162,7 @@ Public Class frmManageCollectionV3
 
     Private Sub btnSearchCompany_Click(sender As Object, e As EventArgs) Handles btnSearchCompany.Click
         frmListofOrdersPending.manageCollection = True
+        frmListofOrdersPending.Label2.Text = "List of Pending Collection Statements"
         frmListofOrdersPending.ShowDialog()
     End Sub
 
@@ -248,7 +249,7 @@ Public Class frmManageCollectionV3
             Dim message As String = "Your billing statement worth " & price & " pesos is due on " & dueDate & "." & vbCrLf & "Please pay within the timeframe to avoid any possible problems!" & vbCrLf & vbCrLf & "From Rambic Corporation"
             gsmController.SendSMSWithRetry(phoneNumber, message)
 
-            updateSMS(number.SubItems(1).Text)
+            updateSMS(number.SubItems(0).Text)
         Next
     End Sub
     Private Sub initializeSMS()

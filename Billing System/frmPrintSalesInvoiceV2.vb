@@ -32,6 +32,7 @@ Public Class frmPrintSalesInvoiceV2
         ListView1.Items.Clear()
         frmManageSalesV2.btnAddOrder.Visible = False
         Call loadActivity()
+        Call frmManageSalesV2.clearText()
         Me.Close()
     End Sub
     Private Sub saveBilling()
@@ -79,7 +80,7 @@ Public Class frmPrintSalesInvoiceV2
             For Each orderlist As ListViewItem In ListView1.Items
                 sql = "UPDATE tblorder SET DueDate=@DueDate, Status=@Status WHERE OrderListID = '" & orderlist.SubItems(6).Text & "'"
                 cmd = New MySqlCommand(sql, cn)
-                cmd.Parameters.AddWithValue("@DueDate", Date.Now.AddDays(5))
+                cmd.Parameters.AddWithValue("@DueDate", adjusteddate)
                 cmd.Parameters.AddWithValue("@Status", "2")
                 cmd.ExecuteNonQuery()
             Next
@@ -124,7 +125,7 @@ Public Class frmPrintSalesInvoiceV2
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
             mail.From = New MailAddress("dangaranferds@gmail.com")
             mail.To.Add("2091-22@itmlyceumalabang.onmicrosoft.com")
-            mail.Subject = "Service Invoice FOR" + DateTime.Now
+            mail.Subject = "Service Invoice FOR " + DateTime.Now
 
             Using memoryStream As New MemoryStream()
                 Using image As Image = Image.FromFile("PrintedInvoice.jpeg")

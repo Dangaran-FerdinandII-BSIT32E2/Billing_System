@@ -56,6 +56,14 @@ Public Class frmAdminDashboard
                 lblCount.Text = dr("TotalInquiries").ToString()
             End If
             dr.Close()
+
+            If lblCount.Text = "0" Then
+                lblCount.Visible = False
+                Guna2CirclePictureBox1.Visible = False
+            Else
+                lblCount.Visible = True
+                Guna2CirclePictureBox1.Visible = True
+            End If
         Catch ex As Exception
             MsgBox("An error occurred frmAdminDashboard(loadNotification): " & ex.Message)
         Finally

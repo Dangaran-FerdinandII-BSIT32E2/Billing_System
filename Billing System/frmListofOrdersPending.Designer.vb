@@ -73,7 +73,7 @@ Partial Class frmListofOrdersPending
         Me.Panel11.Controls.Add(Me.ListView1)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel11.Location = New System.Drawing.Point(13, 74)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(1345, 602)
         Me.Panel11.TabIndex = 14
@@ -88,7 +88,7 @@ Partial Class frmListofOrdersPending
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(1345, 602)
         Me.ListView1.TabIndex = 36
@@ -150,7 +150,7 @@ Partial Class frmListofOrdersPending
         Me.Panel33.BackColor = System.Drawing.Color.White
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel33.Location = New System.Drawing.Point(0, 12)
-        Me.Panel33.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Size = New System.Drawing.Size(13, 50)
         Me.Panel33.TabIndex = 18
@@ -160,7 +160,7 @@ Partial Class frmListofOrdersPending
         Me.Panel32.BackColor = System.Drawing.Color.White
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel32.Location = New System.Drawing.Point(0, 62)
-        Me.Panel32.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(1371, 12)
         Me.Panel32.TabIndex = 18
@@ -170,7 +170,7 @@ Partial Class frmListofOrdersPending
         Me.Panel31.BackColor = System.Drawing.Color.White
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel31.Location = New System.Drawing.Point(0, 0)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel31.Name = "Panel31"
         Me.Panel31.Size = New System.Drawing.Size(1371, 12)
         Me.Panel31.TabIndex = 18
@@ -189,7 +189,7 @@ Partial Class frmListofOrdersPending
         Me.btnConfirm.ForeColor = System.Drawing.Color.White
         Me.btnConfirm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnConfirm.Location = New System.Drawing.Point(0, 0)
-        Me.btnConfirm.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnConfirm.Margin = New System.Windows.Forms.Padding(4)
         Me.btnConfirm.Name = "btnConfirm"
         Me.btnConfirm.PressedDepth = 20
         Me.btnConfirm.Size = New System.Drawing.Size(187, 50)
@@ -202,7 +202,7 @@ Partial Class frmListofOrdersPending
         Me.Panel34.Controls.Add(Me.btnConfirm)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel34.Location = New System.Drawing.Point(13, 12)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(187, 50)
         Me.Panel34.TabIndex = 18
@@ -218,7 +218,7 @@ Partial Class frmListofOrdersPending
         Me.Panel30.Controls.Add(Me.Panel31)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel30.Location = New System.Drawing.Point(0, 676)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(1371, 74)
         Me.Panel30.TabIndex = 19
@@ -229,7 +229,7 @@ Partial Class frmListofOrdersPending
         Me.Panel2.Controls.Add(Me.btnAddNew)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(213, 12)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(187, 50)
         Me.Panel2.TabIndex = 20
@@ -248,7 +248,7 @@ Partial Class frmListofOrdersPending
         Me.btnAddNew.ForeColor = System.Drawing.Color.White
         Me.btnAddNew.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnAddNew.Location = New System.Drawing.Point(0, 0)
-        Me.btnAddNew.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAddNew.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAddNew.Name = "btnAddNew"
         Me.btnAddNew.PressedDepth = 20
         Me.btnAddNew.Size = New System.Drawing.Size(187, 50)
@@ -260,7 +260,7 @@ Partial Class frmListofOrdersPending
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(200, 12)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(13, 50)
         Me.Panel1.TabIndex = 19
@@ -276,7 +276,7 @@ Partial Class frmListofOrdersPending
         Me.pnlListOfCustomerBody.Controls.Add(Me.Panel30)
         Me.pnlListOfCustomerBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlListOfCustomerBody.Location = New System.Drawing.Point(0, 0)
-        Me.pnlListOfCustomerBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlListOfCustomerBody.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlListOfCustomerBody.Name = "pnlListOfCustomerBody"
         Me.pnlListOfCustomerBody.Size = New System.Drawing.Size(1371, 750)
         Me.pnlListOfCustomerBody.TabIndex = 14
@@ -285,7 +285,7 @@ Partial Class frmListofOrdersPending
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(13, 62)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1345, 12)
         Me.Panel8.TabIndex = 7
@@ -294,7 +294,7 @@ Partial Class frmListofOrdersPending
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel9.Location = New System.Drawing.Point(0, 62)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(13, 614)
         Me.Panel9.TabIndex = 8
@@ -303,7 +303,7 @@ Partial Class frmListofOrdersPending
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel12.Location = New System.Drawing.Point(1358, 62)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(13, 614)
         Me.Panel12.TabIndex = 6
@@ -315,7 +315,7 @@ Partial Class frmListofOrdersPending
         Me.Panel14.Controls.Add(Me.Panel23)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(1371, 62)
         Me.Panel14.TabIndex = 0
@@ -328,7 +328,7 @@ Partial Class frmListofOrdersPending
         Me.Panel15.Controls.Add(Me.Panel22)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(467, 62)
         Me.Panel15.TabIndex = 13
@@ -351,7 +351,7 @@ Partial Class frmListofOrdersPending
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel16.Location = New System.Drawing.Point(0, 18)
-        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(13, 32)
         Me.Panel16.TabIndex = 13
@@ -360,7 +360,7 @@ Partial Class frmListofOrdersPending
         '
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel17.Location = New System.Drawing.Point(0, 50)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(467, 12)
         Me.Panel17.TabIndex = 13
@@ -369,7 +369,7 @@ Partial Class frmListofOrdersPending
         '
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(467, 18)
         Me.Panel22.TabIndex = 13
@@ -382,7 +382,7 @@ Partial Class frmListofOrdersPending
         Me.Panel23.Controls.Add(Me.Panel27)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel23.Location = New System.Drawing.Point(831, 0)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(540, 62)
         Me.Panel23.TabIndex = 10
@@ -401,7 +401,7 @@ Partial Class frmListofOrdersPending
         Me.txtSearchProduct.ForeColor = System.Drawing.Color.Black
         Me.txtSearchProduct.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtSearchProduct.Location = New System.Drawing.Point(108, 12)
-        Me.txtSearchProduct.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtSearchProduct.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearchProduct.Name = "txtSearchProduct"
         Me.txtSearchProduct.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchProduct.PlaceholderText = "Search by customer"
@@ -413,7 +413,7 @@ Partial Class frmListofOrdersPending
         '
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel25.Location = New System.Drawing.Point(527, 12)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(13, 38)
         Me.Panel25.TabIndex = 12
@@ -422,7 +422,7 @@ Partial Class frmListofOrdersPending
         '
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel26.Location = New System.Drawing.Point(0, 50)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel26.Name = "Panel26"
         Me.Panel26.Size = New System.Drawing.Size(540, 12)
         Me.Panel26.TabIndex = 11
@@ -431,7 +431,7 @@ Partial Class frmListofOrdersPending
         '
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel27.Location = New System.Drawing.Point(0, 0)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel27.Name = "Panel27"
         Me.Panel27.Size = New System.Drawing.Size(540, 12)
         Me.Panel27.TabIndex = 10

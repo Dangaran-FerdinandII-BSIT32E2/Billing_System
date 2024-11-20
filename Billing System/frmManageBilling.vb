@@ -228,6 +228,7 @@ Public Class frmManageBilling
 
     Private Sub btnSearchCompanyName_Click(sender As Object, e As EventArgs) Handles btnSearchCompanyName.Click
         frmListofOrdersPending.manageBilling = True
+        frmListofOrdersPending.Label2.Text = "List of Pending Billing Invoices"
         frmListofOrdersPending.ShowDialog()
     End Sub
 
