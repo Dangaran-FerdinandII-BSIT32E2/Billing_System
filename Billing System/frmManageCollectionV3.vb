@@ -246,6 +246,7 @@ Public Class frmManageCollectionV3
             Dim dueDate As String = number.SubItems(4).Text
             Dim price As String = number.SubItems(3).Text
 
+            MsgBox(phoneNumber)
             Dim message As String = "Your billing statement worth " & price & " pesos is due on " & dueDate & "." & vbCrLf & "Please pay within the timeframe to avoid any possible problems!" & vbCrLf & vbCrLf & "From Rambic Corporation"
             gsmController.SendSMSWithRetry(phoneNumber, message)
 
@@ -264,7 +265,7 @@ Public Class frmManageCollectionV3
         Next
 
         If Not initialized Then
-            MsgBox("SMS texting is not initialized! System can not send SMS. Please contact support.")
+            MsgBox("SMS texting is not initialized! System can not send SMS." & vbCrLf & "Please contact support.")
         End If
     End Sub
 

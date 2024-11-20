@@ -53,7 +53,7 @@ Public Class frmManageOrder
         Call loadFilteredOrders(startDate, endDate)
     End Sub
 
-    Private Sub loadFilteredOrders(startDate As String, endDate As String)
+    Public Sub loadFilteredOrders(startDate As String, endDate As String)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -121,11 +121,11 @@ Public Class frmManageOrder
 
     Private Sub btnCreateInvoice_Click(sender As Object, e As EventArgs) Handles btnCreateInvoice.Click
         If ListView1.SelectedItems.Count > 0 Then
-            If btnCreateInvoice.Text = "Create Invoice" Then
+            If ListView1.SelectedItems(0).SubItems(5).Text = "Item on Hand" Then
 
 
-                frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(5).Text
-                frmManageSalesV2.orderid = orderid
+                frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(7).Text
+                frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(6).Text
 
                 Me.Close()
                 frmManageSalesV2.TopLevel = False
@@ -133,18 +133,11 @@ Public Class frmManageOrder
                 frmManageSalesV2.BringToFront()
                 frmManageSalesV2.Dock = DockStyle.Fill
                 frmManageSalesV2.Show()
-
-                frmManageSalesV2.Close()
-                frmManageCollectionV3.Close()
-                frmManageSupplierProduct.Close()
-                frmManageProducts.Close()
-                'frmManageCustomerV3.Close()
-                frmManageUsers.Close()
-                frmManageRentalV2.Close()
-                frmAdminSettings.Close()
             Else
-                MsgBox("Please select an available and on-hand order!", MsgBoxStyle.Critical, "Order Error")
+                MsgBox("Please update the order to be available and on-hand!", MsgBoxStyle.Critical, "Create Invoice Error")
             End If
+        Else
+            MsgBox("Please select an available and on-hand order!", MsgBoxStyle.Critical, "Order Error")
         End If
 
     End Sub

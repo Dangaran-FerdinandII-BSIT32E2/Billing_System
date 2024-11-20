@@ -123,8 +123,12 @@ Public Class frmListofCustomerOrder
 
                             If Availability = "Available" Then
                                 .Parameters("@Availability").Value = True
-                                If (Status = "Item on Process" Or Status = "Priority Order") And Availability = "Available" Then
+                                If (Status = "Item on Process" Or Status = "Priority Order") Then
                                     .Parameters("@Status").Value = 1
+                                ElseIf Status = "Ready for Shipment" Then
+                                    .Parameters("@Status").Value = 2
+                                ElseIf Status = "Delivered" Then
+                                    .Parameters("@Status").Value = 3
                                 End If
                             ElseIf Availability = "Not Available" Then
                                 .Parameters("@Availability").Value = True

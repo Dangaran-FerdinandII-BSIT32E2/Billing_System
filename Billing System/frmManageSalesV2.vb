@@ -25,7 +25,7 @@ Public Class frmManageSalesV2
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "' AND OrderID = '" & orderid & "') And Availability = 1 And Status <> 3"
+            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "' AND OrderID = '" & orderid & "') And Availability = 1 And Status = 1"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -304,6 +304,8 @@ Public Class frmManageSalesV2
     End Sub
 
     Public Sub clearText()
+        txtCompanyName.Enabled = True
+
         txtCompanyName.Clear()
         txtAddress.Clear()
         txtDeliveryAddress.Clear()
@@ -313,9 +315,12 @@ Public Class frmManageSalesV2
         txtPONo.Clear()
         txtAmount.Clear()
 
+        txtCompanyName.Enabled = False
+        btnAddOrder.Visible = False
+
         cboSalesman.SelectedIndex = -1
-        cboFormat.SelectedIndex = -1
-        cboAdjust.SelectedIndex = -1
+        cboFormat.SelectedIndex = 0
+        cboAdjust.SelectedIndex = 0
 
         ListView1.Items.Clear()
     End Sub
