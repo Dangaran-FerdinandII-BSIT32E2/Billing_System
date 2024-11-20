@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.ApplicationServices
+﻿Imports Microsoft.Reporting.WinForms
+Imports Microsoft.VisualBasic.ApplicationServices
 Imports MySql.Data.MySqlClient
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 
@@ -31,5 +32,9 @@ Public Class frmAdminSettings
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub btnTest_Click(sender As Object, e As EventArgs) Handles btnTest.Click
+        frmPrintBillingInvoiceV2.ShowDialog()
     End Sub
 End Class
