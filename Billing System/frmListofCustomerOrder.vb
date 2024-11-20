@@ -5,13 +5,16 @@ Imports MySql.Data.MySqlClient
 Public Class frmListofCustomerOrder
 
     Public orderid As String
+    Public custid As String
     Private Sub btnSendQuotation_Click(sender As Object, e As EventArgs) Handles btnSendQuotation.Click
         frmQuotation.orderid = orderid
+        frmQuotation.custid = custid
         frmQuotation.ShowDialog()
     End Sub
 
     Private Sub btnComment_Click(sender As Object, e As EventArgs) Handles btnComment.Click
         frmQuotationComment.orderid = orderid
+
         frmQuotationComment.ShowDialog()
     End Sub
 

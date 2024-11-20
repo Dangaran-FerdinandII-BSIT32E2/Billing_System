@@ -1,5 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports System.Globalization
+Imports System.IO
+Imports System.Net.Mail
 Imports MySql.Data.MySqlClient
 Public Class frmCustomerViewInfo_Order
 
@@ -9,11 +11,14 @@ Public Class frmCustomerViewInfo_Order
 
     Dim startDate As String
     Dim endDate As String
+
+    Private email As String
     Private Sub frmCustomerViewInfo_Order_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadInformation()
+        Call loadImage()
         btnSave.Enabled = False
-        TabControl2.SelectedTab = TabPage2
+        TabControl2.SelectedTab = TabPage1
         Call loadOrderListView()
     End Sub
 
@@ -21,6 +26,45 @@ Public Class frmCustomerViewInfo_Order
         If e.CloseReason = CloseReason.UserClosing Then
             'clear all
         End If
+    End Sub
+    Private Sub loadImage()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT Image FROM tblcustomer WHERE CustomerID = '" & lblCustID.Text & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                If dr("Image") IsNot DBNull.Value AndAlso dr("Image") IsNot Nothing Then
+                    Dim pic As Byte() = DirectCast(dr("Image"), Byte())
+                    If pic.Length > 0 Then
+                        'Dim ms As New MemoryStream(pic)
+                        Using ms As New MemoryStream(pic)
+                            PictureBox1.Image = Image.FromStream(ms)
+                        End Using
+
+                    Else
+                        PictureBox1.Image = Nothing
+                    End If
+                End If
+            Else
+                PictureBox1.Image = Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmQuotation(loadImage): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 
     Private Sub loadOrderListView()
@@ -297,6 +341,10 @@ Public Class frmCustomerViewInfo_Order
                     btnSave.Enabled = False
                     Call disableAll()
                     Call loadInformation()
+
+                    If acctstatus Then
+                        Call sendEmail()
+                    End If
                 Catch ex As Exception
                     MsgBox("An error occurred frmCustomerViewInfo_Order(Saving Information): " & ex.Message)
                 Finally
@@ -309,7 +357,28 @@ Public Class frmCustomerViewInfo_Order
             MsgBox("An error occurred frmManageUsers(btnSave): " & ex.Message)
         End Try
     End Sub
+    Private Sub sendEmail()
+        Try
+            Dim mail As New MailMessage()
+            Dim smtpServer As New SmtpClient("smtp.gmail.com")
+            mail.From = New MailAddress("dangaranferds@gmail.com")
+            mail.To.Add(txtEmailAddress.Text)
+            mail.Subject = "NOTICE ON UPDATE OF ACCOUNT STATUS"
 
+            Using memoryStream As New MemoryStream()
+
+                mail.Body = "Congratulations! Your account has been updated." & vbCrLf & "Your account is now ACTIVE. Please login to continue using our services."
+                smtpServer.Port = 587
+                smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua")
+                smtpServer.EnableSsl = True
+                smtpServer.Send(mail)
+            End Using
+
+            MsgBox("Email sent with form screenshot!")
+        Catch ex As Exception
+            MsgBox("An error occurred frmPrintBillingInvoice(btnEmail): " & ex.Message)
+        End Try
+    End Sub
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         btnSave.Enabled = False
 

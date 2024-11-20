@@ -11,6 +11,7 @@ Public Class frmPrintBillingInvoice
 
     Public billingid As String
     Public custid As String
+    Private email As String
     Private Sub frmPrintBillingInvoice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadCustomerDetails()
@@ -37,6 +38,7 @@ Public Class frmPrintBillingInvoice
                 lblAddress.Text = dr("Address").ToString
                 lblDelivery.Text = dr("Delivery").ToString
                 lblBusStyle.Text = dr("CompanyName").ToString ' business style
+                email = dr("Email").ToString
             End If
             dr.Close()
 
@@ -130,7 +132,7 @@ Public Class frmPrintBillingInvoice
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
             mail.From = New MailAddress("dangaranferds@gmail.com")
-            mail.To.Add("2091-22@itmlyceumalabang.onmicrosoft.com")
+            mail.To.Add(email)
             mail.Subject = "Billing Statement"
 
             Using memoryStream As New MemoryStream()

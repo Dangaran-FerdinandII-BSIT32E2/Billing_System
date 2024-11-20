@@ -1,12 +1,45 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.IO
+Imports System.Net.Mail
 
 Public Class frmQuotation
     Public orderid As String
     Dim d As OpenFileDialog = New OpenFileDialog
+
+    Private email As String
+    Public custid As String
     Private Sub frmQuotation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+        Call loadInformation
         Call loadImage()
+    End Sub
+
+    Private Sub loadInformation()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT * FROM tblcustomer WHERE CustomerID = '" & custid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            If dr.Read = True Then
+                email = dr("Email").ToString
+            End If
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("An error occurred frmQuotation(loadInformation): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
     Private Sub loadImage()
         Try
@@ -98,6 +131,7 @@ Public Class frmQuotation
                     MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
                     Call loadActivity()
                     Call loadImage()
+                    Call sendEmail()
                 End If
             Else
                 MsgBox("Please upload a picture!", MsgBoxStyle.Critical, "Upload Error")
@@ -110,7 +144,28 @@ Public Class frmQuotation
             End If
         End Try
     End Sub
+    Private Sub sendEmail()
+        Try
+            Dim mail As New MailMessage()
+            Dim smtpServer As New SmtpClient("smtp.gmail.com")
+            mail.From = New MailAddress("dangaranferds@gmail.com")
+            mail.To.Add(email)
+            mail.Subject = "NOTICE ON QUOTATION OF ORDER NUMBER " & orderid
 
+            Using memoryStream As New MemoryStream()
+
+                mail.Body = "There is now available quotation for your Order Number " & orderid & "." & vbCrLf & "You can now accept or reject the Order Quotation through the website."
+                smtpServer.Port = 587
+                smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua")
+                smtpServer.EnableSsl = True
+                smtpServer.Send(mail)
+            End Using
+
+            MsgBox("Email sent with form screenshot!")
+        Catch ex As Exception
+            MsgBox("An error occurred frmPrintBillingInvoice(btnEmail): " & ex.Message)
+        End Try
+    End Sub
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         PictureBox1.Image = Nothing
         PictureBox2.Visible = True

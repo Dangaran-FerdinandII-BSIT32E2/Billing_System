@@ -21,7 +21,7 @@ Public Class frmAnalyticsData
         Call getDebt()
         Call getPaid()
         Dim totalDebt As Double = debt - paid
-        lblReceivable.Text = If(totalDebt = 0, "No Account in Deb", "₱" + totalDebt.ToString)
+        lblReceivable.Text = If(totalDebt = 0, "No Account in Debt", "₱" + totalDebt.ToString)
         Call getOverdue()
         Call getPaidAndVisualize()
     End Sub
@@ -166,7 +166,7 @@ Public Class frmAnalyticsData
                     Dim month As String = Convert.ToDateTime(dr("Month") & "-01").ToString("MMM yyyy")
                     Dim amount As Double = Convert.ToDouble(dr("Paid"))
 
-                    Chart1.Series("Payments").Points.AddXY(month, amount)
+                    Chart1.Series("Sales").Points.AddXY(month, amount)
                 End If
             End While
 
