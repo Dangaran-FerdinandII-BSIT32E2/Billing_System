@@ -150,11 +150,10 @@ Public Class frmDeliveryInformation
                     Dim arrImage() As Byte = mstream.GetBuffer
                     mstream.Close()
 
-                    sql = "UPDATE tblbilling SET imgDelivery=@imgDelivery, DateDelivered=@DateDelivered, Remarks=@Remarks WHERE BillingID = '" & billingid & "'"
+                    sql = "UPDATE tblbilling SET imgDelivery=@imgDelivery, DateDelivered=@DateDelivered WHERE BillingID = '" & billingid & "'"
                     cmd = New MySqlCommand(sql, cn)
                     With cmd
                         .Parameters.AddWithValue("@DateDelivered", dtpDateDelivered.Value)
-                        .Parameters.AddWithValue("@Remarks", "1")
                         .Parameters.AddWithValue("@imgDelivery", arrImage)
                         .ExecuteNonQuery()
                     End With
