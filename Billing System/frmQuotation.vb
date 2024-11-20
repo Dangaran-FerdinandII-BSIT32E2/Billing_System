@@ -94,7 +94,9 @@ Public Class frmQuotation
                         .Parameters.AddWithValue("@QuotationImg", arrImage)
                         .ExecuteNonQuery()
                     End With
+
                     MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
+                    Call loadActivity()
                     Call loadImage()
                 End If
             Else
@@ -115,5 +117,28 @@ Public Class frmQuotation
         btnBrowse.Visible = True
         btnCancel.Enabled = False
         btnSend.Enabled = True
+    End Sub
+    Private Sub loadActivity()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
+                .Parameters.AddWithValue("@Username", frmLoginV2.username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "Send Quotation for")
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmAdminSettings(loadActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 End Class

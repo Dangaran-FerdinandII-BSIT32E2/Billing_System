@@ -256,14 +256,17 @@ Partial Class frmManageCollectionV3
         Me.Panel21.Controls.Add(Me.Panel23)
         Me.Panel21.Controls.Add(Me.Panel7)
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Bottom
+
         Me.Panel21.Location = New System.Drawing.Point(13, 633)
         Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel21.Name = "Panel21"
         Me.Panel21.Size = New System.Drawing.Size(1419, 74)
+
         Me.Panel21.TabIndex = 22
         '
         'Panel6
         '
+
         Me.Panel6.BackColor = System.Drawing.Color.White
         Me.Panel6.Controls.Add(Me.btnShow)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
@@ -288,10 +291,9 @@ Partial Class frmManageCollectionV3
         Me.btnShow.ForeColor = System.Drawing.Color.White
         Me.btnShow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnShow.Location = New System.Drawing.Point(0, 0)
-        Me.btnShow.Margin = New System.Windows.Forms.Padding(4)
         Me.btnShow.Name = "btnShow"
         Me.btnShow.PressedDepth = 20
-        Me.btnShow.Size = New System.Drawing.Size(187, 50)
+        Me.btnShow.Size = New System.Drawing.Size(140, 40)
         Me.btnShow.TabIndex = 57
         Me.btnShow.Text = "Show"
         '
@@ -299,10 +301,11 @@ Partial Class frmManageCollectionV3
         '
         Me.Panel23.BackColor = System.Drawing.Color.White
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel23.Location = New System.Drawing.Point(0, 62)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel23.Location = New System.Drawing.Point(0, 50)
         Me.Panel23.Name = "Panel23"
+
         Me.Panel23.Size = New System.Drawing.Size(1419, 12)
+
         Me.Panel23.TabIndex = 18
         '
         'Panel7
@@ -413,6 +416,7 @@ Partial Class frmManageCollectionV3
         '
         'Panel27
         '
+
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel27.Location = New System.Drawing.Point(368, 31)
         Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
@@ -422,6 +426,7 @@ Partial Class frmManageCollectionV3
         '
         'Panel8
         '
+
         Me.Panel8.BackColor = System.Drawing.Color.White
         Me.Panel8.Controls.Add(Me.DateFilter2)
         Me.Panel8.Controls.Add(Me.Label10)
@@ -433,6 +438,7 @@ Partial Class frmManageCollectionV3
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(368, 47)
         Me.Panel8.TabIndex = 65
+
         '
         'DateFilter2
         '
@@ -440,10 +446,9 @@ Partial Class frmManageCollectionV3
         Me.DateFilter2.Dock = System.Windows.Forms.DockStyle.Left
         Me.DateFilter2.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.DateFilter2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFilter2.Location = New System.Drawing.Point(188, 6)
-        Me.DateFilter2.Margin = New System.Windows.Forms.Padding(4)
+        Me.DateFilter2.Location = New System.Drawing.Point(142, 5)
         Me.DateFilter2.Name = "DateFilter2"
-        Me.DateFilter2.Size = New System.Drawing.Size(167, 30)
+        Me.DateFilter2.Size = New System.Drawing.Size(126, 26)
         Me.DateFilter2.TabIndex = 70
         '
         'Label10
@@ -453,10 +458,9 @@ Partial Class frmManageCollectionV3
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label10.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(167, 6)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Location = New System.Drawing.Point(126, 5)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(21, 29)
+        Me.Label10.Size = New System.Drawing.Size(16, 22)
         Me.Label10.TabIndex = 69
         Me.Label10.Text = "-"
         '
@@ -466,19 +470,17 @@ Partial Class frmManageCollectionV3
         Me.DateFilter1.Dock = System.Windows.Forms.DockStyle.Left
         Me.DateFilter1.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.DateFilter1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFilter1.Location = New System.Drawing.Point(0, 6)
-        Me.DateFilter1.Margin = New System.Windows.Forms.Padding(4)
+        Me.DateFilter1.Location = New System.Drawing.Point(0, 5)
         Me.DateFilter1.Name = "DateFilter1"
-        Me.DateFilter1.Size = New System.Drawing.Size(167, 30)
+        Me.DateFilter1.Size = New System.Drawing.Size(126, 26)
         Me.DateFilter1.TabIndex = 68
         '
         'Panel60
         '
         Me.Panel60.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel60.Location = New System.Drawing.Point(0, 0)
-        Me.Panel60.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel60.Name = "Panel60"
-        Me.Panel60.Size = New System.Drawing.Size(368, 6)
+        Me.Panel60.Size = New System.Drawing.Size(276, 5)
         Me.Panel60.TabIndex = 67
         '
         'Panel11
@@ -494,9 +496,11 @@ Partial Class frmManageCollectionV3
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(1419, 31)
         Me.Panel11.TabIndex = 7
+
         '
         'Label2
         '
+
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
@@ -508,18 +512,22 @@ Partial Class frmManageCollectionV3
         Me.Label2.Size = New System.Drawing.Size(76, 24)
         Me.Label2.TabIndex = 72
         Me.Label2.Text = "Search"
+
         '
         'Panel15
         '
+
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(512, 0)
         Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(513, 31)
         Me.Panel15.TabIndex = 71
+
         '
         'Label1
         '
+
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
@@ -531,6 +539,7 @@ Partial Class frmManageCollectionV3
         Me.Label1.Size = New System.Drawing.Size(125, 24)
         Me.Label1.TabIndex = 70
         Me.Label1.Text = "Status Filter"
+
         '
         'Panel25
         '
@@ -540,6 +549,7 @@ Partial Class frmManageCollectionV3
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(280, 31)
         Me.Panel25.TabIndex = 69
+
         '
         'Label13
         '
@@ -554,10 +564,12 @@ Partial Class frmManageCollectionV3
         Me.Label13.Size = New System.Drawing.Size(107, 24)
         Me.Label13.TabIndex = 68
         Me.Label13.Text = "Date Filter"
+
         '
         'Panel12
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
+
         Me.Panel12.Location = New System.Drawing.Point(13, 0)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
@@ -567,23 +579,28 @@ Partial Class frmManageCollectionV3
         'Panel13
         '
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Right
+
         Me.Panel13.Location = New System.Drawing.Point(1432, 0)
         Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(13, 707)
+
         Me.Panel13.TabIndex = 7
         '
         'Panel18
         '
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Left
+
         Me.Panel18.Location = New System.Drawing.Point(0, 0)
         Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(13, 707)
+
         Me.Panel18.TabIndex = 5
         '
         'TabPage1
         '
+
         Me.TabPage1.Controls.Add(Me.Panel9)
         Me.TabPage1.Location = New System.Drawing.Point(4, 44)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
@@ -596,6 +613,7 @@ Partial Class frmManageCollectionV3
         '
         'Panel9
         '
+
         Me.Panel9.BackColor = System.Drawing.Color.White
         Me.Panel9.Controls.Add(Me.ListView2)
         Me.Panel9.Controls.Add(Me.Panel14)
@@ -609,9 +627,11 @@ Partial Class frmManageCollectionV3
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1437, 699)
         Me.Panel9.TabIndex = 15
+
         '
         'ListView2
         '
+
         Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.BillingID, Me.CompanyNameSendSMS, Me.CustomerName, Me.FinalPrice, Me.DueDate, Me.SMSSent})
         Me.ListView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
@@ -626,9 +646,11 @@ Partial Class frmManageCollectionV3
         Me.ListView2.TabIndex = 38
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
+
         '
         'BillingID
         '
+
         Me.BillingID.Text = "ID"
         Me.BillingID.Width = 100
         '
@@ -921,19 +943,21 @@ Partial Class frmManageCollectionV3
         Me.Panel46.Name = "Panel46"
         Me.Panel46.Size = New System.Drawing.Size(13, 699)
         Me.Panel46.TabIndex = 20
+
         '
         'frmManageCollectionV3
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+
         Me.ClientSize = New System.Drawing.Size(1479, 779)
         Me.Controls.Add(Me.TabControl2)
+
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmManageCollectionV3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TabControl2.ResumeLayout(False)

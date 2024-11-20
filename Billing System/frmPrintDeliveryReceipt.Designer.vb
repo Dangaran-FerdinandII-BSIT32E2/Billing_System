@@ -182,9 +182,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.panelBody.Controls.Add(Me.Panel4)
         Me.panelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBody.Location = New System.Drawing.Point(0, 0)
-        Me.panelBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelBody.Name = "panelBody"
-        Me.panelBody.Size = New System.Drawing.Size(1800, 897)
+        Me.panelBody.Size = New System.Drawing.Size(1350, 729)
         Me.panelBody.TabIndex = 1
         '
         'Panel5
@@ -207,20 +206,18 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel5.Controls.Add(Me.Guna2Panel1)
         Me.Panel5.Controls.Add(Me.pnlHeader)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(277, 12)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Location = New System.Drawing.Point(208, 10)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1246, 873)
+        Me.Panel5.Size = New System.Drawing.Size(934, 709)
         Me.Panel5.TabIndex = 11
         '
         'Panel27
         '
         Me.Panel27.Controls.Add(Me.Label5)
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel27.Location = New System.Drawing.Point(13, 769)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel27.Location = New System.Drawing.Point(10, 626)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(1220, 60)
+        Me.Panel27.Size = New System.Drawing.Size(914, 49)
         Me.Panel27.TabIndex = 62
         '
         'Label5
@@ -229,10 +226,9 @@ Partial Class frmPrintDeliveryReceipt
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Italic)
-        Me.Label5.Location = New System.Drawing.Point(292, 10)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(219, 8)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(673, 17)
+        Me.Label5.Size = New System.Drawing.Size(563, 15)
         Me.Label5.TabIndex = 51
         Me.Label5.Text = "NB: Our responsibility ceases upon delivery to transportation company and taking " &
     "their receipt therefor"
@@ -245,10 +241,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel23.Controls.Add(Me.Panel26)
         Me.Panel23.Controls.Add(Me.Label11)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel23.Location = New System.Drawing.Point(13, 731)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel23.Location = New System.Drawing.Point(10, 595)
         Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(1220, 38)
+        Me.Panel23.Size = New System.Drawing.Size(914, 31)
         Me.Panel23.TabIndex = 61
         '
         'Panel24
@@ -256,10 +251,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel24.Controls.Add(Me.lblDate2)
         Me.Panel24.Controls.Add(Me.Guna2Panel5)
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel24.Location = New System.Drawing.Point(792, 0)
-        Me.Panel24.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel24.Location = New System.Drawing.Point(606, 0)
         Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(497, 38)
+        Me.Panel24.Size = New System.Drawing.Size(373, 31)
         Me.Panel24.TabIndex = 57
         '
         'lblDate2
@@ -268,9 +262,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblDate2.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblDate2.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblDate2.Location = New System.Drawing.Point(0, 0)
-        Me.lblDate2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDate2.Name = "lblDate2"
-        Me.lblDate2.Size = New System.Drawing.Size(53, 17)
+        Me.lblDate2.Size = New System.Drawing.Size(42, 15)
         Me.lblDate2.TabIndex = 102
         Me.lblDate2.Text = "XXXXX"
         '
@@ -281,10 +274,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel5.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel5.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel5.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel5.Name = "Guna2Panel5"
-        Me.Guna2Panel5.Size = New System.Drawing.Size(497, 18)
+        Me.Guna2Panel5.Size = New System.Drawing.Size(373, 15)
         Me.Guna2Panel5.TabIndex = 101
         '
         'Label7
@@ -292,20 +285,18 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label7.AutoSize = True
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label7.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label7.Location = New System.Drawing.Point(749, 0)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(570, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(43, 17)
+        Me.Label7.Size = New System.Drawing.Size(36, 15)
         Me.Label7.TabIndex = 55
         Me.Label7.Text = "Date:"
         '
         'Panel25
         '
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel25.Location = New System.Drawing.Point(569, 0)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel25.Location = New System.Drawing.Point(435, 0)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(180, 38)
+        Me.Panel25.Size = New System.Drawing.Size(135, 31)
         Me.Panel25.TabIndex = 8
         '
         'Panel26
@@ -313,10 +304,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel26.Controls.Add(Me.lblApprovedTo)
         Me.Panel26.Controls.Add(Me.Guna2Panel13)
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel26.Location = New System.Drawing.Point(92, 0)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel26.Location = New System.Drawing.Point(77, 0)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(477, 38)
+        Me.Panel26.Size = New System.Drawing.Size(358, 31)
         Me.Panel26.TabIndex = 51
         '
         'lblApprovedTo
@@ -325,9 +315,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblApprovedTo.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblApprovedTo.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblApprovedTo.Location = New System.Drawing.Point(0, 0)
-        Me.lblApprovedTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblApprovedTo.Name = "lblApprovedTo"
-        Me.lblApprovedTo.Size = New System.Drawing.Size(53, 17)
+        Me.lblApprovedTo.Size = New System.Drawing.Size(42, 15)
         Me.lblApprovedTo.TabIndex = 101
         Me.lblApprovedTo.Text = "XXXXX"
         '
@@ -338,10 +327,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel13.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel13.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel13.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel13.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel13.Name = "Guna2Panel13"
-        Me.Guna2Panel13.Size = New System.Drawing.Size(477, 18)
+        Me.Guna2Panel13.Size = New System.Drawing.Size(358, 15)
         Me.Guna2Panel13.TabIndex = 100
         '
         'Label11
@@ -350,9 +339,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label11.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label11.Location = New System.Drawing.Point(0, 0)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(92, 17)
+        Me.Label11.Size = New System.Drawing.Size(77, 15)
         Me.Label11.TabIndex = 48
         Me.Label11.Text = "Approved To:"
         '
@@ -364,10 +352,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel49.Controls.Add(Me.Panel54)
         Me.Panel49.Controls.Add(Me.Label69)
         Me.Panel49.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel49.Location = New System.Drawing.Point(13, 693)
-        Me.Panel49.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel49.Location = New System.Drawing.Point(10, 564)
         Me.Panel49.Name = "Panel49"
-        Me.Panel49.Size = New System.Drawing.Size(1220, 38)
+        Me.Panel49.Size = New System.Drawing.Size(914, 31)
         Me.Panel49.TabIndex = 60
         '
         'Panel50
@@ -375,10 +362,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel50.Controls.Add(Me.lblBy)
         Me.Panel50.Controls.Add(Me.Guna2Panel39)
         Me.Panel50.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel50.Location = New System.Drawing.Point(778, 0)
-        Me.Panel50.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel50.Location = New System.Drawing.Point(593, 0)
         Me.Panel50.Name = "Panel50"
-        Me.Panel50.Size = New System.Drawing.Size(497, 38)
+        Me.Panel50.Size = New System.Drawing.Size(373, 31)
         Me.Panel50.TabIndex = 57
         '
         'lblBy
@@ -387,9 +373,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblBy.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblBy.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblBy.Location = New System.Drawing.Point(0, 0)
-        Me.lblBy.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblBy.Name = "lblBy"
-        Me.lblBy.Size = New System.Drawing.Size(53, 17)
+        Me.lblBy.Size = New System.Drawing.Size(42, 15)
         Me.lblBy.TabIndex = 102
         Me.lblBy.Text = "XXXXX"
         '
@@ -400,10 +385,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel39.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel39.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel39.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel39.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel39.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel39.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel39.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel39.Name = "Guna2Panel39"
-        Me.Guna2Panel39.Size = New System.Drawing.Size(497, 18)
+        Me.Guna2Panel39.Size = New System.Drawing.Size(373, 15)
         Me.Guna2Panel39.TabIndex = 101
         '
         'Label63
@@ -411,20 +396,18 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label63.AutoSize = True
         Me.Label63.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label63.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label63.Location = New System.Drawing.Point(749, 0)
-        Me.Label63.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label63.Location = New System.Drawing.Point(570, 0)
         Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(29, 17)
+        Me.Label63.Size = New System.Drawing.Size(23, 15)
         Me.Label63.TabIndex = 55
         Me.Label63.Text = "By:"
         '
         'Panel53
         '
         Me.Panel53.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel53.Location = New System.Drawing.Point(569, 0)
-        Me.Panel53.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel53.Location = New System.Drawing.Point(435, 0)
         Me.Panel53.Name = "Panel53"
-        Me.Panel53.Size = New System.Drawing.Size(180, 38)
+        Me.Panel53.Size = New System.Drawing.Size(135, 31)
         Me.Panel53.TabIndex = 8
         '
         'Panel54
@@ -432,10 +415,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel54.Controls.Add(Me.lblIssuedTo)
         Me.Panel54.Controls.Add(Me.Guna2Panel40)
         Me.Panel54.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel54.Location = New System.Drawing.Point(74, 0)
-        Me.Panel54.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel54.Location = New System.Drawing.Point(64, 0)
         Me.Panel54.Name = "Panel54"
-        Me.Panel54.Size = New System.Drawing.Size(495, 38)
+        Me.Panel54.Size = New System.Drawing.Size(371, 31)
         Me.Panel54.TabIndex = 51
         '
         'lblIssuedTo
@@ -444,9 +426,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblIssuedTo.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblIssuedTo.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblIssuedTo.Location = New System.Drawing.Point(0, 0)
-        Me.lblIssuedTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblIssuedTo.Name = "lblIssuedTo"
-        Me.lblIssuedTo.Size = New System.Drawing.Size(53, 17)
+        Me.lblIssuedTo.Size = New System.Drawing.Size(42, 15)
         Me.lblIssuedTo.TabIndex = 101
         Me.lblIssuedTo.Text = "XXXXX"
         '
@@ -457,10 +438,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel40.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel40.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel40.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel40.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel40.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel40.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel40.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel40.Name = "Guna2Panel40"
-        Me.Guna2Panel40.Size = New System.Drawing.Size(495, 18)
+        Me.Guna2Panel40.Size = New System.Drawing.Size(371, 15)
         Me.Guna2Panel40.TabIndex = 100
         '
         'Label69
@@ -469,9 +450,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label69.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label69.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label69.Location = New System.Drawing.Point(0, 0)
-        Me.Label69.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(74, 17)
+        Me.Label69.Size = New System.Drawing.Size(64, 15)
         Me.Label69.TabIndex = 48
         Me.Label69.Text = "Issued To:"
         '
@@ -483,10 +463,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel42.Controls.Add(Me.Panel47)
         Me.Panel42.Controls.Add(Me.Label56)
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel42.Location = New System.Drawing.Point(13, 655)
-        Me.Panel42.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel42.Location = New System.Drawing.Point(10, 533)
         Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(1220, 38)
+        Me.Panel42.Size = New System.Drawing.Size(914, 31)
         Me.Panel42.TabIndex = 57
         '
         'Panel46
@@ -494,10 +473,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel46.Controls.Add(Me.lblCustomer)
         Me.Panel46.Controls.Add(Me.Guna2Panel4)
         Me.Panel46.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel46.Location = New System.Drawing.Point(828, 0)
-        Me.Panel46.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel46.Location = New System.Drawing.Point(635, 0)
         Me.Panel46.Name = "Panel46"
-        Me.Panel46.Size = New System.Drawing.Size(392, 38)
+        Me.Panel46.Size = New System.Drawing.Size(279, 31)
         Me.Panel46.TabIndex = 56
         '
         'lblCustomer
@@ -506,9 +484,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblCustomer.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblCustomer.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblCustomer.Location = New System.Drawing.Point(0, 0)
-        Me.lblCustomer.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCustomer.Name = "lblCustomer"
-        Me.lblCustomer.Size = New System.Drawing.Size(53, 17)
+        Me.lblCustomer.Size = New System.Drawing.Size(42, 15)
         Me.lblCustomer.TabIndex = 53
         Me.lblCustomer.Text = "XXXXX"
         '
@@ -519,10 +496,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel4.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel4.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel4.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel4.Name = "Guna2Panel4"
-        Me.Guna2Panel4.Size = New System.Drawing.Size(392, 18)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(279, 15)
         Me.Guna2Panel4.TabIndex = 61
         '
         'lbl1
@@ -530,20 +507,18 @@ Partial Class frmPrintDeliveryReceipt
         Me.lbl1.AutoSize = True
         Me.lbl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.lbl1.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lbl1.Location = New System.Drawing.Point(751, 0)
-        Me.lbl1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl1.Location = New System.Drawing.Point(570, 0)
         Me.lbl1.Name = "lbl1"
-        Me.lbl1.Size = New System.Drawing.Size(77, 17)
+        Me.lbl1.Size = New System.Drawing.Size(65, 15)
         Me.lbl1.TabIndex = 55
         Me.lbl1.Text = "Customer:"
         '
         'Panel44
         '
         Me.Panel44.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel44.Location = New System.Drawing.Point(571, 0)
-        Me.Panel44.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel44.Location = New System.Drawing.Point(435, 0)
         Me.Panel44.Name = "Panel44"
-        Me.Panel44.Size = New System.Drawing.Size(180, 38)
+        Me.Panel44.Size = New System.Drawing.Size(135, 31)
         Me.Panel44.TabIndex = 8
         '
         'Panel47
@@ -551,10 +526,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel47.Controls.Add(Me.lblIssuedBy)
         Me.Panel47.Controls.Add(Me.Guna2Panel38)
         Me.Panel47.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel47.Location = New System.Drawing.Point(76, 0)
-        Me.Panel47.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel47.Location = New System.Drawing.Point(64, 0)
         Me.Panel47.Name = "Panel47"
-        Me.Panel47.Size = New System.Drawing.Size(495, 38)
+        Me.Panel47.Size = New System.Drawing.Size(371, 31)
         Me.Panel47.TabIndex = 51
         '
         'lblIssuedBy
@@ -563,9 +537,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblIssuedBy.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblIssuedBy.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblIssuedBy.Location = New System.Drawing.Point(0, 0)
-        Me.lblIssuedBy.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblIssuedBy.Name = "lblIssuedBy"
-        Me.lblIssuedBy.Size = New System.Drawing.Size(53, 17)
+        Me.lblIssuedBy.Size = New System.Drawing.Size(42, 15)
         Me.lblIssuedBy.TabIndex = 53
         Me.lblIssuedBy.Text = "XXXXX"
         '
@@ -576,10 +549,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel38.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel38.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel38.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel38.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel38.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel38.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel38.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel38.Name = "Guna2Panel38"
-        Me.Guna2Panel38.Size = New System.Drawing.Size(495, 18)
+        Me.Guna2Panel38.Size = New System.Drawing.Size(371, 15)
         Me.Guna2Panel38.TabIndex = 60
         '
         'Label56
@@ -588,9 +561,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label56.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label56.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label56.Location = New System.Drawing.Point(0, 0)
-        Me.Label56.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(76, 17)
+        Me.Label56.Size = New System.Drawing.Size(64, 15)
         Me.Label56.TabIndex = 48
         Me.Label56.Text = "Issued By:"
         '
@@ -599,10 +571,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel41.Controls.Add(Me.Label3)
         Me.Panel41.Controls.Add(Me.Guna2Panel12)
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel41.Location = New System.Drawing.Point(13, 607)
-        Me.Panel41.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel41.Location = New System.Drawing.Point(10, 494)
         Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(1220, 48)
+        Me.Panel41.Size = New System.Drawing.Size(914, 39)
         Me.Panel41.TabIndex = 56
         '
         'Label3
@@ -610,10 +581,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label3.AutoSize = True
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label3.Location = New System.Drawing.Point(778, 0)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(570, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(137, 17)
+        Me.Label3.Size = New System.Drawing.Size(115, 15)
         Me.Label3.TabIndex = 52
         Me.Label3.Text = "terms stated above."
         '
@@ -622,20 +592,18 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel12.BorderThickness = 1
         Me.Guna2Panel12.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel12.Location = New System.Drawing.Point(915, 0)
-        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel12.Location = New System.Drawing.Point(685, 0)
         Me.Guna2Panel12.Name = "Guna2Panel12"
-        Me.Guna2Panel12.Size = New System.Drawing.Size(305, 48)
+        Me.Guna2Panel12.Size = New System.Drawing.Size(229, 39)
         Me.Guna2Panel12.TabIndex = 53
         '
         'Panel39
         '
         Me.Panel39.Controls.Add(Me.Label50)
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel39.Location = New System.Drawing.Point(13, 582)
-        Me.Panel39.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel39.Location = New System.Drawing.Point(10, 474)
         Me.Panel39.Name = "Panel39"
-        Me.Panel39.Size = New System.Drawing.Size(1220, 25)
+        Me.Panel39.Size = New System.Drawing.Size(914, 20)
         Me.Panel39.TabIndex = 19
         '
         'Label50
@@ -643,30 +611,27 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label50.AutoSize = True
         Me.Label50.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label50.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label50.Location = New System.Drawing.Point(814, 0)
-        Me.Label50.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label50.Location = New System.Drawing.Point(570, 0)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(406, 17)
+        Me.Label50.Size = New System.Drawing.Size(344, 15)
         Me.Label50.TabIndex = 50
         Me.Label50.Text = "Received the above complete and in good condition under the"
         '
         'Panel38
         '
         Me.Panel38.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel38.Location = New System.Drawing.Point(13, 570)
-        Me.Panel38.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel38.Location = New System.Drawing.Point(10, 464)
         Me.Panel38.Name = "Panel38"
-        Me.Panel38.Size = New System.Drawing.Size(1220, 12)
+        Me.Panel38.Size = New System.Drawing.Size(914, 10)
         Me.Panel38.TabIndex = 18
         '
         'Panel30
         '
         Me.Panel30.Controls.Add(Me.panelBodyListView)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel30.Location = New System.Drawing.Point(13, 224)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel30.Location = New System.Drawing.Point(10, 183)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(1220, 346)
+        Me.Panel30.Size = New System.Drawing.Size(914, 281)
         Me.Panel30.TabIndex = 17
         '
         'panelBodyListView
@@ -681,9 +646,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.panelBodyListView.CustomBorderThickness = New System.Windows.Forms.Padding(2, 0, 0, 2)
         Me.panelBodyListView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBodyListView.Location = New System.Drawing.Point(0, 0)
-        Me.panelBodyListView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelBodyListView.Name = "panelBodyListView"
-        Me.panelBodyListView.Size = New System.Drawing.Size(1220, 346)
+        Me.panelBodyListView.Size = New System.Drawing.Size(914, 281)
         Me.panelBodyListView.TabIndex = 7
         '
         'ListView1
@@ -695,10 +659,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.ListView1.GridLines = True
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(13, 12)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListView1.Location = New System.Drawing.Point(10, 10)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1194, 322)
+        Me.ListView1.Size = New System.Drawing.Size(894, 261)
         Me.ListView1.TabIndex = 39
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -725,10 +688,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel37.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel37.CustomBorderThickness = New System.Windows.Forms.Padding(0, 2, 0, 0)
         Me.Guna2Panel37.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel37.Location = New System.Drawing.Point(13, 0)
-        Me.Guna2Panel37.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel37.Location = New System.Drawing.Point(10, 0)
         Me.Guna2Panel37.Name = "Guna2Panel37"
-        Me.Guna2Panel37.Size = New System.Drawing.Size(1194, 12)
+        Me.Guna2Panel37.Size = New System.Drawing.Size(894, 10)
         Me.Guna2Panel37.TabIndex = 1
         '
         'Guna2Panel36
@@ -736,10 +698,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel36.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel36.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 2)
         Me.Guna2Panel36.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel36.Location = New System.Drawing.Point(13, 334)
-        Me.Guna2Panel36.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel36.Location = New System.Drawing.Point(10, 271)
         Me.Guna2Panel36.Name = "Guna2Panel36"
-        Me.Guna2Panel36.Size = New System.Drawing.Size(1194, 12)
+        Me.Guna2Panel36.Size = New System.Drawing.Size(894, 10)
         Me.Guna2Panel36.TabIndex = 1
         '
         'Guna2Panel35
@@ -747,10 +708,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel35.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel35.CustomBorderThickness = New System.Windows.Forms.Padding(0, 2, 2, 2)
         Me.Guna2Panel35.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel35.Location = New System.Drawing.Point(1207, 0)
-        Me.Guna2Panel35.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel35.Location = New System.Drawing.Point(904, 0)
         Me.Guna2Panel35.Name = "Guna2Panel35"
-        Me.Guna2Panel35.Size = New System.Drawing.Size(13, 346)
+        Me.Guna2Panel35.Size = New System.Drawing.Size(10, 281)
         Me.Guna2Panel35.TabIndex = 1
         '
         'Guna2Panel34
@@ -759,9 +719,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel34.CustomBorderThickness = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.Guna2Panel34.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel34.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Guna2Panel34.Name = "Guna2Panel34"
-        Me.Guna2Panel34.Size = New System.Drawing.Size(13, 346)
+        Me.Guna2Panel34.Size = New System.Drawing.Size(10, 281)
         Me.Guna2Panel34.TabIndex = 0
         '
         'Panel28
@@ -770,10 +729,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel28.Controls.Add(Me.Panel31)
         Me.Panel28.Controls.Add(Me.Panel32)
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel28.Location = New System.Drawing.Point(13, 186)
-        Me.Panel28.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel28.Location = New System.Drawing.Point(10, 152)
         Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(1220, 38)
+        Me.Panel28.Size = New System.Drawing.Size(914, 31)
         Me.Panel28.TabIndex = 15
         '
         'Panel29
@@ -782,9 +740,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel29.Controls.Add(Me.Label29)
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel29.Location = New System.Drawing.Point(0, 0)
-        Me.Panel29.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(772, 38)
+        Me.Panel29.Size = New System.Drawing.Size(578, 31)
         Me.Panel29.TabIndex = 11
         '
         'Panel19
@@ -792,10 +749,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel19.Controls.Add(Me.lblDeliveredTo)
         Me.Panel19.Controls.Add(Me.Guna2Panel14)
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel19.Location = New System.Drawing.Point(120, 0)
-        Me.Panel19.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel19.Location = New System.Drawing.Point(97, 0)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(652, 38)
+        Me.Panel19.Size = New System.Drawing.Size(481, 31)
         Me.Panel19.TabIndex = 53
         '
         'lblDeliveredTo
@@ -804,9 +760,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblDeliveredTo.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblDeliveredTo.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblDeliveredTo.Location = New System.Drawing.Point(0, 0)
-        Me.lblDeliveredTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDeliveredTo.Name = "lblDeliveredTo"
-        Me.lblDeliveredTo.Size = New System.Drawing.Size(53, 17)
+        Me.lblDeliveredTo.Size = New System.Drawing.Size(42, 15)
         Me.lblDeliveredTo.TabIndex = 53
         Me.lblDeliveredTo.Text = "XXXXX"
         '
@@ -817,10 +772,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel14.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel14.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel14.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel14.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel14.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel14.Name = "Guna2Panel14"
-        Me.Guna2Panel14.Size = New System.Drawing.Size(652, 18)
+        Me.Guna2Panel14.Size = New System.Drawing.Size(481, 15)
         Me.Guna2Panel14.TabIndex = 59
         '
         'Label29
@@ -829,19 +784,17 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label29.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label29.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label29.Location = New System.Drawing.Point(0, 0)
-        Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(120, 17)
+        Me.Label29.Size = New System.Drawing.Size(97, 15)
         Me.Label29.TabIndex = 52
         Me.Label29.Text = "DELIVERED TO:"
         '
         'Panel31
         '
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel31.Location = New System.Drawing.Point(772, 0)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel31.Location = New System.Drawing.Point(578, 0)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(13, 38)
+        Me.Panel31.Size = New System.Drawing.Size(10, 31)
         Me.Panel31.TabIndex = 10
         '
         'Panel32
@@ -849,10 +802,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel32.Controls.Add(Me.Label26)
         Me.Panel32.Controls.Add(Me.Panel34)
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel32.Location = New System.Drawing.Point(785, 0)
-        Me.Panel32.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel32.Location = New System.Drawing.Point(588, 0)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(435, 38)
+        Me.Panel32.Size = New System.Drawing.Size(326, 31)
         Me.Panel32.TabIndex = 9
         '
         'Label26
@@ -860,10 +812,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label26.AutoSize = True
         Me.Label26.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label26.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label26.Location = New System.Drawing.Point(88, 0)
-        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label26.Location = New System.Drawing.Point(63, 0)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(42, 17)
+        Me.Label26.Size = New System.Drawing.Size(34, 15)
         Me.Label26.TabIndex = 54
         Me.Label26.Text = "REF:"
         '
@@ -872,10 +823,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel34.Controls.Add(Me.lblRef)
         Me.Panel34.Controls.Add(Me.Guna2Panel15)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel34.Location = New System.Drawing.Point(130, 0)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel34.Location = New System.Drawing.Point(97, 0)
         Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(305, 38)
+        Me.Panel34.Size = New System.Drawing.Size(229, 31)
         Me.Panel34.TabIndex = 55
         '
         'lblRef
@@ -884,9 +834,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblRef.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblRef.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblRef.Location = New System.Drawing.Point(0, 0)
-        Me.lblRef.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblRef.Name = "lblRef"
-        Me.lblRef.Size = New System.Drawing.Size(53, 17)
+        Me.lblRef.Size = New System.Drawing.Size(42, 15)
         Me.lblRef.TabIndex = 53
         Me.lblRef.Text = "XXXXX"
         '
@@ -897,10 +846,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel15.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel15.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel15.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel15.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel15.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel15.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel15.Name = "Guna2Panel15"
-        Me.Guna2Panel15.Size = New System.Drawing.Size(305, 18)
+        Me.Guna2Panel15.Size = New System.Drawing.Size(229, 15)
         Me.Guna2Panel15.TabIndex = 59
         '
         'Panel9
@@ -910,10 +859,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel9.Controls.Add(Me.Panel20)
         Me.Panel9.Controls.Add(Me.Panel21)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel9.Location = New System.Drawing.Point(13, 148)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Location = New System.Drawing.Point(10, 121)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(1220, 38)
+        Me.Panel9.Size = New System.Drawing.Size(914, 31)
         Me.Panel9.TabIndex = 13
         '
         'Panel14
@@ -921,10 +869,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel14.Controls.Add(Me.lblBusStyle)
         Me.Panel14.Controls.Add(Me.Guna2Panel10)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel14.Location = New System.Drawing.Point(135, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel14.Location = New System.Drawing.Point(111, 0)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(637, 38)
+        Me.Panel14.Size = New System.Drawing.Size(467, 31)
         Me.Panel14.TabIndex = 53
         '
         'lblBusStyle
@@ -933,9 +880,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblBusStyle.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblBusStyle.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblBusStyle.Location = New System.Drawing.Point(0, 0)
-        Me.lblBusStyle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblBusStyle.Name = "lblBusStyle"
-        Me.lblBusStyle.Size = New System.Drawing.Size(53, 17)
+        Me.lblBusStyle.Size = New System.Drawing.Size(42, 15)
         Me.lblBusStyle.TabIndex = 53
         Me.lblBusStyle.Text = "XXXXX"
         '
@@ -946,10 +892,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel10.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel10.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel10.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel10.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel10.Name = "Guna2Panel10"
-        Me.Guna2Panel10.Size = New System.Drawing.Size(637, 18)
+        Me.Guna2Panel10.Size = New System.Drawing.Size(467, 15)
         Me.Guna2Panel10.TabIndex = 57
         '
         'Label18
@@ -958,19 +904,17 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label18.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label18.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label18.Location = New System.Drawing.Point(0, 0)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(135, 17)
+        Me.Label18.Size = New System.Drawing.Size(111, 15)
         Me.Label18.TabIndex = 52
         Me.Label18.Text = "BUSINESS STYLE:"
         '
         'Panel20
         '
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel20.Location = New System.Drawing.Point(772, 0)
-        Me.Panel20.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel20.Location = New System.Drawing.Point(578, 0)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(13, 38)
+        Me.Panel20.Size = New System.Drawing.Size(10, 31)
         Me.Panel20.TabIndex = 10
         '
         'Panel21
@@ -978,10 +922,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel21.Controls.Add(Me.Label15)
         Me.Panel21.Controls.Add(Me.Panel22)
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel21.Location = New System.Drawing.Point(785, 0)
-        Me.Panel21.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel21.Location = New System.Drawing.Point(588, 0)
         Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(435, 38)
+        Me.Panel21.Size = New System.Drawing.Size(326, 31)
         Me.Panel21.TabIndex = 9
         '
         'Label15
@@ -989,10 +932,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label15.AutoSize = True
         Me.Label15.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label15.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label15.Location = New System.Drawing.Point(96, 0)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Location = New System.Drawing.Point(68, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(34, 17)
+        Me.Label15.Size = New System.Drawing.Size(29, 15)
         Me.Label15.TabIndex = 54
         Me.Label15.Text = "TIN:"
         '
@@ -1001,10 +943,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel22.Controls.Add(Me.lblTIN)
         Me.Panel22.Controls.Add(Me.Guna2Panel11)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel22.Location = New System.Drawing.Point(130, 0)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel22.Location = New System.Drawing.Point(97, 0)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(305, 38)
+        Me.Panel22.Size = New System.Drawing.Size(229, 31)
         Me.Panel22.TabIndex = 55
         '
         'lblTIN
@@ -1013,9 +954,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblTIN.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblTIN.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblTIN.Location = New System.Drawing.Point(0, 0)
-        Me.lblTIN.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTIN.Name = "lblTIN"
-        Me.lblTIN.Size = New System.Drawing.Size(53, 17)
+        Me.lblTIN.Size = New System.Drawing.Size(42, 15)
         Me.lblTIN.TabIndex = 53
         Me.lblTIN.Text = "XXXXX"
         '
@@ -1026,10 +966,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel11.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel11.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel11.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel11.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel11.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel11.Name = "Guna2Panel11"
-        Me.Guna2Panel11.Size = New System.Drawing.Size(305, 18)
+        Me.Guna2Panel11.Size = New System.Drawing.Size(229, 15)
         Me.Guna2Panel11.TabIndex = 57
         '
         'Panel7
@@ -1038,10 +978,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel7.Controls.Add(Me.Panel10)
         Me.Panel7.Controls.Add(Me.Panel12)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(13, 110)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Location = New System.Drawing.Point(10, 90)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1220, 38)
+        Me.Panel7.Size = New System.Drawing.Size(914, 31)
         Me.Panel7.TabIndex = 12
         '
         'Panel8
@@ -1050,9 +989,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel8.Controls.Add(Me.Label12)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(772, 38)
+        Me.Panel8.Size = New System.Drawing.Size(578, 31)
         Me.Panel8.TabIndex = 11
         '
         'Panel18
@@ -1060,10 +998,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel18.Controls.Add(Me.lblAddress)
         Me.Panel18.Controls.Add(Me.Guna2Panel8)
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel18.Location = New System.Drawing.Point(84, 0)
-        Me.Panel18.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel18.Location = New System.Drawing.Point(68, 0)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(688, 38)
+        Me.Panel18.Size = New System.Drawing.Size(510, 31)
         Me.Panel18.TabIndex = 53
         '
         'lblAddress
@@ -1072,9 +1009,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblAddress.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblAddress.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblAddress.Location = New System.Drawing.Point(0, 0)
-        Me.lblAddress.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblAddress.Name = "lblAddress"
-        Me.lblAddress.Size = New System.Drawing.Size(53, 17)
+        Me.lblAddress.Size = New System.Drawing.Size(42, 15)
         Me.lblAddress.TabIndex = 53
         Me.lblAddress.Text = "XXXXX"
         '
@@ -1085,10 +1021,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel8.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel8.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel8.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel8.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel8.Name = "Guna2Panel8"
-        Me.Guna2Panel8.Size = New System.Drawing.Size(688, 18)
+        Me.Guna2Panel8.Size = New System.Drawing.Size(510, 15)
         Me.Guna2Panel8.TabIndex = 56
         '
         'Label12
@@ -1097,19 +1033,17 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label12.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label12.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label12.Location = New System.Drawing.Point(0, 0)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(84, 17)
+        Me.Label12.Size = New System.Drawing.Size(68, 15)
         Me.Label12.TabIndex = 52
         Me.Label12.Text = "ADDRESS:"
         '
         'Panel10
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel10.Location = New System.Drawing.Point(772, 0)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel10.Location = New System.Drawing.Point(578, 0)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(13, 38)
+        Me.Panel10.Size = New System.Drawing.Size(10, 31)
         Me.Panel10.TabIndex = 10
         '
         'Panel12
@@ -1117,10 +1051,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel12.Controls.Add(Me.Label9)
         Me.Panel12.Controls.Add(Me.Panel13)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel12.Location = New System.Drawing.Point(785, 0)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel12.Location = New System.Drawing.Point(588, 0)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(435, 38)
+        Me.Panel12.Size = New System.Drawing.Size(326, 31)
         Me.Panel12.TabIndex = 9
         '
         'Label9
@@ -1128,10 +1061,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label9.AutoSize = True
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label9.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label9.Location = New System.Drawing.Point(67, 0)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(45, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(63, 17)
+        Me.Label9.Size = New System.Drawing.Size(52, 15)
         Me.Label9.TabIndex = 54
         Me.Label9.Text = "INV. NO:"
         '
@@ -1140,10 +1072,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel13.Controls.Add(Me.lblInvoiceNo)
         Me.Panel13.Controls.Add(Me.Guna2Panel9)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel13.Location = New System.Drawing.Point(130, 0)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel13.Location = New System.Drawing.Point(97, 0)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(305, 38)
+        Me.Panel13.Size = New System.Drawing.Size(229, 31)
         Me.Panel13.TabIndex = 55
         '
         'lblInvoiceNo
@@ -1152,9 +1083,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblInvoiceNo.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblInvoiceNo.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblInvoiceNo.Location = New System.Drawing.Point(0, 0)
-        Me.lblInvoiceNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblInvoiceNo.Name = "lblInvoiceNo"
-        Me.lblInvoiceNo.Size = New System.Drawing.Size(53, 17)
+        Me.lblInvoiceNo.Size = New System.Drawing.Size(42, 15)
         Me.lblInvoiceNo.TabIndex = 53
         Me.lblInvoiceNo.Text = "XXXXX"
         '
@@ -1165,10 +1095,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel9.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel9.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel9.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel9.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel9.Name = "Guna2Panel9"
-        Me.Guna2Panel9.Size = New System.Drawing.Size(305, 18)
+        Me.Guna2Panel9.Size = New System.Drawing.Size(229, 15)
         Me.Guna2Panel9.TabIndex = 57
         '
         'Panel11
@@ -1177,10 +1107,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel11.Controls.Add(Me.Panel16)
         Me.Panel11.Controls.Add(Me.Panel17)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel11.Location = New System.Drawing.Point(13, 72)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel11.Location = New System.Drawing.Point(10, 59)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1220, 38)
+        Me.Panel11.Size = New System.Drawing.Size(914, 31)
         Me.Panel11.TabIndex = 11
         '
         'Panel6
@@ -1189,9 +1118,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel6.Controls.Add(Me.Label2)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(772, 38)
+        Me.Panel6.Size = New System.Drawing.Size(578, 31)
         Me.Panel6.TabIndex = 11
         '
         'Panel15
@@ -1199,10 +1127,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel15.Controls.Add(Me.lblTo)
         Me.Panel15.Controls.Add(Me.Guna2Panel6)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel15.Location = New System.Drawing.Point(33, 0)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel15.Location = New System.Drawing.Point(26, 0)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(739, 38)
+        Me.Panel15.Size = New System.Drawing.Size(552, 31)
         Me.Panel15.TabIndex = 53
         '
         'lblTo
@@ -1211,9 +1138,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblTo.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblTo.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblTo.Location = New System.Drawing.Point(0, 0)
-        Me.lblTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTo.Name = "lblTo"
-        Me.lblTo.Size = New System.Drawing.Size(53, 17)
+        Me.lblTo.Size = New System.Drawing.Size(42, 15)
         Me.lblTo.TabIndex = 53
         Me.lblTo.Text = "XXXXX"
         '
@@ -1223,10 +1149,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel6.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel6.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.Size = New System.Drawing.Size(739, 18)
+        Me.Guna2Panel6.Size = New System.Drawing.Size(552, 15)
         Me.Guna2Panel6.TabIndex = 54
         '
         'Label2
@@ -1235,19 +1161,17 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(33, 17)
+        Me.Label2.Size = New System.Drawing.Size(26, 15)
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "TO:"
         '
         'Panel16
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel16.Location = New System.Drawing.Point(772, 0)
-        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel16.Location = New System.Drawing.Point(578, 0)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(13, 38)
+        Me.Panel16.Size = New System.Drawing.Size(10, 31)
         Me.Panel16.TabIndex = 10
         '
         'Panel17
@@ -1255,10 +1179,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel17.Controls.Add(Me.Label4)
         Me.Panel17.Controls.Add(Me.Panel40)
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel17.Location = New System.Drawing.Point(785, 0)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel17.Location = New System.Drawing.Point(588, 0)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(435, 38)
+        Me.Panel17.Size = New System.Drawing.Size(326, 31)
         Me.Panel17.TabIndex = 9
         '
         'Label4
@@ -1266,10 +1189,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Label4.AutoSize = True
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label4.Location = New System.Drawing.Point(80, 0)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(57, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(50, 17)
+        Me.Label4.Size = New System.Drawing.Size(40, 15)
         Me.Label4.TabIndex = 54
         Me.Label4.Text = "DATE:"
         '
@@ -1278,10 +1200,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel40.Controls.Add(Me.lblDate)
         Me.Panel40.Controls.Add(Me.Guna2Panel7)
         Me.Panel40.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel40.Location = New System.Drawing.Point(130, 0)
-        Me.Panel40.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel40.Location = New System.Drawing.Point(97, 0)
         Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(305, 38)
+        Me.Panel40.Size = New System.Drawing.Size(229, 31)
         Me.Panel40.TabIndex = 55
         '
         'lblDate
@@ -1290,9 +1211,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.lblDate.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblDate.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblDate.Location = New System.Drawing.Point(0, 0)
-        Me.lblDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(53, 17)
+        Me.lblDate.Size = New System.Drawing.Size(42, 15)
         Me.lblDate.TabIndex = 53
         Me.lblDate.Text = "XXXXX"
         '
@@ -1303,30 +1223,28 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel7.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel7.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel7.Location = New System.Drawing.Point(0, 20)
-        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel7.Location = New System.Drawing.Point(0, 16)
+        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel7.Name = "Guna2Panel7"
-        Me.Guna2Panel7.Size = New System.Drawing.Size(305, 18)
+        Me.Guna2Panel7.Size = New System.Drawing.Size(229, 15)
         Me.Guna2Panel7.TabIndex = 55
         '
         'Panel48
         '
         Me.Panel48.Controls.Add(Me.Label1)
         Me.Panel48.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel48.Location = New System.Drawing.Point(13, 12)
-        Me.Panel48.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel48.Location = New System.Drawing.Point(10, 10)
         Me.Panel48.Name = "Panel48"
-        Me.Panel48.Size = New System.Drawing.Size(1220, 60)
+        Me.Panel48.Size = New System.Drawing.Size(914, 49)
         Me.Panel48.TabIndex = 8
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(501, 4)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(376, 3)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(197, 24)
+        Me.Label1.Size = New System.Drawing.Size(164, 19)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "DELIVERY RECEIPT"
         '
@@ -1336,10 +1254,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel3.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel3.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 1)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel3.Location = New System.Drawing.Point(13, 861)
-        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(10, 699)
         Me.Guna2Panel3.Name = "Guna2Panel3"
-        Me.Guna2Panel3.Size = New System.Drawing.Size(1220, 12)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(914, 10)
         Me.Guna2Panel3.TabIndex = 6
         '
         'Guna2Panel2
@@ -1348,10 +1265,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel2.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel2.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 1, 1)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel2.Location = New System.Drawing.Point(1233, 12)
-        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(924, 10)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(13, 861)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(10, 699)
         Me.Guna2Panel2.TabIndex = 5
         '
         'Guna2Panel1
@@ -1360,10 +1276,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel1.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel1.CustomBorderThickness = New System.Windows.Forms.Padding(1, 0, 0, 1)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 12)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 10)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(13, 861)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(10, 699)
         Me.Guna2Panel1.TabIndex = 4
         '
         'pnlHeader
@@ -1372,9 +1287,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.pnlHeader.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 1, 0)
         Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
-        Me.pnlHeader.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(1246, 12)
+        Me.pnlHeader.Size = New System.Drawing.Size(934, 10)
         Me.pnlHeader.TabIndex = 3
         '
         'Panel3
@@ -1384,10 +1298,9 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel3.Controls.Add(Me.Guna2Panel42)
         Me.Panel3.Controls.Add(Me.Guna2Panel41)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(1523, 12)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Location = New System.Drawing.Point(1142, 10)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(277, 873)
+        Me.Panel3.Size = New System.Drawing.Size(208, 709)
         Me.Panel3.TabIndex = 10
         '
         'btnPrint
@@ -1405,11 +1318,10 @@ Partial Class frmPrintDeliveryReceipt
         Me.btnPrint.Image = CType(resources.GetObject("btnPrint.Image"), System.Drawing.Image)
         Me.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnPrint.ImageOffset = New System.Drawing.Point(50, 0)
-        Me.btnPrint.Location = New System.Drawing.Point(13, 813)
-        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPrint.Location = New System.Drawing.Point(10, 660)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.PressedDepth = 20
-        Me.btnPrint.Size = New System.Drawing.Size(251, 60)
+        Me.btnPrint.Size = New System.Drawing.Size(188, 49)
         Me.btnPrint.TabIndex = 58
         Me.btnPrint.Text = "Print"
         Me.btnPrint.TextOffset = New System.Drawing.Point(10, 0)
@@ -1420,9 +1332,8 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel42.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel42.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel42.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel42.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Guna2Panel42.Name = "Guna2Panel42"
-        Me.Guna2Panel42.Size = New System.Drawing.Size(13, 873)
+        Me.Guna2Panel42.Size = New System.Drawing.Size(10, 709)
         Me.Guna2Panel42.TabIndex = 7
         '
         'Guna2Panel41
@@ -1430,30 +1341,27 @@ Partial Class frmPrintDeliveryReceipt
         Me.Guna2Panel41.BorderThickness = 1
         Me.Guna2Panel41.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel41.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel41.Location = New System.Drawing.Point(264, 0)
-        Me.Guna2Panel41.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel41.Location = New System.Drawing.Point(198, 0)
         Me.Guna2Panel41.Name = "Guna2Panel41"
-        Me.Guna2Panel41.Size = New System.Drawing.Size(13, 873)
+        Me.Guna2Panel41.Size = New System.Drawing.Size(10, 709)
         Me.Guna2Panel41.TabIndex = 6
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.Control
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 12)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(0, 10)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(277, 873)
+        Me.Panel2.Size = New System.Drawing.Size(208, 709)
         Me.Panel2.TabIndex = 9
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Control
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 885)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Location = New System.Drawing.Point(0, 719)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1800, 12)
+        Me.Panel1.Size = New System.Drawing.Size(1350, 10)
         Me.Panel1.TabIndex = 8
         '
         'Panel4
@@ -1461,19 +1369,17 @@ Partial Class frmPrintDeliveryReceipt
         Me.Panel4.BackColor = System.Drawing.SystemColors.Control
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1800, 12)
+        Me.Panel4.Size = New System.Drawing.Size(1350, 10)
         Me.Panel4.TabIndex = 7
         '
         'frmPrintDeliveryReceipt
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1800, 897)
+        Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.panelBody)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmPrintDeliveryReceipt"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
