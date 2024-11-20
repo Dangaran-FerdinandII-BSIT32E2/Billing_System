@@ -270,4 +270,5 @@ Public Class frmManageSupplierProduct
         btnEditProduct.Enabled = True
         btnDeleteProduct.Enabled = True
     End Sub
+
 End Class

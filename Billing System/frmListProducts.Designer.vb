@@ -38,11 +38,6 @@ Partial Class frmListProducts
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.pnlListOfCustomerBody = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Panel31 = New System.Windows.Forms.Panel()
-        Me.Panel32 = New System.Windows.Forms.Panel()
-        Me.Panel34 = New System.Windows.Forms.Panel()
-        Me.btnConfirm = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel30 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -52,13 +47,18 @@ Partial Class frmListProducts
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel30 = New System.Windows.Forms.Panel()
+        Me.Panel34 = New System.Windows.Forms.Panel()
+        Me.btnConfirm = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel32 = New System.Windows.Forms.Panel()
+        Me.Panel31 = New System.Windows.Forms.Panel()
         Me.Panel14.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel23.SuspendLayout()
         Me.pnlListOfCustomerBody.SuspendLayout()
         Me.Panel11.SuspendLayout()
-        Me.Panel34.SuspendLayout()
         Me.Panel30.SuspendLayout()
+        Me.Panel34.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel26
@@ -227,66 +227,6 @@ Partial Class frmListProducts
         Me.Panel11.Size = New System.Drawing.Size(1008, 549)
         Me.Panel11.TabIndex = 14
         '
-        'Panel31
-        '
-        Me.Panel31.BackColor = System.Drawing.Color.White
-        Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel31.Location = New System.Drawing.Point(0, 0)
-        Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(1008, 10)
-        Me.Panel31.TabIndex = 18
-        '
-        'Panel32
-        '
-        Me.Panel32.BackColor = System.Drawing.Color.White
-        Me.Panel32.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel32.Location = New System.Drawing.Point(0, 50)
-        Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(1008, 10)
-        Me.Panel32.TabIndex = 18
-        '
-        'Panel34
-        '
-        Me.Panel34.BackColor = System.Drawing.Color.White
-        Me.Panel34.Controls.Add(Me.btnConfirm)
-        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel34.Location = New System.Drawing.Point(0, 10)
-        Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(140, 40)
-        Me.Panel34.TabIndex = 18
-        '
-        'btnConfirm
-        '
-        Me.btnConfirm.BorderRadius = 8
-        Me.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnConfirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnConfirm.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnConfirm.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnConfirm.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnConfirm.ForeColor = System.Drawing.Color.White
-        Me.btnConfirm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnConfirm.Location = New System.Drawing.Point(0, 0)
-        Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.PressedDepth = 20
-        Me.btnConfirm.Size = New System.Drawing.Size(140, 40)
-        Me.btnConfirm.TabIndex = 57
-        Me.btnConfirm.Text = "Confirm"
-        '
-        'Panel30
-        '
-        Me.Panel30.BackColor = System.Drawing.Color.White
-        Me.Panel30.Controls.Add(Me.Panel34)
-        Me.Panel30.Controls.Add(Me.Panel32)
-        Me.Panel30.Controls.Add(Me.Panel31)
-        Me.Panel30.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel30.Location = New System.Drawing.Point(0, 489)
-        Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(1008, 60)
-        Me.Panel30.TabIndex = 19
-        '
         'ListView1
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader9, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader6})
@@ -342,6 +282,66 @@ Partial Class frmListProducts
         Me.ColumnHeader6.Text = "Selling Price"
         Me.ColumnHeader6.Width = 200
         '
+        'Panel30
+        '
+        Me.Panel30.BackColor = System.Drawing.Color.White
+        Me.Panel30.Controls.Add(Me.Panel34)
+        Me.Panel30.Controls.Add(Me.Panel32)
+        Me.Panel30.Controls.Add(Me.Panel31)
+        Me.Panel30.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel30.Location = New System.Drawing.Point(0, 489)
+        Me.Panel30.Name = "Panel30"
+        Me.Panel30.Size = New System.Drawing.Size(1008, 60)
+        Me.Panel30.TabIndex = 19
+        '
+        'Panel34
+        '
+        Me.Panel34.BackColor = System.Drawing.Color.White
+        Me.Panel34.Controls.Add(Me.btnConfirm)
+        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel34.Location = New System.Drawing.Point(0, 10)
+        Me.Panel34.Name = "Panel34"
+        Me.Panel34.Size = New System.Drawing.Size(140, 40)
+        Me.Panel34.TabIndex = 18
+        '
+        'btnConfirm
+        '
+        Me.btnConfirm.BorderRadius = 8
+        Me.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnConfirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnConfirm.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnConfirm.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnConfirm.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnConfirm.ForeColor = System.Drawing.Color.White
+        Me.btnConfirm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnConfirm.Location = New System.Drawing.Point(0, 0)
+        Me.btnConfirm.Name = "btnConfirm"
+        Me.btnConfirm.PressedDepth = 20
+        Me.btnConfirm.Size = New System.Drawing.Size(140, 40)
+        Me.btnConfirm.TabIndex = 57
+        Me.btnConfirm.Text = "Confirm"
+        '
+        'Panel32
+        '
+        Me.Panel32.BackColor = System.Drawing.Color.White
+        Me.Panel32.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel32.Location = New System.Drawing.Point(0, 50)
+        Me.Panel32.Name = "Panel32"
+        Me.Panel32.Size = New System.Drawing.Size(1008, 10)
+        Me.Panel32.TabIndex = 18
+        '
+        'Panel31
+        '
+        Me.Panel31.BackColor = System.Drawing.Color.White
+        Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel31.Location = New System.Drawing.Point(0, 0)
+        Me.Panel31.Name = "Panel31"
+        Me.Panel31.Size = New System.Drawing.Size(1008, 10)
+        Me.Panel31.TabIndex = 18
+        '
         'frmListProducts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -357,8 +357,8 @@ Partial Class frmListProducts
         Me.Panel23.ResumeLayout(False)
         Me.pnlListOfCustomerBody.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
-        Me.Panel34.ResumeLayout(False)
         Me.Panel30.ResumeLayout(False)
+        Me.Panel34.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

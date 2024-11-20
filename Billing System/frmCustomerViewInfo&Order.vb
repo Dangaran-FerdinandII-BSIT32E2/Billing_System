@@ -241,7 +241,7 @@ Public Class frmCustomerViewInfo_Order
             If ListView1.SelectedItems.Count > 0 Or orderid IsNot Nothing Then
                 frmManageSalesV2.lblCustID.Text = lblCustID.Text
                 frmManageSalesV2.orderid = orderid
-
+                Call loadActivity()
                 Me.Close()
                 frmManageSalesV2.TopLevel = False
                 frmAdminDashboard.panelDashboard.Controls.Add(frmManageSalesV2)
@@ -482,6 +482,29 @@ Public Class frmCustomerViewInfo_Order
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmCustomerViewInfo_Order(viewOrders): " & ex.Message)
+        End Try
+    End Sub
+    Private Sub loadActivity()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
+                .Parameters.AddWithValue("@Username", frmLoginV2.username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "Created Invoice for ")
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmAdminSettings(loadActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
         End Try
     End Sub
 End Class
