@@ -275,7 +275,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel39.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel39.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel39.Location = New System.Drawing.Point(0, 13)
-        Me.Guna2Panel39.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel39.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel39.Name = "Guna2Panel39"
         Me.Guna2Panel39.Size = New System.Drawing.Size(373, 15)
         Me.Guna2Panel39.TabIndex = 101
@@ -316,7 +316,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel40.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel40.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel40.Location = New System.Drawing.Point(0, 13)
-        Me.Guna2Panel40.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel40.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel40.Name = "Guna2Panel40"
         Me.Guna2Panel40.Size = New System.Drawing.Size(318, 15)
         Me.Guna2Panel40.TabIndex = 100
@@ -378,7 +378,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel4.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel4.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.Size = New System.Drawing.Size(268, 15)
         Me.Guna2Panel4.TabIndex = 61
@@ -441,7 +441,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel5.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel5.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.Size = New System.Drawing.Size(183, 15)
         Me.Guna2Panel5.TabIndex = 61
@@ -494,7 +494,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel38.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel38.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel38.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel38.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel38.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel38.Name = "Guna2Panel38"
         Me.Guna2Panel38.Size = New System.Drawing.Size(146, 15)
         Me.Guna2Panel38.TabIndex = 60
@@ -839,7 +839,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel14.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel14.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel14.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel14.Name = "Guna2Panel14"
         Me.Guna2Panel14.Size = New System.Drawing.Size(503, 15)
         Me.Guna2Panel14.TabIndex = 59
@@ -913,7 +913,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel15.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel15.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel15.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel15.Name = "Guna2Panel15"
         Me.Guna2Panel15.Size = New System.Drawing.Size(229, 15)
         Me.Guna2Panel15.TabIndex = 59
@@ -955,7 +955,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel12.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel12.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel12.Name = "Guna2Panel12"
         Me.Guna2Panel12.Size = New System.Drawing.Size(578, 15)
         Me.Guna2Panel12.TabIndex = 59
@@ -1018,7 +1018,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel13.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel13.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel13.Name = "Guna2Panel13"
         Me.Guna2Panel13.Size = New System.Drawing.Size(229, 15)
         Me.Guna2Panel13.TabIndex = 59
@@ -1064,7 +1064,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel10.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel10.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel10.Name = "Guna2Panel10"
         Me.Guna2Panel10.Size = New System.Drawing.Size(511, 15)
         Me.Guna2Panel10.TabIndex = 57
@@ -1138,7 +1138,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel11.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel11.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel11.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel11.Name = "Guna2Panel11"
         Me.Guna2Panel11.Size = New System.Drawing.Size(229, 15)
         Me.Guna2Panel11.TabIndex = 57
@@ -1193,7 +1193,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel8.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel8.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel8.Name = "Guna2Panel8"
         Me.Guna2Panel8.Size = New System.Drawing.Size(460, 15)
         Me.Guna2Panel8.TabIndex = 56
@@ -1267,7 +1267,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel9.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel9.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel9.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel9.Name = "Guna2Panel9"
         Me.Guna2Panel9.Size = New System.Drawing.Size(229, 15)
         Me.Guna2Panel9.TabIndex = 57
@@ -1321,7 +1321,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel6.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel6.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel6.Name = "Guna2Panel6"
         Me.Guna2Panel6.Size = New System.Drawing.Size(516, 15)
         Me.Guna2Panel6.TabIndex = 54
@@ -1395,7 +1395,7 @@ Partial Class frmPrintBillingInvoice
         Me.Guna2Panel7.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel7.Location = New System.Drawing.Point(0, 16)
-        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel7.Name = "Guna2Panel7"
         Me.Guna2Panel7.Size = New System.Drawing.Size(229, 15)
         Me.Guna2Panel7.TabIndex = 55

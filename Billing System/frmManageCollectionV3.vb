@@ -252,13 +252,19 @@ Public Class frmManageCollectionV3
         Next
     End Sub
     Private Sub initializeSMS()
-        For Each portName As String In SerialPort.GetPortNames
-            GSMController = New GSMController(portName, 9600)
+        Dim initialized As Boolean = False
 
-            If Not GSMController.Initialize Then
-                MsgBox("SMS texting is not initialized! System can not send SMS. Please contact support.")
+        For Each portName As String In SerialPort.GetPortNames
+            gsmController = New GSMController(portName, 9600)
+            If gsmController.Initialize Then
+                initialized = True
+                Exit For
             End If
         Next
+
+        If Not initialized Then
+            MsgBox("SMS texting is not initialized! System can not send SMS. Please contact support.")
+        End If
     End Sub
 
     Private Sub updateSMS(billingid As String)
