@@ -420,7 +420,7 @@ Partial Class frmManageInquiry
         Me.txtSearchCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSearchCompanyName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSearchCompanyName.Dock = System.Windows.Forms.DockStyle.Right
-        Me.txtSearchCompanyName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearchCompanyName.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
         Me.txtSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtSearchCompanyName.ForeColor = System.Drawing.Color.Black
         Me.txtSearchCompanyName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
