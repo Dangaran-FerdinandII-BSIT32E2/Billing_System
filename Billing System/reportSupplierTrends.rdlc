@@ -358,6 +358,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -497,10 +498,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
         <rd:SchemaPath>C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\DataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>dtPurchaseOrder</rd:TableName>
+        <rd:TableName>dtSupplierTrends</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>dtPurchaseOrderTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>dtSupplierTrendsTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

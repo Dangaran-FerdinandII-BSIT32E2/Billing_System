@@ -47,7 +47,7 @@ Partial Public Class DataSet1
     
     Private tabledtPurchaseBehavior As dtPurchaseBehaviorDataTable
     
-    Private tabledtPurchaseOrder As dtPurchaseOrderDataTable
+    Private tabledtSupplierTrends As dtSupplierTrendsDataTable
     
     Private tabledtOrderReports As dtOrderReportsDataTable
     
@@ -117,8 +117,8 @@ Partial Public Class DataSet1
             If (Not (ds.Tables("dtPurchaseBehavior")) Is Nothing) Then
                 MyBase.Tables.Add(New dtPurchaseBehaviorDataTable(ds.Tables("dtPurchaseBehavior")))
             End If
-            If (Not (ds.Tables("dtPurchaseOrder")) Is Nothing) Then
-                MyBase.Tables.Add(New dtPurchaseOrderDataTable(ds.Tables("dtPurchaseOrder")))
+            If (Not (ds.Tables("dtSupplierTrends")) Is Nothing) Then
+                MyBase.Tables.Add(New dtSupplierTrendsDataTable(ds.Tables("dtSupplierTrends")))
             End If
             If (Not (ds.Tables("dtOrderReports")) Is Nothing) Then
                 MyBase.Tables.Add(New dtOrderReportsDataTable(ds.Tables("dtOrderReports")))
@@ -260,9 +260,9 @@ Partial Public Class DataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property dtPurchaseOrder() As dtPurchaseOrderDataTable
+    Public ReadOnly Property dtSupplierTrends() As dtSupplierTrendsDataTable
         Get
-            Return Me.tabledtPurchaseOrder
+            Return Me.tabledtSupplierTrends
         End Get
     End Property
     
@@ -396,8 +396,8 @@ Partial Public Class DataSet1
             If (Not (ds.Tables("dtPurchaseBehavior")) Is Nothing) Then
                 MyBase.Tables.Add(New dtPurchaseBehaviorDataTable(ds.Tables("dtPurchaseBehavior")))
             End If
-            If (Not (ds.Tables("dtPurchaseOrder")) Is Nothing) Then
-                MyBase.Tables.Add(New dtPurchaseOrderDataTable(ds.Tables("dtPurchaseOrder")))
+            If (Not (ds.Tables("dtSupplierTrends")) Is Nothing) Then
+                MyBase.Tables.Add(New dtSupplierTrendsDataTable(ds.Tables("dtSupplierTrends")))
             End If
             If (Not (ds.Tables("dtOrderReports")) Is Nothing) Then
                 MyBase.Tables.Add(New dtOrderReportsDataTable(ds.Tables("dtOrderReports")))
@@ -506,10 +506,10 @@ Partial Public Class DataSet1
                 Me.tabledtPurchaseBehavior.InitVars
             End If
         End If
-        Me.tabledtPurchaseOrder = CType(MyBase.Tables("dtPurchaseOrder"),dtPurchaseOrderDataTable)
+        Me.tabledtSupplierTrends = CType(MyBase.Tables("dtSupplierTrends"),dtSupplierTrendsDataTable)
         If (initTable = true) Then
-            If (Not (Me.tabledtPurchaseOrder) Is Nothing) Then
-                Me.tabledtPurchaseOrder.InitVars
+            If (Not (Me.tabledtSupplierTrends) Is Nothing) Then
+                Me.tabledtSupplierTrends.InitVars
             End If
         End If
         Me.tabledtOrderReports = CType(MyBase.Tables("dtOrderReports"),dtOrderReportsDataTable)
@@ -562,8 +562,8 @@ Partial Public Class DataSet1
         MyBase.Tables.Add(Me.tabledtCustomer)
         Me.tabledtPurchaseBehavior = New dtPurchaseBehaviorDataTable()
         MyBase.Tables.Add(Me.tabledtPurchaseBehavior)
-        Me.tabledtPurchaseOrder = New dtPurchaseOrderDataTable()
-        MyBase.Tables.Add(Me.tabledtPurchaseOrder)
+        Me.tabledtSupplierTrends = New dtSupplierTrendsDataTable()
+        MyBase.Tables.Add(Me.tabledtSupplierTrends)
         Me.tabledtOrderReports = New dtOrderReportsDataTable()
         MyBase.Tables.Add(Me.tabledtOrderReports)
         Me.tabledtRentalReport = New dtRentalReportDataTable()
@@ -640,7 +640,7 @@ Partial Public Class DataSet1
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializedtPurchaseOrder() As Boolean
+    Private Function ShouldSerializedtSupplierTrends() As Boolean
         Return false
     End Function
     
@@ -754,7 +754,7 @@ Partial Public Class DataSet1
     Public Delegate Sub dtPurchaseBehaviorRowChangeEventHandler(ByVal sender As Object, ByVal e As dtPurchaseBehaviorRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub dtPurchaseOrderRowChangeEventHandler(ByVal sender As Object, ByVal e As dtPurchaseOrderRowChangeEvent)
+    Public Delegate Sub dtSupplierTrendsRowChangeEventHandler(ByVal sender As Object, ByVal e As dtSupplierTrendsRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Delegate Sub dtOrderReportsRowChangeEventHandler(ByVal sender As Object, ByVal e As dtOrderReportsRowChangeEvent)
@@ -4801,8 +4801,8 @@ Partial Public Class DataSet1
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class dtPurchaseOrderDataTable
-        Inherits Global.System.Data.TypedTableBase(Of dtPurchaseOrderRow)
+    Partial Public Class dtSupplierTrendsDataTable
+        Inherits Global.System.Data.TypedTableBase(Of dtSupplierTrendsRow)
         
         Private columnSupplierID As Global.System.Data.DataColumn
         
@@ -4818,7 +4818,7 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "dtPurchaseOrder"
+            Me.TableName = "dtSupplierTrends"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -4900,44 +4900,44 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As dtPurchaseOrderRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As dtSupplierTrendsRow
             Get
-                Return CType(Me.Rows(index),dtPurchaseOrderRow)
+                Return CType(Me.Rows(index),dtSupplierTrendsRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event dtPurchaseOrderRowChanging As dtPurchaseOrderRowChangeEventHandler
+        Public Event dtSupplierTrendsRowChanging As dtSupplierTrendsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event dtPurchaseOrderRowChanged As dtPurchaseOrderRowChangeEventHandler
+        Public Event dtSupplierTrendsRowChanged As dtSupplierTrendsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event dtPurchaseOrderRowDeleting As dtPurchaseOrderRowChangeEventHandler
+        Public Event dtSupplierTrendsRowDeleting As dtSupplierTrendsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event dtPurchaseOrderRowDeleted As dtPurchaseOrderRowChangeEventHandler
+        Public Event dtSupplierTrendsRowDeleted As dtSupplierTrendsRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AdddtPurchaseOrderRow(ByVal row As dtPurchaseOrderRow)
+        Public Overloads Sub AdddtSupplierTrendsRow(ByVal row As dtSupplierTrendsRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AdddtPurchaseOrderRow(ByVal CompanyName As String, ByVal Amount As Double, ByVal Quantity As Decimal, ByVal DateOrdered As Date) As dtPurchaseOrderRow
-            Dim rowdtPurchaseOrderRow As dtPurchaseOrderRow = CType(Me.NewRow,dtPurchaseOrderRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, CompanyName, Amount, Quantity, DateOrdered}
-            rowdtPurchaseOrderRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowdtPurchaseOrderRow)
-            Return rowdtPurchaseOrderRow
+        Public Overloads Function AdddtSupplierTrendsRow(ByVal SupplierID As Integer, ByVal CompanyName As String, ByVal Amount As Double, ByVal Quantity As Decimal, ByVal DateOrdered As Date) As dtSupplierTrendsRow
+            Dim rowdtSupplierTrendsRow As dtSupplierTrendsRow = CType(Me.NewRow,dtSupplierTrendsRow)
+            Dim columnValuesArray() As Object = New Object() {SupplierID, CompanyName, Amount, Quantity, DateOrdered}
+            rowdtSupplierTrendsRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowdtSupplierTrendsRow)
+            Return rowdtSupplierTrendsRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As dtPurchaseOrderDataTable = CType(MyBase.Clone,dtPurchaseOrderDataTable)
+            Dim cln As dtSupplierTrendsDataTable = CType(MyBase.Clone,dtSupplierTrendsDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -4945,7 +4945,7 @@ Partial Public Class DataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New dtPurchaseOrderDataTable()
+            Return New dtSupplierTrendsDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4972,40 +4972,36 @@ Partial Public Class DataSet1
             Me.columnDateOrdered = New Global.System.Data.DataColumn("DateOrdered", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDateOrdered)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnSupplierID}, false))
-            Me.columnSupplierID.AutoIncrement = true
-            Me.columnSupplierID.AutoIncrementSeed = -1
-            Me.columnSupplierID.AutoIncrementStep = -1
+            Me.columnSupplierID.AllowDBNull = false
             Me.columnSupplierID.Unique = true
             Me.columnCompanyName.AllowDBNull = false
             Me.columnCompanyName.MaxLength = 510
-            Me.columnAmount.ReadOnly = true
-            Me.columnQuantity.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewdtPurchaseOrderRow() As dtPurchaseOrderRow
-            Return CType(Me.NewRow,dtPurchaseOrderRow)
+        Public Function NewdtSupplierTrendsRow() As dtSupplierTrendsRow
+            Return CType(Me.NewRow,dtSupplierTrendsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New dtPurchaseOrderRow(builder)
+            Return New dtSupplierTrendsRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(dtPurchaseOrderRow)
+            Return GetType(dtSupplierTrendsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.dtPurchaseOrderRowChangedEvent) Is Nothing) Then
-                RaiseEvent dtPurchaseOrderRowChanged(Me, New dtPurchaseOrderRowChangeEvent(CType(e.Row,dtPurchaseOrderRow), e.Action))
+            If (Not (Me.dtSupplierTrendsRowChangedEvent) Is Nothing) Then
+                RaiseEvent dtSupplierTrendsRowChanged(Me, New dtSupplierTrendsRowChangeEvent(CType(e.Row,dtSupplierTrendsRow), e.Action))
             End If
         End Sub
         
@@ -5013,8 +5009,8 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.dtPurchaseOrderRowChangingEvent) Is Nothing) Then
-                RaiseEvent dtPurchaseOrderRowChanging(Me, New dtPurchaseOrderRowChangeEvent(CType(e.Row,dtPurchaseOrderRow), e.Action))
+            If (Not (Me.dtSupplierTrendsRowChangingEvent) Is Nothing) Then
+                RaiseEvent dtSupplierTrendsRowChanging(Me, New dtSupplierTrendsRowChangeEvent(CType(e.Row,dtSupplierTrendsRow), e.Action))
             End If
         End Sub
         
@@ -5022,8 +5018,8 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.dtPurchaseOrderRowDeletedEvent) Is Nothing) Then
-                RaiseEvent dtPurchaseOrderRowDeleted(Me, New dtPurchaseOrderRowChangeEvent(CType(e.Row,dtPurchaseOrderRow), e.Action))
+            If (Not (Me.dtSupplierTrendsRowDeletedEvent) Is Nothing) Then
+                RaiseEvent dtSupplierTrendsRowDeleted(Me, New dtSupplierTrendsRowChangeEvent(CType(e.Row,dtSupplierTrendsRow), e.Action))
             End If
         End Sub
         
@@ -5031,14 +5027,14 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.dtPurchaseOrderRowDeletingEvent) Is Nothing) Then
-                RaiseEvent dtPurchaseOrderRowDeleting(Me, New dtPurchaseOrderRowChangeEvent(CType(e.Row,dtPurchaseOrderRow), e.Action))
+            If (Not (Me.dtSupplierTrendsRowDeletingEvent) Is Nothing) Then
+                RaiseEvent dtSupplierTrendsRowDeleting(Me, New dtSupplierTrendsRowChangeEvent(CType(e.Row,dtSupplierTrendsRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemovedtPurchaseOrderRow(ByVal row As dtPurchaseOrderRow)
+        Public Sub RemovedtSupplierTrendsRow(ByVal row As dtSupplierTrendsRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -5065,7 +5061,7 @@ Partial Public Class DataSet1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "dtPurchaseOrderDataTable"
+            attribute2.FixedValue = "dtSupplierTrendsDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -7817,30 +7813,26 @@ Partial Public Class DataSet1
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class dtPurchaseOrderRow
+    Partial Public Class dtSupplierTrendsRow
         Inherits Global.System.Data.DataRow
         
-        Private tabledtPurchaseOrder As dtPurchaseOrderDataTable
+        Private tabledtSupplierTrends As dtSupplierTrendsDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tabledtPurchaseOrder = CType(Me.Table,dtPurchaseOrderDataTable)
+            Me.tabledtSupplierTrends = CType(Me.Table,dtSupplierTrendsDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property SupplierID() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tabledtPurchaseOrder.SupplierIDColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'SupplierID' in table 'dtPurchaseOrder' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tabledtSupplierTrends.SupplierIDColumn),Integer)
             End Get
             Set
-                Me(Me.tabledtPurchaseOrder.SupplierIDColumn) = value
+                Me(Me.tabledtSupplierTrends.SupplierIDColumn) = value
             End Set
         End Property
         
@@ -7848,10 +7840,10 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property CompanyName() As String
             Get
-                Return CType(Me(Me.tabledtPurchaseOrder.CompanyNameColumn),String)
+                Return CType(Me(Me.tabledtSupplierTrends.CompanyNameColumn),String)
             End Get
             Set
-                Me(Me.tabledtPurchaseOrder.CompanyNameColumn) = value
+                Me(Me.tabledtSupplierTrends.CompanyNameColumn) = value
             End Set
         End Property
         
@@ -7860,13 +7852,13 @@ Partial Public Class DataSet1
         Public Property Amount() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tabledtPurchaseOrder.AmountColumn),Double)
+                    Return CType(Me(Me.tabledtSupplierTrends.AmountColumn),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Amount' in table 'dtPurchaseOrder' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Amount' in table 'dtSupplierTrends' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledtPurchaseOrder.AmountColumn) = value
+                Me(Me.tabledtSupplierTrends.AmountColumn) = value
             End Set
         End Property
         
@@ -7875,13 +7867,13 @@ Partial Public Class DataSet1
         Public Property Quantity() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tabledtPurchaseOrder.QuantityColumn),Decimal)
+                    Return CType(Me(Me.tabledtSupplierTrends.QuantityColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Quantity' in table 'dtPurchaseOrder' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Quantity' in table 'dtSupplierTrends' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledtPurchaseOrder.QuantityColumn) = value
+                Me(Me.tabledtSupplierTrends.QuantityColumn) = value
             End Set
         End Property
         
@@ -7890,62 +7882,50 @@ Partial Public Class DataSet1
         Public Property DateOrdered() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tabledtPurchaseOrder.DateOrderedColumn),Date)
+                    Return CType(Me(Me.tabledtSupplierTrends.DateOrderedColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DateOrdered' in table 'dtPurchaseOrder' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DateOrdered' in table 'dtSupplierTrends' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledtPurchaseOrder.DateOrderedColumn) = value
+                Me(Me.tabledtSupplierTrends.DateOrderedColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsSupplierIDNull() As Boolean
-            Return Me.IsNull(Me.tabledtPurchaseOrder.SupplierIDColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetSupplierIDNull()
-            Me(Me.tabledtPurchaseOrder.SupplierIDColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsAmountNull() As Boolean
-            Return Me.IsNull(Me.tabledtPurchaseOrder.AmountColumn)
+            Return Me.IsNull(Me.tabledtSupplierTrends.AmountColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetAmountNull()
-            Me(Me.tabledtPurchaseOrder.AmountColumn) = Global.System.Convert.DBNull
+            Me(Me.tabledtSupplierTrends.AmountColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsQuantityNull() As Boolean
-            Return Me.IsNull(Me.tabledtPurchaseOrder.QuantityColumn)
+            Return Me.IsNull(Me.tabledtSupplierTrends.QuantityColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetQuantityNull()
-            Me(Me.tabledtPurchaseOrder.QuantityColumn) = Global.System.Convert.DBNull
+            Me(Me.tabledtSupplierTrends.QuantityColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsDateOrderedNull() As Boolean
-            Return Me.IsNull(Me.tabledtPurchaseOrder.DateOrderedColumn)
+            Return Me.IsNull(Me.tabledtSupplierTrends.DateOrderedColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetDateOrderedNull()
-            Me(Me.tabledtPurchaseOrder.DateOrderedColumn) = Global.System.Convert.DBNull
+            Me(Me.tabledtSupplierTrends.DateOrderedColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8937,16 +8917,16 @@ Partial Public Class DataSet1
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class dtPurchaseOrderRowChangeEvent
+    Public Class dtSupplierTrendsRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As dtPurchaseOrderRow
+        Private eventRow As dtSupplierTrendsRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As dtPurchaseOrderRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As dtSupplierTrendsRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -8954,7 +8934,7 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As dtPurchaseOrderRow
+        Public ReadOnly Property Row() As dtSupplierTrendsRow
             Get
                 Return Me.eventRow
             End Get
@@ -11088,7 +11068,7 @@ Namespace DataSet1TableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class dtPurchaseOrderTableAdapter
+    Partial Public Class dtSupplierTrendsTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.Odbc.OdbcDataAdapter
@@ -11205,7 +11185,7 @@ Namespace DataSet1TableAdapters
             Me._adapter = New Global.System.Data.Odbc.OdbcDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "dtPurchaseOrder"
+            tableMapping.DataSetTable = "dtSupplierTrends"
             tableMapping.ColumnMappings.Add("SupplierID", "SupplierID")
             tableMapping.ColumnMappings.Add("CompanyName", "CompanyName")
             tableMapping.ColumnMappings.Add("Amount", "Amount")
@@ -11227,11 +11207,7 @@ Namespace DataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.Odbc.OdbcCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.Odbc.OdbcCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT tblsupplier.SupplierID, tblsupplier.CompanyName, SUM(tblorder.Amount) AS A"& _ 
-                "mount, SUM(tblorder.Quantity) AS Quantity, tblorder.DateOrdered"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     tblsup"& _ 
-                "plier, tblproduct, tblorder"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  tblsupplier.SupplierID = tblproduct.Supplier"& _ 
-                "ID AND tblproduct.ProductID = tblorder.ProductID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY tblsupplier.SupplierI"& _ 
-                "D"
+            Me._commandCollection(0).CommandText = "SELECT * FROM `qrysupplierorder`"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -11239,7 +11215,7 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.dtPurchaseOrderDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.dtSupplierTrendsDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -11252,9 +11228,9 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSet1.dtPurchaseOrderDataTable
+        Public Overloads Overridable Function GetData() As DataSet1.dtSupplierTrendsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSet1.dtPurchaseOrderDataTable = New DataSet1.dtPurchaseOrderDataTable()
+            Dim dataTable As DataSet1.dtSupplierTrendsDataTable = New DataSet1.dtSupplierTrendsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function

@@ -5,12 +5,24 @@ Imports Mysqlx.Crud
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class frmManageUsers
 
+    Dim startDateAct As String
+    Dim endDateAct As String
+
     Dim startDate As String
     Dim endDate As String
     Private Sub frmManageUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadUsers()
-        Call loadActivity()
+
+        'ACTIVITY LOGS
+
+        DateFilter3.Text = DateTime.Now.AddDays(-5)
+        startDateAct = DateFilter3.Text
+
+        DateFilter4.Text = DateTime.Now.AddDays(+5)
+        endDateAct = DateFilter4.Text
+
+        Call loadActivity(startDateAct, endDateAct)
 
         'REPORT GENERATION
 
@@ -339,33 +351,50 @@ Public Class frmManageUsers
     End Sub
 
     'ACTIVITY LOG
-    Private Sub loadActivity() Handles Timer1.Tick
+    Private Sub DateFilter3_ValueChanged(sender As Object, e As EventArgs) Handles DateFilter3.ValueChanged
+        startDateAct = DateFilter3.Text
+        loadActivity(startDateAct, endDateAct)
+    End Sub
+
+    Private Sub DateFilter4_ValueChanged(sender As Object, e As EventArgs) Handles DateFilter4.ValueChanged
+        endDateAct = DateFilter4.Text
+        loadActivity(startDateAct, endDateAct)
+    End Sub
+
+    Private Sub loadActivity(startDate As String, endDate As String)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM tblactivity"
-            cmd = New MySqlCommand(sql, cn)
+            Dim startDateTime As DateTime
+            Dim endDateTime As DateTime
 
-            If Not dr.IsClosed Then
-                dr.Close()
+            If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
+           DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
+                sql = "SELECT * FROM tblactivity WHERE DateTime BETWEEN '" & startDateTime.ToString("yyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyy-MM-dd") & "'"
+                cmd = New MySqlCommand(sql, cn)
+
+                If Not dr.IsClosed Then
+                    dr.Close()
+                End If
+
+                dr = cmd.ExecuteReader
+                Dim y As ListViewItem
+                ListView2.Items.Clear()
+
+                Do While dr.Read = True
+                    y = New ListViewItem(StrConv(dr("Username").ToString, VbStrConv.ProperCase))
+                    y.SubItems.Add(dr("Action").ToString)
+
+                    Dim dateTimeValue As DateTime = Convert.ToDateTime(dr("DateTime"))
+
+                    y.SubItems.Add(dateTimeValue.ToString("MMMM dd, yyyy"))
+                    y.SubItems.Add(dateTimeValue.ToString("hh:mm:ss tt"))
+                    ListView2.Items.Add(y)
+                Loop
             End If
 
-            dr = cmd.ExecuteReader
-            Dim y As ListViewItem
-            ListView2.Items.Clear()
-
-            Do While dr.Read = True
-                y = New ListViewItem(StrConv(dr("Username").ToString, VbStrConv.ProperCase))
-                y.SubItems.Add(dr("Action").ToString)
-
-                Dim dateTimeValue As DateTime = Convert.ToDateTime(dr("DateTime"))
-
-                y.SubItems.Add(dateTimeValue.ToString("MMMM dd, yyyy"))
-                y.SubItems.Add(dateTimeValue.ToString("hh:mm:ss tt"))
-                ListView2.Items.Add(y)
-            Loop
         Catch ex As Exception
             MsgBox("An error occurred frmLogin(loadActivity): " & ex.Message)
         Finally
@@ -419,13 +448,13 @@ Public Class frmManageUsers
             Case 0
                 cboOptions.Items.AddRange(New String() {"Overview of Sales Performance", "Monthly Sales Trends", "Top Products Sold"})
             Case 1
-                cboOptions.Items.AddRange(New String() {"Sales Report", "Payment Status"})
+                cboOptions.Items.AddRange(New String() {"Sales Report", "Account Receivable"})
             Case 2
-                cboOptions.Items.AddRange(New String() {"Order Reports", "Order Fullfillment", "Order Trends"})
+                cboOptions.Items.AddRange(New String() {"Order Reports", "Pending Orders", "Order Trends"})
             Case 3
                 cboOptions.Items.AddRange(New String() {"Customer Reports", "Purchase Behavior"})
             Case 4
-                cboOptions.Items.AddRange(New String() {"Supplier Reports", "Purchase Orders", "Supplier Trends"})
+                cboOptions.Items.AddRange(New String() {"Supplier Reports", "Purchase Orders"})
             Case 5
                 cboOptions.Items.AddRange(New String() {"Rental Reports", "Rental Trends"})
             Case 6
@@ -445,13 +474,13 @@ Public Class frmManageUsers
             Case "Dashboard"
                 cboOptions.Items.AddRange(New String() {"Overview of Sales Performance", "Monthly Sales Trends", "Top Products Sold"})
             Case "Billing"
-                cboOptions.Items.AddRange(New String() {"Sales Report", "Payment Status"})
+                cboOptions.Items.AddRange(New String() {"Sales Report", "Account Receivable"})
             Case "Orders"
-                cboOptions.Items.AddRange(New String() {"Order Reports", "Order Fullfillment", "Order Trends"})
+                cboOptions.Items.AddRange(New String() {"Order Reports", "Pending Orders", "Order Trends"})
             Case "Customers"
                 cboOptions.Items.AddRange(New String() {"Customer Reports", "Purchase Behavior"})
             Case "Suppliers"
-                cboOptions.Items.AddRange(New String() {"Supplier Reports", "Purchase Orders", "Supplier Trends"})
+                cboOptions.Items.AddRange(New String() {"Supplier Reports", "Purchase Orders"})
             Case "Rental"
                 cboOptions.Items.AddRange(New String() {"Rental Reports", "Rental Trends"})
             Case "Admin"
@@ -472,12 +501,12 @@ Public Class frmManageUsers
                 'billing
             Case "Sales Report"
                 generateSalesReport()
-            Case "Payment Status"
+            Case "Account Receivable"
                 generatePaymentStatus()
                 'orders
             Case "Order Reports"
                 generateOrderReports()
-            Case "Order Fullfillment"
+            Case "Pending Orders"
                 generateOrderFullfillmentReports()
             Case "Order Trends"
                 generateOrderTrends()
@@ -490,9 +519,9 @@ Public Class frmManageUsers
             Case "Supplier Reports"
                 generateSupplierReports
             Case "Purchase Orders"
-                generatePurchaseOrders
-            Case "Supplier Trends"
-                generateSupplierTrends
+                generatePurchaseOrders()
+            'Case "Supplier Trends"
+            '    generateSupplierTrends()
                 'rental
             Case "Rental Reports"
                 generateRentalReports()
@@ -632,7 +661,7 @@ Public Class frmManageUsers
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT s.CompanyName, p.ProductName, SUM(o.Quantity) AS Quantity, SUM(o.Amount) AS TotalPrice FROM tblsupplier s INNER JOIN tblproduct p ON p.SupplierID = s.SupplierID INNER JOIN tblorder o ON o.ProductID = p.ProductID GROUP BY p.ProductName ORDER BY o.Quantity", cn)
+            da.SelectCommand = New MySqlCommand("SELECT s.CompanyName, p.ProductName, SUM(o.Quantity) AS Quantity, SUM(o.Amount) AS TotalPrice FROM tblsupplier s INNER JOIN tblproduct p ON p.SupplierID = s.SupplierID INNER JOIN tblorder o ON o.ProductID = p.ProductID GROUP BY p.ProductName ORDER BY TotalPrice DESC", cn)
             da.Fill(ds.Tables("dtSalesReport"))
 
             If cn.State = ConnectionState.Open Then
@@ -669,7 +698,7 @@ Public Class frmManageUsers
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT CompanyName, Sum(FinalPrice) AS FinalPrice FROM tblbilling WHERE Remarks = 0 GROUP BY CompanyName", cn)
+            da.SelectCommand = New MySqlCommand("SELECT CompanyName, Sum(FinalPrice) AS FinalPrice FROM tblbilling WHERE Remarks = 0 GROUP BY FinalPrice DESC", cn)
             da.Fill(ds.Tables("dtPaymentStatus"))
 
             If cn.State = ConnectionState.Open Then
@@ -706,7 +735,7 @@ Public Class frmManageUsers
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT tblorder.OrderListID, CONCAT(tblcustomer.FirstName, ', ', tblcustomer.LastName) AS FullName, tblproduct.ProductName, tblorder.Quantity, tblorder.Amount, CASE tblorder.Status WHEN 5 THEN 'CANCELLED ORDER' WHEN 4 THEN 'URGENT' WHEN 3 THEN 'DELIVERED' WHEN 2 THEN 'READY FOR SHIPMENT' WHEN 1 THEN 'ON HOLD' WHEN 0 THEN 'ON PROCESS' END AS Status, tblorder.DateOrdered FROM tblorder INNER JOIN tblcustomer ON tblcustomer.CustomerID = tblorder.CustomerID INNER JOIN tblproduct ON tblproduct.ProductID = tblorder.ProductID", cn)
+            da.SelectCommand = New MySqlCommand("SELECT tblorder.OrderListID, CONCAT(tblcustomer.FirstName, ', ', tblcustomer.LastName) AS FullName, tblproduct.ProductName, tblorder.Quantity, tblorder.Amount, CASE tblorder.Status WHEN 5 THEN 'CANCELLED ORDER' WHEN 4 THEN 'URGENT' WHEN 3 THEN 'DELIVERED' WHEN 2 THEN 'READY FOR SHIPMENT' WHEN 1 THEN 'ON HOLD' WHEN 0 THEN 'ON PROCESS' END AS Status, tblorder.DateOrdered FROM tblorder INNER JOIN tblcustomer ON tblcustomer.CustomerID = tblorder.CustomerID INNER JOIN tblproduct ON tblproduct.ProductID = tblorder.ProductID ORDER BY FullName ASC", cn)
             da.Fill(ds.Tables("dtOrderReports"))
 
             If cn.State = ConnectionState.Open Then
@@ -782,7 +811,7 @@ Public Class frmManageUsers
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT tblorder.ProductID, tblproduct.ProductName, SUM(tblorder.Quantity) AS Quantity, DATE_FORMAT(tblorder.DateOrdered, '%M') AS Month, YEAR(tblorder.DateOrdered) AS Year FROM tblorder INNER JOIN tblproduct ON tblorder.ProductID = tblproduct.ProductID GROUP BY tblorder.ProductID, YEAR(tblorder.DateOrdered), MONTH(tblorder.DateOrdered) ORDER BY Year DESC, FIELD(DATE_FORMAT(tblorder.DateOrdered, '%M'), 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December') DESC, Quantity DESC", cn)
+            da.SelectCommand = New MySqlCommand("SELECT tblorder.ProductID, tblproduct.ProductName, SUM(tblorder.Quantity) AS Quantity, DATE_FORMAT(tblorder.DateOrdered, '%M') AS Month, YEAR(tblorder.DateOrdered) AS Year FROM tblorder INNER JOIN tblproduct ON tblorder.ProductID = tblproduct.ProductID GROUP BY tblorder.ProductID, YEAR(tblorder.DateOrdered), MONTH(tblorder.DateOrdered) ORDER BY Year DESC, FIELD(DATE_FORMAT(tblorder.DateOrdered, '%M'), 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December') ASC, Quantity DESC", cn)
             da.Fill(ds.Tables("dtOrderReports"))
 
             If cn.State = ConnectionState.Open Then
@@ -856,7 +885,7 @@ Public Class frmManageUsers
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT tblcustomer.*, COUNT(tblorder.Quantity) AS Quantity, SUM(tblorder.Amount) AS AmtSpent FROM tblcustomer, tblorder, tblproduct WHERE tblorder.CustomerID = tblcustomer.CustomerID AND tblorder.ProductID = tblproduct.ProductID GROUP BY tblcustomer.CustomerID", cn)
+            da.SelectCommand = New MySqlCommand("SELECT tblcustomer.*, COUNT(tblorder.Quantity) AS Quantity, SUM(tblorder.Amount) AS AmtSpent FROM tblcustomer, tblorder, tblproduct WHERE tblorder.CustomerID = tblcustomer.CustomerID AND tblorder.ProductID = tblproduct.ProductID GROUP BY tblcustomer.CustomerID ORDER BY AmtSpent DESC", cn)
             da.Fill(ds.Tables("dtPurchaseBehavior"))
 
             If cn.State = ConnectionState.Open Then
@@ -969,14 +998,14 @@ Public Class frmManageUsers
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT tblsupplier.SupplierID, tblsupplier.CompanyName, SUM(tblorder.Amount) AS Amount, SUM(tblorder.Quantity) AS Quantity, tblorder.DateOrdered FROM tblsupplier INNER JOIN tblproduct ON tblproduct.SupplierID = tblsupplier.SupplierID INNER JOIN tblorder ON tblproduct.ProductID = tblorder.ProductID GROUP BY tblsupplier.SupplierID, MONTH(tblorder.DateOrdered) ORDER BY MONTH(tblorder.DateOrdered)", cn)
-            da.Fill(ds.Tables("dtPurchaseOrder"))
+            da.SelectCommand = New MySqlCommand("SELECT tblsupplier.SupplierID, tblsupplier.CompanyName, SUM(tblorder.Amount) AS Amount, SUM(tblorder.Quantity) AS Quantity, tblorder.DateOrdered FROM tblsupplier INNER JOIN tblproduct ON tblproduct.SupplierID = tblsupplier.SupplierID INNER JOIN tblorder ON tblproduct.ProductID = tblorder.ProductID GROUP BY tblsupplier.SupplierID, MONTH(tblorder.DateOrdered) ORDER BY MONTH(tblorder.DateOrdered) ASC", cn)
+            da.Fill(ds.Tables("dtSupplierTrends"))
 
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If
 
-            rptDS = New ReportDataSource("dtSupplierTrends", ds.Tables("dtPurchaseOrder"))
+            rptDS = New ReportDataSource("dtSupplierTrends", ds.Tables("dtSupplierTrends"))
             ReportViewer1.LocalReport.DataSources.Add(rptDS)
             ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
             ReportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent
@@ -1119,4 +1148,6 @@ Public Class frmManageUsers
         endDate = DateFilter2.Text
         generateUserActivityLogs(startDate, endDate)
     End Sub
+
+
 End Class

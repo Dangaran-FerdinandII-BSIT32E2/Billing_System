@@ -38,6 +38,11 @@ Partial Class frmManageUsers
         Me.Panel41 = New System.Windows.Forms.Panel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel46 = New System.Windows.Forms.Panel()
+        Me.DateFilter4 = New System.Windows.Forms.DateTimePicker()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.DateFilter3 = New System.Windows.Forms.DateTimePicker()
+        Me.Panel47 = New System.Windows.Forms.Panel()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
@@ -118,11 +123,11 @@ Partial Class frmManageUsers
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel6.SuspendLayout()
         Me.Panel42.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Panel7.SuspendLayout()
+        Me.Panel46.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel23.SuspendLayout()
@@ -271,6 +276,7 @@ Partial Class frmManageUsers
         '
         'Panel7
         '
+        Me.Panel7.Controls.Add(Me.Panel46)
         Me.Panel7.Controls.Add(Me.Guna2TextBox1)
         Me.Panel7.Controls.Add(Me.Panel12)
         Me.Panel7.Controls.Add(Me.Panel18)
@@ -280,6 +286,67 @@ Partial Class frmManageUsers
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1345, 71)
         Me.Panel7.TabIndex = 2
+        '
+        'Panel46
+        '
+        Me.Panel46.BackColor = System.Drawing.Color.White
+        Me.Panel46.Controls.Add(Me.DateFilter4)
+        Me.Panel46.Controls.Add(Me.Label11)
+        Me.Panel46.Controls.Add(Me.DateFilter3)
+        Me.Panel46.Controls.Add(Me.Panel47)
+        Me.Panel46.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel46.Location = New System.Drawing.Point(393, 12)
+        Me.Panel46.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel46.Name = "Panel46"
+        Me.Panel46.Size = New System.Drawing.Size(368, 38)
+        Me.Panel46.TabIndex = 135
+        '
+        'DateFilter4
+        '
+        Me.DateFilter4.CustomFormat = "yyyy-MM-dd"
+        Me.DateFilter4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.DateFilter4.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.DateFilter4.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateFilter4.Location = New System.Drawing.Point(188, 6)
+        Me.DateFilter4.Margin = New System.Windows.Forms.Padding(4)
+        Me.DateFilter4.Name = "DateFilter4"
+        Me.DateFilter4.Size = New System.Drawing.Size(167, 30)
+        Me.DateFilter4.TabIndex = 70
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label11.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(167, 6)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(21, 29)
+        Me.Label11.TabIndex = 69
+        Me.Label11.Text = "-"
+        '
+        'DateFilter3
+        '
+        Me.DateFilter3.CustomFormat = "yyyy-MM-dd"
+        Me.DateFilter3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.DateFilter3.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.DateFilter3.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateFilter3.Location = New System.Drawing.Point(0, 6)
+        Me.DateFilter3.Margin = New System.Windows.Forms.Padding(4)
+        Me.DateFilter3.Name = "DateFilter3"
+        Me.DateFilter3.Size = New System.Drawing.Size(167, 30)
+        Me.DateFilter3.TabIndex = 68
+        '
+        'Panel47
+        '
+        Me.Panel47.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel47.Location = New System.Drawing.Point(0, 0)
+        Me.Panel47.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel47.Name = "Panel47"
+        Me.Panel47.Size = New System.Drawing.Size(368, 6)
+        Me.Panel47.TabIndex = 67
         '
         'Guna2TextBox1
         '
@@ -1364,11 +1431,6 @@ Partial Class frmManageUsers
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 30000
-        '
         'frmManageUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1388,6 +1450,8 @@ Partial Class frmManageUsers
         Me.Panel42.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
+        Me.Panel46.ResumeLayout(False)
+        Me.Panel46.PerformLayout()
         Me.Panel8.ResumeLayout(False)
         Me.Panel9.ResumeLayout(False)
         Me.Panel23.ResumeLayout(False)
@@ -1483,7 +1547,6 @@ Partial Class frmManageUsers
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents ErrorProvider1 As ErrorProvider
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Panel16 As Panel
@@ -1511,4 +1574,9 @@ Partial Class frmManageUsers
     Friend WithEvents Label10 As Label
     Friend WithEvents DateFilter1 As DateTimePicker
     Friend WithEvents Panel60 As Panel
+    Friend WithEvents Panel46 As Panel
+    Friend WithEvents DateFilter4 As DateTimePicker
+    Friend WithEvents Label11 As Label
+    Friend WithEvents DateFilter3 As DateTimePicker
+    Friend WithEvents Panel47 As Panel
 End Class
