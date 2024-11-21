@@ -117,7 +117,7 @@ Public Class frmQuotation
 
             If PictureBox1.Image IsNot Nothing Then
                 If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
-                    sql = "UPDATE tblorder SET QuotationImg=@QuotationImg WHERE OrderID = '" & orderid & "'"
+                    sql = "UPDATE tblorder SET QuotationImg=@QuotationImg, QuotationDueDate=@QuotationDueDate WHERE OrderID = '" & orderid & "'"
                     cmd = New MySqlCommand(sql, cn)
                     With cmd
                         Dim mstream As New System.IO.MemoryStream()
@@ -125,6 +125,7 @@ Public Class frmQuotation
                         Dim arrImage() As Byte = mstream.GetBuffer
                         mstream.Close()
                         .Parameters.AddWithValue("@QuotationImg", arrImage)
+                        .Parameters.AddWithValue("@QuotationDueDate", DateTime.Now.AddDays(7))
                         .ExecuteNonQuery()
                     End With
 
@@ -132,6 +133,7 @@ Public Class frmQuotation
                     Call loadActivity()
                     Call loadImage()
                     Call sendEmail()
+                    Call frmListofCustomerOrder.loadOrder()
                 End If
             Else
                 MsgBox("Please upload a picture!", MsgBoxStyle.Critical, "Upload Error")
@@ -154,7 +156,7 @@ Public Class frmQuotation
 
             Using memoryStream As New MemoryStream()
 
-                mail.Body = "There is now available quotation for your Order Number " & orderid & "." & vbCrLf & "You can now accept or reject the Order Quotation through the website."
+                mail.Body = "There is now available quotation for your Order Number " & orderid & "." & vbCrLf & "You can now accept or reject the Order Quotation through the website." & vbCrLf & vbCrLf & "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
                 smtpServer.Port = 587
                 smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua")
                 smtpServer.EnableSsl = True
@@ -185,7 +187,7 @@ Public Class frmQuotation
                 .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
                 .Parameters.AddWithValue("@Username", frmLoginV2.username)
                 .Parameters.AddWithValue("@DateTime", DateTime.Now)
-                .Parameters.AddWithValue("@Action", "Send Quotation for")
+                .Parameters.AddWithValue("@Action", "Send Quotation for " & orderid)
                 .ExecuteNonQuery()
             End With
         Catch ex As Exception

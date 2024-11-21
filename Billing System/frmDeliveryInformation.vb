@@ -42,8 +42,11 @@ Public Class frmDeliveryInformation
 
             dr = cmd.ExecuteReader
             If dr.Read = True Then
-                txtDatePrinted.Text = dr("DatePrinted").ToString
-                txtDueDate.Text = dr("DueDate").ToString
+                Dim datePrinted As DateTime = Convert.ToDateTime(dr("DatePrinted"))
+                Dim duedate As DateTime = Convert.ToDateTime(dr("DueDate"))
+
+                txtDatePrinted.Text = datePrinted.ToString("MMMM dd, yyyy")
+                txtDueDate.Text = duedate.ToString("MMMM dd, yyyy")
             End If
             dr.Close()
         Catch ex As Exception

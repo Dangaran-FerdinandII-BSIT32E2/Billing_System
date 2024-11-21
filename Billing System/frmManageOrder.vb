@@ -65,7 +65,7 @@ Public Class frmManageOrder
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
                DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT *, SUM(Amount) AS TotalPrice, MIN(Availability) AS Available, MIN(Status) AS Status FROM qryorder WHERE OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT *, SUM(Amount) AS TotalPrice, MIN(Availability) AS Available, MIN(Status) AS Status, DATE_FORMAT(OrderDate, '%M %d, %Y') AS OrderDateF FROM qryorder WHERE OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
 
 
                 If cboFilter.SelectedIndex > 0 Then
@@ -92,13 +92,13 @@ Public Class frmManageOrder
                     x.SubItems.Add(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("PhoneNumber").ToString())
                     x.SubItems.Add(dr("Email").ToString())
-                    x.SubItems.Add(dr("OrderDate").ToString()) ' 4
+                    x.SubItems.Add(dr("OrderDateF").ToString()) ' 4
                     x.SubItems.Add(GetStatusText(dr("Status").ToString))
                     x.SubItems.Add(dr("OrderID").ToString) '6
                     x.SubItems.Add(dr("CustomerID").ToString)
 
                     ' Check if the status is "Urgent" and set the text color accordingly
-                    If x.SubItems(3).Text = "Priority Order" Then
+                    If x.SubItems(5).Text = "Priority Order" Then
                         x.ForeColor = Color.Red
                     End If
                     ListView1.Items.Add(x)

@@ -171,7 +171,9 @@ Public Class frmManageSupplierProduct
                 x.SubItems.Add(dr("Type").ToString())
                 x.SubItems.Add(dr("PurchasePrice").ToString())
                 x.SubItems.Add(dr("SellingPrice").ToString())
-                x.SubItems.Add(dr("ProductID").ToString()) '7
+                x.SubItems.Add(If(dr("Availability"), "Available", "Not Available").ToString())
+                x.SubItems.Add(If(dr("Status"), "Item on Hold", "Item on Process").ToString())
+                x.SubItems.Add(dr("ProductID").ToString()) '9
                 x.SubItems.Add(dr("SupplierID").ToString())
 
                 ListView2.Items.Add(x)
@@ -199,12 +201,14 @@ Public Class frmManageSupplierProduct
     End Sub
 
     Private Sub btnEditProduct_Click(sender As Object, e As EventArgs) Handles btnEditProduct.Click, ListView2.DoubleClick
-        frmManageProducts.productid = ListView2.SelectedItems(0).SubItems(7).Text
-        frmManageProducts.txtSupplier.Text = ListView2.SelectedItems(0).SubItems(1).Text
-        frmManageProducts.supplierid = ListView2.SelectedItems(0).SubItems(8).Text
-        frmManageProducts.ShowDialog()
-        btnEditProduct.Enabled = False
-        btnDeleteProduct.Enabled = False
+        If ListView2.SelectedItems.Count > 0 Then
+            frmManageProducts.txtSupplier.Text = ListView2.SelectedItems(0).SubItems(1).Text
+            frmManageProducts.productid = ListView2.SelectedItems(0).SubItems(9).Text
+            frmManageProducts.supplierid = ListView2.SelectedItems(0).SubItems(10).Text
+            frmManageProducts.ShowDialog()
+            btnEditProduct.Enabled = False
+            btnDeleteProduct.Enabled = False
+        End If
     End Sub
 
     Private Sub btnDeleteProduct_Click(sender As Object, e As EventArgs) Handles btnDeleteProduct.Click
@@ -218,7 +222,7 @@ Public Class frmManageSupplierProduct
                     sql = "DELETE FROM tblproduct WHERE ProductID = @item"
                     cmd = New MySqlCommand(sql, cn)
                     With cmd
-                        .Parameters.AddWithValue("@item", ListView2.SelectedItems(0).SubItems(7).Text)
+                        .Parameters.AddWithValue("@item", ListView2.SelectedItems(0).SubItems(9).Text)
                         .ExecuteNonQuery()
                     End With
                     MsgBox("Product successfully deleted!", MsgBoxStyle.Information, "Delete Status")
@@ -244,7 +248,7 @@ Public Class frmManageSupplierProduct
     End Sub
 
     Public Function SearchProductDatabase(searchTerm As String) As DataTable
-        sql = "Select ProductName,CompanyName,Description,Category,Type,PurchasePrice,SellingPrice, ProductID, SupplierID from qryproducts where ProductName LIKE ? OR CompanyName LIKE ? ORDER BY ProductName ASC"
+        sql = "Select ProductName,CompanyName,Description,Category,Type,PurchasePrice,SellingPrice,Availability, Status ProductID, SupplierID from qryproducts where ProductName LIKE ? OR CompanyName LIKE ? ORDER BY ProductName ASC"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
@@ -269,6 +273,15 @@ Public Class frmManageSupplierProduct
     Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.SelectedIndexChanged
         btnEditProduct.Enabled = True
         btnDeleteProduct.Enabled = True
+        btnSupply.Enabled = True
     End Sub
 
+    Private Sub btnSupply_Click(sender As Object, e As EventArgs) Handles btnSupply.Click
+        If ListView2.SelectedItems.Count > 0 Then
+
+            frmRestockProduct.productid = ListView2.SelectedItems(0).SubItems(9).Text
+
+            frmRestockProduct.ShowDialog()
+        End If
+    End Sub
 End Class

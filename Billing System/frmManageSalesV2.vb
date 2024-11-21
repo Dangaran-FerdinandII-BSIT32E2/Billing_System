@@ -110,6 +110,8 @@ Public Class frmManageSalesV2
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
             Call clearText()
+            lblPONu.Visible = True
+            txtPONo.Visible = True
         End If
     End Sub
 
@@ -122,7 +124,6 @@ Public Class frmManageSalesV2
             {"txtAddress", txtAddress},
             {"txtDeliveryAddress", txtDeliveryAddress},
             {"txtBusinessStyle", txtBusinessStyle},
-            {"txtPONo", txtPONo},
             {"txtTerms", txtTerms},
             {"cboSalesman", cboSalesman},
             {"dtpDate", dtpDate}
@@ -211,7 +212,13 @@ Public Class frmManageSalesV2
             frmPrintSalesInvoiceV2.lblTerms.Text = txtTerms.Text
             frmPrintSalesInvoiceV2.lblTIN.Text = txtTIN.Text
             frmPrintSalesInvoiceV2.lblSalesman.Text = cboSalesman.Text
+
+            If IsNothing(txtPONo.Text) Then
+                txtPONo.Text = "1"
+            End If
+
             frmPrintSalesInvoiceV2.lblPONo.Text = txtPONo.Text
+
             frmPrintSalesInvoiceV2.lblDate.Text = dtpDate.Value.ToString
 
             frmPrintSalesInvoiceV2.textamount = trueadjustedvalue
@@ -236,6 +243,8 @@ Public Class frmManageSalesV2
                 Dim X As ListViewItem = listitem.Clone()
                 frmPrintSalesInvoiceV2.ListView1.Items.Add(X)
             Next
+
+            frmPrintSalesInvoiceV2.orderid = orderid
 
             frmPrintSalesInvoiceV2.ShowDialog()
         Catch ex As Exception
@@ -305,6 +314,8 @@ Public Class frmManageSalesV2
 
     Public Sub clearText()
         txtCompanyName.Enabled = True
+        txtAddress.Enabled = True
+        txtDeliveryAddress.Enabled = True
 
         txtCompanyName.Clear()
         txtAddress.Clear()
@@ -316,6 +327,8 @@ Public Class frmManageSalesV2
         txtAmount.Clear()
 
         txtCompanyName.Enabled = False
+        txtAddress.Enabled = False
+        txtDeliveryAddress.Enabled = False
         btnAddOrder.Visible = False
 
         cboSalesman.SelectedIndex = -1

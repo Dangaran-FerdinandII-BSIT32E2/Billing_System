@@ -24,13 +24,13 @@ Public Class frmListofCustomerOrder
         Call loadComment()
     End Sub
 
-    Private Sub loadOrder()
+    Public Sub loadOrder()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
 
-            sql = "SELECT Unit, Description, Quantity, Amount, Availability, Status, OrderListID FROM qryorder WHERE OrderID = '" & orderid & "'"
+            sql = "SELECT Unit, Description, Quantity, Amount, Availability, Status, QuotationImg, OrderListID FROM qryorder WHERE OrderID = '" & orderid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -49,6 +49,13 @@ Public Class frmListofCustomerOrder
                 x.SubItems.Add(If(dr("Availability"), "Available", "Not Available").ToString)
                 x.SubItems.Add(GetStatusText(dr("Status").ToString))
                 x.SubItems.Add(dr("OrderListID").ToString) '6
+
+                If IsDBNull(dr("QuotationImg")) Then
+                    btnSendQuotation.Visible = True
+                Else
+                    btnSendQuotation.Visible = False
+                End If
+
                 ListView1.Items.Add(x)
             Loop
         Catch ex As Exception
@@ -99,86 +106,6 @@ Public Class frmListofCustomerOrder
             End If
         End Try
     End Sub
-    Private Sub btnUpdateOrder_Click(sender As Object, e As EventArgs) Handles btnUpdateOrder.Click
-        If ListView1.SelectedItems.Count > 0 Then
-            Try
-                If cn.State <> ConnectionState.Open Then
-                    cn.Open()
-                End If
-
-                If MsgBox("Do you want to update the order?", vbQuestion + vbYesNo) = vbYes Then
-                    For Each item As ListViewItem In ListView1.SelectedItems
-
-                        Dim Availability As String = item.SubItems(4).Text
-                        Dim Status As String = item.SubItems(5).Text
-
-                        If Status = "Item on Hand" Then
-                            MsgBox("The item is already available and on hand!", MsgBoxStyle.Critical, "Order Status")
-                            Exit Sub
-                        End If
-
-                        sql = "UPDATE tblorder SET Availability=@Availability, Status=@Status WHERE OrderListID = '" & item.SubItems(6).Text & "'"
-                        cmd = New MySqlCommand(sql, cn)
-
-                        With cmd
-                            .Parameters.AddWithValue("@Availability", False)
-                            .Parameters.AddWithValue("@Status", 0)
-
-                            If Availability = "Available" Then
-                                .Parameters("@Availability").Value = True
-                                If (Status = "Item on Process" Or Status = "Priority Order") Then
-                                    .Parameters("@Status").Value = 1
-                                ElseIf Status = "Ready for Shipment" Then
-                                    .Parameters("@Status").Value = 2
-                                ElseIf Status = "Delivered" Then
-                                    .Parameters("@Status").Value = 3
-                                End If
-                            ElseIf Availability = "Not Available" Then
-                                .Parameters("@Availability").Value = True
-                            End If
-
-                            .ExecuteNonQuery()
-
-                        End With
-
-                    Next
-                    Call loadActivity()
-                    Call loadOrder()
-                End If
-            Catch ex As Exception
-                MsgBox("An error occurred frmListofCustomerOrder(btnUpdateOrder_Click): " & ex.Message)
-            Finally
-                If cn.State = ConnectionState.Open Then
-                    cn.Close()
-                End If
-            End Try
-        Else
-            MsgBox("Please select an order!", MsgBoxStyle.Critical, "Update Error")
-        End If
-    End Sub
-    Private Sub loadActivity()
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-
-            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
-            cmd = New MySqlCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
-                .Parameters.AddWithValue("@Username", frmLoginV2.username)
-                .Parameters.AddWithValue("@DateTime", DateTime.Now)
-                .Parameters.AddWithValue("@Action", "Updated Order for")
-                .ExecuteNonQuery()
-            End With
-        Catch ex As Exception
-            MsgBox("An error occurred frmAdminSettings(loadActivity): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
-    End Sub
 
     Private Sub btnCancelOrder_Click(sender As Object, e As EventArgs) Handles btnCancelOrder.Click
         Call loadActivityCancel()
@@ -195,7 +122,7 @@ Public Class frmListofCustomerOrder
                 .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
                 .Parameters.AddWithValue("@Username", frmLoginV2.username)
                 .Parameters.AddWithValue("@DateTime", DateTime.Now)
-                .Parameters.AddWithValue("@Action", "Order Canceled for")
+                .Parameters.AddWithValue("@Action", "Order Canceled for " & orderid)
                 .ExecuteNonQuery()
             End With
         Catch ex As Exception

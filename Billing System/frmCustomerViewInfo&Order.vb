@@ -345,6 +345,9 @@ Public Class frmCustomerViewInfo_Order
                     If acctstatus Then
                         Call sendEmail()
                     End If
+
+                    frmManageCustomerV3.cboSalesman.SelectedIndex = 0
+                    Call frmManageCustomerV3.loadCustomers()
                 Catch ex As Exception
                     MsgBox("An error occurred frmCustomerViewInfo_Order(Saving Information): " & ex.Message)
                 Finally
@@ -373,8 +376,6 @@ Public Class frmCustomerViewInfo_Order
                 smtpServer.EnableSsl = True
                 smtpServer.Send(mail)
             End Using
-
-            MsgBox("Email sent with form screenshot!")
         Catch ex As Exception
             MsgBox("An error occurred frmPrintBillingInvoice(btnEmail): " & ex.Message)
         End Try
@@ -490,11 +491,46 @@ Public Class frmCustomerViewInfo_Order
                 .ExecuteNonQuery()
             End With
         Catch ex As Exception
-            MsgBox("An error occurred frmAdminSettings(loadActivity): " & ex.Message)
+            MsgBox("An error occurred frmCustomerViewInfo_Order(loadActivity): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub btnActive_Click(sender As Object, e As EventArgs) Handles btnActive.Click
+        If MsgBox("Do you want to activate account?", vbQuestion + vbYesNo, "Activate Status") = vbYes Then
+            Try
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
+
+                sql = "UPDATE tblcustomer SET AcctStatus = 1 WHERE CustomerID = '" & lblCustID.Text & "'"
+                cmd = New MySqlCommand(sql, cn)
+                cmd.ExecuteNonQuery()
+
+                Call sendEmail()
+
+                cboAcctStatus.Text = "Active"
+
+                frmManageCustomerV3.cboSalesman.SelectedIndex = 0
+                Call frmManageCustomerV3.loadCustomers()
+            Catch ex As Exception
+                MsgBox("An error occurred frmCustomerViewInfo_Order(btnActive_Click): " & ex.Message)
+            Finally
+                If cn.State = ConnectionState.Open Then
+                    cn.Close()
+                End If
+            End Try
+        End If
+    End Sub
+
+    Private Sub cboAcctStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAcctStatus.SelectedIndexChanged
+        If cboAcctStatus.Text = "Active" Then
+            btnActive.Visible = False
+        Else
+            btnActive.Visible = True
+        End If
     End Sub
 End Class

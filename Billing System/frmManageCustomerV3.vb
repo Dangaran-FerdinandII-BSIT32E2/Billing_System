@@ -1,8 +1,5 @@
-﻿'Imports System.Data.OleDb
-Imports System.Web.UI
+﻿Imports System.Web.UI
 Imports MySql.Data.MySqlClient
-'Imports Mysqlx.XDevAPI.Common
-'made changes to inlclude vb file
 Public Class frmManageCustomerV3
     Private Sub frmManageCustomerV3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
@@ -28,10 +25,15 @@ Public Class frmManageCustomerV3
             Do While dr.Read = True
                 x = New ListViewItem(dr("CompanyName").ToString())
                 x.SubItems.Add(dr("LastName").ToString() + (", ").ToString() + dr("FirstName").ToString())
+                x.SubItems.Add(If(dr("AcctStatus"), "Active", "Inactive"))
                 x.SubItems.Add(dr("Address").ToString())
                 x.SubItems.Add(dr("Email").ToString())
                 x.SubItems.Add(dr("PhoneNumber").ToString())
                 x.SubItems.Add(dr("CustomerID").ToString())
+
+                If x.SubItems(2).Text = "Inactive" Then
+                    x.ForeColor = Color.Red
+                End If
                 ListView1.Items.Add(x)
             Loop
             dr.Close()
@@ -46,9 +48,12 @@ Public Class frmManageCustomerV3
     Private Sub btnViewInfo_Click(sender As Object, e As EventArgs) Handles btnViewInfo.Click, ListView1.DoubleClick
         If ListView1.SelectedItems.Count > 0 Then
             If cboSalesman.Text = "View Master List" Or cboSalesman.Text = "Filter by" Then
-                frmCustomerViewInfo_Order.lblCustID.Text = ListView1.SelectedItems(0).SubItems(5).Text
+
+                frmCustomerViewInfo_Order.lblCustID.Text = ListView1.SelectedItems(0).SubItems(6).Text
+
             ElseIf cboSalesman.Text = "View Inactive Users" Then
                 frmCustomerViewInfo_Order.lblCustID.Text = ListView1.SelectedItems(0).SubItems(3).Text
+
             ElseIf cboSalesman.Text = "View Pending Orders" Then
                 frmCustomerViewInfo_Order.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
             End If
@@ -124,6 +129,7 @@ Public Class frmManageCustomerV3
             ListView1.Columns.Clear()
             ListView1.Columns.Add("Company Name")
             ListView1.Columns.Add("Contact Person")
+            ListView1.Columns.Add("Status")
             ListView1.Columns.Add("Address")
             ListView1.Columns.Add("Email Address")
             ListView1.Columns.Add("Phone Number")
@@ -131,9 +137,10 @@ Public Class frmManageCustomerV3
             'widths
             ListView1.Columns(0).Width = 250
             ListView1.Columns(1).Width = 200
-            ListView1.Columns(2).Width = 400
-            ListView1.Columns(3).Width = 250
-            ListView1.Columns(4).Width = 200
+            ListView1.Columns(2).Width = 200
+            ListView1.Columns(3).Width = 400
+            ListView1.Columns(4).Width = 250
+            ListView1.Columns(5).Width = 200
 
             Call loadCustomers()
         ElseIf cboSalesman.Text = "View Pending Orders" Then

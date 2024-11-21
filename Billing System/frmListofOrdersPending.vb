@@ -9,6 +9,7 @@ Public Class frmListofOrdersPending
     Private Sub frmListCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         btnAddNew.Visible = True
+
         If manageCollection Or manageBilling Then
             btnAddNew.Visible = False
             Call loadCollections()
@@ -72,7 +73,7 @@ Public Class frmListofOrdersPending
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Availability = 1 AND Status = 1 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Status = 1 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -90,9 +91,9 @@ Public Class frmListofOrdersPending
                 x.SubItems.Add(dr("CompanyName").ToString()) 'business style
                 x.SubItems.Add(dr("Status").ToString())
                 x.SubItems.Add(dr("DateOrdered").ToString())
-                x.SubItems.Add(dr("CustomerID").ToString())
-                x.SubItems.Add(dr("OrderID").ToString())
-                x.SubItems.Add(dr("OrderListID").ToString())
+                x.SubItems.Add(dr("CustomerID").ToString()) '10
+                x.SubItems.Add(dr("OrderID").ToString()) '11
+                x.SubItems.Add(dr("OrderListID").ToString()) '12
                 ListView1.Items.Add(x)
             Loop
             dr.Close()
@@ -116,7 +117,6 @@ Public Class frmListofOrdersPending
                 If manageOrder Then
                     frmManageOrder.orderid = ListView1.SelectedItems(0).SubItems(11).Text
                     frmManageOrder.txtSearchOrder.Text = ListView1.SelectedItems(0).SubItems(0).Text
-                    'ACall frmManageOrder.viewOrders()
 
                 ElseIf manageCollection Then
                     frmManageCollectionV3.customerid = ListView1.SelectedItems(0).SubItems(3).Text
@@ -125,6 +125,7 @@ Public Class frmListofOrdersPending
                 ElseIf manageBilling Then
                     frmManageBilling.customerid = ListView1.SelectedItems(0).SubItems(3).Text
                     frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+
                 Else
                     frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
                     frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(11).Text
@@ -147,6 +148,8 @@ Public Class frmListofOrdersPending
             manageOrder = False
         End If
         frmManageSalesV2.btnPrint.Enabled = True
+        frmManageSalesV2.lblPONu.Visible = False
+        frmManageSalesV2.txtPONo.Visible = False
         Me.Close()
     End Sub
 

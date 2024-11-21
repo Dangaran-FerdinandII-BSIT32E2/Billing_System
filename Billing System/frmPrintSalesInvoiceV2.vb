@@ -15,7 +15,9 @@ Public Class frmPrintSalesInvoiceV2
     Public format As Boolean? = False
     Public walkin As Boolean? = False
     Public printdate As DateTime
-    Public adjusteddate As datetime
+    Public adjusteddate As DateTime
+
+    Public orderid As String
 
     Private Sub frmPrintSalesInvoiceV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
@@ -29,11 +31,37 @@ Public Class frmPrintSalesInvoiceV2
         Call saveBilling()
         Call printfile()
         Call sendEmail()
+        Call subtractAmount()
         ListView1.Items.Clear()
         frmManageSalesV2.btnAddOrder.Visible = False
         Call loadActivity()
         Call frmManageSalesV2.clearText()
         Me.Close()
+    End Sub
+
+    Private Sub subtractAmount()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            For Each item As ListViewItem In ListView1.Items
+                Dim quantity As Decimal = Convert.ToDecimal(item.SubItems(0).Text)
+
+                sql = "UPDATE tblproduct p INNER JOIN tblorder o ON o.ProductID = p.ProductID SET p.Amount = p.Amount - " & quantity & " WHERE OrderID = '" & orderid & "'"
+                cmd = New MySqlCommand(sql, cn)
+                cmd.ExecuteNonQuery()
+
+            Next
+
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmPrintSalesInvoiceV2(subtractAmount): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
     Private Sub saveBilling()
         Try

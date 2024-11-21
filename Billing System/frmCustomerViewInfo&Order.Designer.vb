@@ -141,6 +141,10 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel53 = New System.Windows.Forms.Panel()
+        Me.Panel55 = New System.Windows.Forms.Panel()
+        Me.Panel57 = New System.Windows.Forms.Panel()
+        Me.btnActive = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -171,6 +175,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel5.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
+        Me.Panel57.SuspendLayout()
         Me.SuspendLayout()
         '
         'ColumnHeader13
@@ -964,6 +969,9 @@ Partial Class frmCustomerViewInfo_Order
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Panel57)
+        Me.GroupBox2.Controls.Add(Me.Panel55)
+        Me.GroupBox2.Controls.Add(Me.Panel53)
         Me.GroupBox2.Controls.Add(Me.cboAcctStatus)
         Me.GroupBox2.Controls.Add(Me.Panel41)
         Me.GroupBox2.Controls.Add(Me.Panel42)
@@ -1628,6 +1636,56 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel3.Size = New System.Drawing.Size(1363, 12)
         Me.Panel3.TabIndex = 12
         '
+        'Panel53
+        '
+        Me.Panel53.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel53.Location = New System.Drawing.Point(17, 505)
+        Me.Panel53.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel53.Name = "Panel53"
+        Me.Panel53.Size = New System.Drawing.Size(418, 21)
+        Me.Panel53.TabIndex = 168
+        '
+        'Panel55
+        '
+        Me.Panel55.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel55.Location = New System.Drawing.Point(17, 582)
+        Me.Panel55.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel55.Name = "Panel55"
+        Me.Panel55.Size = New System.Drawing.Size(418, 32)
+        Me.Panel55.TabIndex = 169
+        '
+        'Panel57
+        '
+        Me.Panel57.Controls.Add(Me.btnActive)
+        Me.Panel57.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel57.Location = New System.Drawing.Point(258, 526)
+        Me.Panel57.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel57.Name = "Panel57"
+        Me.Panel57.Size = New System.Drawing.Size(177, 56)
+        Me.Panel57.TabIndex = 171
+        '
+        'btnActive
+        '
+        Me.btnActive.BorderRadius = 8
+        Me.btnActive.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnActive.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnActive.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnActive.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnActive.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnActive.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnActive.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnActive.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnActive.ForeColor = System.Drawing.Color.White
+        Me.btnActive.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnActive.Location = New System.Drawing.Point(0, 0)
+        Me.btnActive.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnActive.Name = "btnActive"
+        Me.btnActive.PressedDepth = 20
+        Me.btnActive.Size = New System.Drawing.Size(177, 56)
+        Me.btnActive.TabIndex = 58
+        Me.btnActive.TabStop = False
+        Me.btnActive.Text = "Activate"
+        '
         'frmCustomerViewInfo_Order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1682,6 +1740,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel5.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
+        Me.Panel57.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1803,4 +1862,8 @@ Partial Class frmCustomerViewInfo_Order
     Friend WithEvents Panel59 As Panel
     Friend WithEvents Label13 As Label
     Friend WithEvents Panel58 As Panel
+    Friend WithEvents Panel55 As Panel
+    Friend WithEvents Panel53 As Panel
+    Friend WithEvents Panel57 As Panel
+    Friend WithEvents btnActive As Guna.UI2.WinForms.Guna2Button
 End Class
