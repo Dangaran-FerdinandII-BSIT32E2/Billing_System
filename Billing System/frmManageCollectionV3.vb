@@ -8,6 +8,12 @@ Public Class frmManageCollectionV3
     Dim startDate As String
     Dim endDate As String
 
+    Dim startDateCollection As String
+    Dim endDateCollection As String
+
+    Dim startDatePaid As String
+    Dim endDatePaid As String
+
     Dim startDateSMS As String
     Dim endDateSMS As String
 
@@ -23,6 +29,24 @@ Public Class frmManageCollectionV3
         endDate = DateFilter2.Text
 
         Call loadCollections(startDate, endDate)
+
+        ''FOR COLLECTION
+
+        'dtpCollection1.Text = DateTime.Now.AddDays(-5)
+        'startDateCollection = dtpCollection1.Text
+
+        'dtpCollection2.Text = DateTime.Now.AddDays(+5)
+        'endDateCollection = dtpCollection2.Text
+
+        'Call loadForCollection(startDateCollection, endDateCollection)
+        ''PAID
+
+        'dtpPaid1.Text = DateTime.Now.AddDays(-5)
+        'startDatePaid = dtpPaid1.Text
+
+        'dtpPaid2.Text = DateTime.Now.AddDays(+5)
+        'endDatePaid = dtpPaid2.Text
+        'Call loadPaid(startDatePaid, endDatePaid)
 
         'SEND SMS TAB
         Call initializeSMS()
