@@ -281,6 +281,8 @@ Public Class frmPaymentInformation
             txtCompanyName.Clear()
             txtUnpaidAmount.Clear()
             txtDueDate.Clear()
+
+            Call frmManageCollectionV3.loadCollections(frmManageCollectionV3.DateFilter1.Text, frmManageCollectionV3.DateFilter2.Text)
         End If
     End Sub
     Private Sub loadActivity()
