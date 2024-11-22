@@ -17,6 +17,7 @@ Public Class frmPaymentInformation
     Private Sub frmPaymentInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadPayment()
+        Call loadOrder()
     End Sub
     Private Sub loadPayment()
         Try
@@ -38,10 +39,23 @@ Public Class frmPaymentInformation
             Dim x As ListViewItem
             ListView1.Items.Clear()
 
+            Dim updateDB As New MySqlCommand
+            updateDB.Connection = cn
+
             Do While dr.Read = True
                 x = New ListViewItem(dr("AmtPaid").ToString)
                 x.SubItems.Add(dr("DatePaid").ToString)
 
+                If dr("newInsert") = True Then
+                    updateDB.CommandText = "UPDATE tblcollection SET newInsert = 0 WHERE BillingID = '" & billingid & "'"
+
+                    dr.Close()
+                    updateDB.ExecuteNonQuery()
+
+                    cmd = New MySqlCommand(sql, cn)
+                    dr = cmd.ExecuteReader
+                    Continue Do
+                End If
                 If Convert.ToDateTime(dr("DatePaid")).Date = DateTime.Today AndAlso dr("Status") = False Then
                     x.ForeColor = Color.Red
                 End If
@@ -83,6 +97,34 @@ Public Class frmPaymentInformation
 
             End Using
         End Using
+    End Sub
+
+    Private Sub loadOrder()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT OrderID FROM tblbillinvoice WHERE BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            If dr.Read = True Then
+                lblBillNo.Text = "Billing #" & billingid
+                lblOrderNo.Text = "Order #" & dr("OrderID").ToString
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmPaymentInformation(loadOrder): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 
     Private Sub updateRemark()
@@ -263,5 +305,9 @@ Public Class frmPaymentInformation
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub btnLedger_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

@@ -67,6 +67,12 @@ Partial Class frmPaymentInformation
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.lblBillNo = New System.Windows.Forms.Label()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel19 = New System.Windows.Forms.Panel()
+        Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.lblOrderNo = New System.Windows.Forms.Label()
+        Me.Panel21 = New System.Windows.Forms.Panel()
         Me.panelBody.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -567,6 +573,12 @@ Partial Class frmPaymentInformation
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Panel9.Controls.Add(Me.lblOrderNo)
+        Me.Panel9.Controls.Add(Me.Panel21)
+        Me.Panel9.Controls.Add(Me.lblBillNo)
+        Me.Panel9.Controls.Add(Me.Panel12)
+        Me.Panel9.Controls.Add(Me.Panel19)
+        Me.Panel9.Controls.Add(Me.Panel20)
         Me.Panel9.Controls.Add(Me.Panel14)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
@@ -598,9 +610,9 @@ Partial Class frmPaymentInformation
         Me.Label2.Location = New System.Drawing.Point(13, 18)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(252, 29)
+        Me.Label2.Size = New System.Drawing.Size(132, 29)
         Me.Label2.TabIndex = 32
-        Me.Label2.Text = "Payment Information"
+        Me.Label2.Text = "Ledger for"
         '
         'Panel15
         '
@@ -629,6 +641,70 @@ Partial Class frmPaymentInformation
         Me.Panel16.Size = New System.Drawing.Size(321, 18)
         Me.Panel16.TabIndex = 13
         '
+        'lblBillNo
+        '
+        Me.lblBillNo.AutoSize = True
+        Me.lblBillNo.BackColor = System.Drawing.Color.Transparent
+        Me.lblBillNo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblBillNo.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblBillNo.ForeColor = System.Drawing.Color.White
+        Me.lblBillNo.Location = New System.Drawing.Point(334, 18)
+        Me.lblBillNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblBillNo.Name = "lblBillNo"
+        Me.lblBillNo.Size = New System.Drawing.Size(185, 29)
+        Me.lblBillNo.TabIndex = 36
+        Me.lblBillNo.Text = "Billing Number"
+        '
+        'Panel12
+        '
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel12.Location = New System.Drawing.Point(321, 18)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(13, 32)
+        Me.Panel12.TabIndex = 33
+        '
+        'Panel19
+        '
+        Me.Panel19.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel19.Location = New System.Drawing.Point(321, 50)
+        Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel19.Name = "Panel19"
+        Me.Panel19.Size = New System.Drawing.Size(1050, 12)
+        Me.Panel19.TabIndex = 34
+        '
+        'Panel20
+        '
+        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel20.Location = New System.Drawing.Point(321, 0)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel20.Name = "Panel20"
+        Me.Panel20.Size = New System.Drawing.Size(1050, 18)
+        Me.Panel20.TabIndex = 35
+        '
+        'lblOrderNo
+        '
+        Me.lblOrderNo.AutoSize = True
+        Me.lblOrderNo.BackColor = System.Drawing.Color.Transparent
+        Me.lblOrderNo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblOrderNo.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblOrderNo.ForeColor = System.Drawing.Color.White
+        Me.lblOrderNo.Location = New System.Drawing.Point(532, 18)
+        Me.lblOrderNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblOrderNo.Name = "lblOrderNo"
+        Me.lblOrderNo.Size = New System.Drawing.Size(174, 29)
+        Me.lblOrderNo.TabIndex = 38
+        Me.lblOrderNo.Text = "Order Number"
+        '
+        'Panel21
+        '
+        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel21.Location = New System.Drawing.Point(519, 18)
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel21.Name = "Panel21"
+        Me.Panel21.Size = New System.Drawing.Size(13, 32)
+        Me.Panel21.TabIndex = 37
+        '
         'frmPaymentInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -656,6 +732,7 @@ Partial Class frmPaymentInformation
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.pbxDelivery, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
         Me.ResumeLayout(False)
@@ -707,4 +784,10 @@ Partial Class frmPaymentInformation
     Friend WithEvents AmountPaid As ColumnHeader
     Friend WithEvents DatePaid As ColumnHeader
     Friend WithEvents Panel13 As Panel
+    Friend WithEvents lblOrderNo As Label
+    Friend WithEvents Panel21 As Panel
+    Friend WithEvents lblBillNo As Label
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel19 As Panel
+    Friend WithEvents Panel20 As Panel
 End Class
