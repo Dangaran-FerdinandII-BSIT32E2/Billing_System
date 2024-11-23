@@ -528,9 +528,9 @@ Public Class frmCustomerViewInfo_Order
 
     Private Sub cboAcctStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAcctStatus.SelectedIndexChanged
         If cboAcctStatus.Text = "Active" Then
-            btnActive.Visible = False
+            btnActive.Enabled = False
         Else
-            btnActive.Visible = True
+            btnActive.Enabled = True
         End If
     End Sub
 End Class
