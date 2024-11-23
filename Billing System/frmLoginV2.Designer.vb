@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmLoginV2
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,12 @@ Partial Class frmLoginV2
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLoginV2))
         Me.pnl_frmLogin = New System.Windows.Forms.Panel()
+        Me.cbxPassword = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.btnCreateAccount = New Guna.UI2.WinForms.Guna2Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
@@ -52,6 +53,7 @@ Partial Class frmLoginV2
         'pnl_frmLogin
         '
         Me.pnl_frmLogin.BackColor = System.Drawing.Color.White
+        Me.pnl_frmLogin.Controls.Add(Me.cbxPassword)
         Me.pnl_frmLogin.Controls.Add(Me.btnCreateAccount)
         Me.pnl_frmLogin.Controls.Add(Me.Label1)
         Me.pnl_frmLogin.Controls.Add(Me.Guna2Separator2)
@@ -69,6 +71,22 @@ Partial Class frmLoginV2
         Me.pnl_frmLogin.Name = "pnl_frmLogin"
         Me.pnl_frmLogin.Size = New System.Drawing.Size(745, 945)
         Me.pnl_frmLogin.TabIndex = 0
+        '
+        'cbxPassword
+        '
+        Me.cbxPassword.AutoSize = True
+        Me.cbxPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxPassword.CheckedState.BorderRadius = 0
+        Me.cbxPassword.CheckedState.BorderThickness = 0
+        Me.cbxPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxPassword.Location = New System.Drawing.Point(614, 578)
+        Me.cbxPassword.Name = "cbxPassword"
+        Me.cbxPassword.Size = New System.Drawing.Size(18, 17)
+        Me.cbxPassword.TabIndex = 17
+        Me.cbxPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.cbxPassword.UncheckedState.BorderRadius = 0
+        Me.cbxPassword.UncheckedState.BorderThickness = 0
+        Me.cbxPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         '
         'btnCreateAccount
         '
@@ -319,4 +337,5 @@ Partial Class frmLoginV2
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents cbxPassword As Guna.UI2.WinForms.Guna2CheckBox
 End Class

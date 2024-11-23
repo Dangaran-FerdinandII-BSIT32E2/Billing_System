@@ -1852,7 +1852,7 @@ Partial Class frmManageCollectionV3
         '
         'ColumnHeader11
         '
-        Me.ColumnHeader11.Text = "Unpaid Amount"
+        Me.ColumnHeader11.Text = "Paid Amount"
         Me.ColumnHeader11.Width = 200
         '
         'ColumnHeader12

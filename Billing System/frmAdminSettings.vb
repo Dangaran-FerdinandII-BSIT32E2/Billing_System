@@ -43,4 +43,8 @@ Public Class frmAdminSettings
     Private Sub btnTest_Click(sender As Object, e As EventArgs) Handles btnTest.Click
         frmPrintBillingInvoiceV2.ShowDialog()
     End Sub
+
+    Private Sub frmAdminSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnTest.Visible = False
+    End Sub
 End Class

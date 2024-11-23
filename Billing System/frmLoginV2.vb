@@ -104,4 +104,14 @@ Public Class frmLoginV2
             End If
         End Try
     End Sub
+
+    Private Sub cbxPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxPassword.CheckedChanged
+        If cbxPassword.Checked = True Then
+            txtPassword.UseSystemPasswordChar = False
+            txtPassword.PasswordChar = ""
+        Else
+            txtPassword.UseSystemPasswordChar = True
+            txtPassword.PasswordChar = "*"
+        End If
+    End Sub
 End Class

@@ -32,21 +32,10 @@ Public Class frmManageCollectionV3
 
         ''FOR COLLECTION
 
-        'dtpCollection1.Text = DateTime.Now.AddDays(-5)
-        'startDateCollection = dtpCollection1.Text
+        'Call loadForCollection()
+        '''PAID
 
-        'dtpCollection2.Text = DateTime.Now.AddDays(+5)
-        'endDateCollection = dtpCollection2.Text
-
-        'Call loadForCollection(startDateCollection, endDateCollection)
-        ''PAID
-
-        'dtpPaid1.Text = DateTime.Now.AddDays(-5)
-        'startDatePaid = dtpPaid1.Text
-
-        'dtpPaid2.Text = DateTime.Now.AddDays(+5)
-        'endDatePaid = dtpPaid2.Text
-        'Call loadPaid(startDatePaid, endDatePaid)
+        'Call loadPaid()
 
         'SEND SMS TAB
         Call initializeSMS()
@@ -339,4 +328,30 @@ Public Class frmManageCollectionV3
         End If
     End Sub
 
+    Public Sub loadForCollection()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT "
+        Catch ex As Exception
+            MsgBox("An error occured at frmManageCollectionV3(loadForCollection): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Public Sub loadPaid()
+        Try
+
+        Catch ex As Exception
+            MsgBox("An error occured at frmManageCollectionV3(loadPaid): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
 End Class
