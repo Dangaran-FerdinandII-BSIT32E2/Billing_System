@@ -117,7 +117,7 @@ Public Class frmQuotation
 
             If PictureBox1.Image IsNot Nothing Then
                 If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
-                    sql = "UPDATE tblorder SET QuotationImg=@QuotationImg, QuotationDueDate=@QuotationDueDate WHERE OrderID = '" & orderid & "'"
+                    sql = "UPDATE tblorder SET QuotationImg=@QuotationImg, QuotationDueDate=@QuotationDueDate, Status = 1 WHERE OrderID = '" & orderid & "'"
                     cmd = New MySqlCommand(sql, cn)
                     With cmd
                         Dim mstream As New System.IO.MemoryStream()

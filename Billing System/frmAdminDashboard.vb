@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Imports MySql.Data.MySqlClient
 Imports Guna.UI2.WinForms
+Imports Guna.UI2.AnimatorNS
+Imports System.Web.UI.Design
 
 Public Class frmAdminDashboard
     Dim removeThickness As New Padding(0, 0, 0, 0) 'use to remove border left
@@ -75,7 +77,7 @@ Public Class frmAdminDashboard
 
     Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call loadNotification()
-
+        Call loadRoles()
         btnDashboard.CustomBorderThickness = addThickness
         btnDashboard.CustomBorderColor = addColor
 
@@ -84,6 +86,60 @@ Public Class frmAdminDashboard
         frmAnalyticsData.BringToFront()
         frmAnalyticsData.Dock = DockStyle.Fill
         frmAnalyticsData.Show()
+    End Sub
+    Private Sub loadRoles()
+        btnSales.Visible = True
+        btnOrder.Visible = True
+        btnRental.Visible = True
+
+        btnBilling.Visible = True
+        btnCollection.Visible = True
+        btnCustomer.Visible = True
+        btnSupplier.Visible = True
+        btnUser.Visible = True
+
+        Select Case lblRole.Text
+            Case "Sales"
+                btnSales.Visible = True
+                btnOrder.Visible = True
+                btnRental.Visible = True
+
+                btnBilling.Visible = False
+                btnCollection.Visible = False
+                btnCustomer.Visible = False
+                btnSupplier.Visible = False
+                btnUser.Visible = False
+            Case "Controller"
+                btnBilling.Visible = True
+                btnCollection.Visible = True
+                btnCustomer.Visible = True
+
+                btnSales.Visible = False
+                btnOrder.Visible = False
+                btnRental.Visible = False
+                btnSupplier.Visible = False
+                btnUser.Visible = False
+            Case "Purchaser"
+                btnBilling.Enabled = True
+                btnCustomer.Enabled = True
+                btnSupplier.Enabled = True
+
+                btnSales.Visible = False
+                btnOrder.Visible = False
+                btnRental.Visible = False
+                btnCollection.Visible = False
+                btnUser.Visible = False
+            Case Else
+                btnSales.Visible = True
+                btnOrder.Visible = True
+                btnRental.Visible = True
+
+                btnBilling.Visible = True
+                btnCollection.Visible = True
+                btnCustomer.Visible = True
+                btnSupplier.Visible = True
+                btnUser.Visible = True
+        End Select
     End Sub
 
     'DASHBOARD MODULE

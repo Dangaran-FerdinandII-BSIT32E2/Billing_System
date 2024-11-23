@@ -738,7 +738,7 @@ Partial Class frmManageUsers
         Me.cboRole.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.cboRole.ForeColor = System.Drawing.Color.Black
         Me.cboRole.ItemHeight = 30
-        Me.cboRole.Items.AddRange(New Object() {"Sales", "Finance", "Controller", "Purchaser"})
+        Me.cboRole.Items.AddRange(New Object() {"Sales", "Controller", "Purchaser"})
         Me.cboRole.Location = New System.Drawing.Point(376, 172)
         Me.cboRole.Margin = New System.Windows.Forms.Padding(4)
         Me.cboRole.Name = "cboRole"

@@ -24,6 +24,7 @@ Partial Class frmQuotation
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmQuotation))
         Me.panelBody = New System.Windows.Forms.Panel()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSend = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
@@ -33,7 +34,6 @@ Partial Class frmQuotation
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.panelBody.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
@@ -52,10 +52,30 @@ Partial Class frmQuotation
         Me.panelBody.Controls.Add(Me.Panel1)
         Me.panelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBody.Location = New System.Drawing.Point(0, 0)
-        Me.panelBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panelBody.Margin = New System.Windows.Forms.Padding(4)
         Me.panelBody.Name = "panelBody"
-        Me.panelBody.Size = New System.Drawing.Size(836, 638)
+        Me.panelBody.Size = New System.Drawing.Size(832, 659)
         Me.panelBody.TabIndex = 2
+        '
+        'btnCancel
+        '
+        Me.btnCancel.BorderRadius = 15
+        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCancel.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnCancel.Location = New System.Drawing.Point(469, 564)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.PressedDepth = 20
+        Me.btnCancel.Size = New System.Drawing.Size(300, 49)
+        Me.btnCancel.TabIndex = 10000007
+        Me.btnCancel.Text = "Cancel"
         '
         'btnSend
         '
@@ -69,8 +89,8 @@ Partial Class frmQuotation
         Me.btnSend.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSend.ForeColor = System.Drawing.Color.White
         Me.btnSend.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnSend.Location = New System.Drawing.Point(76, 551)
-        Me.btnSend.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSend.Location = New System.Drawing.Point(81, 564)
+        Me.btnSend.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSend.Name = "btnSend"
         Me.btnSend.PressedDepth = 20
         Me.btnSend.Size = New System.Drawing.Size(300, 49)
@@ -81,7 +101,7 @@ Partial Class frmQuotation
         '
         Me.Panel2.Controls.Add(Me.Guna2Panel1)
         Me.Panel2.Location = New System.Drawing.Point(76, 132)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(688, 382)
         Me.Panel2.TabIndex = 10000005
@@ -97,7 +117,7 @@ Partial Class frmQuotation
         Me.Guna2Panel1.Controls.Add(Me.PictureBox1)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(688, 382)
         Me.Guna2Panel1.TabIndex = 10000004
@@ -116,7 +136,7 @@ Partial Class frmQuotation
         Me.btnBrowse.ForeColor = System.Drawing.Color.White
         Me.btnBrowse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnBrowse.Location = New System.Drawing.Point(281, 199)
-        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.PressedDepth = 20
         Me.btnBrowse.ShadowDecoration.BorderRadius = 15
@@ -129,7 +149,7 @@ Partial Class frmQuotation
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(295, 94)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(120, 103)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -139,7 +159,7 @@ Partial Class frmQuotation
         'PictureBox1
         '
         Me.PictureBox1.Location = New System.Drawing.Point(7, 7)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(673, 367)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -165,9 +185,9 @@ Partial Class frmQuotation
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(836, 62)
+        Me.Panel1.Size = New System.Drawing.Size(832, 62)
         Me.Panel1.TabIndex = 0
         '
         'Label2
@@ -183,33 +203,13 @@ Partial Class frmQuotation
         Me.Label2.TabIndex = 34
         Me.Label2.Text = "Send Quotation"
         '
-        'btnCancel
-        '
-        Me.btnCancel.BorderRadius = 15
-        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancel.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCancel.Location = New System.Drawing.Point(464, 551)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(300, 49)
-        Me.btnCancel.TabIndex = 10000007
-        Me.btnCancel.Text = "Cancel"
-        '
         'frmQuotation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(836, 638)
+        Me.ClientSize = New System.Drawing.Size(832, 659)
         Me.Controls.Add(Me.panelBody)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "frmQuotation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
