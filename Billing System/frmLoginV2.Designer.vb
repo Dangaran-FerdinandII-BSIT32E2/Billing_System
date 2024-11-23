@@ -162,12 +162,13 @@ Partial Class frmLoginV2
         Me.txtPassword.Location = New System.Drawing.Point(129, 559)
         Me.txtPassword.Margin = New System.Windows.Forms.Padding(5)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txtPassword.PlaceholderText = "Enter your password"
         Me.txtPassword.SelectedText = ""
         Me.txtPassword.Size = New System.Drawing.Size(503, 53)
         Me.txtPassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.txtPassword.TabIndex = 1
+        Me.txtPassword.UseSystemPasswordChar = True
         '
         'txtUsername
         '

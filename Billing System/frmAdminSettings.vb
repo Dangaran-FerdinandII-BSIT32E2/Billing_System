@@ -8,7 +8,13 @@ Public Class frmAdminSettings
         Call connection()
         Call loadActivity()
         frmAdminDashboard.Close()
-        Environment.Exit(0)
+        'Environment.Exit(0)
+
+        frmLoginV2.txtUsername.Clear()
+        frmLoginV2.txtPassword.Clear()
+
+        frmLoginV2.ActiveControl = frmLoginV2.txtUsername
+        frmLoginV2.Show()
     End Sub
     Private Sub loadActivity()
         Try

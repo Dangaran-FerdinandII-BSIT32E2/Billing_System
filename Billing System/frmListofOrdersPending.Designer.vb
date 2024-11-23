@@ -253,7 +253,7 @@ Partial Class frmListofOrdersPending
         Me.btnAddNew.PressedDepth = 20
         Me.btnAddNew.Size = New System.Drawing.Size(187, 50)
         Me.btnAddNew.TabIndex = 57
-        Me.btnAddNew.Text = "Add"
+        Me.btnAddNew.Text = "Add Walk-In?"
         '
         'Panel1
         '

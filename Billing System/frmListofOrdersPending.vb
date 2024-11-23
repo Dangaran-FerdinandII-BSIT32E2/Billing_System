@@ -73,7 +73,7 @@ Public Class frmListofOrdersPending
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID FROM tblorder WHERE Status = 1 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID, DeliveryAddress FROM tblorder WHERE Status = 1 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -87,7 +87,7 @@ Public Class frmListofOrdersPending
                 x.SubItems.Add(dr("Email").ToString())
                 x.SubItems.Add(dr("OrderCount").ToString())
                 x.SubItems.Add(dr("Address").ToString())
-                x.SubItems.Add(dr("Delivery").ToString())
+                x.SubItems.Add(dr("DeliveryAddress").ToString()) '6
                 x.SubItems.Add(dr("CompanyName").ToString()) 'business style
                 x.SubItems.Add(dr("Status").ToString())
                 x.SubItems.Add(dr("DateOrdered").ToString())
@@ -129,7 +129,8 @@ Public Class frmListofOrdersPending
                 Else
                     frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
                     frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(11).Text
-                    frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                    frmManageSalesV2.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                    frmManageSalesV2.txtDeliveryAddress.Text = ListView1.SelectedItems(0).SubItems(6).Text
                     Call frmManageSalesV2.loadBilling()
                 End If
             End If
@@ -206,10 +207,9 @@ Public Class frmListofOrdersPending
             frmManageSalesV2.txtTerms.Clear()
             frmManageSalesV2.cboSalesman.SelectedIndex = -1
 
+            frmAddNewCustomer.ShowDialog()
             frmManagePOS.isRental = False
             frmManageSalesV2.btnAddOrder.Visible = True
-            frmManageSalesV2.txtCompanyName.PlaceholderText = "Enter Company Name"
-            frmManageSalesV2.txtCompanyName.Enabled = True
             frmManageSalesV2.txtAddress.Enabled = True
             frmManageSalesV2.txtDeliveryAddress.Enabled = True
         End If

@@ -5,11 +5,15 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
 Imports System.Data.SqlClient
 Imports System.Net.Mime.MediaTypeNames
+Imports System.Web.WebSockets
 Public Class frmManageSalesV2
 
     Public orderid As String
     Dim adjustedValue As Double
     Dim trueadjustedvalue As String
+
+    Public phoneNumber As String
+    Public email As String
     Private Sub frmManageBilling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadBilling()
@@ -245,6 +249,8 @@ Public Class frmManageSalesV2
             Next
 
             frmPrintSalesInvoiceV2.orderid = orderid
+            frmPrintSalesInvoiceV2.phoneNumber = phoneNumber
+            frmPrintSalesInvoiceV2.email = email
 
             frmPrintSalesInvoiceV2.ShowDialog()
         Catch ex As Exception

@@ -19,6 +19,9 @@ Public Class frmPrintSalesInvoiceV2
 
     Public orderid As String
 
+    Public phoneNumber As String
+    Public email As String
+
     Private Sub frmPrintSalesInvoiceV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call calculateReceipt()
@@ -69,7 +72,7 @@ Public Class frmPrintSalesInvoiceV2
                 cn.Open()
             End If
 
-            sql = "INSERT INTO tblbilling(BillingID, CustomerID, CompanyName, SalesMan, Terms, ProductOrder, DatePrinted, DueDate, Discount, Markup, FinalPrice) VALUES(@BillingID, @CustomerID, @CompanyName, @SalesMan, @Terms, @ProductOrder, @DatePrinted, @DueDate, @Discount, @Markup, @FinalPrice)"
+            sql = "INSERT INTO tblbilling(BillingID, CustomerID, CompanyName, SalesMan, Terms, ProductOrder, DatePrinted, DueDate, Discount, Markup, FinalPrice, phoneNumber, Email) VALUES(@BillingID, @CustomerID, @CompanyName, @SalesMan, @Terms, @ProductOrder, @DatePrinted, @DueDate, @Discount, @Markup, @FinalPrice, @phoneNumber, @Email)"
             cmd = New MySqlCommand(sql, cn)
             With cmd
                 .Parameters.AddWithValue("@BillingID", billid)
@@ -83,6 +86,13 @@ Public Class frmPrintSalesInvoiceV2
                 .Parameters.AddWithValue("@Discount", If(lblAdjustPrice.Text = "Discount:", lblAdjustPrice.Text, DBNull.Value))
                 .Parameters.AddWithValue("@Markup", If(lblAdjustPrice.Text = "Mark Up:", lblAdjustPrice.Text, DBNull.Value))
                 .Parameters.AddWithValue("@FinalPrice", lblTotalAmount.Text.Replace(",", ""))
+                .Parameters.AddWithValue("@phoneNumber", Nothing)
+                .Parameters.AddWithValue("@Email", Nothing)
+
+                If walkin Then
+                    .Parameters("@phoneNumber").Value = phoneNumber
+                    .Parameters("@Email").Value = email
+                End If
                 .ExecuteNonQuery()
             End With
 

@@ -17,9 +17,9 @@ Public Class frmCustomerViewInfo_Order
         Call connection()
         Call loadInformation()
         Call loadImage()
+        Call loadOrderListView()
         btnSave.Enabled = False
         TabControl2.SelectedTab = TabPage1
-        Call loadOrderListView()
     End Sub
 
     Private Sub frmClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
