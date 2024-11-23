@@ -2,6 +2,7 @@
 Imports System.Runtime.InteropServices.ComTypes
 Imports System.Security.Cryptography
 Imports MySql.Data.MySqlClient
+Imports Mysqlx.Crud
 
 Public Class frmPaymentInformation
 
@@ -56,13 +57,14 @@ Public Class frmPaymentInformation
                     dr = cmd.ExecuteReader
                     Continue Do
                 End If
+
                 If Convert.ToDateTime(dr("DatePaid")).Date = DateTime.Today AndAlso dr("Status") = False Then
                     x.ForeColor = Color.Red
                 End If
 
                 ListView1.Items.Add(x)
 
-                If dr("Status") = True Then
+                If dr("Status") = 2 Then
                     totalPaid += Convert.ToDouble(dr("AmtPaid"))
                 End If
             Loop
@@ -70,6 +72,7 @@ Public Class frmPaymentInformation
             dr.Close()
 
             Call loadInformation()
+            Call updateRemark()
         Catch ex As Exception
             MsgBox("An error occurred frmPaymentInformation(loadPayment): " & ex.Message)
         Finally
@@ -86,15 +89,10 @@ Public Class frmPaymentInformation
                 Using dr = cmd.ExecuteReader
                     If dr.Read = True Then
                         txtCompanyName.Text = dr("CompanyName").ToString()
-                        txtUnpaidAmount.Text = (dr("FinalPrice") - totalPaid).ToString()
+                        txtUnpaidAmount.Text = (dr("FinalPrice") - totalPaid).ToString
                         txtDueDate.Text = dr("DueDate").ToString
                     End If
                 End Using
-
-                If Convert.ToDouble(txtUnpaidAmount.Text) = totalPaid Then
-                    Call updateRemark()
-                End If
-
             End Using
         End Using
     End Sub
@@ -135,7 +133,11 @@ Public Class frmPaymentInformation
 
             sql = "UPDATE tblbilling SET Remarks=@Remarks WHERE BillingID = '" & billingid & "'"
             cmd = New MySqlCommand(sql, cn)
-            cmd.Parameters.AddWithValue("@Remarks", "1")
+            If Convert.ToDouble(txtUnpaidAmount.Text) <= totalPaid Then
+                cmd.Parameters.AddWithValue("@Remarks", "1")
+            Else
+                cmd.Parameters.AddWithValue("@Remarks", "0")
+            End If
             cmd.ExecuteNonQuery()
 
             Dim startDate As String = frmManageCollectionV3.DateFilter1.Text
@@ -182,7 +184,7 @@ Public Class frmPaymentInformation
             End If
 
             If MsgBox("Do you want to approve?", vbYesNo + vbQuestion) = vbYes Then
-                sql = "UPDATE tblcollection SET Status = True WHERE CollectionID = '" & collectionid & "'"
+                sql = "UPDATE tblcollection SET Status = 2 WHERE CollectionID = '" & collectionid & "'"
                 cmd = New MySqlCommand(sql, cn)
                 cmd.ExecuteNonQuery()
 
@@ -210,7 +212,7 @@ Public Class frmPaymentInformation
             End If
 
             If MsgBox("Do you want to reject?", vbYesNo + vbQuestion) = vbYes Then
-                sql = "UPDATE tblcollection SET Status = False WHERE CollectionID = '" & collectionid & "'"
+                sql = "UPDATE tblcollection SET Status = 1 WHERE CollectionID = '" & collectionid & "'"
                 cmd = New MySqlCommand(sql, cn)
                 cmd.ExecuteNonQuery()
 
@@ -307,9 +309,5 @@ Public Class frmPaymentInformation
                 cn.Close()
             End If
         End Try
-    End Sub
-
-    Private Sub btnLedger_Click(sender As Object, e As EventArgs)
-
     End Sub
 End Class

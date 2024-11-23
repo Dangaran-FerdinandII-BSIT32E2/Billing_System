@@ -21,7 +21,7 @@ Public Class frmAnalyticsData
         Call getDebt()
         Call getPaid()
         Dim totalDebt As Double = debt - paid
-        lblReceivable.Text = If(totalDebt = 0, "No Account in Debt", "₱" + totalDebt.ToString)
+        lblReceivable.Text = If(totalDebt <= 0, "No Account in Debt", "₱" + totalDebt.ToString)
         Call getOverdue()
         Call getPaidAndVisualize()
     End Sub
@@ -61,7 +61,7 @@ Public Class frmAnalyticsData
                 cn.Open()
             End If
 
-            sql = "SELECT DATE_FORMAT(DatePaid, '%Y-%m') AS Month, SUM(AmtPaid) AS Paid FROM tblcollection WHERE DatePaid >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH) GROUP BY DATE_FORMAT(DatePaid, '%Y-%m') ORDER BY Month"
+            sql = "SELECT DATE_FORMAT(DatePaid, '%Y-%m') AS Month, SUM(AmtPaid) AS Paid FROM tblcollection WHERE DatePaid >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH) AND Status = 2 GROUP BY DATE_FORMAT(DatePaid, '%Y-%m') ORDER BY Month"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then

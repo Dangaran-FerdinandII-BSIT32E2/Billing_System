@@ -93,7 +93,7 @@ Public Class frmManageCollectionV3
 
                 Do While dr.Read = True
                     x = New ListViewItem(dr("CompanyName").ToString())
-                    x.SubItems.Add(dr("RemainingBalance").ToString())
+                    x.SubItems.Add(If(dr("RemainingBalance") <= 0, "Paid", dr("RemainingBalance").ToString()))
                     x.SubItems.Add(If(dr("Remarks"), "Paid", "For Collection"))
                     x.SubItems.Add(dr("BillingID").ToString()) '3
                     x.SubItems.Add(dr("CustomerID").ToString) '4
