@@ -70,7 +70,7 @@ Public Class frmManageCollectionV3
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
                DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT b.CompanyName, b.Remarks, b.BillingID, b.CustomerID, b.FinalPrice - COALESCE( SUM( CASE WHEN c.Status = 1 THEN c.AmtPaid ELSE 0 END ), 0 ) AS RemainingBalance, COALESCE(c.newInsert, 1) AS newInsert FROM tblbilling b LEFT JOIN tblcollection c ON b.BillingID = c.BillingID WHERE DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' AND DateDelivered IS NOT NULL GROUP BY b.BillingID"
+                sql = "SELECT b.CompanyName, b.Remarks, b.BillingID, b.CustomerID, b.FinalPrice - COALESCE( SUM( CASE WHEN c.Status = 2 THEN c.AmtPaid ELSE 0 END ), 0 ) AS RemainingBalance, COALESCE(c.newInsert, 1) AS newInsert FROM tblbilling b LEFT JOIN tblcollection c ON b.BillingID = c.BillingID WHERE DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' AND DateDelivered IS NOT NULL GROUP BY b.BillingID"
 
 
                 If cboFilter.SelectedIndex > 0 Then

@@ -10,7 +10,7 @@ Public Class frmManageCustomerV3
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT * FROM tblcustomer WHERE CustomerID <> 1 AND CustomerID <> 2"
+            sql = "SELECT * FROM tblcustomer WHERE CustomerID <> 1 AND CustomerID <> 2 ORDER BY AcctStatus ASC"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
