@@ -214,12 +214,15 @@ Public Class frmManageCollectionV3
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
                DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT tblbilling.BillingID, tblbilling.CompanyName, tblbilling.FinalPrice, tblcustomer.CustomerID, tblcustomer.PhoneNumber, tblbilling.SentSMS, CONCAT(tblcustomer.LastName, ', ', tblcustomer.FirstName) AS FullName, DATE_FORMAT(tblbilling.DueDate, '%M %d, %Y') AS DueDate FROM tblbilling INNER JOIN tblcustomer ON tblbilling.CustomerID = tblcustomer.CustomerID WHERE tblbilling.DateDelivered IS NOT NULL AND tblbilling.DueDate "
+                sql = "SELECT tblbilling.BillingID, tblbilling.CompanyName, COALESCE(tblbilling.FinalPrice - SUM(tblcollection.AmtPaid), 0) AS FinalPrice, tblcustomer.CustomerID, tblcustomer.PhoneNumber, COALESCE(tblbilling.SentSMS, 0) AS SentSMS, CONCAT( tblcustomer.LastName, ', ', tblcustomer.FirstName ) AS FullName, DATE_FORMAT(tblbilling.DueDate, '%M %d, %Y') AS DueDate FROM tblbilling INNER JOIN tblcustomer ON tblbilling.CustomerID = tblcustomer.CustomerID INNER JOIN tblcollection ON tblbilling.BillingID = tblcollection.BillingID WHERE tblbilling.DateDelivered IS NOT NULL AND tblbilling.DueDate "
+
+                btnSend.Visible = True
 
                 If cboFilterSMS.SelectedIndex = 0 Then 'DEFAULT
                     sql += "BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
                 ElseIf cboFilterSMS.SelectedIndex = 1 Then 'UPTODATE
                     sql += "> CURDATE()"
+                    btnSend.Visible = False
                 ElseIf cboFilterSMS.SelectedIndex = 2 Then 'OVERDUE
                     sql += "< CURDATE()"
                 End If
@@ -275,9 +278,8 @@ Public Class frmManageCollectionV3
             Dim dueDate As String = number.SubItems(4).Text
             Dim price As String = number.SubItems(3).Text
 
-            MsgBox(phoneNumber)
             Dim message As String = "Your billing statement worth " & price & " pesos is due on " & dueDate & "." & vbCrLf & "Please pay within the timeframe to avoid any possible problems!" & vbCrLf & vbCrLf & "From Rambic Corporation"
-            gsmController.SendSMSWithRetry(phoneNumber, message)
+            gsmController.SendSMSWithRetry(phoneNumber, Message)
 
             updateSMS(number.SubItems(0).Text)
         Next
@@ -336,4 +338,5 @@ Public Class frmManageCollectionV3
             GSMController.Close()
         End If
     End Sub
+
 End Class
