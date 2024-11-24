@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmCustomerViewInfo_Order
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmSupplierInformation
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,51 +20,11 @@ Partial Class frmCustomerViewInfo_Order
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCustomerViewInfo_Order))
-        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.btnViewOrder = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lblstatus = New System.Windows.Forms.Label()
-        Me.lblOrderID = New System.Windows.Forms.Label()
-        Me.Panel34 = New System.Windows.Forms.Panel()
-        Me.btnInsert = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.DateFilter2 = New System.Windows.Forms.DateTimePicker()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.DateFilter1 = New System.Windows.Forms.DateTimePicker()
-        Me.Panel60 = New System.Windows.Forms.Panel()
-        Me.Panel59 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Panel58 = New System.Windows.Forms.Panel()
-        Me.Panel54 = New System.Windows.Forms.Panel()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSupplierInformation))
         Me.TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.SupplierInformation = New System.Windows.Forms.TabPage()
         Me.panelBody = New System.Windows.Forms.Panel()
         Me.Panel64 = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -154,16 +114,30 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage2.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        Me.Panel15.SuspendLayout()
-        Me.Panel34.SuspendLayout()
-        Me.Panel8.SuspendLayout()
-        Me.Panel16.SuspendLayout()
-        Me.Panel59.SuspendLayout()
+        Me.SupplierProducts = New System.Windows.Forms.TabPage()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Panel34 = New System.Windows.Forms.Panel()
+        Me.btnInsert = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.btnSearchCompanyName = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel54 = New System.Windows.Forms.Panel()
+        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Panel58 = New System.Windows.Forms.Panel()
         Me.TabControl2.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.SupplierInformation.SuspendLayout()
         Me.panelBody.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.Panel28.SuspendLayout()
@@ -187,373 +161,16 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel5.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
+        Me.SupplierProducts.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.Panel34.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ColumnHeader13
-        '
-        Me.ColumnHeader13.Text = "Manufacturer"
-        Me.ColumnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader13.Width = 220
-        '
-        'ColumnHeader12
-        '
-        Me.ColumnHeader12.Text = "Product Name"
-        Me.ColumnHeader12.Width = 150
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Category"
-        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader4.Width = 200
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Selling Price"
-        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader3.Width = 150
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Supplier Name"
-        Me.ColumnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader1.Width = 180
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Description"
-        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader2.Width = 350
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Purchase Price"
-        Me.ColumnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader7.Width = 180
-        '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink
-        Me.ErrorProvider1.ContainerControl = Me
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Model Number"
-        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader5.Width = 345
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Year Manufactured"
-        Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader6.Width = 200
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.ListView1)
-        Me.TabPage2.Controls.Add(Me.Panel6)
-        Me.TabPage2.Controls.Add(Me.Panel12)
-        Me.TabPage2.Controls.Add(Me.Panel9)
-        Me.TabPage2.Controls.Add(Me.Panel8)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 44)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TabPage2.Size = New System.Drawing.Size(1342, 681)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Customer Order"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'ListView1
-        '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader8, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader18})
-        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ListView1.FullRowSelect = True
-        Me.ListView1.GridLines = True
-        Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(13, 45)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1316, 573)
-        Me.ListView1.TabIndex = 40
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader8
-        '
-        Me.ColumnHeader8.Text = "OrderID"
-        Me.ColumnHeader8.Width = 150
-        '
-        'ColumnHeader14
-        '
-        Me.ColumnHeader14.Text = "Price"
-        Me.ColumnHeader14.Width = 150
-        '
-        'ColumnHeader15
-        '
-        Me.ColumnHeader15.Text = "Availability"
-        Me.ColumnHeader15.Width = 150
-        '
-        'ColumnHeader16
-        '
-        Me.ColumnHeader16.Text = "Status"
-        Me.ColumnHeader16.Width = 300
-        '
-        'ColumnHeader18
-        '
-        Me.ColumnHeader18.Text = "Ordered Date"
-        Me.ColumnHeader18.Width = 300
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.White
-        Me.Panel6.Controls.Add(Me.Panel15)
-        Me.Panel6.Controls.Add(Me.Guna2Panel1)
-        Me.Panel6.Controls.Add(Me.lblstatus)
-        Me.Panel6.Controls.Add(Me.lblOrderID)
-        Me.Panel6.Controls.Add(Me.Panel34)
-        Me.Panel6.Controls.Add(Me.Panel7)
-        Me.Panel6.Controls.Add(Me.Panel14)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(13, 618)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1316, 60)
-        Me.Panel6.TabIndex = 21
-        '
-        'Panel15
-        '
-        Me.Panel15.BackColor = System.Drawing.Color.White
-        Me.Panel15.Controls.Add(Me.btnViewOrder)
-        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel15.Location = New System.Drawing.Point(150, 10)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(140, 40)
-        Me.Panel15.TabIndex = 58
-        '
-        'btnViewOrder
-        '
-        Me.btnViewOrder.BorderRadius = 8
-        Me.btnViewOrder.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnViewOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnViewOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnViewOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnViewOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnViewOrder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnViewOrder.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnViewOrder.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnViewOrder.ForeColor = System.Drawing.Color.White
-        Me.btnViewOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnViewOrder.Location = New System.Drawing.Point(0, 0)
-        Me.btnViewOrder.Name = "btnViewOrder"
-        Me.btnViewOrder.PressedDepth = 20
-        Me.btnViewOrder.Size = New System.Drawing.Size(140, 40)
-        Me.btnViewOrder.TabIndex = 57
-        Me.btnViewOrder.Text = "View"
-        '
-        'Guna2Panel1
-        '
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel1.Location = New System.Drawing.Point(140, 10)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(10, 40)
-        Me.Guna2Panel1.TabIndex = 43
-        '
-        'lblstatus
-        '
-        Me.lblstatus.AutoSize = True
-        Me.lblstatus.Location = New System.Drawing.Point(726, 21)
-        Me.lblstatus.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblstatus.Name = "lblstatus"
-        Me.lblstatus.Size = New System.Drawing.Size(39, 13)
-        Me.lblstatus.TabIndex = 42
-        Me.lblstatus.Text = "Label2"
-        Me.lblstatus.Visible = False
-        '
-        'lblOrderID
-        '
-        Me.lblOrderID.AutoSize = True
-        Me.lblOrderID.Location = New System.Drawing.Point(670, 21)
-        Me.lblOrderID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblOrderID.Name = "lblOrderID"
-        Me.lblOrderID.Size = New System.Drawing.Size(54, 13)
-        Me.lblOrderID.TabIndex = 41
-        Me.lblOrderID.Text = "lblOrderID"
-        Me.lblOrderID.Visible = False
-        '
-        'Panel34
-        '
-        Me.Panel34.BackColor = System.Drawing.Color.White
-        Me.Panel34.Controls.Add(Me.btnInsert)
-        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel34.Location = New System.Drawing.Point(0, 10)
-        Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(140, 40)
-        Me.Panel34.TabIndex = 18
-        '
-        'btnInsert
-        '
-        Me.btnInsert.BorderRadius = 8
-        Me.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnInsert.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnInsert.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnInsert.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnInsert.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnInsert.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnInsert.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnInsert.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnInsert.ForeColor = System.Drawing.Color.White
-        Me.btnInsert.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnInsert.Location = New System.Drawing.Point(0, 0)
-        Me.btnInsert.Name = "btnInsert"
-        Me.btnInsert.PressedDepth = 20
-        Me.btnInsert.Size = New System.Drawing.Size(140, 40)
-        Me.btnInsert.TabIndex = 57
-        Me.btnInsert.Text = "Create Invoice"
-        '
-        'Panel7
-        '
-        Me.Panel7.BackColor = System.Drawing.Color.White
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel7.Location = New System.Drawing.Point(0, 50)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1316, 10)
-        Me.Panel7.TabIndex = 18
-        '
-        'Panel14
-        '
-        Me.Panel14.BackColor = System.Drawing.Color.White
-        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1316, 10)
-        Me.Panel14.TabIndex = 18
-        '
-        'Panel12
-        '
-        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel12.Location = New System.Drawing.Point(1329, 45)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(10, 633)
-        Me.Panel12.TabIndex = 10
-        '
-        'Panel9
-        '
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel9.Location = New System.Drawing.Point(3, 45)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(10, 633)
-        Me.Panel9.TabIndex = 9
-        '
-        'Panel8
-        '
-        Me.Panel8.Controls.Add(Me.Panel16)
-        Me.Panel8.Controls.Add(Me.Panel59)
-        Me.Panel8.Controls.Add(Me.Panel54)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(3, 3)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1336, 42)
-        Me.Panel8.TabIndex = 8
-        '
-        'Panel16
-        '
-        Me.Panel16.BackColor = System.Drawing.Color.White
-        Me.Panel16.Controls.Add(Me.DateFilter2)
-        Me.Panel16.Controls.Add(Me.Label10)
-        Me.Panel16.Controls.Add(Me.DateFilter1)
-        Me.Panel16.Controls.Add(Me.Panel60)
-        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel16.Location = New System.Drawing.Point(103, 0)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(276, 42)
-        Me.Panel16.TabIndex = 64
-        '
-        'DateFilter2
-        '
-        Me.DateFilter2.CustomFormat = "yyyy-MM-dd"
-        Me.DateFilter2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.DateFilter2.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.DateFilter2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFilter2.Location = New System.Drawing.Point(142, 5)
-        Me.DateFilter2.Name = "DateFilter2"
-        Me.DateFilter2.Size = New System.Drawing.Size(126, 26)
-        Me.DateFilter2.TabIndex = 70
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label10.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(126, 5)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(16, 22)
-        Me.Label10.TabIndex = 69
-        Me.Label10.Text = "-"
-        '
-        'DateFilter1
-        '
-        Me.DateFilter1.CustomFormat = "yyyy-MM-dd"
-        Me.DateFilter1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.DateFilter1.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.DateFilter1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFilter1.Location = New System.Drawing.Point(0, 5)
-        Me.DateFilter1.Name = "DateFilter1"
-        Me.DateFilter1.Size = New System.Drawing.Size(126, 26)
-        Me.DateFilter1.TabIndex = 68
-        '
-        'Panel60
-        '
-        Me.Panel60.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel60.Location = New System.Drawing.Point(0, 0)
-        Me.Panel60.Name = "Panel60"
-        Me.Panel60.Size = New System.Drawing.Size(276, 5)
-        Me.Panel60.TabIndex = 67
-        '
-        'Panel59
-        '
-        Me.Panel59.Controls.Add(Me.Label13)
-        Me.Panel59.Controls.Add(Me.Panel58)
-        Me.Panel59.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel59.Location = New System.Drawing.Point(10, 0)
-        Me.Panel59.Name = "Panel59"
-        Me.Panel59.Size = New System.Drawing.Size(93, 42)
-        Me.Panel59.TabIndex = 66
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label13.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(0, 8)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(92, 19)
-        Me.Label13.TabIndex = 67
-        Me.Label13.Text = "Date Filter:"
-        '
-        'Panel58
-        '
-        Me.Panel58.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel58.Location = New System.Drawing.Point(0, 0)
-        Me.Panel58.Name = "Panel58"
-        Me.Panel58.Size = New System.Drawing.Size(93, 8)
-        Me.Panel58.TabIndex = 66
-        '
-        'Panel54
-        '
-        Me.Panel54.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel54.Location = New System.Drawing.Point(0, 0)
-        Me.Panel54.Name = "Panel54"
-        Me.Panel54.Size = New System.Drawing.Size(10, 42)
-        Me.Panel54.TabIndex = 62
         '
         'TabControl2
         '
-        Me.TabControl2.Controls.Add(Me.TabPage1)
-        Me.TabControl2.Controls.Add(Me.TabPage2)
+        Me.TabControl2.Controls.Add(Me.SupplierInformation)
+        Me.TabControl2.Controls.Add(Me.SupplierProducts)
         Me.TabControl2.Cursor = System.Windows.Forms.Cursors.Default
         Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl2.ItemSize = New System.Drawing.Size(250, 40)
@@ -577,19 +194,19 @@ Partial Class frmCustomerViewInfo_Order
         Me.TabControl2.TabButtonSelectedState.ForeColor = System.Drawing.Color.White
         Me.TabControl2.TabButtonSelectedState.InnerColor = System.Drawing.Color.OrangeRed
         Me.TabControl2.TabButtonSize = New System.Drawing.Size(250, 40)
-        Me.TabControl2.TabIndex = 16
+        Me.TabControl2.TabIndex = 17
         Me.TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
-        'TabPage1
+        'SupplierInformation
         '
-        Me.TabPage1.Controls.Add(Me.panelBody)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 44)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(1342, 681)
-        Me.TabPage1.TabIndex = 2
-        Me.TabPage1.Text = "Customer Information"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.SupplierInformation.Controls.Add(Me.panelBody)
+        Me.SupplierInformation.Location = New System.Drawing.Point(4, 44)
+        Me.SupplierInformation.Name = "SupplierInformation"
+        Me.SupplierInformation.Size = New System.Drawing.Size(1342, 681)
+        Me.SupplierInformation.TabIndex = 2
+        Me.SupplierInformation.Text = "Supplier Profile"
+        Me.SupplierInformation.UseVisualStyleBackColor = True
         '
         'panelBody
         '
@@ -646,7 +263,7 @@ Partial Class frmCustomerViewInfo_Order
         Me.GroupBox3.Size = New System.Drawing.Size(357, 611)
         Me.GroupBox3.TabIndex = 34
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Company Information"
+        Me.GroupBox3.Text = "Supplier Information"
         '
         'cboStatus
         '
@@ -1008,7 +625,7 @@ Partial Class frmCustomerViewInfo_Order
         '
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel2.Location = New System.Drawing.Point(151, 0)
-        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.Size = New System.Drawing.Size(10, 40)
         Me.Guna2Panel2.TabIndex = 59
@@ -1588,7 +1205,7 @@ Partial Class frmCustomerViewInfo_Order
         '
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel3.Location = New System.Drawing.Point(290, 10)
-        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.Size = New System.Drawing.Size(10, 40)
         Me.Guna2Panel3.TabIndex = 59
@@ -1628,7 +1245,7 @@ Partial Class frmCustomerViewInfo_Order
         '
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel4.Location = New System.Drawing.Point(140, 10)
-        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.Size = New System.Drawing.Size(10, 40)
         Me.Guna2Panel4.TabIndex = 43
@@ -1706,28 +1323,249 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel3.Size = New System.Drawing.Size(1342, 10)
         Me.Panel3.TabIndex = 12
         '
-        'frmCustomerViewInfo_Order
+        'SupplierProducts
+        '
+        Me.SupplierProducts.Controls.Add(Me.ListView1)
+        Me.SupplierProducts.Controls.Add(Me.Panel8)
+        Me.SupplierProducts.Controls.Add(Me.Panel6)
+        Me.SupplierProducts.Controls.Add(Me.Panel12)
+        Me.SupplierProducts.Controls.Add(Me.Panel9)
+        Me.SupplierProducts.Location = New System.Drawing.Point(4, 44)
+        Me.SupplierProducts.Name = "SupplierProducts"
+        Me.SupplierProducts.Padding = New System.Windows.Forms.Padding(3)
+        Me.SupplierProducts.Size = New System.Drawing.Size(1342, 681)
+        Me.SupplierProducts.TabIndex = 1
+        Me.SupplierProducts.Text = "Supplier Products"
+        Me.SupplierProducts.UseVisualStyleBackColor = True
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.White
+        Me.Panel6.Controls.Add(Me.Panel15)
+        Me.Panel6.Controls.Add(Me.Guna2Panel1)
+        Me.Panel6.Controls.Add(Me.Panel34)
+        Me.Panel6.Controls.Add(Me.Panel7)
+        Me.Panel6.Controls.Add(Me.Panel14)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel6.Location = New System.Drawing.Point(13, 618)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1316, 60)
+        Me.Panel6.TabIndex = 21
+        '
+        'Panel15
+        '
+        Me.Panel15.BackColor = System.Drawing.Color.White
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel15.Location = New System.Drawing.Point(150, 10)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(140, 40)
+        Me.Panel15.TabIndex = 58
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel1.Location = New System.Drawing.Point(140, 10)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(10, 40)
+        Me.Guna2Panel1.TabIndex = 43
+        '
+        'Panel34
+        '
+        Me.Panel34.BackColor = System.Drawing.Color.White
+        Me.Panel34.Controls.Add(Me.btnInsert)
+        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel34.Location = New System.Drawing.Point(0, 10)
+        Me.Panel34.Name = "Panel34"
+        Me.Panel34.Size = New System.Drawing.Size(140, 40)
+        Me.Panel34.TabIndex = 18
+        '
+        'btnInsert
+        '
+        Me.btnInsert.BorderRadius = 8
+        Me.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnInsert.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnInsert.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnInsert.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnInsert.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnInsert.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnInsert.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnInsert.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnInsert.ForeColor = System.Drawing.Color.White
+        Me.btnInsert.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnInsert.Location = New System.Drawing.Point(0, 0)
+        Me.btnInsert.Name = "btnInsert"
+        Me.btnInsert.PressedDepth = 20
+        Me.btnInsert.Size = New System.Drawing.Size(140, 40)
+        Me.btnInsert.TabIndex = 57
+        Me.btnInsert.Text = "Re-Stock"
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.White
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel7.Location = New System.Drawing.Point(0, 50)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(1316, 10)
+        Me.Panel7.TabIndex = 18
+        '
+        'Panel14
+        '
+        Me.Panel14.BackColor = System.Drawing.Color.White
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel14.Location = New System.Drawing.Point(0, 0)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(1316, 10)
+        Me.Panel14.TabIndex = 18
+        '
+        'Panel12
+        '
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel12.Location = New System.Drawing.Point(1329, 3)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(10, 675)
+        Me.Panel12.TabIndex = 10
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.Guna2TextBox1)
+        Me.Panel8.Controls.Add(Me.Panel58)
+        Me.Panel8.Controls.Add(Me.btnSearchCompanyName)
+        Me.Panel8.Controls.Add(Me.Panel54)
+        Me.Panel8.Controls.Add(Me.Panel16)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(13, 3)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(1316, 57)
+        Me.Panel8.TabIndex = 22
+        '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader8, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader18})
+        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView1.FullRowSelect = True
+        Me.ListView1.GridLines = True
+        Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(13, 60)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(1316, 558)
+        Me.ListView1.TabIndex = 41
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "OrderID"
+        Me.ColumnHeader8.Width = 150
+        '
+        'ColumnHeader14
+        '
+        Me.ColumnHeader14.Text = "Price"
+        Me.ColumnHeader14.Width = 150
+        '
+        'ColumnHeader15
+        '
+        Me.ColumnHeader15.Text = "Availability"
+        Me.ColumnHeader15.Width = 150
+        '
+        'ColumnHeader16
+        '
+        Me.ColumnHeader16.Text = "Status"
+        Me.ColumnHeader16.Width = 300
+        '
+        'ColumnHeader18
+        '
+        Me.ColumnHeader18.Text = "Ordered Date"
+        Me.ColumnHeader18.Width = 300
+        '
+        'Panel16
+        '
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel16.Location = New System.Drawing.Point(0, 0)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(1316, 10)
+        Me.Panel16.TabIndex = 23
+        '
+        'btnSearchCompanyName
+        '
+        Me.btnSearchCompanyName.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearchCompanyName.BorderRadius = 8
+        Me.btnSearchCompanyName.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearchCompanyName.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCompanyName.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSearchCompanyName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSearchCompanyName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSearchCompanyName.Dock = System.Windows.Forms.DockStyle.Left
+        Me.btnSearchCompanyName.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnSearchCompanyName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSearchCompanyName.ForeColor = System.Drawing.Color.White
+        Me.btnSearchCompanyName.Image = CType(resources.GetObject("btnSearchCompanyName.Image"), System.Drawing.Image)
+        Me.btnSearchCompanyName.Location = New System.Drawing.Point(0, 10)
+        Me.btnSearchCompanyName.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSearchCompanyName.Name = "btnSearchCompanyName"
+        Me.btnSearchCompanyName.PressedDepth = 20
+        Me.btnSearchCompanyName.Size = New System.Drawing.Size(41, 37)
+        Me.btnSearchCompanyName.TabIndex = 47
+        '
+        'Panel54
+        '
+        Me.Panel54.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel54.Location = New System.Drawing.Point(0, 47)
+        Me.Panel54.Name = "Panel54"
+        Me.Panel54.Size = New System.Drawing.Size(1316, 10)
+        Me.Panel54.TabIndex = 24
+        '
+        'Guna2TextBox1
+        '
+        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox1.DefaultText = ""
+        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
+        Me.Guna2TextBox1.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2TextBox1.Location = New System.Drawing.Point(51, 10)
+        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(5)
+        Me.Guna2TextBox1.Name = "Guna2TextBox1"
+        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox1.PlaceholderText = "Looking for supplier product?"
+        Me.Guna2TextBox1.SelectedText = ""
+        Me.Guna2TextBox1.Size = New System.Drawing.Size(265, 37)
+        Me.Guna2TextBox1.TabIndex = 48
+        '
+        'Panel9
+        '
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel9.Location = New System.Drawing.Point(3, 3)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(10, 675)
+        Me.Panel9.TabIndex = 9
+        '
+        'Panel58
+        '
+        Me.Panel58.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel58.Location = New System.Drawing.Point(41, 10)
+        Me.Panel58.Name = "Panel58"
+        Me.Panel58.Size = New System.Drawing.Size(10, 37)
+        Me.Panel58.TabIndex = 49
+        '
+        'frmSupplierInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.TabControl2)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Name = "frmCustomerViewInfo_Order"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Name = "frmSupplierInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        Me.Panel15.ResumeLayout(False)
-        Me.Panel34.ResumeLayout(False)
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel16.ResumeLayout(False)
-        Me.Panel16.PerformLayout()
-        Me.Panel59.ResumeLayout(False)
-        Me.Panel59.PerformLayout()
         Me.TabControl2.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
+        Me.SupplierInformation.ResumeLayout(False)
         Me.panelBody.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.Panel28.ResumeLayout(False)
@@ -1763,113 +1601,18 @@ Partial Class frmCustomerViewInfo_Order
         Me.Panel5.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
+        Me.SupplierProducts.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel34.ResumeLayout(False)
+        Me.Panel8.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents ColumnHeader13 As ColumnHeader
-    Friend WithEvents ColumnHeader12 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader7 As ColumnHeader
-    Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents TabControl2 As Guna.UI2.WinForms.Guna2TabControl
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader8 As ColumnHeader
-    Friend WithEvents ColumnHeader14 As ColumnHeader
-    Friend WithEvents ColumnHeader15 As ColumnHeader
-    Friend WithEvents ColumnHeader16 As ColumnHeader
-    Friend WithEvents ColumnHeader18 As ColumnHeader
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Panel34 As Panel
-    Friend WithEvents btnInsert As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Panel14 As Panel
-    Friend WithEvents Panel12 As Panel
-    Friend WithEvents Panel9 As Panel
-    Friend WithEvents Panel8 As Panel
-    Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents ColumnHeader6 As ColumnHeader
-    Friend WithEvents lblOrderID As Label
-    Friend WithEvents lblstatus As Label
-    Friend WithEvents Panel15 As Panel
-    Friend WithEvents btnViewOrder As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents SupplierInformation As TabPage
     Friend WithEvents panelBody As Panel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Panel11 As Panel
-    Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel13 As Panel
-    Friend WithEvents Panel17 As Panel
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Panel18 As Panel
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Panel19 As Panel
-    Friend WithEvents Panel31 As Panel
-    Friend WithEvents lblCustID As Label
-    Friend WithEvents Panel33 As Panel
-    Friend WithEvents Panel32 As Panel
-    Friend WithEvents Panel30 As Panel
-    Friend WithEvents cboAcctStatus As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Panel41 As Panel
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Panel42 As Panel
-    Friend WithEvents txtRole As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Panel39 As Panel
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Panel40 As Panel
-    Friend WithEvents txtEmailAddress As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Panel37 As Panel
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Panel38 As Panel
-    Friend WithEvents txtPhoneNumber As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Panel35 As Panel
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Panel36 As Panel
-    Friend WithEvents txtLastName As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Panel46 As Panel
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Panel47 As Panel
-    Friend WithEvents txtFirstName As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Panel48 As Panel
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Panel49 As Panel
-    Friend WithEvents Panel50 As Panel
-    Friend WithEvents Panel51 As Panel
-    Friend WithEvents Panel52 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Panel54 As Panel
-    Friend WithEvents Panel16 As Panel
-    Friend WithEvents DateFilter2 As DateTimePicker
-    Friend WithEvents Label10 As Label
-    Friend WithEvents DateFilter1 As DateTimePicker
-    Friend WithEvents Panel60 As Panel
-    Friend WithEvents Panel59 As Panel
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Panel58 As Panel
-    Friend WithEvents Panel55 As Panel
-    Friend WithEvents Panel53 As Panel
-    Friend WithEvents Panel57 As Panel
-    Friend WithEvents btnActive As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Panel56 As Panel
-    Friend WithEvents Panel61 As Panel
-    Friend WithEvents Panel62 As Panel
-    Friend WithEvents Panel63 As Panel
+    Friend WithEvents Panel64 As Panel
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents cboStatus As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Panel28 As Panel
@@ -1894,7 +1637,89 @@ Partial Class frmCustomerViewInfo_Order
     Friend WithEvents Panel22 As Panel
     Friend WithEvents Panel21 As Panel
     Friend WithEvents Panel20 As Panel
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Panel57 As Panel
     Friend WithEvents btnDeactive As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Panel64 As Panel
+    Friend WithEvents btnActive As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel55 As Panel
+    Friend WithEvents Panel53 As Panel
+    Friend WithEvents cboAcctStatus As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Panel41 As Panel
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Panel42 As Panel
+    Friend WithEvents txtRole As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel39 As Panel
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Panel40 As Panel
+    Friend WithEvents txtEmailAddress As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel37 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Panel38 As Panel
+    Friend WithEvents txtPhoneNumber As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel35 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Panel36 As Panel
+    Friend WithEvents txtLastName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel46 As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Panel47 As Panel
+    Friend WithEvents txtFirstName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel48 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Panel33 As Panel
+    Friend WithEvents Panel32 As Panel
+    Friend WithEvents Panel30 As Panel
+    Friend WithEvents Panel31 As Panel
+    Friend WithEvents Panel19 As Panel
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Panel56 As Panel
+    Friend WithEvents Panel61 As Panel
+    Friend WithEvents Panel62 As Panel
+    Friend WithEvents Panel63 As Panel
+    Friend WithEvents Panel18 As Panel
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel49 As Panel
+    Friend WithEvents Panel50 As Panel
+    Friend WithEvents Panel51 As Panel
+    Friend WithEvents Panel52 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents lblCustID As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Panel17 As Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents SupplierProducts As TabPage
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel15 As Panel
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Panel34 As Panel
+    Friend WithEvents btnInsert As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader8 As ColumnHeader
+    Friend WithEvents ColumnHeader14 As ColumnHeader
+    Friend WithEvents ColumnHeader15 As ColumnHeader
+    Friend WithEvents ColumnHeader16 As ColumnHeader
+    Friend WithEvents ColumnHeader18 As ColumnHeader
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents btnSearchCompanyName As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel54 As Panel
+    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel58 As Panel
+    Friend WithEvents Panel9 As Panel
 End Class

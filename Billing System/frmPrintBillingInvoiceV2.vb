@@ -17,7 +17,7 @@ Public Class frmPrintBillingInvoiceV2
 
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printBillingInvoiceV2.rdlc"
+                .ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printBillingInvoiceV2.rdlc"
                 .DataSources.Clear()
             End With
 
@@ -28,7 +28,7 @@ Public Class frmPrintBillingInvoiceV2
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT c.CompanyName, c.Address, o.DeliveryAddress, b.DatePrinted, b.ProductOrder, b.Terms, b.Salesman, c.TIN, o.Quantity, p.ProductName, p.Description, p.SellingPrice, o.Amount, SUM(o.Amount) AS FinalAmount FROM tblcustomer c INNER JOIN tblbilling b ON b.CustomerID = c.CustomerID INNER JOIN tblbillinvoice i ON i.BillingID = b.BillingID INNER JOIN tblorder o ON i.OrderID = o.OrderID AND o.ProductID = i.ProductID INNER JOIN tblproduct p ON i.ProductID = p.ProductID WHERE b.BillingID = '" & billingid & "'", cn)
+            da.SelectCommand = New MySqlCommand("SELECT c.CompanyName, c.Address, o.DeliveryAddress, b.DatePrinted, b.ProductOrder, b.Terms, b.Salesman, c.TIN, o.Quantity, p.ProductName, p.Description, p.SellingPrice, o.Amount, (SELECT SUM(o2.Amount) FROM tblorder o2 INNER JOIN tblbillinvoice i2 ON i2.OrderID = o2.OrderID AND i2.ProductID = o2.ProductID WHERE i2.BillingID = b.BillingID) AS FinalAmount FROM tblcustomer c INNER JOIN tblbilling b ON b.CustomerID = c.CustomerID INNER JOIN tblbillinvoice i ON i.BillingID = b.BillingID INNER JOIN tblorder o ON i.OrderID = o.OrderID AND i.ProductID = o.ProductID INNER JOIN tblproduct p ON i.ProductID = p.ProductID WHERE b.BillingID = '" & billingid & "'", cn)
             da.Fill(ds.Tables("dtPrintBillingStatement"))
 
             If cn.State = ConnectionState.Open Then

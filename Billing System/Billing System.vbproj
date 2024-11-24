@@ -296,16 +296,23 @@
     <Compile Include="frmPrintBillingInvoiceV2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmProduct.Designer.vb">
+      <DependentUpon>frmProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRestockProduct.Designer.vb">
       <DependentUpon>frmRestockProduct.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRestockProduct.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="printDS.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>printDS.xsd</DependentUpon>
+    <Compile Include="frmSupplierInformation.Designer.vb">
+      <DependentUpon>frmSupplierInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSupplierInformation.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="printSalesInvoice.Designer.vb">
       <DependentUpon>printSalesInvoice.vb</DependentUpon>
@@ -462,8 +469,14 @@
     <EmbeddedResource Include="frmPaymentInformation.resx">
       <DependentUpon>frmPaymentInformation.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProduct.resx">
+      <DependentUpon>frmProduct.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRestockProduct.resx">
       <DependentUpon>frmRestockProduct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSupplierInformation.resx">
+      <DependentUpon>frmSupplierInformation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="printBillingInvoice.rdlc" />
     <EmbeddedResource Include="frmPrintBillingInvoice.resx">
@@ -552,17 +565,6 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="printDS.xsc">
-      <DependentUpon>printDS.xsd</DependentUpon>
-    </None>
-    <None Include="printDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>printDS.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="printDS.xss">
-      <DependentUpon>printDS.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

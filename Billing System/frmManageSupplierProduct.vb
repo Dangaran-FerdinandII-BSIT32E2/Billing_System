@@ -201,13 +201,13 @@ Public Class frmManageSupplierProduct
         frmManageProducts.ShowDialog()
     End Sub
 
-    Private Sub btnEditProduct_Click(sender As Object, e As EventArgs) Handles btnEditProduct.Click, ListView2.DoubleClick
+    Private Sub btnEditProduct_Click(sender As Object, e As EventArgs) Handles ListView2.DoubleClick
         If ListView2.SelectedItems.Count > 0 Then
             frmManageProducts.txtSupplier.Text = ListView2.SelectedItems(0).SubItems(1).Text
             frmManageProducts.productid = ListView2.SelectedItems(0).SubItems(9).Text
             frmManageProducts.supplierid = ListView2.SelectedItems(0).SubItems(10).Text
             frmManageProducts.ShowDialog()
-            btnEditProduct.Enabled = False
+            'btnEditProduct.Enabled = False
             btnDeleteProduct.Enabled = False
         End If
     End Sub
@@ -229,7 +229,7 @@ Public Class frmManageSupplierProduct
                     MsgBox("Product successfully deleted!", MsgBoxStyle.Information, "Delete Status")
                     Call loadProducts()
                 End If
-                btnEditProduct.Enabled = False
+                'btnEditProduct.Enabled = False
                 btnDeleteProduct.Enabled = False
             Else
                 MsgBox("Please select an item to delete!", vbExclamation)
@@ -272,12 +272,12 @@ Public Class frmManageSupplierProduct
     End Sub
 
     Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.SelectedIndexChanged
-        btnEditProduct.Enabled = True
+        'btnEditProduct.Enabled = True
         btnDeleteProduct.Enabled = True
-        btnSupply.Enabled = True
+        'btnSupply.Enabled = True
     End Sub
 
-    Private Sub btnSupply_Click(sender As Object, e As EventArgs) Handles btnSupply.Click
+    Private Sub btnSupply_Click(sender As Object, e As EventArgs)
         If ListView2.SelectedItems.Count > 0 Then
 
             frmRestockProduct.productid = ListView2.SelectedItems(0).SubItems(9).Text
