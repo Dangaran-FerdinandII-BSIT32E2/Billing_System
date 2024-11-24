@@ -302,6 +302,11 @@
     <Compile Include="frmRestockProduct.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="printDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>printDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="printSalesInvoice.Designer.vb">
       <DependentUpon>printSalesInvoice.vb</DependentUpon>
     </Compile>
@@ -547,6 +552,17 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="printDS.xsc">
+      <DependentUpon>printDS.xsd</DependentUpon>
+    </None>
+    <None Include="printDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>printDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="printDS.xss">
+      <DependentUpon>printDS.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

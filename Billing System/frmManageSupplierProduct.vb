@@ -122,10 +122,11 @@ Public Class frmManageSupplierProduct
         PopulateSupplierListView(dt)
     End Sub
     Public Function SearchSupplierDatabase(searchTerm As String) As DataTable
-        sql = "Select CompanyName,BankDetails,ContactPerson,PhoneNumber,Address,DeliveryTerms,SupplierID from tblsupplier where CompanyName LIKE ? OR ContactPerson LIKE ?"
+        sql = "Select CompanyName,AccountName,FirstName,PhoneNumber,Address,DeliveryTerms,SupplierID from tblsupplier where CompanyName LIKE ? OR FirstName LIKE ? OR LastName LIKE ?"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
+        cmd.Parameters.Add(New MySqlParameter("searchTerm3", "%" & searchTerm & "%"))
 
         If Not dr.IsClosed Then
             dr.Close()

@@ -4,6 +4,8 @@ Imports Microsoft.Reporting.WinForms
 Imports MySql.Data.MySqlClient
 
 Public Class frmPrintBillingInvoiceV2
+
+    Public billingid As String
     Private Sub frmPrintBillingInvoiceV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadReport()
@@ -26,14 +28,14 @@ Public Class frmPrintBillingInvoiceV2
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT tblbilling.CompanyName from tblbilling", cn)
-            da.Fill(ds.Tables("dtRentalReport"))
+            da.SelectCommand = New MySqlCommand("SELECT c.CompanyName, c.Address, o.DeliveryAddress, b.DatePrinted, b.ProductOrder, b.Terms, b.Salesman, c.TIN, o.Quantity, p.ProductName, p.Description, p.SellingPrice, o.Amount, SUM(o.Amount) AS FinalAmount FROM tblcustomer c INNER JOIN tblbilling b ON b.CustomerID = c.CustomerID INNER JOIN tblbillinvoice i ON i.BillingID = b.BillingID INNER JOIN tblorder o ON i.OrderID = o.OrderID AND o.ProductID = i.ProductID INNER JOIN tblproduct p ON i.ProductID = p.ProductID WHERE b.BillingID = '" & billingid & "'", cn)
+            da.Fill(ds.Tables("dtPrintBillingStatement"))
 
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If
 
-            rptDS = New ReportDataSource("dtTestOnly", ds.Tables("dtRentalReport"))
+            rptDS = New ReportDataSource("dtPrintBillingStatement", ds.Tables("dtPrintBillingStatement"))
             ReportViewer1.LocalReport.DataSources.Add(rptDS)
             ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
             ReportViewer1.ZoomMode = ZoomMode.Percent

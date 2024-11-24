@@ -221,7 +221,8 @@ Public Class frmDeliveryInformation
     End Sub
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-
+        frmPrintBillingInvoiceV2.billingid = billingid
+        frmPrintBillingInvoiceV2.ShowDialog()
     End Sub
     Private Sub loadPrint()
         Try
