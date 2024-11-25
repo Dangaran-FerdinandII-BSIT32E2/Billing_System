@@ -57,7 +57,6 @@ Public Class frmManageProducts
         txtType.Clear()
         txtPurchasePrice.Clear()
         txtSellingPrice.Clear()
-        txtSupplier.Clear()
 
         pbxProduct.Image = Nothing
         btnBrowse.Visible = True
@@ -73,7 +72,6 @@ Public Class frmManageProducts
                 Dim filled As Boolean = True
 
                 Dim requiredFields As New Dictionary(Of String, Control) From {
-                {"txtSupplier", txtSupplier},
                 {"txtProductName", txtProductName},
                 {"txtDescription", txtDescription},
                 {"txtCategory", txtCategory},
@@ -119,7 +117,6 @@ Public Class frmManageProducts
                                 .Parameters.AddWithValue("@Description", txtDescription.Text)
                                 .Parameters.AddWithValue("@Category", txtCategory.Text)
                                 .Parameters.AddWithValue("@Type", txtType.Text)
-                                .Parameters.AddWithValue("@Manufacturer", txtSupplier.Text)
                                 .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
                                 .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
                                 .Parameters.AddWithValue("@SupplierID", supplierid)
@@ -236,7 +233,7 @@ Public Class frmManageProducts
         End Try
     End Sub
 
-    Private Sub btnSearchSupplier_Click(sender As Object, e As EventArgs) Handles btnSearchSupplier.Click
+    Private Sub btnSearchSupplier_Click(sender As Object, e As EventArgs) 
         frmListofSuppliers.ShowDialog()
     End Sub
 
