@@ -589,7 +589,7 @@ Partial Class frmAdminDashboard
         Me.panelDashboard.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelDashboard.Location = New System.Drawing.Point(257, 113)
         Me.panelDashboard.Name = "panelDashboard"
-        Me.panelDashboard.Size = New System.Drawing.Size(1109, 655)
+        Me.panelDashboard.Size = New System.Drawing.Size(1109, 633)
         Me.panelDashboard.TabIndex = 5
         '
         'frmAdminDashboard
@@ -597,8 +597,8 @@ Partial Class frmAdminDashboard
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1366, 768)
-        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.panelDashboard)
+        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

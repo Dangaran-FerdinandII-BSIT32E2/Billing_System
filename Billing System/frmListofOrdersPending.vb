@@ -201,10 +201,10 @@ Public Class frmListofOrdersPending
             frmManageSalesV2.txtCompanyName.Clear()
             frmManageSalesV2.txtAddress.Clear()
             frmManageSalesV2.txtDeliveryAddress.Clear()
-            frmManageSalesV2.txtBusinessStyle.Clear()
+            'frmManageSalesV2.txtBusinessStyle.Clear()
             frmManageSalesV2.txtTIN.Clear()
             frmManageSalesV2.txtPONo.Clear()
-            frmManageSalesV2.txtTerms.Clear()
+            'frmManageSalesV2.txtTerms.Clear()
             frmManageSalesV2.cboSalesman.SelectedIndex = -1
 
             frmAddNewCustomer.ShowDialog()
