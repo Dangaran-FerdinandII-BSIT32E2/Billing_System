@@ -61,7 +61,7 @@ Public Class frmManageSalesV2
         End Try
     End Sub
 
-    Private Sub lblCustID_TextChanged(sender As Object, e As EventArgs) Handles lblCustID.TextChanged, MyBase.Load
+    Private Sub lblCustID_TextChanged(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -79,7 +79,7 @@ Public Class frmManageSalesV2
                 txtCompanyName.Text = dr("CompanyName").ToString()
                 txtAddress.Text = dr("Address").ToString()
                 txtDeliveryAddress.Text = dr("Delivery").ToString()
-                txtBusinessStyle.Text = dr("CompanyName").ToString()
+                'txtBusinessStyle.Text = dr("CompanyName").ToString()
                 txtTIN.Text = dr("TIN").ToString()
             End If
         Catch ex As Exception
@@ -91,7 +91,7 @@ Public Class frmManageSalesV2
         End Try
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -111,7 +111,7 @@ Public Class frmManageSalesV2
         End Try
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
             Call clearText()
             lblPONu.Visible = True
@@ -119,7 +119,7 @@ Public Class frmManageSalesV2
         End If
     End Sub
 
-    Private Sub Printbtn_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+    Private Sub Printbtn_Click(sender As Object, e As EventArgs)
         Try
             Dim filled As Boolean = True
 
@@ -127,11 +127,12 @@ Public Class frmManageSalesV2
             {"txtCompanyName", txtCompanyName},
             {"txtAddress", txtAddress},
             {"txtDeliveryAddress", txtDeliveryAddress},
-            {"txtBusinessStyle", txtBusinessStyle},
-            {"txtTerms", txtTerms},
             {"cboSalesman", cboSalesman},
             {"dtpDate", dtpDate}
         }
+
+            '{"txtBusinessStyle", txtBusinessStyle},
+            '{"txtTerms", txtTerms},
 
             For Each fieldName_controlPair In requiredFields
                 Dim control As Control = fieldName_controlPair.Value
@@ -213,7 +214,7 @@ Public Class frmManageSalesV2
 
             frmPrintSalesInvoiceV2.custid = lblCustID.Text
             frmPrintSalesInvoiceV2.billid = lblBillingID.Text
-            frmPrintSalesInvoiceV2.lblTerms.Text = txtTerms.Text
+            'frmPrintSalesInvoiceV2.lblTerms.Text = txtTerms.Text
             frmPrintSalesInvoiceV2.lblTIN.Text = txtTIN.Text
             frmPrintSalesInvoiceV2.lblSalesman.Text = cboSalesman.Text
 
@@ -230,18 +231,18 @@ Public Class frmManageSalesV2
 
             'add date based on terms
 
-            Dim terms = TermParser.ParseTerms(txtTerms.Text)
+            'Dim terms = TermParser.ParseTerms(txtTerms.Text)
 
-            For Each term In terms
-                Select Case term.Unit
-                    Case "day"
-                        frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddDays(term.Number).ToString
-                    Case "month"
-                        frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddMonths(term.Number).ToString
-                    Case "year"
-                        frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddYears(term.Number).ToString
-                End Select
-            Next
+            'For Each term In terms
+            '    Select Case term.Unit
+            '        Case "day"
+            '            frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddDays(term.Number).ToString
+            '        Case "month"
+            '            frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddMonths(term.Number).ToString
+            '        Case "year"
+            '            frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddYears(term.Number).ToString
+            '    End Select
+            'Next
 
             For Each listitem As ListViewItem In ListView1.Items 'includes OrderID on SubItem 5 OrderList sub item 6 productid sub item 7
                 Dim X As ListViewItem = listitem.Clone()
@@ -295,7 +296,7 @@ Public Class frmManageSalesV2
         End Try
     End Function
 
-    Private Sub cboAdjust_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAdjust.SelectedIndexChanged
+    Private Sub cboAdjust_SelectedIndexChanged(sender As Object, e As EventArgs)
         If cboAdjust.SelectedIndex <> 0 Then
             txtAmount.Enabled = True
             cboFormat.Visible = True
@@ -308,11 +309,11 @@ Public Class frmManageSalesV2
         End If
     End Sub
 
-    Private Sub txtCompanyName_TextChanged(sender As Object, e As EventArgs) Handles txtCompanyName.TextChanged
-        txtBusinessStyle.Text = txtCompanyName.Text
+    Private Sub txtCompanyName_TextChanged(sender As Object, e As EventArgs)
+        'txtBusinessStyle.Text = txtCompanyName.Text
     End Sub
 
-    Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
+    Private Sub btnAddOrder_Click(sender As Object, e As EventArgs)
         If MsgBox("Do you want to add items?", vbYesNo + vbQuestion, "Walk-In Status") = vbYes Then
             frmManagePOS.ShowDialog()
         End If
@@ -326,9 +327,9 @@ Public Class frmManageSalesV2
         txtCompanyName.Clear()
         txtAddress.Clear()
         txtDeliveryAddress.Clear()
-        txtBusinessStyle.Clear()
+        'txtBusinessStyle.Clear()
         txtTIN.Clear()
-        txtTerms.Clear()
+        'txtTerms.Clear()
         txtPONo.Clear()
         txtAmount.Clear()
 
