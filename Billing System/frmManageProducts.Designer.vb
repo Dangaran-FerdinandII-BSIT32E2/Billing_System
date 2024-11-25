@@ -85,9 +85,7 @@ Partial Class frmManageProducts
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnSearchSupplier = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.txtSupplier = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -923,9 +921,7 @@ Partial Class frmManageProducts
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.btnSearchSupplier)
         Me.Panel1.Controls.Add(Me.Panel5)
-        Me.Panel1.Controls.Add(Me.txtSupplier)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel4)
@@ -936,60 +932,14 @@ Partial Class frmManageProducts
         Me.Panel1.Size = New System.Drawing.Size(532, 62)
         Me.Panel1.TabIndex = 14
         '
-        'btnSearchSupplier
-        '
-        Me.btnSearchSupplier.BackColor = System.Drawing.Color.Transparent
-        Me.btnSearchSupplier.BorderRadius = 8
-        Me.btnSearchSupplier.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSearchSupplier.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchSupplier.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSearchSupplier.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSearchSupplier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSearchSupplier.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btnSearchSupplier.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnSearchSupplier.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSearchSupplier.ForeColor = System.Drawing.Color.White
-        Me.btnSearchSupplier.Image = CType(resources.GetObject("btnSearchSupplier.Image"), System.Drawing.Image)
-        Me.btnSearchSupplier.Location = New System.Drawing.Point(87, 12)
-        Me.btnSearchSupplier.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnSearchSupplier.Name = "btnSearchSupplier"
-        Me.btnSearchSupplier.PressedDepth = 20
-        Me.btnSearchSupplier.Size = New System.Drawing.Size(55, 38)
-        Me.btnSearchSupplier.TabIndex = 82
-        Me.btnSearchSupplier.TabStop = False
-        '
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel5.Location = New System.Drawing.Point(142, 12)
+        Me.Panel5.Location = New System.Drawing.Point(506, 12)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(13, 38)
         Me.Panel5.TabIndex = 73
-        '
-        'txtSupplier
-        '
-        Me.txtSupplier.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSupplier.DefaultText = ""
-        Me.txtSupplier.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSupplier.DisabledState.FillColor = System.Drawing.Color.White
-        Me.txtSupplier.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.txtSupplier.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSupplier.Dock = System.Windows.Forms.DockStyle.Right
-        Me.txtSupplier.Enabled = False
-        Me.txtSupplier.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
-        Me.txtSupplier.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtSupplier.ForeColor = System.Drawing.Color.Black
-        Me.txtSupplier.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSupplier.Location = New System.Drawing.Point(155, 12)
-        Me.txtSupplier.Margin = New System.Windows.Forms.Padding(5)
-        Me.txtSupplier.Name = "txtSupplier"
-        Me.txtSupplier.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSupplier.PlaceholderText = "Search supplier"
-        Me.txtSupplier.SelectedText = ""
-        Me.txtSupplier.Size = New System.Drawing.Size(364, 38)
-        Me.txtSupplier.TabIndex = 72
-        Me.txtSupplier.TabStop = False
         '
         'Panel2
         '
@@ -1180,9 +1130,7 @@ Partial Class frmManageProducts
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel19 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnSearchSupplier As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents txtSupplier As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel

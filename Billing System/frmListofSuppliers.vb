@@ -66,7 +66,7 @@ Public Class frmListofSuppliers
 
             dr = cmd.ExecuteReader
             If dr.Read = True Then
-                frmManageProducts.txtSupplier.Text = dr("CompanyName").ToString()
+                'frmManageProducts.txtSupplier.Text = dr("CompanyName").ToString()
                 frmManageProducts.supplierid = dr("SupplierID").ToString()
                 Me.Close()
             End If
