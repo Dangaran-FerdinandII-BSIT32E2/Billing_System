@@ -60,10 +60,6 @@ Public Class frmRestockProduct
         End Try
     End Sub
 
-    Private Sub btnCancelSupp_Click(sender As Object, e As EventArgs) Handles btnCancelSupp.Click
-        Me.Close()
-    End Sub
-
     Private Sub frmRestockProduct_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
             txtSupplier.Clear()
@@ -138,5 +134,9 @@ Public Class frmRestockProduct
         Catch ex As Exception
             MsgBox("An error occurred frmRestockProduct(sendRequest): " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+
     End Sub
 End Class
