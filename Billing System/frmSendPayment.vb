@@ -92,21 +92,21 @@ Public Class frmSendPayment
     Private Sub btnSend_Click(sender As Object, e As EventArgs) Handles btnSend.Click
         If pbxPayment.Image IsNot Nothing AndAlso txtAmount.Text IsNot Nothing Then
             If MsgBox("Do you want to send payment?", vbYesNo + vbQuestion) = vbYes Then
-
-                Dim mstream As New System.IO.MemoryStream()
-                pbxPayment.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
-                Dim arrImage() As Byte = mstream.GetBuffer
-                mstream.Close()
                 Try
                     If cn.State <> ConnectionState.Open Then
                         cn.Open()
                     End If
-                    sql = "UPDATE tblpayment SET PaymentIMG=@PaymentIMG, DateSubmitted=@DateSubmitted, AmountPaid=@AmountPaid WHERE QuotationID = '" & quotationid & "'"
-                cmd = New MySqlCommand(sql, cn)
+                    Dim mstream As New System.IO.MemoryStream()
+                    pbxPayment.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                    Dim arrImage() As Byte = mstream.GetBuffer
+                    mstream.Close()
+
+                    sql = "UPDATE tblpayment SET PaymentImg=@PaymentImg, DateSubmitted=@DateSubmitted, AmountPaid=@AmountPaid WHERE QuotationID = '" & quotationid & "'"
+                    cmd = New MySqlCommand(sql, cn)
                     With cmd
+                        .Parameters.AddWithValue("@PaymentImg", arrImage)
                         .Parameters.AddWithValue("@DateSubmitted", DateTime.Now)
-                        .Parameters.AddWithValue("@AmountPaid", txtAmount.Text)
-                        .Parameters.AddWithValue("@PaymentIMG", arrImage)
+                        .Parameters.AddWithValue("@AmountPaid", Double.Parse(txtAmount.Text))
                         .ExecuteNonQuery()
                     End With
 

@@ -270,6 +270,7 @@ Public Class frmRestockQuotation
     End Sub
 
     Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
+        frmSendPayment.quotationid = quotationid
         frmSendPayment.ShowDialog()
     End Sub
 End Class
