@@ -86,11 +86,11 @@ Public Class frmManageCustomerV3
     Public Function SearchDatabase(searchTerm As String) As DataTable
 
         If cboSalesman.Text = "View Master List" Or cboSalesman.Text = "Filter by" Then
-            sql = "SELECT CompanyName, CONCAT(LastName, ', ', FirstName) AS FullName, Address, Email, PhoneNumber, CustomerID " &
-                      "FROM tblcustomer WHERE LastName LIKE @searchTerm1 OR CompanyName LIKE @searchTerm2"
+            sql = "SELECT CompanyName, CONCAT(LastName, ', ', FirstName) AS FullName, CASE AcctStatus WHEN 1 THEN 'Active' WHEN 0 THEN 'Inactive' END AS Status, Address, Email, PhoneNumber, CustomerID " &
+                      "FROM tblcustomer WHERE CustomerID > 2 AND (LastName LIKE @searchTerm1 OR CompanyName LIKE @searchTerm2)"
         ElseIf cboSalesman.Text = "View Inactive Users" Then
             sql = "SELECT CompanyName, CONCAT(LastName, ', ', FirstName) AS FullName, Address, CustomerID " &
-                      "FROM tblcustomer WHERE (LastName LIKE @searchTerm1 OR CompanyName LIKE @searchTerm2) AND AcctStatus = 0"
+                      "FROM tblcustomer WHERE CustomerID > 2 AND ((LastName LIKE @searchTerm1 OR CompanyName LIKE @searchTerm2) AND AcctStatus = 0)"
         ElseIf cboSalesman.Text = "View Pending Orders" Then
             sql = "SELECT c.CompanyName, CONCAT(c.LastName, ', ', c.FirstName) AS FullName, c.PhoneNumber, c.Email, " &
                   "o.OrderCount, " &
@@ -101,7 +101,7 @@ Public Class frmManageCustomerV3
                   "c.Address, c.Delivery, o.DateOrdered, o.CustomerID, o.OrderID " &
                   "FROM tblcustomer c INNER JOIN (SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, Status, OrderID " &
                   "FROM tblorder WHERE Status <> 2 AND Status <> 3 AND DueDate IS NULL GROUP BY CustomerID) o " &
-                  "ON c.CustomerID = o.CustomerID WHERE LastName LIKE @searchTerm1 OR CompanyName LIKE @searchTerm2"
+                  "ON c.CustomerID = o.CustomerID WHERE CustomerID > 2 AND (LastName LIKE @searchTerm1 OR CompanyName LIKE @searchTerm2)"
 
         End If
 

@@ -344,6 +344,7 @@ Public Class frmManageSuppliers
 
     Private Sub btnRestock_Click(sender As Object, e As EventArgs) Handles btnRestock.Click, ListView3.DoubleClick
         If ListView3.SelectedItems.Count > 0 Then
+            frmRestockProduct.productid = ListView3.SelectedItems(0).SubItems(7).Text
             frmRestockProduct.supplierid = ListView3.SelectedItems(0).SubItems(8).Text
             frmRestockProduct.ShowDialog()
         End If

@@ -35,9 +35,6 @@ Partial Class frmRestockProduct
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ProductName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Quantity = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtPONo = New Guna.UI2.WinForms.Guna2TextBox()
@@ -77,7 +74,10 @@ Partial Class frmRestockProduct
         Me.Panel55 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ProductName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Quantity = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel19.SuspendLayout()
         Me.Panel20.SuspendLayout()
@@ -205,7 +205,6 @@ Partial Class frmRestockProduct
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.ListView1)
         Me.GroupBox2.Controls.Add(Me.Panel1)
         Me.GroupBox2.Controls.Add(Me.Panel2)
         Me.GroupBox2.Controls.Add(Me.Panel3)
@@ -229,31 +228,6 @@ Partial Class frmRestockProduct
         Me.GroupBox2.TabIndex = 26
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Restock Information"
-        '
-        'ListView1
-        '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ProductName, Me.Quantity})
-        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.FullRowSelect = True
-        Me.ListView1.GridLines = True
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(17, 235)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(597, 307)
-        Me.ListView1.TabIndex = 41
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ProductName
-        '
-        Me.ProductName.Text = "Product Name"
-        Me.ProductName.Width = 150
-        '
-        'Quantity
-        '
-        Me.Quantity.Text = "Quantity"
-        Me.Quantity.Width = 150
         '
         'Panel1
         '
@@ -564,6 +538,7 @@ Partial Class frmRestockProduct
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ListView1)
         Me.GroupBox1.Controls.Add(Me.pbxProduct)
         Me.GroupBox1.Controls.Add(Me.Panel34)
         Me.GroupBox1.Controls.Add(Me.Panel53)
@@ -579,7 +554,7 @@ Partial Class frmRestockProduct
         Me.GroupBox1.Size = New System.Drawing.Size(601, 620)
         Me.GroupBox1.TabIndex = 28
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Product Image"
+        Me.GroupBox1.Text = "Shopping Cart"
         '
         'pbxProduct
         '
@@ -745,10 +720,35 @@ Partial Class frmRestockProduct
         Me.ImageList1.ImageSize = New System.Drawing.Size(128, 128)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ProductName, Me.Quantity})
+        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView1.FullRowSelect = True
+        Me.ListView1.GridLines = True
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(17, 39)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(567, 503)
+        Me.ListView1.TabIndex = 42
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Product Image"
         Me.ColumnHeader1.Width = 200
+        '
+        'ProductName
+        '
+        Me.ProductName.Text = "Product Name"
+        Me.ProductName.Width = 150
+        '
+        'Quantity
+        '
+        Me.Quantity.Text = "Quantity"
+        Me.Quantity.Width = 150
         '
         'frmRestockProduct
         '
@@ -821,9 +821,6 @@ Partial Class frmRestockProduct
     Friend WithEvents Label3 As Label
     Friend WithEvents txtSupplier As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents ImageList1 As ImageList
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents ProductName As ColumnHeader
-    Friend WithEvents Quantity As ColumnHeader
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel34 As Panel
     Friend WithEvents Panel35 As Panel
@@ -838,5 +835,8 @@ Partial Class frmRestockProduct
     Friend WithEvents Panel55 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents pbxProduct As PictureBox
+    Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ProductName As ColumnHeader
+    Friend WithEvents Quantity As ColumnHeader
 End Class
