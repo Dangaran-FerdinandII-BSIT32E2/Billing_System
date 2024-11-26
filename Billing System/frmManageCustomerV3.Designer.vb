@@ -117,7 +117,7 @@ Partial Class frmManageCustomerV3
         Me.btnSearch.ForeColor = System.Drawing.Color.White
         Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
         Me.btnSearch.Location = New System.Drawing.Point(148, 10)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.PressedDepth = 20
         Me.btnSearch.Size = New System.Drawing.Size(35, 30)
@@ -214,7 +214,7 @@ Partial Class frmManageCustomerV3
         Me.cboSalesman.ItemHeight = 30
         Me.cboSalesman.Items.AddRange(New Object() {"Filter by", "View Master List", "View Inactive Users", "View Pending Orders"})
         Me.cboSalesman.Location = New System.Drawing.Point(0, 10)
-        Me.cboSalesman.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboSalesman.Margin = New System.Windows.Forms.Padding(4)
         Me.cboSalesman.Name = "cboSalesman"
         Me.cboSalesman.Size = New System.Drawing.Size(226, 36)
         Me.cboSalesman.StartIndex = 0
@@ -413,6 +413,7 @@ Partial Class frmManageCustomerV3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(1109, 655)
         Me.Controls.Add(Me.MainBody)
         Me.Controls.Add(Me.Panel3)
@@ -420,7 +421,7 @@ Partial Class frmManageCustomerV3
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmManageCustomerV3"
         Me.Text = "frmManageCustomerV3"
         Me.Panel23.ResumeLayout(False)

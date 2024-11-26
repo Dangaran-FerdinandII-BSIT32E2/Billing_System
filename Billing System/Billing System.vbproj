@@ -248,10 +248,10 @@
     <Compile Include="frmManageSalesV2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmManageSupplierProduct.Designer.vb">
-      <DependentUpon>frmManageSupplierProduct.vb</DependentUpon>
+    <Compile Include="frmManageSuppliers.Designer.vb">
+      <DependentUpon>frmManageSuppliers.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmManageSupplierProduct.vb">
+    <Compile Include="frmManageSuppliers.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmManageSupplierV2.Designer.vb">
@@ -457,8 +457,8 @@
     <EmbeddedResource Include="frmManageSalesV2.resx">
       <DependentUpon>frmManageSalesV2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmManageSupplierProduct.resx">
-      <DependentUpon>frmManageSupplierProduct.vb</DependentUpon>
+    <EmbeddedResource Include="frmManageSuppliers.resx">
+      <DependentUpon>frmManageSuppliers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageSupplierV2.resx">
       <DependentUpon>frmManageSupplierV2.vb</DependentUpon>

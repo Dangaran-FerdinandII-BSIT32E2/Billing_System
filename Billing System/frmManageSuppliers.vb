@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing.Imaging
 Imports MySql.Data.MySqlClient
-Public Class frmManageSupplierProduct
+Public Class frmManageSuppliers
     Private Sub frmManageSupplierProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadSuppliers()
