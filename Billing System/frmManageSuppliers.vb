@@ -295,13 +295,13 @@ Public Class frmManageSuppliers
     End Sub
 
     'REORDERS
-    Private Sub loadReorders()
+    Public Sub loadReorders()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryproducts WHERE Status < 2 ORDER BY Status ASC"
+            sql = "SELECT * FROM qryproducts WHERE Status < 2 AND NOT EXISTS ( SELECT 1 FROM tblquotation WHERE qryproducts.ProductID = tblquotation.ProductID ) ORDER BY Status ASC"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then

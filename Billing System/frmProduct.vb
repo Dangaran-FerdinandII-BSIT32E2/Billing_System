@@ -94,7 +94,7 @@ Public Class frmProduct
                 cn.Open()
             End If
 
-            sql = "SELECT q.QuotationID, q.Amount, q.SupplierID, s.CompanyName FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID"
+            sql = "SELECT q.PONumber, q.QuotationID, COUNT(q.ProductID) AS TotalOrders, q.SupplierID, SUM(q.Amount) AS Amount, s.CompanyName, DATE_FORMAT(q.DateRequested, '%M %d %Y') AS DateRequested FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID WHERE q.QuotationIMG IS NOT NULL GROUP BY q.QuotationID ORDER BY q.PONumber ASC"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -107,10 +107,13 @@ Public Class frmProduct
             ListView2.Items.Clear()
 
             Do While dr.Read = True
-                x = New ListViewItem(dr("QuotationID").ToString())
+                x = New ListViewItem(dr("PONumber").ToString())
                 x.SubItems.Add(dr("CompanyName").ToString())
+                x.SubItems.Add(dr("TotalOrders").ToString())
                 x.SubItems.Add(dr("Amount").ToString())
-                x.SubItems.Add(dr("SupplierID").ToString()) '3
+                x.SubItems.Add(dr("DateRequested").ToString())
+                x.SubItems.Add(dr("QuotationID").ToString()) '5
+                x.SubItems.Add(dr("SupplierID").ToString()) '6
 
                 ListView2.Items.Add(x)
             Loop
@@ -122,5 +125,13 @@ Public Class frmProduct
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub btnAddNewProduct_Click(sender As Object, e As EventArgs) Handles btnAddNewProduct.Click, ListView2.DoubleClick
+        If ListView2.SelectedItems.Count > 0 Then
+            frmRestockQuotation.quotationid = ListView2.SelectedItems(0).SubItems(5).Text
+            frmRestockQuotation.supplierid = ListView2.SelectedItems(0).SubItems(6).Text
+            frmRestockQuotation.ShowDialog()
+        End If
     End Sub
 End Class

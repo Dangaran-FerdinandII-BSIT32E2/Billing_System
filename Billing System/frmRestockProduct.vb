@@ -51,7 +51,7 @@ Public Class frmRestockProduct
                                 x.ImageIndex = ImageList1.Images.Add(image, Nothing)
                                 x.SubItems.Add(dr("ProductName").ToString)
                                 x.SubItems.Add(dr("Amount").ToString)
-                                x.SubItems.Add(dr("ProductID").ToString)
+                                x.SubItems.Add(dr("ProductID").ToString) '3
 
                                 ListView1.Items.Add(x)
                             End Using
@@ -75,14 +75,17 @@ Public Class frmRestockProduct
         If e.CloseReason = CloseReason.UserClosing Then
             txtSupplier.Clear()
             txtPONo.Clear()
+
+            ListView1.Items.Clear()
+            listofProductIds.Clear()
+
+            productid = Nothing
+            supplierid = Nothing
         End If
     End Sub
 
     Private Sub btnSendRequest_Click(sender As Object, e As EventArgs) Handles btnSendRequest.Click
-        If btnSendRequest.Text = "Send Request" Then
-            sendRequest()
-        ElseIf btnSendRequest.Text = "View Quotation" Then
-        End If
+        sendRequest()
     End Sub
 
     Private Sub sendRequest()
@@ -141,28 +144,65 @@ Public Class frmRestockProduct
                 smtpServer.Send(mail)
             End Using
 
+            Call getMaxQuotationID()
             Call updateQuotation()
+            Call frmManageSuppliers.loadReorders()
+            Me.Close()
             MsgBox("Request sent successfully!", MsgBoxStyle.Information, "Request Sending")
         Catch ex As Exception
             MsgBox("An error occurred frmRestockProduct(sendRequest): " & ex.Message)
         End Try
     End Sub
 
+    Dim quotationid As String
+    Private Sub getMaxQuotationID()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT MAX(QuotationID) AS QuotationID FROM tblquotation"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            If dr.Read = True Then
+                quotationid = (dr("QuotationID") + 1).ToString
+            End If
+        Catch ex As Exception
+            MsgBox("An Error occurred frmRestockProduct(getMaxQuotationID): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub updateQuotation()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
 
-            sql = "INSERT INTO tblquotation(SupplierID, PONumber, newInsert, Status) VALUES(@SupplierID, @PONumber)"
-            cmd = New MySqlCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@SupplierID", supplierid)
-                .Parameters.AddWithValue("@PONumber", txtPONo.Text)
-                .ExecuteNonQuery()
-            End With
+            For Each item As ListViewItem In ListView1.Items
+                sql = "INSERT INTO tblquotation(QuotationID, SupplierID, PONumber, ProductID, DateRequested, Quantity) VALUES(@QuotationID, @SupplierID, @PONumber, @ProductID, @DateRequested, @Quantity)"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@QuotationID", quotationid)
+                    .Parameters.AddWithValue("@SupplierID", supplierid)
+                    .Parameters.AddWithValue("@PONumber", txtPONo.Text)
+                    .Parameters.AddWithValue("@ProductID", item.SubItems(3).Text)
+                    .Parameters.AddWithValue("@DateRequested", DateTime.Now)
+                    .Parameters.AddWithValue("@Quantity", item.SubItems(2).Text)
+                    .ExecuteNonQuery()
+                End With
+            Next
+
         Catch ex As Exception
-            MsgBox("An Error occurred frmRestockProduct(loadQuotation): " & ex.Message)
+            MsgBox("An Error occurred frmRestockProduct(updateQuotation): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -187,7 +227,21 @@ Public Class frmRestockProduct
             If MsgBox("Do you want to remove the item?", vbQuestion + vbYesNo) = vbYes Then
                 listofProductIds.Remove(ListView1.SelectedItems(0).SubItems(3).Text)
 
+                btnQuantity.Enabled = False
+                btnRemove.Enabled = False
                 Call loadInformation()
+            End If
+        End If
+    End Sub
+
+    Private Sub btnQuantity_Click(sender As Object, e As EventArgs) Handles btnQuantity.Click
+        If ListView1.SelectedItems.Count > 0 Then
+            Dim currentValue As String = ListView1.SelectedItems(0).SubItems(2).Text
+
+            Dim newValue As String = InputBox("Enter quantity: ", "Restock Item", currentValue)
+
+            If Not String.IsNullOrEmpty(newValue) Then
+                ListView1.SelectedItems(0).SubItems(2).Text = newValue
             End If
         End If
     End Sub
