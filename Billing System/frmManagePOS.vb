@@ -1,11 +1,19 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Mysqlx.Crud
 Imports System.Data.SqlClient
+Imports System.Web.UI.WebControls
 Public Class frmManagePOS
 
     Public productid As String
     Dim totalamount As Integer
     Public isRental As Boolean? = False
+
+    Public nameofcompany As String
+    Public nameofcontact As String
+    Public phonenumber As String
+    Public email As String
+    Public deliveryaddress As String
+    Public purchaseorder As String
     Private Sub btnSearchSupplier_Click(sender As Object, e As EventArgs) Handles btnSearchSupplier.Click
         frmListProducts.ShowDialog()
         btnCancel.Enabled = True
@@ -47,7 +55,7 @@ Public Class frmManagePOS
             If filled Then
                 If Not IsNumeric(txtQty.Text) Then
                     MsgBox("Invalid number!", MsgBoxStyle.Critical)
-                ElseIf Val(txtQty.text) > 100 Or Val(txtQty.text) < 0 Then
+                ElseIf Val(txtQty.Text) > 100 Or Val(txtQty.Text) < 0 Then
                     MsgBox("Amount is invalid!", MsgBoxStyle.Critical)
                 ElseIf MsgBox("Do you want to add item?", vbYesNo + vbQuestion) = vbYes Then
 
@@ -160,64 +168,15 @@ Public Class frmManagePOS
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
+        If MsgBox("Do you want to save?", vbYesNo + vbQuestion) = vbYes Then
+            If isRental Then
+                rental()
+            Else
+                walkin()
             End If
-            If MsgBox("Do you want to save?", vbYesNo + vbQuestion) = vbYes Then
-                For Each listitem As ListViewItem In ListView1.Items 'includes ProductID as ListView1.SubItems(4)
-                    sql = "SELECT ProductName, Description, SellingPrice, ProductID FROM qryproducts WHERE ProductID = '" & listitem.SubItems(4).Text & "'"
-                    cmd = New MySqlCommand(sql, cn)
-
-                    If Not dr.IsClosed Then
-                        dr.Close()
-                    End If
-
-                    dr = cmd.ExecuteReader
-                    If isRental Then
-                        While dr.Read
-                            Dim X As ListViewItem = frmManageRentalV2.ListView1.Items.Add(listitem.SubItems(2).Text)
-                            X.SubItems.Add(dr("ProductName").ToString())
-                            X.SubItems.Add(dr("Description").ToString())
-                            X.SubItems.Add(dr("SellingPrice").ToString())
-                            X.SubItems.Add(listitem.SubItems(3).Text)
-                            X.SubItems.Add("0") '5
-                            X.SubItems.Add("0") '6
-                            X.SubItems.Add(dr("ProductID").ToString()) '7
-                        End While
-                        frmManageRentalV2.txtCompanyName.Enabled = True
-                        frmManageRentalV2.txtDeliveryAddress.Enabled = True
-                        frmManageRentalV2.txtAddress.Enabled = True
-                        frmManageRentalV2.btnPrint.Enabled = True
-                    Else
-                        While dr.Read
-                            Dim X As ListViewItem = frmManageSalesV2.ListView1.Items.Add(listitem.SubItems(2).Text)
-                            X.SubItems.Add(dr("ProductName").ToString())
-                            X.SubItems.Add(dr("Description").ToString())
-                            X.SubItems.Add(dr("SellingPrice").ToString())
-                            X.SubItems.Add(listitem.SubItems(3).Text)
-                            X.SubItems.Add("0") '5
-                            X.SubItems.Add("0") '6
-                            X.SubItems.Add(dr("ProductID").ToString()) '7
-                        End While
-                        frmPrintSalesInvoiceV2.walkin = True
-                        frmManageSalesV2.txtCompanyName.Enabled = True
-                        frmManageSalesV2.txtDeliveryAddress.Enabled = True
-                        frmManageSalesV2.txtAddress.Enabled = True
-                        frmManageSalesV2.btnPrint.Enabled = True
-                    End If
-                Next
-                Call closeForm()
-                Me.Close()
-            End If
-        Catch ex As Exception
-            MsgBox("An error occurred frmManageBilling(printBilling): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
+            Call closeForm()
+            Me.Close()
+        End If
     End Sub
     Private Sub closeForm()
         ListView1.Items.Clear()
@@ -229,6 +188,84 @@ Public Class frmManagePOS
         Call clearAll()
         btnCancel.Enabled = False
     End Sub
+    Private Sub rental()
+        Try
 
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
+            sql = "SELECT ProductName, Description, SellingPrice, ProductID FROM qryproducts WHERE ProductID = '" & ListView1.SelectedItems(0).SubItems(4).Text & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            While dr.Read
+
+                Dim X As ListViewItem = frmManageRentalV2.ListView1.Items.Add(ListView1.SelectedItems(0).SubItems(2).Text)
+                X.SubItems.Add(dr("ProductName").ToString())
+                X.SubItems.Add(dr("Description").ToString())
+                X.SubItems.Add(dr("SellingPrice").ToString())
+                X.SubItems.Add(ListView1.SelectedItems(0).SubItems(3).Text)
+                X.SubItems.Add("0") '5
+                X.SubItems.Add("0") '6
+                X.SubItems.Add(dr("ProductID").ToString()) '7
+            End While
+
+            frmManageRentalV2.txtCompanyName.Enabled = True
+            frmManageRentalV2.txtDeliveryAddress.Enabled = True
+            frmManageRentalV2.txtAddress.Enabled = True
+            frmManageRentalV2.btnPrint.Enabled = True
+        Catch ex As Exception
+            MsgBox("An error occurred frmManagePOS(walkin): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub walkin()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            For Each item As ListViewItem In ListView1.Items
+                Dim insertSQL As String = "INSERT INTO tblwalkin(OrderID, CustomerID, CompanyName, ContactPerson, PhoneNumber, Email, ProductID, DateOrdered, DueDate, DeliveryAddress, Amount, PONo, Quantity) VALUES(@OrderID, @CustomerID, @CompanyName, @ContactPerson, @PhoneNumber, @Email, @ProductID, @DateOrdered, @DueDate, @DeliveryAddress, @Amount, @PONo, @Quantity)"
+                Using insertCMD As New MySqlCommand(insertSQL, cn)
+                    With insertCMD
+
+                        Dim productid As String = item.SubItems(4).Text
+                        Dim amount As String = item.SubItems(3).Text
+                        Dim quantity As String = item.SubItems(2).Text
+
+                        .Parameters.AddWithValue("@OrderID", "0")
+                        .Parameters.AddWithValue("@CustomerID", "2") 'customerid 2 is walkin, 1 is rental
+                        .Parameters.AddWithValue("@CompanyName", nameofcompany)
+                        .Parameters.AddWithValue("@ContactPerson", nameofcontact)
+                        .Parameters.AddWithValue("@PhoneNumber", phonenumber)
+                        .Parameters.AddWithValue("@Email", email)
+                        .Parameters.AddWithValue("@ProductID", productid)
+                        .Parameters.AddWithValue("@DateOrdered", DateTime.Now)
+                        .Parameters.AddWithValue("@DueDate", DateTime.Now.AddDays(7))
+                        .Parameters.AddWithValue("@DeliveryAddress", deliveryaddress)
+                        .Parameters.AddWithValue("@Amount", amount)
+                        .Parameters.AddWithValue("@PONo", purchaseorder)
+                        .Parameters.AddWithValue("@Quantity", quantity)
+                        .ExecuteNonQuery()
+                    End With
+                End Using
+            Next
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmManagePOS(walkin): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
 End Class

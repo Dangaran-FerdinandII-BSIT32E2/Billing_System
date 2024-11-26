@@ -8,12 +8,14 @@ Public Class frmListofOrdersPending
     Public manageBilling As Boolean = False
     Private Sub frmListCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        btnAddNew.Visible = True
+        btnAddNew.Visible = False
 
         If manageCollection Or manageBilling Then
-            btnAddNew.Visible = False
             Call loadCollections()
         Else
+            If manageOrder Then
+                btnAddNew.Visible = True
+            End If
             Call loadCustomers()
         End If
     End Sub
@@ -201,10 +203,8 @@ Public Class frmListofOrdersPending
             frmManageSalesV2.txtCompanyName.Clear()
             frmManageSalesV2.txtAddress.Clear()
             frmManageSalesV2.txtDeliveryAddress.Clear()
-            'frmManageSalesV2.txtBusinessStyle.Clear()
             frmManageSalesV2.txtTIN.Clear()
             frmManageSalesV2.txtPONo.Clear()
-            'frmManageSalesV2.txtTerms.Clear()
             frmManageSalesV2.cboSalesman.SelectedIndex = -1
 
             frmAddNewCustomer.ShowDialog()

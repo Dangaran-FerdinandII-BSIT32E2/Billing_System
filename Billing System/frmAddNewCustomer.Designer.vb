@@ -61,6 +61,16 @@ Partial Class frmAddNewCustomer
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.txtDeliveryAddress = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Panel21 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel22 = New System.Windows.Forms.Panel()
+        Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.txtPONo = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Panel24 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel26 = New System.Windows.Forms.Panel()
         Me.panelBody.SuspendLayout()
         Me.Panel30.SuspendLayout()
         Me.Panel40.SuspendLayout()
@@ -76,11 +86,21 @@ Partial Class frmAddNewCustomer
         Me.Panel9.SuspendLayout()
         Me.Panel14.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel7.SuspendLayout()
+        Me.Panel21.SuspendLayout()
+        Me.Panel23.SuspendLayout()
+        Me.Panel24.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelBody
         '
         Me.panelBody.BackColor = System.Drawing.Color.White
+        Me.panelBody.Controls.Add(Me.Panel23)
+        Me.panelBody.Controls.Add(Me.Panel24)
+        Me.panelBody.Controls.Add(Me.Panel26)
+        Me.panelBody.Controls.Add(Me.Panel7)
+        Me.panelBody.Controls.Add(Me.Panel21)
+        Me.panelBody.Controls.Add(Me.Panel22)
         Me.panelBody.Controls.Add(Me.Panel30)
         Me.panelBody.Controls.Add(Me.Panel13)
         Me.panelBody.Controls.Add(Me.Panel19)
@@ -101,7 +121,7 @@ Partial Class frmAddNewCustomer
         Me.panelBody.Location = New System.Drawing.Point(0, 0)
         Me.panelBody.Margin = New System.Windows.Forms.Padding(4)
         Me.panelBody.Name = "panelBody"
-        Me.panelBody.Size = New System.Drawing.Size(732, 716)
+        Me.panelBody.Size = New System.Drawing.Size(752, 716)
         Me.panelBody.TabIndex = 0
         '
         'Panel30
@@ -116,7 +136,7 @@ Partial Class frmAddNewCustomer
         Me.Panel30.Location = New System.Drawing.Point(13, 642)
         Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(706, 74)
+        Me.Panel30.Size = New System.Drawing.Size(726, 74)
         Me.Panel30.TabIndex = 60
         '
         'Panel40
@@ -127,7 +147,7 @@ Partial Class frmAddNewCustomer
         Me.Panel40.Location = New System.Drawing.Point(364, 12)
         Me.Panel40.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(342, 50)
+        Me.Panel40.Size = New System.Drawing.Size(362, 50)
         Me.Panel40.TabIndex = 18
         '
         'btnCancel
@@ -147,7 +167,7 @@ Partial Class frmAddNewCustomer
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(342, 50)
+        Me.btnCancel.Size = New System.Drawing.Size(362, 50)
         Me.btnCancel.TabIndex = 5
         Me.btnCancel.Text = "Cancel"
         '
@@ -200,7 +220,7 @@ Partial Class frmAddNewCustomer
         Me.Panel32.Location = New System.Drawing.Point(0, 62)
         Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(706, 12)
+        Me.Panel32.Size = New System.Drawing.Size(726, 12)
         Me.Panel32.TabIndex = 18
         '
         'Panel31
@@ -210,7 +230,7 @@ Partial Class frmAddNewCustomer
         Me.Panel31.Location = New System.Drawing.Point(0, 0)
         Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(706, 12)
+        Me.Panel31.Size = New System.Drawing.Size(726, 12)
         Me.Panel31.TabIndex = 18
         '
         'Panel13
@@ -220,7 +240,7 @@ Partial Class frmAddNewCustomer
         Me.Panel13.Location = New System.Drawing.Point(13, 387)
         Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(706, 43)
+        Me.Panel13.Size = New System.Drawing.Size(726, 43)
         Me.Panel13.TabIndex = 59
         '
         'txtContactPerson
@@ -242,7 +262,7 @@ Partial Class frmAddNewCustomer
         Me.txtContactPerson.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtContactPerson.PlaceholderText = "Enter contact person"
         Me.txtContactPerson.SelectedText = ""
-        Me.txtContactPerson.Size = New System.Drawing.Size(706, 43)
+        Me.txtContactPerson.Size = New System.Drawing.Size(726, 43)
         Me.txtContactPerson.TabIndex = 3
         '
         'Panel19
@@ -252,7 +272,7 @@ Partial Class frmAddNewCustomer
         Me.Panel19.Location = New System.Drawing.Point(13, 350)
         Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(706, 37)
+        Me.Panel19.Size = New System.Drawing.Size(726, 37)
         Me.Panel19.TabIndex = 58
         '
         'Label5
@@ -276,7 +296,7 @@ Partial Class frmAddNewCustomer
         Me.Panel20.Location = New System.Drawing.Point(13, 338)
         Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(706, 12)
+        Me.Panel20.Size = New System.Drawing.Size(726, 12)
         Me.Panel20.TabIndex = 57
         '
         'Panel5
@@ -286,7 +306,7 @@ Partial Class frmAddNewCustomer
         Me.Panel5.Location = New System.Drawing.Point(13, 295)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(706, 43)
+        Me.Panel5.Size = New System.Drawing.Size(726, 43)
         Me.Panel5.TabIndex = 56
         '
         'txtEmail
@@ -308,7 +328,7 @@ Partial Class frmAddNewCustomer
         Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtEmail.PlaceholderText = "Enter email"
         Me.txtEmail.SelectedText = ""
-        Me.txtEmail.Size = New System.Drawing.Size(706, 43)
+        Me.txtEmail.Size = New System.Drawing.Size(726, 43)
         Me.txtEmail.TabIndex = 2
         '
         'Panel12
@@ -318,7 +338,7 @@ Partial Class frmAddNewCustomer
         Me.Panel12.Location = New System.Drawing.Point(13, 258)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(706, 37)
+        Me.Panel12.Size = New System.Drawing.Size(726, 37)
         Me.Panel12.TabIndex = 55
         '
         'Label4
@@ -342,7 +362,7 @@ Partial Class frmAddNewCustomer
         Me.Panel4.Location = New System.Drawing.Point(13, 246)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(706, 12)
+        Me.Panel4.Size = New System.Drawing.Size(726, 12)
         Me.Panel4.TabIndex = 54
         '
         'Panel3
@@ -352,7 +372,7 @@ Partial Class frmAddNewCustomer
         Me.Panel3.Location = New System.Drawing.Point(13, 203)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(706, 43)
+        Me.Panel3.Size = New System.Drawing.Size(726, 43)
         Me.Panel3.TabIndex = 53
         '
         'txtPhoneNumber
@@ -374,7 +394,7 @@ Partial Class frmAddNewCustomer
         Me.txtPhoneNumber.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPhoneNumber.PlaceholderText = "Enter phone number"
         Me.txtPhoneNumber.SelectedText = ""
-        Me.txtPhoneNumber.Size = New System.Drawing.Size(706, 43)
+        Me.txtPhoneNumber.Size = New System.Drawing.Size(726, 43)
         Me.txtPhoneNumber.TabIndex = 1
         '
         'Panel2
@@ -384,7 +404,7 @@ Partial Class frmAddNewCustomer
         Me.Panel2.Location = New System.Drawing.Point(13, 166)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(706, 37)
+        Me.Panel2.Size = New System.Drawing.Size(726, 37)
         Me.Panel2.TabIndex = 52
         '
         'Label3
@@ -408,7 +428,7 @@ Partial Class frmAddNewCustomer
         Me.Panel1.Location = New System.Drawing.Point(13, 154)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(706, 12)
+        Me.Panel1.Size = New System.Drawing.Size(726, 12)
         Me.Panel1.TabIndex = 51
         '
         'Panel18
@@ -418,7 +438,7 @@ Partial Class frmAddNewCustomer
         Me.Panel18.Location = New System.Drawing.Point(13, 111)
         Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(706, 43)
+        Me.Panel18.Size = New System.Drawing.Size(726, 43)
         Me.Panel18.TabIndex = 48
         '
         'txtName
@@ -440,7 +460,7 @@ Partial Class frmAddNewCustomer
         Me.txtName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtName.PlaceholderText = "Enter customer name"
         Me.txtName.SelectedText = ""
-        Me.txtName.Size = New System.Drawing.Size(706, 43)
+        Me.txtName.Size = New System.Drawing.Size(726, 43)
         Me.txtName.TabIndex = 0
         '
         'Panel11
@@ -450,7 +470,7 @@ Partial Class frmAddNewCustomer
         Me.Panel11.Location = New System.Drawing.Point(13, 74)
         Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(706, 37)
+        Me.Panel11.Size = New System.Drawing.Size(726, 37)
         Me.Panel11.TabIndex = 27
         '
         'Label1
@@ -483,13 +503,13 @@ Partial Class frmAddNewCustomer
         Me.Panel10.Location = New System.Drawing.Point(0, 62)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(719, 12)
+        Me.Panel10.Size = New System.Drawing.Size(739, 12)
         Me.Panel10.TabIndex = 23
         '
         'Panel8
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel8.Location = New System.Drawing.Point(719, 62)
+        Me.Panel8.Location = New System.Drawing.Point(739, 62)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(13, 654)
@@ -503,7 +523,7 @@ Partial Class frmAddNewCustomer
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
         Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(732, 62)
+        Me.Panel9.Size = New System.Drawing.Size(752, 62)
         Me.Panel9.TabIndex = 2
         '
         'Panel14
@@ -565,11 +585,143 @@ Partial Class frmAddNewCustomer
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.txtDeliveryAddress)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(13, 479)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(726, 43)
+        Me.Panel7.TabIndex = 63
+        '
+        'txtDeliveryAddress
+        '
+        Me.txtDeliveryAddress.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDeliveryAddress.DefaultText = ""
+        Me.txtDeliveryAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDeliveryAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtDeliveryAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDeliveryAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDeliveryAddress.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtDeliveryAddress.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
+        Me.txtDeliveryAddress.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtDeliveryAddress.ForeColor = System.Drawing.Color.Black
+        Me.txtDeliveryAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtDeliveryAddress.Location = New System.Drawing.Point(0, 0)
+        Me.txtDeliveryAddress.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
+        Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
+        Me.txtDeliveryAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDeliveryAddress.PlaceholderText = "Enter delivery address"
+        Me.txtDeliveryAddress.SelectedText = ""
+        Me.txtDeliveryAddress.Size = New System.Drawing.Size(726, 43)
+        Me.txtDeliveryAddress.TabIndex = 3
+        '
+        'Panel21
+        '
+        Me.Panel21.Controls.Add(Me.Label6)
+        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel21.Location = New System.Drawing.Point(13, 442)
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel21.Name = "Panel21"
+        Me.Panel21.Size = New System.Drawing.Size(726, 37)
+        Me.Panel21.TabIndex = 62
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label6.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(0, 0)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(206, 29)
+        Me.Label6.TabIndex = 49
+        Me.Label6.Text = "Delivery Address"
+        '
+        'Panel22
+        '
+        Me.Panel22.BackColor = System.Drawing.Color.White
+        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel22.Location = New System.Drawing.Point(13, 430)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(726, 12)
+        Me.Panel22.TabIndex = 61
+        '
+        'Panel23
+        '
+        Me.Panel23.Controls.Add(Me.txtPONo)
+        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel23.Location = New System.Drawing.Point(13, 571)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(726, 43)
+        Me.Panel23.TabIndex = 66
+        '
+        'txtPONo
+        '
+        Me.txtPONo.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPONo.DefaultText = ""
+        Me.txtPONo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtPONo.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtPONo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtPONo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtPONo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtPONo.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
+        Me.txtPONo.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtPONo.ForeColor = System.Drawing.Color.Black
+        Me.txtPONo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtPONo.Location = New System.Drawing.Point(0, 0)
+        Me.txtPONo.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
+        Me.txtPONo.Name = "txtPONo"
+        Me.txtPONo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPONo.PlaceholderText = "Enter purchase order number"
+        Me.txtPONo.SelectedText = ""
+        Me.txtPONo.Size = New System.Drawing.Size(726, 43)
+        Me.txtPONo.TabIndex = 3
+        '
+        'Panel24
+        '
+        Me.Panel24.Controls.Add(Me.Label7)
+        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel24.Location = New System.Drawing.Point(13, 534)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel24.Name = "Panel24"
+        Me.Panel24.Size = New System.Drawing.Size(726, 37)
+        Me.Panel24.TabIndex = 65
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label7.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(0, 0)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(288, 29)
+        Me.Label7.TabIndex = 49
+        Me.Label7.Text = "Purchase Order Number"
+        '
+        'Panel26
+        '
+        Me.Panel26.BackColor = System.Drawing.Color.White
+        Me.Panel26.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel26.Location = New System.Drawing.Point(13, 522)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel26.Name = "Panel26"
+        Me.Panel26.Size = New System.Drawing.Size(726, 12)
+        Me.Panel26.TabIndex = 64
+        '
         'frmAddNewCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(732, 716)
+        Me.ClientSize = New System.Drawing.Size(752, 716)
         Me.Controls.Add(Me.panelBody)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -595,6 +747,12 @@ Partial Class frmAddNewCustomer
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel21.ResumeLayout(False)
+        Me.Panel21.PerformLayout()
+        Me.Panel23.ResumeLayout(False)
+        Me.Panel24.ResumeLayout(False)
+        Me.Panel24.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -637,4 +795,14 @@ Partial Class frmAddNewCustomer
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel32 As Panel
     Friend WithEvents Panel31 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents txtDeliveryAddress As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel21 As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Panel22 As Panel
+    Friend WithEvents Panel23 As Panel
+    Friend WithEvents txtPONo As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel24 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Panel26 As Panel
 End Class

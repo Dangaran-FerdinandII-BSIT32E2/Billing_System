@@ -5,10 +5,6 @@ Public Class frmAddNewCustomer
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-
-        MsgBox(isEmail(txtEmail.Text))
-        MsgBox(isNumber(txtPhoneNumber.Text))
-
         If Not isEmail(txtEmail.Text.Trim) Then
             MsgBox("Please enter a valid email address.", MsgBoxStyle.Critical, "Email Error")
             Exit Sub
@@ -48,9 +44,15 @@ Public Class frmAddNewCustomer
 
             If filled Then
                 If MsgBox("Do you want to save?", vbQuestion + vbYesNo) = vbYes Then
-                    frmManageSalesV2.txtCompanyName.Text = txtName.Text
-                    frmManageSalesV2.phoneNumber = txtPhoneNumber.Text
-                    frmManageSalesV2.email = txtEmail.Text
+                    frmManagePOS.nameofcompany = txtName.Text
+                    frmManagePOS.nameofcontact = txtContactPerson.Text
+                    frmManagePOS.phonenumber = txtPhoneNumber.Text
+                    frmManagePOS.email = txtEmail.Text
+                    frmManagePOS.deliveryaddress = txtDeliveryAddress.Text
+                    frmManagePOS.purchaseorder = txtPONo.Text
+
+                    frmManagePOS.ShowDialog()
+                    Me.Close()
                 End If
             End If
         Catch ex As Exception

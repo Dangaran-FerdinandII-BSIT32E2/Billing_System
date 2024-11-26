@@ -59,7 +59,6 @@ Public Class frmRestockProduct
             End If
         End Try
     End Sub
-
     Private Sub frmRestockProduct_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
             txtSupplier.Clear()
@@ -70,6 +69,7 @@ Public Class frmRestockProduct
     Private Sub btnSendRequest_Click(sender As Object, e As EventArgs) Handles btnSendRequest.Click
         If btnSendRequest.Text = "Send Request" Then
             sendRequest()
+        ElseIf btnSendRequest.Text = "View Quotation" Then
         End If
     End Sub
 
@@ -130,13 +130,32 @@ Public Class frmRestockProduct
                 smtpServer.Send(mail)
             End Using
 
+            Call updateQuotation()
             MsgBox("Request sent successfully!", MsgBoxStyle.Information, "Request Sending")
         Catch ex As Exception
             MsgBox("An error occurred frmRestockProduct(sendRequest): " & ex.Message)
         End Try
     End Sub
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub updateQuotation()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
+            sql = "INSERT INTO tblquotation(SupplierID, PONumber, newInsert, Status) VALUES(@SupplierID, @PONumber)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@SupplierID", supplierid)
+                .Parameters.AddWithValue("@PONumber", txtPONo.Text)
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An Error occurred frmRestockProduct(loadQuotation): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 End Class
