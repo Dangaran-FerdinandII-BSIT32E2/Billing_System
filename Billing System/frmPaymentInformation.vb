@@ -251,7 +251,6 @@ Public Class frmPaymentInformation
                 If dr.Read = True Then
                     Dim pic As Byte() = DirectCast(dr("imgPayment"), Byte())
                     If pic.Length > 0 Then
-                        'Dim ms As New MemoryStream(pic)
                         Using ms As New MemoryStream(pic)
                             pbxDelivery.Image = Image.FromStream(ms)
                         End Using

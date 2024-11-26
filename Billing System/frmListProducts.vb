@@ -1,9 +1,17 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
 Imports MySql.Data.MySqlClient
 Public Class frmListProducts
+
+    Public supplierid As String = Nothing
     Private Sub frmListProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        Call loadProducts()
+        If supplierid Then
+            Call rearrangeListView()
+            Call loadReorders()
+        Else
+            Call loadProducts()
+        End If
     End Sub
     Private Sub loadProducts()
         Try
@@ -39,13 +47,53 @@ Public Class frmListProducts
         End Try
     End Sub
 
-    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+    Private Sub loadReorders()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
+            sql = "SELECT * FROM tblproduct WHERE SupplierID = '" & supplierid & "' ORDER BY Amount ASC"
+            cmd = New MySqlCommand(sql, cn)
+            dr = cmd.ExecuteReader
 
-            If ListView1.SelectedItems.Count > 0 Then
+            Dim x As ListViewItem
+            ListView1.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("ProductName").ToString())
+                x.SubItems.Add(dr("Description").ToString())
+                x.SubItems.Add(dr("Category").ToString())
+                x.SubItems.Add(dr("PurchasePrice").ToString())
+                x.SubItems.Add(dr("SellingPrice").ToString())
+                x.SubItems.Add(dr("Amount").ToString())
+                x.SubItems.Add(dr("ProductID").ToString()) '6
+                x.SubItems.Add(dr("SupplierID").ToString())
+
+                ListView1.Items.Add(x)
+            Loop
+        Catch ex As Exception
+            MsgBox("An error occurred frmListProducts(loadProducts): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub rearrangeListView()
+        ListView1.Columns.Clear()
+
+        ListView1.Columns.Add("Product Name").Width = 250
+        ListView1.Columns.Add("Description").Width = 250
+        ListView1.Columns.Add("Category").Width = 150
+        ListView1.Columns.Add("Original Price").Width = 150
+        ListView1.Columns.Add("Selling Price").Width = 150
+        ListView1.Columns.Add("Quantity").Width = 150
+    End Sub
+    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+        If ListView1.SelectedItems.Count > 0 Then
+            If supplierid Then
+                frmRestockProduct.addtolist(ListView1.SelectedItems(0).SubItems(6).Text)
+            Else
                 frmManagePOS.txtProduct.Text = ListView1.SelectedItems(0).SubItems(0).Text
                 frmManagePOS.txtAmt.Text = ListView1.SelectedItems(0).SubItems(7).Text
                 frmManagePOS.productid = ListView1.SelectedItems(0).SubItems(8).Text
@@ -53,19 +101,12 @@ Public Class frmListProducts
                 frmManagePOS.txtQty.Enabled = True
                 frmManagePOS.btnInsert.Enabled = True
                 frmManagePOS.txtQty.Text = "1"
-
-                Me.Close()
-            Else
-                MsgBox("Please pick an item!", MsgBoxStyle.Critical, "Item Error")
             End If
 
-        Catch ex As Exception
-            MsgBox("An error occurred frmListProducts(btnCOnfirm): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
+            Me.Close()
+        Else
+            MsgBox("Please pick an item!", MsgBoxStyle.Critical, "Item Error")
+        End If
     End Sub
 
     Private Sub txtSearchProduct_TextChanged(sender As Object, e As EventArgs) Handles txtSearchProduct.TextChanged

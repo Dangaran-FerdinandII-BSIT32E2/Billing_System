@@ -10,46 +10,58 @@ Public Class frmRestockProduct
     Public supplierid As String
 
     Private email As String
+
+    Public listofProductIds As New List(Of String)
     Private Sub frmRestockProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+        Call addtolist(productid)
         Call loadInformation()
     End Sub
-    Private Sub loadInformation()
+
+    Public Sub addtolist(productid As String)
+        If Not listofProductIds.Contains(productid) Then
+            listofProductIds.Add(productid)
+        End If
+
+        Call loadInformation()
+    End Sub
+    Public Sub loadInformation()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
 
-            sql = "SELECT p.ProductID, p.ProductName, p.Image, s.Email, s.CompanyName, p.Amount FROM tblproduct p INNER JOIN tblsupplier s ON p.SupplierID = s.SupplierID  WHERE p.Status < 2 AND p.ProductID = '" & productid & "'"
-            cmd = New MySqlCommand(sql, cn)
-
-            If Not dr.IsClosed Then
-                dr.Close()
-            End If
-
-            dr = cmd.ExecuteReader
             ListView1.Items.Clear()
 
-            Do While dr.Read = True
-                ListView1.SmallImageList = ImageList1
+            For Each productid As String In listofProductIds
+                sql = "SELECT p.ProductID, p.ProductName, p.Image, s.Email, s.CompanyName, p.Amount FROM tblproduct p INNER JOIN tblsupplier s ON p.SupplierID = s.SupplierID  WHERE p.Status < 2 AND p.ProductID = @ProductID"
+                Using cmd As New MySqlCommand(sql, cn)
+                    cmd.Parameters.AddWithValue("@ProductID", productid)
 
-                Dim productimage() As Byte = DirectCast(dr("Image"), Byte())
-                Dim ms As New MemoryStream(productimage)
+                    Using dr As MySqlDataReader = cmd.ExecuteReader
+                        While dr.Read
+                            ListView1.SmallImageList = ImageList1
 
-                Using image As Image = Image.FromStream(ms)
-                    Dim x As New ListViewItem
+                            Dim productimage() As Byte = DirectCast(dr("Image"), Byte())
+                            Dim ms As New MemoryStream(productimage)
 
-                    x.ImageIndex = ImageList1.Images.Add(image, Nothing)
-                    x.SubItems.Add(dr("ProductName").ToString)
-                    x.SubItems.Add(dr("Amount").ToString)
-                    x.SubItems.Add(dr("ProductID").ToString)
+                            Using image As Image = Image.FromStream(ms)
+                                Dim x As New ListViewItem
 
-                    ListView1.Items.Add(x)
+                                x.ImageIndex = ImageList1.Images.Add(image, Nothing)
+                                x.SubItems.Add(dr("ProductName").ToString)
+                                x.SubItems.Add(dr("Amount").ToString)
+                                x.SubItems.Add(dr("ProductID").ToString)
+
+                                ListView1.Items.Add(x)
+                            End Using
+
+                            txtSupplier.Text = dr("CompanyName").ToString
+                            email = dr("Email").ToString
+                        End While
+                    End Using
                 End Using
-
-                txtSupplier.Text = dr("CompanyName").ToString
-                email = dr("Email").ToString
-            Loop
+            Next
 
         Catch ex As Exception
             MsgBox("An Error occurred frmRestockProduct(loadInformation): " & ex.Message)
@@ -95,7 +107,6 @@ Public Class frmRestockProduct
 
                 emailBody.AppendLine("<table style='width: 100px; border-collapse: collapse;'>")
                 emailBody.AppendLine("<tr style='background-color: #f2f2f2;'>")
-                emailBody.AppendLine("<th style='border: 1px solid #dddddd; text-align: left; padding: 8px;'>Product Image</th>")
                 emailBody.AppendLine("<th style='border: 1px solid #dddddd; text-align: left; padding: 8px;'>Product Name</th>")
                 emailBody.AppendLine("<th style='border: 1px solid #dddddd; text-align: left; padding: 8px;'>Amount</th>")
                 emailBody.AppendLine("</tr>")
@@ -157,5 +168,27 @@ Public Class frmRestockProduct
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        frmListProducts.supplierid = supplierid
+        frmListProducts.ShowDialog()
+    End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+        If ListView1.SelectedItems.Count > 0 Then
+            btnQuantity.Enabled = True
+            btnRemove.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
+        If ListView1.SelectedItems.Count > 0 Then
+            If MsgBox("Do you want to remove the item?", vbQuestion + vbYesNo) = vbYes Then
+                listofProductIds.Remove(ListView1.SelectedItems(0).SubItems(3).Text)
+
+                Call loadInformation()
+            End If
+        End If
     End Sub
 End Class

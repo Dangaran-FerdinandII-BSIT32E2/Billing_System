@@ -68,7 +68,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel1.Location = New System.Drawing.Point(1466, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(13, 794)
         Me.Panel1.TabIndex = 37
@@ -77,7 +77,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 12)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(13, 782)
         Me.Panel3.TabIndex = 36
@@ -86,7 +86,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 794)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1479, 12)
         Me.Panel2.TabIndex = 35
@@ -101,7 +101,7 @@ Partial Class frmManageCustomerV3
         Me.Panel23.Controls.Add(Me.Panel26)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel23.Location = New System.Drawing.Point(740, 0)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(713, 62)
         Me.Panel23.TabIndex = 10
@@ -121,7 +121,7 @@ Partial Class frmManageCustomerV3
         Me.btnSearch.ForeColor = System.Drawing.Color.White
         Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
         Me.btnSearch.Location = New System.Drawing.Point(197, 12)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(5)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.PressedDepth = 20
         Me.btnSearch.Size = New System.Drawing.Size(47, 38)
@@ -131,7 +131,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel16.Location = New System.Drawing.Point(244, 12)
-        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(13, 38)
         Me.Panel16.TabIndex = 86
@@ -150,7 +150,7 @@ Partial Class frmManageCustomerV3
         Me.txtSearchCustomer.ForeColor = System.Drawing.Color.Black
         Me.txtSearchCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtSearchCustomer.Location = New System.Drawing.Point(257, 12)
-        Me.txtSearchCustomer.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtSearchCustomer.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearchCustomer.Name = "txtSearchCustomer"
         Me.txtSearchCustomer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchCustomer.PlaceholderText = "Search by customer name or company name"
@@ -162,7 +162,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel5.Location = New System.Drawing.Point(0, 50)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(700, 12)
         Me.Panel5.TabIndex = 13
@@ -171,7 +171,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel25.Location = New System.Drawing.Point(700, 12)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(13, 50)
         Me.Panel25.TabIndex = 12
@@ -180,7 +180,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel26.Location = New System.Drawing.Point(0, 0)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel26.Name = "Panel26"
         Me.Panel26.Size = New System.Drawing.Size(713, 12)
         Me.Panel26.TabIndex = 11
@@ -205,7 +205,7 @@ Partial Class frmManageCustomerV3
         Me.Panel8.Controls.Add(Me.Panel10)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(13, 62)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1427, 69)
         Me.Panel8.TabIndex = 7
@@ -224,7 +224,7 @@ Partial Class frmManageCustomerV3
         Me.cboSalesman.ItemHeight = 30
         Me.cboSalesman.Items.AddRange(New Object() {"Filter by", "View Master List", "View Inactive Users", "View Pending Orders"})
         Me.cboSalesman.Location = New System.Drawing.Point(0, 12)
-        Me.cboSalesman.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.cboSalesman.Margin = New System.Windows.Forms.Padding(5)
         Me.cboSalesman.Name = "cboSalesman"
         Me.cboSalesman.Size = New System.Drawing.Size(300, 36)
         Me.cboSalesman.StartIndex = 0
@@ -234,7 +234,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel7.Location = New System.Drawing.Point(0, 57)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1427, 12)
         Me.Panel7.TabIndex = 14
@@ -243,7 +243,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1427, 12)
         Me.Panel10.TabIndex = 12
@@ -252,7 +252,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel9.Location = New System.Drawing.Point(0, 62)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(13, 720)
         Me.Panel9.TabIndex = 8
@@ -261,7 +261,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel12.Location = New System.Drawing.Point(1440, 62)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(13, 720)
         Me.Panel12.TabIndex = 6
@@ -273,7 +273,7 @@ Partial Class frmManageCustomerV3
         Me.Panel14.Controls.Add(Me.Panel23)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(1453, 62)
         Me.Panel14.TabIndex = 0
@@ -282,7 +282,7 @@ Partial Class frmManageCustomerV3
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1466, 12)
         Me.Panel4.TabIndex = 34
@@ -296,7 +296,7 @@ Partial Class frmManageCustomerV3
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(1427, 577)
         Me.ListView1.TabIndex = 37
@@ -308,7 +308,7 @@ Partial Class frmManageCustomerV3
         Me.Panel11.Controls.Add(Me.ListView1)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel11.Location = New System.Drawing.Point(13, 131)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(1427, 577)
         Me.Panel11.TabIndex = 14
@@ -318,7 +318,7 @@ Partial Class frmManageCustomerV3
         Me.Panel31.BackColor = System.Drawing.Color.White
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel31.Location = New System.Drawing.Point(0, 0)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel31.Name = "Panel31"
         Me.Panel31.Size = New System.Drawing.Size(1427, 12)
         Me.Panel31.TabIndex = 18
@@ -329,7 +329,7 @@ Partial Class frmManageCustomerV3
         Me.Panel34.Controls.Add(Me.btnViewInfo)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel34.Location = New System.Drawing.Point(0, 12)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(187, 50)
         Me.Panel34.TabIndex = 18
@@ -349,7 +349,7 @@ Partial Class frmManageCustomerV3
         Me.btnViewInfo.ForeColor = System.Drawing.Color.White
         Me.btnViewInfo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnViewInfo.Location = New System.Drawing.Point(0, 0)
-        Me.btnViewInfo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnViewInfo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnViewInfo.Name = "btnViewInfo"
         Me.btnViewInfo.PressedDepth = 20
         Me.btnViewInfo.Size = New System.Drawing.Size(187, 50)
@@ -365,7 +365,7 @@ Partial Class frmManageCustomerV3
         Me.Panel30.Controls.Add(Me.Panel31)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel30.Location = New System.Drawing.Point(13, 708)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(1427, 74)
         Me.Panel30.TabIndex = 19
@@ -376,7 +376,7 @@ Partial Class frmManageCustomerV3
         Me.Panel6.Controls.Add(Me.btnRefresh)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel6.Location = New System.Drawing.Point(1240, 12)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(187, 50)
         Me.Panel6.TabIndex = 22
@@ -396,7 +396,7 @@ Partial Class frmManageCustomerV3
         Me.btnRefresh.Image = CType(resources.GetObject("btnRefresh.Image"), System.Drawing.Image)
         Me.btnRefresh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnRefresh.Location = New System.Drawing.Point(0, 0)
-        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(4)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Padding = New System.Windows.Forms.Padding(27, 0, 0, 0)
         Me.btnRefresh.PressedDepth = 20
@@ -409,7 +409,7 @@ Partial Class frmManageCustomerV3
         Me.Panel32.BackColor = System.Drawing.Color.White
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel32.Location = New System.Drawing.Point(0, 62)
-        Me.Panel32.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(1427, 12)
         Me.Panel32.TabIndex = 18
@@ -425,7 +425,7 @@ Partial Class frmManageCustomerV3
         Me.MainBody.Controls.Add(Me.Panel14)
         Me.MainBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainBody.Location = New System.Drawing.Point(13, 12)
-        Me.MainBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MainBody.Margin = New System.Windows.Forms.Padding(4)
         Me.MainBody.Name = "MainBody"
         Me.MainBody.Size = New System.Drawing.Size(1453, 782)
         Me.MainBody.TabIndex = 38

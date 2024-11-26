@@ -632,6 +632,7 @@ Partial Class frmRestockProduct
         Me.btnRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnRemove.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnRemove.Enabled = False
         Me.btnRemove.FillColor = System.Drawing.Color.OrangeRed
         Me.btnRemove.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnRemove.ForeColor = System.Drawing.Color.White
@@ -675,6 +676,7 @@ Partial Class frmRestockProduct
         Me.btnQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnQuantity.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnQuantity.Enabled = False
         Me.btnQuantity.FillColor = System.Drawing.Color.OrangeRed
         Me.btnQuantity.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnQuantity.ForeColor = System.Drawing.Color.White

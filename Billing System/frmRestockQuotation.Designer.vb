@@ -29,15 +29,15 @@ Partial Class frmRestockQuotation
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel19 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.lblManageProduct = New System.Windows.Forms.Label()
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.Panel28 = New System.Windows.Forms.Panel()
         Me.Panel29 = New System.Windows.Forms.Panel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.panelBody.SuspendLayout()
         Me.Panel19.SuspendLayout()
         Me.Panel20.SuspendLayout()
@@ -109,6 +109,38 @@ Partial Class frmRestockQuotation
         Me.Panel19.Size = New System.Drawing.Size(648, 62)
         Me.Panel19.TabIndex = 4
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(183, 18)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(60, 29)
+        Me.Label1.TabIndex = 36
+        Me.Label1.Text = "PO#"
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(183, 50)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(465, 12)
+        Me.Panel2.TabIndex = 34
+        '
+        'Panel3
+        '
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(183, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(465, 18)
+        Me.Panel3.TabIndex = 35
+        '
         'Panel20
         '
         Me.Panel20.Controls.Add(Me.lblManageProduct)
@@ -167,38 +199,6 @@ Partial Class frmRestockQuotation
         '
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrorProvider1.ContainerControl = Me
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(183, 18)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(60, 29)
-        Me.Label1.TabIndex = 36
-        Me.Label1.Text = "PO#"
-        '
-        'Panel2
-        '
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(183, 50)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(465, 12)
-        Me.Panel2.TabIndex = 34
-        '
-        'Panel3
-        '
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(183, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(465, 18)
-        Me.Panel3.TabIndex = 35
         '
         'frmRestockQuotation
         '

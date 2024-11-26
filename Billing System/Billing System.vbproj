@@ -140,6 +140,12 @@
     <Compile Include="frmAddNewCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAddProducts.Designer.vb">
+      <DependentUpon>frmAddProducts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddProducts.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAdminDashboard.Designer.vb">
       <DependentUpon>frmAdminDashboard.vb</DependentUpon>
     </Compile>
@@ -314,10 +320,22 @@
     <Compile Include="frmRestockQuotation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmSendPayment.Designer.vb">
+      <DependentUpon>frmSendPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSendPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSupplierInformation.Designer.vb">
       <DependentUpon>frmSupplierInformation.vb</DependentUpon>
     </Compile>
     <Compile Include="frmSupplierInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewQuotation.Designer.vb">
+      <DependentUpon>frmViewQuotation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewQuotation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="printSalesInvoice.Designer.vb">
@@ -403,6 +421,9 @@
     <EmbeddedResource Include="frmAddNewCustomer.resx">
       <DependentUpon>frmAddNewCustomer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddProducts.resx">
+      <DependentUpon>frmAddProducts.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdminDashboard.resx">
       <DependentUpon>frmAdminDashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -484,8 +505,14 @@
     <EmbeddedResource Include="frmRestockQuotation.resx">
       <DependentUpon>frmRestockQuotation.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSendPayment.resx">
+      <DependentUpon>frmSendPayment.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSupplierInformation.resx">
       <DependentUpon>frmSupplierInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewQuotation.resx">
+      <DependentUpon>frmViewQuotation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="printBillingInvoice.rdlc" />
     <EmbeddedResource Include="frmPrintBillingInvoice.resx">

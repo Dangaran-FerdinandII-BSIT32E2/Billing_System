@@ -1,7 +1,7 @@
 ﻿Imports System.Drawing.Imaging
 Imports MySql.Data.MySqlClient
 Public Class frmManageSuppliers
-    Private Sub frmManageSupplierProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmManageSuppliers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadSuppliers()
         Call loadProducts()
@@ -40,7 +40,7 @@ Public Class frmManageSuppliers
             Loop
             dr.Close()
         Catch ex As Exception
-            MsgBox("An Error occurred frmManageSupplierProduct(loadSuppliers): " & ex.Message)
+            MsgBox("An Error occurred frmManageSuppliers(loadSuppliers): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -346,6 +346,7 @@ Public Class frmManageSuppliers
         If ListView3.SelectedItems.Count > 0 Then
             frmRestockProduct.productid = ListView3.SelectedItems(0).SubItems(7).Text
             frmRestockProduct.supplierid = ListView3.SelectedItems(0).SubItems(8).Text
+
             frmRestockProduct.ShowDialog()
         End If
     End Sub
