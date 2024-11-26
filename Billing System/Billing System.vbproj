@@ -496,6 +496,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="printBillingInvoiceV2.rdlc" />
     <EmbeddedResource Include="printDeliveryReceipt.rdlc" />
+    <EmbeddedResource Include="printQuotation.rdlc" />
     <EmbeddedResource Include="printSalesInvoice.rdlc" />
     <EmbeddedResource Include="printSalesInvoice.resx">
       <DependentUpon>printSalesInvoice.vb</DependentUpon>
