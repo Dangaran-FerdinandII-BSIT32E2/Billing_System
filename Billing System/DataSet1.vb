@@ -1,4 +1,18 @@
 ﻿Partial Class DataSet1
+    Partial Public Class dtPrintQuotationDataTable
+        Private Sub dtPrintQuotationDataTable_dtPrintQuotationRowChanging(sender As Object, e As dtPrintQuotationRowChangeEvent) Handles Me.dtPrintQuotationRowChanging
+
+        End Sub
+
+        Private Sub dtPrintQuotationDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
+            If (e.Column.ColumnName = Me.FullNameColumn.ColumnName) Then
+                'Add user code here
+            End If
+
+        End Sub
+
+    End Class
+
     Partial Public Class dtAdminReportDataTable
         Private Sub dtAdminReportDataTable_dtAdminReportRowChanging(sender As Object, e As dtAdminReportRowChangeEvent) Handles Me.dtAdminReportRowChanging
 

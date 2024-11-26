@@ -8,13 +8,13 @@ Public Class frmAdminSettings
         Call connection()
         Call loadActivity()
         frmAdminDashboard.Close()
-        'Environment.Exit(0)
+        Environment.Exit(0)
 
         frmLoginV2.txtUsername.Clear()
         frmLoginV2.txtPassword.Clear()
 
         frmLoginV2.ActiveControl = frmLoginV2.txtUsername
-        frmLoginV2.Show()
+        'frmLoginV2.Show()
     End Sub
     Private Sub loadActivity()
         Try
@@ -41,10 +41,7 @@ Public Class frmAdminSettings
     End Sub
 
     Private Sub btnTest_Click(sender As Object, e As EventArgs) Handles btnTest.Click
-        frmPrintBillingInvoiceV2.ShowDialog()
-    End Sub
-
-    Private Sub frmAdminSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        btnTest.Visible = False
+        'frmPrintBillingInvoiceV2.ShowDialog()
+        frmQuotation.ShowDialog()
     End Sub
 End Class
