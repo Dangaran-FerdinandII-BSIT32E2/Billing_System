@@ -29,18 +29,20 @@ Public Class frmRestockProduct
             ListView1.Items.Clear()
 
             Do While dr.Read = True
-                Dim x As ListViewItem
+                ListView1.SmallImageList = ImageList1
 
                 Dim productimage() As Byte = DirectCast(dr("Image"), Byte())
                 Dim ms As New MemoryStream(productimage)
-                Dim image As Image = Image.FromStream(ms)
 
-                x = New ListViewItem
-                x.ImageIndex = ImageList1.Images.Add(image, Nothing)
-                x.SubItems.Add(dr("ProductName").ToString)
-                x.SubItems.Add(dr("Amount").ToString)
+                Using image As Image = Image.FromStream(ms)
+                    Dim x As New ListViewItem
 
-                ListView1.Items.Add(x)
+                    x.ImageIndex = ImageList1.Images.Add(image, Nothing)
+                    x.SubItems.Add(dr("ProductName").ToString)
+                    x.SubItems.Add(dr("Amount").ToString)
+
+                    ListView1.Items.Add(x)
+                End Using
 
                 txtSupplier.Text = dr("CompanyName").ToString
                 email = dr("Email").ToString

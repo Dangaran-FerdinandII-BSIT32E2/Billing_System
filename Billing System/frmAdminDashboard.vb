@@ -101,29 +101,32 @@ Public Class frmAdminDashboard
         Select Case lblRole.Text
             Case "Sales"
                 btnSales.Visible = True
+                btnBilling.Visible = True
                 btnOrder.Visible = True
                 btnRental.Visible = True
+                btnCustomer.Visible = True
 
-                btnBilling.Visible = False
                 btnCollection.Visible = False
-                btnCustomer.Visible = False
                 btnSupplier.Visible = False
+                btnProduct.Visible = False
                 btnUser.Visible = False
             Case "Controller"
-                btnBilling.Visible = True
                 btnCollection.Visible = True
                 btnCustomer.Visible = True
 
                 btnSales.Visible = False
+                btnProduct.Visible = False
                 btnOrder.Visible = False
+                btnBilling.Visible = False
                 btnRental.Visible = False
                 btnSupplier.Visible = False
                 btnUser.Visible = False
             Case "Purchaser"
-                btnBilling.Enabled = True
-                btnCustomer.Enabled = True
-                btnSupplier.Enabled = True
+                btnCustomer.Visible = True
+                btnSupplier.Visible = True
+                btnProduct.Visible = True
 
+                btnBilling.Visible = False
                 btnSales.Visible = False
                 btnOrder.Visible = False
                 btnRental.Visible = False
@@ -138,6 +141,7 @@ Public Class frmAdminDashboard
                 btnCollection.Visible = True
                 btnCustomer.Visible = True
                 btnSupplier.Visible = True
+                btnProduct.Visible = True
                 btnUser.Visible = True
         End Select
     End Sub
