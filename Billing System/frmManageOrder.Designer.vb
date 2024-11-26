@@ -261,7 +261,7 @@ Partial Class frmManageOrder
         '
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel1.Location = New System.Drawing.Point(140, 10)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(10, 40)
         Me.Guna2Panel1.TabIndex = 43
@@ -347,7 +347,7 @@ Partial Class frmManageOrder
         Me.cboFilter.ItemHeight = 30
         Me.cboFilter.Items.AddRange(New Object() {"Default", "On Process", "On Hand", "Ready for Shipment", "Delivered", "Priority Orders", "Cancelled"})
         Me.cboFilter.Location = New System.Drawing.Point(375, 25)
-        Me.cboFilter.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboFilter.Margin = New System.Windows.Forms.Padding(4)
         Me.cboFilter.Name = "cboFilter"
         Me.cboFilter.Size = New System.Drawing.Size(239, 36)
         Me.cboFilter.StartIndex = 0
@@ -526,7 +526,7 @@ Partial Class frmManageOrder
         Me.btnSearchOrder.ForeColor = System.Drawing.Color.White
         Me.btnSearchOrder.Image = CType(resources.GetObject("btnSearchOrder.Image"), System.Drawing.Image)
         Me.btnSearchOrder.Location = New System.Drawing.Point(84, 10)
-        Me.btnSearchOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSearchOrder.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearchOrder.Name = "btnSearchOrder"
         Me.btnSearchOrder.PressedDepth = 20
         Me.btnSearchOrder.Size = New System.Drawing.Size(35, 30)
@@ -640,6 +640,7 @@ Partial Class frmManageOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(1040, 633)
         Me.Controls.Add(Me.panelBody)
         Me.Controls.Add(Me.Panel4)

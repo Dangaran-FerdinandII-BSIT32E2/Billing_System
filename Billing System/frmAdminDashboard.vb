@@ -165,7 +165,7 @@ Public Class frmAdminDashboard
         frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSupplierProduct.Close()
+        frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
@@ -196,7 +196,7 @@ Public Class frmAdminDashboard
         frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSupplierProduct.Close()
+        frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageUsers.Close()
         frmManageRentalV2.Close()
@@ -226,7 +226,7 @@ Public Class frmAdminDashboard
         frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSupplierProduct.Close()
+        frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
@@ -256,7 +256,7 @@ Public Class frmAdminDashboard
         frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSupplierProduct.Close()
+        frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
@@ -284,7 +284,7 @@ Public Class frmAdminDashboard
 
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSupplierProduct.Close()
+        frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
@@ -313,7 +313,7 @@ Public Class frmAdminDashboard
 
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSupplierProduct.Close()
+        frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
@@ -342,7 +342,7 @@ Public Class frmAdminDashboard
 
         frmManageSalesV2.Close()
         frmManageCollectionV3.Close()
-        frmManageSupplierProduct.Close()
+        frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
@@ -371,7 +371,7 @@ Public Class frmAdminDashboard
 
         frmManageSalesV2.Close()
         frmManageBilling.Close()
-        frmManageSupplierProduct.Close()
+        frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()
@@ -382,11 +382,11 @@ Public Class frmAdminDashboard
 
     'SUPPLIER MODULE
     Private Sub btnSupplier_Click(sender As Object, e As EventArgs) Handles btnSupplier.Click
-        frmManageSupplierProduct.TopLevel = False
-        panelDashboard.Controls.Add(frmManageSupplierProduct)
-        frmManageSupplierProduct.BringToFront()
-        frmManageSupplierProduct.Dock = DockStyle.Fill
-        frmManageSupplierProduct.Show()
+        frmManageSuppliers.TopLevel = False
+        panelDashboard.Controls.Add(frmManageSuppliers)
+        frmManageSuppliers.BringToFront()
+        frmManageSuppliers.Dock = DockStyle.Fill
+        frmManageSuppliers.Show()
 
         btnSupplier.CustomBorderThickness = addThickness
         btnSupplier.CustomBorderColor = addColor
@@ -431,7 +431,7 @@ Public Class frmAdminDashboard
         frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSupplierProduct.Close()
+        frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageRentalV2.Close()
@@ -458,7 +458,7 @@ Public Class frmAdminDashboard
         frmManageSalesV2.Close()
         frmManageBilling.Close()
         frmManageCollectionV3.Close()
-        frmManageSupplierProduct.Close()
+        frmManageSuppliers.Close()
         frmManageProducts.Close()
         frmManageCustomerV3.Close()
         frmManageUsers.Close()

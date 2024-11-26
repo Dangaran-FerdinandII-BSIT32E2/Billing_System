@@ -66,8 +66,8 @@ Public Class frmRestockProduct
         End If
     End Sub
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If btnSave.Text = "Send Request" Then
+    Private Sub btnSendRequest_Click(sender As Object, e As EventArgs) Handles btnSendRequest.Click
+        If btnSendRequest.Text = "Send Request" Then
             sendRequest()
         End If
     End Sub

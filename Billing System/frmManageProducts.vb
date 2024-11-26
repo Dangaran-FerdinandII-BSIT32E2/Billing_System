@@ -126,7 +126,7 @@ Public Class frmManageProducts
                         End Using
                         Call loadActivity()
                         MsgBox("Product successfully saved!", MsgBoxStyle.Information, "Product Insert")
-                        Call frmManageSupplierProduct.loadProducts()
+                        Call frmManageSuppliers.loadProducts()
                         productid = Nothing
                         supplierid = Nothing
                         Me.Close()
