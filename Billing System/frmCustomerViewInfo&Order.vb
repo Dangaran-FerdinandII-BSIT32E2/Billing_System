@@ -45,7 +45,6 @@ Public Class frmCustomerViewInfo_Order
                 If dr("Image") IsNot DBNull.Value AndAlso dr("Image") IsNot Nothing Then
                     Dim pic As Byte() = DirectCast(dr("Image"), Byte())
                     If pic.Length > 0 Then
-                        'Dim ms As New MemoryStream(pic)
                         Using ms As New MemoryStream(pic)
                             PictureBox1.Image = Image.FromStream(ms)
                         End Using

@@ -17,7 +17,7 @@ Public Class frmPrintBillingInvoiceV2
 
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printBillingInvoiceV2.rdlc"
+                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printBillingInvoiceV2.rdlc"
                 .DataSources.Clear()
             End With
 

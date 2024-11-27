@@ -22,25 +22,25 @@ Public Class frmRestockQuotation
                 cn.Open()
             End If
 
-            sql = "SELECT q.PONumber, p.Image, p.ProductID, p.ProductName, q.Quantity, s.CompanyName, s.Email FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID INNER JOIN tblproduct p ON q.ProductID = p.ProductID WHERE QuotationID = '" & quotationid & "'"
+            sql = "SELECT q.PONumber, q.Quantity, s.CompanyName, s.Email FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID WHERE QuotationID = '" & quotationid & "'"
             Using cmd As New MySqlCommand(sql, cn)
                 Using dr As MySqlDataReader = cmd.ExecuteReader
                     While dr.Read
-                        ListView1.SmallImageList = ImageList1
+                        'ListView1.SmallImageList = ImageList1
 
-                        Dim quotationImage() As Byte = DirectCast(dr("Image"), Byte())
-                        Dim ms As New MemoryStream(quotationImage)
+                        'Dim quotationImage() As Byte = DirectCast(dr("Image"), Byte())
+                        'Dim ms As New MemoryStream(quotationImage)
 
-                        Using image As Image = Image.FromStream(ms)
-                            Dim x As New ListViewItem
+                        'Using image As Image = Image.FromStream(ms)
+                        '    Dim x As New ListViewItem
 
-                            x.ImageIndex = ImageList1.Images.Add(image, Nothing)
-                            x.SubItems.Add(dr("ProductName").ToString)
-                            x.SubItems.Add(dr("Quantity").ToString)
-                            x.SubItems.Add(dr("ProductID").ToString)
+                        '    x.ImageIndex = ImageList1.Images.Add(image, Nothing)
+                        '    x.SubItems.Add(dr("PONumber").ToString)
+                        '    x.SubItems.Add(dr("Quantity").ToString)
+                        '    ' x.SubItems.Add(dr("ProductID").ToString)
 
-                            ListView1.Items.Add(x)
-                        End Using
+                        '    ListView1.Items.Add(x)
+                        'End Using
 
                         txtSupplier.Text = dr("CompanyName").ToString
                         email = dr("Email").ToString

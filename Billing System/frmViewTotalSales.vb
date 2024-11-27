@@ -13,7 +13,7 @@ Public Class frmViewTotalSales
 
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\reportViewTotalSales.rdlc"
+                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\reportViewTotalSales.rdlc"
                 .DataSources.Clear()
             End With
 

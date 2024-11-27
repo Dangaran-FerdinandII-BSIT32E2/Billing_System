@@ -183,7 +183,7 @@ Public Class frmListofOrdersPending
     End Sub
 
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "SELECT CompanyName, LastName, FirstName, PhoneNumber, Email, Status FROM tblcustomer WHERE CompanyName LIKE ? OR LastName LIKE ? OR FirstName LIKE ?"
+        sql = "SELECT CompanyName, LastName, FirstName, PhoneNumber, Email, Status FROM tblcustomer WHERE CustomerID > 2 AND (CompanyName LIKE ? OR LastName LIKE ? OR FirstName LIKE ?) AND CustomerID NOT IN (SELECT DISTINCT CustomerID FROM tblbilling)"
 
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))

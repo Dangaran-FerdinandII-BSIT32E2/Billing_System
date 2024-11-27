@@ -28,7 +28,7 @@ Public Class frmManageSalesV2
                 cn.Open()
             End If
 
-            sql = "SELECT tblbilling.BillingID AS 'Invoice No', CONCAT(tblcustomer.FirstName, ' ', tblcustomer.LastName) AS FullName, tblbilling.CompanyName, tblbilling.FinalPrice, DATE_FORMAT(tblbilling.DatePrinted, '%M %d, %Y %h:%i %p') AS DatePrinted FROM tblbilling INNER JOIN tblcustomer ON tblcustomer.CustomerID = tblbilling.CustomerID"
+            sql = "SELECT b.BillingID, CONCAT(c.LastName, ', ', c.FirstName) AS FullName, b.CompanyName, SUM(b.FinalPrice) AS FinalPrice, DATE_FORMAT(b.DatePrinted, '%M %d %Y, %h:%i %p') AS DatePrinted FROM tblbilling b INNER JOIN tblcustomer c ON b.CustomerID = c.CustomerID GROUP BY b.BillingID"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -41,7 +41,7 @@ Public Class frmManageSalesV2
             ListView2.Items.Clear()
 
             Do While dr.Read = True
-                x = New ListViewItem(dr("Invoice No").ToString())
+                x = New ListViewItem(dr("BillingID").ToString())
                 x.SubItems.Add(dr("FullName").ToString())
                 x.SubItems.Add(dr("CompanyName").ToString())
                 x.SubItems.Add(dr("FinalPrice").ToString())
@@ -242,6 +242,7 @@ Public Class frmManageSalesV2
 
         Call savetoBilling()
         Call savetoBillInvoice()
+        Call updateOrder
 
         Dim email As ListViewItem = ListView1.Items(0)
         frmPrintSalesInvoice.billingid = lblBillingID.Text
@@ -327,6 +328,27 @@ Public Class frmManageSalesV2
             End If
         End Try
     End Sub
+    Private Sub updateOrder()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            For Each item As ListViewItem In ListView1.Items
+                Dim orderid As String = item.SubItems(5).Text
+
+                sql = "UPDATE tblorder SET Status = 2 WHERE OrderID = '" & orderid & "'"
+                cmd = New MySqlCommand(sql, cn)
+                cmd.ExecuteNonQuery()
+            Next
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageSalesV2(updateOrder): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Function getBillingID() As Integer
         Try
             If cn.State <> ConnectionState.Open Then
@@ -389,7 +411,8 @@ Public Class frmManageSalesV2
         txtDeliveryAddress.Clear()
         'txtBusinessStyle.Clear()
         txtTIN.Clear()
-        'txtTerms.Clear()
+        txtDays.Clear()
+
         txtPONo.Clear()
         txtAmount.Clear()
 
@@ -398,6 +421,7 @@ Public Class frmManageSalesV2
         txtDeliveryAddress.Enabled = False
         btnAddOrder.Visible = False
 
+        cboSalesman.SelectedIndex = -1
         cboSalesman.SelectedIndex = -1
         cboFormat.SelectedIndex = 0
         cboAdjust.SelectedIndex = 0

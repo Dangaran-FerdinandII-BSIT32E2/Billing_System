@@ -110,12 +110,12 @@ Public Class frmRestockProduct
 
                 emailBody.AppendLine("<table style='width: 100px; border-collapse: collapse;'>")
                 emailBody.AppendLine("<tr style='background-color: #f2f2f2;'>")
-                emailBody.AppendLine("<th style='border: 1px solid #dddddd; text-align: left; padding: 8px;'>Product Name</th>")
-                emailBody.AppendLine("<th style='border: 1px solid #dddddd; text-align: left; padding: 8px;'>Amount</th>")
+                emailBody.AppendLine("<th style='border: 1px solid #dddddd; text-align: center; padding: 8px;'>Product Name</th>")
+                emailBody.AppendLine("<th style='border: 1px solid #dddddd; text-align: center; padding: 8px;'>Amount</th>")
                 emailBody.AppendLine("</tr>")
 
                 For Each item As ListViewItem In ListView1.Items
-                    emailBody.AppendLine("<tr>")
+                    emailBody.AppendLine("<tr style='width: 100px'>")
                     emailBody.AppendLine("<td style='border: 1px solid #dddddd; text-align: left; padding: 8px;'>" & item.SubItems(1).Text & "</td>")
                     emailBody.AppendLine("<td style='border: 1px solid #dddddd; text-align: left; padding: 8px;'>" & item.SubItems(2).Text & "</td>")
                     emailBody.AppendLine("</tr>")
@@ -127,8 +127,8 @@ Public Class frmRestockProduct
 
                 emailBody.AppendLine("<p>Please process this restock request at your earliest convenience.</p>")
 
-                emailBody.AppendLine("<p style='text-align: center;'>Best regards,</p>")
-                emailBody.AppendLine("<p style='text-align: center;'>Rambic Corporation</p>")
+                emailBody.AppendLine("<p style='text-align: left;'>Best regards,</p>")
+                emailBody.AppendLine("<p style='text-align: left;'>Rambic Corporation</p>")
 
                 emailBody.AppendLine("<p style='text-align: center;'>Contact Information:  (123) 456-7890</p>")
                 emailBody.AppendLine("<p style='text-align: center;'>Address: Blk. 62 Lot 2 General Bautista St., Soldier's Hill's, Putatan, Muntinlupa City, Philippines</p>")
