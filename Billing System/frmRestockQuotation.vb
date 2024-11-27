@@ -179,9 +179,8 @@ Public Class frmRestockQuotation
 
                 emailBody.AppendLine("<p>We hope this email finds you well. We are glad to accept the following conditions on the quotation for " & lblPo.Text & "</p>")
 
-
-                emailBody.AppendLine("<p style='text-align: center;'>Best regards,</p>")
-                emailBody.AppendLine("<p style='text-align: center;'>Rambic Corporation</p>")
+                emailBody.AppendLine("<p style='text-align: left;'>Best regards,</p>")
+                emailBody.AppendLine("<p style='text-align: left;'>Rambic Corporation</p>")
 
                 emailBody.AppendLine("<p style='text-align: center;'>Contact Information:  (123) 456-7890</p>")
                 emailBody.AppendLine("<p style='text-align: center;'>Address: Blk. 62 Lot 2 General Bautista St., Soldier's Hill's, Putatan, Muntinlupa City, Philippines</p>")

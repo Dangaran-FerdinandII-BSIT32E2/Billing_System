@@ -18,7 +18,7 @@ Public Class frmManageProducts
                     cn.Open()
                 End If
 
-                sql = "SELECT * FROM tblproduct WHERE ProductID = '" & productid & "'"
+                sql = "SELECT p.*, s.* FROM tblproduct p INNER JOIN tblsupplier s ON p.SupplierID = s.SupplierID WHERE ProductID = '" & productid & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -27,12 +27,41 @@ Public Class frmManageProducts
 
                 dr = cmd.ExecuteReader
                 If dr.Read = True Then
+                    If dr("Image") IsNot DBNull.Value AndAlso dr("Image") IsNot Nothing Then
+                        Try
+                            Dim pic As Byte() = DirectCast(dr("Image"), Byte())
+                            If pic.Length > 0 Then
+                                'Dim ms As New MemoryStream(pic)
+                                Using ms As New MemoryStream(pic)
+                                    pbxProduct.Image = Image.FromStream(ms)
+                                End Using
+
+                                PictureBox2.Visible = False
+                                btnBrowse.Visible = False
+
+                            Else
+                                pbxProduct.Image = Nothing
+                                PictureBox2.Visible = True
+                                btnBrowse.Visible = True
+                            End If
+
+                        Catch ex As Exception
+                            MsgBox("Error loading image: " & ex.Message)
+                        End Try
+                    Else
+                        pbxProduct.Image = Nothing
+                        PictureBox2.Visible = True
+                        btnBrowse.Visible = True
+                    End If
                     txtProductName.Text = dr("ProductName").ToString
-                    txtDescription.Text = dr("Description").ToString
-                    txtCategory.Text = dr("Category").ToString
-                    txtType.Text = dr("Type").ToString
-                    txtPurchasePrice.Text = dr("PurchasePrice").ToString
-                    txtSellingPrice.Text = dr("SellingPrice").ToString
+                        txtDescription.Text = dr("Description").ToString
+                        txtCategory.Text = dr("Category").ToString
+                        txtType.Text = dr("Type").ToString
+                        txtPurchasePrice.Text = dr("PurchasePrice").ToString
+                        txtSellingPrice.Text = dr("SellingPrice").ToString
+
+                    txtSearchSupplierName.Text = dr("CompanyName").ToString
+
                 End If
 
             Catch ex As Exception
@@ -51,6 +80,12 @@ Public Class frmManageProducts
         productid = Nothing
         supplierid = Nothing
 
+        txtSearchSupplierName.Enabled = True
+
+        txtSearchSupplierName.Clear()
+
+        txtSearchSupplierName.Enabled = False
+
         txtProductName.Clear()
         txtDescription.Clear()
         txtCategory.Clear()
@@ -63,15 +98,13 @@ Public Class frmManageProducts
         PictureBox2.Visible = True
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If MsgBox("Do you want to save?", vbYesNo + vbQuestion) = vbYes Then
-            Try
-                If cn.State <> ConnectionState.Open Then
-                    cn.Open()
-                End If
+        If pbxProduct.Image IsNot Nothing Then
+            If MsgBox("Do you want to save?", vbYesNo + vbQuestion) = vbYes Then
 
                 Dim filled As Boolean = True
 
                 Dim requiredFields As New Dictionary(Of String, Control) From {
+                {"txtSearchSupplierName", txtSearchSupplierName},
                 {"txtProductName", txtProductName},
                 {"txtDescription", txtDescription},
                 {"txtCategory", txtCategory},
@@ -95,51 +128,96 @@ Public Class frmManageProducts
                 Next
 
                 If filled Then
-                    If pbxProduct.Image Is Nothing Then
-                        MsgBox("Please upload an image!", MsgBoxStyle.Critical, "Image Error")
+                    If productid Is Nothing Then
+                        Call saveProduct
                     Else
-                        Using mstream As New System.IO.MemoryStream()
-                            Using bmp As New Bitmap(pbxProduct.Image)
-                                bmp.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
-                            End Using
-                            mstream.Position = 0 ' Reset position before reading
-                            Dim arrImage() As Byte = mstream.ToArray()
-
-                            If productid Is Nothing Then
-                                sql = "INSERT INTO tblproduct(ProductName, Description, Category, Type, Manufacturer, PurchasePrice, SellingPrice, Image, SupplierID) VALUES(@ProductName, @Description, @Category, @Type, @Manufacturer, @PurchasePrice, @SellingPrice, @Image, @SupplierID)"
-
-                            Else
-                                sql = "UPDATE tblproduct SET ProductName = @ProductName, Description = @Description, Category = @Category, Type = @Type, PurchasePrice = @PurchasePrice, SellingPrice = @SellingPrice, SupplierID=@SupplierID, Manufacturer=@Manufacturer WHERE ProductID = '" & productid & "'"
-                            End If
-                            cmd = New MySqlCommand(sql, cn)
-                            With cmd
-                                .Parameters.AddWithValue("@ProductName", txtProductName.Text)
-                                .Parameters.AddWithValue("@Description", txtDescription.Text)
-                                .Parameters.AddWithValue("@Category", txtCategory.Text)
-                                .Parameters.AddWithValue("@Type", txtType.Text)
-                                .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
-                                .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
-                                .Parameters.AddWithValue("@SupplierID", supplierid)
-                                .Parameters.AddWithValue("@Image", arrImage)
-                                .ExecuteNonQuery()
-                            End With
-                        End Using
-                        Call loadActivity()
-                        MsgBox("Product successfully saved!", MsgBoxStyle.Information, "Product Insert")
-                        Call frmManageSuppliers.loadProducts()
-                        productid = Nothing
-                        supplierid = Nothing
-                        Me.Close()
+                        Call updateProduct
                     End If
+
+                    Call loadActivity()
+                    Call frmProduct.loadProducts()
+                    MsgBox("Product successfully saved!", MsgBoxStyle.Information, "Product Insert")
+                    Me.Close()
+
                 End If
-            Catch ex As Exception
-                MsgBox("An error occurred frmManageProducts(btnSave_Click): " & ex.Message)
-            Finally
-                If cn.State = ConnectionState.Open Then
-                    cn.Close()
-                End If
-            End Try
+            End If
+        Else
+            MsgBox("Please insert an image.", MsgBoxStyle.Critical, "Image Error")
         End If
+    End Sub
+    Private Sub saveProduct()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "INSERT INTO tblproduct(ProductName, Description, Category, Type, Manufacturer, PurchasePrice, SellingPrice, SupplierID) " &
+                    "VALUES(@ProductName, @Description, @Category, @Type, @Manufacturer, @PurchasePrice, @SellingPrice, @SupplierID)"
+
+            Using mstream As New System.IO.MemoryStream
+                pbxProduct.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim arrImage() As Byte = mstream.GetBuffer
+
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@ProductName", txtProductName.Text)
+                    .Parameters.AddWithValue("@Description", txtDescription.Text)
+                    .Parameters.AddWithValue("@Category", txtCategory.Text)
+                    .Parameters.AddWithValue("@Type", txtType.Text)
+                    .Parameters.AddWithValue("@Manufacturer", txtSearchSupplierName.Text)
+                    .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
+                    .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
+                    .Parameters.AddWithValue("@SupplierID", supplierid)
+                    .Parameters.AddWithValue("@Image", arrImage)
+                    .ExecuteNonQuery()
+                End With
+            End Using
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageProducts(saveProduct): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub updateProduct()
+
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "UPDATE tblproduct SET ProductName = @ProductName, Description = @Description, Category = @Category, Type = @Type, PurchasePrice = @PurchasePrice, SellingPrice = @SellingPrice, SupplierID=@SupplierID, Manufacturer=@Manufacturer, Image = @Image WHERE ProductID = '" & productid & "'"
+
+
+            Using mstream As New System.IO.MemoryStream
+                pbxProduct.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim arrImage() As Byte = mstream.GetBuffer
+
+
+                Using cmd As New MySqlCommand(sql, cn)
+                    With cmd
+                        .Parameters.AddWithValue("@ProductName", txtProductName.Text)
+                        .Parameters.AddWithValue("@Description", txtDescription.Text)
+                        .Parameters.AddWithValue("@Category", txtCategory.Text)
+                        .Parameters.AddWithValue("@Type", txtType.Text)
+                        .Parameters.AddWithValue("@Manufacturer", txtSearchSupplierName.Text)
+                        .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
+                        .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
+                        .Parameters.AddWithValue("@SupplierID", supplierid)
+                        .Parameters.AddWithValue("@Image", arrImage)
+                        .ExecuteNonQuery()
+                    End With
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageProducts(updateProduct): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
     Private Sub loadActivity()
         Try
@@ -157,7 +235,7 @@ Public Class frmManageProducts
                 .ExecuteNonQuery()
             End With
         Catch ex As Exception
-            MsgBox("An error occurred frmMessage(loadActivity): " & ex.Message)
+            MsgBox("An error occurred frmManageProducts(loadActivity): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -252,5 +330,13 @@ Public Class frmManageProducts
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         frmListofSuppliers.ShowDialog()
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If MsgBox("Do you want to remove the image?", vbYesNo + vbQuestion) = vbYes Then
+            pbxProduct.Image = Nothing
+            PictureBox2.Visible = True
+            btnBrowse.Visible = True
+        End If
     End Sub
 End Class

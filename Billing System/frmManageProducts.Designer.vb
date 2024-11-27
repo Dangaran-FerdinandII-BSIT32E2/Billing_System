@@ -208,7 +208,7 @@ Partial Class frmManageProducts
         Me.btnDelete.Size = New System.Drawing.Size(625, 50)
         Me.btnDelete.TabIndex = 56
         Me.btnDelete.TabStop = False
-        Me.btnDelete.Text = "Delete Image"
+        Me.btnDelete.Text = "Remove Image"
         '
         'Panel46
         '
@@ -243,7 +243,7 @@ Partial Class frmManageProducts
         Me.btnBrowse.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnBrowse.ForeColor = System.Drawing.Color.White
         Me.btnBrowse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnBrowse.Location = New System.Drawing.Point(281, 434)
+        Me.btnBrowse.Location = New System.Drawing.Point(263, 331)
         Me.btnBrowse.Margin = New System.Windows.Forms.Padding(5)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.PressedDepth = 20
@@ -257,7 +257,7 @@ Partial Class frmManageProducts
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(295, 329)
+        Me.PictureBox2.Location = New System.Drawing.Point(277, 226)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(120, 103)
@@ -966,6 +966,7 @@ Partial Class frmManageProducts
         Me.txtSearchSupplierName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSearchSupplierName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSearchSupplierName.Dock = System.Windows.Forms.DockStyle.Right
+        Me.txtSearchSupplierName.Enabled = False
         Me.txtSearchSupplierName.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
         Me.txtSearchSupplierName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtSearchSupplierName.ForeColor = System.Drawing.Color.Black

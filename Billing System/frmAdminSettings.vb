@@ -13,7 +13,7 @@ Public Class frmAdminSettings
         frmLoginV2.txtPassword.Clear()
 
         frmLoginV2.ActiveControl = frmLoginV2.txtUsername
-        'frmLoginV2.Show()
+        frmLoginV2.Show()
     End Sub
     Private Sub loadActivity()
         Try

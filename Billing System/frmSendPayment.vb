@@ -109,7 +109,7 @@ Public Class frmSendPayment
                         .Parameters.AddWithValue("@AmountPaid", Double.Parse(txtAmount.Text))
                         .ExecuteNonQuery()
                     End With
-
+                    Me.Close()
                 Catch ex As Exception
                     MsgBox("An error occurred frmSendPayment(btnSend_Click): " & ex.Message)
                 Finally

@@ -26,12 +26,10 @@ Public Class frmListofSuppliers
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("CompanyName").ToString())
-                x.SubItems.Add(dr("BankDetails").ToString())
-                x.SubItems.Add(dr("ContactPerson").ToString())
+                x.SubItems.Add(dr("LastName").ToString() & ", " & dr("FirstName").ToString())
                 x.SubItems.Add(dr("PhoneNumber").ToString())
                 x.SubItems.Add(dr("Address").ToString())
-                x.SubItems.Add(dr("DeliveryTerms").ToString())
-                x.SubItems.Add(dr("SupplierID").ToString())
+                x.SubItems.Add(dr("SupplierID").ToString()) '4
 
                 ListView1.Items.Add(x)
             Loop
@@ -47,35 +45,17 @@ Public Class frmListofSuppliers
 
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
-            supplierid = ListView1.SelectedItems(0).SubItems(6).Text
+            supplierid = ListView1.SelectedItems(0).SubItems(4).Text
         End If
     End Sub
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-            sql = "Select SupplierID, CompanyName from tblsupplier where SupplierID=@SupplierID"
-            cmd = New MySqlCommand(sql, cn)
-            cmd.Parameters.AddWithValue("SupplierID", supplierid)
-
-            If Not dr.IsClosed Then
-                dr.Close()
-            End If
-
-            dr = cmd.ExecuteReader
-            If dr.Read = True Then
-                'frmManageProducts.txtSupplier.Text = dr("CompanyName").ToString()
-                frmManageProducts.supplierid = dr("SupplierID").ToString()
-                Me.Close()
-            End If
-        Catch ex As Exception
-            MsgBox("An error occurred frmListofSuppliers(lblSupplierIDTextChange): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
+        If ListView1.SelectedItems.Count > 0 Then
+            frmManageProducts.txtSearchSupplierName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+            frmManageProducts.supplierid = ListView1.SelectedItems(0).SubItems(4).Text
+            Me.Close()
+        Else
+            MsgBox("Please select a supplier.", MsgBoxStyle.Critical, "Supplier Error")
+        End If
     End Sub
 End Class

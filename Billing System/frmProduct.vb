@@ -9,7 +9,7 @@ Public Class frmProduct
         Call loadOrders()
     End Sub
 
-    Private Sub loadProducts()
+    Public Sub loadProducts()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -83,9 +83,10 @@ Public Class frmProduct
         End If
     End Sub
 
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click, ListView1.DoubleClick
         frmManageProducts.productid = ListView1.SelectedItems(0).SubItems(7).Text
         frmManageProducts.supplierid = ListView1.SelectedItems(0).SubItems(8).Text
+        frmManageProducts.ShowDialog()
     End Sub
 
     Private Sub loadOrders()
