@@ -1,19 +1,20 @@
-﻿Imports Microsoft.Reporting.WinForms
-Imports MySql.Data.MySqlClient
-Imports System.Drawing.Imaging
+﻿Imports System.Drawing.Imaging
 Imports System.IO
 Imports System.Net.Mail
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports Microsoft.Reporting.WinForms
+Imports MySql.Data.MySqlClient
+Imports Mysqlx.Crud
 
-Public Class frmQuotation
+Public Class frmPrintSalesInvoice
+
+    Public billingid As String
     Public orderid As String
-    Dim d As OpenFileDialog = New OpenFileDialog
 
-    Private email As String
-    Public custid As String
-    Private Sub frmQuotation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Dim email As String
+
+    Private Sub frmPrintSalesInvoice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        Call loadInformation()
+        Call loadInformation
         Call loadReport()
     End Sub
 
@@ -23,7 +24,7 @@ Public Class frmQuotation
                 cn.Open()
             End If
 
-            sql = "SELECT Email FROM tblcustomer WHERE CustomerID = '" & custid & "'"
+            sql = "SELECT c.Email FROM tblcustomer c INNER JOIN tblbilling b on c.CustomerID = b.CustomerID WHERE BillingID = '" & billingid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -37,20 +38,22 @@ Public Class frmQuotation
             End If
 
         Catch ex As Exception
-            MsgBox("An error occurred frmQuotation(loadInformation): " & ex.Message)
+            MsgBox("An error occurred in loadInformation: " & ex.Message, MsgBoxStyle.Critical, "Error")
         Finally
+            ' Ensure the database connection is closed
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If
         End Try
     End Sub
+
     Private Sub loadReport()
         Dim rptDS As ReportDataSource
         Me.ReportViewer1.RefreshReport()
 
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printQuotation.rdlc"
+                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
                 .DataSources.Clear()
             End With
 
@@ -61,14 +64,14 @@ Public Class frmQuotation
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT CONCAT(tblcustomer.FirstName, tblcustomer.LastName) AS FullName, tblcustomer.Address, tblcustomer.Delivery, tblorder.OrderID, tblorder.DateOrdered, tblorder.QuotationDueDate, tblproduct.ProductName, tblproduct.Description, tblorder.Quantity, tblorder.Amount, SUM(tblorder.Amount) OVER () AS TotalAmount FROM tblcustomer INNER JOIN tblorder ON tblorder.CustomerID = tblcustomer.CustomerID INNER JOIN tblproduct ON tblorder.ProductID = tblproduct.ProductID WHERE tblorder.OrderID = '" & orderid & "'", cn)
-            da.Fill(ds.Tables("dtPrintQuotation"))
+            da.SelectCommand = New MySqlCommand("SELECT c.CompanyName, c.Address, o.DeliveryAddress, b.DatePrinted, b.ProductOrder, b.Terms, b.Salesman, b.VATableSales, b.VAT, c.TIN, o.Quantity, p.ProductName, p.Description, p.SellingPrice, o.Amount, ( SELECT SUM(o2.Amount) FROM tblorder o2 INNER JOIN tblbillinvoice i2 ON i2.OrderID = o2.OrderID AND i2.ProductID = o2.ProductID WHERE i2.BillingID = b.BillingID ) AS FinalAmount FROM tblcustomer c INNER JOIN tblbilling b ON b.CustomerID = c.CustomerID INNER JOIN tblbillinvoice i ON i.BillingID = b.BillingID INNER JOIN tblorder o ON i.OrderID = o.OrderID AND i.ProductID = o.ProductID INNER JOIN tblproduct p ON i.ProductID = p.ProductID WHERE b.BillingID = '" & billingid & "'", cn)
+            da.Fill(ds.Tables("dtPrintBillingStatement"))
 
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If
 
-            rptDS = New ReportDataSource("dtPrintQuotation", ds.Tables("dtPrintQuotation"))
+            rptDS = New ReportDataSource("dtPrintBillingStatement", ds.Tables("dtPrintBillingStatement"))
             ReportViewer1.LocalReport.DataSources.Add(rptDS)
             ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
             ReportViewer1.ZoomMode = ZoomMode.Percent
@@ -105,6 +108,8 @@ Public Class frmQuotation
                 image.Save(outputImagePath, ImageFormat.Png)
             End Using
 
+            MessageBox.Show("Report exported as an image to: " & outputImagePath)
+
         Catch ex As Exception
             MessageBox.Show("Error exporting report to image: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -134,22 +139,7 @@ Public Class frmQuotation
 
             ' Update database with image and quotation due date
             If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
-                sql = "UPDATE tblorder SET QuotationImg=@QuotationImg, QuotationDueDate=@QuotationDueDate, Status = 1 WHERE OrderID = @OrderID"
-                cmd = New MySqlCommand(sql, cn)
-                With cmd
-                    Dim mstream As New MemoryStream()
-                    sendImage.Save(mstream, ImageFormat.Jpeg)
-                    Dim arrImage() As Byte = mstream.ToArray()
-                    mstream.Close()
 
-                    .Parameters.AddWithValue("@QuotationImg", arrImage)
-                    .Parameters.AddWithValue("@QuotationDueDate", DateTime.Now.AddDays(7))
-                    .Parameters.AddWithValue("@OrderID", orderid)
-                    .ExecuteNonQuery()
-                End With
-
-                ' Notify the user
-                MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
 
                 ' Send the email
                 Call sendEmail()
@@ -183,7 +173,7 @@ Public Class frmQuotation
             mail.From = New MailAddress("dangaranferds@gmail.com") ' Replace with your email
             mail.To.Add(email)
 
-            mail.Subject = "NOTICE ON QUOTATION OF ORDER NUMBER " & orderid
+            mail.Subject = "SALES INVOICE FOR Order Number " & orderid
 
             Using memoryStream As New MemoryStream()
 

@@ -6223,6 +6223,10 @@ Partial Public Class DataSet1
         
         Private columnFinalAmount As Global.System.Data.DataColumn
         
+        Private columnVATableSales As Global.System.Data.DataColumn
+        
+        Private columnVAT As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -6371,6 +6375,22 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property VATableSalesColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnVATableSales
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property VATColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnVAT
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -6407,9 +6427,25 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AdddtPrintBillingStatementRow(ByVal CompanyName As String, ByVal Address As String, ByVal DeliveryAddress As String, ByVal DatePrinted As String, ByVal ProductOrder As String, ByVal Terms As String, ByVal Salesman As String, ByVal TIN As String, ByVal Quantity As String, ByVal ProductName As String, ByVal Description As String, ByVal SellingPrice As String, ByVal Amount As String, ByVal FinalAmount As String) As dtPrintBillingStatementRow
+        Public Overloads Function AdddtPrintBillingStatementRow( _
+                    ByVal CompanyName As String,  _
+                    ByVal Address As String,  _
+                    ByVal DeliveryAddress As String,  _
+                    ByVal DatePrinted As String,  _
+                    ByVal ProductOrder As String,  _
+                    ByVal Terms As String,  _
+                    ByVal Salesman As String,  _
+                    ByVal TIN As String,  _
+                    ByVal Quantity As String,  _
+                    ByVal ProductName As String,  _
+                    ByVal Description As String,  _
+                    ByVal SellingPrice As String,  _
+                    ByVal Amount As String,  _
+                    ByVal FinalAmount As String,  _
+                    ByVal VATableSales As String,  _
+                    ByVal VAT As String) As dtPrintBillingStatementRow
             Dim rowdtPrintBillingStatementRow As dtPrintBillingStatementRow = CType(Me.NewRow,dtPrintBillingStatementRow)
-            Dim columnValuesArray() As Object = New Object() {CompanyName, Address, DeliveryAddress, DatePrinted, ProductOrder, Terms, Salesman, TIN, Quantity, ProductName, Description, SellingPrice, Amount, FinalAmount}
+            Dim columnValuesArray() As Object = New Object() {CompanyName, Address, DeliveryAddress, DatePrinted, ProductOrder, Terms, Salesman, TIN, Quantity, ProductName, Description, SellingPrice, Amount, FinalAmount, VATableSales, VAT}
             rowdtPrintBillingStatementRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdtPrintBillingStatementRow)
             Return rowdtPrintBillingStatementRow
@@ -6446,6 +6482,8 @@ Partial Public Class DataSet1
             Me.columnSellingPrice = MyBase.Columns("SellingPrice")
             Me.columnAmount = MyBase.Columns("Amount")
             Me.columnFinalAmount = MyBase.Columns("FinalAmount")
+            Me.columnVATableSales = MyBase.Columns("VATableSales")
+            Me.columnVAT = MyBase.Columns("VAT")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6479,6 +6517,10 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnAmount)
             Me.columnFinalAmount = New Global.System.Data.DataColumn("FinalAmount", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFinalAmount)
+            Me.columnVATableSales = New Global.System.Data.DataColumn("VATableSales", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVATableSales)
+            Me.columnVAT = New Global.System.Data.DataColumn("VAT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVAT)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9972,6 +10014,37 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property VATableSales() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtPrintBillingStatement.VATableSalesColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'VATableSales' in table 'dtPrintBillingStatement' is DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtPrintBillingStatement.VATableSalesColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property VAT() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtPrintBillingStatement.VATColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'VAT' in table 'dtPrintBillingStatement' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtPrintBillingStatement.VATColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsCompanyNameNull() As Boolean
             Return Me.IsNull(Me.tabledtPrintBillingStatement.CompanyNameColumn)
         End Function
@@ -10136,6 +10209,30 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetFinalAmountNull()
             Me(Me.tabledtPrintBillingStatement.FinalAmountColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsVATableSalesNull() As Boolean
+            Return Me.IsNull(Me.tabledtPrintBillingStatement.VATableSalesColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetVATableSalesNull()
+            Me(Me.tabledtPrintBillingStatement.VATableSalesColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsVATNull() As Boolean
+            Return Me.IsNull(Me.tabledtPrintBillingStatement.VATColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetVATNull()
+            Me(Me.tabledtPrintBillingStatement.VATColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

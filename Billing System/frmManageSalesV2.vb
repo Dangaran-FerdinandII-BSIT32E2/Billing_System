@@ -82,10 +82,12 @@ Public Class frmManageSalesV2
                 x.SubItems.Add(dr("Description").ToString())
                 x.SubItems.Add(dr("SellingPrice").ToString())
                 x.SubItems.Add("₱ " + dr("Amount").ToString())
-                x.SubItems.Add(dr("OrderID").ToString())
-                x.SubItems.Add(dr("OrderListID").ToString())
-                x.SubItems.Add(dr("ProductID").ToString())
+                x.SubItems.Add(dr("OrderID").ToString()) '5
+                x.SubItems.Add(dr("OrderListID").ToString()) '6
+                x.SubItems.Add(dr("ProductID").ToString()) '7
                 ListView1.Items.Add(x)
+
+                totalamount += Convert.ToDouble(dr("Amount").ToString)
             Loop
         Catch ex As Exception
             MsgBox("An Error occurred frmManageBilling(loadBilling): " & ex.Message)
@@ -114,7 +116,6 @@ Public Class frmManageSalesV2
                 txtCompanyName.Text = dr("CompanyName").ToString()
                 txtAddress.Text = dr("Address").ToString()
                 txtDeliveryAddress.Text = dr("Delivery").ToString()
-                'txtBusinessStyle.Text = dr("CompanyName").ToString()
                 txtTIN.Text = dr("TIN").ToString()
             End If
         Catch ex As Exception
@@ -154,6 +155,7 @@ Public Class frmManageSalesV2
         End If
     End Sub
 
+    Dim totalamount As Double = 0
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Try
             Dim filled As Boolean = True
@@ -184,37 +186,7 @@ Public Class frmManageSalesV2
             Next
 
             If filled Then
-                If cboAdjust.SelectedIndex <> 0 Then
-                    If txtAmount.TextLength > 0 Then
-                        frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = True
-                        frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = True
-                        If cboAdjust.Text = "Add Discount" Then
-                            If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue > 0 AndAlso adjustedValue <= 100 Then
-                                frmPrintSalesInvoiceV2.lblPriceAdjusted.Text = "Discount:"
-                                frmPrintSalesInvoiceV2.priceadjust = adjustedValue
-                                Call printBilling()
-                            Else
-                                MsgBox("Invalid discount!", MsgBoxStyle.Critical)
-                            End If
-                        ElseIf cboAdjust.Text = "Add Mark Up" Then
-                            If Double.TryParse(txtAmount.Text.Replace("%", ""), adjustedValue) AndAlso adjustedValue > 0 AndAlso adjustedValue <= 100 Then
-                                frmPrintSalesInvoiceV2.lblPriceAdjusted.Text = "Mark Up:"
-                                frmPrintSalesInvoiceV2.priceadjust = adjustedValue
-                                Call printBilling()
-                            Else
-                                MsgBox("Invalid markup!", MsgBoxStyle.Critical)
-                            End If
-                        End If
-                    Else
-                        frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = False
-                        frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
-                        Call printBilling()
-                    End If
-                Else
-                    frmPrintSalesInvoiceV2.lblPriceAdjusted.Visible = False
-                    frmPrintSalesInvoiceV2.lblAdjustPrice.Visible = False
-                    Call printBilling()
-                End If
+                Call printBilling()
 
                 'btnAddOrder.Visible = False
                 txtCompanyName.PlaceholderText = "Search Company"
@@ -227,70 +199,99 @@ Public Class frmManageSalesV2
             End If
         End Try
     End Sub
+
+    Dim changeAmount As Double = 0
     Private Sub printBilling()
+
+        adjustedValue = totalamount
+        trueadjustedvalue = totalamount
+
+        If cboAdjust.Text = "Add Discount" Then
+            If cboFormat.Text = "In Percent" Then
+
+                changeAmount = totalamount * (Convert.ToDecimal(txtAmount.Text) / 100)
+
+                adjustedValue -= changeAmount
+                trueadjustedvalue = adjustedValue
+            ElseIf cboFormat.Text = "In Whole Number" Then
+
+                adjustedValue -= Convert.ToDecimal(txtAmount.Text)
+                trueadjustedvalue = adjustedValue
+            End If
+        ElseIf cboAdjust.Text = "Add Mark Up" Then
+            If cboFormat.Text = "In Percent" Then
+
+                changeAmount = totalamount * (Convert.ToDecimal(txtAmount.Text) / 100)
+
+                adjustedValue += changeAmount
+                trueadjustedvalue = adjustedValue
+
+            ElseIf cboFormat.Text = "In Whole Number" Then
+
+                adjustedValue += Convert.ToDecimal(txtAmount.Text)
+                trueadjustedvalue = adjustedValue
+            End If
+        End If
+
+        If IsNothing(txtPONo.Text) Then
+            txtPONo.Text = "1"
+        End If
+
+
+        'add date based on terms
+
+        Call savetoBilling()
+        Call savetoBillInvoice()
+
+        Dim email As ListViewItem = ListView1.Items(0)
+        frmPrintSalesInvoice.billingid = lblBillingID.Text
+        frmPrintSalesInvoice.orderid = email.SubItems(5).Text
+        frmPrintSalesInvoice.ShowDialog()
+
+        Call clearText()
+    End Sub
+    Private Sub savetoBilling()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
+            Dim adjusteddate As DateTime
 
-            If cboFormat.Text = "In Percent" Then
-                frmPrintSalesInvoiceV2.format = True
-                trueadjustedvalue = (adjustedValue / 100).ToString("P")
-            ElseIf cboFormat.Text = "In Whole Number" Then
-                frmPrintSalesInvoiceV2.format = False
-                trueadjustedvalue = adjustedValue
-            End If
-
-            'left side
-            frmPrintSalesInvoiceV2.lblSoldTo.Text = txtCompanyName.Text
-            frmPrintSalesInvoiceV2.lblAddress.Text = txtAddress.Text
-            frmPrintSalesInvoiceV2.lblDelivery.Text = txtDeliveryAddress.Text
-            frmPrintSalesInvoiceV2.lblBusStyle.Text = txtCompanyName.Text
-
-            frmPrintSalesInvoiceV2.custid = lblCustID.Text
-            frmPrintSalesInvoiceV2.billid = lblBillingID.Text
-            'frmPrintSalesInvoiceV2.lblTerms.Text = txtTerms.Text
-            frmPrintSalesInvoiceV2.lblTIN.Text = txtTIN.Text
-            frmPrintSalesInvoiceV2.lblSalesman.Text = cboSalesman.Text
-
-            If IsNothing(txtPONo.Text) Then
-                txtPONo.Text = "1"
-            End If
-
-            frmPrintSalesInvoiceV2.lblPONo.Text = txtPONo.Text
-
-            frmPrintSalesInvoiceV2.lblDate.Text = dtpDate.Value.ToString
-
-            frmPrintSalesInvoiceV2.textamount = trueadjustedvalue
-            frmPrintSalesInvoiceV2.printdate = dtpDate.Value.ToString
-
-            'add date based on terms
-
-            'Dim terms = TermParser.ParseTerms(txtTerms.Text)
-
-            'For Each term In terms
-            '    Select Case term.Unit
-            '        Case "day"
-            '            frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddDays(term.Number).ToString
-            '        Case "month"
-            '            frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddMonths(term.Number).ToString
-            '        Case "year"
-            '            frmPrintSalesInvoiceV2.adjusteddate = dtpDate.Value.AddYears(term.Number).ToString
-            '    End Select
-            'Next
-
-            For Each listitem As ListViewItem In ListView1.Items 'includes OrderID on SubItem 5 OrderList sub item 6 productid sub item 7
-                Dim X As ListViewItem = listitem.Clone()
-                frmPrintSalesInvoiceV2.ListView1.Items.Add(X)
+            For Each term In cboTerms.Text
+                Select Case term
+                    Case "day"
+                        adjusteddate = DateTime.Now.AddDays(txtDays.Text).ToString
+                    Case "month"
+                        adjusteddate = DateTime.Now.AddMonths(txtDays.Text).ToString
+                    Case "year"
+                        adjusteddate = DateTime.Now.AddYears(txtDays.Text).ToString
+                End Select
             Next
+            Dim vat As Double = trueadjustedvalue * 0.12
 
-            frmPrintSalesInvoiceV2.orderid = orderid
-            frmPrintSalesInvoiceV2.phoneNumber = phoneNumber
-            frmPrintSalesInvoiceV2.email = email
+            Dim vatablesales As Double = trueadjustedvalue - vat
 
-            frmPrintSalesInvoiceV2.ShowDialog()
+            sql = "INSERT INTO tblbilling(BillingID, CustomerID, CompanyName, SalesMan, Terms, ProductOrder, DatePrinted, DueDate, Discount, Markup, FinalPrice, VATableSales, VAT) " &
+                    "VALUES(@BillingID, @CustomerID, @CompanyName, @SalesMan, @Terms, @ProductOrder, @DatePrinted, @DueDate, @Discount, @Markup, @FinalPrice, @VATableSales, @VAT)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@BillingID", lblBillingID.Text)
+                .Parameters.AddWithValue("@CustomerID", lblCustID.Text)
+                .Parameters.AddWithValue("@CompanyName", txtCompanyName.Text)
+                .Parameters.AddWithValue("@SalesMan", cboSalesman.Text)
+                .Parameters.AddWithValue("@Terms", (txtDays.Text & " " & cboTerms.Text))
+                .Parameters.AddWithValue("@ProductOrder", txtPONo.Text)
+                .Parameters.AddWithValue("@DatePrinted", DateTime.Now)
+                .Parameters.AddWithValue("@DueDate", adjusteddate)
+                .Parameters.AddWithValue("@Discount", If(cboAdjust.Text = "Add Discount", changeAmount, DBNull.Value))
+                .Parameters.AddWithValue("@Markup", If(cboAdjust.Text = "Add Mark Up", changeAmount, DBNull.Value))
+                .Parameters.AddWithValue("@FinalPrice", trueadjustedvalue)
+                .Parameters.AddWithValue("@VATableSales", vatablesales)
+                .Parameters.AddWithValue("@VAT", vat)
+                .ExecuteNonQuery()
+            End With
         Catch ex As Exception
-            MsgBox("An error occurred frmManageBilling(printBilling): " & ex.Message)
+            MsgBox("An error occurred frmManageSalesV2(savetoBilling): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -298,6 +299,34 @@ Public Class frmManageSalesV2
         End Try
     End Sub
 
+    Private Sub savetoBillInvoice()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            For Each item As ListViewItem In ListView1.Items
+                Dim productid As String = item.SubItems(7).Text
+                Dim orderid As String = item.SubItems(5).Text
+
+                sql = "INSERT INTO tblbillinvoice(BillingID, OrderID, ProductID, Amount) VALUES(@BillingID, @OrderID, @ProductID, @Amount)"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@BillingID", lblBillingID.Text)
+                    .Parameters.AddWithValue("@OrderID", orderid)
+                    .Parameters.AddWithValue("@ProductID", productid)
+                    .Parameters.AddWithValue("@Amount", trueadjustedvalue)
+                    .ExecuteNonQuery()
+                End With
+            Next
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageSalesV2(savetoBillInvoice): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Function getBillingID() As Integer
         Try
             If cn.State <> ConnectionState.Open Then
@@ -331,7 +360,7 @@ Public Class frmManageSalesV2
         End Try
     End Function
 
-    Private Sub cboAdjust_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cboAdjust_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAdjust.SelectedIndexChanged
         If cboAdjust.SelectedIndex <> 0 Then
             txtAmount.Enabled = True
             cboFormat.Visible = True
@@ -342,10 +371,6 @@ Public Class frmManageSalesV2
             cboFormat.Visible = False
             cboFormat.Enabled = False
         End If
-    End Sub
-
-    Private Sub txtCompanyName_TextChanged(sender As Object, e As EventArgs)
-        'txtBusinessStyle.Text = txtCompanyName.Text
     End Sub
 
     Private Sub btnAddOrder_Click(sender As Object, e As EventArgs)

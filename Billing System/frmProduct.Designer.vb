@@ -58,7 +58,9 @@ Partial Class frmProduct
         Me.ListView2 = New System.Windows.Forms.ListView()
         Me.RestockID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Supplier = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Products = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Amount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DateRequested = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel56 = New System.Windows.Forms.Panel()
         Me.Panel57 = New System.Windows.Forms.Panel()
         Me.txtSearchProduct = New Guna.UI2.WinForms.Guna2TextBox()
@@ -71,8 +73,6 @@ Partial Class frmProduct
         Me.Panel26 = New System.Windows.Forms.Panel()
         Me.Panel58 = New System.Windows.Forms.Panel()
         Me.Panel59 = New System.Windows.Forms.Panel()
-        Me.Products = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.DateRequested = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabControl2.SuspendLayout()
         Me.ListofProducts.SuspendLayout()
         Me.panelBody.SuspendLayout()
@@ -504,10 +504,20 @@ Partial Class frmProduct
         Me.Supplier.Text = "Supplier"
         Me.Supplier.Width = 200
         '
+        'Products
+        '
+        Me.Products.Text = "Total Products"
+        Me.Products.Width = 250
+        '
         'Amount
         '
         Me.Amount.Text = "Amount"
         Me.Amount.Width = 250
+        '
+        'DateRequested
+        '
+        Me.DateRequested.Text = "Date Requested"
+        Me.DateRequested.Width = 250
         '
         'Panel56
         '
@@ -652,16 +662,6 @@ Partial Class frmProduct
         Me.Panel59.Name = "Panel59"
         Me.Panel59.Size = New System.Drawing.Size(13, 707)
         Me.Panel59.TabIndex = 4
-        '
-        'Products
-        '
-        Me.Products.Text = "Total Products"
-        Me.Products.Width = 250
-        '
-        'DateRequested
-        '
-        Me.DateRequested.Text = "Date Requested"
-        Me.DateRequested.Width = 250
         '
         'frmProduct
         '

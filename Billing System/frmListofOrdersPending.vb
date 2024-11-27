@@ -75,7 +75,7 @@ Public Class frmListofOrdersPending
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN(SELECT CustomerID, COUNT(OrderID) AS OrderCount, DateOrdered, OrderID, OrderListID, DeliveryAddress FROM tblorder WHERE Status = 1 GROUP BY OrderID) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN( SELECT o.CustomerID, COUNT(o.OrderID) AS OrderCount, o.DateOrdered, o.OrderID, o.OrderListID, o.DeliveryAddress FROM tblorder o LEFT JOIN tblbillinvoice b ON o.OrderID = b.OrderID WHERE o.Status = 1 AND b.OrderID IS NULL GROUP BY o.OrderID, o.CustomerID, o.DateOrdered, o.OrderListID, o.DeliveryAddress ) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
