@@ -17,12 +17,47 @@ Public Class frmManageSalesV2
     Private Sub frmManageBilling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadBilling()
+        Call loadSalesInvoice()
         dtpDate.Text = Now.ToString()
         lblBillingID.Text = getBillingID()
     End Sub
-    Private Sub btnSearchCustomer_Click(sender As Object, e As EventArgs) Handles btnSearchCustomer.Click
-        frmListofOrdersPending.ShowDialog()
+
+    Private Sub loadSalesInvoice()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT tblbilling.BillingID AS 'Invoice No', CONCAT(tblcustomer.FirstName, ' ', tblcustomer.LastName) AS FullName, tblbilling.CompanyName, tblbilling.FinalPrice, DATE_FORMAT(tblbilling.DatePrinted, '%M %d, %Y %h:%i %p') AS DatePrinted FROM tblbilling INNER JOIN tblcustomer ON tblcustomer.CustomerID = tblbilling.CustomerID"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            Dim x As ListViewItem
+            ListView2.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("Invoice No").ToString())
+                x.SubItems.Add(dr("FullName").ToString())
+                x.SubItems.Add(dr("CompanyName").ToString())
+                x.SubItems.Add(dr("FinalPrice").ToString())
+                x.SubItems.Add(dr("DatePrinted").ToString())
+                ListView2.Items.Add(x)
+            Loop
+
+        Catch ex As Exception
+            MsgBox("An Error occurred frmManageBilling(loadSalesInvoice): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
+
     Public Sub loadBilling()
         Try
             If cn.State <> ConnectionState.Open Then
@@ -111,7 +146,7 @@ Public Class frmManageSalesV2
         End Try
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
             Call clearText()
             lblPONu.Visible = True
@@ -119,7 +154,7 @@ Public Class frmManageSalesV2
         End If
     End Sub
 
-    Private Sub Printbtn_Click(sender As Object, e As EventArgs)
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Try
             Dim filled As Boolean = True
 
@@ -343,5 +378,13 @@ Public Class frmManageSalesV2
         cboAdjust.SelectedIndex = 0
 
         ListView1.Items.Clear()
+    End Sub
+
+    Private Sub btnSearchCustomer_Click(sender As Object, e As EventArgs) Handles btnSearchCustomer.Click
+        frmListofOrdersPending.ShowDialog()
+    End Sub
+
+    Private Sub btnViewSales_Click(sender As Object, e As EventArgs) Handles btnViewSales.Click
+        frmViewTotalSales.ShowDialog()
     End Sub
 End Class

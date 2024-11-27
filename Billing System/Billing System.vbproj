@@ -230,6 +230,12 @@
     <Compile Include="frmManageBilling.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmManageNotifications.Designer.vb">
+      <DependentUpon>frmManageNotifications.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageNotifications.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmManagePOS.Designer.vb">
       <DependentUpon>frmManagePOS.vb</DependentUpon>
     </Compile>
@@ -284,6 +290,12 @@
     <Compile Include="frmManageOrder.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmNotifNewOrder.Designer.vb">
+      <DependentUpon>frmNotifNewOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNotifNewOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPaymentInformation.Designer.vb">
       <DependentUpon>frmPaymentInformation.vb</DependentUpon>
     </Compile>
@@ -336,6 +348,12 @@
       <DependentUpon>frmViewQuotation.vb</DependentUpon>
     </Compile>
     <Compile Include="frmViewQuotation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewTotalSales.Designer.vb">
+      <DependentUpon>frmViewTotalSales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewTotalSales.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="printSalesInvoice.Designer.vb">
@@ -466,6 +484,9 @@
     <EmbeddedResource Include="frmManageBilling.resx">
       <DependentUpon>frmManageBilling.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManageNotifications.resx">
+      <DependentUpon>frmManageNotifications.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManagePOS.resx">
       <DependentUpon>frmManagePOS.vb</DependentUpon>
     </EmbeddedResource>
@@ -493,6 +514,9 @@
     <EmbeddedResource Include="frmManageOrder.resx">
       <DependentUpon>frmManageOrder.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNotifNewOrder.resx">
+      <DependentUpon>frmNotifNewOrder.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPaymentInformation.resx">
       <DependentUpon>frmPaymentInformation.vb</DependentUpon>
     </EmbeddedResource>
@@ -513,6 +537,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewQuotation.resx">
       <DependentUpon>frmViewQuotation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewTotalSales.resx">
+      <DependentUpon>frmViewTotalSales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="printBillingInvoice.rdlc" />
     <EmbeddedResource Include="frmPrintBillingInvoice.resx">
@@ -578,6 +605,7 @@
     <EmbeddedResource Include="reportSupplierTrends.rdlc" />
     <EmbeddedResource Include="reportTopProductSold.rdlc" />
     <EmbeddedResource Include="reportUserActivityLogs.rdlc" />
+    <EmbeddedResource Include="reportViewTotalSales.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSet1.xsc">

@@ -34,7 +34,7 @@ Public Class frmQuotation
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT CONCAT(tblcustomer.FirstName, tblcustomer.LastName) AS FullName, tblcustomer.Address, tblcustomer.Delivery, tblorder.OrderID, tblorder.DateOrdered, tblorder.QuotationDueDate, tblproduct.ProductName, tblproduct.Description, tblorder.Quantity, tblorder.Amount, SUM(tblorder.Amount) OVER () AS TotalAmount FROM tblcustomer INNER JOIN tblorder ON tblorder.CustomerID = tblcustomer.CustomerID INNER JOIN tblproduct ON tblorder.ProductID = tblproduct.ProductID WHERE tblcustomer.CustomerID = 20", cn)
+            da.SelectCommand = New MySqlCommand("SELECT CONCAT(tblcustomer.FirstName, tblcustomer.LastName) AS FullName, tblcustomer.Address, tblcustomer.Delivery, tblorder.OrderID, tblorder.DateOrdered, tblorder.QuotationDueDate, tblproduct.ProductName, tblproduct.Description, tblorder.Quantity, tblorder.Amount, SUM(tblorder.Amount) OVER () AS TotalAmount FROM tblcustomer INNER JOIN tblorder ON tblorder.CustomerID = tblcustomer.CustomerID INNER JOIN tblproduct ON tblorder.ProductID = tblproduct.ProductID WHERE tblcustomer.CustomerID = '" & custid & "'", cn)
             da.Fill(ds.Tables("dtPrintQuotation"))
 
             If cn.State = ConnectionState.Open Then
@@ -85,33 +85,94 @@ Public Class frmQuotation
         End Try
     End Sub
 
-    'Private Sub loadInformation()
-    '    Try
-    '        If cn.State <> ConnectionState.Open Then
-    '            cn.Open()
-    '        End If
+    Private Sub btnSend_Click(sender As Object, e As EventArgs) Handles btnSend.Click
+        Try
+            ' Path to the generated image
+            Dim generatedImagePath As String = Application.StartupPath & "\Image\ReportImage.png"
 
-    '        sql = "SELECT * FROM tblcustomer WHERE CustomerID = '" & custid & "'"
-    '        cmd = New MySqlCommand(sql, cn)
+            ' Check if the image file exists
+            If Not File.Exists(generatedImagePath) Then
+                MsgBox("Generated report image not found. Please generate the report first.", MsgBoxStyle.Critical, "Error")
+                Exit Sub
+            End If
 
-    '        If Not dr.IsClosed Then
-    '            dr.Close()
-    '        End If
+            ' Load the image
+            Dim sendImage As Image
+            Using fs As New FileStream(generatedImagePath, FileMode.Open, FileAccess.Read)
+                sendImage = Image.FromStream(fs)
+            End Using
 
-    '        dr = cmd.ExecuteReader
+            ' Ensure database connection is open
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
-    '        If dr.Read = True Then
-    '            email = dr("Email").ToString
-    '        End If
-    '        dr.Close()
-    '    Catch ex As Exception
-    '        MsgBox("An error occurred frmQuotation(loadInformation): " & ex.Message)
-    '    Finally
-    '        If cn.State = ConnectionState.Open Then
-    '            cn.Close()
-    '        End If
-    '    End Try
-    'End Sub
+            ' Update database with image and quotation due date
+            If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
+                sql = "UPDATE tblorder SET QuotationImg=@QuotationImg, QuotationDueDate=@QuotationDueDate, Status = 1 WHERE OrderID = @OrderID"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    Dim mstream As New MemoryStream()
+                    sendImage.Save(mstream, ImageFormat.Jpeg)
+                    Dim arrImage() As Byte = mstream.ToArray()
+                    mstream.Close()
+
+                    .Parameters.AddWithValue("@QuotationImg", arrImage)
+                    .Parameters.AddWithValue("@QuotationDueDate", DateTime.Now.AddDays(7))
+                    .Parameters.AddWithValue("@OrderID", orderid)
+                    .ExecuteNonQuery()
+                End With
+
+                ' Notify the user
+                MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
+
+                ' Send the email
+                Call sendEmail()
+
+                ' Clean up the image file
+                If File.Exists(generatedImagePath) Then
+                    File.Delete(generatedImagePath)
+                End If
+
+                ' Refresh order list
+                Call frmListofCustomerOrder.loadOrder()
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred in btnSend_Click: " & ex.Message, MsgBoxStyle.Critical, "Error")
+        Finally
+            ' Ensure the database connection is closed
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub sendEmail()
+        Try
+            Dim mail As New MailMessage()
+            Dim smtpServer As New SmtpClient("smtp.gmail.com")
+
+            mail.From = New MailAddress("2718-21@itmlyceumalabang.onmicrosoft.com") ' Replace with your email
+            mail.To.Add(email)
+            mail.Subject = "NOTICE ON QUOTATION OF ORDER NUMBER " & orderid
+            mail.Body = "There is now an available quotation for your Order Number " & orderid & "." & vbCrLf &
+                        "You can now accept or reject the Order Quotation through the website." & vbCrLf & vbCrLf &
+                        "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
+
+            smtpServer.Port = 587
+            smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua") ' Use secure methods
+            smtpServer.EnableSsl = True
+            smtpServer.Send(mail)
+
+            MsgBox("Email sent successfully!", MsgBoxStyle.Information, "Email Sent")
+
+        Catch ex As Exception
+            MsgBox("An error occurred in sendEmail: " & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+    End Sub
+
+
     'Private Sub loadImage()
     '    Try
     '        If cn.State <> ConnectionState.Open Then
@@ -217,6 +278,7 @@ Public Class frmQuotation
     '        End If
     '    End Try
     'End Sub
+
     'Private Sub sendEmail()
     '    Try
     '        Dim mail As New MailMessage()
@@ -239,6 +301,7 @@ Public Class frmQuotation
     '        MsgBox("An error occurred frmPrintBillingInvoice(btnEmail): " & ex.Message)
     '    End Try
     'End Sub
+
     'Private Sub btnCancel_Click(sender As Object, e As EventArgs)
     '    PictureBox1.Image = Nothing
     '    PictureBox2.Visible = True

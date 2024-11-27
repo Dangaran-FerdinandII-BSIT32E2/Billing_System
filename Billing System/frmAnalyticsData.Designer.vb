@@ -23,9 +23,9 @@ Partial Class frmAnalyticsData
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -42,9 +42,9 @@ Partial Class frmAnalyticsData
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.InvoiceNo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.CompanyName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DueDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
@@ -134,26 +134,26 @@ Partial Class frmAnalyticsData
         '
         Me.Chart1.BorderlineWidth = 5
         Me.Chart1.BorderSkin.BorderColor = System.Drawing.Color.Red
-        ChartArea3.AxisX.Title = "Months"
-        ChartArea3.AxisX.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        ChartArea3.AxisY.Title = "Revenue"
-        ChartArea3.AxisY.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        ChartArea3.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea3)
+        ChartArea7.AxisX.Title = "Months"
+        ChartArea7.AxisX.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        ChartArea7.AxisY.Title = "Revenue"
+        ChartArea7.AxisY.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        ChartArea7.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea7)
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Legend3.IsTextAutoFit = False
-        Legend3.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend3)
+        Legend7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Legend7.IsTextAutoFit = False
+        Legend7.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend7)
         Me.Chart1.Location = New System.Drawing.Point(10, 60)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
         Me.Chart1.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.OrangeRed}
-        Series3.ChartArea = "ChartArea1"
-        Series3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series3.Legend = "Legend1"
-        Series3.Name = "Sales"
-        Me.Chart1.Series.Add(Series3)
+        Series7.ChartArea = "ChartArea1"
+        Series7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series7.Legend = "Legend1"
+        Series7.Name = "Sales"
+        Me.Chart1.Series.Add(Series7)
         Me.Chart1.Size = New System.Drawing.Size(1000, 275)
         Me.Chart1.TabIndex = 34
         '
@@ -188,11 +188,11 @@ Partial Class frmAnalyticsData
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(15, 13)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(175, 22)
+        Me.Label2.Size = New System.Drawing.Size(145, 19)
         Me.Label2.TabIndex = 31
         Me.Label2.Text = "Preview 6 months"
         '
@@ -245,9 +245,9 @@ Partial Class frmAnalyticsData
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.InvoiceNo, Me.CompanyName, Me.DueDate})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(10, 60)
@@ -257,20 +257,20 @@ Partial Class frmAnalyticsData
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
-        'ColumnHeader1
+        'InvoiceNo
         '
-        Me.ColumnHeader1.Text = "Invoice No"
-        Me.ColumnHeader1.Width = 180
+        Me.InvoiceNo.Text = "Invoice No"
+        Me.InvoiceNo.Width = 100
         '
-        'ColumnHeader2
+        'CompanyName
         '
-        Me.ColumnHeader2.Text = "Company Name"
-        Me.ColumnHeader2.Width = 300
+        Me.CompanyName.Text = "Company Name"
+        Me.CompanyName.Width = 250
         '
-        'ColumnHeader3
+        'DueDate
         '
-        Me.ColumnHeader3.Text = "Due Date"
-        Me.ColumnHeader3.Width = 200
+        Me.DueDate.Text = "Due Date"
+        Me.DueDate.Width = 285
         '
         'Panel14
         '
@@ -303,11 +303,11 @@ Partial Class frmAnalyticsData
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(15, 13)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(187, 22)
+        Me.Label4.Size = New System.Drawing.Size(154, 19)
         Me.Label4.TabIndex = 31
         Me.Label4.Text = "Overdue Payments"
         '
@@ -325,7 +325,7 @@ Partial Class frmAnalyticsData
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel8.Location = New System.Drawing.Point(349, 0)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(10, 173)
+        Me.Panel8.Size = New System.Drawing.Size(10, 114)
         Me.Panel8.TabIndex = 4
         '
         'Panel5
@@ -335,7 +335,7 @@ Partial Class frmAnalyticsData
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(10, 10)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(359, 173)
+        Me.Panel5.Size = New System.Drawing.Size(359, 114)
         Me.Panel5.TabIndex = 5
         '
         'Panel18
@@ -346,15 +346,15 @@ Partial Class frmAnalyticsData
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel18.Location = New System.Drawing.Point(0, 0)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(349, 173)
+        Me.Panel18.Size = New System.Drawing.Size(349, 114)
         Me.Panel18.TabIndex = 14
         '
         'Panel19
         '
         Me.Panel19.Controls.Add(Me.lblReceivable)
-        Me.Panel19.Location = New System.Drawing.Point(19, 77)
+        Me.Panel19.Location = New System.Drawing.Point(19, 43)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(382, 48)
+        Me.Panel19.Size = New System.Drawing.Size(315, 32)
         Me.Panel19.TabIndex = 33
         '
         'lblReceivable
@@ -362,11 +362,11 @@ Partial Class frmAnalyticsData
         Me.lblReceivable.AutoSize = True
         Me.lblReceivable.BackColor = System.Drawing.Color.Transparent
         Me.lblReceivable.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblReceivable.Font = New System.Drawing.Font("Arial", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReceivable.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReceivable.ForeColor = System.Drawing.Color.White
         Me.lblReceivable.Location = New System.Drawing.Point(0, 0)
         Me.lblReceivable.Name = "lblReceivable"
-        Me.lblReceivable.Size = New System.Drawing.Size(24, 26)
+        Me.lblReceivable.Size = New System.Drawing.Size(18, 19)
         Me.lblReceivable.TabIndex = 34
         Me.lblReceivable.Text = "0"
         '
@@ -374,11 +374,11 @@ Partial Class frmAnalyticsData
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(15, 21)
+        Me.Label1.Location = New System.Drawing.Point(15, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(243, 22)
+        Me.Label1.Size = New System.Drawing.Size(201, 19)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Total Account Receivable"
         '
@@ -437,9 +437,9 @@ Partial Class frmAnalyticsData
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents InvoiceNo As ColumnHeader
+    Friend WithEvents CompanyName As ColumnHeader
+    Friend WithEvents DueDate As ColumnHeader
     Friend WithEvents Panel14 As Panel
     Friend WithEvents Panel15 As Panel
     Friend WithEvents Panel16 As Panel

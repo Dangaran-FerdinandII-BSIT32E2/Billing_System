@@ -78,6 +78,7 @@ Public Class frmAdminDashboard
     Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call loadNotification()
         Call loadRoles()
+        'frmNotifNewOrder.Show()
         btnDashboard.CustomBorderThickness = addThickness
         btnDashboard.CustomBorderColor = addColor
 
@@ -476,6 +477,11 @@ Public Class frmAdminDashboard
     End Sub
 
     Private Sub btnNotification_Click(sender As Object, e As EventArgs) Handles btnNotification.Click
-        frmManageInquiry.ShowDialog()
+        'frmManageInquiry.ShowDialog()
+        frmManageNotifications.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        frmNotifNewOrder.Show()
     End Sub
 End Class

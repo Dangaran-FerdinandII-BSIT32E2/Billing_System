@@ -1,7 +1,6 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports MySql.Data.MySqlClient
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 
 Public Class frmAdminSettings
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
