@@ -132,6 +132,7 @@ Public Class frmListofOrdersPending
                     frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
                     frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(11).Text
                     frmManageSalesV2.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
+                    frmManageSalesV2.txtAddress.Text = ListView1.SelectedItems(0).SubItems(5).Text
                     frmManageSalesV2.txtDeliveryAddress.Text = ListView1.SelectedItems(0).SubItems(6).Text
                     Call frmManageSalesV2.loadBilling()
                 End If
