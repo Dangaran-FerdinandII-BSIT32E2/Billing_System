@@ -4,6 +4,8 @@ Imports MySql.Data.MySqlClient
 Public Class frmListProducts
 
     Public supplierid As String = Nothing
+
+    Public listofProductIds As New List(Of String)
     Private Sub frmListProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         If supplierid Then
@@ -20,6 +22,11 @@ Public Class frmListProducts
             End If
             sql = "SELECT * FROM qryproducts ORDER BY ProductName ASC"
             cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
             dr = cmd.ExecuteReader
 
             Dim x As ListViewItem
@@ -48,16 +55,30 @@ Public Class frmListProducts
     End Sub
 
     Private Sub loadReorders()
+        If listofProductIds.Count = 0 Then
+            loadAllProducts()
+        Else
+            loadOnlyProducts()
+        End If
+    End Sub
+    Private Sub loadAllProducts()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT * FROM tblproduct WHERE SupplierID = '" & supplierid & "' ORDER BY Amount ASC"
+
+            sql = "SELECT * FROM tblproduct WHERE SupplierID = '" & supplierid & "' ORDER BY ProductName ASC"
             cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
             dr = cmd.ExecuteReader
 
             Dim x As ListViewItem
             ListView1.Items.Clear()
+
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("ProductName").ToString())
@@ -71,6 +92,50 @@ Public Class frmListProducts
 
                 ListView1.Items.Add(x)
             Loop
+        Catch ex As Exception
+            MsgBox("An error occurred frmListProducts(loadProducts): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub loadOnlyProducts()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            For Each productid In listofProductIds
+                sql = "SELECT * FROM tblproduct WHERE SupplierID = '" & supplierid & "' ORDER BY Amount ASC"
+                cmd = New MySqlCommand(sql, cn)
+
+                If Not dr.IsClosed Then
+                    dr.Close()
+                End If
+
+                dr = cmd.ExecuteReader
+
+                Dim x As ListViewItem
+                ListView1.Items.Clear()
+
+                Do While dr.Read = True
+                    If Not listofProductIds.Contains(dr("ProductID").ToString()) Then
+                        x = New ListViewItem(dr("ProductName").ToString())
+                        x.SubItems.Add(dr("Description").ToString())
+                        x.SubItems.Add(dr("Category").ToString())
+                        x.SubItems.Add(dr("PurchasePrice").ToString())
+                        x.SubItems.Add(dr("SellingPrice").ToString())
+                        x.SubItems.Add(dr("Amount").ToString())
+                        x.SubItems.Add(dr("ProductID").ToString()) '6
+                        x.SubItems.Add(dr("SupplierID").ToString())
+
+                        ListView1.Items.Add(x)
+                        ' End If
+                    End If
+                Loop
+            Next
         Catch ex As Exception
             MsgBox("An error occurred frmListProducts(loadProducts): " & ex.Message)
         Finally

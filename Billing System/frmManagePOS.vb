@@ -169,11 +169,8 @@ Public Class frmManagePOS
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If MsgBox("Do you want to save?", vbYesNo + vbQuestion) = vbYes Then
-            If isRental Then
-                rental()
-            Else
-                walkin()
-            End If
+
+            walkin()
             Call closeForm()
             Me.Close()
         End If
@@ -187,45 +184,6 @@ Public Class frmManagePOS
         lblVAT.Text = "0.00"
         Call clearAll()
         btnCancel.Enabled = False
-    End Sub
-    Private Sub rental()
-        Try
-
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-
-            sql = "SELECT ProductName, Description, SellingPrice, ProductID FROM qryproducts WHERE ProductID = '" & ListView1.SelectedItems(0).SubItems(4).Text & "'"
-            cmd = New MySqlCommand(sql, cn)
-
-            If Not dr.IsClosed Then
-                dr.Close()
-            End If
-
-            dr = cmd.ExecuteReader
-            While dr.Read
-
-                Dim X As ListViewItem = frmManageRentalV2.ListView1.Items.Add(ListView1.SelectedItems(0).SubItems(2).Text)
-                X.SubItems.Add(dr("ProductName").ToString())
-                X.SubItems.Add(dr("Description").ToString())
-                X.SubItems.Add(dr("SellingPrice").ToString())
-                X.SubItems.Add(ListView1.SelectedItems(0).SubItems(3).Text)
-                X.SubItems.Add("0") '5
-                X.SubItems.Add("0") '6
-                X.SubItems.Add(dr("ProductID").ToString()) '7
-            End While
-
-            frmManageRentalV2.txtCompanyName.Enabled = True
-            frmManageRentalV2.txtDeliveryAddress.Enabled = True
-            frmManageRentalV2.txtAddress.Enabled = True
-            frmManageRentalV2.btnPrint.Enabled = True
-        Catch ex As Exception
-            MsgBox("An error occurred frmManagePOS(walkin): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
     End Sub
     Private Sub walkin()
         Try

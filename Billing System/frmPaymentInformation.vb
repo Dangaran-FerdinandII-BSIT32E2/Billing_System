@@ -88,9 +88,9 @@ Public Class frmPaymentInformation
             Using cmd As New MySqlCommand(sql, cn)
                 Using dr = cmd.ExecuteReader
                     If dr.Read = True Then
-                        txtCompanyName.Text = dr("CompanyName").ToString()
-                        txtUnpaidAmount.Text = (dr("FinalPrice") - totalPaid).ToString
-                        txtDueDate.Text = dr("DueDate").ToString
+                        'txtCompanyName.Text = dr("CompanyName").ToString()
+                        'txtUnpaidAmount.Text = (dr("FinalPrice") - totalPaid).ToString
+                        'txtDueDate.Text = dr("DueDate").ToString
                     End If
                 End Using
             End Using
@@ -133,11 +133,11 @@ Public Class frmPaymentInformation
 
             sql = "UPDATE tblbilling SET Remarks=@Remarks WHERE BillingID = '" & billingid & "'"
             cmd = New MySqlCommand(sql, cn)
-            If Convert.ToDouble(txtUnpaidAmount.Text) <= totalPaid Then
-                cmd.Parameters.AddWithValue("@Remarks", "1")
-            Else
-                cmd.Parameters.AddWithValue("@Remarks", "0")
-            End If
+            'If Convert.ToDouble(txtUnpaidAmount.Text) <= totalPaid Then
+            '    cmd.Parameters.AddWithValue("@Remarks", "1")
+            'Else
+            '    cmd.Parameters.AddWithValue("@Remarks", "0")
+            'End If
             cmd.ExecuteNonQuery()
 
             Dim startDate As String = frmManageCollectionV3.DateFilter1.Text
@@ -166,7 +166,7 @@ Public Class frmPaymentInformation
                 pbxDelivery.Image = Image.FromFile(d.FileName)
 
                 btnCancel.Enabled = True
-                txtDueDate.Enabled = True
+                ' txtDueDate.Enabled = True
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmPaymentInformation(btnUpload_Click): " & ex.Message)
@@ -275,13 +275,13 @@ Public Class frmPaymentInformation
         If e.CloseReason = CloseReason.UserClosing Then
             pbxDelivery.Image = Nothing
 
-            btnSave.Enabled = False
-            txtDueDate.Enabled = False
-            btnCancel.Enabled = False
+            'btnSave.Enabled = False
+            'txtDueDate.Enabled = False
+            'btnCancel.Enabled = False
 
-            txtCompanyName.Clear()
-            txtUnpaidAmount.Clear()
-            txtDueDate.Clear()
+            'txtCompanyName.Clear()
+            'txtUnpaidAmount.Clear()
+            'txtDueDate.Clear()
 
             Call frmManageCollectionV3.loadCollections(frmManageCollectionV3.DateFilter1.Text, frmManageCollectionV3.DateFilter2.Text)
         End If

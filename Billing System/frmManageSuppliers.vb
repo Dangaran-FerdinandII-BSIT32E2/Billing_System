@@ -4,7 +4,6 @@ Public Class frmManageSuppliers
     Private Sub frmManageSuppliers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadSuppliers()
-        Call loadProducts()
         Call loadReorders()
     End Sub
 
@@ -145,56 +144,7 @@ Public Class frmManageSuppliers
         Next
     End Sub
 
-    'LIST OF RAMBIC PRODUCTS
-    Public Sub loadProducts()
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-
-            sql = "SELECT * FROM qryproducts WHERE Amount > 0 AND Status <> 3 ORDER BY ProductName ASC"
-            cmd = New MySqlCommand(sql, cn)
-
-            If Not dr.IsClosed Then
-                dr.Close()
-            End If
-
-            dr = cmd.ExecuteReader
-
-            Dim x As ListViewItem
-            ListView2.Items.Clear()
-
-            Do While dr.Read = True
-                x = New ListViewItem(dr("ProductName").ToString())
-                x.SubItems.Add(dr("Description").ToString())
-                x.SubItems.Add(dr("Category").ToString())
-                x.SubItems.Add(dr("PurchasePrice").ToString())
-                x.SubItems.Add(dr("SellingPrice").ToString())
-                x.SubItems.Add(checkStatus(dr("Amount"), dr("ProductID")))
-                x.SubItems.Add(dr("Amount").ToString())
-                x.SubItems.Add(dr("ProductID").ToString()) '7
-                x.SubItems.Add(dr("SupplierID").ToString())
-
-                If dr("Status") = 2 Then
-                    x.ForeColor = Color.Black
-                ElseIf dr("Status") = 1 Then
-                    x.ForeColor = Color.Orange
-                Else
-                    x.ForeColor = Color.Red
-                End If
-
-                ListView2.Items.Add(x)
-            Loop
-            dr.Close()
-        Catch ex As Exception
-            MsgBox("An Error occurred frmManageSupplierProduct(loadProducts): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
-    End Sub
-
+    'REORDERS
     Private Function checkStatus(amount As Integer, productid As String) As String
         Using cn As New MySqlConnection("server=localhost;user=root;password=;database=dbbilling")
             cn.Open()
@@ -224,77 +174,6 @@ Public Class frmManageSuppliers
         End Using
     End Function
 
-    Private Sub btnAddNewProduct_Click(sender As Object, e As EventArgs) Handles ListView2.DoubleClick, btnAddNewProduct.Click
-        If ListView2.SelectedItems.Count > 0 Then
-            frmManageProducts.productid = ListView2.SelectedItems(0).SubItems(7).Text
-            frmManageProducts.supplierid = ListView2.SelectedItems(0).SubItems(8).Text
-            frmManageProducts.ShowDialog()
-
-            btnDeleteProduct.Enabled = False
-        End If
-    End Sub
-
-    Private Sub btnDeleteProduct_Click(sender As Object, e As EventArgs) Handles btnDeleteProduct.Click
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-
-            If ListView2.SelectedItems.Count > 0 Then
-                If MsgBox("Do you want to delete?", vbYesNo) = vbYes Then
-                    sql = "UPDATE tblproduct SET Status = 3 WHERE ProductID = '" & ListView2.SelectedItems(0).SubItems(7).Text & "'"
-                    cmd = New MySqlCommand(sql, cn)
-                    cmd.ExecuteNonQuery()
-
-                    MsgBox("Product deactivated.", MsgBoxStyle.Information, "Deactivate Status")
-                    Call loadProducts()
-                End If
-                btnDeleteProduct.Enabled = False
-            Else
-                MsgBox("Please select an item to deactivate!", vbExclamation)
-            End If
-        Catch ex As Exception
-            MsgBox("An Error occurred frmManageSupplierProduct(btnDeleteProduct_Click): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
-    End Sub
-
-    Private Sub txtSearchProduct_TextChanged(sender As Object, e As EventArgs) Handles txtSearchProduct.TextChanged
-        Dim dt As DataTable = SearchProductDatabase(txtSearchProduct.Text)
-        PopulateProductListView(dt)
-    End Sub
-
-    Public Function SearchProductDatabase(searchTerm As String) As DataTable
-        sql = "Select ProductName,CompanyName,Description,Category,Type,PurchasePrice,SellingPrice,Availability, Status ProductID, SupplierID from qryproducts where ProductName LIKE ? OR CompanyName LIKE ? ORDER BY ProductName ASC"
-        cmd = New MySqlCommand(sql, cn)
-        cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
-        cmd.Parameters.Add(New MySqlParameter("searchTerm2", "%" & searchTerm & "%"))
-
-        If Not dr.IsClosed Then
-            dr.Close()
-        End If
-
-        Dim dt As New DataTable
-        Dim da As New MySqlDataAdapter(cmd)
-        da.Fill(dt)
-        dr.Close()
-        Return dt
-    End Function
-    Private Sub PopulateProductListView(dt As DataTable)
-        ListView2.Items.Clear()
-        For Each row As DataRow In dt.Rows
-            ListView2.Items.Add(New ListViewItem(row.ItemArray.Select(Function(x) x.ToString()).ToArray()))
-        Next
-    End Sub
-
-    Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.SelectedIndexChanged
-        btnDeleteProduct.Enabled = True
-    End Sub
-
-    'REORDERS
     Public Sub loadReorders()
         Try
             If cn.State <> ConnectionState.Open Then

@@ -89,7 +89,19 @@ Public Class frmRestockProduct
     End Sub
 
     Private Sub btnSendRequest_Click(sender As Object, e As EventArgs) Handles btnSendRequest.Click
-        sendRequest()
+        Dim itemsWithoutAmount As New List(Of String)
+        For Each item As ListViewItem In ListView1.Items
+            If item.SubItems(2).Text <= 0 Then
+                itemsWithoutAmount.Add(item.SubItems(1).Text)
+            End If
+        Next
+
+        If itemsWithoutAmount.Count > 0 Then
+            Dim errorMessage As String = "Please enter an amount for the following product(s):" & Environment.NewLine & Environment.NewLine & String.Join(Environment.NewLine, itemsWithoutAmount)
+            MsgBox(errorMessage, MsgBoxStyle.Critical, "Send Request Error")
+        Else
+            sendRequest()
+        End If
     End Sub
 
     Private Sub sendRequest()
@@ -165,7 +177,7 @@ Public Class frmRestockProduct
                 cn.Open()
             End If
 
-            sql = "SELECT MAX(QuotationID) AS QuotationID FROM tblquotation"
+            sql = "SELECT MAX(QuotationID) AS QuotationID FROM tblquotationproducts"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -175,7 +187,13 @@ Public Class frmRestockProduct
             dr = cmd.ExecuteReader
 
             If dr.Read = True Then
-                quotationid = (dr("QuotationID") + 1).ToString
+                If Not IsDBNull(dr("QuotationID")) Then 'IF QUOTATIONID IS NOT NULL
+                    quotationid = (dr("QuotationID") + 1).ToString
+                Else 'IF THERE IS NO QUOTATIONID
+                    quotationid = "1"
+                End If
+            Else
+                quotationid = "0"
             End If
         Catch ex As Exception
             MsgBox("An Error occurred frmRestockProduct(getMaxQuotationID): " & ex.Message)
@@ -192,21 +210,16 @@ Public Class frmRestockProduct
             End If
 
             For Each item As ListViewItem In ListView1.Items
-                If item.SubItems(2).Text IsNot Nothing Then
-                    sql = "INSERT INTO tblquotationproducts(QuotationID, SupplierID, PONumber, ProductID, Amount) VALUES(@QuotationID, @SupplierID, @PONumber, @ProductID, @Amount)"
-                    cmd = New MySqlCommand(sql, cn)
-                    With cmd
-                        .Parameters.AddWithValue("@QuotationID", quotationid)
-                        .Parameters.AddWithValue("@SupplierID", supplierid)
-                        .Parameters.AddWithValue("@PONumber", txtPONo.Text)
-                        .Parameters.AddWithValue("@ProductID", item.SubItems(3).Text)
-                        .Parameters.AddWithValue("@Amount", item.SubItems(2).Text)
-                        .ExecuteNonQuery()
-                    End With
-                Else
-                    MsgBox("Please enter an amount for " & item.SubItems(1).Text & ".", MsgBoxStyle.Information, "Send Status")
-                End If
-
+                sql = "INSERT INTO tblquotationproducts(QuotationID, SupplierID, PONumber, ProductID, Amount) VALUES(@QuotationID, @SupplierID, @PONumber, @ProductID, @Amount)"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@QuotationID", quotationid)
+                    .Parameters.AddWithValue("@SupplierID", supplierid)
+                    .Parameters.AddWithValue("@PONumber", txtPONo.Text)
+                    .Parameters.AddWithValue("@ProductID", item.SubItems(3).Text)
+                    .Parameters.AddWithValue("@Amount", item.SubItems(2).Text)
+                    .ExecuteNonQuery()
+                End With
             Next
 
         Catch ex As Exception
@@ -220,6 +233,7 @@ Public Class frmRestockProduct
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         frmListProducts.supplierid = supplierid
+        frmListProducts.listofProductIds = listofProductIds
         frmListProducts.ShowDialog()
     End Sub
 
