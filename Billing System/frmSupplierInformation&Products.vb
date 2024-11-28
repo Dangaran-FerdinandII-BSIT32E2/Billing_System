@@ -7,7 +7,10 @@ Public Class frmManageSupplierV2
     Private Sub frmManageSupplierV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadInformation()
-        Call loadImage
+        Call loadImage()
+
+        'SUPPLIER PRODUCTS
+        Call supplierProducts()
     End Sub
 
     Private Sub loadInformation()
@@ -41,6 +44,8 @@ Public Class frmManageSupplierV2
                 'txtPassword.Text = dr("Password").ToString
 
                 cboAcctStatus.Text = (If(dr("AcctStatus") = True, "Active", "Inactive"))
+
+                grpbxSupplierName.Text = dr("CompanyName").ToString & " Products"
             End If
         Catch ex As Exception
             MsgBox("An Error occurred frmManageSupplierV2(loadInformation): " & ex.Message)
@@ -269,6 +274,84 @@ Public Class frmManageSupplierV2
         ElseIf cboAcctStatus.Text = "Inactive" Then
             btnDeactive.Enabled = False
             btnActive.Enabled = True
+        End If
+    End Sub
+
+    'SUPPLIER PRODUCTS
+    Private Sub supplierProducts()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT p.* FROM tblproduct p INNER JOIN tblsupplier s ON p.SupplierID = s.SupplierID WHERE p.SupplierID = '" & supplierid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            Dim x As ListViewItem
+            ListView1.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("ProductName").ToString)
+                x.SubItems.Add(dr("Description").ToString)
+                x.SubItems.Add(dr("Category").ToString)
+                x.SubItems.Add(dr("Type").ToString)
+                x.SubItems.Add(dr("PurchasePrice").ToString)
+                x.SubItems.Add(dr("SellingPrice").ToString)
+                x.SubItems.Add(dr("Amount").ToString)
+                x.SubItems.Add(dr("ProductID").ToString) '7
+
+                ListView1.Items.Add(x)
+            Loop
+        Catch ex As Exception
+            MsgBox("An Error occurred frmManageSupplierV2(supplierProducts): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+        If ListView1.SelectedItems.Count > 0 Then
+            Try
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
+
+                sql = "SELECT Image FROM tblproduct WHERE ProductID = '" & ListView1.SelectedItems(0).SubItems(7).Text & "'"
+                cmd = New MySqlCommand(sql, cn)
+
+                If Not dr.IsClosed Then
+                    dr.Close()
+                End If
+
+                dr = cmd.ExecuteReader
+                If dr.Read = True Then
+                    Dim pic As Byte() = DirectCast(dr("Image"), Byte())
+                    If pic.Length > 0 Then
+                        Using ms As New MemoryStream(pic)
+                            pbxProduct.Image = Image.FromStream(ms)
+                        End Using
+
+                        btnDelete.Enabled = True
+                    End If
+                Else
+                    pbxProduct.Image = Nothing
+                    btnDelete.Enabled = False
+                End If
+            Catch ex As Exception
+                MsgBox("An error occurred frmRestockQuotation(loadQuotationImage): " & ex.Message)
+            Finally
+                If cn.State = ConnectionState.Open Then
+                    cn.Close()
+                End If
+            End Try
         End If
     End Sub
 End Class
