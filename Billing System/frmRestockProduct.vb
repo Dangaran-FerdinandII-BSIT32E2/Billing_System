@@ -12,6 +12,8 @@ Public Class frmRestockProduct
     Private email As String
 
     Public listofProductIds As New List(Of String)
+
+    Dim newValue As String = 0
     Private Sub frmRestockProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call addtolist(productid)
@@ -34,7 +36,7 @@ Public Class frmRestockProduct
             ListView1.Items.Clear()
 
             For Each productid As String In listofProductIds
-                sql = "SELECT p.ProductID, p.ProductName, p.Image, s.Email, s.CompanyName, p.Amount FROM tblproduct p INNER JOIN tblsupplier s ON p.SupplierID = s.SupplierID  WHERE p.Status < 2 AND p.ProductID = @ProductID"
+                sql = "SELECT p.ProductID, p.ProductName, p.Image, s.Email, s.CompanyName FROM tblproduct p INNER JOIN tblsupplier s ON p.SupplierID = s.SupplierID  WHERE p.Status < 2 AND p.ProductID = @ProductID"
                 Using cmd As New MySqlCommand(sql, cn)
                     cmd.Parameters.AddWithValue("@ProductID", productid)
 
@@ -50,10 +52,12 @@ Public Class frmRestockProduct
 
                                 x.ImageIndex = ImageList1.Images.Add(image, Nothing)
                                 x.SubItems.Add(dr("ProductName").ToString)
-                                x.SubItems.Add(dr("Amount").ToString)
+                                x.SubItems.Add(newValue)
                                 x.SubItems.Add(dr("ProductID").ToString) '3
 
                                 ListView1.Items.Add(x)
+
+                                newValue = 0
                             End Using
 
                             txtSupplier.Text = dr("CompanyName").ToString
@@ -64,7 +68,7 @@ Public Class frmRestockProduct
             Next
 
         Catch ex As Exception
-            MsgBox("An Error occurred frmRestockProduct(loadInformation): " & ex.Message)
+            MsgBox("An Error occurred frmRestockProduct(loadInformation) :  " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -188,17 +192,21 @@ Public Class frmRestockProduct
             End If
 
             For Each item As ListViewItem In ListView1.Items
-                sql = "INSERT INTO tblquotation(QuotationID, SupplierID, PONumber, ProductID, DateRequested, Quantity) VALUES(@QuotationID, @SupplierID, @PONumber, @ProductID, @DateRequested, @Quantity)"
-                cmd = New MySqlCommand(sql, cn)
-                With cmd
-                    .Parameters.AddWithValue("@QuotationID", quotationid)
-                    .Parameters.AddWithValue("@SupplierID", supplierid)
-                    .Parameters.AddWithValue("@PONumber", txtPONo.Text)
-                    .Parameters.AddWithValue("@ProductID", item.SubItems(3).Text)
-                    .Parameters.AddWithValue("@DateRequested", DateTime.Now)
-                    .Parameters.AddWithValue("@Quantity", item.SubItems(2).Text)
-                    .ExecuteNonQuery()
-                End With
+                If item.SubItems(2).Text IsNot Nothing Then
+                    sql = "INSERT INTO tblquotationproducts(QuotationID, SupplierID, PONumber, ProductID, Amount) VALUES(@QuotationID, @SupplierID, @PONumber, @ProductID, @Amount)"
+                    cmd = New MySqlCommand(sql, cn)
+                    With cmd
+                        .Parameters.AddWithValue("@QuotationID", quotationid)
+                        .Parameters.AddWithValue("@SupplierID", supplierid)
+                        .Parameters.AddWithValue("@PONumber", txtPONo.Text)
+                        .Parameters.AddWithValue("@ProductID", item.SubItems(3).Text)
+                        .Parameters.AddWithValue("@Amount", item.SubItems(2).Text)
+                        .ExecuteNonQuery()
+                    End With
+                Else
+                    MsgBox("Please enter an amount for " & item.SubItems(1).Text & ".", MsgBoxStyle.Information, "Send Status")
+                End If
+
             Next
 
         Catch ex As Exception
@@ -238,7 +246,7 @@ Public Class frmRestockProduct
         If ListView1.SelectedItems.Count > 0 Then
             Dim currentValue As String = ListView1.SelectedItems(0).SubItems(2).Text
 
-            Dim newValue As String = InputBox("Enter quantity: ", "Restock Item", currentValue)
+            newValue = InputBox("Enter quantity: ", "Restock Item", currentValue)
 
             If Not String.IsNullOrEmpty(newValue) Then
                 ListView1.SelectedItems(0).SubItems(2).Text = newValue
