@@ -7,6 +7,8 @@ Public Class frmProduct
 
         'ACTIVE ORDERS
         Call loadOrders()
+
+        'RAMBIC PRODUCTS
     End Sub
 
     Public Sub loadProducts()
@@ -95,7 +97,7 @@ Public Class frmProduct
                 cn.Open()
             End If
 
-            sql = "SELECT q.PONumber, q.QuotationID, COUNT(q.ProductID) AS TotalOrders, q.SupplierID, SUM(q.Amount) AS Amount, s.CompanyName, DATE_FORMAT(q.DateRequested, '%M %d %Y') AS DateRequested FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID WHERE q.QuotationIMG IS NOT NULL GROUP BY q.QuotationID ORDER BY q.PONumber ASC"
+            sql = "SELECT q.PONumber, s.CompanyName, COUNT(q.ProductID) AS TotalOrders, SUM(q.Amount) AS Amount, DATE_FORMAT(q.DateRequested, '%M %d %Y') AS DateRequested, q.QuotationID, q.SupplierID FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID WHERE q.QuotationIMG IS NOT NULL GROUP BY q.QuotationID ORDER BY q.PONumber ASC"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -133,6 +135,57 @@ Public Class frmProduct
             frmRestockQuotation.quotationid = ListView2.SelectedItems(0).SubItems(5).Text
             frmRestockQuotation.supplierid = ListView2.SelectedItems(0).SubItems(6).Text
             frmRestockQuotation.ShowDialog()
+        End If
+    End Sub
+
+    'RAMBIC PRODUCTS
+
+    Private Sub availableProducts()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT ProductName, Description, Category, PurchasePrice, SellingPrice, Status, Amount, ProductID, SupplierID FROM tblproduct WHERE Amount > 0 ORDER BY ProductName ASC"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            Dim x As ListViewItem
+            ListView3.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("ProductName").ToString())
+                x.SubItems.Add(dr("Description").ToString())
+                x.SubItems.Add(dr("Category").ToString())
+                x.SubItems.Add(dr("PurchasePrice").ToString())
+                x.SubItems.Add(dr("SellingPrice").ToString())
+                x.SubItems.Add(dr("Status").ToString())
+                x.SubItems.Add(dr("Amount").ToString())
+                x.SubItems.Add(dr("ProductID").ToString()) '7
+                x.SubItems.Add(dr("SupplierID").ToString()) '8
+
+                ListView3.Items.Add(x)
+            Loop
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("An Error occurred frmProduct(availableProducts): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click, ListView3.DoubleClick
+        If ListView1.SelectedItems.Count > 0 Then
+            frmManageProducts.productid = ListView3.SelectedItems(0).SubItems(7).Text
+            frmManageProducts.supplierid = ListView3.SelectedItems(0).SubItems(8).Text
+            frmManageProducts.ShowDialog()
         End If
     End Sub
 End Class
