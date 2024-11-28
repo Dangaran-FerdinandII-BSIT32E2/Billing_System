@@ -11,7 +11,6 @@ Public Class frmPaymentInformation
     Dim d As OpenFileDialog = New OpenFileDialog
 
     Dim totalPaid As Double = 0.0
-    Dim totalDebt As Double = 0.0
 
     Private collectionid As String
 
@@ -88,9 +87,11 @@ Public Class frmPaymentInformation
             Using cmd As New MySqlCommand(sql, cn)
                 Using dr = cmd.ExecuteReader
                     If dr.Read = True Then
-                        'txtCompanyName.Text = dr("CompanyName").ToString()
-                        'txtUnpaidAmount.Text = (dr("FinalPrice") - totalPaid).ToString
-                        'txtDueDate.Text = dr("DueDate").ToString
+                        txtCompanyName.Text = dr("CompanyName").ToString()
+                        txtOutstanding.Text = (dr("FinalPrice") - totalPaid).ToString
+                        txtAmountDue.Text = dr("FinalPrice").ToString
+                        txtPayment.Text = totalPaid
+                        ' txtDueDate.Text = dr("DueDate").ToString
                     End If
                 End Using
             End Using
@@ -114,7 +115,9 @@ Public Class frmPaymentInformation
 
             If dr.Read = True Then
                 lblBillNo.Text = "Billing #" & billingid
-                lblOrderNo.Text = "Order #" & dr("OrderID").ToString
+                lblPONo.Text = billingid
+                lblInvoiceNo.Text = billingid
+                lblOrderNo.Text = dr("OrderID").ToString
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmPaymentInformation(loadOrder): " & ex.Message)
@@ -133,11 +136,11 @@ Public Class frmPaymentInformation
 
             sql = "UPDATE tblbilling SET Remarks=@Remarks WHERE BillingID = '" & billingid & "'"
             cmd = New MySqlCommand(sql, cn)
-            'If Convert.ToDouble(txtUnpaidAmount.Text) <= totalPaid Then
-            '    cmd.Parameters.AddWithValue("@Remarks", "1")
-            'Else
-            '    cmd.Parameters.AddWithValue("@Remarks", "0")
-            'End If
+            If Convert.ToDouble(txtOutstanding.Text) <= totalPaid Then
+                cmd.Parameters.AddWithValue("@Remarks", "1")
+            Else
+                cmd.Parameters.AddWithValue("@Remarks", "0")
+            End If
             cmd.ExecuteNonQuery()
 
             Dim startDate As String = frmManageCollectionV3.DateFilter1.Text

@@ -7,8 +7,6 @@ Imports Mysqlx.Crud
 Public Class frmDeliveryInformation
 
     Public billingid As String
-    Public startDate As String
-    Public endDate As String
     Dim d As OpenFileDialog = New OpenFileDialog
 
     Private Sub frmManageCollectionV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
