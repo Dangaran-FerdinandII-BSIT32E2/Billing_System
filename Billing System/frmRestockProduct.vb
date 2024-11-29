@@ -89,18 +89,26 @@ Public Class frmRestockProduct
     End Sub
 
     Private Sub btnSendRequest_Click(sender As Object, e As EventArgs) Handles btnSendRequest.Click
-        Dim itemsWithoutAmount As New List(Of String)
-        For Each item As ListViewItem In ListView1.Items
-            If item.SubItems(2).Text <= 0 Then
-                itemsWithoutAmount.Add(item.SubItems(1).Text)
-            End If
-        Next
+        If Not IsNumeric(String.IsNullOrWhiteSpace(txtPONo.Text)) AndAlso listofProductIds.Count > 0 Then
+            Dim itemsWithoutAmount As New List(Of String)
+            For Each item As ListViewItem In ListView1.Items
+                If item.SubItems(2).Text <= 0 Then
+                    itemsWithoutAmount.Add(item.SubItems(1).Text)
+                End If
+            Next
 
-        If itemsWithoutAmount.Count > 0 Then
-            Dim errorMessage As String = "Please enter an amount for the following product(s):" & Environment.NewLine & Environment.NewLine & String.Join(Environment.NewLine, itemsWithoutAmount)
-            MsgBox(errorMessage, MsgBoxStyle.Critical, "Send Request Error")
+            If itemsWithoutAmount.Count > 0 Then
+                Dim errorMessage As String = "Please enter an amount for the following product(s):" & Environment.NewLine & Environment.NewLine & String.Join(Environment.NewLine, itemsWithoutAmount)
+                MsgBox(errorMessage, MsgBoxStyle.Critical, "Send Request Error")
+            Else
+                sendRequest()
+            End If
         Else
-            sendRequest()
+            If Not listofProductIds.Count = 0 Then
+                MsgBox("Please enter a valid Purchase Order Number.", MsgBoxStyle.Critical, "Invalid Input")
+            Else
+                MsgBox("Please add a product to send a restock request.", MsgBoxStyle.Critical, "Invalid Product")
+            End If
         End If
     End Sub
 
@@ -262,8 +270,10 @@ Public Class frmRestockProduct
 
             newValue = InputBox("Enter quantity: ", "Restock Item", currentValue)
 
-            If Not String.IsNullOrEmpty(newValue) Then
+            If Not String.IsNullOrEmpty(newValue) AndAlso IsNumeric(newValue) Then
                 ListView1.SelectedItems(0).SubItems(2).Text = newValue
+            Else
+                MsgBox("Please enter a valid amount.", MsgBoxStyle.Critical, "Add Product Quantity")
             End If
         End If
     End Sub

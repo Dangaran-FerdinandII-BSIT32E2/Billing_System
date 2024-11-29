@@ -6,6 +6,8 @@ Public Class frmManageSupplierV2
 
     Private Sub frmManageSupplierV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+
+        TabControl2.SelectedTab = TabPage1
         Call loadInformation()
         Call loadImage()
 
@@ -218,6 +220,8 @@ Public Class frmManageSupplierV2
         If e.CloseReason = CloseReason.UserClosing Then
             Call disableAll()
             Call clearAll()
+
+            pbxProduct.Image = Nothing
         End If
     End Sub
 
@@ -353,5 +357,13 @@ Public Class frmManageSupplierV2
                 End If
             End Try
         End If
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+
+    End Sub
+
+    Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
+
     End Sub
 End Class

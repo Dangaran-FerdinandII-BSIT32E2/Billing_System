@@ -9,6 +9,7 @@ Public Class frmProduct
         Call loadOrders()
 
         'RAMBIC PRODUCTS
+        Call availableProducts()
     End Sub
 
     Public Sub loadProducts()
@@ -164,7 +165,7 @@ Public Class frmProduct
                 x.SubItems.Add(dr("Category").ToString())
                 x.SubItems.Add(dr("PurchasePrice").ToString())
                 x.SubItems.Add(dr("SellingPrice").ToString())
-                x.SubItems.Add(dr("Status").ToString())
+                x.SubItems.Add(checkStatus(dr("Status").ToString()))
                 x.SubItems.Add(dr("Amount").ToString())
                 x.SubItems.Add(dr("ProductID").ToString()) '7
                 x.SubItems.Add(dr("SupplierID").ToString()) '8
@@ -186,6 +187,15 @@ Public Class frmProduct
             frmManageProducts.productid = ListView3.SelectedItems(0).SubItems(7).Text
             frmManageProducts.supplierid = ListView3.SelectedItems(0).SubItems(8).Text
             frmManageProducts.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub btnRestock_Click(sender As Object, e As EventArgs) Handles btnRestock.Click
+        If ListView1.SelectedItems.Count > 0 Then
+            frmRestockProduct.productid = ListView1.SelectedItems(0).SubItems(7).Text
+            frmRestockProduct.supplierid = ListView1.SelectedItems(0).SubItems(8).Text
+
+            frmRestockProduct.ShowDialog()
         End If
     End Sub
 End Class

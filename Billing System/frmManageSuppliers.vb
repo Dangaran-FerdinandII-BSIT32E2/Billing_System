@@ -180,7 +180,7 @@ Public Class frmManageSuppliers
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryproducts WHERE Status < 2 AND NOT EXISTS ( SELECT 1 FROM tblquotation WHERE qryproducts.ProductID = tblquotation.ProductID ) ORDER BY Status ASC"
+            sql = "SELECT * FROM qryproducts WHERE STATUS < 2 AND NOT EXISTS( SELECT 1 FROM tblquotationproducts WHERE qryproducts.ProductID = tblquotationproducts.ProductID ) ORDER BY STATUS ASC"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then

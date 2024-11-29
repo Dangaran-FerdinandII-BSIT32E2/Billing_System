@@ -12,6 +12,8 @@ Public Class frmDeliveryInformation
     Private Sub frmManageCollectionV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
 
+        dtpDateDelivered.Text = DateTime.Now
+
         Call loadDeliveryImage()
         Call loadDeliveryDetails()
     End Sub

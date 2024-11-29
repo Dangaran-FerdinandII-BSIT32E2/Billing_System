@@ -104,7 +104,7 @@ Public Class frmPaymentInformation
                 cn.Open()
             End If
 
-            sql = "SELECT OrderID FROM tblbillinvoice WHERE BillingID = '" & billingid & "'"
+            sql = "SELECT LPAD(c.CollectionID, 4, '0') AS CollectionID, DATE_FORMAT(b.DatePrinted, '%m%d') AS DatePrinted, o.OrderID FROM tblcollection c INNER JOIN tblbilling b ON c.BillingID = b.BillingID INNER JOIN tblorder o ON c.CustomerID = o.CustomerID WHERE b.BillingID = '" & billingid & "' GROUP BY c.CollectionID"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -116,7 +116,7 @@ Public Class frmPaymentInformation
             If dr.Read = True Then
                 lblBillNo.Text = "Billing #" & billingid
                 lblPONo.Text = billingid
-                lblInvoiceNo.Text = billingid
+                lblInvoiceNo.Text = dr("DatePrinted").ToString & "-" & dr("CollectionID").ToString
                 lblOrderNo.Text = dr("OrderID").ToString
             End If
         Catch ex As Exception
