@@ -46,15 +46,15 @@ Public Class frmCustomerViewInfo_Order
                     Dim pic As Byte() = DirectCast(dr("Image"), Byte())
                     If pic.Length > 0 Then
                         Using ms As New MemoryStream(pic)
-                            PictureBox1.Image = Image.FromStream(ms)
+                            pbxGovID.Image = Image.FromStream(ms)
                         End Using
 
                     Else
-                        PictureBox1.Image = Nothing
+                        pbxGovID.Image = Nothing
                     End If
                 End If
             Else
-                PictureBox1.Image = Nothing
+                pbxGovID.Image = Nothing
             End If
 
         Catch ex As Exception
@@ -234,7 +234,7 @@ Public Class frmCustomerViewInfo_Order
         End Try
     End Sub
 
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs)
         btnSave.Enabled = True
         btnEdit.Enabled = False
 
@@ -267,7 +267,7 @@ Public Class frmCustomerViewInfo_Order
         txtEmailAddress.Enabled = False
         cboAcctStatus.Enabled = False
     End Sub
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs)
         Try
             Dim filled As Boolean = True
 
@@ -379,7 +379,7 @@ Public Class frmCustomerViewInfo_Order
             MsgBox("An error occurred frmPrintBillingInvoice(btnEmail): " & ex.Message)
         End Try
     End Sub
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         btnSave.Enabled = False
 
         btnEdit.Enabled = True
@@ -498,7 +498,7 @@ Public Class frmCustomerViewInfo_Order
         End Try
     End Sub
 
-    Private Sub btnActive_Click(sender As Object, e As EventArgs) Handles btnActive.Click
+    Private Sub btnActive_Click(sender As Object, e As EventArgs)
         If MsgBox("Do you want to activate account?", vbQuestion + vbYesNo, "Activate Status") = vbYes Then
             Try
                 If cn.State <> ConnectionState.Open Then
@@ -525,7 +525,7 @@ Public Class frmCustomerViewInfo_Order
         End If
     End Sub
 
-    Private Sub cboAcctStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAcctStatus.SelectedIndexChanged
+    Private Sub cboAcctStatus_SelectedIndexChanged(sender As Object, e As EventArgs)
         If cboAcctStatus.Text = "Active" Then
             btnActive.Enabled = False
         Else

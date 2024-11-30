@@ -53,7 +53,7 @@ Partial Class frmQuotationComment
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.Panel34 = New System.Windows.Forms.Panel()
-        Me.btnConfirm = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnOkay = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel32 = New System.Windows.Forms.Panel()
         Me.Panel31 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
@@ -486,32 +486,32 @@ Partial Class frmQuotationComment
         'Panel34
         '
         Me.Panel34.BackColor = System.Drawing.Color.White
-        Me.Panel34.Controls.Add(Me.btnConfirm)
+        Me.Panel34.Controls.Add(Me.btnOkay)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel34.Location = New System.Drawing.Point(0, 10)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(140, 40)
         Me.Panel34.TabIndex = 18
         '
-        'btnConfirm
+        'btnOkay
         '
-        Me.btnConfirm.BorderRadius = 8
-        Me.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnConfirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnConfirm.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnConfirm.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnConfirm.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnConfirm.ForeColor = System.Drawing.Color.White
-        Me.btnConfirm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnConfirm.Location = New System.Drawing.Point(0, 0)
-        Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.PressedDepth = 20
-        Me.btnConfirm.Size = New System.Drawing.Size(140, 40)
-        Me.btnConfirm.TabIndex = 57
-        Me.btnConfirm.Text = "Confirm"
+        Me.btnOkay.BorderRadius = 8
+        Me.btnOkay.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnOkay.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnOkay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnOkay.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnOkay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnOkay.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnOkay.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnOkay.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnOkay.ForeColor = System.Drawing.Color.White
+        Me.btnOkay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnOkay.Location = New System.Drawing.Point(0, 0)
+        Me.btnOkay.Name = "btnOkay"
+        Me.btnOkay.PressedDepth = 20
+        Me.btnOkay.Size = New System.Drawing.Size(140, 40)
+        Me.btnOkay.TabIndex = 57
+        Me.btnOkay.Text = "Okay"
         '
         'Panel32
         '
@@ -674,7 +674,7 @@ Partial Class frmQuotationComment
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel30 As Panel
     Friend WithEvents Panel34 As Panel
-    Friend WithEvents btnConfirm As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnOkay As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel32 As Panel
     Friend WithEvents Panel31 As Panel
     Friend WithEvents Panel8 As Panel
