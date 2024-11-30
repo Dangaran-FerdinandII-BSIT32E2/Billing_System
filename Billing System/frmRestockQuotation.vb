@@ -42,7 +42,7 @@ Public Class frmRestockQuotation
                             ListView1.Items.Add(x)
                         End Using
 
-                        txtSupplier.Text = dr("CompanyName").ToString
+                        lblSupplierName.Text = dr("CompanyName").ToString
                         email = dr("Email").ToString
                         lblPo.Text = (("PO #") & dr("PONumber").ToString)
                     End While
@@ -91,7 +91,7 @@ Public Class frmRestockQuotation
         End Try
     End Sub
 
-    Private Sub btnAccept_Click(sender As Object, e As EventArgs) Handles btnAccept.Click
+    Private Sub btnAccept_Click(sender As Object, e As EventArgs)
         Call sendEmail()
         Call insertPayment()
         btnPayment.Enabled = True
@@ -140,7 +140,7 @@ Public Class frmRestockQuotation
         End Try
     End Sub
 
-    Private Sub btnReject_Click(sender As Object, e As EventArgs) Handles btnReject.Click
+    Private Sub btnReject_Click(sender As Object, e As EventArgs)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -178,7 +178,7 @@ Public Class frmRestockQuotation
 
                 emailBody.AppendLine("<p style='text-align: center;'><strong>Purchase Order Request</strong></p>")
 
-                emailBody.AppendLine("<p>Dear " & txtSupplier.Text & ",</p>")
+                emailBody.AppendLine("<p>Dear " & lblSupplierName.Text & ",</p>")
 
                 emailBody.AppendLine("<p>We hope this email finds you well. We are glad to accept the following conditions on the quotation for " & lblPo.Text & ".</p>")
 
@@ -222,7 +222,7 @@ Public Class frmRestockQuotation
 
                 emailBody.AppendLine("<p style='text-align: center;'><strong>Purchase Order Request</strong></p>")
 
-                emailBody.AppendLine("<p>Dear " & txtSupplier.Text & ",</p>")
+                emailBody.AppendLine("<p>Dear " & lblSupplierName.Text & ",</p>")
 
                 emailBody.AppendLine("<p>We hope this email finds you well. Unfortunately, Rambic Corporation will not be proceeding with the quotation for " & lblPo.Text & " at this time.</p>")
 
@@ -271,7 +271,7 @@ Public Class frmRestockQuotation
         End If
     End Sub
 
-    Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
+    Private Sub btnPayment_Click(sender As Object, e As EventArgs)
         frmSendPayment.quotationid = quotationid
         frmSendPayment.ShowDialog()
     End Sub

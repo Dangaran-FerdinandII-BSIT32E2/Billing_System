@@ -20,16 +20,6 @@ Public Class frmManageOrder
 
         Call loadFilteredOrders(startDate, endDate)
     End Sub
-    Private Function GetStatusText(status As String) As String
-        Select Case status
-            Case "5" : Return "Cancelled Order"
-            Case "4" : Return "Priority Order"
-            Case "3" : Return "Delivered"
-            Case "2" : Return "Ready for Shipment"
-            Case "1" : Return "Item on Hand"
-            Case Else : Return "Item on Process"
-        End Select
-    End Function
 
     Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs) Handles DateFilter1.ValueChanged
         startDate = DateFilter1.Text
@@ -89,6 +79,7 @@ Public Class frmManageOrder
 
                 Do While dr.Read = True
                     x = New ListViewItem((dr("LastName").ToString) & ", " & (dr("FirstName").ToString()))
+                    x.Font = New Font("Arial", 12, FontStyle.Regular)
                     x.SubItems.Add(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("PhoneNumber").ToString())
                     x.SubItems.Add(dr("Email").ToString())
@@ -100,6 +91,7 @@ Public Class frmManageOrder
                     ' Check if the status is "Urgent" and set the text color accordingly
                     If x.SubItems(5).Text = "Priority Order" Then
                         x.ForeColor = Color.Red
+                        x.Font = New Font("Arial", 12, FontStyle.Bold)
                     End If
                     ListView1.Items.Add(x)
                 Loop
@@ -114,6 +106,17 @@ Public Class frmManageOrder
             End If
         End Try
     End Sub
+
+    Private Function GetStatusText(status As String) As String
+        Select Case status
+            Case "5" : Return "Cancelled Order"
+            Case "4" : Return "Priority Order"
+            Case "3" : Return "Delivered"
+            Case "2" : Return "Ready for Shipment"
+            Case "1" : Return "Item on Hand"
+            Case Else : Return "Item on Process"
+        End Select
+    End Function
 
     Private Sub btnSearchOrder_Click(sender As Object, e As EventArgs) Handles btnSearchOrder.Click
         frmListofOrdersPending.manageOrder = True

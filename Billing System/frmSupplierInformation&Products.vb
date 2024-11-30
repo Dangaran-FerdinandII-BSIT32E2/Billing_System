@@ -225,7 +225,7 @@ Public Class frmManageSupplierV2
         End If
     End Sub
 
-    Private Sub btnActive_Click(sender As Object, e As EventArgs) Handles btnActive.Click
+    Private Sub btnActive_Click(sender As Object, e As EventArgs)
         If MsgBox("Do you want to activate?", vbYesNo + vbQuestion) = vbYes Then
             Try
                 If cn.State <> ConnectionState.Open Then
@@ -248,7 +248,7 @@ Public Class frmManageSupplierV2
         End If
     End Sub
 
-    Private Sub btnDeactive_Click(sender As Object, e As EventArgs) Handles btnDeactive.Click
+    Private Sub btnDeactive_Click(sender As Object, e As EventArgs)
         If MsgBox("Do you want to deactivate?", vbYesNo + vbQuestion) = vbYes Then
             Try
                 If cn.State <> ConnectionState.Open Then
@@ -271,7 +271,7 @@ Public Class frmManageSupplierV2
         End If
     End Sub
 
-    Private Sub cboAcctStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAcctStatus.SelectedIndexChanged
+    Private Sub cboAcctStatus_SelectedIndexChanged(sender As Object, e As EventArgs)
         If cboAcctStatus.Text = "Active" Then
             btnDeactive.Enabled = True
             btnActive.Enabled = False

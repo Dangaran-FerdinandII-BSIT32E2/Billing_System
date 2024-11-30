@@ -4,6 +4,7 @@ Public Class frmManageSuppliers
     Private Sub frmManageSuppliers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadSuppliers()
+        Call loadOrders()
         Call loadReorders()
     End Sub
 
@@ -28,6 +29,7 @@ Public Class frmManageSuppliers
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("CompanyName").ToString())
+                x.Font = New Font("Arial", 12, FontStyle.Regular)
                 x.SubItems.Add(dr("AccountNumber").ToString())
                 x.SubItems.Add(dr("LastName").ToString() & ", " & dr("FirstName").ToString)
                 x.SubItems.Add(dr("PhoneNumber").ToString())
@@ -46,6 +48,48 @@ Public Class frmManageSuppliers
             End If
         End Try
     End Sub
+
+    'LOAD RAMBIC ORDERS
+    Private Sub loadOrders()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT q.PONumber, s.CompanyName, COUNT(q.ProductID) AS TotalOrders, SUM(q.Amount) AS Amount, DATE_FORMAT(q.DateRequested, '%M %d %Y') AS DateRequested, q.QuotationID, q.SupplierID FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID WHERE q.QuotationIMG IS NOT NULL GROUP BY q.QuotationID ORDER BY q.PONumber ASC"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            Dim x As ListViewItem
+            ListView2.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("PONumber").ToString())
+                x.Font = New Font("Arial", 12, FontStyle.Regular)
+                x.SubItems.Add(dr("CompanyName").ToString())
+                x.SubItems.Add(dr("TotalOrders").ToString())
+                x.SubItems.Add(dr("Amount").ToString())
+                x.SubItems.Add(dr("DateRequested").ToString())
+                x.SubItems.Add(dr("QuotationID").ToString()) '5
+                x.SubItems.Add(dr("SupplierID").ToString()) '6
+
+                ListView2.Items.Add(x)
+            Loop
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("An Error occurred frmProduct(loadProducts): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
     Private Sub btnAddNewSupplier_Click(sender As Object, e As EventArgs) Handles btnAddNewSupplier.Click
         frmManageSupplierV2.ShowDialog()
         btnEditSupplier.Enabled = False
@@ -116,8 +160,8 @@ Public Class frmManageSuppliers
         btnDeleteSupplier.Enabled = True
     End Sub
 
-    Private Sub txtSearchSupplierName_TextChanged(sender As Object, e As EventArgs) Handles txtSearchSupplierName.TextChanged
-        Dim dt As DataTable = SearchSupplierDatabase(txtSearchSupplierName.Text)
+    Private Sub txtSearchSupplierName_TextChanged(sender As Object, e As EventArgs) Handles txtSearchCompanyName.TextChanged
+        Dim dt As DataTable = SearchSupplierDatabase(txtSearchCompanyName.Text)
         PopulateSupplierListView(dt)
     End Sub
     Public Function SearchSupplierDatabase(searchTerm As String) As DataTable
@@ -194,6 +238,7 @@ Public Class frmManageSuppliers
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("ProductName").ToString())
+                x.Font = New Font("Arial", 12, FontStyle.Regular)
                 x.SubItems.Add(dr("Description").ToString())
                 x.SubItems.Add(dr("Category").ToString())
                 x.SubItems.Add(dr("PurchasePrice").ToString())
@@ -234,5 +279,19 @@ Public Class frmManageSuppliers
         If ListView3.SelectedItems.Count > 0 Then
             btnRestock.Enabled = True
         End If
+    End Sub
+
+    Private Sub btnViewQuotation_Click(sender As Object, e As EventArgs) Handles btnViewQuotation.Click
+        If ListView2.SelectedItems.Count > 0 Then
+            'frmRestockQuotation.quotationid = ListView2.SelectedItems(0).SubItems(5).Text
+            'frmRestockQuotation.supplierid = ListView2.SelectedItems(0).SubItems(6).Text
+            frmRestockQuotation.ShowDialog()
+        Else
+            MsgBox("Please select an item", MsgBoxStyle.Information, "Select Item")
+        End If
+    End Sub
+
+    Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.SelectedIndexChanged, ListView2.DoubleClick
+        frmRestockQuotation.ShowDialog()
     End Sub
 End Class

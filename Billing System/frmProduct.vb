@@ -6,12 +6,13 @@ Public Class frmProduct
         Call loadProducts()
 
         'ACTIVE ORDERS
-        Call loadOrders()
+        'Call loadOrders()
 
         'RAMBIC PRODUCTS
         Call availableProducts()
     End Sub
 
+    'LIST OF PRODUCTS TAB
     Public Sub loadProducts()
         Try
             If cn.State <> ConnectionState.Open Then
@@ -32,15 +33,16 @@ Public Class frmProduct
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("ProductName").ToString())
-                x.SubItems.Add(dr("Description").ToString())
+                x.Font = New Font("Arial", 12, FontStyle.Regular)
                 x.SubItems.Add(dr("Category").ToString())
                 x.SubItems.Add(dr("Type").ToString())
-                x.SubItems.Add(dr("PurchasePrice").ToString())
-                x.SubItems.Add(dr("SellingPrice").ToString())
+                x.SubItems.Add("₱ " & Convert.ToDecimal(dr("PurchasePrice")).ToString("N2"))
+                x.SubItems.Add("₱ " & Convert.ToDecimal(dr("SellingPrice")).ToString("N2"))
                 x.SubItems.Add(checkStatus(dr("Status").ToString()))
-                x.SubItems.Add(dr("ProductID").ToString()) '7
-                x.SubItems.Add(dr("SupplierID").ToString()) '8
+                x.SubItems.Add(dr("ProductID").ToString())
+                x.SubItems.Add(dr("SupplierID").ToString())
 
+                ' Adjust color and font
                 If dr("Status") = 2 Then
                     x.ForeColor = Color.Black
                 ElseIf dr("Status") = 1 Then
@@ -51,6 +53,7 @@ Public Class frmProduct
 
                 ListView1.Items.Add(x)
             Loop
+
             dr.Close()
         Catch ex As Exception
             MsgBox("An Error occurred frmProduct(loadProducts): " & ex.Message)
@@ -92,55 +95,55 @@ Public Class frmProduct
         frmManageProducts.ShowDialog()
     End Sub
 
-    Private Sub loadOrders()
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
+    'Private Sub loadOrders()
+    '    Try
+    '        If cn.State <> ConnectionState.Open Then
+    '            cn.Open()
+    '        End If
 
-            sql = "SELECT q.PONumber, s.CompanyName, COUNT(q.ProductID) AS TotalOrders, SUM(q.Amount) AS Amount, DATE_FORMAT(q.DateRequested, '%M %d %Y') AS DateRequested, q.QuotationID, q.SupplierID FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID WHERE q.QuotationIMG IS NOT NULL GROUP BY q.QuotationID ORDER BY q.PONumber ASC"
-            cmd = New MySqlCommand(sql, cn)
+    '        sql = "SELECT q.PONumber, s.CompanyName, COUNT(q.ProductID) AS TotalOrders, SUM(q.Amount) AS Amount, DATE_FORMAT(q.DateRequested, '%M %d %Y') AS DateRequested, q.QuotationID, q.SupplierID FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID WHERE q.QuotationIMG IS NOT NULL GROUP BY q.QuotationID ORDER BY q.PONumber ASC"
+    '        cmd = New MySqlCommand(sql, cn)
 
-            If Not dr.IsClosed Then
-                dr.Close()
-            End If
+    '        If Not dr.IsClosed Then
+    '            dr.Close()
+    '        End If
 
-            dr = cmd.ExecuteReader
+    '        dr = cmd.ExecuteReader
 
-            Dim x As ListViewItem
-            ListView2.Items.Clear()
+    '        Dim x As ListViewItem
+    '        ListView2.Items.Clear()
 
-            Do While dr.Read = True
-                x = New ListViewItem(dr("PONumber").ToString())
-                x.SubItems.Add(dr("CompanyName").ToString())
-                x.SubItems.Add(dr("TotalOrders").ToString())
-                x.SubItems.Add(dr("Amount").ToString())
-                x.SubItems.Add(dr("DateRequested").ToString())
-                x.SubItems.Add(dr("QuotationID").ToString()) '5
-                x.SubItems.Add(dr("SupplierID").ToString()) '6
+    '        Do While dr.Read = True
+    '            x = New ListViewItem(dr("PONumber").ToString())
+    '            x.SubItems.Add(dr("CompanyName").ToString())
+    '            x.SubItems.Add(dr("TotalOrders").ToString())
+    '            x.SubItems.Add(dr("Amount").ToString())
+    '            x.SubItems.Add(dr("DateRequested").ToString())
+    '            x.SubItems.Add(dr("QuotationID").ToString()) '5
+    '            x.SubItems.Add(dr("SupplierID").ToString()) '6
 
-                ListView2.Items.Add(x)
-            Loop
-            dr.Close()
-        Catch ex As Exception
-            MsgBox("An Error occurred frmProduct(loadProducts): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
-    End Sub
+    '            ListView2.Items.Add(x)
+    '        Loop
+    '        dr.Close()
+    '    Catch ex As Exception
+    '        MsgBox("An Error occurred frmProduct(loadProducts): " & ex.Message)
+    '    Finally
+    '        If cn.State = ConnectionState.Open Then
+    '            cn.Close()
+    '        End If
+    '    End Try
+    'End Sub
 
-    Private Sub btnAddNewProduct_Click(sender As Object, e As EventArgs) Handles btnAddNewProduct.Click, ListView2.DoubleClick
-        If ListView2.SelectedItems.Count > 0 Then
-            frmRestockQuotation.quotationid = ListView2.SelectedItems(0).SubItems(5).Text
-            frmRestockQuotation.supplierid = ListView2.SelectedItems(0).SubItems(6).Text
-            frmRestockQuotation.ShowDialog()
-        End If
-    End Sub
+    'Private Sub btnAddNewProduct_Click(sender As Object, e As EventArgs)
+    '    If ListView2.SelectedItems.Count > 0 Then
+    '        frmRestockQuotation.quotationid = ListView2.SelectedItems(0).SubItems(5).Text
+    '        frmRestockQuotation.supplierid = ListView2.SelectedItems(0).SubItems(6).Text
+    '        frmRestockQuotation.ShowDialog()
+    '    End If
+    'End Sub
+
 
     'RAMBIC PRODUCTS
-
     Private Sub availableProducts()
         Try
             If cn.State <> ConnectionState.Open Then
@@ -161,14 +164,18 @@ Public Class frmProduct
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("ProductName").ToString())
-                x.SubItems.Add(dr("Description").ToString())
+                x.Font = New Font("Arial", 12, FontStyle.Regular)
+                'x.SubItems.Add(dr("Description").ToString())
                 x.SubItems.Add(dr("Category").ToString())
-                x.SubItems.Add(dr("PurchasePrice").ToString())
-                x.SubItems.Add(dr("SellingPrice").ToString())
+                'x.SubItems.Add(dr("PurchasePrice").ToString())
+                x.SubItems.Add("₱ " & Convert.ToDecimal(dr("PurchasePrice")).ToString("N2"))
+                'x.SubItems.Add(dr("SellingPrice").ToString())
+                x.SubItems.Add("₱ " & Convert.ToDecimal(dr("SellingPrice")).ToString("N2"))
                 x.SubItems.Add(checkStatus(dr("Status").ToString()))
                 x.SubItems.Add(dr("Amount").ToString())
                 x.SubItems.Add(dr("ProductID").ToString()) '7
                 x.SubItems.Add(dr("SupplierID").ToString()) '8
+                'x.SubItems.Add("₱" & Convert.ToDecimal(dr("Amount")).ToString("N2"))
 
                 ListView3.Items.Add(x)
             Loop
@@ -182,7 +189,7 @@ Public Class frmProduct
         End Try
     End Sub
 
-    Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click, ListView3.DoubleClick
+    Private Sub btnView_Click(sender As Object, e As EventArgs)
         If ListView1.SelectedItems.Count > 0 Then
             frmManageProducts.productid = ListView3.SelectedItems(0).SubItems(7).Text
             frmManageProducts.supplierid = ListView3.SelectedItems(0).SubItems(8).Text

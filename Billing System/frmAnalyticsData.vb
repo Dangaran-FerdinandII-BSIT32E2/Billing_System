@@ -5,7 +5,6 @@ Imports MySql.Data.MySqlClient
 Imports Mysqlx
 
 Public Class frmAnalyticsData
-
     Dim debt As Double = 0.0
     Dim paid As Double = 0.0
 
@@ -73,7 +72,7 @@ Public Class frmAnalyticsData
             End If
         End Try
     End Sub
-    Private Sub ListView3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView3.DoubleClick
+    Private Sub ListView3_SelectedIndexChanged(sender As Object, e As EventArgs)
         If ListView3.SelectedItems.Count > 0 Then
             frmListofCustomerOrder.orderid = ListView3.SelectedItems(0).SubItems(0).Text
             frmListofCustomerOrder.lblCompanyName.Text = ListView3.SelectedItems(0).SubItems(1).Text
@@ -143,7 +142,7 @@ Public Class frmAnalyticsData
         Return "Not Yet Delivered"
     End Function
 
-    Private Sub ListView4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView4.DoubleClick
+    Private Sub ListView4_SelectedIndexChanged(sender As Object, e As EventArgs)
         Dim status As String = ListView4.SelectedItems(0).SubItems(2).Text
         If ListView4.SelectedItems.Count > 0 AndAlso status <> "Payment Accepted" Then
             If status = "Not Yet Delivered" Then
@@ -309,6 +308,4 @@ Public Class frmAnalyticsData
             End If
         End Try
     End Sub
-
-
 End Class

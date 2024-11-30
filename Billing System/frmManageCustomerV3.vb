@@ -24,6 +24,7 @@ Public Class frmManageCustomerV3
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("CompanyName").ToString())
+                x.Font = New Font("Arial", 12, FontStyle.Regular)
                 x.SubItems.Add(dr("LastName").ToString() + (", ").ToString() + dr("FirstName").ToString())
                 x.SubItems.Add(If(dr("AcctStatus"), "Active", "Inactive"))
                 x.SubItems.Add(dr("Address").ToString())
@@ -213,6 +214,7 @@ Public Class frmManageCustomerV3
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("CompanyName").ToString())
+                x.Font = New Font("Arial", 12, FontStyle.Regular)
                 x.SubItems.Add(dr("FullName").ToString())
                 x.SubItems.Add(dr("PhoneNumber").ToString())
                 x.SubItems.Add(dr("Email").ToString())
@@ -254,6 +256,7 @@ Public Class frmManageCustomerV3
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("CompanyName").ToString())
+                x.Font = New Font("Arial", 12, FontStyle.Regular)
                 x.SubItems.Add(dr("LastName").ToString() + (", ").ToString() + dr("FirstName").ToString())
                 x.SubItems.Add(dr("Address").ToString())
                 x.SubItems.Add(dr("CustomerID").ToString())
