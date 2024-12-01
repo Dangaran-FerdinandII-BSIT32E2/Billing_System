@@ -37,7 +37,7 @@ Partial Class frmManageOrder
         Me.Stat = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.Panel29 = New System.Windows.Forms.Panel()
-        Me.btnWalkIn = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnAddWalkIn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel28 = New System.Windows.Forms.Panel()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
@@ -206,32 +206,32 @@ Partial Class frmManageOrder
         'Panel29
         '
         Me.Panel29.BackColor = System.Drawing.Color.White
-        Me.Panel29.Controls.Add(Me.btnWalkIn)
+        Me.Panel29.Controls.Add(Me.btnAddWalkIn)
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel29.Location = New System.Drawing.Point(300, 10)
         Me.Panel29.Name = "Panel29"
         Me.Panel29.Size = New System.Drawing.Size(140, 40)
         Me.Panel29.TabIndex = 61
         '
-        'btnWalkIn
+        'btnAddWalkIn
         '
-        Me.btnWalkIn.BorderRadius = 8
-        Me.btnWalkIn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnWalkIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnWalkIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnWalkIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnWalkIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnWalkIn.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnWalkIn.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnWalkIn.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnWalkIn.ForeColor = System.Drawing.Color.White
-        Me.btnWalkIn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnWalkIn.Location = New System.Drawing.Point(0, 0)
-        Me.btnWalkIn.Name = "btnWalkIn"
-        Me.btnWalkIn.PressedDepth = 20
-        Me.btnWalkIn.Size = New System.Drawing.Size(140, 40)
-        Me.btnWalkIn.TabIndex = 57
-        Me.btnWalkIn.Text = "Add Walk-In"
+        Me.btnAddWalkIn.BorderRadius = 8
+        Me.btnAddWalkIn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAddWalkIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnAddWalkIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnAddWalkIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnAddWalkIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnAddWalkIn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAddWalkIn.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnAddWalkIn.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnAddWalkIn.ForeColor = System.Drawing.Color.White
+        Me.btnAddWalkIn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnAddWalkIn.Location = New System.Drawing.Point(0, 0)
+        Me.btnAddWalkIn.Name = "btnAddWalkIn"
+        Me.btnAddWalkIn.PressedDepth = 20
+        Me.btnAddWalkIn.Size = New System.Drawing.Size(140, 40)
+        Me.btnAddWalkIn.TabIndex = 57
+        Me.btnAddWalkIn.Text = "Add Walk-In"
         '
         'Guna2Panel2
         '
@@ -766,6 +766,6 @@ Partial Class frmManageOrder
     Friend WithEvents ContactPerson As ColumnHeader
     Friend WithEvents Stat As ColumnHeader
     Friend WithEvents Panel29 As Panel
-    Friend WithEvents btnWalkIn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnAddWalkIn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
 End Class

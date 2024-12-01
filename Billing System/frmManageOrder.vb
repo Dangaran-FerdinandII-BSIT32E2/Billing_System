@@ -167,4 +167,10 @@ Public Class frmManageOrder
             frmListofCustomerOrder.orderid = ListView1.SelectedItems(0).SubItems(6).Text
         End If
     End Sub
+
+    Private Sub btnAddWalkIn_Click(sender As Object, e As EventArgs) Handles btnAddWalkIn.Click
+        'frmLoginV2.ActiveControl = frmLoginV2.txtUsername
+        frmAddCustomerWalkin.ActiveControl = frmAddCustomerWalkin.txtCompanyName
+        frmAddCustomerWalkin.ShowDialog()
+    End Sub
 End Class
