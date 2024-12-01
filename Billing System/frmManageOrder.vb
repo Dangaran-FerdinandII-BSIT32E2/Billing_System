@@ -1,6 +1,7 @@
 ﻿Imports System.Globalization
 Imports System.Runtime.InteropServices.ComTypes
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
 Public Class frmManageOrder
 
@@ -124,6 +125,21 @@ Public Class frmManageOrder
     End Sub
 
     Private Sub btnCreateInvoice_Click(sender As Object, e As EventArgs) Handles btnCreateInvoice.Click
+        Dim removeThickness As New Padding(0, 0, 0, 0) 'use to remove border left
+        Dim addThickness As New Padding(5, 0, 0, 0) 'use to add border left
+        Dim addColor As Color = Color.OrangeRed 'use to filled color border left
+        Dim removeColor As Color = Color.Empty 'use to removed filled color border left
+
+        frmAdminDashboard.btnSales.CustomBorderThickness = addThickness
+        frmAdminDashboard.btnSales.CustomBorderColor = addColor
+
+        Dim buttons() As Guna2Button = {frmAdminDashboard.btnOrder}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
         If ListView1.SelectedItems.Count > 0 Then
             If ListView1.SelectedItems(0).SubItems(5).Text = "Item on Hand" Then
 

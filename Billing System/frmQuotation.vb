@@ -50,7 +50,8 @@ Public Class frmQuotation
 
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printQuotation.rdlc"
+                '.ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printQuotation.rdlc"
+                .ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printQuotation.rdlc"
                 .DataSources.Clear()
             End With
 

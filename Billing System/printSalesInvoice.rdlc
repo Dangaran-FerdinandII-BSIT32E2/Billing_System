@@ -39,9 +39,9 @@
           </Textbox>
           <Line Name="Line1">
             <Top>1.74456cm</Top>
-            <Left>2.08196cm</Left>
+            <Left>1.76446cm</Left>
             <Height>0cm</Height>
-            <Width>10.48491cm</Width>
+            <Width>10.83416cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -50,10 +50,10 @@
             </Style>
           </Line>
           <Line Name="Line2">
-            <Top>2.52095cm</Top>
-            <Left>3.92875cm</Left>
+            <Top>2.5527cm</Top>
+            <Left>2.9445cm</Left>
             <Height>0cm</Height>
-            <Width>8.63812cm</Width>
+            <Width>9.65412cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -69,7 +69,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>SOLD TO:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -99,7 +101,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>ADDRESS/SHIP TO:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -129,7 +133,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>DELIVERY:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -159,7 +165,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>BUS. STYLE:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -183,9 +191,9 @@
           </Textbox>
           <Line Name="Line3">
             <Top>3.28872cm</Top>
-            <Left>2.39946cm</Left>
+            <Left>1.95496cm</Left>
             <Height>0cm</Height>
-            <Width>10.19916cm</Width>
+            <Width>10.64366cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -194,10 +202,10 @@
             </Style>
           </Line>
           <Line Name="Line4">
-            <Top>4.69482cm</Top>
-            <Left>2.74256cm</Left>
+            <Top>4.72657cm</Top>
+            <Left>2.26631cm</Left>
             <Height>0cm</Height>
-            <Width>9.85605cm</Width>
+            <Width>10.33231cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -225,7 +233,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>DATE:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -249,9 +259,9 @@
           </Textbox>
           <Line Name="Line6">
             <Top>1.71281cm</Top>
-            <Left>14.78501cm</Left>
+            <Left>14.56276cm</Left>
             <Height>0cm</Height>
-            <Width>4.43147cm</Width>
+            <Width>4.6537cm</Width>
             <ZIndex>11</ZIndex>
             <Style>
               <Border>
@@ -261,9 +271,9 @@
           </Line>
           <Line Name="Line7">
             <Top>2.52095cm</Top>
-            <Left>15.10252cm</Left>
+            <Left>14.81677cm</Left>
             <Height>0cm</Height>
-            <Width>4.11396cm</Width>
+            <Width>4.39969cm</Width>
             <ZIndex>12</ZIndex>
             <Style>
               <Border>
@@ -279,7 +289,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>P.O NO:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -309,7 +321,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>TERMS:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -333,9 +347,9 @@
           </Textbox>
           <Line Name="Line8">
             <Top>3.28872cm</Top>
-            <Left>15.10252cm</Left>
+            <Left>14.78502cm</Left>
             <Height>0cm</Height>
-            <Width>4.11396cm</Width>
+            <Width>4.43146cm</Width>
             <ZIndex>15</ZIndex>
             <Style>
               <Border>
@@ -345,9 +359,9 @@
           </Line>
           <Line Name="Line9">
             <Top>3.94582cm</Top>
-            <Left>15.67402cm</Left>
+            <Left>15.35652cm</Left>
             <Height>0cm</Height>
-            <Width>3.54246cm</Width>
+            <Width>3.85996cm</Width>
             <ZIndex>16</ZIndex>
             <Style>
               <Border>
@@ -363,7 +377,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Salemsman:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -387,9 +403,9 @@
           </Textbox>
           <Line Name="Line10">
             <Top>4.75635cm</Top>
-            <Left>14.45694cm</Left>
+            <Left>14.23469cm</Left>
             <Height>0cm</Height>
-            <Width>4.75954cm</Width>
+            <Width>4.98177cm</Width>
             <ZIndex>18</ZIndex>
             <Style>
               <Border>
@@ -405,7 +421,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>TIN:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -471,452 +489,6 @@
               <PaddingBottom>5pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Tablix Name="Tablix3">
-            <TablixBody>
-              <TablixColumns>
-                <TablixColumn>
-                  <Width>2.30777cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.56136cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>7.35266cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>3.16851cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>3.47162cm</Width>
-                </TablixColumn>
-              </TablixColumns>
-              <TablixRows>
-                <TablixRow>
-                  <Height>0.8249cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox39">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>QUANTITY</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox39</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <TopBorder>
-                              <Style>Solid</Style>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Style>Solid</Style>
-                            </LeftBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>5pt</PaddingTop>
-                            <PaddingBottom>5pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox45">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>UNITS</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox45</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <TopBorder>
-                              <Style>Solid</Style>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Style>Solid</Style>
-                            </LeftBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>5pt</PaddingTop>
-                            <PaddingBottom>5pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox47">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>DESCRIPTION</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox47</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <TopBorder>
-                              <Style>Solid</Style>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Style>Solid</Style>
-                            </LeftBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>5pt</PaddingTop>
-                            <PaddingBottom>5pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox49">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>UNIT PRICE</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox49</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <TopBorder>
-                              <Style>Solid</Style>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Style>Solid</Style>
-                            </LeftBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>5pt</PaddingTop>
-                            <PaddingBottom>5pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox51">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>AMOUNT</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox51</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <TopBorder>
-                              <Style>Solid</Style>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Style>Solid</Style>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Style>Solid</Style>
-                            </RightBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>5pt</PaddingTop>
-                            <PaddingBottom>5pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.79844cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="CompanyName">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!CompanyName.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <Color>Blue</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>CompanyName</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="CompanyName1">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!CompanyName.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <Color>Blue</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>CompanyName1</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="CompanyName2">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!CompanyName.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <Color>Blue</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>CompanyName2</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="CompanyName3">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!CompanyName.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <Color>Blue</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>CompanyName3</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="CompanyName4">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!CompanyName.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <Color>Blue</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>CompanyName4</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-              </TablixRows>
-            </TablixBody>
-            <TablixColumnHierarchy>
-              <TablixMembers>
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
-              </TablixMembers>
-            </TablixColumnHierarchy>
-            <TablixRowHierarchy>
-              <TablixMembers>
-                <TablixMember>
-                  <KeepWithGroup>After</KeepWithGroup>
-                </TablixMember>
-                <TablixMember>
-                  <Group Name="Details" />
-                </TablixMember>
-              </TablixMembers>
-            </TablixRowHierarchy>
-            <DataSetName>dtPrintBillingStatement</DataSetName>
-            <Top>7.07383cm</Top>
-            <Left>0.35454cm</Left>
-            <Height>1.62334cm</Height>
-            <Width>18.86192cm</Width>
-            <ZIndex>21</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Tablix>
           <Textbox Name="Textbox62">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -925,18 +497,20 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Received in good order and condition terms herein specified &amp; accepted</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox55</rd:DefaultName>
-            <Top>18.5366cm</Top>
-            <Left>0.60008cm</Left>
+            <Top>21.16782cm</Top>
+            <Left>0.62941cm</Left>
             <Height>0.6cm</Height>
-            <Width>11.64929cm</Width>
-            <ZIndex>22</ZIndex>
+            <Width>9.45325cm</Width>
+            <ZIndex>21</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -955,18 +529,20 @@
                 <TextRuns>
                   <TextRun>
                     <Value>D.R. No.</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>19.83062cm</Top>
-            <Left>0.35454cm</Left>
+            <Top>21.80822cm</Top>
+            <Left>0.38387cm</Left>
             <Height>0.6cm</Height>
             <Width>1.68308cm</Width>
-            <ZIndex>23</ZIndex>
+            <ZIndex>22</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -978,11 +554,11 @@
             </Style>
           </Textbox>
           <Line Name="Line11">
-            <Top>20.25071cm</Top>
-            <Left>1.95419cm</Left>
+            <Top>22.22831cm</Top>
+            <Left>1.63427cm</Left>
             <Height>0cm</Height>
             <Width>2.92311cm</Width>
-            <ZIndex>24</ZIndex>
+            <ZIndex>23</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -990,11 +566,11 @@
             </Style>
           </Line>
           <Line Name="Line12">
-            <Top>20.25071cm</Top>
-            <Left>8.35236cm</Left>
+            <Top>22.22831cm</Top>
+            <Left>7.74669cm</Left>
             <Height>0cm</Height>
-            <Width>3.62574cm</Width>
-            <ZIndex>25</ZIndex>
+            <Width>4.82018cm</Width>
+            <ZIndex>24</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1009,18 +585,20 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Billed &amp; Checked by:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>19.83062cm</Top>
-            <Left>4.94305cm</Left>
+            <Top>21.80822cm</Top>
+            <Left>4.97238cm</Left>
             <Height>0.6cm</Height>
             <Width>3.77329cm</Width>
-            <ZIndex>26</ZIndex>
+            <ZIndex>25</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1032,11 +610,11 @@
             </Style>
           </Textbox>
           <Line Name="Line13">
-            <Top>20.25071cm</Top>
-            <Left>15.25745cm</Left>
+            <Top>22.22831cm</Top>
+            <Left>15.28678cm</Left>
             <Height>0cm</Height>
             <Width>3.99616cm</Width>
-            <ZIndex>27</ZIndex>
+            <ZIndex>26</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1051,18 +629,20 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Credit approved by:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>19.83062cm</Top>
-            <Left>12.07039cm</Left>
+            <Top>21.80822cm</Top>
+            <Left>12.60772cm</Left>
             <Height>0.6cm</Height>
             <Width>3.27058cm</Width>
-            <ZIndex>28</ZIndex>
+            <ZIndex>27</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1081,18 +661,23 @@
                 <TextRuns>
                   <TextRun>
                     <Value>RAMBIC CORPORATION</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Bodoni MT</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>20.60701cm</Top>
-            <Left>12.69247cm</Left>
+            <Top>22.19655cm</Top>
+            <Left>14.42667cm</Left>
             <Height>0.6cm</Height>
-            <Width>4.37854cm</Width>
-            <ZIndex>29</ZIndex>
+            <Width>4.53877cm</Width>
+            <ZIndex>28</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1104,11 +689,11 @@
             </Style>
           </Textbox>
           <Line Name="Line14">
-            <Top>22.30916cm</Top>
-            <Left>1.07304cm</Left>
+            <Top>23.65176cm</Top>
+            <Left>1.03887cm</Left>
             <Height>0cm</Height>
             <Width>7.58765cm</Width>
-            <ZIndex>30</ZIndex>
+            <ZIndex>29</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1123,18 +708,20 @@
                 <TextRuns>
                   <TextRun>
                     <Value>By:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>21.88907cm</Top>
-            <Left>0.33602cm</Left>
+            <Top>23.23167cm</Top>
+            <Left>0.36535cm</Left>
             <Height>0.6cm</Height>
             <Width>0.86287cm</Width>
-            <ZIndex>31</ZIndex>
+            <ZIndex>30</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1153,18 +740,22 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Customer's Signature</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>22.29505cm</Top>
-            <Left>2.72404cm</Left>
+            <Top>23.63765cm</Top>
+            <Left>2.75337cm</Left>
             <Height>0.6cm</Height>
             <Width>3.66417cm</Width>
-            <ZIndex>32</ZIndex>
+            <ZIndex>31</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1176,11 +767,11 @@
             </Style>
           </Textbox>
           <Line Name="Line15">
-            <Top>22.25625cm</Top>
-            <Left>11.61031cm</Left>
+            <Top>23.59885cm</Top>
+            <Left>11.57614cm</Left>
             <Height>0cm</Height>
-            <Width>7.6433cm</Width>
-            <ZIndex>33</ZIndex>
+            <Width>7.7068cm</Width>
+            <ZIndex>32</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1195,18 +786,308 @@
                 <TextRuns>
                   <TextRun>
                     <Value>By:</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>21.83616cm</Top>
-            <Left>10.87329cm</Left>
+            <Top>23.17876cm</Top>
+            <Left>10.90262cm</Left>
             <Height>0.6cm</Height>
             <Width>0.86287cm</Width>
+            <ZIndex>33</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="CompanyName5">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!CompanyName.Value, "dtPrintBillingStatement")</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>CompanyName5</rd:DefaultName>
+            <Top>1.20453cm</Top>
+            <Left>1.72918cm</Left>
+            <Height>0.6cm</Height>
+            <Width>10.23443cm</Width>
             <ZIndex>34</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Address">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!Address.Value, "dtPrintBillingStatement")</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Address</rd:DefaultName>
+            <Top>2.03933cm</Top>
+            <Left>3.09245cm</Left>
+            <Height>0.6cm</Height>
+            <Width>8.93466cm</Width>
+            <ZIndex>35</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="DeliveryAddress">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!DeliveryAddress.Value, "dtPrintBillingStatement")</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>DeliveryAddress</rd:DefaultName>
+            <Top>2.78044cm</Top>
+            <Left>2.01295cm</Left>
+            <Height>0.6cm</Height>
+            <Width>10.01416cm</Width>
+            <ZIndex>36</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="CompanyName6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!CompanyName.Value, "dtPrintBillingStatement")</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>CompanyName6</rd:DefaultName>
+            <Top>4.25357cm</Top>
+            <Left>2.14971cm</Left>
+            <Height>0.6cm</Height>
+            <Width>9.9409cm</Width>
+            <ZIndex>37</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="DatePrinted">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!DatePrinted.Value, "dtPrintBillingStatement")</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>DatePrinted</rd:DefaultName>
+            <Top>1.23981cm</Top>
+            <Left>14.43195cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.56226cm</Width>
+            <ZIndex>38</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="ProductOrder">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!ProductOrder.Value, "dtPrintBillingStatement")</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>ProductOrder</rd:DefaultName>
+            <Top>2.00758cm</Top>
+            <Left>14.68595cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.11776cm</Width>
+            <ZIndex>39</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Terms">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!Terms.Value, "dtPrintBillingStatement")</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Terms</rd:DefaultName>
+            <Top>2.78044cm</Top>
+            <Left>14.6542cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.27651cm</Width>
+            <ZIndex>40</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Salesman">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!Salesman.Value, "dtPrintBillingStatement")</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Salesman</rd:DefaultName>
+            <Top>3.48627cm</Top>
+            <Left>15.24892cm</Left>
+            <Height>0.6cm</Height>
+            <Width>3.65004cm</Width>
+            <ZIndex>41</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TIN">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!TIN.Value, "dtPrintBillingStatement")</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TIN</rd:DefaultName>
+            <Top>4.30648cm</Top>
+            <Left>14.15001cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.7807cm</Width>
+            <ZIndex>42</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1219,21 +1100,20 @@
           </Textbox>
           <Rectangle Name="Rectangle1">
             <ReportItems>
-              <Line Name="Line16">
-                <Top>0.78511cm</Top>
-                <Left>0.00001cm</Left>
+              <Line Name="Line25">
+                <Top>0.66615cm</Top>
                 <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+                <Width>18.86192cm</Width>
                 <Style>
                   <Border>
                     <Style>Solid</Style>
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line17">
-                <Top>1.45465cm</Top>
-                <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+              <Line Name="Line26">
+                <Left>2.10217cm</Left>
+                <Height>14.02696cm</Height>
+                <Width>0cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -1241,10 +1121,11 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line18">
-                <Top>2.08965cm</Top>
-                <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+              <Line Name="Line27">
+                <Top>0.01764cm</Top>
+                <Left>3.43021cm</Left>
+                <Height>14.00932cm</Height>
+                <Width>0cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
@@ -1252,10 +1133,10 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line19">
-                <Top>2.72465cm</Top>
-                <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+              <Line Name="Line28">
+                <Left>13.36449cm</Left>
+                <Height>6.60967cm</Height>
+                <Width>0cm</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
                   <Border>
@@ -1263,10 +1144,11 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line20">
-                <Top>3.35965cm</Top>
-                <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+              <Line Name="Line29">
+                <Top>0.03528cm</Top>
+                <Left>15.49508cm</Left>
+                <Height>13.99168cm</Height>
+                <Width>0cm</Width>
                 <ZIndex>4</ZIndex>
                 <Style>
                   <Border>
@@ -1274,8 +1156,8 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line21">
-                <Top>3.99465cm</Top>
+              <Line Name="Line30">
+                <Top>1.49987cm</Top>
                 <Height>0cm</Height>
                 <Width>18.86194cm</Width>
                 <ZIndex>5</ZIndex>
@@ -1285,10 +1167,10 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line22">
-                <Top>4.62965cm</Top>
+              <Line Name="Line33">
+                <Top>2.33359cm</Top>
                 <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+                <Width>18.86192cm</Width>
                 <ZIndex>6</ZIndex>
                 <Style>
                   <Border>
@@ -1296,10 +1178,11 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line23">
-                <Top>5.26465cm</Top>
+              <Line Name="Line34">
+                <Top>3.16731cm</Top>
+                <Left>0cm</Left>
                 <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+                <Width>18.86732cm</Width>
                 <ZIndex>7</ZIndex>
                 <Style>
                   <Border>
@@ -1307,10 +1190,10 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line24">
-                <Top>5.89965cm</Top>
+              <Line Name="Line51">
+                <Top>4.00103cm</Top>
                 <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+                <Width>18.86192cm</Width>
                 <ZIndex>8</ZIndex>
                 <Style>
                   <Border>
@@ -1318,10 +1201,10 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line25">
-                <Top>6.53465cm</Top>
+              <Line Name="Line52">
+                <Top>4.80521cm</Top>
                 <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+                <Width>18.86732cm</Width>
                 <ZIndex>9</ZIndex>
                 <Style>
                   <Border>
@@ -1329,10 +1212,10 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line26">
-                <Top>7.16965cm</Top>
+              <Line Name="Line53">
+                <Top>5.73125cm</Top>
                 <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+                <Width>18.86192cm</Width>
                 <ZIndex>10</ZIndex>
                 <Style>
                   <Border>
@@ -1340,10 +1223,10 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line27">
-                <Top>7.80465cm</Top>
+              <Line Name="Line60">
+                <Top>6.60967cm</Top>
                 <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+                <Width>18.86192cm</Width>
                 <ZIndex>11</ZIndex>
                 <Style>
                   <Border>
@@ -1351,10 +1234,11 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line28">
-                <Top>8.43965cm</Top>
+              <Line Name="Line61">
+                <Top>7.52615cm</Top>
+                <Left>0.0027cm</Left>
                 <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+                <Width>18.86192cm</Width>
                 <ZIndex>12</ZIndex>
                 <Style>
                   <Border>
@@ -1362,10 +1246,11 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line29">
-                <Top>9.07465cm</Top>
+              <Line Name="Line62">
+                <Top>8.47865cm</Top>
+                <Left>0.0027cm</Left>
                 <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+                <Width>18.86192cm</Width>
                 <ZIndex>13</ZIndex>
                 <Style>
                   <Border>
@@ -1373,10 +1258,11 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line30">
-                <Top>9.70965cm</Top>
+              <Line Name="Line63">
+                <Top>9.36765cm</Top>
+                <Left>0.0027cm</Left>
                 <Height>0cm</Height>
-                <Width>18.86194cm</Width>
+                <Width>18.86192cm</Width>
                 <ZIndex>14</ZIndex>
                 <Style>
                   <Border>
@@ -1384,11 +1270,11 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line32">
-                <Top>0.00873cm</Top>
-                <Left>2.30778cm</Left>
-                <Height>10.45707cm</Height>
-                <Width>0cm</Width>
+              <Line Name="Line64">
+                <Top>10.26194cm</Top>
+                <Left>0.0027cm</Left>
+                <Height>0cm</Height>
+                <Width>18.86192cm</Width>
                 <ZIndex>15</ZIndex>
                 <Style>
                   <Border>
@@ -1396,11 +1282,11 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line33">
-                <Top>0.00436cm</Top>
-                <Left>4.89072cm</Left>
-                <Height>10.45707cm</Height>
-                <Width>0cm</Width>
+              <Line Name="Line65">
+                <Top>11.21444cm</Top>
+                <Left>0.0027cm</Left>
+                <Height>0cm</Height>
+                <Width>18.86192cm</Width>
                 <ZIndex>16</ZIndex>
                 <Style>
                   <Border>
@@ -1408,11 +1294,11 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line34">
-                <Top>0.00436cm</Top>
-                <Left>12.2218cm</Left>
-                <Height>5.26028cm</Height>
-                <Width>0cm</Width>
+              <Line Name="Line66">
+                <Top>12.13519cm</Top>
+                <Left>0.0027cm</Left>
+                <Height>0cm</Height>
+                <Width>18.86192cm</Width>
                 <ZIndex>17</ZIndex>
                 <Style>
                   <Border>
@@ -1420,11 +1306,11 @@
                   </Border>
                 </Style>
               </Line>
-              <Line Name="Line35">
-                <Top>0.00873cm</Top>
-                <Left>15.39031cm</Left>
-                <Height>10.45707cm</Height>
-                <Width>0cm</Width>
+              <Line Name="Line67">
+                <Top>13.08769cm</Top>
+                <Left>0.0027cm</Left>
+                <Height>0cm</Height>
+                <Width>18.86192cm</Width>
                 <ZIndex>18</ZIndex>
                 <Style>
                   <Border>
@@ -1432,14 +1318,14 @@
                   </Border>
                 </Style>
               </Line>
-              <Textbox Name="Textbox119">
+              <Textbox Name="Textbox126">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Total  Amount Due</Value>
+                        <Value>VATable-Sales</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
@@ -1451,10 +1337,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox119</rd:DefaultName>
-                <Top>9.81548cm</Top>
-                <Left>9.4014cm</Left>
+                <Top>6.75681cm</Top>
+                <Left>10.65423cm</Left>
                 <Height>0.6cm</Height>
-                <Width>5.96604cm</Width>
+                <Width>4.77735cm</Width>
                 <ZIndex>19</ZIndex>
                 <Style>
                   <Border>
@@ -1466,14 +1352,14 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Textbox Name="Textbox120">
+              <Textbox Name="Textbox127">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Less: Withholding Tax</Value>
+                        <Value>VAT-Exempt Sales</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
@@ -1485,10 +1371,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox119</rd:DefaultName>
-                <Top>9.10259cm</Top>
-                <Left>9.36308cm</Left>
+                <Top>7.66726cm</Top>
+                <Left>10.64267cm</Left>
                 <Height>0.6cm</Height>
-                <Width>5.96604cm</Width>
+                <Width>4.77735cm</Width>
                 <ZIndex>20</ZIndex>
                 <Style>
                   <Border>
@@ -1500,48 +1386,48 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Textbox Name="Textbox121">
+              <Textbox Name="VATableSales">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Total</Value>
+                        <Value>=First(Fields!VATableSales.Value, "dtPrintBillingStatement")</Value>
                         <Style>
-                          <FontWeight>Bold</FontWeight>
+                          <FontSize>8pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
                     <Style>
-                      <TextAlign>Right</TextAlign>
+                      <TextAlign>Center</TextAlign>
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <rd:DefaultName>Textbox119</rd:DefaultName>
-                <Top>8.47725cm</Top>
-                <Left>9.36895cm</Left>
+                <rd:DefaultName>VATableSales</rd:DefaultName>
+                <Top>6.78606cm</Top>
+                <Left>15.56564cm</Left>
                 <Height>0.6cm</Height>
-                <Width>5.96604cm</Width>
+                <Width>3.16931cm</Width>
                 <ZIndex>21</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
                   </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingLeft>5pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Textbox Name="Textbox122">
+              <Textbox Name="Textbox124">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Add: 12% VAT</Value>
+                        <Value>Zero Rated Sales</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
@@ -1553,10 +1439,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox119</rd:DefaultName>
-                <Top>7.874cm</Top>
-                <Left>9.4007cm</Left>
+                <Top>8.59126cm</Top>
+                <Left>10.65423cm</Left>
                 <Height>0.6cm</Height>
-                <Width>5.96604cm</Width>
+                <Width>4.76579cm</Width>
                 <ZIndex>22</ZIndex>
                 <Style>
                   <Border>
@@ -1587,10 +1473,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox119</rd:DefaultName>
-                <Top>7.1755cm</Top>
-                <Left>9.36895cm</Left>
+                <Top>9.4926cm</Top>
+                <Left>10.10692cm</Left>
                 <Height>0.6cm</Height>
-                <Width>5.96604cm</Width>
+                <Width>5.32467cm</Width>
                 <ZIndex>23</ZIndex>
                 <Style>
                   <Border>
@@ -1602,14 +1488,14 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Textbox Name="Textbox124">
+              <Textbox Name="Textbox122">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Zero Rated Sales</Value>
+                        <Value>Add: 12% VAT</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
@@ -1621,10 +1507,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox119</rd:DefaultName>
-                <Top>6.5405cm</Top>
-                <Left>9.36895cm</Left>
+                <Top>10.44863cm</Top>
+                <Left>10.17041cm</Left>
                 <Height>0.6cm</Height>
-                <Width>5.96604cm</Width>
+                <Width>5.32467cm</Width>
                 <ZIndex>24</ZIndex>
                 <Style>
                   <Border>
@@ -1636,14 +1522,14 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Textbox Name="Textbox125">
+              <Textbox Name="Textbox121">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>VAT-Exempt Sales</Value>
+                        <Value>Total</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
@@ -1655,10 +1541,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox119</rd:DefaultName>
-                <Top>5.9055cm</Top>
-                <Left>9.36895cm</Left>
+                <Top>11.34116cm</Top>
+                <Left>10.12455cm</Left>
                 <Height>0.6cm</Height>
-                <Width>5.96604cm</Width>
+                <Width>5.32467cm</Width>
                 <ZIndex>25</ZIndex>
                 <Style>
                   <Border>
@@ -1670,14 +1556,14 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Textbox Name="Textbox126">
+              <Textbox Name="Textbox120">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>VATable-Sales</Value>
+                        <Value>Less: Withholding Tax</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
@@ -1689,10 +1575,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox119</rd:DefaultName>
-                <Top>5.2705cm</Top>
-                <Left>9.36895cm</Left>
+                <Top>12.29719cm</Top>
+                <Left>10.12808cm</Left>
                 <Height>0.6cm</Height>
-                <Width>5.96604cm</Width>
+                <Width>5.32467cm</Width>
                 <ZIndex>26</ZIndex>
                 <Style>
                   <Border>
@@ -1704,56 +1590,30 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Textbox Name="FinalAmount">
+              <Textbox Name="Textbox119">
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=First(Fields!FinalAmount.Value, "dtPrintBillingStatement")</Value>
-                        <Style />
+                        <Value>Total  Amount Due</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
-                <rd:DefaultName>FinalAmount</rd:DefaultName>
-                <Top>9.81548cm</Top>
-                <Left>15.78717cm</Left>
+                <rd:DefaultName>Textbox119</rd:DefaultName>
+                <Top>13.23233cm</Top>
+                <Left>10.12455cm</Left>
                 <Height>0.6cm</Height>
-                <Width>2.5cm</Width>
+                <Width>5.32467cm</Width>
                 <ZIndex>27</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="VATableSales">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=First(Fields!VATableSales.Value, "dtPrintBillingStatement")</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>VATableSales</rd:DefaultName>
-                <Top>5.2705cm</Top>
-                <Left>15.5667cm</Left>
-                <Height>0.6cm</Height>
-                <Width>2.5cm</Width>
-                <ZIndex>28</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1772,17 +1632,55 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=First(Fields!VAT.Value, "dtPrintBillingStatement")</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>VAT</rd:DefaultName>
-                <Top>7.83993cm</Top>
-                <Left>15.639cm</Left>
+                <Top>10.44863cm</Top>
+                <Left>15.60797cm</Left>
                 <Height>0.6cm</Height>
-                <Width>2.5cm</Width>
+                <Width>3.12698cm</Width>
+                <ZIndex>28</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="FinalAmount">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!FinalAmount.Value, "dtPrintBillingStatement")</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>FinalAmount</rd:DefaultName>
+                <Top>13.26408cm</Top>
+                <Left>15.56211cm</Left>
+                <Height>0.6cm</Height>
+                <Width>3.20459cm</Width>
                 <ZIndex>29</ZIndex>
                 <Style>
                   <Border>
@@ -1802,17 +1700,21 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=First(Fields!FinalAmount.Value, "dtPrintBillingStatement")</Value>
-                        <Style />
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>FinalAmount1</rd:DefaultName>
-                <Top>8.54548cm</Top>
-                <Left>15.5667cm</Left>
+                <Top>9.50876cm</Top>
+                <Left>15.60797cm</Left>
                 <Height>0.6cm</Height>
-                <Width>2.5cm</Width>
+                <Width>3.12698cm</Width>
                 <ZIndex>30</ZIndex>
                 <Style>
                   <Border>
@@ -1826,324 +1728,412 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>7.91205cm</Top>
-            <Left>0.35453cm</Left>
-            <Height>10.55892cm</Height>
-            <Width>18.86195cm</Width>
-            <ZIndex>35</ZIndex>
+            <Top>7.05972cm</Top>
+            <Left>0.35454cm</Left>
+            <Height>14.02696cm</Height>
+            <Width>18.86898cm</Width>
+            <ZIndex>43</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
               </Border>
-              <TopBorder>
-                <Style>None</Style>
-              </TopBorder>
             </Style>
           </Rectangle>
-          <Textbox Name="CompanyName5">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!CompanyName.Value, "dtPrintBillingStatement")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>CompanyName5</rd:DefaultName>
-            <Top>1.26294cm</Top>
-            <Left>3.32446cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>36</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Address">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!Address.Value, "dtPrintBillingStatement")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Address</rd:DefaultName>
-            <Top>2.00405cm</Top>
-            <Left>4.6482cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>37</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="DeliveryAddress">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!DeliveryAddress.Value, "dtPrintBillingStatement")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>DeliveryAddress</rd:DefaultName>
-            <Top>2.78044cm</Top>
-            <Left>2.9337cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>38</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="CompanyName6">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!CompanyName.Value, "dtPrintBillingStatement")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>CompanyName6</rd:DefaultName>
-            <Top>4.30648cm</Top>
-            <Left>3.32446cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>39</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="DatePrinted">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!DatePrinted.Value, "dtPrintBillingStatement")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>DatePrinted</rd:DefaultName>
-            <Top>1.26294cm</Top>
-            <Left>15.25745cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>40</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="ProductOrder">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!ProductOrder.Value, "dtPrintBillingStatement")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ProductOrder</rd:DefaultName>
-            <Top>2.07108cm</Top>
-            <Left>15.25745cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>41</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Terms">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!Terms.Value, "dtPrintBillingStatement")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Terms</rd:DefaultName>
-            <Top>2.78044cm</Top>
-            <Left>15.25745cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>42</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Salesman">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!Salesman.Value, "dtPrintBillingStatement")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Salesman</rd:DefaultName>
-            <Top>3.48627cm</Top>
-            <Left>15.91567cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>43</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="TIN">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!TIN.Value, "dtPrintBillingStatement")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>TIN</rd:DefaultName>
-            <Top>4.30648cm</Top>
-            <Left>14.78501cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+          <Tablix Name="Tablix3">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.10258cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.32137cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>9.94095cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.13059cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.36684cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.66615cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox39">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>QUANTITY</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox39</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox45">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>UNITS</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox45</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox47">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>DESCRIPTION</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox47</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox49">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>UNIT PRICE</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox49</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox51">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>AMOUNT</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox51</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.83372cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Quantity">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Quantity.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Quantity</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CompanyName1">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CompanyName1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Description">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Description.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Description</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>5pt</PaddingLeft>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CompanyName3">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CompanyName3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Amount">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Amount.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Amount</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>dtPrintBillingStatement</DataSetName>
+            <Top>7.05972cm</Top>
+            <Left>0.35413cm</Left>
+            <Height>1.49987cm</Height>
+            <Width>18.86233cm</Width>
             <ZIndex>44</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
             </Style>
-          </Textbox>
-          <Textbox Name="DatePrinted1">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!DatePrinted.Value, "dtPrintBillingStatement")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>DatePrinted1</rd:DefaultName>
-            <Top>19.61543cm</Top>
-            <Left>8.89273cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>45</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
+          </Tablix>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Height>23.36345cm</Height>
-        <Width>19.53397cm</Width>
+        <Height>24.54076cm</Height>
+        <Width>19.5182cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2151,14 +2141,14 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>9.19821in</Height>
+    <Height>9.66172in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
     </Style>
   </Body>
-  <Width>7.69054in</Width>
+  <Width>7.68433in</Width>
   <Page>
     <PageHeader>
       <Height>3.16023cm</Height>
@@ -2174,6 +2164,7 @@
                 <TextRun>
                   <Value>RAMBIC CORPORATION</Value>
                   <Style>
+                    <FontFamily>Bodoni MT</FontFamily>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
@@ -2327,6 +2318,21 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>rambic_logo</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.3175cm</Top>
+          <Left>12.29252cm</Left>
+          <Height>1.94126cm</Height>
+          <Width>6.92396cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
       </ReportItems>
       <Style>
         <Border>
@@ -2435,6 +2441,19 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="rambic_logo">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>2cdac0da-42f6-454a-ac22-3d88e4bb516d</rd:ReportID>
 </Report>

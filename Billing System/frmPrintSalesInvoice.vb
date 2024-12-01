@@ -24,7 +24,7 @@ Public Class frmPrintSalesInvoice
                 cn.Open()
             End If
 
-            sql = "SELECT c.Email FROM tblcustomer c INNER JOIN tblbilling b on c.CustomerID = b.CustomerID WHERE BillingID = '" & billingid & "'"
+            sql = "SELECT c.Email FROM tblcustomer c INNER JOIN tblbilling b on c.CustomerID = b.CustomerID WHERE BillingID = 6"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -53,7 +53,8 @@ Public Class frmPrintSalesInvoice
 
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
+                '.ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
+                .ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
                 .DataSources.Clear()
             End With
 
@@ -64,7 +65,7 @@ Public Class frmPrintSalesInvoice
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT c.CompanyName, c.Address, o.DeliveryAddress, b.DatePrinted, b.ProductOrder, b.Terms, b.Salesman, b.VATableSales, b.VAT, c.TIN, o.Quantity, p.ProductName, p.Description, p.SellingPrice, o.Amount, ( SELECT SUM(o2.Amount) FROM tblorder o2 INNER JOIN tblbillinvoice i2 ON i2.OrderID = o2.OrderID AND i2.ProductID = o2.ProductID WHERE i2.BillingID = b.BillingID ) AS FinalAmount FROM tblcustomer c INNER JOIN tblbilling b ON b.CustomerID = c.CustomerID INNER JOIN tblbillinvoice i ON i.BillingID = b.BillingID INNER JOIN tblorder o ON i.OrderID = o.OrderID AND i.ProductID = o.ProductID INNER JOIN tblproduct p ON i.ProductID = p.ProductID WHERE b.BillingID = '" & billingid & "'", cn)
+            da.SelectCommand = New MySqlCommand("SELECT c.CompanyName, c.Address, o.DeliveryAddress, b.DatePrinted, b.ProductOrder, b.Terms, b.Salesman, b.VATableSales, b.VAT, c.TIN, o.Quantity, p.ProductName, p.Description, p.SellingPrice, o.Amount, ( SELECT SUM(o2.Amount) FROM tblorder o2 INNER JOIN tblbillinvoice i2 ON i2.OrderID = o2.OrderID AND i2.ProductID = o2.ProductID WHERE i2.BillingID = b.BillingID ) AS FinalAmount FROM tblcustomer c INNER JOIN tblbilling b ON b.CustomerID = c.CustomerID INNER JOIN tblbillinvoice i ON i.BillingID = b.BillingID INNER JOIN tblorder o ON i.OrderID = o.OrderID AND i.ProductID = o.ProductID INNER JOIN tblproduct p ON i.ProductID = p.ProductID WHERE b.BillingID = 1", cn)
             da.Fill(ds.Tables("dtPrintBillingStatement"))
 
             If cn.State = ConnectionState.Open Then
@@ -115,7 +116,7 @@ Public Class frmPrintSalesInvoice
         End Try
     End Sub
 
-    Private Sub btnSend_Click(sender As Object, e As EventArgs) Handles btnSend.Click
+    Private Sub btnSendEmail_Click(sender As Object, e As EventArgs) Handles btnSendEmail.Click
         Try
             ' Path to the generated image
             Dim generatedImagePath As String = Application.StartupPath & "\Image\ReportImage.png"
@@ -201,5 +202,9 @@ Public Class frmPrintSalesInvoice
         Catch ex As Exception
             MsgBox("An error occurred in sendEmail: " & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
     End Sub
 End Class

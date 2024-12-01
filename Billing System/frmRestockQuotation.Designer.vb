@@ -87,6 +87,7 @@ Partial Class frmRestockQuotation
         Me.Panel29 = New System.Windows.Forms.Panel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.pbxPayment = New System.Windows.Forms.PictureBox()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBody.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -106,6 +107,7 @@ Partial Class frmRestockQuotation
         Me.Panel2.SuspendLayout()
         Me.Panel20.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxPayment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel25
@@ -579,6 +581,7 @@ Partial Class frmRestockQuotation
         Me.Guna2Panel1.BorderThickness = 3
         Me.Guna2Panel1.Controls.Add(Me.btnBrowse)
         Me.Guna2Panel1.Controls.Add(Me.PictureBox2)
+        Me.Guna2Panel1.Controls.Add(Me.pbxPayment)
         Me.Guna2Panel1.Location = New System.Drawing.Point(41, 31)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(362, 314)
@@ -597,7 +600,7 @@ Partial Class frmRestockQuotation
         Me.btnBrowse.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnBrowse.ForeColor = System.Drawing.Color.White
         Me.btnBrowse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnBrowse.Location = New System.Drawing.Point(130, 176)
+        Me.btnBrowse.Location = New System.Drawing.Point(125, 175)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.PressedDepth = 20
         Me.btnBrowse.ShadowDecoration.BorderRadius = 15
@@ -609,7 +612,7 @@ Partial Class frmRestockQuotation
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(140, 90)
+        Me.PictureBox2.Location = New System.Drawing.Point(135, 85)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(90, 84)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -819,6 +822,15 @@ Partial Class frmRestockQuotation
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'pbxPayment
+        '
+        Me.pbxPayment.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbxPayment.Location = New System.Drawing.Point(0, 0)
+        Me.pbxPayment.Name = "pbxPayment"
+        Me.pbxPayment.Size = New System.Drawing.Size(362, 314)
+        Me.pbxPayment.TabIndex = 0
+        Me.pbxPayment.TabStop = False
+        '
         'frmRestockQuotation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -851,6 +863,7 @@ Partial Class frmRestockQuotation
         Me.Panel20.ResumeLayout(False)
         Me.Panel20.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxPayment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -918,4 +931,5 @@ Partial Class frmRestockQuotation
     Friend WithEvents btnPayment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Panel17 As Panel
+    Friend WithEvents pbxPayment As PictureBox
 End Class

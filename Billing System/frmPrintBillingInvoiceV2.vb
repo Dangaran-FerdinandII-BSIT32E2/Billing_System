@@ -1,14 +1,47 @@
 ﻿Imports System.Drawing.Imaging
 Imports System.IO
+Imports System.Net.Mail
 Imports Microsoft.Reporting.WinForms
 Imports MySql.Data.MySqlClient
+Imports Mysqlx.Crud
 
 Public Class frmPrintBillingInvoiceV2
+    Public orderid, billingid As String
+    Dim email As String
 
-    Public billingid As String
     Private Sub frmPrintBillingInvoiceV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+        Call loadInformation()
         Call loadReport()
+    End Sub
+
+    Private Sub loadInformation()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT c.Email FROM tblcustomer c INNER JOIN tblbilling b on c.CustomerID = b.CustomerID WHERE BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            If dr.Read = True Then
+                email = dr("Email").ToString
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred in loadInformation: " & ex.Message, MsgBoxStyle.Critical, "Error")
+        Finally
+            ' Ensure the database connection is closed
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 
     Private Sub loadReport()
@@ -17,7 +50,8 @@ Public Class frmPrintBillingInvoiceV2
 
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printBillingInvoiceV2.rdlc"
+                '.ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printBillingInvoiceV2.rdlc"
+                .ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printBillingInvoiceV2.rdlc"
                 .DataSources.Clear()
             End With
 
@@ -76,6 +110,98 @@ Public Class frmPrintBillingInvoiceV2
 
         Catch ex As Exception
             MessageBox.Show("Error exporting report to image: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnSendEmail_Click(sender As Object, e As EventArgs) Handles btnSendEmail.Click
+        Try
+            ' Path to the generated image
+            Dim generatedImagePath As String = Application.StartupPath & "\Image\ReportImage.png"
+
+            ' Check if the image file exists
+            If Not File.Exists(generatedImagePath) Then
+                MsgBox("Generated report image not found. Please generate the report first.", MsgBoxStyle.Critical, "Error")
+                Exit Sub
+            End If
+
+            ' Load the image
+            Dim sendImage As Image
+            Using fs As New FileStream(generatedImagePath, FileMode.Open, FileAccess.Read)
+                sendImage = Image.FromStream(fs)
+            End Using
+
+            ' Ensure database connection is open
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            ' Update database with image and quotation due date
+            If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
+
+
+                ' Send the email
+                Call sendEmail()
+
+                ' Clean up the image file
+                If File.Exists(generatedImagePath) Then
+                    File.Delete(generatedImagePath)
+                End If
+
+                ' Refresh order list
+
+                Call frmListofCustomerOrder.loadOrder()
+                Call frmManageOrder.loadFilteredOrders(frmManageOrder.DateFilter1.Text, frmManageOrder.DateFilter2.Text)
+                Me.Close()
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred in btnSend_Click: " & ex.Message, MsgBoxStyle.Critical, "Error")
+        Finally
+            ' Ensure the database connection is closed
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
+    End Sub
+
+    Private Sub sendEmail()
+        Try
+            Dim mail As New MailMessage()
+            Dim smtpServer As New SmtpClient("smtp.gmail.com")
+
+            mail.From = New MailAddress("dangaranferds@gmail.com") ' Replace with your email
+            mail.To.Add(email)
+
+            mail.Subject = "SALES INVOICE FOR Order Number " & orderid
+
+            Using memoryStream As New MemoryStream()
+
+                Dim imagepath As String = Path.Combine(Application.StartupPath, "Image\ReportImage.png")
+                Using image As Image = Image.FromFile(imagepath)
+                    image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                    memoryStream.Position = 0
+
+                    Dim imageAttachment As New Attachment(memoryStream, "QUOTATION-ORDER_NUMBER" & orderid & "-.jpeg")
+                    mail.Attachments.Add(imageAttachment)
+
+                    mail.Body = "There is now an available quotation for your Order Number " & orderid & "." & vbCrLf &
+                        "You can now accept or reject the Order Quotation through the website." & vbCrLf & vbCrLf &
+                        "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
+
+                    smtpServer.Port = 587
+                    smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua") ' Use secure methods
+                    smtpServer.EnableSsl = True
+                    smtpServer.Send(mail)
+
+                End Using
+            End Using
+            MsgBox("Email sent successfully!", MsgBoxStyle.Information, "Email Sent")
+
+        Catch ex As Exception
+            MsgBox("An error occurred in sendEmail: " & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
 End Class
