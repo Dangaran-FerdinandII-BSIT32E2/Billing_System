@@ -477,8 +477,8 @@ Public Class frmAdminDashboard
     End Sub
 
     Private Sub btnNotification_Click(sender As Object, e As EventArgs) Handles btnNotification.Click
-        'frmManageInquiry.ShowDialog()
-        frmManageNotifications.ShowDialog()
+        frmManageInquiry.ShowDialog()
+        'frmManageNotifications.ShowDialog()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

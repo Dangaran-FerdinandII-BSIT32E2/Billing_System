@@ -65,6 +65,7 @@ Partial Class frmRestockQuotation
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnBrowse = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.pbxPayment = New System.Windows.Forms.PictureBox()
         Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel12 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -87,7 +88,6 @@ Partial Class frmRestockQuotation
         Me.Panel29 = New System.Windows.Forms.Panel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.pbxPayment = New System.Windows.Forms.PictureBox()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBody.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -103,11 +103,11 @@ Partial Class frmRestockQuotation
         Me.Panel10.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxPayment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel19.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel20.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxPayment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel25
@@ -619,6 +619,15 @@ Partial Class frmRestockQuotation
         Me.PictureBox2.TabIndex = 10000011
         Me.PictureBox2.TabStop = False
         '
+        'pbxPayment
+        '
+        Me.pbxPayment.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbxPayment.Location = New System.Drawing.Point(0, 0)
+        Me.pbxPayment.Name = "pbxPayment"
+        Me.pbxPayment.Size = New System.Drawing.Size(362, 314)
+        Me.pbxPayment.TabIndex = 0
+        Me.pbxPayment.TabStop = False
+        '
         'Guna2Panel11
         '
         Me.Guna2Panel11.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
@@ -822,15 +831,6 @@ Partial Class frmRestockQuotation
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'pbxPayment
-        '
-        Me.pbxPayment.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbxPayment.Location = New System.Drawing.Point(0, 0)
-        Me.pbxPayment.Name = "pbxPayment"
-        Me.pbxPayment.Size = New System.Drawing.Size(362, 314)
-        Me.pbxPayment.TabIndex = 0
-        Me.pbxPayment.TabStop = False
-        '
         'frmRestockQuotation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -857,13 +857,13 @@ Partial Class frmRestockQuotation
         Me.Panel10.ResumeLayout(False)
         Me.Guna2Panel1.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxPayment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel19.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel20.ResumeLayout(False)
         Me.Panel20.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxPayment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

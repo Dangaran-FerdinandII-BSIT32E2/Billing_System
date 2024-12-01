@@ -528,7 +528,7 @@ Partial Class frmRestockProduct
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(13, 32)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(2)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(479, 409)
         Me.ListView1.TabIndex = 42
@@ -579,9 +579,9 @@ Partial Class frmRestockProduct
         Me.Panel35.BackColor = System.Drawing.Color.White
         Me.Panel35.Controls.Add(Me.btnRemove)
         Me.Panel35.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel35.Location = New System.Drawing.Point(227, 10)
+        Me.Panel35.Location = New System.Drawing.Point(244, 10)
         Me.Panel35.Name = "Panel35"
-        Me.Panel35.Size = New System.Drawing.Size(252, 40)
+        Me.Panel35.Size = New System.Drawing.Size(235, 40)
         Me.Panel35.TabIndex = 18
         '
         'btnRemove
@@ -601,7 +601,7 @@ Partial Class frmRestockProduct
         Me.btnRemove.Location = New System.Drawing.Point(0, 0)
         Me.btnRemove.Name = "btnRemove"
         Me.btnRemove.PressedDepth = 20
-        Me.btnRemove.Size = New System.Drawing.Size(252, 40)
+        Me.btnRemove.Size = New System.Drawing.Size(235, 40)
         Me.btnRemove.TabIndex = 56
         Me.btnRemove.TabStop = False
         Me.btnRemove.Text = "Remove Product"
@@ -610,7 +610,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel36.BackColor = System.Drawing.Color.White
         Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel36.Location = New System.Drawing.Point(217, 10)
+        Me.Panel36.Location = New System.Drawing.Point(234, 10)
         Me.Panel36.Name = "Panel36"
         Me.Panel36.Size = New System.Drawing.Size(10, 40)
         Me.Panel36.TabIndex = 18
@@ -622,7 +622,7 @@ Partial Class frmRestockProduct
         Me.Panel43.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel43.Location = New System.Drawing.Point(0, 10)
         Me.Panel43.Name = "Panel43"
-        Me.Panel43.Size = New System.Drawing.Size(217, 40)
+        Me.Panel43.Size = New System.Drawing.Size(234, 40)
         Me.Panel43.TabIndex = 19
         '
         'btnQuantity
@@ -642,7 +642,7 @@ Partial Class frmRestockProduct
         Me.btnQuantity.Location = New System.Drawing.Point(0, 0)
         Me.btnQuantity.Name = "btnQuantity"
         Me.btnQuantity.PressedDepth = 20
-        Me.btnQuantity.Size = New System.Drawing.Size(217, 40)
+        Me.btnQuantity.Size = New System.Drawing.Size(234, 40)
         Me.btnQuantity.TabIndex = 56
         Me.btnQuantity.TabStop = False
         Me.btnQuantity.Text = "Enter Quantity"
@@ -710,7 +710,7 @@ Partial Class frmRestockProduct
         Me.ClientSize = New System.Drawing.Size(1008, 574)
         Me.Controls.Add(Me.panelBody)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmRestockProduct"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()

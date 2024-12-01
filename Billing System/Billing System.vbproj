@@ -134,6 +134,12 @@
     <Compile Include="DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmAddCustomerWalkin.Designer.vb">
+      <DependentUpon>frmAddCustomerWalkin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCustomerWalkin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAddNewCustomer.Designer.vb">
       <DependentUpon>frmAddNewCustomer.vb</DependentUpon>
     </Compile>
@@ -266,10 +272,16 @@
     <Compile Include="frmManageSuppliers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRestockItem.Designer.vb">
-      <DependentUpon>frmRestockItem.vb</DependentUpon>
+    <Compile Include="frmEnterQuantity.Designer.vb">
+      <DependentUpon>frmEnterQuantity.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmRestockItem.vb">
+    <Compile Include="frmEnterQuantity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRetrievalProducts.Designer.vb">
+      <DependentUpon>frmRetrievalProducts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRetrievalProducts.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSupplierInformation&amp;Products.Designer.vb">
@@ -348,12 +360,6 @@
       <DependentUpon>frmSendPayment.vb</DependentUpon>
     </Compile>
     <Compile Include="frmSendPayment.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSupplierInformation.Designer.vb">
-      <DependentUpon>frmSupplierInformation.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmSupplierInformation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmViewQuotation.Designer.vb">
@@ -448,6 +454,9 @@
     <Compile Include="termParser.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAddCustomerWalkin.resx">
+      <DependentUpon>frmAddCustomerWalkin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddNewCustomer.resx">
       <DependentUpon>frmAddNewCustomer.vb</DependentUpon>
     </EmbeddedResource>
@@ -514,8 +523,11 @@
     <EmbeddedResource Include="frmManageSuppliers.resx">
       <DependentUpon>frmManageSuppliers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRestockItem.resx">
-      <DependentUpon>frmRestockItem.vb</DependentUpon>
+    <EmbeddedResource Include="frmEnterQuantity.resx">
+      <DependentUpon>frmEnterQuantity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRetrievalProducts.resx">
+      <DependentUpon>frmRetrievalProducts.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSupplierInformation&amp;Products.resx">
       <DependentUpon>frmSupplierInformation&amp;Products.vb</DependentUpon>
@@ -549,9 +561,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSendPayment.resx">
       <DependentUpon>frmSendPayment.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSupplierInformation.resx">
-      <DependentUpon>frmSupplierInformation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewQuotation.resx">
       <DependentUpon>frmViewQuotation.vb</DependentUpon>
