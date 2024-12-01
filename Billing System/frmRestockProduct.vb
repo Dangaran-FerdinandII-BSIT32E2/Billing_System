@@ -268,14 +268,9 @@ Public Class frmRestockProduct
         If ListView1.SelectedItems.Count > 0 Then
             Dim currentValue As String = ListView1.SelectedItems(0).SubItems(2).Text
 
+            frmRestockItem.restock = True
             frmRestockItem.ShowDialog()
-            'newValue = InputBox("Enter quantity: ", "Restock Item", currentValue)
 
-            If Not String.IsNullOrEmpty(newValue) AndAlso IsNumeric(newValue) Then
-                ListView1.SelectedItems(0).SubItems(2).Text = newValue
-            Else
-                MsgBox("Please enter a valid amount.", MsgBoxStyle.Critical, "Add Product Quantity")
-            End If
         End If
     End Sub
 End Class

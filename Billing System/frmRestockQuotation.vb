@@ -6,7 +6,7 @@ Imports MySql.Data.MySqlClient
 Public Class frmRestockQuotation
     Public quotationid As String
     Public supplierid As String
-    Public ponum As String
+    Public ponumber As String
 
     Private email As String
 
@@ -14,6 +14,8 @@ Public Class frmRestockQuotation
         Call connection()
         Call loadQuotation()
         Call loadQuotationImage()
+
+        Call loadPaymentImage()
         Call checkAccept()
     End Sub
 
@@ -23,7 +25,7 @@ Public Class frmRestockQuotation
                 cn.Open()
             End If
 
-            sql = "SELECT p.Image, p.ProductName, qp.Amount AS Quantity, s.CompanyName, s.Email, q.PONumber FROM tblquotationproducts qp INNER JOIN tblquotation q ON qp.PONumber = q.PONumber INNER JOIN tblproduct p ON qp.ProductID = p.ProductID INNER JOIN tblsupplier s ON qp.SupplierID = s.SupplierID WHERE q.QuotationID = '" & quotationid & "'"
+            sql = "SELECT p.Image, p.ProductName, qp.Amount AS Quantity, s.CompanyName, s.Email, q.PONumber FROM tblquotationproducts qp INNER JOIN tblquotation q ON qp.PONumber = q.PONumber INNER JOIN tblproduct p ON qp.ProductID = p.ProductID INNER JOIN tblsupplier s ON qp.SupplierID = s.SupplierID WHERE q.PONumber = '" & ponumber & "'"
             Using cmd As New MySqlCommand(sql, cn)
                 Using dr As MySqlDataReader = cmd.ExecuteReader
                     While dr.Read
@@ -44,7 +46,7 @@ Public Class frmRestockQuotation
 
                         lblSupplierName.Text = dr("CompanyName").ToString
                         email = dr("Email").ToString
-                        lblPo.Text = (("PO #") & dr("PONumber").ToString)
+                        lblPo.Text = dr("PONumber").ToString
                     End While
                 End Using
             End Using
@@ -63,7 +65,7 @@ Public Class frmRestockQuotation
                 cn.Open()
             End If
 
-            sql = "SELECT QuotationIMG FROM tblquotation WHERE QuotationID = '" & quotationid & "'"
+            sql = "SELECT QuotationIMG FROM tblquotation WHERE PONumber = '" & ponumber & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -90,6 +92,39 @@ Public Class frmRestockQuotation
             End If
         End Try
     End Sub
+    Private Sub loadPaymentImage()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT PaymentIMG FROM tblpayment WHERE QuotationID = '" & quotationid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                Dim pic As Byte() = DirectCast(dr("PaymentIMG"), Byte())
+                If pic.Length > 0 Then
+                    Using ms As New MemoryStream(pic)
+                        pbxProduct.Image = Image.FromStream(ms)
+                    End Using
+
+                    txtAmount.Visible = False
+                    btnPayment.Enabled = False
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmRestockQuotation(loadQuotationImage): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
 
     Private Sub btnAccept_Click(sender As Object, e As EventArgs)
         Call sendEmail()
@@ -104,7 +139,7 @@ Public Class frmRestockQuotation
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "UPDATE tblquotation SET Status = 2 WHERE QuotationID = '" & quotationid & "'"
+            sql = "UPDATE tblquotation SET Status = 2 WHERE PONumber = '" & ponumber & "'"
             cmd = New MySqlCommand(sql, cn)
             cmd.ExecuteReader()
 
@@ -259,7 +294,7 @@ Public Class frmRestockQuotation
     Private Sub frmRestockQuotation_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
             quotationid = Nothing
-            ponum = Nothing
+            ponumber = Nothing
             email = Nothing
 
             pbxQuotation.Image = Nothing

@@ -23,13 +23,13 @@ Partial Class frmRestockItem
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lblManageProduct = New System.Windows.Forms.Label()
         Me.btnExit = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lblManageProduct = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtQuantiyProducts = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnOkay = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtQuantiyProducts = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -43,9 +43,23 @@ Partial Class frmRestockItem
         Me.Guna2Panel1.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 0, 0)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(527, 43)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(703, 53)
         Me.Guna2Panel1.TabIndex = 0
+        '
+        'lblManageProduct
+        '
+        Me.lblManageProduct.AutoSize = True
+        Me.lblManageProduct.BackColor = System.Drawing.Color.Transparent
+        Me.lblManageProduct.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblManageProduct.ForeColor = System.Drawing.Color.White
+        Me.lblManageProduct.Location = New System.Drawing.Point(16, 11)
+        Me.lblManageProduct.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblManageProduct.Name = "lblManageProduct"
+        Me.lblManageProduct.Size = New System.Drawing.Size(161, 29)
+        Me.lblManageProduct.TabIndex = 36
+        Me.lblManageProduct.Text = "Restock Item"
         '
         'btnExit
         '
@@ -62,11 +76,12 @@ Partial Class frmRestockItem
         Me.btnExit.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(207, Byte), Integer))
         Me.btnExit.HoverState.ForeColor = System.Drawing.Color.White
-        Me.btnExit.Location = New System.Drawing.Point(487, 0)
+        Me.btnExit.Location = New System.Drawing.Point(650, 0)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.PressedColor = System.Drawing.Color.White
         Me.btnExit.PressedDepth = 0
-        Me.btnExit.Size = New System.Drawing.Size(40, 43)
+        Me.btnExit.Size = New System.Drawing.Size(53, 53)
         Me.btnExit.TabIndex = 35
         Me.btnExit.TabStop = False
         Me.btnExit.Text = "X"
@@ -82,55 +97,11 @@ Partial Class frmRestockItem
         Me.Guna2Panel2.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel2.CustomBorderThickness = New System.Windows.Forms.Padding(1, 0, 1, 1)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 43)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 53)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(527, 197)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(703, 242)
         Me.Guna2Panel2.TabIndex = 1
-        '
-        'lblManageProduct
-        '
-        Me.lblManageProduct.AutoSize = True
-        Me.lblManageProduct.BackColor = System.Drawing.Color.Transparent
-        Me.lblManageProduct.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.lblManageProduct.ForeColor = System.Drawing.Color.White
-        Me.lblManageProduct.Location = New System.Drawing.Point(12, 9)
-        Me.lblManageProduct.Name = "lblManageProduct"
-        Me.lblManageProduct.Size = New System.Drawing.Size(129, 22)
-        Me.lblManageProduct.TabIndex = 36
-        Me.lblManageProduct.Text = "Restock Item"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(12, 18)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(116, 19)
-        Me.Label1.TabIndex = 34
-        Me.Label1.Text = "Input Quantity"
-        '
-        'txtQuantiyProducts
-        '
-        Me.txtQuantiyProducts.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtQuantiyProducts.DefaultText = ""
-        Me.txtQuantiyProducts.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtQuantiyProducts.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtQuantiyProducts.DisabledState.ForeColor = System.Drawing.Color.Black
-        Me.txtQuantiyProducts.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtQuantiyProducts.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
-        Me.txtQuantiyProducts.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtQuantiyProducts.ForeColor = System.Drawing.Color.Black
-        Me.txtQuantiyProducts.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtQuantiyProducts.Location = New System.Drawing.Point(16, 56)
-        Me.txtQuantiyProducts.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtQuantiyProducts.Name = "txtQuantiyProducts"
-        Me.txtQuantiyProducts.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtQuantiyProducts.PlaceholderText = "Enter quantity of product"
-        Me.txtQuantiyProducts.SelectedText = ""
-        Me.txtQuantiyProducts.Size = New System.Drawing.Size(498, 35)
-        Me.txtQuantiyProducts.TabIndex = 0
         '
         'btnOkay
         '
@@ -144,10 +115,11 @@ Partial Class frmRestockItem
         Me.btnOkay.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnOkay.ForeColor = System.Drawing.Color.White
         Me.btnOkay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnOkay.Location = New System.Drawing.Point(278, 146)
+        Me.btnOkay.Location = New System.Drawing.Point(371, 180)
+        Me.btnOkay.Margin = New System.Windows.Forms.Padding(4)
         Me.btnOkay.Name = "btnOkay"
         Me.btnOkay.PressedDepth = 20
-        Me.btnOkay.Size = New System.Drawing.Size(112, 39)
+        Me.btnOkay.Size = New System.Drawing.Size(149, 48)
         Me.btnOkay.TabIndex = 61
         Me.btnOkay.TabStop = False
         Me.btnOkay.Text = "OK"
@@ -164,22 +136,58 @@ Partial Class frmRestockItem
         Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCancel.Location = New System.Drawing.Point(402, 146)
+        Me.btnCancel.Location = New System.Drawing.Point(536, 180)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(112, 39)
+        Me.btnCancel.Size = New System.Drawing.Size(149, 48)
         Me.btnCancel.TabIndex = 60
         Me.btnCancel.TabStop = False
         Me.btnCancel.Text = "Cancel"
         '
+        'txtQuantiyProducts
+        '
+        Me.txtQuantiyProducts.Cursor = System.Windows.Forms.Cursors.No
+        Me.txtQuantiyProducts.DefaultText = ""
+        Me.txtQuantiyProducts.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtQuantiyProducts.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtQuantiyProducts.DisabledState.ForeColor = System.Drawing.Color.Black
+        Me.txtQuantiyProducts.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtQuantiyProducts.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
+        Me.txtQuantiyProducts.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtQuantiyProducts.ForeColor = System.Drawing.Color.Black
+        Me.txtQuantiyProducts.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtQuantiyProducts.Location = New System.Drawing.Point(21, 69)
+        Me.txtQuantiyProducts.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtQuantiyProducts.Name = "txtQuantiyProducts"
+        Me.txtQuantiyProducts.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtQuantiyProducts.PlaceholderText = "Enter quantity of product"
+        Me.txtQuantiyProducts.SelectedText = ""
+        Me.txtQuantiyProducts.Size = New System.Drawing.Size(664, 43)
+        Me.txtQuantiyProducts.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(16, 22)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(145, 24)
+        Me.Label1.TabIndex = 34
+        Me.Label1.Text = "Input Quantity"
+        '
         'frmRestockItem
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(527, 240)
+        Me.ClientSize = New System.Drawing.Size(703, 295)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmRestockItem"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmRestockItem"

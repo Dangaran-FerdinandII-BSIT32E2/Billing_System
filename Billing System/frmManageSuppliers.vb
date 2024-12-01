@@ -3,7 +3,11 @@ Imports MySql.Data.MySqlClient
 Public Class frmManageSuppliers
     Private Sub frmManageSuppliers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+
+        'LIST OF SUPPLIERS
         Call loadSuppliers()
+
+        '
         Call loadOrders()
         Call loadReorders()
     End Sub
@@ -56,7 +60,7 @@ Public Class frmManageSuppliers
                 cn.Open()
             End If
 
-            sql = "SELECT q.PONumber, s.CompanyName, COUNT(q.ProductID) AS TotalOrders, SUM(q.Amount) AS Amount, DATE_FORMAT(q.DateRequested, '%M %d %Y') AS DateRequested, q.QuotationID, q.SupplierID FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID WHERE q.QuotationIMG IS NOT NULL GROUP BY q.QuotationID ORDER BY q.PONumber ASC"
+            sql = "SELECT q.PONumber, s.CompanyName, COUNT(qp.ProductID) AS TotalOrders, SUM(qp.Amount) AS Amount, DATE_FORMAT(q.DateRequested, '%M %d, %Y') AS DateRequested, q.QuotationID, q.SupplierID FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID INNER JOIN tblquotationproducts qp ON q.PONumber = qp.PONumber WHERE q.QuotationIMG IS NOT NULL GROUP BY q.QuotationID ORDER BY q.PONumber ASC"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -75,8 +79,8 @@ Public Class frmManageSuppliers
                 x.SubItems.Add(dr("TotalOrders").ToString())
                 x.SubItems.Add(dr("Amount").ToString())
                 x.SubItems.Add(dr("DateRequested").ToString())
-                x.SubItems.Add(dr("QuotationID").ToString()) '5
-                x.SubItems.Add(dr("SupplierID").ToString()) '6
+                x.SubItems.Add(dr("SupplierID").ToString()) '5
+                x.SubItems.Add(dr("QuotationID").ToString()) '6
 
                 ListView2.Items.Add(x)
             Loop
@@ -88,6 +92,17 @@ Public Class frmManageSuppliers
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub btnViewQuotation_Click(sender As Object, e As EventArgs) Handles btnViewQuotation.Click, ListView2.DoubleClick
+        If ListView2.SelectedItems.Count > 0 Then
+            frmRestockQuotation.ponumber = ListView2.SelectedItems(0).SubItems(0).Text
+            frmRestockQuotation.supplierid = ListView2.SelectedItems(0).SubItems(5).Text
+            frmRestockQuotation.quotationid = ListView2.SelectedItems(0).SubItems(6).Text
+            frmRestockQuotation.ShowDialog()
+        Else
+            MsgBox("Please select an item", MsgBoxStyle.Information, "Select Item")
+        End If
     End Sub
 
     Private Sub btnAddNewSupplier_Click(sender As Object, e As EventArgs) Handles btnAddNewSupplier.Click
@@ -279,19 +294,5 @@ Public Class frmManageSuppliers
         If ListView3.SelectedItems.Count > 0 Then
             btnRestock.Enabled = True
         End If
-    End Sub
-
-    Private Sub btnViewQuotation_Click(sender As Object, e As EventArgs) Handles btnViewQuotation.Click
-        If ListView2.SelectedItems.Count > 0 Then
-            'frmRestockQuotation.quotationid = ListView2.SelectedItems(0).SubItems(5).Text
-            'frmRestockQuotation.supplierid = ListView2.SelectedItems(0).SubItems(6).Text
-            frmRestockQuotation.ShowDialog()
-        Else
-            MsgBox("Please select an item", MsgBoxStyle.Information, "Select Item")
-        End If
-    End Sub
-
-    Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.SelectedIndexChanged, ListView2.DoubleClick
-        frmRestockQuotation.ShowDialog()
     End Sub
 End Class

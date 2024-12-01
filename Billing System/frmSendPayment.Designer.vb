@@ -54,8 +54,9 @@ Partial Class frmSendPayment
         Me.panelBody.Controls.Add(Me.Panel1)
         Me.panelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBody.Location = New System.Drawing.Point(0, 0)
+        Me.panelBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelBody.Name = "panelBody"
-        Me.panelBody.Size = New System.Drawing.Size(627, 558)
+        Me.panelBody.Size = New System.Drawing.Size(836, 687)
         Me.panelBody.TabIndex = 4
         '
         'txtAmount
@@ -71,13 +72,13 @@ Partial Class frmSendPayment
         Me.txtAmount.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtAmount.ForeColor = System.Drawing.Color.Black
         Me.txtAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtAmount.Location = New System.Drawing.Point(62, 438)
-        Me.txtAmount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAmount.Location = New System.Drawing.Point(83, 539)
+        Me.txtAmount.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtAmount.Name = "txtAmount"
         Me.txtAmount.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAmount.PlaceholderText = "Enter amount"
         Me.txtAmount.SelectedText = ""
-        Me.txtAmount.Size = New System.Drawing.Size(505, 35)
+        Me.txtAmount.Size = New System.Drawing.Size(673, 43)
         Me.txtAmount.TabIndex = 10000008
         '
         'btnCancel
@@ -92,10 +93,11 @@ Partial Class frmSendPayment
         Me.btnCancel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCancel.Location = New System.Drawing.Point(353, 497)
+        Me.btnCancel.Location = New System.Drawing.Point(471, 612)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(225, 40)
+        Me.btnCancel.Size = New System.Drawing.Size(300, 49)
         Me.btnCancel.TabIndex = 10000007
         Me.btnCancel.Text = "Cancel"
         '
@@ -111,19 +113,21 @@ Partial Class frmSendPayment
         Me.btnSend.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSend.ForeColor = System.Drawing.Color.White
         Me.btnSend.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnSend.Location = New System.Drawing.Point(62, 497)
+        Me.btnSend.Location = New System.Drawing.Point(83, 612)
+        Me.btnSend.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSend.Name = "btnSend"
         Me.btnSend.PressedDepth = 20
-        Me.btnSend.Size = New System.Drawing.Size(225, 40)
+        Me.btnSend.Size = New System.Drawing.Size(300, 49)
         Me.btnSend.TabIndex = 10000006
         Me.btnSend.Text = "Send"
         '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Guna2Panel1)
-        Me.Panel2.Location = New System.Drawing.Point(57, 107)
+        Me.Panel2.Location = New System.Drawing.Point(76, 132)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(516, 310)
+        Me.Panel2.Size = New System.Drawing.Size(688, 382)
         Me.Panel2.TabIndex = 10000005
         '
         'Guna2Panel1
@@ -137,8 +141,9 @@ Partial Class frmSendPayment
         Me.Guna2Panel1.Controls.Add(Me.pbxPayment)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(516, 310)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(688, 382)
         Me.Guna2Panel1.TabIndex = 10000004
         '
         'btnBrowse
@@ -154,30 +159,33 @@ Partial Class frmSendPayment
         Me.btnBrowse.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnBrowse.ForeColor = System.Drawing.Color.White
         Me.btnBrowse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnBrowse.Location = New System.Drawing.Point(211, 162)
+        Me.btnBrowse.Location = New System.Drawing.Point(281, 199)
+        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.PressedDepth = 20
         Me.btnBrowse.ShadowDecoration.BorderRadius = 15
         Me.btnBrowse.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(2)
-        Me.btnBrowse.Size = New System.Drawing.Size(109, 36)
+        Me.btnBrowse.Size = New System.Drawing.Size(145, 44)
         Me.btnBrowse.TabIndex = 10000007
         Me.btnBrowse.Text = "Browse"
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(221, 76)
+        Me.PictureBox2.Location = New System.Drawing.Point(295, 94)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(90, 84)
+        Me.PictureBox2.Size = New System.Drawing.Size(120, 103)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 10000011
         Me.PictureBox2.TabStop = False
         '
         'pbxPayment
         '
-        Me.pbxPayment.Location = New System.Drawing.Point(5, 6)
+        Me.pbxPayment.Location = New System.Drawing.Point(7, 7)
+        Me.pbxPayment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxPayment.Name = "pbxPayment"
-        Me.pbxPayment.Size = New System.Drawing.Size(505, 298)
+        Me.pbxPayment.Size = New System.Drawing.Size(673, 367)
         Me.pbxPayment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbxPayment.TabIndex = 0
         Me.pbxPayment.TabStop = False
@@ -188,9 +196,10 @@ Partial Class frmSendPayment
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(58, 69)
+        Me.Label1.Location = New System.Drawing.Point(77, 85)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 19)
+        Me.Label1.Size = New System.Drawing.Size(138, 24)
         Me.Label1.TabIndex = 10000003
         Me.Label1.Text = "Upload Image"
         '
@@ -200,8 +209,9 @@ Partial Class frmSendPayment
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(627, 50)
+        Me.Panel1.Size = New System.Drawing.Size(836, 62)
         Me.Panel1.TabIndex = 0
         '
         'Label2
@@ -210,19 +220,21 @@ Partial Class frmSendPayment
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(10, 14)
+        Me.Label2.Location = New System.Drawing.Point(13, 17)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(144, 22)
+        Me.Label2.Size = New System.Drawing.Size(178, 29)
         Me.Label2.TabIndex = 34
         Me.Label2.Text = "Send Payment"
         '
         'frmSendPayment
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(627, 558)
+        Me.ClientSize = New System.Drawing.Size(836, 687)
         Me.Controls.Add(Me.panelBody)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "frmSendPayment"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

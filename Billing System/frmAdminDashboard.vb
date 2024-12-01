@@ -105,9 +105,9 @@ Public Class frmAdminDashboard
                 btnBilling.Visible = True
                 btnOrder.Visible = True
                 btnRental.Visible = True
-                btnCustomer.Visible = True
+                btnCollection.Visible = True
 
-                btnCollection.Visible = False
+                btnCustomer.Visible = False
                 btnSupplier.Visible = False
                 btnProduct.Visible = False
                 btnUser.Visible = False
