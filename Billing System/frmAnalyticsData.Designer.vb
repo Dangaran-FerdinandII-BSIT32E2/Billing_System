@@ -39,20 +39,7 @@ Partial Class frmAnalyticsData
         Me.Panel31 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
-        Me.OverduePayment = New System.Windows.Forms.TabPage()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.OrderUpdates = New System.Windows.Forms.TabPage()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.ListView2 = New System.Windows.Forms.ListView()
         Me.OrderID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -62,7 +49,7 @@ Partial Class frmAnalyticsData
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel20 = New System.Windows.Forms.Panel()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.QuotationUpdates = New System.Windows.Forms.TabPage()
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.ListView3 = New System.Windows.Forms.ListView()
         Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -75,7 +62,7 @@ Partial Class frmAnalyticsData
         Me.Panel23 = New System.Windows.Forms.Panel()
         Me.Panel24 = New System.Windows.Forms.Panel()
         Me.Panel25 = New System.Windows.Forms.Panel()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.RambicPO = New System.Windows.Forms.TabPage()
         Me.Panel26 = New System.Windows.Forms.Panel()
         Me.ListView4 = New System.Windows.Forms.ListView()
         Me.ColumnHeader22 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -91,18 +78,18 @@ Partial Class frmAnalyticsData
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnViewPayment = New Guna.UI2.WinForms.Guna2Button()
+        Me.lblNewPayments = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnViewOrder = New Guna.UI2.WinForms.Guna2Button()
+        Me.lblNewOrders = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
-        Me.lblNewOrders = New System.Windows.Forms.Label()
+        Me.btnViewCustomer = New Guna.UI2.WinForms.Guna2Button()
+        Me.lblNewCustomers = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.panelGuider = New System.Windows.Forms.Panel()
@@ -115,23 +102,33 @@ Partial Class frmAnalyticsData
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.OverduePayments = New System.Windows.Forms.TabPage()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel15 = New System.Windows.Forms.Panel()
         Me.panelBody.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
         Me.TabControl2.SuspendLayout()
-        Me.OverduePayment.SuspendLayout()
-        Me.Panel11.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.OrderUpdates.SuspendLayout()
         Me.Panel16.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
+        Me.QuotationUpdates.SuspendLayout()
         Me.Panel21.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
+        Me.RambicPO.SuspendLayout()
         Me.Panel26.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
+        Me.OverduePayments.SuspendLayout()
+        Me.Panel11.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel4
@@ -289,10 +286,10 @@ Partial Class frmAnalyticsData
         '
         'TabControl2
         '
-        Me.TabControl2.Controls.Add(Me.OverduePayment)
-        Me.TabControl2.Controls.Add(Me.TabPage1)
-        Me.TabControl2.Controls.Add(Me.TabPage2)
-        Me.TabControl2.Controls.Add(Me.TabPage3)
+        Me.TabControl2.Controls.Add(Me.OverduePayments)
+        Me.TabControl2.Controls.Add(Me.OrderUpdates)
+        Me.TabControl2.Controls.Add(Me.QuotationUpdates)
+        Me.TabControl2.Controls.Add(Me.RambicPO)
         Me.TabControl2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl2.ItemSize = New System.Drawing.Size(266, 40)
@@ -321,119 +318,16 @@ Partial Class frmAnalyticsData
         Me.TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
-        'OverduePayment
+        'OrderUpdates
         '
-        Me.OverduePayment.Controls.Add(Me.Panel11)
-        Me.OverduePayment.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.OverduePayment.Location = New System.Drawing.Point(4, 44)
-        Me.OverduePayment.Name = "OverduePayment"
-        Me.OverduePayment.Size = New System.Drawing.Size(1064, 321)
-        Me.OverduePayment.TabIndex = 2
-        Me.OverduePayment.Text = "Overdue Payments"
-        Me.OverduePayment.UseVisualStyleBackColor = True
-        '
-        'Panel11
-        '
-        Me.Panel11.Controls.Add(Me.ListView1)
-        Me.Panel11.Controls.Add(Me.Panel12)
-        Me.Panel11.Controls.Add(Me.Panel13)
-        Me.Panel11.Controls.Add(Me.Panel14)
-        Me.Panel11.Controls.Add(Me.Panel15)
-        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel11.Location = New System.Drawing.Point(0, 0)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1064, 321)
-        Me.Panel11.TabIndex = 0
-        '
-        'ListView1
-        '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
-        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.ListView1.ForeColor = System.Drawing.Color.Red
-        Me.ListView1.FullRowSelect = True
-        Me.ListView1.GridLines = True
-        Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(10, 10)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1044, 301)
-        Me.ListView1.TabIndex = 43
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Name"
-        Me.ColumnHeader1.Width = 200
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Company Name"
-        Me.ColumnHeader2.Width = 250
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Contact Number"
-        Me.ColumnHeader3.Width = 250
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Email Address"
-        Me.ColumnHeader4.Width = 250
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Ordered Date"
-        Me.ColumnHeader5.Width = 200
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Status"
-        Me.ColumnHeader6.Width = 200
-        '
-        'Panel12
-        '
-        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel12.Location = New System.Drawing.Point(10, 311)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(1044, 10)
-        Me.Panel12.TabIndex = 7
-        '
-        'Panel13
-        '
-        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel13.Location = New System.Drawing.Point(0, 10)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(10, 311)
-        Me.Panel13.TabIndex = 8
-        '
-        'Panel14
-        '
-        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel14.Location = New System.Drawing.Point(1054, 10)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(10, 311)
-        Me.Panel14.TabIndex = 9
-        '
-        'Panel15
-        '
-        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel15.Location = New System.Drawing.Point(0, 0)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(1064, 10)
-        Me.Panel15.TabIndex = 6
-        '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.Panel16)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 44)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1064, 321)
-        Me.TabPage1.TabIndex = 3
-        Me.TabPage1.Text = "Order Updates"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.OrderUpdates.Controls.Add(Me.Panel16)
+        Me.OrderUpdates.Location = New System.Drawing.Point(4, 44)
+        Me.OrderUpdates.Name = "OrderUpdates"
+        Me.OrderUpdates.Padding = New System.Windows.Forms.Padding(3)
+        Me.OrderUpdates.Size = New System.Drawing.Size(1064, 321)
+        Me.OrderUpdates.TabIndex = 3
+        Me.OrderUpdates.Text = "Order Updates"
+        Me.OrderUpdates.UseVisualStyleBackColor = True
         '
         'Panel16
         '
@@ -511,16 +405,16 @@ Partial Class frmAnalyticsData
         Me.Panel20.Size = New System.Drawing.Size(1058, 10)
         Me.Panel20.TabIndex = 6
         '
-        'TabPage2
+        'QuotationUpdates
         '
-        Me.TabPage2.Controls.Add(Me.Panel21)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 44)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1064, 321)
-        Me.TabPage2.TabIndex = 4
-        Me.TabPage2.Text = "Quotation Updates"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.QuotationUpdates.Controls.Add(Me.Panel21)
+        Me.QuotationUpdates.Location = New System.Drawing.Point(4, 44)
+        Me.QuotationUpdates.Name = "QuotationUpdates"
+        Me.QuotationUpdates.Padding = New System.Windows.Forms.Padding(3)
+        Me.QuotationUpdates.Size = New System.Drawing.Size(1064, 321)
+        Me.QuotationUpdates.TabIndex = 4
+        Me.QuotationUpdates.Text = "Quotation Updates"
+        Me.QuotationUpdates.UseVisualStyleBackColor = True
         '
         'Panel21
         '
@@ -614,16 +508,16 @@ Partial Class frmAnalyticsData
         Me.Panel25.Size = New System.Drawing.Size(1058, 10)
         Me.Panel25.TabIndex = 6
         '
-        'TabPage3
+        'RambicPO
         '
-        Me.TabPage3.Controls.Add(Me.Panel26)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 44)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1064, 321)
-        Me.TabPage3.TabIndex = 5
-        Me.TabPage3.Text = "Rambic P.O."
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.RambicPO.Controls.Add(Me.Panel26)
+        Me.RambicPO.Location = New System.Drawing.Point(4, 44)
+        Me.RambicPO.Name = "RambicPO"
+        Me.RambicPO.Padding = New System.Windows.Forms.Padding(3)
+        Me.RambicPO.Size = New System.Drawing.Size(1064, 321)
+        Me.RambicPO.TabIndex = 5
+        Me.RambicPO.Text = "Rambic P.O."
+        Me.RambicPO.UseVisualStyleBackColor = True
         '
         'Panel26
         '
@@ -744,8 +638,8 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel3.BorderColor = System.Drawing.Color.White
         Me.Guna2Panel3.BorderRadius = 15
         Me.Guna2Panel3.BorderThickness = 1
-        Me.Guna2Panel3.Controls.Add(Me.Guna2Button2)
-        Me.Guna2Panel3.Controls.Add(Me.Label4)
+        Me.Guna2Panel3.Controls.Add(Me.btnViewPayment)
+        Me.Guna2Panel3.Controls.Add(Me.lblNewPayments)
         Me.Guna2Panel3.Controls.Add(Me.Label3)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel3.FillColor = System.Drawing.Color.White
@@ -754,39 +648,39 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel3.Size = New System.Drawing.Size(364, 143)
         Me.Guna2Panel3.TabIndex = 12
         '
-        'Guna2Button2
+        'btnViewPayment
         '
-        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.BorderRadius = 15
-        Me.Guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.Empty
-        Me.Guna2Button2.Font = New System.Drawing.Font("Arial", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button2.ImageOffset = New System.Drawing.Point(15, 0)
-        Me.Guna2Button2.ImageSize = New System.Drawing.Size(50, 50)
-        Me.Guna2Button2.Location = New System.Drawing.Point(215, 97)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(135, 30)
-        Me.Guna2Button2.TabIndex = 14
-        Me.Guna2Button2.Text = "View Payment"
-        Me.Guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnViewPayment.BackColor = System.Drawing.Color.Transparent
+        Me.btnViewPayment.BorderRadius = 15
+        Me.btnViewPayment.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnViewPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnViewPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnViewPayment.FillColor = System.Drawing.Color.Empty
+        Me.btnViewPayment.Font = New System.Drawing.Font("Arial", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViewPayment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnViewPayment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnViewPayment.ImageOffset = New System.Drawing.Point(15, 0)
+        Me.btnViewPayment.ImageSize = New System.Drawing.Size(50, 50)
+        Me.btnViewPayment.Location = New System.Drawing.Point(215, 97)
+        Me.btnViewPayment.Name = "btnViewPayment"
+        Me.btnViewPayment.Size = New System.Drawing.Size(135, 30)
+        Me.btnViewPayment.TabIndex = 14
+        Me.btnViewPayment.Text = "View Payment"
+        Me.btnViewPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'Label4
+        'lblNewPayments
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(21, 49)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(29, 32)
-        Me.Label4.TabIndex = 100
-        Me.Label4.Text = "0"
+        Me.lblNewPayments.AutoSize = True
+        Me.lblNewPayments.BackColor = System.Drawing.Color.Transparent
+        Me.lblNewPayments.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lblNewPayments.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.lblNewPayments.Location = New System.Drawing.Point(21, 49)
+        Me.lblNewPayments.Name = "lblNewPayments"
+        Me.lblNewPayments.Size = New System.Drawing.Size(29, 32)
+        Me.lblNewPayments.TabIndex = 100
+        Me.lblNewPayments.Text = "0"
         '
         'Label3
         '
@@ -814,8 +708,8 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel2.BorderColor = System.Drawing.Color.White
         Me.Guna2Panel2.BorderRadius = 15
         Me.Guna2Panel2.BorderThickness = 1
-        Me.Guna2Panel2.Controls.Add(Me.Guna2Button1)
-        Me.Guna2Panel2.Controls.Add(Me.Label2)
+        Me.Guna2Panel2.Controls.Add(Me.btnViewOrder)
+        Me.Guna2Panel2.Controls.Add(Me.lblNewOrders)
         Me.Guna2Panel2.Controls.Add(Me.Label1)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel2.FillColor = System.Drawing.Color.White
@@ -824,39 +718,39 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel2.Size = New System.Drawing.Size(344, 143)
         Me.Guna2Panel2.TabIndex = 10
         '
-        'Guna2Button1
+        'btnViewOrder
         '
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 15
-        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Empty
-        Me.Guna2Button1.Font = New System.Drawing.Font("Arial", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button1.ImageOffset = New System.Drawing.Point(15, 0)
-        Me.Guna2Button1.ImageSize = New System.Drawing.Size(50, 50)
-        Me.Guna2Button1.Location = New System.Drawing.Point(217, 97)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(110, 30)
-        Me.Guna2Button1.TabIndex = 13
-        Me.Guna2Button1.Text = "View Order"
-        Me.Guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnViewOrder.BackColor = System.Drawing.Color.Transparent
+        Me.btnViewOrder.BorderRadius = 15
+        Me.btnViewOrder.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnViewOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnViewOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnViewOrder.FillColor = System.Drawing.Color.Empty
+        Me.btnViewOrder.Font = New System.Drawing.Font("Arial", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViewOrder.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnViewOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnViewOrder.ImageOffset = New System.Drawing.Point(15, 0)
+        Me.btnViewOrder.ImageSize = New System.Drawing.Size(50, 50)
+        Me.btnViewOrder.Location = New System.Drawing.Point(217, 97)
+        Me.btnViewOrder.Name = "btnViewOrder"
+        Me.btnViewOrder.Size = New System.Drawing.Size(110, 30)
+        Me.btnViewOrder.TabIndex = 13
+        Me.btnViewOrder.Text = "View Order"
+        Me.btnViewOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'Label2
+        'lblNewOrders
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(18, 49)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(29, 32)
-        Me.Label2.TabIndex = 13
-        Me.Label2.Text = "0"
+        Me.lblNewOrders.AutoSize = True
+        Me.lblNewOrders.BackColor = System.Drawing.Color.Transparent
+        Me.lblNewOrders.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lblNewOrders.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.lblNewOrders.Location = New System.Drawing.Point(18, 49)
+        Me.lblNewOrders.Name = "lblNewOrders"
+        Me.lblNewOrders.Size = New System.Drawing.Size(29, 32)
+        Me.lblNewOrders.TabIndex = 13
+        Me.lblNewOrders.Text = "0"
         '
         'Label1
         '
@@ -884,8 +778,8 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel1.BorderColor = System.Drawing.Color.White
         Me.Guna2Panel1.BorderRadius = 15
         Me.Guna2Panel1.BorderThickness = 1
-        Me.Guna2Panel1.Controls.Add(Me.btnDashboard)
-        Me.Guna2Panel1.Controls.Add(Me.lblNewOrders)
+        Me.Guna2Panel1.Controls.Add(Me.btnViewCustomer)
+        Me.Guna2Panel1.Controls.Add(Me.lblNewCustomers)
         Me.Guna2Panel1.Controls.Add(Me.Label22)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel1.FillColor = System.Drawing.Color.White
@@ -894,39 +788,39 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel1.Size = New System.Drawing.Size(344, 143)
         Me.Guna2Panel1.TabIndex = 8
         '
-        'btnDashboard
+        'btnViewCustomer
         '
-        Me.btnDashboard.BackColor = System.Drawing.Color.Transparent
-        Me.btnDashboard.BorderRadius = 15
-        Me.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDashboard.FillColor = System.Drawing.Color.Empty
-        Me.btnDashboard.Font = New System.Drawing.Font("Arial", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnDashboard.ImageOffset = New System.Drawing.Point(15, 0)
-        Me.btnDashboard.ImageSize = New System.Drawing.Size(50, 50)
-        Me.btnDashboard.Location = New System.Drawing.Point(182, 97)
-        Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Size = New System.Drawing.Size(143, 30)
-        Me.btnDashboard.TabIndex = 12
-        Me.btnDashboard.Text = "View Customer"
-        Me.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnViewCustomer.BackColor = System.Drawing.Color.Transparent
+        Me.btnViewCustomer.BorderRadius = 15
+        Me.btnViewCustomer.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnViewCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnViewCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnViewCustomer.FillColor = System.Drawing.Color.Empty
+        Me.btnViewCustomer.Font = New System.Drawing.Font("Arial", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViewCustomer.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnViewCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnViewCustomer.ImageOffset = New System.Drawing.Point(15, 0)
+        Me.btnViewCustomer.ImageSize = New System.Drawing.Size(50, 50)
+        Me.btnViewCustomer.Location = New System.Drawing.Point(182, 97)
+        Me.btnViewCustomer.Name = "btnViewCustomer"
+        Me.btnViewCustomer.Size = New System.Drawing.Size(143, 30)
+        Me.btnViewCustomer.TabIndex = 12
+        Me.btnViewCustomer.Text = "View Customer"
+        Me.btnViewCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'lblNewOrders
+        'lblNewCustomers
         '
-        Me.lblNewOrders.AutoSize = True
-        Me.lblNewOrders.BackColor = System.Drawing.Color.Transparent
-        Me.lblNewOrders.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.lblNewOrders.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.lblNewOrders.Location = New System.Drawing.Point(16, 49)
-        Me.lblNewOrders.Name = "lblNewOrders"
-        Me.lblNewOrders.Size = New System.Drawing.Size(29, 32)
-        Me.lblNewOrders.TabIndex = 12
-        Me.lblNewOrders.Text = "0"
+        Me.lblNewCustomers.AutoSize = True
+        Me.lblNewCustomers.BackColor = System.Drawing.Color.Transparent
+        Me.lblNewCustomers.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lblNewCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.lblNewCustomers.Location = New System.Drawing.Point(16, 49)
+        Me.lblNewCustomers.Name = "lblNewCustomers"
+        Me.lblNewCustomers.Size = New System.Drawing.Size(29, 32)
+        Me.lblNewCustomers.TabIndex = 12
+        Me.lblNewCustomers.Text = "0"
         '
         'Label22
         '
@@ -1009,6 +903,93 @@ Partial Class frmAnalyticsData
         Me.ColumnHeader14.Text = "Date Paid"
         Me.ColumnHeader14.Width = 250
         '
+        'OverduePayments
+        '
+        Me.OverduePayments.Controls.Add(Me.Panel11)
+        Me.OverduePayments.Location = New System.Drawing.Point(4, 44)
+        Me.OverduePayments.Name = "OverduePayments"
+        Me.OverduePayments.Padding = New System.Windows.Forms.Padding(3)
+        Me.OverduePayments.Size = New System.Drawing.Size(1064, 321)
+        Me.OverduePayments.TabIndex = 6
+        Me.OverduePayments.Text = "Overdue Payments"
+        Me.OverduePayments.UseVisualStyleBackColor = True
+        '
+        'Panel11
+        '
+        Me.Panel11.Controls.Add(Me.ListView1)
+        Me.Panel11.Controls.Add(Me.Panel12)
+        Me.Panel11.Controls.Add(Me.Panel13)
+        Me.Panel11.Controls.Add(Me.Panel14)
+        Me.Panel11.Controls.Add(Me.Panel15)
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel11.Location = New System.Drawing.Point(3, 3)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(1058, 315)
+        Me.Panel11.TabIndex = 2
+        '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView1.FullRowSelect = True
+        Me.ListView1.GridLines = True
+        Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(10, 10)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(1038, 295)
+        Me.ListView1.TabIndex = 48
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Order #"
+        Me.ColumnHeader1.Width = 100
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Company Name"
+        Me.ColumnHeader2.Width = 250
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Status"
+        Me.ColumnHeader3.Width = 250
+        '
+        'Panel12
+        '
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel12.Location = New System.Drawing.Point(10, 305)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(1038, 10)
+        Me.Panel12.TabIndex = 7
+        '
+        'Panel13
+        '
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel13.Location = New System.Drawing.Point(0, 10)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(10, 305)
+        Me.Panel13.TabIndex = 8
+        '
+        'Panel14
+        '
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel14.Location = New System.Drawing.Point(1048, 10)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(10, 305)
+        Me.Panel14.TabIndex = 9
+        '
+        'Panel15
+        '
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel15.Location = New System.Drawing.Point(0, 0)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(1058, 10)
+        Me.Panel15.TabIndex = 6
+        '
         'frmAnalyticsData
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1028,13 +1009,11 @@ Partial Class frmAnalyticsData
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
-        Me.OverduePayment.ResumeLayout(False)
-        Me.Panel11.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
+        Me.OrderUpdates.ResumeLayout(False)
         Me.Panel16.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
+        Me.QuotationUpdates.ResumeLayout(False)
         Me.Panel21.ResumeLayout(False)
-        Me.TabPage3.ResumeLayout(False)
+        Me.RambicPO.ResumeLayout(False)
         Me.Panel26.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Guna2Panel3.ResumeLayout(False)
@@ -1043,6 +1022,8 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel2.PerformLayout()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
+        Me.OverduePayments.ResumeLayout(False)
+        Me.Panel11.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1058,15 +1039,15 @@ Partial Class frmAnalyticsData
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents lblNewOrders As Label
+    Friend WithEvents lblNewCustomers As Label
     Friend WithEvents Label22 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblNewOrders As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents btnDashboard As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents lblNewPayments As Label
+    Friend WithEvents btnViewCustomer As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnViewOrder As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnViewPayment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel9 As Panel
     Friend WithEvents ContactPerson As ColumnHeader
     Friend WithEvents CompanyName As ColumnHeader
@@ -1079,22 +1060,9 @@ Partial Class frmAnalyticsData
     Friend WithEvents ColumnHeader14 As ColumnHeader
     Friend WithEvents Panel10 As Panel
     Friend WithEvents TabControl2 As Guna.UI2.WinForms.Guna2TabControl
-    Friend WithEvents OverduePayment As TabPage
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents Panel11 As Panel
-    Friend WithEvents Panel12 As Panel
-    Friend WithEvents Panel13 As Panel
-    Friend WithEvents Panel14 As Panel
-    Friend WithEvents Panel15 As Panel
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents OrderUpdates As TabPage
+    Friend WithEvents QuotationUpdates As TabPage
+    Friend WithEvents RambicPO As TabPage
     Friend WithEvents Panel16 As Panel
     Friend WithEvents Panel17 As Panel
     Friend WithEvents Panel18 As Panel
@@ -1137,4 +1105,14 @@ Partial Class frmAnalyticsData
     Friend WithEvents Panel33 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel34 As Panel
+    Friend WithEvents OverduePayments As TabPage
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents Panel15 As Panel
 End Class

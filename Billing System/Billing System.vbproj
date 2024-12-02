@@ -176,6 +176,24 @@
     <Compile Include="frmCustomerViewInfo&amp;Order.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmDashboardController.Designer.vb">
+      <DependentUpon>frmDashboardController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashboardController.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashboardPurchaser.Designer.vb">
+      <DependentUpon>frmDashboardPurchaser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashboardPurchaser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashboardSales.Designer.vb">
+      <DependentUpon>frmDashboardSales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashboardSales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmListofOrdersPending.Designer.vb">
       <DependentUpon>frmListofOrdersPending.vb</DependentUpon>
     </Compile>
@@ -474,6 +492,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerViewInfo&amp;Order.resx">
       <DependentUpon>frmCustomerViewInfo&amp;Order.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashboardController.resx">
+      <DependentUpon>frmDashboardController.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashboardPurchaser.resx">
+      <DependentUpon>frmDashboardPurchaser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashboardSales.resx">
+      <DependentUpon>frmDashboardSales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListofOrdersPending.resx">
       <DependentUpon>frmListofOrdersPending.vb</DependentUpon>
