@@ -13,7 +13,6 @@ Public Class frmRestockProduct
 
     Public listofProductIds As New List(Of String)
 
-    Dim newValue As String = 0
     Private Sub frmRestockProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call addtolist(productid)
@@ -264,18 +263,20 @@ Public Class frmRestockProduct
         End If
     End Sub
 
-    Private Sub btnQuantity_Click(sender As Object, e As EventArgs) Handles btnQuantity.Click
+
+    Public newValue As String = 0
+
+
+    Private Sub btnQuantity_Click(sender As Object, e As EventArgs) Handles btnQuantity.Click, ListView1.DoubleClick
         If ListView1.SelectedItems.Count > 0 Then
-            Dim currentValue As String = ListView1.SelectedItems(0).SubItems(2).Text
 
+            frmEnterQuantity.restock = True
             frmEnterQuantity.ShowDialog()
-            'newValue = InputBox("Enter quantity: ", "Restock Item", currentValue)
 
-            If Not String.IsNullOrEmpty(newValue) AndAlso IsNumeric(newValue) Then
-                ListView1.SelectedItems(0).SubItems(2).Text = newValue
-            Else
-                MsgBox("Please enter a valid amount.", MsgBoxStyle.Critical, "Add Product Quantity")
-            End If
+            ListView1.SelectedItems(0).SubItems(2).Text = newValue
+
+            btnQuantity.Enabled = False
+            btnRemove.Enabled = False
         End If
     End Sub
 End Class

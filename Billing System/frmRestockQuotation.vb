@@ -14,6 +14,7 @@ Public Class frmRestockQuotation
         Call connection()
         Call loadQuotation()
         Call loadQuotationImage()
+
         Call checkAccept()
     End Sub
 
@@ -23,7 +24,7 @@ Public Class frmRestockQuotation
                 cn.Open()
             End If
 
-            sql = "SELECT p.Image, p.ProductName, qp.Amount AS Quantity, s.CompanyName, s.Email, q.PONumber FROM tblquotationproducts qp INNER JOIN tblquotation q ON qp.PONumber = q.PONumber INNER JOIN tblproduct p ON qp.ProductID = p.ProductID INNER JOIN tblsupplier s ON qp.SupplierID = s.SupplierID WHERE q.QuotationID = '" & quotationid & "'"
+            sql = "SELECT p.Image, p.ProductName, qp.Amount AS Quantity, s.CompanyName, s.Email, q.PONumber FROM tblquotationproducts qp INNER JOIN tblquotation q ON qp.PONumber = q.PONumber INNER JOIN tblproduct p ON qp.ProductID = p.ProductID INNER JOIN tblsupplier s ON qp.SupplierID = s.SupplierID WHERE q.PONumber = '" & ponum & "'"
             Using cmd As New MySqlCommand(sql, cn)
                 Using dr As MySqlDataReader = cmd.ExecuteReader
                     While dr.Read
@@ -44,7 +45,7 @@ Public Class frmRestockQuotation
 
                         lblSupplierName.Text = dr("CompanyName").ToString
                         email = dr("Email").ToString
-                        lblPo.Text = (("PO #") & dr("PONumber").ToString)
+                        lblPo.Text = dr("PONumber").ToString
                     End While
                 End Using
             End Using
@@ -63,7 +64,7 @@ Public Class frmRestockQuotation
                 cn.Open()
             End If
 
-            sql = "SELECT QuotationIMG FROM tblquotation WHERE QuotationID = '" & quotationid & "'"
+            sql = "SELECT QuotationIMG FROM tblquotation WHERE PONumber = '" & ponum & "' AND Status = 0"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -80,6 +81,12 @@ Public Class frmRestockQuotation
 
                     btnAccept.Enabled = True
                     btnReject.Enabled = True
+
+                End If
+
+                If pbxQuotation.Image Is Nothing Then
+                    btnAccept.Enabled = False
+                    btnReject.Enabled = False
                 End If
             End If
         Catch ex As Exception
@@ -91,7 +98,7 @@ Public Class frmRestockQuotation
         End Try
     End Sub
 
-    Private Sub btnAccept_Click(sender As Object, e As EventArgs)
+    Private Sub btnAccept_Click(sender As Object, e As EventArgs) Handles btnAccept.Click
         Call sendEmail()
         Call insertPayment()
         btnPayment.Enabled = True
@@ -104,7 +111,7 @@ Public Class frmRestockQuotation
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "UPDATE tblquotation SET Status = 2 WHERE QuotationID = '" & quotationid & "'"
+            sql = "UPDATE tblquotation SET Status = 2 WHERE PONumber = '" & ponum & "'"
             cmd = New MySqlCommand(sql, cn)
             cmd.ExecuteReader()
 
@@ -124,11 +131,12 @@ Public Class frmRestockQuotation
                 cn.Open()
             End If
 
-            sql = "INSERT INTO tblpayment(QuotationID, SupplierID) VALUES(@QuotationID, @SupplierID)"
+            sql = "INSERT INTO tblpayment(QuotationID, SupplierID, PONumber) VALUES(@QuotationID, @SupplierID, @PONumber)"
             cmd = New MySqlCommand(sql, cn)
             With cmd
                 .Parameters.AddWithValue("@QuotationID", quotationid)
                 .Parameters.AddWithValue("@SupplierID", supplierid)
+                .Parameters.AddWithValue("@PONumber", ponum)
                 .ExecuteNonQuery()
             End With
         Catch ex As Exception
@@ -140,26 +148,30 @@ Public Class frmRestockQuotation
         End Try
     End Sub
 
-    Private Sub btnReject_Click(sender As Object, e As EventArgs)
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
+    Public reasonMSG As String
+    Private Sub btnReject_Click(sender As Object, e As EventArgs) Handles btnReject.Click
+        If MsgBox("Do you want to reject quotation?", vbYesNo + vbQuestion) = vbYes Then
+            Try
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
 
-            Dim reason As String = InputBox("Enter reason for rejection: ", "Rejection Reason")
+                frmEnterQuantity.reason = True
+                frmEnterQuantity.ShowDialog()
 
-            sql = "UPDATE tblquotation SET Status = 1, QuotationComment = '" & reason & "' WHERE QuotationID = '" & quotationid & "'"
-            cmd = New MySqlCommand(sql, cn)
-            cmd.ExecuteReader()
+                sql = "UPDATE tblquotation SET Status = 1, QuotationComment = '" & reasonMSG & "' WHERE PONumber = '" & ponum & "'"
+                cmd = New MySqlCommand(sql, cn)
+                cmd.ExecuteReader()
 
-            Call sendRejectEmail(reason)
-        Catch ex As Exception
-            MsgBox("An error occurred frmRestockQuotation(btnReject_Click): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
+                Call sendRejectEmail(reasonMSG)
+            Catch ex As Exception
+                MsgBox("An error occurred frmRestockQuotation(btnReject_Click): " & ex.Message)
+            Finally
+                If cn.State = ConnectionState.Open Then
+                    cn.Close()
+                End If
+            End Try
+        End If
     End Sub
 
     Private Sub sendAcceptEmail()
@@ -271,11 +283,51 @@ Public Class frmRestockQuotation
         End If
     End Sub
 
-    Private Sub btnPayment_Click(sender As Object, e As EventArgs)
-        frmSendPayment.quotationid = quotationid
-        frmSendPayment.ShowDialog()
+    Public payment As String
+    Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
+        If pbxPayment.Image IsNot Nothing Then
+            frmEnterQuantity.payment = True
+            frmEnterQuantity.ShowDialog()
+            Call updatePayment()
+        End If
     End Sub
 
+    Private Sub updatePayment()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            If pbxPayment.Image IsNot Nothing Then
+                Dim mstream As New System.IO.MemoryStream()
+                pbxPayment.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim arrImage() As Byte = mstream.GetBuffer
+                mstream.Close()
+
+                sql = "INSERT INTO tblpayment(PONumber, QuotationID, SupplierID, PaymentIMG, DateSubmitted, AmountPaid) VALUES(@PONumber, @QuotationID, @SupplierID, @PaymentIMG, @DateSubmitted, @AmountPaid)"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@PONumber", ponum)
+                    .Parameters.AddWithValue("@QuotationID", quotationid)
+                    .Parameters.AddWithValue("@SupplierID", supplierid)
+                    .Parameters.AddWithValue("@PaymentIMG", arrImage)
+                    .Parameters.AddWithValue("@DateSubmitted", DateTime.Now)
+                    .Parameters.AddWithValue("@AmountPaid", payment)
+                    .ExecuteNonQuery()
+                End With
+
+            Else
+                MsgBox("Please upload an image for payment.", MsgBoxStyle.Critical, "Image Error")
+            End If
+
+        Catch ex As Exception
+            MsgBox("An Error occurred frmRestockQuotation(insertPayment): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub checkAccept()
         Try
             If cn.State <> ConnectionState.Open Then
@@ -304,6 +356,70 @@ Public Class frmRestockQuotation
             End If
         Catch ex As Exception
             MsgBox("An Error occurred frmRestockQuotation(checkAccept): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub loadPaymentIMG()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT PaymentIMG FROM tblpayment WHERE PONumber = '" & ponum & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                Dim pic As Byte() = DirectCast(dr("PaymentIMG"), Byte())
+                If pic.Length > 0 Then
+                    Using ms As New MemoryStream(pic)
+                        pbxPayment.Image = Image.FromStream(ms)
+                    End Using
+
+                    PictureBox2.Visible = False
+                    btnBrowse.Visible = False
+                    btnPayment.Enabled = True
+                Else
+                    pbxPayment.Image = Nothing
+
+                    PictureBox2.Visible = True
+                    btnBrowse.Visible = True
+                    btnPayment.Enabled = False
+
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmRestockQuotation(loadPaymentIMG): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Dim d As OpenFileDialog = New OpenFileDialog
+    Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            d.Filter = "JPEG(*.jpg; *.jpeg)|*.jpg|PNG(*.png)|*.png"
+
+            If d.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                pbxPayment.Image = Image.FromFile(d.FileName)
+
+                btnPayment.Enabled = True
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmRestockQuotation(btnBrowse_Click): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
