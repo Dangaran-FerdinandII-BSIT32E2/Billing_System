@@ -11,9 +11,6 @@ Public Class frmLoginV2
     Public Sub callConnection()
         Call connection()
     End Sub
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Me.Close()
-    End Sub
 
     Private Sub btnCreateAccount_Click(sender As Object, e As EventArgs) Handles btnCreateAccount.Click
         frmRegisterV2.TopLevel = False
@@ -113,5 +110,9 @@ Public Class frmLoginV2
             txtPassword.UseSystemPasswordChar = True
             txtPassword.PasswordChar = "*"
         End If
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
     End Sub
 End Class

@@ -15,28 +15,39 @@ Public Class frmAdminDashboard
     Private mouseDownY As Integer
     'Private isButtonClicked As Boolean = False
 
+    Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call loadNotification()
+        Call loadRoles()
+        'frmNotifNewOrder.Show()
+        btnDashboard.CustomBorderThickness = addThickness
+        btnDashboard.CustomBorderColor = addColor
 
-    Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel2.MouseDown
-        If e.Button = MouseButtons.Left Then
-            isFormBeingDragged = True
-            mouseDownX = e.X
-            mouseDownY = e.Y
-        End If
-    End Sub
-
-    Private Sub Panel2_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel2.MouseUp
-        If e.Button = MouseButtons.Left Then
-            isFormBeingDragged = False
-        End If
-    End Sub
-
-    Private Sub Panel2_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel2.MouseMove
-        If isFormBeingDragged Then
-            Dim temp As Point = New Point()
-            temp.X = Me.Location.X + (e.X - mouseDownX)
-            temp.Y = Me.Location.Y + (e.Y - mouseDownY)
-            Me.Location = temp
-            temp = Nothing
+        'LEVEL OF ACCESS IN DASHBOARD
+        If lblRole.Text = "Sales" Then
+            frmDashboardSales.TopLevel = False
+            panelDashboard.Controls.Add(frmDashboardSales)
+            frmDashboardSales.BringToFront()
+            frmDashboardSales.Dock = DockStyle.Fill
+            frmDashboardSales.Show()
+        ElseIf lblRole.Text = "Purchaser" Then
+            frmDashboardPurchaser.TopLevel = False
+            panelDashboard.Controls.Add(frmDashboardPurchaser)
+            frmDashboardPurchaser.BringToFront()
+            frmDashboardPurchaser.Dock = DockStyle.Fill
+            frmDashboardPurchaser.Show()
+        ElseIf lblRole.Text = "Controller" Then
+            frmDashboardController.TopLevel = False
+            panelDashboard.Controls.Add(frmDashboardController)
+            frmDashboardController.BringToFront()
+            frmDashboardController.Dock = DockStyle.Fill
+            frmDashboardController.Show()
+        Else
+            'ADMIN ROLE
+            frmAnalyticsData.TopLevel = False
+            panelDashboard.Controls.Add(frmAnalyticsData)
+            frmAnalyticsData.BringToFront()
+            frmAnalyticsData.Dock = DockStyle.Fill
+            frmAnalyticsData.Show()
         End If
     End Sub
 
@@ -75,19 +86,6 @@ Public Class frmAdminDashboard
         End Try
     End Sub
 
-    Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call loadNotification()
-        Call loadRoles()
-        'frmNotifNewOrder.Show()
-        btnDashboard.CustomBorderThickness = addThickness
-        btnDashboard.CustomBorderColor = addColor
-
-        frmAnalyticsData.TopLevel = False
-        panelDashboard.Controls.Add(frmAnalyticsData)
-        frmAnalyticsData.BringToFront()
-        frmAnalyticsData.Dock = DockStyle.Fill
-        frmAnalyticsData.Show()
-    End Sub
     Private Sub loadRoles()
         btnSales.Visible = True
         btnOrder.Visible = True
@@ -100,28 +98,37 @@ Public Class frmAdminDashboard
         btnUser.Visible = True
 
         Select Case lblRole.Text
+            'SALES, BILLING, COLLECTION, ORDER, RENTAL MODULE
             Case "Sales"
                 btnSales.Visible = True
                 btnBilling.Visible = True
+                btnCollection.Visible = True
                 btnOrder.Visible = True
                 btnRental.Visible = True
-                btnCustomer.Visible = True
 
-                btnCollection.Visible = False
+                btnCustomer.Visible = False
                 btnSupplier.Visible = False
                 btnProduct.Visible = False
                 btnUser.Visible = False
+
+                Panel1.AutoScroll = False
+
+            'COLLECTION, CUSTOMER, SUPPLIER MODULE
             Case "Controller"
                 btnCollection.Visible = True
                 btnCustomer.Visible = True
+                btnSupplier.Visible = True
 
                 btnSales.Visible = False
                 btnProduct.Visible = False
                 btnOrder.Visible = False
                 btnBilling.Visible = False
                 btnRental.Visible = False
-                btnSupplier.Visible = False
                 btnUser.Visible = False
+
+                Panel1.AutoScroll = False
+
+            'CUSTOMER, SUPPLIER, PRODUCT MODULE
             Case "Purchaser"
                 btnCustomer.Visible = True
                 btnSupplier.Visible = True
@@ -133,11 +140,13 @@ Public Class frmAdminDashboard
                 btnRental.Visible = False
                 btnCollection.Visible = False
                 btnUser.Visible = False
+
+                Panel1.AutoScroll = False
             Case Else
+                'ADMIN ROLE
                 btnSales.Visible = True
                 btnOrder.Visible = True
                 btnRental.Visible = True
-
                 btnBilling.Visible = True
                 btnCollection.Visible = True
                 btnCustomer.Visible = True
@@ -149,11 +158,32 @@ Public Class frmAdminDashboard
 
     'DASHBOARD MODULE
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
-        frmAnalyticsData.TopLevel = False
-        panelDashboard.Controls.Add(frmAnalyticsData)
-        frmAnalyticsData.BringToFront()
-        frmAnalyticsData.Dock = DockStyle.Fill
-        frmAnalyticsData.Show()
+        If lblRole.Text = "Sales" Then
+            frmDashboardSales.TopLevel = False
+            panelDashboard.Controls.Add(frmDashboardSales)
+            frmDashboardSales.BringToFront()
+            frmDashboardSales.Dock = DockStyle.Fill
+            frmDashboardSales.Show()
+        ElseIf lblRole.Text = "Purchaser" Then
+            frmDashboardPurchaser.TopLevel = False
+            panelDashboard.Controls.Add(frmDashboardPurchaser)
+            frmDashboardPurchaser.BringToFront()
+            frmDashboardPurchaser.Dock = DockStyle.Fill
+            frmDashboardPurchaser.Show()
+        ElseIf lblRole.Text = "Controller" Then
+            frmDashboardController.TopLevel = False
+            panelDashboard.Controls.Add(frmDashboardController)
+            frmDashboardController.BringToFront()
+            frmDashboardController.Dock = DockStyle.Fill
+            frmDashboardController.Show()
+        Else
+            'ADMIN ROLE
+            frmAnalyticsData.TopLevel = False
+            panelDashboard.Controls.Add(frmAnalyticsData)
+            frmAnalyticsData.BringToFront()
+            frmAnalyticsData.Dock = DockStyle.Fill
+            frmAnalyticsData.Show()
+        End If
 
         'color button indicator
         btnDashboard.CustomBorderThickness = addThickness
@@ -483,5 +513,29 @@ Public Class frmAdminDashboard
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         frmNotifNewOrder.Show()
+    End Sub
+
+    Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel2.MouseDown
+        If e.Button = MouseButtons.Left Then
+            isFormBeingDragged = True
+            mouseDownX = e.X
+            mouseDownY = e.Y
+        End If
+    End Sub
+
+    Private Sub Panel2_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel2.MouseUp
+        If e.Button = MouseButtons.Left Then
+            isFormBeingDragged = False
+        End If
+    End Sub
+
+    Private Sub Panel2_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel2.MouseMove
+        If isFormBeingDragged Then
+            Dim temp As Point = New Point()
+            temp.X = Me.Location.X + (e.X - mouseDownX)
+            temp.Y = Me.Location.Y + (e.Y - mouseDownY)
+            Me.Location = temp
+            temp = Nothing
+        End If
     End Sub
 End Class

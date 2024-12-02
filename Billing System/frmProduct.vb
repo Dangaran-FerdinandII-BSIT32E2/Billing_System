@@ -189,7 +189,7 @@ Public Class frmProduct
         End Try
     End Sub
 
-    Private Sub btnView_Click(sender As Object, e As EventArgs)
+    Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
         If ListView1.SelectedItems.Count > 0 Then
             frmManageProducts.productid = ListView3.SelectedItems(0).SubItems(7).Text
             frmManageProducts.supplierid = ListView3.SelectedItems(0).SubItems(8).Text
@@ -201,7 +201,6 @@ Public Class frmProduct
         If ListView1.SelectedItems.Count > 0 Then
             frmRestockProduct.productid = ListView1.SelectedItems(0).SubItems(7).Text
             frmRestockProduct.supplierid = ListView1.SelectedItems(0).SubItems(8).Text
-
             frmRestockProduct.ShowDialog()
         End If
     End Sub
