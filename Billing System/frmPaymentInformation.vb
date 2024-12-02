@@ -166,7 +166,7 @@ Public Class frmPaymentInformation
             d.Filter = "JPEG(*.jpg; *.jpeg)|*.jpg|PNG(*.png)|*.png"
 
             If d.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                pbxDelivery.Image = Image.FromFile(d.FileName)
+                pbxPostDatedCheck.Image = Image.FromFile(d.FileName)
 
                 btnCancel.Enabled = True
                 ' txtDueDate.Enabled = True
@@ -194,7 +194,7 @@ Public Class frmPaymentInformation
                 btnSave.Enabled = False
                 btnCancel.Enabled = False
 
-                pbxDelivery.Image = Nothing
+                pbxPostDatedCheck.Image = Nothing
 
                 Call loadPayment()
             End If
@@ -222,7 +222,7 @@ Public Class frmPaymentInformation
                 btnSave.Enabled = False
                 btnCancel.Enabled = False
 
-                pbxDelivery.Image = Nothing
+                pbxPostDatedCheck.Image = Nothing
 
                 Call loadPayment()
             End If
@@ -255,7 +255,7 @@ Public Class frmPaymentInformation
                     Dim pic As Byte() = DirectCast(dr("imgPayment"), Byte())
                     If pic.Length > 0 Then
                         Using ms As New MemoryStream(pic)
-                            pbxDelivery.Image = Image.FromStream(ms)
+                            pbxPostDatedCheck.Image = Image.FromStream(ms)
                         End Using
 
                         collectionid = dr("CollectionID").ToString
@@ -276,7 +276,7 @@ Public Class frmPaymentInformation
 
     Private Sub frmPaymentInformation_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
-            pbxDelivery.Image = Nothing
+            pbxPostDatedCheck.Image = Nothing
 
             'btnSave.Enabled = False
             'txtDueDate.Enabled = False
