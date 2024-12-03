@@ -53,8 +53,8 @@ Public Class frmPrintSalesInvoice
 
         Try
             With ReportViewer1.LocalReport
-                '.ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
-                .ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
+                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
+                '.ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
                 .DataSources.Clear()
             End With
 

@@ -2,18 +2,20 @@
     Public restock As Boolean? = False
     Public reason As Boolean? = False
     Public payment As Boolean? = False
+    Public walkin As Boolean? = False
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
 
     Private Sub btnOkay_Click(sender As Object, e As EventArgs) Handles btnOkay.Click
-        If restock Or payment Then
-
+        If restock Or payment Or walkin Then
             If IsNumeric(String.IsNullOrWhiteSpace(txtQuantiyProducts.Text)) Then
                 If restock Then
                     frmRestockProduct.newValue = txtQuantiyProducts.Text
                 ElseIf payment Then
                     frmRestockQuotation.payment = txtQuantiyProducts.Text
+                ElseIf walkin Then
+                    frmAddCustomerWalkin.newValue = txtQuantiyProducts.Text
                 End If
             Else
                 MsgBox("Please enter a valid amount.", MsgBoxStyle.Critical, "Input Error")
@@ -34,6 +36,8 @@
         If e.CloseReason = CloseReason.UserClosing Then
             restock = Nothing
             reason = Nothing
+            walkin = Nothing
+            payment = Nothing
             txtQuantiyProducts.Clear()
         End If
     End Sub

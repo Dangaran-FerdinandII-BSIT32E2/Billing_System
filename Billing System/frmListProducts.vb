@@ -5,12 +5,16 @@ Public Class frmListProducts
 
     Public supplierid As String = Nothing
 
+    Public walkin As Boolean? = False
+
     Public listofProductIds As New List(Of String)
     Private Sub frmListProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        If supplierid Then
+        If Not IsNothing(supplierid) Then
             Call rearrangeListView()
             Call loadReorders()
+        ElseIf walkin Then
+            Call loadWalkin()
         Else
             Call loadProducts()
         End If
@@ -87,7 +91,7 @@ Public Class frmListProducts
                 x.SubItems.Add(dr("PurchasePrice").ToString())
                 x.SubItems.Add(dr("SellingPrice").ToString())
                 x.SubItems.Add(dr("Amount").ToString())
-                x.SubItems.Add(dr("ProductID").ToString()) '6
+                x.SubItems.Add(dr("ProductID").ToString()) '6 OR '7
                 x.SubItems.Add(dr("SupplierID").ToString())
 
                 ListView1.Items.Add(x)
@@ -144,6 +148,93 @@ Public Class frmListProducts
             End If
         End Try
     End Sub
+    Private Sub loadWalkin()
+        If listofProductIds.Count = 0 Then
+            loadWalkinProducts()
+        Else
+            loadOnlyWalkins()
+        End If
+    End Sub
+
+    Private Sub loadWalkinProducts()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+            sql = "SELECT * FROM qryproducts ORDER BY ProductName ASC"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            Dim x As ListViewItem
+            ListView1.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("ProductName").ToString())
+                x.SubItems.Add(dr("CompanyName").ToString())
+                x.SubItems.Add(dr("Description").ToString())
+                x.SubItems.Add(dr("Category").ToString())
+                x.SubItems.Add(dr("Manufacturer").ToString())
+                x.SubItems.Add(dr("ModelNumber").ToString())
+                x.SubItems.Add(dr("PurchasePrice").ToString())
+                x.SubItems.Add(dr("SellingPrice").ToString()) '7
+                x.SubItems.Add(dr("ProductID").ToString())
+                x.SubItems.Add(dr("SupplierID").ToString())
+                ListView1.Items.Add(x)
+            Loop
+        Catch ex As Exception
+            MsgBox("An error occurred frmListProducts(loadProducts): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub loadOnlyWalkins()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+            sql = "SELECT * FROM qryproducts ORDER BY ProductName ASC"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            Dim x As ListViewItem
+            ListView1.Items.Clear()
+
+            Do While dr.Read = True
+                If Not listofProductIds.Contains(dr("ProductID").ToString()) Then
+                    x = New ListViewItem(dr("ProductName").ToString())
+                    x.SubItems.Add(dr("CompanyName").ToString())
+                    x.SubItems.Add(dr("Description").ToString())
+                    x.SubItems.Add(dr("Category").ToString())
+                    x.SubItems.Add(dr("Manufacturer").ToString())
+                    x.SubItems.Add(dr("ModelNumber").ToString())
+                    x.SubItems.Add(dr("PurchasePrice").ToString())
+                    x.SubItems.Add(dr("SellingPrice").ToString()) '7
+                    x.SubItems.Add(dr("ProductID").ToString())
+                    x.SubItems.Add(dr("SupplierID").ToString())
+                    ListView1.Items.Add(x)
+                End If
+            Loop
+        Catch ex As Exception
+            MsgBox("An error occurred frmListProducts(loadProducts): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
     Private Sub rearrangeListView()
         ListView1.Columns.Clear()
 
@@ -156,8 +247,10 @@ Public Class frmListProducts
     End Sub
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         If ListView1.SelectedItems.Count > 0 Then
-            If supplierid Then
+            If Not IsNothing(supplierid) Then
                 frmRestockProduct.addtolist(ListView1.SelectedItems(0).SubItems(6).Text)
+            ElseIf walkin Then
+                frmAddCustomerWalkin.addtolist(ListView1.SelectedItems(0).SubItems(8).Text)
             Else
                 frmManagePOS.txtProduct.Text = ListView1.SelectedItems(0).SubItems(0).Text
                 frmManagePOS.txtAmt.Text = ListView1.SelectedItems(0).SubItems(7).Text
@@ -212,4 +305,13 @@ Public Class frmListProducts
 
         Return dt
     End Function
+
+    Private Sub frmListProducts_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+
+            supplierid = Nothing
+            walkin = False
+
+        End If
+    End Sub
 End Class
