@@ -10,12 +10,9 @@ Public Class frmListofOrdersPending
         Call connection()
         btnAddNew.Visible = False
 
-        If manageCollection Or manageBilling Then
+        If manageCollection Or manageBilling Then 'if searching on billing/collection module
             Call loadCollections()
-        Else
-            If manageOrder Then
-                btnAddNew.Visible = True
-            End If
+        Else 'if search on order or sales module
             Call loadCustomers()
         End If
     End Sub
@@ -75,7 +72,7 @@ Public Class frmListofOrdersPending
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN( SELECT o.CustomerID, COUNT(o.OrderID) AS OrderCount, o.DateOrdered, o.OrderID, o.OrderListID, o.DeliveryAddress FROM tblorder o LEFT JOIN tblbillinvoice b ON o.OrderID = b.OrderID WHERE o.Status = 1 AND b.OrderID IS NULL GROUP BY o.OrderID, o.CustomerID, o.DateOrdered, o.OrderListID, o.DeliveryAddress ) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN( SELECT o.CustomerID, COUNT(o.OrderID) AS OrderCount, DATE_FORMAT(o.DateOrdered, '%M %d, %Y') AS DateOrdered, o.OrderID, o.OrderListID, o.DeliveryAddress FROM tblorder o LEFT JOIN tblbillinvoice b ON o.OrderID = b.OrderID WHERE o.Status = 1 AND b.OrderID IS NULL GROUP BY o.CustomerID ) o ON c.CustomerID = o.CustomerID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -90,12 +87,12 @@ Public Class frmListofOrdersPending
                 x.SubItems.Add(dr("OrderCount").ToString())
                 x.SubItems.Add(dr("Address").ToString())
                 x.SubItems.Add(dr("DeliveryAddress").ToString()) '6
-                x.SubItems.Add(dr("CompanyName").ToString()) 'business style
-                x.SubItems.Add(dr("Status").ToString())
-                x.SubItems.Add(dr("DateOrdered").ToString())
-                x.SubItems.Add(dr("CustomerID").ToString()) '10
-                x.SubItems.Add(dr("OrderID").ToString()) '11
-                x.SubItems.Add(dr("OrderListID").ToString()) '12
+                x.SubItems.Add(dr("CompanyName").ToString()) 'business style '7
+                x.SubItems.Add(dr("DateOrdered").ToString()) '8
+                x.SubItems.Add(dr("CustomerID").ToString()) '9
+                x.SubItems.Add(dr("OrderID").ToString()) '10
+                x.SubItems.Add(dr("OrderListID").ToString()) '11
+                x.SubItems.Add(dr("TIN").ToString) '12
                 ListView1.Items.Add(x)
             Loop
             dr.Close()
@@ -129,11 +126,12 @@ Public Class frmListofOrdersPending
                     frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
 
                 Else
-                    frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(10).Text
-                    frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(11).Text
+                    frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(9).Text
+                    frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(10).Text
                     frmManageSalesV2.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
                     frmManageSalesV2.txtAddress.Text = ListView1.SelectedItems(0).SubItems(5).Text
                     frmManageSalesV2.txtDeliveryAddress.Text = ListView1.SelectedItems(0).SubItems(6).Text
+                    frmManageSalesV2.txtTIN.Text = ListView1.SelectedItems(0).SubItems(12).Text
                     Call frmManageSalesV2.loadBilling()
                 End If
             End If
@@ -183,7 +181,7 @@ Public Class frmListofOrdersPending
     End Sub
 
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "SELECT CompanyName, LastName, FirstName, PhoneNumber, Email, Status FROM tblcustomer WHERE CustomerID > 2 AND (CompanyName LIKE ? OR LastName LIKE ? OR FirstName LIKE ?) AND CustomerID NOT IN (SELECT DISTINCT CustomerID FROM tblbilling)"
+        sql = "SELECT c.CompanyName, CONCAT(c.LastName, ', ', c.FirstName) AS ContactPerson, c.PhoneNumber, c.Email, COUNT(o.OrderID) AS PendingOrders, c.Address, o.DeliveryAddress, c.CompanyName, o.DateOrdered FROM tblorder o INNER JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE o.Status = 1 AND (c.CompanyName LIKE ? OR c.LastName LIKE ? OR c.FirstName LIKE ?) GROUP BY o.OrderID"
 
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))

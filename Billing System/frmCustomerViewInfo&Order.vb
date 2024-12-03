@@ -17,15 +17,87 @@ Public Class frmCustomerViewInfo_Order
         Call connection()
         Call loadInformation()
         Call loadImage()
-        Call loadOrderListView()
+        Call loadCompanyImage()
         btnSave.Enabled = False
+
         TabControl2.SelectedTab = TabPage1
+
+        'ORDER TAB
+
+        DateFilter1.Text = DateTime.Now.AddDays(-5)
+        startDate = DateFilter1.Value.ToString("yyyy-MM-dd")
+
+        DateFilter2.Text = DateTime.Now.AddDays(+5)
+        endDate = DateFilter2.Value.ToString("yyyy-MM-dd")
+
+        Call loadOrders(startDate, endDate)
     End Sub
 
     Private Sub frmClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
             'clear all
         End If
+    End Sub
+
+    Private Sub loadOrders(startDate As String, endDate As String)
+        Try
+            Dim startDateTime As DateTime
+            Dim endDateTime As DateTime
+
+            If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
+           DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
+
+                sql = "SELECT OrderID, SUM(Amount) AS Amount, Status, DATE_FORMAT(DateOrdered, '%M %d, %Y') AS OrderedDate, CustomerID FROM tblorder WHERE CustomerID = '" & lblCustID.Text & "' AND DateOrdered BETWEEN '" & startDateTime.ToString("yyyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyyy-MM-dd") & "' GROUP BY OrderID ORDER BY OrderID ASC"
+                cmd = New MySqlCommand(sql, cn)
+
+                If Not dr.IsClosed Then
+                    dr.Close()
+                End If
+
+                dr = cmd.ExecuteReader
+                Dim x As ListViewItem
+                ListView1.Items.Clear()
+
+                Do While dr.Read = True
+                    x = New ListViewItem(dr("OrderID").ToString())
+                    x.SubItems.Add(dr("Amount").ToString())
+                    x.SubItems.Add(GetStatusText(dr("Status").ToString()))
+                    x.SubItems.Add(dr("OrderedDate").ToString())
+                    x.SubItems.Add(dr("CustomerID").ToString())
+
+                    If dr("Status") = 3 Then
+                        x.ForeColor = Color.Green
+                    Else
+                        x.ForeColor = Color.Black
+                    End If
+
+
+                    ListView1.Items.Add(x)
+                Loop
+
+                dr.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageBilling(loadOrders): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub DateFilter1_ValueChanged(sender As Object, e As EventArgs) Handles DateFilter1.ValueChanged
+        startDate = DateFilter1.Text
+        Call loadOrders(startDate, endDate)
+    End Sub
+
+    Private Sub DateFilter2_ValueChanged(sender As Object, e As EventArgs) Handles DateFilter2.ValueChanged
+        endDate = DateFilter2.Text
+        Call loadOrders(startDate, endDate)
     End Sub
     Private Sub loadImage()
         Try
@@ -58,7 +130,7 @@ Public Class frmCustomerViewInfo_Order
             End If
 
         Catch ex As Exception
-            MsgBox("An error occurred frmQuotation(loadImage): " & ex.Message)
+            MsgBox("An error occurred frmCustomerViewInfo_Order(loadImage): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -66,33 +138,43 @@ Public Class frmCustomerViewInfo_Order
         End Try
     End Sub
 
-    Private Sub loadOrderListView()
+    Private Sub loadCompanyImage()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
-        orderid = "lblOrderID"
-        ListView1.Columns.Clear()
-        ListView1.Columns.Add("OrderID")
-        ListView1.Columns.Add("Price")
-        ListView1.Columns.Add("Availability")
-        ListView1.Columns.Add("Status")
-        ListView1.Columns.Add("Ordered Date")
+            sql = "SELECT GovernmentID FROM tblcustomer WHERE CustomerID = '" & lblCustID.Text & "'"
+            cmd = New MySqlCommand(sql, cn)
 
-        'widths
-        ListView1.Columns(0).Width = 150
-        ListView1.Columns(1).Width = 150
-        ListView1.Columns(2).Width = 150
-        ListView1.Columns(3).Width = 150
-        ListView1.Columns(4).Width = 300
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
 
-        btnViewOrder.Text = "View"
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                If dr("GovernmentID") IsNot DBNull.Value AndAlso dr("GovernmentID") IsNot Nothing Then
+                    Dim pic As Byte() = DirectCast(dr("GovernmentID"), Byte())
+                    If pic.Length > 0 Then
+                        Using ms As New MemoryStream(pic)
+                            pbxCompanyID.Image = Image.FromStream(ms)
+                        End Using
 
-        DateFilter1.Text = DateTime.Now.AddDays(-5)
-        startDate = DateFilter1.Text
+                    Else
+                        pbxCompanyID.Image = Nothing
+                    End If
+                End If
+            Else
+                pbxCompanyID.Image = Nothing
+            End If
 
-        DateFilter2.Text = DateTime.Now.AddDays(+5)
-        endDate = DateFilter2.Text
-
-
-        Call loadOrder(startDate, endDate)
+        Catch ex As Exception
+            MsgBox("An error occurred frmCustomerViewInfo_Order(loadCompanyImage): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
     'Customer Tab
     Private Sub loadInformation()
@@ -100,6 +182,7 @@ Public Class frmCustomerViewInfo_Order
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
+
             sql = "SELECT * FROM tblcustomer WHERE CustomerID = '" & lblCustID.Text & "'"
             cmd = New MySqlCommand(sql, cn)
 
@@ -132,109 +215,18 @@ Public Class frmCustomerViewInfo_Order
         End Try
     End Sub
 
-    'Order Tab
-    Private Sub loadOrder(startDate As String, endDate As String)
-        If btnViewOrder.Text = "View" Then
-            Try
-
-                Dim startDateTime As DateTime
-                Dim endDateTime As DateTime
-
-                If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
-               DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                    If cn.State <> ConnectionState.Open Then
-                        cn.Open()
-                    End If
-
-                    sql = "SELECT *, SUM(Amount) AS TotalPrice, MIN(Availability) AS Available FROM qryorder WHERE CustomerID = '" & lblCustID.Text & "' AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' GROUP BY OrderID"
-                    cmd = New MySqlCommand(sql, cn)
-
-                    If Not dr.IsClosed Then
-                        dr.Close()
-                    End If
-
-                    dr = cmd.ExecuteReader
-                    Dim x As ListViewItem
-                    ListView1.Items.Clear()
-
-                    Do While dr.Read = True
-                        x = New ListViewItem(dr("OrderID").ToString())
-                        x.SubItems.Add(dr("TotalPrice").ToString())
-                        x.SubItems.Add(If(dr("Available"), "Yes", "No")) '2
-                        x.SubItems.Add(GetStatusText(dr("Status").ToString)) '3
-                        x.SubItems.Add(dr("OrderDate").ToString()) ' 4
-
-                        ' Check if the status is "Urgent" and set the text color accordingly
-                        If x.SubItems(3).Text = "Priority Order" Then
-                            x.ForeColor = Color.Red
-                        End If
-                        ListView1.Items.Add(x)
-                    Loop
-                    dr.Close()
-                End If
-            Catch ex As Exception
-                MsgBox("An error occurred frmCustomerViewInfo_Order(loadOrder): " & ex.Message)
-            Finally
-                If cn.State = ConnectionState.Open Then
-                    cn.Close()
-                End If
-            End Try
-        End If
-    End Sub
-
     Private Function GetStatusText(status As String) As String
         Select Case status
             Case "5" : Return "Cancelled Order"
             Case "4" : Return "Priority Order"
             Case "3" : Return "Delivered"
             Case "2" : Return "Ready for Shipment"
-            Case "1" : Return "Item on Hand"
-            Case Else : Return "Item on Process"
+            Case "1" : Return "On Hand"
+            Case Else : Return "On Process"
         End Select
     End Function
 
-    Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs) Handles DateFilter1.ValueChanged
-        startDate = DateFilter1.Text
-        loadOrder(startDate, endDate)
-    End Sub
-
-    Private Sub DateFilter2_TextChanged(sender As Object, e As EventArgs) Handles DateFilter2.ValueChanged
-        endDate = DateFilter2.Text
-        loadOrder(startDate, endDate)
-    End Sub
-
-
-    Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-
-            If ListView1.SelectedItems.Count > 0 Or orderid IsNot Nothing Then
-                frmManageSalesV2.lblCustID.Text = lblCustID.Text
-                frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(0).Text
-                Call loadActivity()
-
-                Me.Close()
-                frmManageSalesV2.TopLevel = False
-                frmAdminDashboard.panelDashboard.Controls.Add(frmManageSalesV2)
-                frmManageSalesV2.BringToFront()
-                frmManageSalesV2.Dock = DockStyle.Fill
-                frmManageSalesV2.Show()
-            Else
-                MsgBox("Please select an order!", MsgBoxStyle.Critical, "Insert Error")
-            End If
-
-        Catch ex As Exception
-            MsgBox("An error occurred frmCustomerViewInfo_Order(btnInsert): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
-    End Sub
-
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs)
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         btnSave.Enabled = True
         btnEdit.Enabled = False
 
@@ -267,7 +259,7 @@ Public Class frmCustomerViewInfo_Order
         txtEmailAddress.Enabled = False
         cboAcctStatus.Enabled = False
     End Sub
-    Private Sub btnSave_Click(sender As Object, e As EventArgs)
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             Dim filled As Boolean = True
 
@@ -342,7 +334,7 @@ Public Class frmCustomerViewInfo_Order
                     Call loadInformation()
 
                     If acctstatus Then
-                        Call sendEmail()
+                        Call sendActiveEmail()
                     End If
 
                     frmManageCustomerV3.cboSalesman.SelectedIndex = 0
@@ -359,7 +351,7 @@ Public Class frmCustomerViewInfo_Order
             MsgBox("An error occurred frmManageUsers(btnSave): " & ex.Message)
         End Try
     End Sub
-    Private Sub sendEmail()
+    Private Sub sendActiveEmail()
         Try
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
@@ -369,7 +361,7 @@ Public Class frmCustomerViewInfo_Order
 
             Using memoryStream As New MemoryStream()
 
-                mail.Body = "Congratulations! Your account has been updated." & vbCrLf & "Your account is now ACTIVE. Please login to continue using our services."
+                mail.Body = "Congratulations!" & vbCrLf & "Your account is now ACTIVE. Please login to continue using our services."
                 smtpServer.Port = 587
                 smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua")
                 smtpServer.EnableSsl = True
@@ -379,100 +371,13 @@ Public Class frmCustomerViewInfo_Order
             MsgBox("An error occurred frmPrintBillingInvoice(btnEmail): " & ex.Message)
         End Try
     End Sub
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         btnSave.Enabled = False
 
         btnEdit.Enabled = True
 
         Call disableAll()
         Call loadInformation()
-    End Sub
-
-    Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-
-            If btnViewOrder.Text = "View" Then
-                Call viewOrders()
-            Else
-                ListView1.Columns.Clear()
-                ListView1.Columns.Add("OrderID")
-                ListView1.Columns.Add("Price")
-                ListView1.Columns.Add("Availability")
-                ListView1.Columns.Add("Status")
-                ListView1.Columns.Add("Ordered Date")
-
-                'widths
-                ListView1.Columns(0).Width = 150
-                ListView1.Columns(1).Width = 150
-                ListView1.Columns(2).Width = 150
-                ListView1.Columns(3).Width = 150
-                ListView1.Columns(4).Width = 300
-
-                btnViewOrder.Text = "View"
-
-                Call loadOrder(startDate, endDate)
-            End If
-
-        Catch ex As Exception
-            MsgBox("An error occurred frmCustomerViewInfo_Order(btnViewOrder): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
-    End Sub
-
-    Private Sub viewOrders()
-        Try
-
-            If ListView1.SelectedItems.Count > 0 Then
-
-                ListView1.Columns.Clear()
-                ListView1.Columns.Add("Unit")
-                ListView1.Columns.Add("Description")
-                ListView1.Columns.Add("Quantity")
-                ListView1.Columns.Add("Amount")
-                ListView1.Columns.Add("Availability")
-                ListView1.Columns.Add("Status")
-
-                'widths
-                ListView1.Columns(0).Width = 200
-                ListView1.Columns(1).Width = 200
-                ListView1.Columns(2).Width = 200
-                ListView1.Columns(3).Width = 200
-                ListView1.Columns(4).Width = 200
-                ListView1.Columns(5).Width = 200
-
-                sql = "SELECT * FROM qryorder WHERE OrderID = '" & lblOrderID.Text & "'"
-                cmd = New MySqlCommand(sql, cn)
-
-                If Not dr.IsClosed Then
-                    dr.Close()
-                End If
-
-                dr = cmd.ExecuteReader
-                Dim x As ListViewItem
-                ListView1.Items.Clear()
-
-                Do While dr.Read = True
-                    x = New ListViewItem(dr("Unit").ToString())
-                    x.SubItems.Add(dr("Description").ToString())
-                    x.SubItems.Add(dr("Quantity").ToString())
-                    x.SubItems.Add(dr("Amount").ToString())
-                    x.SubItems.Add(If(dr("Availability").ToString() = "True", "Yes", "No")) '2
-                    x.SubItems.Add(GetStatusText(dr("Status").ToString))
-                    x.SubItems.Add(dr("OrderListID").ToString())
-                    ListView1.Items.Add(x)
-                Loop
-
-                btnViewOrder.Text = "Back"
-            End If
-        Catch ex As Exception
-            MsgBox("An error occurred frmCustomerViewInfo_Order(viewOrders): " & ex.Message)
-        End Try
     End Sub
     Private Sub loadActivity()
         Try
@@ -498,7 +403,7 @@ Public Class frmCustomerViewInfo_Order
         End Try
     End Sub
 
-    Private Sub btnActive_Click(sender As Object, e As EventArgs)
+    Private Sub btnActive_Click(sender As Object, e As EventArgs) Handles btnActive.Click
         If MsgBox("Do you want to activate account?", vbQuestion + vbYesNo, "Activate Status") = vbYes Then
             Try
                 If cn.State <> ConnectionState.Open Then
@@ -509,7 +414,7 @@ Public Class frmCustomerViewInfo_Order
                 cmd = New MySqlCommand(sql, cn)
                 cmd.ExecuteNonQuery()
 
-                Call sendEmail()
+                Call sendActiveEmail()
 
                 cboAcctStatus.Text = "Active"
 
@@ -525,11 +430,162 @@ Public Class frmCustomerViewInfo_Order
         End If
     End Sub
 
-    Private Sub cboAcctStatus_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    Private Sub cboAcctStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAcctStatus.SelectedIndexChanged
         If cboAcctStatus.Text = "Active" Then
+
             btnActive.Enabled = False
-        Else
+            btnDeactive.Enabled = True
+
+        ElseIf cboAcctStatus.Text = "Inactive" Then
+
             btnActive.Enabled = True
+            btnDeactive.Enabled = False
+
+        End If
+    End Sub
+
+    Private Sub btnDeactive_Click(sender As Object, e As EventArgs) Handles btnDeactive.Click
+        If MsgBox("Do you want to deactivate account?", vbQuestion + vbYesNo, "Deactivate Status") = vbYes Then
+            Try
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
+
+                sql = "UPDATE tblcustomer SET AcctStatus = 0 WHERE CustomerID = '" & lblCustID.Text & "'"
+                cmd = New MySqlCommand(sql, cn)
+                cmd.ExecuteNonQuery()
+
+                Call sendDeactivateEmail()
+
+                cboAcctStatus.Text = "Inactive"
+
+                frmManageCustomerV3.cboSalesman.SelectedIndex = 0
+                Call frmManageCustomerV3.loadCustomers()
+            Catch ex As Exception
+                MsgBox("An error occurred frmCustomerViewInfo_Order(btnDeactive_Click): " & ex.Message)
+            Finally
+                If cn.State = ConnectionState.Open Then
+                    cn.Close()
+                End If
+            End Try
+        End If
+    End Sub
+
+    Private Sub sendDeactivateEmail()
+        Try
+            Dim mail As New MailMessage()
+            Dim smtpServer As New SmtpClient("smtp.gmail.com")
+            mail.From = New MailAddress("dangaranferds@gmail.com")
+            mail.To.Add(txtEmailAddress.Text)
+            mail.Subject = "NOTICE ON UPDATE OF ACCOUNT STATUS"
+
+            Using memoryStream As New MemoryStream()
+
+                mail.Body = "Your account has been DEACTIVATED. Please login to continue using our services."
+                smtpServer.Port = 587
+                smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua")
+                smtpServer.EnableSsl = True
+                smtpServer.Send(mail)
+            End Using
+        Catch ex As Exception
+            MsgBox("An error occurred frmCustomerViewInfo_Order(sendDeactivateEmail): " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click, ListView1.DoubleClick
+        If btnViewOrder.Text = "View" Then
+
+            Call productsListView()
+            Call loadSpecificOrder()
+            btnBack.Enabled = True
+            btnViewOrder.Enabled = False
+
+        End If
+    End Sub
+
+    Private Sub productsListView()
+        ListView1.Clear()
+
+        ListView1.Columns.Add("Product Name")
+        ListView1.Columns.Add("Supplier Name")
+        ListView1.Columns.Add("Selling Price")
+        ListView1.Columns.Add("Quantity")
+        ListView1.Columns.Add("Total Price")
+
+        ListView1.Columns(0).Width = 150
+        ListView1.Columns(1).Width = 150
+        ListView1.Columns(2).Width = 150
+        ListView1.Columns(3).Width = 150
+        ListView1.Columns(4).Width = 150
+    End Sub
+
+    Private Sub ordersListView()
+        ListView1.Clear()
+
+        ListView1.Columns.Add("OrderID")
+        ListView1.Columns.Add("Price")
+        ListView1.Columns.Add("Status")
+        ListView1.Columns.Add("Ordered Date")
+
+        ListView1.Columns(0).Width = 150
+        ListView1.Columns(1).Width = 150
+        ListView1.Columns(2).Width = 300
+        ListView1.Columns(3).Width = 300
+    End Sub
+    Private Sub loadSpecificOrder()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT s.CompanyName, p.ProductName, p.SellingPrice, o.Quantity, o.Amount FROM tblorder o INNER JOIN tblproduct p ON o.ProductID = p.ProductID INNER JOIN tblsupplier s on s.SupplierID = p.SupplierID WHERE o.OrderID = '" & orderid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            Dim x As ListViewItem
+            ListView1.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("ProductName").ToString)
+                x.SubItems.Add(dr("CompanyName").ToString)
+                x.SubItems.Add(dr("SellingPrice").ToString)
+                x.SubItems.Add(dr("Quantity").ToString)
+                x.SubItems.Add(dr("Amount").ToString)
+
+                ListView1.Items.Add(x)
+
+            Loop
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("An error occurred frmCustomerViewInfo_Order(loadSpecificOrder): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+        If ListView1.SelectedItems.Count > 0 And btnViewOrder.Text = "View" Then
+            orderid = ListView1.SelectedItems(0).SubItems(0).Text
+            btnViewOrder.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        If btnViewOrder.Enabled = False Then
+
+            orderid = Nothing
+            Call ordersListView()
+            Call loadOrders(startDate, endDate)
+
+            btnViewOrder.Enabled = False
+            btnBack.Enabled = False
         End If
     End Sub
 End Class

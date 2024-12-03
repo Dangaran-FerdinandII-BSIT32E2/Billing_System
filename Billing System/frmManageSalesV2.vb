@@ -260,11 +260,11 @@ Public Class frmManageSalesV2
 
             For Each term In cboTerms.Text
                 Select Case term
-                    Case "day"
+                    Case "Days"
                         adjusteddate = DateTime.Now.AddDays(txtDays.Text).ToString
-                    Case "month"
+                    Case "Months"
                         adjusteddate = DateTime.Now.AddMonths(txtDays.Text).ToString
-                    Case "year"
+                    Case "Year"
                         adjusteddate = DateTime.Now.AddYears(txtDays.Text).ToString
                 End Select
             Next
