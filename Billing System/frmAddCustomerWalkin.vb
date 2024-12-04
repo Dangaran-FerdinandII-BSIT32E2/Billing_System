@@ -9,10 +9,13 @@ Public Class frmAddCustomerWalkin
     Public orderid As String = 0
     Public walkinid As String = 0
 
+    Dim PONo As String = 0
+
     Private Sub frmAddCustomerWalkin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadOrderID()
-        Call loadWalkinID
+        Call loadWalkinID()
+        PONo = getPO()
     End Sub
 
     Private Sub loadOrderID()
@@ -95,7 +98,7 @@ Public Class frmAddCustomerWalkin
             ListView1.Items.Clear()
 
             For Each productid As String In listofProductIds
-                sql = "SELECT p.ProductID, p.ProductName, p.Image FROM tblproduct p WHERE p.ProductID = '" & productid & "'"
+                sql = "SELECT p.ProductID, p.ProductName, p.Image, p.SellingPrice FROM tblproduct p WHERE p.ProductID = '" & productid & "'"
                 Using cmd As New MySqlCommand(sql, cn)
                     Using dr As MySqlDataReader = cmd.ExecuteReader
                         While dr.Read
@@ -111,6 +114,7 @@ Public Class frmAddCustomerWalkin
                                 x.SubItems.Add(dr("ProductName").ToString)
                                 x.SubItems.Add(newValue)
                                 x.SubItems.Add(dr("ProductID").ToString) '3
+                                x.SubItems.Add(dr("SellingPrice").ToString) '4
 
                                 ListView1.Items.Add(x)
 
@@ -308,30 +312,66 @@ Public Class frmAddCustomerWalkin
             End If
 
             For Each item As ListViewItem In ListView1.Items
-                sql = "INSERT INTO tblorder(OrderID, CustomerID, ProductID, Quantity, DateOrdered, Amount, Status, isRental) VALUES(@OrderID, @CustomerID, @ProductID, @Quantity, @DateOrdered, @Amount, @Status, @isRental)"
+                Dim amount As Double = Convert.ToDouble(item.SubItems(4).Text * item.SubItems(2).Text)
+                sql = "INSERT INTO tblorder(OrderID, CustomerID, ProductID, Quantity, Amount, Status, DateOrdered, DeliveryAddress, PONo, isRental, RentDays, RentDueDate) " &
+                        "VALUES(@OrderID, @CustomerID, @ProductID, @Quantity, @Amount, @Status, @DateOrdered, @DeliveryAddress, @PONo, @isRental, @RentDays, @RentDueDate)"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
                     .Parameters.AddWithValue("@OrderID", orderid)
                     .Parameters.AddWithValue("@CustomerID", 2)
                     .Parameters.AddWithValue("@ProductID", item.SubItems(3).Text)
                     .Parameters.AddWithValue("@Quantity", item.SubItems(2).Text)
-                    .Parameters.AddWithValue("@DateOrdered", DateTime.Now.ToString)
-                    .Parameters.AddWithValue("@Amount", txtFirstName.Text)
+                    .Parameters.AddWithValue("@Amount", amount)
                     .Parameters.AddWithValue("@Status", 0)
+                    .Parameters.AddWithValue("@DateOrdered", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                    .Parameters.AddWithValue("@DeliveryAddress", txtDeliveryAddress.Text)
+                    .Parameters.AddWithValue("@PONo", PONo)
                     .Parameters.AddWithValue("@isRental", 0)
+                    .Parameters.AddWithValue("@RentDays", 0)
+                    .Parameters.AddWithValue("@RentDueDate", Nothing)
                     .ExecuteNonQuery()
                 End With
             Next
 
-
         Catch ex As Exception
-            MsgBox("An Error occurred frmAddCustomerWalkin(checkTIN) :  " & ex.Message)
+            MsgBox("An Error occurred frmAddCustomerWalkin(savetoOrders) :  " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If
         End Try
     End Sub
+
+    Dim maxPONumber As String = 1
+    Private Function getPO() As String
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT MAX(PONo) AS PONo FROM tblorder"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            If dr.Read = True Then
+                maxPONumber = dr("PONo").ToString
+            End If
+
+            Return "PO-" & 2 & "-" & DateTime.Now.ToString("yyyy") & "-" & maxPONumber.ToString.PadLeft(4, "0"c)
+        Catch ex As Exception
+            MsgBox("An Error occurred frmAddCustomerWalkin(checkTIN) :  " & ex.Message)
+            Return "PO-" & 2 & "-" & DateTime.Now.ToString("yyyy") & "-" & maxPONumber.ToString.PadLeft(4, "0"c)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Function
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then

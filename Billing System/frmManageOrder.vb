@@ -56,7 +56,7 @@ Public Class frmManageOrder
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
                DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT *, SUM(Amount) AS TotalPrice, MIN(Availability) AS Available, MIN(Status) AS Status, DATE_FORMAT(OrderDate, '%M %d, %Y') AS OrderDateF FROM qryorder WHERE OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT COALESCE(w.LastName, o.LastName) AS LastName, COALESCE(w.FirstName, o.FirstName) AS FirstName, COALESCE(w.CompanyName, o.CompanyName) AS CompanyName, COALESCE(w.PhoneNumber, o.PhoneNumber) AS PhoneNumber, COALESCE(w.Email, o.Email) AS Email, o.OrderID, o.CustomerID, o.Status, DATE_FORMAT(o.OrderDate, '%M %d, %Y') AS OrderDateF FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
 
 
                 If cboFilter.SelectedIndex > 0 Then
@@ -114,8 +114,8 @@ Public Class frmManageOrder
             Case "4" : Return "Priority Order"
             Case "3" : Return "Delivered"
             Case "2" : Return "Ready for Shipment"
-            Case "1" : Return "Item on Hand"
-            Case Else : Return "Item on Process"
+            Case "1" : Return "On Hand"
+            Case Else : Return "On Process"
         End Select
     End Function
 
@@ -141,7 +141,7 @@ Public Class frmManageOrder
         Next
 
         If ListView1.SelectedItems.Count > 0 Then
-            If ListView1.SelectedItems(0).SubItems(5).Text = "Item on Hand" Then
+            If ListView1.SelectedItems(0).SubItems(5).Text = "On Hand" Then
 
 
                 frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(7).Text
@@ -172,5 +172,6 @@ Public Class frmManageOrder
         'frmLoginV2.ActiveControl = frmLoginV2.txtUsername
         frmAddCustomerWalkin.ActiveControl = frmAddCustomerWalkin.txtCompanyName
         frmAddCustomerWalkin.ShowDialog()
+        Call loadFilteredOrders(startDate, endDate)
     End Sub
 End Class
