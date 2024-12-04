@@ -39,7 +39,7 @@ Public Class frmProduct
                 x.SubItems.Add("₱ " & Convert.ToDecimal(dr("PurchasePrice")).ToString("N2"))
                 x.SubItems.Add("₱ " & Convert.ToDecimal(dr("SellingPrice")).ToString("N2"))
                 x.SubItems.Add(checkStatus(dr("Status").ToString()))
-                x.SubItems.Add(dr("ProductID").ToString())
+                x.SubItems.Add(dr("ProductID").ToString()) '6
                 x.SubItems.Add(dr("SupplierID").ToString())
 
                 ' Adjust color and font
@@ -90,8 +90,8 @@ Public Class frmProduct
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click, ListView1.DoubleClick
-        frmManageProducts.productid = ListView1.SelectedItems(0).SubItems(7).Text
-        frmManageProducts.supplierid = ListView1.SelectedItems(0).SubItems(8).Text
+        frmManageProducts.productid = ListView1.SelectedItems(0).SubItems(6).Text
+        frmManageProducts.supplierid = ListView1.SelectedItems(0).SubItems(7).Text
         frmManageProducts.ShowDialog()
     End Sub
 
@@ -191,16 +191,16 @@ Public Class frmProduct
 
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
         If ListView1.SelectedItems.Count > 0 Then
-            frmManageProducts.productid = ListView3.SelectedItems(0).SubItems(7).Text
-            frmManageProducts.supplierid = ListView3.SelectedItems(0).SubItems(8).Text
+            frmManageProducts.productid = ListView3.SelectedItems(0).SubItems(6).Text
+            frmManageProducts.supplierid = ListView3.SelectedItems(0).SubItems(7).Text
             frmManageProducts.ShowDialog()
         End If
     End Sub
 
     Private Sub btnRestock_Click(sender As Object, e As EventArgs) Handles btnRestock.Click
         If ListView1.SelectedItems.Count > 0 Then
-            frmRestockProduct.productid = ListView1.SelectedItems(0).SubItems(7).Text
-            frmRestockProduct.supplierid = ListView1.SelectedItems(0).SubItems(8).Text
+            frmRestockProduct.productid = ListView1.SelectedItems(0).SubItems(6).Text
+            frmRestockProduct.supplierid = ListView1.SelectedItems(0).SubItems(7).Text
             frmRestockProduct.ShowDialog()
         End If
     End Sub

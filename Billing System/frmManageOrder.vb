@@ -60,7 +60,7 @@ Public Class frmManageOrder
 
 
                 If cboFilter.SelectedIndex > 0 Then
-                    sql += "AND Status = @Status "
+                    sql += " AND Status = @Status "
                 End If
 
                 sql += "GROUP BY OrderID"
@@ -100,7 +100,7 @@ Public Class frmManageOrder
             End If
 
         Catch ex As Exception
-            MsgBox("An error occurred frmManageOrder(cboFilter_SelectedIndexChanged): " & ex.Message)
+            MsgBox("An error occurred frmManageOrder(loadFilteredOrders): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
