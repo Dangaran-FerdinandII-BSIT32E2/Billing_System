@@ -16,6 +16,9 @@ Public Class frmPaymentInformation
 
     Private Sub frmPaymentInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+
+        TabControl1.SelectedTab = PostDatedCheck
+
         Call loadPayment()
         Call loadOrder()
     End Sub
@@ -60,6 +63,8 @@ Public Class frmPaymentInformation
                 If Convert.ToDateTime(dr("DatePaid")).Date = DateTime.Today AndAlso dr("Status") = False Then
                     x.ForeColor = Color.Red
                 End If
+
+                x.SubItems.Add(If(dr("Type") = 1, "Post-Dated Cheque", "Deposit Slip"))
 
                 ListView1.Items.Add(x)
 
@@ -157,7 +162,8 @@ Public Class frmPaymentInformation
         End Try
     End Sub
 
-    Private Sub btnUpload_Click(sender As Object, e As EventArgs)
+    Dim uploaded As Boolean? = False
+    Private Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnCheck.Click
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -168,8 +174,11 @@ Public Class frmPaymentInformation
             If d.ShowDialog() = Windows.Forms.DialogResult.OK Then
                 pbxPostDatedCheck.Image = Image.FromFile(d.FileName)
 
-                btnCancel.Enabled = True
-                ' txtDueDate.Enabled = True
+                btnReject.Enabled = True
+                uploaded = True
+
+                btnAccept.Enabled = True
+                btnReject.Enabled = True
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmPaymentInformation(btnUpload_Click): " & ex.Message)
@@ -180,23 +189,54 @@ Public Class frmPaymentInformation
         End Try
     End Sub
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnAccept.Click
+        If MsgBox("Do you want to approve?", vbYesNo + vbQuestion) = vbYes Then
+            If uploaded Then
+                Call insertPostDatedCheck()
+            Else
+                Call updateDepositSlip()
+            End If
+        End If
+
+    End Sub
+
+    Public amount As Double = 0
+    Private Sub insertPostDatedCheck()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
 
-            If MsgBox("Do you want to approve?", vbYesNo + vbQuestion) = vbYes Then
-                sql = "UPDATE tblcollection SET Status = 2 WHERE CollectionID = '" & collectionid & "'"
-                cmd = New MySqlCommand(sql, cn)
-                cmd.ExecuteNonQuery()
+            frmEnterQuantity.ShowDialog()
 
-                btnSave.Enabled = False
-                btnCancel.Enabled = False
+            If pbxPostDatedCheck.Image IsNot Nothing Then
+                Dim mstream As New System.IO.MemoryStream()
+                pbxPostDatedCheck.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim arrImage() As Byte = mstream.GetBuffer
+                mstream.Close()
+
+                sql = "INSERT INTO tblcollection(BillingID, CustomerID, AmtPaid, DatePaid, imgPayment, Status, newInsert, Type) " &
+                    "VALUES(@BillingID, @CustomerID, @AmtPaid, @DatePaid, @imgPayment, @Status, @newInsert, @Type)"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@BillingID", billingid)
+                    .Parameters.AddWithValue("@CustomerID", customerid)
+                    .Parameters.AddWithValue("@AmtPaid", amount)
+                    .Parameters.AddWithValue("@DatePaid", DateTime.Now)
+                    .Parameters.AddWithValue("@imgPayment", arrImage)
+                    .Parameters.AddWithValue("@Status", 2)
+                    .Parameters.AddWithValue("@newInsert", 1)
+                    .Parameters.AddWithValue("@Type", 1)
+                    .ExecuteNonQuery()
+                End With
+
+                btnAccept.Enabled = False
+                btnReject.Enabled = False
 
                 pbxPostDatedCheck.Image = Nothing
 
                 Call loadPayment()
+
             End If
 
         Catch ex As Exception
@@ -207,8 +247,31 @@ Public Class frmPaymentInformation
             End If
         End Try
     End Sub
+    Private Sub updateDepositSlip()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+            sql = "UPDATE tblcollection SET Status = 2 WHERE CollectionID = '" & collectionid & "'"
+                cmd = New MySqlCommand(sql, cn)
+                cmd.ExecuteNonQuery()
+
+                btnAccept.Enabled = False
+                btnReject.Enabled = False
+
+                pbxPostDatedCheck.Image = Nothing
+
+            Call loadPayment()
+        Catch ex As Exception
+            MsgBox("An error occurred frmPaymentInformation(btnSave_Click): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnReject.Click
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -219,8 +282,8 @@ Public Class frmPaymentInformation
                 cmd = New MySqlCommand(sql, cn)
                 cmd.ExecuteNonQuery()
 
-                btnSave.Enabled = False
-                btnCancel.Enabled = False
+                btnAccept.Enabled = False
+                btnReject.Enabled = False
 
                 pbxPostDatedCheck.Image = Nothing
 
@@ -255,13 +318,19 @@ Public Class frmPaymentInformation
                     Dim pic As Byte() = DirectCast(dr("imgPayment"), Byte())
                     If pic.Length > 0 Then
                         Using ms As New MemoryStream(pic)
-                            pbxPostDatedCheck.Image = Image.FromStream(ms)
+                            If ListView1.SelectedItems(0).SubItems(2).Text = "Deposit Slip" Then
+                                pbxDepositSlip.Image = Image.FromStream(ms)
+                                TabControl1.SelectedTab = DepositSlip
+                            Else
+                                pbxPostDatedCheck.Image = Image.FromStream(ms)
+                                TabControl1.SelectedTab = PostDatedCheck
+                            End If
                         End Using
 
                         collectionid = dr("CollectionID").ToString
 
-                        btnSave.Enabled = True
-                        btnCancel.Enabled = True
+                        btnAccept.Enabled = True
+                        btnReject.Enabled = True
                     End If
                 End If
             Catch ex As Exception
@@ -277,14 +346,7 @@ Public Class frmPaymentInformation
     Private Sub frmPaymentInformation_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
             pbxPostDatedCheck.Image = Nothing
-
-            'btnSave.Enabled = False
-            'txtDueDate.Enabled = False
-            'btnCancel.Enabled = False
-
-            'txtCompanyName.Clear()
-            'txtUnpaidAmount.Clear()
-            'txtDueDate.Clear()
+            pbxDepositSlip.Image = Nothing
 
             Call frmManageCollectionV3.loadCollections(frmManageCollectionV3.DateFilter1.Text, frmManageCollectionV3.DateFilter2.Text)
         End If
@@ -311,5 +373,9 @@ Public Class frmPaymentInformation
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub btnCheck_Click(sender As Object, e As EventArgs) Handles btnCheck.Click
+
     End Sub
 End Class

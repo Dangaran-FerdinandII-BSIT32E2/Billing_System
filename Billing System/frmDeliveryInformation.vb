@@ -84,10 +84,14 @@ Public Class frmDeliveryInformation
                             PictureBox2.Visible = False
                             btnBrowse.Visible = False
 
+                            btnConfirm.Enabled = False
+
                         Else
                             pbxDelivery.Image = Nothing
                             PictureBox2.Visible = True
                             btnBrowse.Visible = True
+
+                            btnConfirm.Enabled = True
                         End If
 
                     Catch ex As Exception
@@ -97,6 +101,8 @@ Public Class frmDeliveryInformation
                     pbxDelivery.Image = Nothing
                     PictureBox2.Visible = True
                     btnBrowse.Visible = True
+
+                    btnConfirm.Enabled = True
                 End If
                 dr.Close()
             End If
@@ -137,6 +143,8 @@ Public Class frmDeliveryInformation
             pbxDelivery.Image = Nothing
             PictureBox2.Visible = True
             btnBrowse.Visible = True
+
+            btnConfirm.Enabled = True
         End If
     End Sub
 
@@ -164,6 +172,9 @@ Public Class frmDeliveryInformation
                     MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
 
                     Call saveDelivery()
+
+
+                    btnConfirm.Enabled = False
                 Else
                     MsgBox("Please upload an image!", MsgBoxStyle.Critical, "Upload Error")
                 End If

@@ -34,6 +34,7 @@ Public Class frmManageOrder
     Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click, ListView1.DoubleClick
         If ListView1.SelectedItems.Count > 0 Then
             frmListofCustomerOrder.lblCompanyName.Text = ListView1.SelectedItems(0).SubItems(1).Text
+            frmListofCustomerOrder.orderid = ListView1.SelectedItems(0).SubItems(6).Text
             frmListofCustomerOrder.custid = ListView1.SelectedItems(0).SubItems(7).Text
             frmListofCustomerOrder.ShowDialog()
         Else
@@ -56,7 +57,7 @@ Public Class frmManageOrder
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
                DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT COALESCE(w.LastName, o.LastName) AS LastName, COALESCE(w.FirstName, o.FirstName) AS FirstName, COALESCE(w.CompanyName, o.CompanyName) AS CompanyName, COALESCE(w.PhoneNumber, o.PhoneNumber) AS PhoneNumber, COALESCE(w.Email, o.Email) AS Email, o.OrderID, o.CustomerID, o.Status, DATE_FORMAT(o.OrderDate, '%M %d, %Y') AS OrderDateF FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT COALESCE(w.LastName, o.LastName) AS LastName, COALESCE(w.FirstName, o.FirstName) AS FirstName, COALESCE(w.CompanyName, o.CompanyName) AS CompanyName, COALESCE(w.PhoneNumber, o.PhoneNumber) AS PhoneNumber, COALESCE(w.Email, o.Email) AS Email, o.OrderID, o.CustomerID, o.Status, DATE_FORMAT(o.OrderDate, '%M %d, %Y') AS OrderDateF FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE o.isRental = 0 AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
 
 
                 If cboFilter.SelectedIndex > 0 Then
@@ -160,12 +161,6 @@ Public Class frmManageOrder
             MsgBox("Please select an available and on-hand order!", MsgBoxStyle.Critical, "Order Error")
         End If
 
-    End Sub
-
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-        If ListView1.SelectedItems.Count > 0 Then
-            frmListofCustomerOrder.orderid = ListView1.SelectedItems(0).SubItems(6).Text
-        End If
     End Sub
 
     Private Sub btnAddWalkIn_Click(sender As Object, e As EventArgs) Handles btnAddWalkIn.Click

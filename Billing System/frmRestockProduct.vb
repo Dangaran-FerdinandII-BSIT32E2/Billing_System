@@ -88,7 +88,7 @@ Public Class frmRestockProduct
     End Sub
 
     Private Sub btnSendRequest_Click(sender As Object, e As EventArgs) Handles btnSendRequest.Click
-        If Not IsNumeric(String.IsNullOrWhiteSpace(txtPONo.Text)) AndAlso listofProductIds.Count > 0 Then
+        If Not String.IsNullOrWhiteSpace(txtPONo.Text) AndAlso IsNumeric(txtPONo.Text) AndAlso listofProductIds.Count > 0 Then
             Dim itemsWithoutAmount As New List(Of String)
             For Each item As ListViewItem In ListView1.Items
                 If item.SubItems(2).Text <= 0 Then
