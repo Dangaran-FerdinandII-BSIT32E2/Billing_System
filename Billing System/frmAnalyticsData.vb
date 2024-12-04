@@ -1,6 +1,8 @@
 ﻿Imports System.Globalization
 Imports System.IO.Ports
+Imports System.Web.UI.WebControls
 Imports System.Windows.Forms.DataVisualization.Charting
+Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
 Imports Mysqlx
 
@@ -12,10 +14,89 @@ Public Class frmAnalyticsData
     Private Sub frmAnalyticsData_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call calculateData()
+        Call newCustomers()
+        Call newOrders()
     End Sub
-    'Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-    '    Call calculateData()
-    'End Sub
+
+    Private Sub newCustomers()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT COUNT(*) AS NewCustomers FROM tblcustomer WHERE tblcustomer.AcctStatus = 0"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader()
+
+            If dr.Read() Then
+                Dim count As Integer = Convert.ToInt32(dr("NewCustomers"))
+                If count > 0 Then
+                    btnViewCustomer.Visible = True
+                    lblNewCustomers.Font = New Font("Arial", 20, FontStyle.Bold)
+                    lblNewCustomers.Text = count.ToString()
+                Else
+                    btnViewCustomer.Visible = False
+                    lblNewCustomers.Text = "No New Customer"
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred in frmAnalyticsData(newCustomers): " & ex.Message)
+        Finally
+            If dr IsNot Nothing AndAlso Not dr.IsClosed Then
+                dr.Close()
+            End If
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub newOrders()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT COUNT(DISTINCT tblorder.OrderID) as newOrders FROM tblorder WHERE tblorder.Status = 0"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader()
+
+            If dr.Read() Then
+                Dim count As Integer = Convert.ToInt32(dr("newOrders"))
+                If count > 0 Then
+                    btnViewOrder.Visible = True
+                    lblNewOrders.Font = New Font("Arial", 20, FontStyle.Bold)
+                    lblNewOrders.Text = count.ToString()
+                Else
+                    btnViewOrder.Visible = False
+                    lblNewOrders.Text = "No New Order"
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred in frmAnalyticsData(newOrders): " & ex.Message)
+        Finally
+            If dr IsNot Nothing AndAlso Not dr.IsClosed Then
+                dr.Close()
+            End If
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+
     Private Sub calculateData()
         'NEW ORDERS
         Call getNewOrders()
@@ -308,4 +389,75 @@ Public Class frmAnalyticsData
             End If
         End Try
     End Sub
+
+    Private Sub btnViewCustomer_Click(sender As Object, e As EventArgs) Handles btnViewCustomer.Click
+        Dim removeThickness As New Padding(0, 0, 0, 0) 'use to remove border left
+        Dim addThickness As New Padding(5, 0, 0, 0) 'use to add border left
+        Dim addColor As Color = Color.OrangeRed 'use to filled color border left
+        Dim removeColor As Color = Color.Empty 'use to removed filled color border left
+
+        frmManageCustomerV3.TopLevel = False
+        frmAdminDashboard.panelDashboard.Controls.Add(frmManageCustomerV3)
+        frmManageCustomerV3.BringToFront()
+        frmManageCustomerV3.Dock = DockStyle.Fill
+        frmManageCustomerV3.Show()
+
+        frmAdminDashboard.btnCustomer.CustomBorderThickness = addThickness
+        frmAdminDashboard.btnCustomer.CustomBorderColor = addColor
+
+        'Dim buttons() As Guna2Button = {btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+        Dim buttons() As Guna2Button = {frmAdminDashboard.btnProduct, frmAdminDashboard.btnDashboard, frmAdminDashboard.btnSales, frmAdminDashboard.btnBilling, frmAdminDashboard.btnCollection, frmAdminDashboard.btnOrder, frmAdminDashboard.btnSupplier, frmAdminDashboard.btnRental, frmAdminDashboard.btnUser}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
+        frmManageSalesV2.Close()
+        frmManageBilling.Close()
+        frmManageCollectionV3.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageUsers.Close()
+        frmManageRentalV2.Close()
+        frmAdminSettings.Close()
+        frmProduct.Close()
+    End Sub
+
+    Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click
+        Dim removeThickness As New Padding(0, 0, 0, 0) 'use to remove border left
+        Dim addThickness As New Padding(5, 0, 0, 0) 'use to add border left
+        Dim addColor As Color = Color.OrangeRed 'use to filled color border left
+        Dim removeColor As Color = Color.Empty 'use to removed filled color border left
+
+        frmManageOrder.TopLevel = False
+        frmAdminDashboard.panelDashboard.Controls.Add(frmManageOrder)
+        frmManageOrder.BringToFront()
+        frmManageOrder.Dock = DockStyle.Fill
+        frmManageOrder.Show()
+
+        frmAdminDashboard.btnOrder.CustomBorderThickness = addThickness
+        frmAdminDashboard.btnOrder.CustomBorderColor = addColor
+
+        'btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser
+        Dim buttons() As Guna2Button = {frmAdminDashboard.btnProduct, frmAdminDashboard.btnDashboard, frmAdminDashboard.btnSales, frmAdminDashboard.btnBilling, frmAdminDashboard.btnCollection, frmAdminDashboard.btnCustomer, frmAdminDashboard.btnSupplier, frmAdminDashboard.btnUser, frmAdminDashboard.btnRental}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
+
+        frmManageSalesV2.Close()
+        frmManageBilling.Close()
+        frmManageCollectionV3.Close()
+        frmManageSuppliers.Close()
+        frmManageProducts.Close()
+        frmManageCustomerV3.Close()
+        frmManageUsers.Close()
+        frmAdminSettings.Close()
+        frmProduct.Close()
+    End Sub
+    'Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    '    Call calculateData()
+    'End Sub
 End Class
