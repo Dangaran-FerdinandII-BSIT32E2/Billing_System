@@ -203,22 +203,22 @@ Partial Class frmProduct
         'Category1
         '
         Me.Category1.Text = "Category"
-        Me.Category1.Width = 360
+        Me.Category1.Width = 220
         '
         'Type1
         '
         Me.Type1.Text = "Type"
-        Me.Type1.Width = 220
+        Me.Type1.Width = 200
         '
         'OriginalPrice1
         '
         Me.OriginalPrice1.Text = "Original Price"
-        Me.OriginalPrice1.Width = 180
+        Me.OriginalPrice1.Width = 150
         '
         'SellingPrice1
         '
         Me.SellingPrice1.Text = "Selling Price"
-        Me.SellingPrice1.Width = 180
+        Me.SellingPrice1.Width = 150
         '
         'Status1
         '
@@ -483,7 +483,7 @@ Partial Class frmProduct
         'Category
         '
         Me.Category.Text = "Category"
-        Me.Category.Width = 360
+        Me.Category.Width = 220
         '
         'PurchasePrice
         '

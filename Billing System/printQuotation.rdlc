@@ -121,9 +121,9 @@
       </Textbox>
       <Line Name="Line3">
         <Top>4.82184cm</Top>
-        <Left>3.34547cm</Left>
+        <Left>3.47247cm</Left>
         <Height>0cm</Height>
-        <Width>9.24137cm</Width>
+        <Width>9.11436cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -138,7 +138,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Delivery Addres:</Value>
+                <Value>Delivery Address:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -521,7 +521,7 @@
                         </Border>
                         <PaddingLeft>5pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
@@ -553,7 +553,7 @@
                         </Border>
                         <PaddingLeft>5pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
@@ -585,7 +585,7 @@
                         </Border>
                         <PaddingLeft>5pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
@@ -617,7 +617,7 @@
                         </Border>
                         <PaddingLeft>5pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
@@ -648,7 +648,7 @@
                         </Border>
                         <PaddingLeft>5pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
@@ -692,9 +692,8 @@
       <Rectangle Name="Rectangle1">
         <ReportItems>
           <Line Name="Line9">
-            <Top>0.07937cm</Top>
             <Left>5.3975cm</Left>
-            <Height>14.50975cm</Height>
+            <Height>14.63148cm</Height>
             <Width>0cm</Width>
             <Style>
               <Border>
@@ -703,8 +702,9 @@
             </Style>
           </Line>
           <Line Name="Line10">
+            <Top>0.04235cm</Top>
             <Left>11.11111cm</Left>
-            <Height>13.6822cm</Height>
+            <Height>13.76157cm</Height>
             <Width>0cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -714,9 +714,9 @@
             </Style>
           </Line>
           <Line Name="Line11">
-            <Top>0cm</Top>
+            <Top>0.04235cm</Top>
             <Left>13.61111cm</Left>
-            <Height>14.50975cm</Height>
+            <Height>14.58912cm</Height>
             <Width>0cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
@@ -726,7 +726,7 @@
             </Style>
           </Line>
           <Line Name="Line4">
-            <Top>13.76157cm</Top>
+            <Top>13.80392cm</Top>
             <Height>0cm</Height>
             <Width>20.01143cm</Width>
             <ZIndex>3</ZIndex>
@@ -755,10 +755,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>13.84829cm</Top>
-            <Left>10.85041cm</Left>
+            <Top>13.89064cm</Top>
+            <Left>13.91958cm</Left>
             <Height>0.66146cm</Height>
-            <Width>5.91312cm</Width>
+            <Width>2.84395cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -771,9 +771,8 @@
             </Style>
           </Textbox>
           <Line Name="Line12">
-            <Top>0.07937cm</Top>
             <Left>16.76353cm</Left>
-            <Height>14.50975cm</Height>
+            <Height>14.63148cm</Height>
             <Width>0cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
@@ -793,14 +792,16 @@
                     <Style />
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>TotalPricing</rd:DefaultName>
-            <Top>13.8674cm</Top>
+            <Top>13.90975cm</Top>
             <Left>16.93992cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>2.97625cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -814,9 +815,9 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>5.40052cm</Top>
+        <Top>6.13781cm</Top>
         <Left>0.58678cm</Left>
-        <Height>14.58913cm</Height>
+        <Height>14.63148cm</Height>
         <Width>20.01143cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
@@ -900,10 +901,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DeliveryAddress</rd:DefaultName>
-        <Top>4.24284cm</Top>
-        <Left>3.30941cm</Left>
+        <Top>4.27828cm</Top>
+        <Left>3.35175cm</Left>
         <Height>0.6cm</Height>
-        <Width>9.27742cm</Width>
+        <Width>9.15042cm</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
@@ -1074,10 +1075,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>9.16696in</Height>
+    <Height>8.89613in</Height>
     <Style />
   </Body>
-  <Width>8.68925in</Width>
+  <Width>8.32467in</Width>
   <Page>
     <PageHeader>
       <Height>2.99299cm</Height>
