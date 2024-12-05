@@ -183,12 +183,12 @@ Public Class frmPrintSalesInvoice
                     image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Jpeg)
                     memoryStream.Position = 0
 
-                    Dim imageAttachment As New Attachment(memoryStream, "QUOTATION-ORDER_NUMBER" & orderid & "-.jpeg")
+                    Dim imageAttachment As New Attachment(memoryStream, "CustomerCopy-SalesInvoice_#" & billingid & "-.jpeg")
                     mail.Attachments.Add(imageAttachment)
 
-                    mail.Body = "There is now an available quotation for your Order Number " & orderid & "." & vbCrLf &
-                        "You can now accept or reject the Order Quotation through the website." & vbCrLf & vbCrLf &
-                        "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
+                    'mail.Body = "There is now an available quotation for your Order Number " & orderid & "." & vbCrLf &
+                    '    "You can now accept or reject the Order Quotation through the website." & vbCrLf & vbCrLf &
+                    '    "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
 
                     smtpServer.Port = 587
                     smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua") ' Use secure methods
