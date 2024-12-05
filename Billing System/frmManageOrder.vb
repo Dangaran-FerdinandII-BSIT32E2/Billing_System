@@ -169,7 +169,7 @@ Public Class frmManageOrder
         If ListView1.SelectedItems.Count > 0 Then
             Dim quotationstatus As String = ListView1.SelectedItems(0).SubItems(8).Text
 
-            If Not String.IsNullOrWhiteSpace(quotationstatus) AndAlso quotationstatus = "1" Then
+            If Not String.IsNullOrWhiteSpace(quotationstatus) AndAlso quotationstatus = "True" Then
                 btnCreateInvoice.Enabled = True
             Else
                 btnCreateInvoice.Enabled = False
