@@ -52,11 +52,7 @@ Public Class frmListofCustomerOrder
                 x.SubItems.Add(GetStatusText(dr("Status").ToString))
                 x.SubItems.Add(dr("OrderListID").ToString) '6
 
-                If IsDBNull(dr("QuotationImg")) Then
-                    btnSendQuotation.Visible = True
-                Else
-                    btnSendQuotation.Visible = False
-                End If
+
 
                 ListView1.Items.Add(x)
             Loop
@@ -142,7 +138,7 @@ Public Class frmListofCustomerOrder
                 cn.Open()
             End If
 
-            sql = "SELECT QuotationStatus FROM tblorder WHERE QuotationStatus < 2 AND OrderID = '" & orderid & "'"
+            sql = "SELECT QuotationStatus FROM tblorder WHERE (QuotationStatus < 2 OR QuotationStatus IS NULL) AND OrderID = '" & orderid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
