@@ -205,8 +205,8 @@ Public Class frmManageSuppliers
                 x.SubItems.Add("₱ " & Convert.ToInt32(dr("SellingPrice")).ToString("N2"))
                 x.SubItems.Add(checkStatus(dr("Amount"), dr("ProductID"))) '4
                 x.SubItems.Add(dr("Amount").ToString())
-                x.SubItems.Add(dr("ProductID").ToString()) '7
-                x.SubItems.Add(dr("SupplierID").ToString())
+                x.SubItems.Add(dr("ProductID").ToString()) '6
+                x.SubItems.Add(dr("SupplierID").ToString()) '7
 
                 If x.SubItems(4).Text = "Critical Level" Then
                     x.ForeColor = Color.Orange
@@ -230,8 +230,8 @@ Public Class frmManageSuppliers
 
     Private Sub btnRestock_Click(sender As Object, e As EventArgs) Handles btnRestock.Click, ListView3.DoubleClick
         If ListView3.SelectedItems.Count > 0 Then
-            frmRestockProduct.productid = ListView3.SelectedItems(0).SubItems(7).Text
-            frmRestockProduct.supplierid = ListView3.SelectedItems(0).SubItems(8).Text
+            frmRestockProduct.productid = ListView3.SelectedItems(0).SubItems(6).Text
+            frmRestockProduct.supplierid = ListView3.SelectedItems(0).SubItems(7).Text
 
             frmRestockProduct.ShowDialog()
         End If

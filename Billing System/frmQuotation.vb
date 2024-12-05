@@ -10,7 +10,6 @@ Public Class frmQuotation
     Dim d As OpenFileDialog = New OpenFileDialog
 
     Private email As String
-    Public custid As String
     Private Sub frmQuotation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadInformation()
@@ -23,7 +22,7 @@ Public Class frmQuotation
                 cn.Open()
             End If
 
-            sql = "SELECT Email FROM tblcustomer WHERE CustomerID = '" & custid & "'"
+            sql = "SELECT COALESCE(w.Email, c.Email) AS Email FROM tblorder o LEFT JOIN tblcustomer c ON o.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE o.OrderID = '" & orderid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -136,7 +135,7 @@ Public Class frmQuotation
 
             ' Update database with image and quotation due date
             If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
-                sql = "UPDATE tblorder SET QuotationImg=@QuotationImg, QuotationDueDate=@QuotationDueDate, QuotationStatus = 0 WHERE OrderID = @OrderID"
+                sql = "UPDATE tblorder SET QuotationImg=@QuotationImg, QuotationDueDate=@QuotationDueDate, QuotationStatus = NULL WHERE OrderID = '" & orderid & "'"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
                     Dim mstream As New MemoryStream()
@@ -146,7 +145,6 @@ Public Class frmQuotation
 
                     .Parameters.AddWithValue("@QuotationImg", arrImage)
                     .Parameters.AddWithValue("@QuotationDueDate", DateTime.Now.AddDays(7))
-                    .Parameters.AddWithValue("@OrderID", orderid)
                     .ExecuteNonQuery()
                 End With
 

@@ -24,7 +24,7 @@ Public Class frmAddCustomerWalkin
                 cn.Open()
             End If
 
-            sql = "SELECT MAX(OrderID) AS OrderID FROM tblorder"
+            sql = "SELECT COALESCE(MAX(OrderID), 0) AS OrderID FROM tblorder"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -53,7 +53,7 @@ Public Class frmAddCustomerWalkin
                 cn.Open()
             End If
 
-            sql = "SELECT MAX(WalkinID) AS WalkinID FROM tblwalkin"
+            sql = "SELECT COALESCE(MAX(WalkinID), 0) AS WalkinID FROM tblwalkin"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -63,13 +63,7 @@ Public Class frmAddCustomerWalkin
             dr = cmd.ExecuteReader
 
             If dr.Read = True Then
-                If IsDBNull(dr("WalkinID")) Then
-
-                    walkinid = 1
-                Else
-
-                    walkinid = (dr("WalkinID") + 1).ToString
-                End If
+                walkinid = (dr("WalkinID") + 1).ToString
             End If
         Catch ex As Exception
             MsgBox("An Error occurred frmAddCustomerWalkin(loadWalkinID) :  " & ex.Message)
@@ -349,7 +343,7 @@ Public Class frmAddCustomerWalkin
                 cn.Open()
             End If
 
-            sql = "SELECT MAX(PONo) AS PONo FROM tblorder"
+            sql = "SELECT COALESCE(MAX(PONo), 1) AS PONo FROM tblorder"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -381,7 +375,9 @@ Public Class frmAddCustomerWalkin
 
     Private Sub frmAddCustomerWalkin_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
+            ListView1.Items.Clear()
             listofProductIds.Clear()
+
             txtCompanyName.Clear()
             txtAddress.Clear()
             txtDeliveryAddress.Clear()
@@ -392,6 +388,7 @@ Public Class frmAddCustomerWalkin
             txtPhoneNumber.Clear()
             txtEmailAddress.Clear()
             txtTIN.Clear()
+
         End If
     End Sub
 

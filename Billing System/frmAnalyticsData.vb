@@ -16,6 +16,7 @@ Public Class frmAnalyticsData
         Call calculateData()
         Call newCustomers()
         Call newOrders()
+        Call newPayments()
     End Sub
 
     Private Sub newCustomers()
@@ -86,6 +87,45 @@ Public Class frmAnalyticsData
 
         Catch ex As Exception
             MsgBox("An error occurred in frmAnalyticsData(newOrders): " & ex.Message)
+        Finally
+            If dr IsNot Nothing AndAlso Not dr.IsClosed Then
+                dr.Close()
+            End If
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub newPayments()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT COUNT(DISTINCT CollectionID) as newPayments FROM tblcollection WHERE newInsert = 1"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader()
+
+            If dr.Read() Then
+                Dim count As Integer = Convert.ToInt32(dr("newPayments"))
+                If count > 0 Then
+                    btnViewPayment.Visible = True
+                    lblNewPayments.Font = New Font("Arial", 20, FontStyle.Bold)
+                    lblNewPayments.Text = count.ToString()
+                Else
+                    btnViewPayment.Visible = False
+                    lblNewPayments.Text = "No New Payments"
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred in frmAnalyticsData(newPayments): " & ex.Message)
         Finally
             If dr IsNot Nothing AndAlso Not dr.IsClosed Then
                 dr.Close()

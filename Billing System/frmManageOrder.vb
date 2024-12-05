@@ -57,7 +57,7 @@ Public Class frmManageOrder
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
                DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT COALESCE(w.LastName, o.LastName) AS LastName, COALESCE(w.FirstName, o.FirstName) AS FirstName, COALESCE(w.CompanyName, o.CompanyName) AS CompanyName, COALESCE(w.PhoneNumber, o.PhoneNumber) AS PhoneNumber, COALESCE(w.Email, o.Email) AS Email, o.OrderID, o.CustomerID, o.Status, DATE_FORMAT(o.OrderDate, '%M %d, %Y') AS OrderDateF FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE o.isRental = 0 AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT COALESCE(w.LastName, o.LastName) AS LastName, COALESCE(w.FirstName, o.FirstName) AS FirstName, COALESCE(w.CompanyName, o.CompanyName) AS CompanyName, COALESCE(w.PhoneNumber, o.PhoneNumber) AS PhoneNumber, COALESCE(w.Email, o.Email) AS Email, o.OrderID, o.CustomerID, o.Status, DATE_FORMAT(o.OrderDate, '%M %d, %Y') AS OrderDateF, o.QuotationStatus FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE o.isRental = 0 AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
 
 
                 If cboFilter.SelectedIndex > 0 Then
@@ -89,6 +89,7 @@ Public Class frmManageOrder
                     x.SubItems.Add(GetStatusText(dr("Status").ToString))
                     x.SubItems.Add(dr("OrderID").ToString) '6
                     x.SubItems.Add(dr("CustomerID").ToString)
+                    x.SubItems.Add(dr("QuotationStatus").ToString)
 
                     ' Check if the status is "Urgent" and set the text color accordingly
                     If x.SubItems(5).Text = "Priority Order" Then
@@ -142,25 +143,19 @@ Public Class frmManageOrder
         Next
 
         If ListView1.SelectedItems.Count > 0 Then
-            If ListView1.SelectedItems(0).SubItems(5).Text = "On Hand" Then
 
+            frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(7).Text
+            frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(6).Text
 
-                frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(7).Text
-                frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(6).Text
-
-                Me.Close()
-                frmManageSalesV2.TopLevel = False
-                frmAdminDashboard.panelDashboard.Controls.Add(frmManageSalesV2)
-                frmManageSalesV2.BringToFront()
-                frmManageSalesV2.Dock = DockStyle.Fill
-                frmManageSalesV2.Show()
-            Else
-                MsgBox("Please update the order to be available and on-hand!", MsgBoxStyle.Critical, "Create Invoice Error")
-            End If
+            Me.Close()
+            frmManageSalesV2.TopLevel = False
+            frmAdminDashboard.panelDashboard.Controls.Add(frmManageSalesV2)
+            frmManageSalesV2.BringToFront()
+            frmManageSalesV2.Dock = DockStyle.Fill
+            frmManageSalesV2.Show()
         Else
-            MsgBox("Please select an available and on-hand order!", MsgBoxStyle.Critical, "Order Error")
+            MsgBox("Please update the order to be available and on-hand!", MsgBoxStyle.Critical, "Create Invoice Error")
         End If
-
     End Sub
 
     Private Sub btnAddWalkIn_Click(sender As Object, e As EventArgs) Handles btnAddWalkIn.Click
@@ -168,5 +163,17 @@ Public Class frmManageOrder
         frmAddCustomerWalkin.ActiveControl = frmAddCustomerWalkin.txtCompanyName
         frmAddCustomerWalkin.ShowDialog()
         Call loadFilteredOrders(startDate, endDate)
+    End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+        If ListView1.SelectedItems.Count > 0 Then
+            Dim quotationstatus As String = ListView1.SelectedItems(0).SubItems(8).Text
+
+            If Not String.IsNullOrWhiteSpace(quotationstatus) AndAlso quotationstatus = "1" Then
+                btnCreateInvoice.Enabled = True
+            Else
+                btnCreateInvoice.Enabled = False
+            End If
+        End If
     End Sub
 End Class

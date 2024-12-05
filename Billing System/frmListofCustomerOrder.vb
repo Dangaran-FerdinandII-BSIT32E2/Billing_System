@@ -9,7 +9,6 @@ Public Class frmListofCustomerOrder
 
     Private Sub btnSendQuotation_Click(sender As Object, e As EventArgs) Handles btnSendQuotation.Click
         frmQuotation.orderid = orderid
-        frmQuotation.custid = custid
         frmQuotation.ShowDialog()
     End Sub
 
@@ -138,7 +137,7 @@ Public Class frmListofCustomerOrder
                 cn.Open()
             End If
 
-            sql = "SELECT QuotationStatus FROM tblorder WHERE (QuotationStatus < 2 OR QuotationStatus IS NULL) AND OrderID = '" & orderid & "'"
+            sql = "SELECT QuotationStatus, QuotationImg FROM tblorder WHERE OrderID = '" & orderid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -147,10 +146,14 @@ Public Class frmListofCustomerOrder
 
             dr = cmd.ExecuteReader
 
-            If dr.HasRows Then
-                btnSendQuotation.Enabled = True
-            Else
-                btnSendQuotation.Enabled = False
+            If dr.Read = True Then
+                If IsDBNull(dr("QuotationStatus")) OrElse dr("QuotationStatus") = True Then
+                    'accepted or pending
+                    btnSendQuotation.Enabled = False
+                ElseIf dr("QuotationStatus") = False OrElse IsDBNull(dr("QuotationImg")) Then
+                    'rejeected, can send again OR if there is still not updated
+                    btnSendQuotation.Enabled = True
+                End If
             End If
 
         Catch ex As Exception

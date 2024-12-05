@@ -39,7 +39,7 @@ Public Class frmAdminSettings
         End Try
     End Sub
 
-    Private Sub btnTest_Click(sender As Object, e As EventArgs) Handles btnTest.Click
+    Private Sub btnTest_Click(sender As Object, e As EventArgs) 
         'frmPrintBillingInvoiceV2.ShowDialog()
         'frmQuotation.ShowDialog()
         frmPrintSalesInvoice.ShowDialog()

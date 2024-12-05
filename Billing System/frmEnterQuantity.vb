@@ -11,7 +11,7 @@
 
     Private Sub btnOkay_Click(sender As Object, e As EventArgs) Handles btnOkay.Click
         If restock Or payment Or walkin Or postdatedcheck Then
-            If String.IsNullOrWhiteSpace(txtQuantiyProducts.Text) AndAlso IsNumeric(txtQuantiyProducts.Text) Then
+            If Not String.IsNullOrWhiteSpace(txtQuantiyProducts.Text) AndAlso IsNumeric(txtQuantiyProducts.Text) Then
                 If restock Then
                     frmRestockProduct.newValue = txtQuantiyProducts.Text
                 ElseIf payment Then
