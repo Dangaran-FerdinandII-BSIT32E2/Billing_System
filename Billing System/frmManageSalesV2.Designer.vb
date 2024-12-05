@@ -39,9 +39,6 @@ Partial Class frmManageSalesV2
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel41 = New System.Windows.Forms.Panel()
-        Me.Panel42 = New System.Windows.Forms.Panel()
-        Me.btnAddOrder = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel43 = New System.Windows.Forms.Panel()
         Me.Panel44 = New System.Windows.Forms.Panel()
         Me.cboAdjust = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Panel45 = New System.Windows.Forms.Panel()
@@ -135,7 +132,6 @@ Partial Class frmManageSalesV2
         Me.Panel6.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel41.SuspendLayout()
-        Me.Panel42.SuspendLayout()
         Me.Panel44.SuspendLayout()
         Me.Panel46.SuspendLayout()
         Me.Panel47.SuspendLayout()
@@ -319,8 +315,6 @@ Partial Class frmManageSalesV2
         'Panel41
         '
         Me.Panel41.BackColor = System.Drawing.Color.White
-        Me.Panel41.Controls.Add(Me.Panel42)
-        Me.Panel41.Controls.Add(Me.Panel43)
         Me.Panel41.Controls.Add(Me.Panel44)
         Me.Panel41.Controls.Add(Me.Panel45)
         Me.Panel41.Controls.Add(Me.Panel46)
@@ -337,49 +331,6 @@ Partial Class frmManageSalesV2
         Me.Panel41.Name = "Panel41"
         Me.Panel41.Size = New System.Drawing.Size(1419, 74)
         Me.Panel41.TabIndex = 94
-        '
-        'Panel42
-        '
-        Me.Panel42.BackColor = System.Drawing.Color.White
-        Me.Panel42.Controls.Add(Me.btnAddOrder)
-        Me.Panel42.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel42.Location = New System.Drawing.Point(400, 12)
-        Me.Panel42.Margin = New System.Windows.Forms.Padding(5)
-        Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(187, 50)
-        Me.Panel42.TabIndex = 28
-        '
-        'btnAddOrder
-        '
-        Me.btnAddOrder.BorderRadius = 8
-        Me.btnAddOrder.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnAddOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnAddOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnAddOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnAddOrder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnAddOrder.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnAddOrder.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnAddOrder.ForeColor = System.Drawing.Color.White
-        Me.btnAddOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnAddOrder.Location = New System.Drawing.Point(0, 0)
-        Me.btnAddOrder.Margin = New System.Windows.Forms.Padding(5)
-        Me.btnAddOrder.Name = "btnAddOrder"
-        Me.btnAddOrder.PressedDepth = 20
-        Me.btnAddOrder.Size = New System.Drawing.Size(187, 50)
-        Me.btnAddOrder.TabIndex = 57
-        Me.btnAddOrder.Text = "Add Order"
-        Me.btnAddOrder.Visible = False
-        '
-        'Panel43
-        '
-        Me.Panel43.BackColor = System.Drawing.Color.White
-        Me.Panel43.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel43.Location = New System.Drawing.Point(387, 12)
-        Me.Panel43.Margin = New System.Windows.Forms.Padding(5)
-        Me.Panel43.Name = "Panel43"
-        Me.Panel43.Size = New System.Drawing.Size(13, 50)
-        Me.Panel43.TabIndex = 27
         '
         'Panel44
         '
@@ -1513,7 +1464,6 @@ Partial Class frmManageSalesV2
         Me.Panel6.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
         Me.Panel41.ResumeLayout(False)
-        Me.Panel42.ResumeLayout(False)
         Me.Panel44.ResumeLayout(False)
         Me.Panel46.ResumeLayout(False)
         Me.Panel47.ResumeLayout(False)
@@ -1613,9 +1563,6 @@ Partial Class frmManageSalesV2
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel40 As Panel
     Friend WithEvents Panel41 As Panel
-    Friend WithEvents Panel42 As Panel
-    Friend WithEvents btnAddOrder As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel43 As Panel
     Friend WithEvents Panel44 As Panel
     Friend WithEvents cboAdjust As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Panel45 As Panel

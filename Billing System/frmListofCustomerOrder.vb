@@ -23,6 +23,7 @@ Public Class frmListofCustomerOrder
         Call connection()
         Call loadOrder()
         Call loadComment()
+        Call loadQuotation
     End Sub
 
     Public Sub loadOrder()
@@ -128,6 +129,36 @@ Public Class frmListofCustomerOrder
             End With
         Catch ex As Exception
             MsgBox("An error occurred frmAdminSettings(loadActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub loadQuotation()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT QuotationStatus FROM tblorder WHERE QuotationStatus < 2 AND OrderID = '" & orderid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+
+            If dr.HasRows Then
+                btnSendQuotation.Enabled = True
+            Else
+                btnSendQuotation.Enabled = False
+            End If
+
+        Catch ex As Exception
+            MsgBox("An error occurred frmListofCustomerOrder(loadQuotation): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()

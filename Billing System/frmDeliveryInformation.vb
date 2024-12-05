@@ -9,10 +9,21 @@ Public Class frmDeliveryInformation
     Public billingid As String
     Dim d As OpenFileDialog = New OpenFileDialog
 
+    Public confirmdelivery As Boolean? = False
+    Public createbilling As Boolean? = False
+
     Private Sub frmManageCollectionV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
 
         dtpDateDelivered.Text = DateTime.Now
+
+        If createbilling Then
+            GroupBox1.Text = "Upload Signed Sales Invoice"
+            btnPrint.Visible = True
+        ElseIf confirmdelivery Then
+            GroupBox1.Text = "Proof of Delivery"
+            btnPrint.Visible = False
+        End If
 
         Call loadDeliveryImage()
         Call loadDeliveryDetails()
@@ -23,6 +34,10 @@ Public Class frmDeliveryInformation
             pbxDelivery.Image = Nothing
             PictureBox2.Visible = True
             btnBrowse.Visible = True
+            confirmdelivery = False
+            createbilling = False
+
+            GroupBox1.Text = "Proof of Delivery"
         End If
     End Sub
 

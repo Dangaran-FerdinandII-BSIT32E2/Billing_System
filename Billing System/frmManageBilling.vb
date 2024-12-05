@@ -42,7 +42,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%M-%d') AS DatePrinted, DATE_FORMAT(DateDelivered, '%Y-%M-%d') AS DateDelivered, Terms FROM tblbilling WHERE Remarks = 0 AND DateDelivered IS NOT NULL AND DatePrinted BETWEEN '" & startDateTime.ToString("yyyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyyy-MM-dd") & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%M-%d') AS DatePrinted, DATE_FORMAT(DateDelivered, '%Y-%M-%d') AS DateDelivered, Terms FROM tblbilling WHERE Remarks = 0 AND DateDelivered IS NULL AND DatePrinted BETWEEN '" & startDateTime.ToString("yyyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyyy-MM-dd") & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -86,7 +86,13 @@ Public Class frmManageBilling
         If ListView1.SelectedItems.Count > 0 Then
             frmDeliveryInformation.billingid = ListView1.SelectedItems(0).SubItems(0).Text
             frmDeliveryInformation.lblCompanyName.Text = ListView1.SelectedItems(0).SubItems(1).Text
+
+            frmDeliveryInformation.confirmdelivery = True
+
             frmDeliveryInformation.ShowDialog()
+
+            loadBilling(startDate, endDate)
+            loadDeliver(startDate, endDate)
         Else
             MsgBox("Please select a billing invoice!", MsgBoxStyle.Information, "Selection Error")
         End If
@@ -144,7 +150,7 @@ Public Class frmManageBilling
         End Try
     End Sub
 
-    'LIST OF NOT DELIVERED
+    'LIST OF billing
 
     Public Sub loadDeliver(startDate As String, endDate As String)
         Try
@@ -157,7 +163,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%M-%d') AS DatePrinted, Terms FROM tblbilling WHERE Remarks = 0 AND DateDelivered IS NULL AND DatePrinted BETWEEN '" & startDateTime.ToString("yyyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyyy-MM-dd") & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%M-%d') AS DatePrinted, Terms FROM tblbilling WHERE Remarks = 0 AND DateDelivered IS NOT NULL AND DatePrinted BETWEEN '" & startDateTime.ToString("yyyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyyy-MM-dd") & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -192,7 +198,11 @@ Public Class frmManageBilling
         If ListView2.SelectedItems.Count > 0 Then
             frmDeliveryInformation.btnPrint.Visible = False
             frmDeliveryInformation.billingid = ListView2.SelectedItems(0).SubItems(0).Text
+            frmDeliveryInformation.createbilling = True
             frmDeliveryInformation.ShowDialog()
+
+            loadBilling(startDate, endDate)
+            loadDeliver(startDate, endDate)
         End If
     End Sub
 
@@ -204,13 +214,5 @@ Public Class frmManageBilling
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         endDelivery = DateTimePicker1.Text
         loadDeliver(startDelivery, endDelivery)
-    End Sub
-
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-        If ListView1.SelectedItems.Count > 0 Then
-            frmDeliveryInformation.btnPrint.Visible = True
-            frmDeliveryInformation.billingid = ListView1.SelectedItems(0).SubItems(0).Text
-            frmDeliveryInformation.ShowDialog()
-        End If
     End Sub
 End Class

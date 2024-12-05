@@ -417,6 +417,9 @@ Public Class frmRestockQuotation
                 pbxPayment.Image = Image.FromFile(d.FileName)
 
                 btnPayment.Enabled = True
+
+                pbxProduct.Enabled = False
+                btnBrowse.Enabled = False
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmRestockQuotation(btnBrowse_Click): " & ex.Message)

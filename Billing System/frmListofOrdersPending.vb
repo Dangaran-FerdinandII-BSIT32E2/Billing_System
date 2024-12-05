@@ -208,7 +208,6 @@ Public Class frmListofOrdersPending
 
             frmAddNewCustomer.ShowDialog()
             frmManagePOS.isRental = False
-            frmManageSalesV2.btnAddOrder.Visible = True
             frmManageSalesV2.txtAddress.Enabled = True
             frmManageSalesV2.txtDeliveryAddress.Enabled = True
         End If

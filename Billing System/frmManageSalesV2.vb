@@ -188,7 +188,6 @@ Public Class frmManageSalesV2
             If filled Then
                 Call printBilling()
 
-                'btnAddOrder.Visible = False
                 txtCompanyName.PlaceholderText = "Search Company"
             End If
         Catch ex As Exception
@@ -395,12 +394,6 @@ Public Class frmManageSalesV2
         End If
     End Sub
 
-    Private Sub btnAddOrder_Click(sender As Object, e As EventArgs)
-        If MsgBox("Do you want to add items?", vbYesNo + vbQuestion, "Walk-In Status") = vbYes Then
-            frmManagePOS.ShowDialog()
-        End If
-    End Sub
-
     Public Sub clearText()
         txtCompanyName.Enabled = True
         txtAddress.Enabled = True
@@ -419,7 +412,6 @@ Public Class frmManageSalesV2
         txtCompanyName.Enabled = False
         txtAddress.Enabled = False
         txtDeliveryAddress.Enabled = False
-        btnAddOrder.Visible = False
 
         cboSalesman.SelectedIndex = -1
         cboSalesman.SelectedIndex = -1

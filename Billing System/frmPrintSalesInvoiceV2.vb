@@ -36,7 +36,6 @@ Public Class frmPrintSalesInvoiceV2
         Call sendEmail()
         Call subtractAmount()
         ListView1.Items.Clear()
-        frmManageSalesV2.btnAddOrder.Visible = False
         Call loadActivity()
         Call frmManageSalesV2.clearText()
         Me.Close()
@@ -249,7 +248,6 @@ Public Class frmPrintSalesInvoiceV2
             ListView1.Items.Clear()
             lblAdjustPrice.Text = ""
             If walkin Then
-                frmManageSalesV2.btnAddOrder.Visible = True
             End If
         End If
     End Sub
