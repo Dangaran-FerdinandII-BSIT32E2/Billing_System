@@ -107,4 +107,44 @@ Public Class frmManageRentalV2
             MsgBox("Please select an order!", MsgBoxStyle.Critical, "View Order Error")
         End If
     End Sub
+
+    'RETRIEVAL OF PRODUCTS
+    Private Sub loadRental()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT o.OrderID, COALESCE(w.CompanyName, o.CompanyName) AS CompanyName, COUNT(o.ProductID) AS RentedProducts, DATE_FORMAT(o.RentDueDate, '%M %d, %Y') AS RentDueDate FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE o.isRental = 1 GROUP BY o.OrderID"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            Dim x As ListViewItem
+            ListView2.Items.Clear()
+
+            Do While dr.Read = True
+                x = New ListViewItem(dr("OrderID").ToString)
+                x.SubItems.Add(dr("CompanyName").ToString)
+                x.SubItems.Add(dr("RentedProducts").ToString)
+                x.SubItems.Add(dr("RentDueDate").ToString)
+
+                ListView2.Items.Add(x)
+            Loop
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("An error occured at frmManageRentalV2(loadRental): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnViewRetrieval_Click(sender As Object, e As EventArgs) Handles btnViewRetrieval.Click
+
+    End Sub
 End Class

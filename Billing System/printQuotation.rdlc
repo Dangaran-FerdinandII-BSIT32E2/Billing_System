@@ -294,13 +294,16 @@
               <Width>5.3975cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.96151cm</Width>
+              <Width>5.71361cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.15242cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.2479cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -424,7 +427,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Amount</Value>
+                              <Value>Unit Price</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -436,6 +439,42 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox34</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingBottom>5pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Amount</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -584,12 +623,44 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TotalAmount1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TotalAmount.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TotalAmount1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>5pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>5pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -609,7 +680,7 @@
         <DataSetName>dtPrintQuotation</DataSetName>
         <Top>5.33822cm</Top>
         <Left>0.58677cm</Left>
-        <Height>1.64979cm</Height>
+        <Height>1.6498cm</Height>
         <Width>20.01143cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
@@ -621,6 +692,7 @@
       <Rectangle Name="Rectangle1">
         <ReportItems>
           <Line Name="Line9">
+            <Top>0.07937cm</Top>
             <Left>5.3975cm</Left>
             <Height>14.50975cm</Height>
             <Width>0cm</Width>
@@ -631,7 +703,7 @@
             </Style>
           </Line>
           <Line Name="Line10">
-            <Left>14.35901cm</Left>
+            <Left>11.11111cm</Left>
             <Height>13.6822cm</Height>
             <Width>0cm</Width>
             <ZIndex>1</ZIndex>
@@ -642,7 +714,8 @@
             </Style>
           </Line>
           <Line Name="Line11">
-            <Left>16.84467cm</Left>
+            <Top>0cm</Top>
+            <Left>13.61111cm</Left>
             <Height>14.50975cm</Height>
             <Width>0cm</Width>
             <ZIndex>2</ZIndex>
@@ -653,7 +726,7 @@
             </Style>
           </Line>
           <Line Name="Line4">
-            <Top>13.6822cm</Top>
+            <Top>13.76157cm</Top>
             <Height>0cm</Height>
             <Width>20.01143cm</Width>
             <ZIndex>3</ZIndex>
@@ -663,38 +736,6 @@
               </Border>
             </Style>
           </Line>
-          <Textbox Name="TotalAmount">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!TotalAmount.Value, "dtPrintQuotation")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>TotalAmount</rd:DefaultName>
-            <Top>13.73541cm</Top>
-            <Left>16.91875cm</Left>
-            <Height>0.66146cm</Height>
-            <Width>2.99742cm</Width>
-            <ZIndex>4</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox16">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -714,11 +755,53 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>13.76892cm</Top>
+            <Top>13.84829cm</Top>
             <Left>10.85041cm</Left>
             <Height>0.66146cm</Height>
             <Width>5.91312cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line12">
+            <Top>0.07937cm</Top>
+            <Left>16.76353cm</Left>
+            <Height>14.50975cm</Height>
+            <Width>0cm</Width>
             <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Textbox Name="TotalPricing">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!TotalPricing.Value, "dtPrintQuotation")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TotalPricing</rd:DefaultName>
+            <Top>13.8674cm</Top>
+            <Left>16.93992cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -731,9 +814,9 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>6.17634cm</Top>
-        <Left>0.58677cm</Left>
-        <Height>14.50975cm</Height>
+        <Top>5.40052cm</Top>
+        <Left>0.58678cm</Left>
+        <Height>14.58913cm</Height>
         <Width>20.01143cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
@@ -991,10 +1074,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>8.87529in</Height>
+    <Height>9.16696in</Height>
     <Style />
   </Body>
-  <Width>8.33943in</Width>
+  <Width>8.68925in</Width>
   <Page>
     <PageHeader>
       <Height>2.99299cm</Height>
@@ -1255,10 +1338,14 @@
           <DataField>TotalAmount</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="TotalPricing">
+          <DataField>TotalPricing</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\DataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\DataSet1.xsd</rd:SchemaPath>
         <rd:TableName>dtPrintQuotation</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

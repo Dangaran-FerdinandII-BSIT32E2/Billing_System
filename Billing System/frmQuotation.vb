@@ -63,7 +63,7 @@ Public Class frmQuotation
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT CONCAT(tblcustomer.FirstName, tblcustomer.LastName) AS FullName, tblcustomer.Address, tblcustomer.Delivery, tblorder.OrderID, tblorder.DateOrdered, tblorder.QuotationDueDate, tblproduct.ProductName, tblproduct.Description, tblorder.Quantity, tblorder.Amount, SUM(tblorder.Amount) OVER () AS TotalAmount FROM tblcustomer INNER JOIN tblorder ON tblorder.CustomerID = tblcustomer.CustomerID INNER JOIN tblproduct ON tblorder.ProductID = tblproduct.ProductID WHERE tblorder.OrderID = '" & orderid & "'", cn)
+            da.SelectCommand = New MySqlCommand("SELECT CONCAT( COALESCE(w.LastName, o.LastName), ', ', COALESCE(w.FirstName, o.FirstName) ) AS FullName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, c.Delivery) AS DeliveryAddress, DATE_FORMAT(CURDATE(), '%M %d, %Y') AS DateOrdered, DATE_FORMAT(CURDATE() + INTERVAL 7 DAY, '%M %d, %Y') AS QuotationDueDate, CONCAT('PO-', MONTH(NOW()), '-', YEAR(NOW()), '-', LPAD(o.OrderID, 4, '0')) AS OrderID, o.Unit AS ProductName, o.Description, o.Quantity, o.Amount, (o.Amount * o.Quantity) AS TotalAmount, SUM(o.Amount * o.Quantity) OVER() AS TotalPricing FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE o.OrderID = '" & orderid & "' GROUP BY o.ProductID", cn)
             da.Fill(ds.Tables("dtPrintQuotation"))
 
             If cn.State = ConnectionState.Open Then
@@ -213,5 +213,11 @@ Public Class frmQuotation
         Catch ex As Exception
             MsgBox("An error occurred in sendEmail: " & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
+    End Sub
+
+    Private Sub frmQuotation_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+
+        End If
     End Sub
 End Class

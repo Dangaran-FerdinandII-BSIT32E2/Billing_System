@@ -641,7 +641,7 @@ Partial Class frmManageRentalV2
         '
         'RentedProduct
         '
-        Me.RentedProduct.Text = "Rented Product"
+        Me.RentedProduct.Text = "Rented Products"
         Me.RentedProduct.Width = 250
         '
         'DueDate

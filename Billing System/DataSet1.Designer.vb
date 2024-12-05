@@ -6680,6 +6680,8 @@ Partial Public Class DataSet1
         
         Private columnTotalAmount As Global.System.Data.DataColumn
         
+        Private columnTotalPricing As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -6804,6 +6806,14 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property TotalPricingColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTotalPricing
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -6840,9 +6850,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AdddtPrintQuotationRow(ByVal FullName As String, ByVal Address As String, ByVal DeliveryAddress As String, ByVal OrderID As String, ByVal DateOrdered As String, ByVal QuotationDueDate As String, ByVal ProductName As String, ByVal Description As String, ByVal Quantity As String, ByVal Amount As String, ByVal TotalAmount As String) As dtPrintQuotationRow
+        Public Overloads Function AdddtPrintQuotationRow(ByVal FullName As String, ByVal Address As String, ByVal DeliveryAddress As String, ByVal OrderID As String, ByVal DateOrdered As String, ByVal QuotationDueDate As String, ByVal ProductName As String, ByVal Description As String, ByVal Quantity As String, ByVal Amount As String, ByVal TotalAmount As String, ByVal TotalPricing As String) As dtPrintQuotationRow
             Dim rowdtPrintQuotationRow As dtPrintQuotationRow = CType(Me.NewRow,dtPrintQuotationRow)
-            Dim columnValuesArray() As Object = New Object() {FullName, Address, DeliveryAddress, OrderID, DateOrdered, QuotationDueDate, ProductName, Description, Quantity, Amount, TotalAmount}
+            Dim columnValuesArray() As Object = New Object() {FullName, Address, DeliveryAddress, OrderID, DateOrdered, QuotationDueDate, ProductName, Description, Quantity, Amount, TotalAmount, TotalPricing}
             rowdtPrintQuotationRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdtPrintQuotationRow)
             Return rowdtPrintQuotationRow
@@ -6876,6 +6886,7 @@ Partial Public Class DataSet1
             Me.columnQuantity = MyBase.Columns("Quantity")
             Me.columnAmount = MyBase.Columns("Amount")
             Me.columnTotalAmount = MyBase.Columns("TotalAmount")
+            Me.columnTotalPricing = MyBase.Columns("TotalPricing")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6903,6 +6914,8 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnAmount)
             Me.columnTotalAmount = New Global.System.Data.DataColumn("TotalAmount", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTotalAmount)
+            Me.columnTotalPricing = New Global.System.Data.DataColumn("TotalPricing", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTotalPricing)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10418,6 +10431,21 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property TotalPricing() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledtPrintQuotation.TotalPricingColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TotalPricing' in table 'dtPrintQuotation' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledtPrintQuotation.TotalPricingColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsFullNameNull() As Boolean
             Return Me.IsNull(Me.tabledtPrintQuotation.FullNameColumn)
         End Function
@@ -10546,6 +10574,18 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetTotalAmountNull()
             Me(Me.tabledtPrintQuotation.TotalAmountColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsTotalPricingNull() As Boolean
+            Return Me.IsNull(Me.tabledtPrintQuotation.TotalPricingColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetTotalPricingNull()
+            Me(Me.tabledtPrintQuotation.TotalPricingColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
