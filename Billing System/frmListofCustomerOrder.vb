@@ -6,10 +6,16 @@ Public Class frmListofCustomerOrder
 
     Public orderid As String
     Public custid As String
-
+    Private Sub frmListofCustomerOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call connection()
+        Call loadOrder()
+        Call loadComment()
+        Call loadQuotation()
+    End Sub
     Private Sub btnSendQuotation_Click(sender As Object, e As EventArgs) Handles btnSendQuotation.Click
         frmQuotation.orderid = orderid
         frmQuotation.ShowDialog()
+        Call loadQuotation()
     End Sub
 
     Private Sub btnComment_Click(sender As Object, e As EventArgs) Handles btnComment.Click
@@ -18,12 +24,7 @@ Public Class frmListofCustomerOrder
         frmQuotationComment.ShowDialog()
     End Sub
 
-    Private Sub frmListofCustomerOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call connection()
-        Call loadOrder()
-        Call loadComment()
-        Call loadQuotation
-    End Sub
+
 
     Public Sub loadOrder()
         Try
@@ -147,11 +148,11 @@ Public Class frmListofCustomerOrder
             dr = cmd.ExecuteReader
 
             If dr.Read = True Then
-                If IsDBNull(dr("QuotationStatus")) OrElse dr("QuotationStatus") = True Then
-                    'accepted or pending
+                If (IsDBNull(dr("QuotationStatus")) OrElse dr("QuotationStatus") = 1) And Not IsDBNull(dr("QuotationImg")) Then
+                    'accepted or pending, but there is already image present
                     btnSendQuotation.Enabled = False
-                ElseIf dr("QuotationStatus") = False OrElse IsDBNull(dr("QuotationImg")) Then
-                    'rejeected, can send again OR if there is still not updated
+                ElseIf IsDBNull(dr("QuotationImg")) OrElse dr("QuotationStatus") = 0 Then
+                    'rejeected, can send again OR if there is still no image
                     btnSendQuotation.Enabled = True
                 End If
             End If
