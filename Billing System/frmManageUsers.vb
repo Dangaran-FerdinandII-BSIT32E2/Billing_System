@@ -147,7 +147,7 @@ Public Class frmManageUsers
         cboRole.SelectedIndex = -1
         cboStatus.SelectedIndex = -1
     End Sub
-    Private Sub btnOkay_Click(sender As Object, e As EventArgs) Handles btnOkay.Click
+    Private Sub btnOkay_Click(sender As Object, e As EventArgs) Handles btnView.Click
         TabControl2.SelectedTab = TabPage1
     End Sub
 
@@ -1148,6 +1148,4 @@ Public Class frmManageUsers
         endDate = DateFilter2.Text
         generateUserActivityLogs(startDate, endDate)
     End Sub
-
-
 End Class

@@ -200,10 +200,12 @@ Public Class frmManageSuppliers
             Do While dr.Read = True
                 x = New ListViewItem(dr("ProductName").ToString())
                 x.Font = New Font("Arial", 12, FontStyle.Regular)
-                x.SubItems.Add(dr("Description").ToString())
+                'x.SubItems.Add(dr("Description").ToString())
                 x.SubItems.Add(dr("Category").ToString())
-                x.SubItems.Add(dr("PurchasePrice").ToString())
-                x.SubItems.Add(dr("SellingPrice").ToString())
+                x.SubItems.Add("₱ " & Convert.ToInt32(dr("PurchasePrice")).ToString("N2"))
+                x.SubItems.Add("₱ " & Convert.ToInt32(dr("SellingPrice")).ToString("N2"))
+                'x.SubItems.Add(dr("PurchasePrice").ToString())
+                'x.SubItems.Add(dr("SellingPrice").ToString())
                 x.SubItems.Add(checkStatus(dr("Amount"), dr("ProductID")))
                 x.SubItems.Add(dr("Amount").ToString())
                 x.SubItems.Add(dr("ProductID").ToString()) '7

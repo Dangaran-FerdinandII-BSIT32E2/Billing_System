@@ -207,7 +207,7 @@ Public Class frmAddCustomerWalkin
             If filled AndAlso checkTIN() Then
                 Call saveWalkinInformation()
                 Call saveWalkinCart()
-                Call savetoOrders
+                Call savetoOrders()
 
                 MsgBox("Order saved successfully!", MsgBoxStyle.Information, "Walkin Status")
                 Me.Close()
@@ -392,6 +392,24 @@ Public Class frmAddCustomerWalkin
             txtPhoneNumber.Clear()
             txtEmailAddress.Clear()
             txtTIN.Clear()
+        End If
+    End Sub
+
+    Private Sub chckRentOrder_CheckedChanged(sender As Object, e As EventArgs) Handles chckRentOrder.CheckedChanged
+        If chckRentOrder.Checked = True Then
+            chckPurchaseOrder.Checked = False
+            Me.ActiveControl = Me.txtRentDays
+            GroupBox5.Visible = True
+        Else
+            GroupBox5.Visible = False
+        End If
+    End Sub
+
+    Private Sub chckPurchaseOrder_CheckedChanged(sender As Object, e As EventArgs) Handles chckPurchaseOrder.CheckedChanged
+        If chckPurchaseOrder.Checked = True Then
+            txtRentDays.Clear()
+            chckRentOrder.Checked = False
+            GroupBox5.Visible = False
         End If
     End Sub
 End Class

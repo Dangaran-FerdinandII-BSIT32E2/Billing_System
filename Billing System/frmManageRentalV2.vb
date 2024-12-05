@@ -145,6 +145,6 @@ Public Class frmManageRentalV2
     End Sub
 
     Private Sub btnViewRetrieval_Click(sender As Object, e As EventArgs) Handles btnViewRetrieval.Click
-
+        frmRetrievalProducts.ShowDialog()
     End Sub
 End Class
