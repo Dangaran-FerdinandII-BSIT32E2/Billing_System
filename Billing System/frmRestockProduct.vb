@@ -59,7 +59,7 @@ Public Class frmRestockProduct
                                 newValue = 0
                             End Using
 
-                            txtSupplier.Text = dr("CompanyName").ToString
+                            lblSupplierName.Text = dr("CompanyName").ToString
                             email = dr("Email").ToString
                         End While
                     End Using
@@ -76,7 +76,7 @@ Public Class frmRestockProduct
     End Sub
     Private Sub frmRestockProduct_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
-            txtSupplier.Clear()
+            lblSupplierName.Text = ""
             txtPONo.Clear()
 
             ListView1.Items.Clear()
@@ -117,7 +117,7 @@ Public Class frmRestockProduct
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
             mail.From = New MailAddress("dangaranferds@gmail.com")
             mail.To.Add(email)
-            mail.Subject = "Restock Request for " & txtSupplier.Text & " - Purchase Order " & txtPONo.Text
+            mail.Subject = "Restock Request for " & lblSupplierName.Text & " - Purchase Order " & txtPONo.Text
 
             Using memoryStream As New MemoryStream()
                 Dim emailBody As New StringBuilder
@@ -127,7 +127,7 @@ Public Class frmRestockProduct
 
                 emailBody.AppendLine("<p style='text-align: center;'><strong>Purchase Order Request</strong></p>")
 
-                emailBody.AppendLine("<p>Dear " & txtSupplier.Text & ",</p>")
+                emailBody.AppendLine("<p>Dear " & lblSupplierName.Text & ",</p>")
 
                 emailBody.AppendLine("<p>We hope this email finds you well. We are formally requesting a restock of the following item(s):</p>")
 
@@ -238,7 +238,7 @@ Public Class frmRestockProduct
         End Try
     End Sub
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub btnAddProduct_Click(sender As Object, e As EventArgs) Handles btnAddProduct.Click
         frmListProducts.supplierid = supplierid
         frmListProducts.listofProductIds = listofProductIds
         frmListProducts.ShowDialog()
