@@ -37,6 +37,8 @@ Public Class frmManageOrder
             frmListofCustomerOrder.orderid = ListView1.SelectedItems(0).SubItems(6).Text
             frmListofCustomerOrder.custid = ListView1.SelectedItems(0).SubItems(7).Text
             frmListofCustomerOrder.ShowDialog()
+
+            Call loadFilteredOrders(startDate, endDate)
         Else
             MsgBox("Please select an order!", MsgBoxStyle.Critical, "View Order Error")
         End If

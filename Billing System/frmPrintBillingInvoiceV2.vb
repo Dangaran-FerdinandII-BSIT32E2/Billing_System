@@ -21,7 +21,7 @@ Public Class frmPrintBillingInvoiceV2
                 cn.Open()
             End If
 
-            sql = "SELECT c.Email FROM tblcustomer c INNER JOIN tblbilling b on c.CustomerID = b.CustomerID WHERE BillingID = '" & billingid & "'"
+            sql = "SELECT COALESCE(w.Email, c.Email) AS Email FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -62,7 +62,7 @@ Public Class frmPrintBillingInvoiceV2
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT c.CompanyName, c.Address, o.DeliveryAddress, b.DatePrinted, b.ProductOrder, b.Terms, b.Salesman, c.TIN, o.Quantity, p.ProductName, p.Description, p.SellingPrice, o.Amount, (SELECT SUM(o2.Amount) FROM tblorder o2 INNER JOIN tblbillinvoice i2 ON i2.OrderID = o2.OrderID AND i2.ProductID = o2.ProductID WHERE i2.BillingID = b.BillingID) AS FinalAmount FROM tblcustomer c INNER JOIN tblbilling b ON b.CustomerID = c.CustomerID INNER JOIN tblbillinvoice i ON i.BillingID = b.BillingID INNER JOIN tblorder o ON i.OrderID = o.OrderID AND i.ProductID = o.ProductID INNER JOIN tblproduct p ON i.ProductID = p.ProductID WHERE b.BillingID = '" & billingid & "'", cn)
+            da.SelectCommand = New MySqlCommand("SELECT COALESCE(w.CompanyName, c.CompanyName) AS CompanyName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress, b.DatePrinted AS DatePrinted, b.ProductOrder AS ProductOrder, b.Terms AS Terms, b.SalesMan AS Salesman, COALESCE(w.TIN, c.TIN) AS TIN, o.Quantity AS Quantity, p.ProductName AS ProductName, p.Description AS Description, p.SellingPrice AS SellingPrice, (o.Quantity * p.SellingPrice) AS Amount, SUM(o.Quantity * p.SellingPrice) AS FinalAmount, b.VATableSales, b.VAT FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'", cn)
             da.Fill(ds.Tables("dtPrintBillingStatement"))
 
             If cn.State = ConnectionState.Open Then

@@ -72,7 +72,7 @@ Public Class frmListofOrdersPending
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
-            sql = "SELECT c.*, o.* FROM tblcustomer c INNER JOIN( SELECT o.CustomerID, COUNT(o.OrderID) AS OrderCount, DATE_FORMAT(o.DateOrdered, '%M %d, %Y') AS DateOrdered, o.OrderID, o.OrderListID, o.DeliveryAddress FROM tblorder o LEFT JOIN tblbillinvoice b ON o.OrderID = b.OrderID WHERE o.Status = 1 AND b.OrderID IS NULL GROUP BY o.CustomerID ) o ON c.CustomerID = o.CustomerID"
+            sql = "SELECT COALESCE(w.CompanyName, c.CompanyName) AS CompanyName, COALESCE(CONCAT(w.LastName, ', ', w.FirstName), CONCAT(c.LastName, ', ', c.FirstName)) AS ContactPerson, COALESCE(w.PhoneNumber, c.PhoneNumber) AS PhoneNumber, COALESCE(w.Email, c.Email) AS Email, COUNT(o.OrderID) AS PendingOrders, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress, COALESCE(w.CompanyName, c.CompanyName) AS BusinessStyle, DATE_FORMAT(o.DateOrdered, '%M %d, %Y') AS DateOrdered, COALESCE(w.WalkinID, c.CustomerID) AS CustomerID, o.OrderID AS OrderID, o.OrderListID AS OrderListID, COALESCE(w.TIN, c.TIN) AS TIN FROM tblorder o LEFT JOIN tblcustomer c ON o.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON o.OrderID = ow.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE o.QuotationStatus = 1 AND o.OrderID NOT IN (SELECT OrderID FROM tblbillinvoice) GROUP BY o.OrderID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -81,13 +81,13 @@ Public Class frmListofOrdersPending
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("CompanyName").ToString())
-                x.SubItems.Add(dr("LastName").ToString() + (", ") + dr("FirstName").ToString())
+                x.SubItems.Add(dr("ContactPerson").ToString())
                 x.SubItems.Add(dr("PhoneNumber").ToString())
                 x.SubItems.Add(dr("Email").ToString())
-                x.SubItems.Add(dr("OrderCount").ToString())
+                x.SubItems.Add(dr("PendingOrders").ToString())
                 x.SubItems.Add(dr("Address").ToString())
                 x.SubItems.Add(dr("DeliveryAddress").ToString()) '6
-                x.SubItems.Add(dr("CompanyName").ToString()) 'business style '7
+                x.SubItems.Add(dr("BusinessStyle").ToString()) 'business style '7
                 x.SubItems.Add(dr("DateOrdered").ToString()) '8
                 x.SubItems.Add(dr("CustomerID").ToString()) '9
                 x.SubItems.Add(dr("OrderID").ToString()) '10
@@ -126,6 +126,9 @@ Public Class frmListofOrdersPending
                     frmManageBilling.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text
 
                 Else
+
+                    frmManageSalesV2.ListView1.Items.Clear()
+
                     frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(9).Text
                     frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(10).Text
                     frmManageSalesV2.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(0).Text

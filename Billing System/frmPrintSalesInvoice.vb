@@ -24,7 +24,7 @@ Public Class frmPrintSalesInvoice
                 cn.Open()
             End If
 
-            sql = "SELECT c.Email FROM tblcustomer c INNER JOIN tblbilling b on c.CustomerID = b.CustomerID WHERE BillingID = 6"
+            sql = "SELECT COALESCE(w.Email, c.Email) AS Email FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -65,7 +65,7 @@ Public Class frmPrintSalesInvoice
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT c.CompanyName, c.Address, o.DeliveryAddress, b.DatePrinted, b.ProductOrder, b.Terms, b.Salesman, b.VATableSales, b.VAT, c.TIN, o.Quantity, p.ProductName, p.Description, p.SellingPrice, o.Amount, ( SELECT SUM(o2.Amount) FROM tblorder o2 INNER JOIN tblbillinvoice i2 ON i2.OrderID = o2.OrderID AND i2.ProductID = o2.ProductID WHERE i2.BillingID = b.BillingID ) AS FinalAmount FROM tblcustomer c INNER JOIN tblbilling b ON b.CustomerID = c.CustomerID INNER JOIN tblbillinvoice i ON i.BillingID = b.BillingID INNER JOIN tblorder o ON i.OrderID = o.OrderID AND i.ProductID = o.ProductID INNER JOIN tblproduct p ON i.ProductID = p.ProductID WHERE b.BillingID = '" & billingid & "'", cn)
+            da.SelectCommand = New MySqlCommand("SELECT COALESCE(w.CompanyName, c.CompanyName) AS CompanyName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress, b.DatePrinted AS DatePrinted, b.ProductOrder AS ProductOrder, b.Terms AS Terms, b.SalesMan AS Salesman, COALESCE(w.TIN, c.TIN) AS TIN, o.Quantity AS Quantity, p.ProductName AS ProductName, p.Description AS Description, p.SellingPrice AS SellingPrice, (o.Quantity * p.SellingPrice) AS Amount, SUM(o.Quantity * p.SellingPrice) AS FinalAmount, b.VATableSales, b.VAT FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'", cn)
             da.Fill(ds.Tables("dtPrintBillingStatement"))
 
             If cn.State = ConnectionState.Open Then
@@ -108,8 +108,6 @@ Public Class frmPrintSalesInvoice
                 Dim image As System.Drawing.Image = System.Drawing.Image.FromStream(ms)
                 image.Save(outputImagePath, ImageFormat.Png)
             End Using
-
-            MessageBox.Show("Report exported as an image to: " & outputImagePath)
 
         Catch ex As Exception
             MessageBox.Show("Error exporting report to image: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -205,6 +203,56 @@ Public Class frmPrintSalesInvoice
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Me.Close()
+        If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
+            Call deleteinBilling()
+            Call deleteinBillInvoice()
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub deleteinBilling()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "DELETE FROM tblbilling WHERE BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("An error occurred in loadInformation(deleteinBilling): " & ex.Message, MsgBoxStyle.Critical, "Error")
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub deleteinBillInvoice()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "DELETE FROM tblbillinvoice WHERE BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("An error occurred in loadInformation(deleteinBillInvoice): " & ex.Message, MsgBoxStyle.Critical, "Error")
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub frmPrintSalesInvoice_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing Then
+            billingid = Nothing
+            orderid = Nothing
+            email = Nothing
+        End If
     End Sub
 End Class

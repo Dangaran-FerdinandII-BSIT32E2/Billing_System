@@ -26,15 +26,15 @@ Partial Class frmPrintSalesInvoice
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.btnSendEmail = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel18.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -43,10 +43,11 @@ Partial Class frmPrintSalesInvoice
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ReportViewer1.Location = New System.Drawing.Point(10, 10)
+        Me.ReportViewer1.Location = New System.Drawing.Point(13, 12)
+        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(1008, 526)
+        Me.ReportViewer1.Size = New System.Drawing.Size(1345, 648)
         Me.ReportViewer1.TabIndex = 34
         '
         'Panel18
@@ -57,20 +58,20 @@ Partial Class frmPrintSalesInvoice
         Me.Panel18.Controls.Add(Me.Panel10)
         Me.Panel18.Controls.Add(Me.Panel7)
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel18.Location = New System.Drawing.Point(10, 536)
-        Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel18.Location = New System.Drawing.Point(13, 660)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(1008, 63)
+        Me.Panel18.Size = New System.Drawing.Size(1345, 78)
         Me.Panel18.TabIndex = 33
         '
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.btnSendEmail)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel6.Location = New System.Drawing.Point(678, 10)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel6.Location = New System.Drawing.Point(906, 12)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(160, 43)
+        Me.Panel6.Size = New System.Drawing.Size(213, 54)
         Me.Panel6.TabIndex = 13
         '
         'btnSendEmail
@@ -87,71 +88,30 @@ Partial Class frmPrintSalesInvoice
         Me.btnSendEmail.ForeColor = System.Drawing.Color.White
         Me.btnSendEmail.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnSendEmail.Location = New System.Drawing.Point(0, 0)
-        Me.btnSendEmail.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSendEmail.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.btnSendEmail.Name = "btnSendEmail"
         Me.btnSendEmail.PressedDepth = 20
-        Me.btnSendEmail.Size = New System.Drawing.Size(160, 43)
+        Me.btnSendEmail.Size = New System.Drawing.Size(213, 54)
         Me.btnSendEmail.TabIndex = 41
         Me.btnSendEmail.Text = "Send Email"
         '
-        'Panel10
+        'Panel8
         '
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel10.Location = New System.Drawing.Point(0, 0)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1008, 10)
-        Me.Panel10.TabIndex = 13
-        '
-        'Panel7
-        '
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel7.Location = New System.Drawing.Point(0, 53)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1008, 10)
-        Me.Panel7.TabIndex = 13
-        '
-        'Panel4
-        '
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(10, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1008, 10)
-        Me.Panel4.TabIndex = 30
-        '
-        'Panel3
-        '
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(10, 599)
-        Me.Panel3.TabIndex = 31
-        '
-        'Panel2
-        '
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(1018, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(10, 599)
-        Me.Panel2.TabIndex = 32
-        '
-        'Panel1
-        '
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 599)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1028, 10)
-        Me.Panel1.TabIndex = 29
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel8.Location = New System.Drawing.Point(1119, 12)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(13, 54)
+        Me.Panel8.TabIndex = 16
         '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.btnCancel)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel5.Location = New System.Drawing.Point(848, 10)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel5.Location = New System.Drawing.Point(1132, 12)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(160, 43)
+        Me.Panel5.Size = New System.Drawing.Size(213, 54)
         Me.Panel5.TabIndex = 15
         '
         'btnCancel
@@ -168,34 +128,80 @@ Partial Class frmPrintSalesInvoice
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCancel.Location = New System.Drawing.Point(0, 0)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(160, 43)
+        Me.btnCancel.Size = New System.Drawing.Size(213, 54)
         Me.btnCancel.TabIndex = 41
         Me.btnCancel.Text = "Cancel"
         '
-        'Panel8
+        'Panel10
         '
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel8.Location = New System.Drawing.Point(838, 10)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(10, 43)
-        Me.Panel8.TabIndex = 16
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel10.Location = New System.Drawing.Point(0, 0)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(1345, 12)
+        Me.Panel10.TabIndex = 13
+        '
+        'Panel7
+        '
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel7.Location = New System.Drawing.Point(0, 66)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(1345, 12)
+        Me.Panel7.TabIndex = 13
+        '
+        'Panel4
+        '
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(13, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1345, 12)
+        Me.Panel4.TabIndex = 30
+        '
+        'Panel3
+        '
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(13, 738)
+        Me.Panel3.TabIndex = 31
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel2.Location = New System.Drawing.Point(1358, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(13, 738)
+        Me.Panel2.TabIndex = 32
+        '
+        'Panel1
+        '
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 738)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1371, 12)
+        Me.Panel1.TabIndex = 29
         '
         'frmPrintSalesInvoice
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.ClientSize = New System.Drawing.Size(1371, 750)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.Panel18)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmPrintSalesInvoice"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmPrintSalesInvoice"

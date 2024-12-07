@@ -53,7 +53,7 @@ Public Class frmAddCustomerWalkin
                 cn.Open()
             End If
 
-            sql = "SELECT COALESCE(MAX(WalkinID), 0) AS WalkinID FROM tblwalkin"
+            sql = "SELECT COALESCE(MAX(CustomerID), 0) AS CustomerID FROM tblcustomer"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -63,7 +63,7 @@ Public Class frmAddCustomerWalkin
             dr = cmd.ExecuteReader
 
             If dr.Read = True Then
-                walkinid = (dr("WalkinID") + 1).ToString
+                walkinid = (dr("CustomerID") + 1).ToString
             End If
         Catch ex As Exception
             MsgBox("An Error occurred frmAddCustomerWalkin(loadWalkinID) :  " & ex.Message)

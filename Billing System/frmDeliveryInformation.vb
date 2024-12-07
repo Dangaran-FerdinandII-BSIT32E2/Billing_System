@@ -190,6 +190,7 @@ Public Class frmDeliveryInformation
 
 
                     btnConfirm.Enabled = False
+                    Me.Close()
                 Else
                     MsgBox("Please upload an image!", MsgBoxStyle.Critical, "Upload Error")
                 End If
@@ -249,6 +250,7 @@ Public Class frmDeliveryInformation
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         frmPrintBillingInvoiceV2.billingid = billingid
         frmPrintBillingInvoiceV2.ShowDialog()
+        Me.Close()
     End Sub
     Private Sub loadPrint()
         Try

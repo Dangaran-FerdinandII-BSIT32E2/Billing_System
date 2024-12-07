@@ -42,7 +42,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%M-%d') AS DatePrinted, DATE_FORMAT(DateDelivered, '%Y-%M-%d') AS DateDelivered, Terms FROM tblbilling WHERE Remarks = 0 AND DateDelivered IS NULL AND DatePrinted BETWEEN '" & startDateTime.ToString("yyyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyyy-MM-dd") & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%M %d, %Y') AS DatePrintedF, DATE_FORMAT(DateDelivered, '%M %d, %Y') AS DateDeliveredF, Terms FROM tblbilling WHERE Remarks = 0 AND DateDelivered IS NULL AND DatePrinted BETWEEN '" & startDateTime.ToString("yyyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyyy-MM-dd") & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -56,8 +56,8 @@ Public Class frmManageBilling
                 Do While dr.Read = True
                     x = New ListViewItem(dr("BillingID").ToString())
                     x.SubItems.Add(dr("CompanyName").ToString())
-                    x.SubItems.Add(dr("DatePrinted").ToString())
-                    x.SubItems.Add(dr("DateDelivered").ToString())
+                    x.SubItems.Add(dr("DatePrintedF").ToString())
+                    x.SubItems.Add(If(IsDBNull(dr("DateDeliveredF")), "Not Yet Delivered", dr("DateDeliveredF").ToString()))
                     x.SubItems.Add(dr("Terms").ToString())
                     ListView1.Items.Add(x)
                 Loop
@@ -120,7 +120,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%m-%d') AS DatePrinted, Terms FROM qrybilling WHERE Remarks <> 1 AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' AND CustomerID = '" & customerid & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%M %d, %Y') AS DatePrintedF, DATE_FORMAT(DateDelivered, '%M %d, %Y') AS DateDeliveredF, Terms FROM qrybilling WHERE Remarks <> 1 AND DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' AND CustomerID = '" & customerid & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -134,7 +134,8 @@ Public Class frmManageBilling
                 Do While dr.Read = True
                     x = New ListViewItem(dr("BillingID").ToString())
                     x.SubItems.Add(dr("CompanyName").ToString())
-                    x.SubItems.Add(dr("DatePrinted").ToString())
+                    x.SubItems.Add(dr("DatePrintedF").ToString())
+                    x.SubItems.Add(If(IsDBNull(dr("DateDeliveredF")), "Not Yet Delivered", dr("DateDeliveredF").ToString()))
                     x.SubItems.Add(dr("Terms").ToString())
                     ListView1.Items.Add(x)
                 Loop
@@ -163,7 +164,7 @@ Public Class frmManageBilling
                     cn.Open()
                 End If
 
-                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%Y-%M-%d') AS DatePrinted, Terms FROM tblbilling WHERE Remarks = 0 AND DateDelivered IS NOT NULL AND DatePrinted BETWEEN '" & startDateTime.ToString("yyyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyyy-MM-dd") & "'"
+                sql = "SELECT BillingID, CompanyName, DATE_FORMAT(DatePrinted, '%M %d, %Y') AS DatePrintedF, Terms FROM tblbilling WHERE Remarks = 0 AND DateDelivered IS NOT NULL AND DatePrinted BETWEEN '" & startDateTime.ToString("yyyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyyy-MM-dd") & "'"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -177,7 +178,7 @@ Public Class frmManageBilling
                 Do While dr.Read = True
                     x = New ListViewItem(dr("BillingID").ToString())
                     x.SubItems.Add(dr("CompanyName").ToString())
-                    x.SubItems.Add(dr("DatePrinted").ToString())
+                    x.SubItems.Add(dr("DatePrintedF").ToString())
                     x.SubItems.Add(dr("Terms").ToString())
                     ListView2.Items.Add(x)
                 Loop
@@ -203,6 +204,8 @@ Public Class frmManageBilling
 
             loadBilling(startDate, endDate)
             loadDeliver(startDate, endDate)
+
+
         End If
     End Sub
 

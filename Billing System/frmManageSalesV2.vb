@@ -64,7 +64,7 @@ Public Class frmManageSalesV2
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryorder WHERE OrderID IN (SELECT OrderID FROM tblOrder WHERE CustomerID = '" & lblCustID.Text & "' AND OrderID = '" & orderid & "') And Availability = 1 And Status = 1"
+            sql = "SELECT COALESCE(ow.Quantity, o.Quantity) AS Quantity, COALESCE(p.ProductName, o.Unit) AS Unit, COALESCE(p.Description, o.Description) AS Description, COALESCE(p.SellingPrice, o.SellingPrice) AS SellingPrice, COALESCE((ow.Quantity * p.SellingPrice), o.Amount) AS Amount, o.OrderID, o.OrderListID, COALESCE(ow.ProductID, o.ProductID) AS ProductID FROM qryorder o LEFT JOIN tblorderwalkin ow ON o.OrderID = ow.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblproduct p ON ow.ProductID = p.ProductID WHERE o.OrderID = '" & orderid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -157,46 +157,47 @@ Public Class frmManageSalesV2
 
     Dim totalamount As Double = 0
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-        Try
-            Dim filled As Boolean = True
+        If IsNumeric(txtDays.Text) Then
+            Try
+                Dim filled As Boolean = True
 
-            Dim requiredFields As New Dictionary(Of String, Control) From {
-            {"txtCompanyName", txtCompanyName},
-            {"txtAddress", txtAddress},
-            {"txtDeliveryAddress", txtDeliveryAddress},
-            {"cboSalesman", cboSalesman},
-            {"dtpDate", dtpDate}
-        }
+                Dim requiredFields As New Dictionary(Of String, Control) From {
+                {"txtCompanyName", txtCompanyName},
+                {"txtAddress", txtAddress},
+                {"txtDeliveryAddress", txtDeliveryAddress},
+                {"cboSalesman", cboSalesman},
+                {"txtDays", txtDays}
+            }
+                For Each fieldName_controlPair In requiredFields
+                    Dim control As Control = fieldName_controlPair.Value
 
-            '{"txtBusinessStyle", txtBusinessStyle},
-            '{"txtTerms", txtTerms},
+                    If control.Text.Trim = "" Then
+                        ErrorProvider1.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft)
+                        ErrorProvider1.SetError(control, "This field is required.")
+                        MsgBox("Please fill out all fields!", MsgBoxStyle.Critical, "Empty Inputs")
+                        filled = False
+                        Exit For
+                    Else
+                        ErrorProvider1.SetError(control, "")
+                    End If
+                Next
 
-            For Each fieldName_controlPair In requiredFields
-                Dim control As Control = fieldName_controlPair.Value
+                If filled Then
+                    Call printBilling()
 
-                If control.Text.Trim = "" Then
-                    ErrorProvider1.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft)
-                    ErrorProvider1.SetError(control, "This field is required.")
-                    MsgBox("Please fill out all fields!", MsgBoxStyle.Critical, "Empty Inputs")
-                    filled = False
-                    Exit For
-                Else
-                    ErrorProvider1.SetError(control, "")
+                    txtCompanyName.PlaceholderText = "Search Company"
                 End If
-            Next
+            Catch ex As Exception
+                MsgBox("An error occurred frmManageBilling(btnPrint): " & ex.Message)
+            Finally
+                If cn.State = ConnectionState.Open Then
+                    cn.Close()
+                End If
+            End Try
+        Else
+            MsgBox("Please enter a valid number of days.", MsgBoxStyle.Critical, "Error")
+        End If
 
-            If filled Then
-                Call printBilling()
-
-                txtCompanyName.PlaceholderText = "Search Company"
-            End If
-        Catch ex As Exception
-            MsgBox("An error occurred frmManageBilling(btnPrint): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
     End Sub
 
     Dim changeAmount As Double = 0
@@ -236,8 +237,6 @@ Public Class frmManageSalesV2
             txtPONo.Text = "1"
         End If
 
-
-        'add date based on terms
 
         Call savetoBilling()
         Call savetoBillInvoice()
@@ -419,6 +418,10 @@ Public Class frmManageSalesV2
         cboAdjust.SelectedIndex = 0
 
         ListView1.Items.Clear()
+
+        BillingID = Nothing
+        orderid = Nothing
+        email = Nothing
     End Sub
 
     Private Sub btnSearchCustomer_Click(sender As Object, e As EventArgs) Handles btnSearchCustomer.Click

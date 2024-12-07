@@ -1180,7 +1180,6 @@
               </Line>
               <Line Name="Line34">
                 <Top>3.16731cm</Top>
-                <Left>0cm</Left>
                 <Height>0cm</Height>
                 <Width>18.86732cm</Width>
                 <ZIndex>7</ZIndex>
@@ -1665,7 +1664,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=First(Fields!FinalAmount.Value, "dtPrintBillingStatement")</Value>
+                        <Value>=Fields!FinalAmount.Value</Value>
                         <Style>
                           <FontSize>8pt</FontSize>
                         </Style>
@@ -2092,7 +2091,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>

@@ -163,7 +163,7 @@ Public Class frmPaymentInformation
     End Sub
 
     Dim uploaded As Boolean? = False
-    Private Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnCheck.Click
+    Private Sub btnUpload_Click(sender As Object, e As EventArgs)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -375,7 +375,7 @@ Public Class frmPaymentInformation
         End Try
     End Sub
 
-    Private Sub btnCheck_Click(sender As Object, e As EventArgs) Handles btnCheck.Click
+    Private Sub btnCheck_Click(sender As Object, e As EventArgs) Handles btnUploadPostDatedCheck.Click
 
     End Sub
 End Class
