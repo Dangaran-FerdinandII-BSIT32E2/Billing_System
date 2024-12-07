@@ -233,7 +233,7 @@ Public Class frmAnalyticsData
                 If x.SubItems(2).Text = "Payment Accepted" Then
                     x.ForeColor = Color.Green
                 ElseIf x.SubItems(2).Text = "Payment Rejected" Then
-
+                    x.ForeColor = Color.Red
                 End If
 
                 ListView4.Items.Add(x)
@@ -365,7 +365,7 @@ Public Class frmAnalyticsData
         End Try
     End Sub
 
-    Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.DoubleClick
+    Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs)
         If ListView2.SelectedItems.Count > 0 Then
             frmPaymentInformation.billingid = ListView2.SelectedItems(0).SubItems(3).Text
             frmPaymentInformation.customerid = ListView2.SelectedItems(0).SubItems(4).Text

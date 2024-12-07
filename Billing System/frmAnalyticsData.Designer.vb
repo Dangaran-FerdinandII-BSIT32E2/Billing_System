@@ -22,9 +22,9 @@ Partial Class frmAnalyticsData
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea20 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend20 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series20 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -42,7 +42,7 @@ Partial Class frmAnalyticsData
         Me.OverduePayments = New System.Windows.Forms.TabPage()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.OrderNo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel12 = New System.Windows.Forms.Panel()
@@ -50,41 +50,8 @@ Partial Class frmAnalyticsData
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.OrderUpdates = New System.Windows.Forms.TabPage()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.ListView2 = New System.Windows.Forms.ListView()
-        Me.OrderID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.CompName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Panel17 = New System.Windows.Forms.Panel()
-        Me.Panel18 = New System.Windows.Forms.Panel()
-        Me.Panel19 = New System.Windows.Forms.Panel()
-        Me.Panel20 = New System.Windows.Forms.Panel()
         Me.QuotationUpdates = New System.Windows.Forms.TabPage()
-        Me.Panel21 = New System.Windows.Forms.Panel()
-        Me.ListView3 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader17 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader20 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader21 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Panel22 = New System.Windows.Forms.Panel()
-        Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.Panel24 = New System.Windows.Forms.Panel()
-        Me.Panel25 = New System.Windows.Forms.Panel()
         Me.RambicPO = New System.Windows.Forms.TabPage()
-        Me.Panel26 = New System.Windows.Forms.Panel()
-        Me.ListView4 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader22 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader23 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader24 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader25 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader26 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader27 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Panel27 = New System.Windows.Forms.Panel()
-        Me.Panel28 = New System.Windows.Forms.Panel()
-        Me.Panel29 = New System.Windows.Forms.Panel()
-        Me.Panel30 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
@@ -112,6 +79,71 @@ Partial Class frmAnalyticsData
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.Panel37 = New System.Windows.Forms.Panel()
+        Me.Panel26 = New System.Windows.Forms.Panel()
+        Me.ListView4 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel27 = New System.Windows.Forms.Panel()
+        Me.Panel28 = New System.Windows.Forms.Panel()
+        Me.Panel29 = New System.Windows.Forms.Panel()
+        Me.Panel30 = New System.Windows.Forms.Panel()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel53 = New System.Windows.Forms.Panel()
+        Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel38 = New System.Windows.Forms.Panel()
+        Me.Panel51 = New System.Windows.Forms.Panel()
+        Me.Panel52 = New System.Windows.Forms.Panel()
+        Me.Panel54 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.Panel19 = New System.Windows.Forms.Panel()
+        Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.Panel55 = New System.Windows.Forms.Panel()
+        Me.Panel56 = New System.Windows.Forms.Panel()
+        Me.Panel57 = New System.Windows.Forms.Panel()
+        Me.Panel58 = New System.Windows.Forms.Panel()
+        Me.Guna2CirclePictureBox3 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel39 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.Panel40 = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Guna2CirclePictureBox4 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.Panel21 = New System.Windows.Forms.Panel()
+        Me.ListView3 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel22 = New System.Windows.Forms.Panel()
+        Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.Panel24 = New System.Windows.Forms.Panel()
+        Me.Panel25 = New System.Windows.Forms.Panel()
+        Me.Panel41 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Guna2CirclePictureBox5 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.Panel42 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Guna2CirclePictureBox6 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.Panel43 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Guna2CirclePictureBox9 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.Panel44 = New System.Windows.Forms.Panel()
+        Me.Panel45 = New System.Windows.Forms.Panel()
+        Me.Panel46 = New System.Windows.Forms.Panel()
+        Me.ColumnHeader17 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.panelBody.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,16 +151,30 @@ Partial Class frmAnalyticsData
         Me.TabControl2.SuspendLayout()
         Me.OverduePayments.SuspendLayout()
         Me.Panel11.SuspendLayout()
+        Me.Panel15.SuspendLayout()
         Me.OrderUpdates.SuspendLayout()
-        Me.Panel16.SuspendLayout()
         Me.QuotationUpdates.SuspendLayout()
-        Me.Panel21.SuspendLayout()
         Me.RambicPO.SuspendLayout()
-        Me.Panel26.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
+        Me.Panel36.SuspendLayout()
+        Me.Panel26.SuspendLayout()
+        CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel38.SuspendLayout()
+        Me.Panel16.SuspendLayout()
+        Me.Panel20.SuspendLayout()
+        Me.Panel55.SuspendLayout()
+        CType(Me.Guna2CirclePictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2CirclePictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel21.SuspendLayout()
+        Me.Panel25.SuspendLayout()
+        Me.Panel41.SuspendLayout()
+        CType(Me.Guna2CirclePictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2CirclePictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2CirclePictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel4
@@ -184,46 +230,46 @@ Partial Class frmAnalyticsData
         Me.Guna2GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(0, 532)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(0, 426)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
         Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 0
         Me.Guna2GroupBox2.ShadowDecoration.Enabled = True
         Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1072, 449)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1072, 555)
         Me.Guna2GroupBox2.TabIndex = 15
         '
         'Chart1
         '
         Me.Chart1.BorderlineWidth = 5
         Me.Chart1.BorderSkin.BorderColor = System.Drawing.Color.Red
-        ChartArea1.AxisX.Title = "Months"
-        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        ChartArea1.AxisY.Title = "Revenue"
-        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
+        ChartArea20.AxisX.Title = "Months"
+        ChartArea20.AxisX.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        ChartArea20.AxisY.Title = "Revenue"
+        ChartArea20.AxisY.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        ChartArea20.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea20)
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Legend1.IsTextAutoFit = False
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        Legend20.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Legend20.IsTextAutoFit = False
+        Legend20.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend20)
         Me.Chart1.Location = New System.Drawing.Point(10, 60)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
         Me.Chart1.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.OrangeRed}
-        Series1.ChartArea = "ChartArea1"
-        Series1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series1.Legend = "Legend1"
-        Series1.Name = "Sales"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(1052, 379)
+        Series20.ChartArea = "ChartArea1"
+        Series20.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series20.Legend = "Legend1"
+        Series20.Name = "Sales"
+        Me.Chart1.Series.Add(Series20)
+        Me.Chart1.Size = New System.Drawing.Size(1052, 485)
         Me.Chart1.TabIndex = 34
         '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.White
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(10, 439)
+        Me.Panel5.Location = New System.Drawing.Point(10, 545)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1052, 10)
         Me.Panel5.TabIndex = 33
@@ -234,7 +280,7 @@ Partial Class frmAnalyticsData
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel32.Location = New System.Drawing.Point(0, 60)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(10, 389)
+        Me.Panel32.Size = New System.Drawing.Size(10, 495)
         Me.Panel32.TabIndex = 32
         '
         'Panel33
@@ -264,13 +310,13 @@ Partial Class frmAnalyticsData
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel34.Location = New System.Drawing.Point(1062, 50)
         Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(10, 399)
+        Me.Panel34.Size = New System.Drawing.Size(10, 505)
         Me.Panel34.TabIndex = 33
         '
         'Panel31
         '
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel31.Location = New System.Drawing.Point(0, 522)
+        Me.Panel31.Location = New System.Drawing.Point(0, 416)
         Me.Panel31.Name = "Panel31"
         Me.Panel31.Size = New System.Drawing.Size(1072, 10)
         Me.Panel31.TabIndex = 10
@@ -281,7 +327,7 @@ Partial Class frmAnalyticsData
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel10.Location = New System.Drawing.Point(0, 153)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1072, 369)
+        Me.Panel10.Size = New System.Drawing.Size(1072, 263)
         Me.Panel10.TabIndex = 9
         '
         'TabControl2
@@ -290,14 +336,14 @@ Partial Class frmAnalyticsData
         Me.TabControl2.Controls.Add(Me.OrderUpdates)
         Me.TabControl2.Controls.Add(Me.QuotationUpdates)
         Me.TabControl2.Controls.Add(Me.RambicPO)
-        Me.TabControl2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TabControl2.Cursor = System.Windows.Forms.Cursors.Default
         Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl2.ItemSize = New System.Drawing.Size(266, 40)
         Me.TabControl2.Location = New System.Drawing.Point(0, 0)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
         Me.TabControl2.ShowToolTips = True
-        Me.TabControl2.Size = New System.Drawing.Size(1072, 369)
+        Me.TabControl2.Size = New System.Drawing.Size(1072, 263)
         Me.TabControl2.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
         Me.TabControl2.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabButtonHoverState.Font = New System.Drawing.Font("Arial", 12.0!)
@@ -324,7 +370,7 @@ Partial Class frmAnalyticsData
         Me.OverduePayments.Location = New System.Drawing.Point(4, 44)
         Me.OverduePayments.Name = "OverduePayments"
         Me.OverduePayments.Padding = New System.Windows.Forms.Padding(3)
-        Me.OverduePayments.Size = New System.Drawing.Size(1064, 321)
+        Me.OverduePayments.Size = New System.Drawing.Size(1064, 215)
         Me.OverduePayments.TabIndex = 6
         Me.OverduePayments.Text = "Overdue Payments"
         Me.OverduePayments.UseVisualStyleBackColor = True
@@ -339,29 +385,29 @@ Partial Class frmAnalyticsData
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel11.Location = New System.Drawing.Point(3, 3)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1058, 315)
+        Me.Panel11.Size = New System.Drawing.Size(1058, 209)
         Me.Panel11.TabIndex = 2
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.OrderNo, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader1})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(10, 10)
+        Me.ListView1.Location = New System.Drawing.Point(10, 30)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1038, 295)
+        Me.ListView1.Size = New System.Drawing.Size(1038, 169)
         Me.ListView1.TabIndex = 48
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
-        'ColumnHeader1
+        'OrderNo
         '
-        Me.ColumnHeader1.Text = "Order #"
-        Me.ColumnHeader1.Width = 100
+        Me.OrderNo.Text = "Order No"
+        Me.OrderNo.Width = 100
         '
         'ColumnHeader2
         '
@@ -370,13 +416,13 @@ Partial Class frmAnalyticsData
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "Status"
-        Me.ColumnHeader3.Width = 250
+        Me.ColumnHeader3.Text = "Outstanding Balance"
+        Me.ColumnHeader3.Width = 150
         '
         'Panel12
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel12.Location = New System.Drawing.Point(10, 305)
+        Me.Panel12.Location = New System.Drawing.Point(10, 199)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(1038, 10)
         Me.Panel12.TabIndex = 7
@@ -384,25 +430,28 @@ Partial Class frmAnalyticsData
         'Panel13
         '
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel13.Location = New System.Drawing.Point(0, 10)
+        Me.Panel13.Location = New System.Drawing.Point(0, 30)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(10, 305)
+        Me.Panel13.Size = New System.Drawing.Size(10, 179)
         Me.Panel13.TabIndex = 8
         '
         'Panel14
         '
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel14.Location = New System.Drawing.Point(1048, 10)
+        Me.Panel14.Location = New System.Drawing.Point(1048, 30)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(10, 305)
+        Me.Panel14.Size = New System.Drawing.Size(10, 179)
         Me.Panel14.TabIndex = 9
         '
         'Panel15
         '
+        Me.Panel15.Controls.Add(Me.Panel38)
+        Me.Panel15.Controls.Add(Me.Panel36)
+        Me.Panel15.Controls.Add(Me.Panel35)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(1058, 10)
+        Me.Panel15.Size = New System.Drawing.Size(1058, 30)
         Me.Panel15.TabIndex = 6
         '
         'OrderUpdates
@@ -411,86 +460,10 @@ Partial Class frmAnalyticsData
         Me.OrderUpdates.Location = New System.Drawing.Point(4, 44)
         Me.OrderUpdates.Name = "OrderUpdates"
         Me.OrderUpdates.Padding = New System.Windows.Forms.Padding(3)
-        Me.OrderUpdates.Size = New System.Drawing.Size(1064, 321)
+        Me.OrderUpdates.Size = New System.Drawing.Size(1064, 215)
         Me.OrderUpdates.TabIndex = 3
         Me.OrderUpdates.Text = "Order Updates"
         Me.OrderUpdates.UseVisualStyleBackColor = True
-        '
-        'Panel16
-        '
-        Me.Panel16.Controls.Add(Me.ListView2)
-        Me.Panel16.Controls.Add(Me.Panel17)
-        Me.Panel16.Controls.Add(Me.Panel18)
-        Me.Panel16.Controls.Add(Me.Panel19)
-        Me.Panel16.Controls.Add(Me.Panel20)
-        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel16.Location = New System.Drawing.Point(3, 3)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(1058, 315)
-        Me.Panel16.TabIndex = 1
-        '
-        'ListView2
-        '
-        Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.OrderID, Me.CompName, Me.ColumnHeader11})
-        Me.ListView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.ListView2.FullRowSelect = True
-        Me.ListView2.GridLines = True
-        Me.ListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.ListView2.HideSelection = False
-        Me.ListView2.Location = New System.Drawing.Point(10, 10)
-        Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(1038, 295)
-        Me.ListView2.TabIndex = 48
-        Me.ListView2.UseCompatibleStateImageBehavior = False
-        Me.ListView2.View = System.Windows.Forms.View.Details
-        '
-        'OrderID
-        '
-        Me.OrderID.Text = "Order #"
-        Me.OrderID.Width = 100
-        '
-        'CompName
-        '
-        Me.CompName.Text = "Company Name"
-        Me.CompName.Width = 250
-        '
-        'ColumnHeader11
-        '
-        Me.ColumnHeader11.Text = "Status"
-        Me.ColumnHeader11.Width = 250
-        '
-        'Panel17
-        '
-        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel17.Location = New System.Drawing.Point(10, 305)
-        Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(1038, 10)
-        Me.Panel17.TabIndex = 7
-        '
-        'Panel18
-        '
-        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel18.Location = New System.Drawing.Point(0, 10)
-        Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(10, 305)
-        Me.Panel18.TabIndex = 8
-        '
-        'Panel19
-        '
-        Me.Panel19.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel19.Location = New System.Drawing.Point(1048, 10)
-        Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(10, 305)
-        Me.Panel19.TabIndex = 9
-        '
-        'Panel20
-        '
-        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel20.Location = New System.Drawing.Point(0, 0)
-        Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(1058, 10)
-        Me.Panel20.TabIndex = 6
         '
         'QuotationUpdates
         '
@@ -498,102 +471,10 @@ Partial Class frmAnalyticsData
         Me.QuotationUpdates.Location = New System.Drawing.Point(4, 44)
         Me.QuotationUpdates.Name = "QuotationUpdates"
         Me.QuotationUpdates.Padding = New System.Windows.Forms.Padding(3)
-        Me.QuotationUpdates.Size = New System.Drawing.Size(1064, 321)
+        Me.QuotationUpdates.Size = New System.Drawing.Size(1064, 215)
         Me.QuotationUpdates.TabIndex = 4
         Me.QuotationUpdates.Text = "Quotation Updates"
         Me.QuotationUpdates.UseVisualStyleBackColor = True
-        '
-        'Panel21
-        '
-        Me.Panel21.Controls.Add(Me.ListView3)
-        Me.Panel21.Controls.Add(Me.Panel22)
-        Me.Panel21.Controls.Add(Me.Panel23)
-        Me.Panel21.Controls.Add(Me.Panel24)
-        Me.Panel21.Controls.Add(Me.Panel25)
-        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel21.Location = New System.Drawing.Point(3, 3)
-        Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(1058, 315)
-        Me.Panel21.TabIndex = 1
-        '
-        'ListView3
-        '
-        Me.ListView3.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader16, Me.ColumnHeader17, Me.ColumnHeader18, Me.ColumnHeader19, Me.ColumnHeader20, Me.ColumnHeader21})
-        Me.ListView3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.ListView3.ForeColor = System.Drawing.Color.Red
-        Me.ListView3.FullRowSelect = True
-        Me.ListView3.GridLines = True
-        Me.ListView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.ListView3.HideSelection = False
-        Me.ListView3.Location = New System.Drawing.Point(10, 10)
-        Me.ListView3.Name = "ListView3"
-        Me.ListView3.Size = New System.Drawing.Size(1038, 295)
-        Me.ListView3.TabIndex = 43
-        Me.ListView3.UseCompatibleStateImageBehavior = False
-        Me.ListView3.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader16
-        '
-        Me.ColumnHeader16.Text = "Name"
-        Me.ColumnHeader16.Width = 200
-        '
-        'ColumnHeader17
-        '
-        Me.ColumnHeader17.Text = "Company Name"
-        Me.ColumnHeader17.Width = 250
-        '
-        'ColumnHeader18
-        '
-        Me.ColumnHeader18.Text = "Contact Number"
-        Me.ColumnHeader18.Width = 250
-        '
-        'ColumnHeader19
-        '
-        Me.ColumnHeader19.Text = "Email Address"
-        Me.ColumnHeader19.Width = 250
-        '
-        'ColumnHeader20
-        '
-        Me.ColumnHeader20.Text = "Ordered Date"
-        Me.ColumnHeader20.Width = 200
-        '
-        'ColumnHeader21
-        '
-        Me.ColumnHeader21.Text = "Status"
-        Me.ColumnHeader21.Width = 200
-        '
-        'Panel22
-        '
-        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel22.Location = New System.Drawing.Point(10, 305)
-        Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(1038, 10)
-        Me.Panel22.TabIndex = 7
-        '
-        'Panel23
-        '
-        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel23.Location = New System.Drawing.Point(0, 10)
-        Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(10, 305)
-        Me.Panel23.TabIndex = 8
-        '
-        'Panel24
-        '
-        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel24.Location = New System.Drawing.Point(1048, 10)
-        Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(10, 305)
-        Me.Panel24.TabIndex = 9
-        '
-        'Panel25
-        '
-        Me.Panel25.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel25.Location = New System.Drawing.Point(0, 0)
-        Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(1058, 10)
-        Me.Panel25.TabIndex = 6
         '
         'RambicPO
         '
@@ -601,102 +482,10 @@ Partial Class frmAnalyticsData
         Me.RambicPO.Location = New System.Drawing.Point(4, 44)
         Me.RambicPO.Name = "RambicPO"
         Me.RambicPO.Padding = New System.Windows.Forms.Padding(3)
-        Me.RambicPO.Size = New System.Drawing.Size(1064, 321)
+        Me.RambicPO.Size = New System.Drawing.Size(1064, 215)
         Me.RambicPO.TabIndex = 5
         Me.RambicPO.Text = "Rambic P.O."
         Me.RambicPO.UseVisualStyleBackColor = True
-        '
-        'Panel26
-        '
-        Me.Panel26.Controls.Add(Me.ListView4)
-        Me.Panel26.Controls.Add(Me.Panel27)
-        Me.Panel26.Controls.Add(Me.Panel28)
-        Me.Panel26.Controls.Add(Me.Panel29)
-        Me.Panel26.Controls.Add(Me.Panel30)
-        Me.Panel26.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel26.Location = New System.Drawing.Point(3, 3)
-        Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(1058, 315)
-        Me.Panel26.TabIndex = 1
-        '
-        'ListView4
-        '
-        Me.ListView4.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader22, Me.ColumnHeader23, Me.ColumnHeader24, Me.ColumnHeader25, Me.ColumnHeader26, Me.ColumnHeader27})
-        Me.ListView4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView4.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.ListView4.ForeColor = System.Drawing.Color.Red
-        Me.ListView4.FullRowSelect = True
-        Me.ListView4.GridLines = True
-        Me.ListView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.ListView4.HideSelection = False
-        Me.ListView4.Location = New System.Drawing.Point(10, 10)
-        Me.ListView4.Name = "ListView4"
-        Me.ListView4.Size = New System.Drawing.Size(1038, 295)
-        Me.ListView4.TabIndex = 43
-        Me.ListView4.UseCompatibleStateImageBehavior = False
-        Me.ListView4.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader22
-        '
-        Me.ColumnHeader22.Text = "Name"
-        Me.ColumnHeader22.Width = 200
-        '
-        'ColumnHeader23
-        '
-        Me.ColumnHeader23.Text = "Company Name"
-        Me.ColumnHeader23.Width = 250
-        '
-        'ColumnHeader24
-        '
-        Me.ColumnHeader24.Text = "Contact Number"
-        Me.ColumnHeader24.Width = 250
-        '
-        'ColumnHeader25
-        '
-        Me.ColumnHeader25.Text = "Email Address"
-        Me.ColumnHeader25.Width = 250
-        '
-        'ColumnHeader26
-        '
-        Me.ColumnHeader26.Text = "Ordered Date"
-        Me.ColumnHeader26.Width = 200
-        '
-        'ColumnHeader27
-        '
-        Me.ColumnHeader27.Text = "Status"
-        Me.ColumnHeader27.Width = 200
-        '
-        'Panel27
-        '
-        Me.Panel27.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel27.Location = New System.Drawing.Point(10, 305)
-        Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(1038, 10)
-        Me.Panel27.TabIndex = 7
-        '
-        'Panel28
-        '
-        Me.Panel28.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel28.Location = New System.Drawing.Point(0, 10)
-        Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(10, 305)
-        Me.Panel28.TabIndex = 8
-        '
-        'Panel29
-        '
-        Me.Panel29.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel29.Location = New System.Drawing.Point(1048, 10)
-        Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(10, 305)
-        Me.Panel29.TabIndex = 9
-        '
-        'Panel30
-        '
-        Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel30.Location = New System.Drawing.Point(0, 0)
-        Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(1058, 10)
-        Me.Panel30.TabIndex = 6
         '
         'Panel9
         '
@@ -990,6 +779,644 @@ Partial Class frmAnalyticsData
         Me.ColumnHeader14.Text = "Date Paid"
         Me.ColumnHeader14.Width = 250
         '
+        'Panel35
+        '
+        Me.Panel35.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel35.Location = New System.Drawing.Point(0, 0)
+        Me.Panel35.Name = "Panel35"
+        Me.Panel35.Size = New System.Drawing.Size(10, 30)
+        Me.Panel35.TabIndex = 9
+        '
+        'Panel36
+        '
+        Me.Panel36.Controls.Add(Me.Label4)
+        Me.Panel36.Controls.Add(Me.Guna2CirclePictureBox2)
+        Me.Panel36.Controls.Add(Me.Panel53)
+        Me.Panel36.Controls.Add(Me.Panel37)
+        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel36.Location = New System.Drawing.Point(10, 0)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(172, 30)
+        Me.Panel36.TabIndex = 10
+        '
+        'Panel37
+        '
+        Me.Panel37.BackColor = System.Drawing.Color.White
+        Me.Panel37.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel37.Location = New System.Drawing.Point(0, 22)
+        Me.Panel37.Name = "Panel37"
+        Me.Panel37.Size = New System.Drawing.Size(172, 8)
+        Me.Panel37.TabIndex = 34
+        '
+        'Panel26
+        '
+        Me.Panel26.Controls.Add(Me.ListView4)
+        Me.Panel26.Controls.Add(Me.Panel27)
+        Me.Panel26.Controls.Add(Me.Panel28)
+        Me.Panel26.Controls.Add(Me.Panel29)
+        Me.Panel26.Controls.Add(Me.Panel30)
+        Me.Panel26.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel26.Location = New System.Drawing.Point(3, 3)
+        Me.Panel26.Name = "Panel26"
+        Me.Panel26.Size = New System.Drawing.Size(1058, 209)
+        Me.Panel26.TabIndex = 3
+        '
+        'ListView4
+        '
+        Me.ListView4.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader15, Me.ColumnHeader17})
+        Me.ListView4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView4.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView4.FullRowSelect = True
+        Me.ListView4.GridLines = True
+        Me.ListView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.ListView4.HideSelection = False
+        Me.ListView4.Location = New System.Drawing.Point(10, 10)
+        Me.ListView4.Name = "ListView4"
+        Me.ListView4.Size = New System.Drawing.Size(1038, 189)
+        Me.ListView4.TabIndex = 48
+        Me.ListView4.UseCompatibleStateImageBehavior = False
+        Me.ListView4.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader10
+        '
+        Me.ColumnHeader10.Text = "P.O. No"
+        Me.ColumnHeader10.Width = 100
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "Company Name"
+        Me.ColumnHeader11.Width = 250
+        '
+        'ColumnHeader15
+        '
+        Me.ColumnHeader15.Text = "Amount"
+        Me.ColumnHeader15.Width = 150
+        '
+        'Panel27
+        '
+        Me.Panel27.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel27.Location = New System.Drawing.Point(10, 199)
+        Me.Panel27.Name = "Panel27"
+        Me.Panel27.Size = New System.Drawing.Size(1038, 10)
+        Me.Panel27.TabIndex = 7
+        '
+        'Panel28
+        '
+        Me.Panel28.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel28.Location = New System.Drawing.Point(0, 10)
+        Me.Panel28.Name = "Panel28"
+        Me.Panel28.Size = New System.Drawing.Size(10, 199)
+        Me.Panel28.TabIndex = 8
+        '
+        'Panel29
+        '
+        Me.Panel29.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel29.Location = New System.Drawing.Point(1048, 10)
+        Me.Panel29.Name = "Panel29"
+        Me.Panel29.Size = New System.Drawing.Size(10, 199)
+        Me.Panel29.TabIndex = 9
+        '
+        'Panel30
+        '
+        Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel30.Location = New System.Drawing.Point(0, 0)
+        Me.Panel30.Name = "Panel30"
+        Me.Panel30.Size = New System.Drawing.Size(1058, 10)
+        Me.Panel30.TabIndex = 6
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Last Payment"
+        Me.ColumnHeader1.Width = 200
+        '
+        'Panel53
+        '
+        Me.Panel53.BackColor = System.Drawing.Color.White
+        Me.Panel53.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel53.Location = New System.Drawing.Point(0, 0)
+        Me.Panel53.Name = "Panel53"
+        Me.Panel53.Size = New System.Drawing.Size(172, 7)
+        Me.Panel53.TabIndex = 35
+        '
+        'Guna2CirclePictureBox2
+        '
+        Me.Guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2CirclePictureBox2.FillColor = System.Drawing.Color.Red
+        Me.Guna2CirclePictureBox2.ImageRotate = 0!
+        Me.Guna2CirclePictureBox2.Location = New System.Drawing.Point(0, 7)
+        Me.Guna2CirclePictureBox2.Name = "Guna2CirclePictureBox2"
+        Me.Guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox2.Size = New System.Drawing.Size(15, 15)
+        Me.Guna2CirclePictureBox2.TabIndex = 37
+        Me.Guna2CirclePictureBox2.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label4.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Label4.ForeColor = System.Drawing.Color.Red
+        Me.Label4.Location = New System.Drawing.Point(15, 7)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(77, 15)
+        Me.Label4.TabIndex = 38
+        Me.Label4.Text = "New Update"
+        '
+        'Panel38
+        '
+        Me.Panel38.Controls.Add(Me.Label2)
+        Me.Panel38.Controls.Add(Me.Panel54)
+        Me.Panel38.Controls.Add(Me.Panel51)
+        Me.Panel38.Controls.Add(Me.Panel52)
+        Me.Panel38.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel38.Location = New System.Drawing.Point(728, 0)
+        Me.Panel38.Name = "Panel38"
+        Me.Panel38.Size = New System.Drawing.Size(330, 30)
+        Me.Panel38.TabIndex = 41
+        '
+        'Panel51
+        '
+        Me.Panel51.BackColor = System.Drawing.Color.White
+        Me.Panel51.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel51.Location = New System.Drawing.Point(0, 0)
+        Me.Panel51.Name = "Panel51"
+        Me.Panel51.Size = New System.Drawing.Size(330, 7)
+        Me.Panel51.TabIndex = 35
+        '
+        'Panel52
+        '
+        Me.Panel52.BackColor = System.Drawing.Color.White
+        Me.Panel52.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel52.Location = New System.Drawing.Point(0, 23)
+        Me.Panel52.Name = "Panel52"
+        Me.Panel52.Size = New System.Drawing.Size(330, 7)
+        Me.Panel52.TabIndex = 34
+        '
+        'Panel54
+        '
+        Me.Panel54.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel54.Location = New System.Drawing.Point(320, 7)
+        Me.Panel54.Name = "Panel54"
+        Me.Panel54.Size = New System.Drawing.Size(10, 16)
+        Me.Panel54.TabIndex = 39
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label2.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(156, 7)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(164, 15)
+        Me.Label2.TabIndex = 41
+        Me.Label2.Text = "*sorted by earliest due date"
+        '
+        'Panel16
+        '
+        Me.Panel16.Controls.Add(Me.ListView2)
+        Me.Panel16.Controls.Add(Me.Panel17)
+        Me.Panel16.Controls.Add(Me.Panel18)
+        Me.Panel16.Controls.Add(Me.Panel19)
+        Me.Panel16.Controls.Add(Me.Panel20)
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel16.Location = New System.Drawing.Point(3, 3)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(1058, 209)
+        Me.Panel16.TabIndex = 3
+        '
+        'ListView2
+        '
+        Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader16})
+        Me.ListView2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView2.FullRowSelect = True
+        Me.ListView2.GridLines = True
+        Me.ListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.ListView2.HideSelection = False
+        Me.ListView2.Location = New System.Drawing.Point(10, 30)
+        Me.ListView2.Name = "ListView2"
+        Me.ListView2.Size = New System.Drawing.Size(1038, 169)
+        Me.ListView2.TabIndex = 48
+        Me.ListView2.UseCompatibleStateImageBehavior = False
+        Me.ListView2.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Order No"
+        Me.ColumnHeader4.Width = 100
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Company Name"
+        Me.ColumnHeader5.Width = 250
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Status"
+        Me.ColumnHeader6.Width = 150
+        '
+        'ColumnHeader16
+        '
+        Me.ColumnHeader16.Text = "Date Ordered"
+        Me.ColumnHeader16.Width = 200
+        '
+        'Panel17
+        '
+        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel17.Location = New System.Drawing.Point(10, 199)
+        Me.Panel17.Name = "Panel17"
+        Me.Panel17.Size = New System.Drawing.Size(1038, 10)
+        Me.Panel17.TabIndex = 7
+        '
+        'Panel18
+        '
+        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel18.Location = New System.Drawing.Point(0, 30)
+        Me.Panel18.Name = "Panel18"
+        Me.Panel18.Size = New System.Drawing.Size(10, 179)
+        Me.Panel18.TabIndex = 8
+        '
+        'Panel19
+        '
+        Me.Panel19.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel19.Location = New System.Drawing.Point(1048, 30)
+        Me.Panel19.Name = "Panel19"
+        Me.Panel19.Size = New System.Drawing.Size(10, 179)
+        Me.Panel19.TabIndex = 9
+        '
+        'Panel20
+        '
+        Me.Panel20.Controls.Add(Me.Panel55)
+        Me.Panel20.Controls.Add(Me.Panel58)
+        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel20.Location = New System.Drawing.Point(0, 0)
+        Me.Panel20.Name = "Panel20"
+        Me.Panel20.Size = New System.Drawing.Size(1058, 30)
+        Me.Panel20.TabIndex = 6
+        '
+        'Panel55
+        '
+        Me.Panel55.Controls.Add(Me.Label12)
+        Me.Panel55.Controls.Add(Me.Guna2CirclePictureBox4)
+        Me.Panel55.Controls.Add(Me.Panel40)
+        Me.Panel55.Controls.Add(Me.Label7)
+        Me.Panel55.Controls.Add(Me.Guna2CirclePictureBox1)
+        Me.Panel55.Controls.Add(Me.Panel39)
+        Me.Panel55.Controls.Add(Me.Label6)
+        Me.Panel55.Controls.Add(Me.Guna2CirclePictureBox3)
+        Me.Panel55.Controls.Add(Me.Panel56)
+        Me.Panel55.Controls.Add(Me.Panel57)
+        Me.Panel55.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel55.Location = New System.Drawing.Point(10, 0)
+        Me.Panel55.Name = "Panel55"
+        Me.Panel55.Size = New System.Drawing.Size(432, 30)
+        Me.Panel55.TabIndex = 10
+        '
+        'Panel56
+        '
+        Me.Panel56.BackColor = System.Drawing.Color.White
+        Me.Panel56.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel56.Location = New System.Drawing.Point(0, 0)
+        Me.Panel56.Name = "Panel56"
+        Me.Panel56.Size = New System.Drawing.Size(432, 7)
+        Me.Panel56.TabIndex = 35
+        '
+        'Panel57
+        '
+        Me.Panel57.BackColor = System.Drawing.Color.White
+        Me.Panel57.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel57.Location = New System.Drawing.Point(0, 22)
+        Me.Panel57.Name = "Panel57"
+        Me.Panel57.Size = New System.Drawing.Size(432, 8)
+        Me.Panel57.TabIndex = 34
+        '
+        'Panel58
+        '
+        Me.Panel58.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel58.Location = New System.Drawing.Point(0, 0)
+        Me.Panel58.Name = "Panel58"
+        Me.Panel58.Size = New System.Drawing.Size(10, 30)
+        Me.Panel58.TabIndex = 9
+        '
+        'Guna2CirclePictureBox3
+        '
+        Me.Guna2CirclePictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2CirclePictureBox3.FillColor = System.Drawing.Color.Green
+        Me.Guna2CirclePictureBox3.ImageRotate = 0!
+        Me.Guna2CirclePictureBox3.Location = New System.Drawing.Point(0, 7)
+        Me.Guna2CirclePictureBox3.Name = "Guna2CirclePictureBox3"
+        Me.Guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox3.Size = New System.Drawing.Size(15, 15)
+        Me.Guna2CirclePictureBox3.TabIndex = 40
+        Me.Guna2CirclePictureBox3.TabStop = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label6.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Label6.ForeColor = System.Drawing.Color.Green
+        Me.Label6.Location = New System.Drawing.Point(15, 7)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(62, 15)
+        Me.Label6.TabIndex = 41
+        Me.Label6.Text = "Delivered"
+        '
+        'Panel39
+        '
+        Me.Panel39.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel39.Location = New System.Drawing.Point(77, 7)
+        Me.Panel39.Name = "Panel39"
+        Me.Panel39.Size = New System.Drawing.Size(10, 15)
+        Me.Panel39.TabIndex = 42
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label7.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Label7.ForeColor = System.Drawing.Color.Blue
+        Me.Label7.Location = New System.Drawing.Point(102, 7)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(61, 15)
+        Me.Label7.TabIndex = 44
+        Me.Label7.Text = "In-Transit"
+        '
+        'Guna2CirclePictureBox1
+        '
+        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.Blue
+        Me.Guna2CirclePictureBox1.ImageRotate = 0!
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(87, 7)
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(15, 15)
+        Me.Guna2CirclePictureBox1.TabIndex = 43
+        Me.Guna2CirclePictureBox1.TabStop = False
+        '
+        'Panel40
+        '
+        Me.Panel40.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel40.Location = New System.Drawing.Point(163, 7)
+        Me.Panel40.Name = "Panel40"
+        Me.Panel40.Size = New System.Drawing.Size(10, 15)
+        Me.Panel40.TabIndex = 45
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label12.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Label12.ForeColor = System.Drawing.Color.Gold
+        Me.Label12.Location = New System.Drawing.Point(188, 7)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(120, 15)
+        Me.Label12.TabIndex = 47
+        Me.Label12.Text = "Ready for Shipment"
+        '
+        'Guna2CirclePictureBox4
+        '
+        Me.Guna2CirclePictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2CirclePictureBox4.FillColor = System.Drawing.Color.Gold
+        Me.Guna2CirclePictureBox4.ImageRotate = 0!
+        Me.Guna2CirclePictureBox4.Location = New System.Drawing.Point(173, 7)
+        Me.Guna2CirclePictureBox4.Name = "Guna2CirclePictureBox4"
+        Me.Guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox4.Size = New System.Drawing.Size(15, 15)
+        Me.Guna2CirclePictureBox4.TabIndex = 46
+        Me.Guna2CirclePictureBox4.TabStop = False
+        '
+        'Panel21
+        '
+        Me.Panel21.Controls.Add(Me.ListView3)
+        Me.Panel21.Controls.Add(Me.Panel22)
+        Me.Panel21.Controls.Add(Me.Panel23)
+        Me.Panel21.Controls.Add(Me.Panel24)
+        Me.Panel21.Controls.Add(Me.Panel25)
+        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel21.Location = New System.Drawing.Point(3, 3)
+        Me.Panel21.Name = "Panel21"
+        Me.Panel21.Size = New System.Drawing.Size(1058, 209)
+        Me.Panel21.TabIndex = 4
+        '
+        'ListView3
+        '
+        Me.ListView3.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9})
+        Me.ListView3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ListView3.FullRowSelect = True
+        Me.ListView3.GridLines = True
+        Me.ListView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.ListView3.HideSelection = False
+        Me.ListView3.Location = New System.Drawing.Point(10, 30)
+        Me.ListView3.Name = "ListView3"
+        Me.ListView3.Size = New System.Drawing.Size(1038, 169)
+        Me.ListView3.TabIndex = 48
+        Me.ListView3.UseCompatibleStateImageBehavior = False
+        Me.ListView3.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Order No"
+        Me.ColumnHeader7.Width = 100
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "Company Name"
+        Me.ColumnHeader8.Width = 250
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Status"
+        Me.ColumnHeader9.Width = 150
+        '
+        'Panel22
+        '
+        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel22.Location = New System.Drawing.Point(10, 199)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(1038, 10)
+        Me.Panel22.TabIndex = 7
+        '
+        'Panel23
+        '
+        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel23.Location = New System.Drawing.Point(0, 30)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(10, 179)
+        Me.Panel23.TabIndex = 8
+        '
+        'Panel24
+        '
+        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel24.Location = New System.Drawing.Point(1048, 30)
+        Me.Panel24.Name = "Panel24"
+        Me.Panel24.Size = New System.Drawing.Size(10, 179)
+        Me.Panel24.TabIndex = 9
+        '
+        'Panel25
+        '
+        Me.Panel25.Controls.Add(Me.Panel41)
+        Me.Panel25.Controls.Add(Me.Panel46)
+        Me.Panel25.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel25.Location = New System.Drawing.Point(0, 0)
+        Me.Panel25.Name = "Panel25"
+        Me.Panel25.Size = New System.Drawing.Size(1058, 30)
+        Me.Panel25.TabIndex = 6
+        '
+        'Panel41
+        '
+        Me.Panel41.Controls.Add(Me.Label8)
+        Me.Panel41.Controls.Add(Me.Guna2CirclePictureBox5)
+        Me.Panel41.Controls.Add(Me.Panel42)
+        Me.Panel41.Controls.Add(Me.Label9)
+        Me.Panel41.Controls.Add(Me.Guna2CirclePictureBox6)
+        Me.Panel41.Controls.Add(Me.Panel43)
+        Me.Panel41.Controls.Add(Me.Label13)
+        Me.Panel41.Controls.Add(Me.Guna2CirclePictureBox9)
+        Me.Panel41.Controls.Add(Me.Panel44)
+        Me.Panel41.Controls.Add(Me.Panel45)
+        Me.Panel41.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel41.Location = New System.Drawing.Point(10, 0)
+        Me.Panel41.Name = "Panel41"
+        Me.Panel41.Size = New System.Drawing.Size(432, 30)
+        Me.Panel41.TabIndex = 10
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label8.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(181, 7)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(58, 15)
+        Me.Label8.TabIndex = 47
+        Me.Label8.Text = "Rejected"
+        '
+        'Guna2CirclePictureBox5
+        '
+        Me.Guna2CirclePictureBox5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2CirclePictureBox5.FillColor = System.Drawing.Color.Red
+        Me.Guna2CirclePictureBox5.ImageRotate = 0!
+        Me.Guna2CirclePictureBox5.Location = New System.Drawing.Point(166, 7)
+        Me.Guna2CirclePictureBox5.Name = "Guna2CirclePictureBox5"
+        Me.Guna2CirclePictureBox5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox5.Size = New System.Drawing.Size(15, 15)
+        Me.Guna2CirclePictureBox5.TabIndex = 46
+        Me.Guna2CirclePictureBox5.TabStop = False
+        '
+        'Panel42
+        '
+        Me.Panel42.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel42.Location = New System.Drawing.Point(156, 7)
+        Me.Panel42.Name = "Panel42"
+        Me.Panel42.Size = New System.Drawing.Size(10, 15)
+        Me.Panel42.TabIndex = 45
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label9.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Label9.ForeColor = System.Drawing.Color.Orange
+        Me.Label9.Location = New System.Drawing.Point(103, 7)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(53, 15)
+        Me.Label9.TabIndex = 44
+        Me.Label9.Text = "Pending"
+        '
+        'Guna2CirclePictureBox6
+        '
+        Me.Guna2CirclePictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox6.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2CirclePictureBox6.FillColor = System.Drawing.Color.Orange
+        Me.Guna2CirclePictureBox6.ImageRotate = 0!
+        Me.Guna2CirclePictureBox6.Location = New System.Drawing.Point(88, 7)
+        Me.Guna2CirclePictureBox6.Name = "Guna2CirclePictureBox6"
+        Me.Guna2CirclePictureBox6.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox6.Size = New System.Drawing.Size(15, 15)
+        Me.Guna2CirclePictureBox6.TabIndex = 43
+        Me.Guna2CirclePictureBox6.TabStop = False
+        '
+        'Panel43
+        '
+        Me.Panel43.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel43.Location = New System.Drawing.Point(78, 7)
+        Me.Panel43.Name = "Panel43"
+        Me.Panel43.Size = New System.Drawing.Size(10, 15)
+        Me.Panel43.TabIndex = 42
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label13.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Label13.ForeColor = System.Drawing.Color.Green
+        Me.Label13.Location = New System.Drawing.Point(15, 7)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(63, 15)
+        Me.Label13.TabIndex = 41
+        Me.Label13.Text = "Approved"
+        '
+        'Guna2CirclePictureBox9
+        '
+        Me.Guna2CirclePictureBox9.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox9.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2CirclePictureBox9.FillColor = System.Drawing.Color.Green
+        Me.Guna2CirclePictureBox9.ImageRotate = 0!
+        Me.Guna2CirclePictureBox9.Location = New System.Drawing.Point(0, 7)
+        Me.Guna2CirclePictureBox9.Name = "Guna2CirclePictureBox9"
+        Me.Guna2CirclePictureBox9.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox9.Size = New System.Drawing.Size(15, 15)
+        Me.Guna2CirclePictureBox9.TabIndex = 40
+        Me.Guna2CirclePictureBox9.TabStop = False
+        '
+        'Panel44
+        '
+        Me.Panel44.BackColor = System.Drawing.Color.White
+        Me.Panel44.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel44.Location = New System.Drawing.Point(0, 0)
+        Me.Panel44.Name = "Panel44"
+        Me.Panel44.Size = New System.Drawing.Size(432, 7)
+        Me.Panel44.TabIndex = 35
+        '
+        'Panel45
+        '
+        Me.Panel45.BackColor = System.Drawing.Color.White
+        Me.Panel45.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel45.Location = New System.Drawing.Point(0, 22)
+        Me.Panel45.Name = "Panel45"
+        Me.Panel45.Size = New System.Drawing.Size(432, 8)
+        Me.Panel45.TabIndex = 34
+        '
+        'Panel46
+        '
+        Me.Panel46.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel46.Location = New System.Drawing.Point(0, 0)
+        Me.Panel46.Name = "Panel46"
+        Me.Panel46.Size = New System.Drawing.Size(10, 30)
+        Me.Panel46.TabIndex = 9
+        '
+        'ColumnHeader17
+        '
+        Me.ColumnHeader17.Text = "Date Requested"
+        Me.ColumnHeader17.Width = 200
+        '
         'frmAnalyticsData
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1011,12 +1438,10 @@ Partial Class frmAnalyticsData
         Me.TabControl2.ResumeLayout(False)
         Me.OverduePayments.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
+        Me.Panel15.ResumeLayout(False)
         Me.OrderUpdates.ResumeLayout(False)
-        Me.Panel16.ResumeLayout(False)
         Me.QuotationUpdates.ResumeLayout(False)
-        Me.Panel21.ResumeLayout(False)
         Me.RambicPO.ResumeLayout(False)
-        Me.Panel26.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Guna2Panel3.ResumeLayout(False)
         Me.Guna2Panel3.PerformLayout()
@@ -1024,6 +1449,26 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel2.PerformLayout()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
+        Me.Panel36.ResumeLayout(False)
+        Me.Panel36.PerformLayout()
+        Me.Panel26.ResumeLayout(False)
+        CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel38.ResumeLayout(False)
+        Me.Panel38.PerformLayout()
+        Me.Panel16.ResumeLayout(False)
+        Me.Panel20.ResumeLayout(False)
+        Me.Panel55.ResumeLayout(False)
+        Me.Panel55.PerformLayout()
+        CType(Me.Guna2CirclePictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2CirclePictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel21.ResumeLayout(False)
+        Me.Panel25.ResumeLayout(False)
+        Me.Panel41.ResumeLayout(False)
+        Me.Panel41.PerformLayout()
+        CType(Me.Guna2CirclePictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2CirclePictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2CirclePictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1063,39 +1508,6 @@ Partial Class frmAnalyticsData
     Friend WithEvents OrderUpdates As TabPage
     Friend WithEvents QuotationUpdates As TabPage
     Friend WithEvents RambicPO As TabPage
-    Friend WithEvents Panel16 As Panel
-    Friend WithEvents Panel17 As Panel
-    Friend WithEvents Panel18 As Panel
-    Friend WithEvents Panel19 As Panel
-    Friend WithEvents Panel20 As Panel
-    Friend WithEvents Panel21 As Panel
-    Friend WithEvents ListView3 As ListView
-    Friend WithEvents ColumnHeader16 As ColumnHeader
-    Friend WithEvents ColumnHeader17 As ColumnHeader
-    Friend WithEvents ColumnHeader18 As ColumnHeader
-    Friend WithEvents ColumnHeader19 As ColumnHeader
-    Friend WithEvents ColumnHeader20 As ColumnHeader
-    Friend WithEvents ColumnHeader21 As ColumnHeader
-    Friend WithEvents Panel22 As Panel
-    Friend WithEvents Panel23 As Panel
-    Friend WithEvents Panel24 As Panel
-    Friend WithEvents Panel25 As Panel
-    Friend WithEvents Panel26 As Panel
-    Friend WithEvents ListView4 As ListView
-    Friend WithEvents ColumnHeader22 As ColumnHeader
-    Friend WithEvents ColumnHeader23 As ColumnHeader
-    Friend WithEvents ColumnHeader24 As ColumnHeader
-    Friend WithEvents ColumnHeader25 As ColumnHeader
-    Friend WithEvents ColumnHeader26 As ColumnHeader
-    Friend WithEvents ColumnHeader27 As ColumnHeader
-    Friend WithEvents Panel27 As Panel
-    Friend WithEvents Panel28 As Panel
-    Friend WithEvents Panel29 As Panel
-    Friend WithEvents Panel30 As Panel
-    Friend WithEvents ListView2 As ListView
-    Friend WithEvents OrderID As ColumnHeader
-    Friend WithEvents CompName As ColumnHeader
-    Friend WithEvents ColumnHeader11 As ColumnHeader
     Friend WithEvents Panel31 As Panel
     Friend WithEvents panelGuider As Panel
     Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
@@ -1108,11 +1520,76 @@ Partial Class frmAnalyticsData
     Friend WithEvents OverduePayments As TabPage
     Friend WithEvents Panel11 As Panel
     Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents OrderNo As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Panel14 As Panel
     Friend WithEvents Panel15 As Panel
+    Friend WithEvents Panel35 As Panel
+    Friend WithEvents Panel36 As Panel
+    Friend WithEvents Panel37 As Panel
+    Friend WithEvents Panel26 As Panel
+    Friend WithEvents ListView4 As ListView
+    Friend WithEvents ColumnHeader10 As ColumnHeader
+    Friend WithEvents ColumnHeader11 As ColumnHeader
+    Friend WithEvents ColumnHeader15 As ColumnHeader
+    Friend WithEvents Panel27 As Panel
+    Friend WithEvents Panel28 As Panel
+    Friend WithEvents Panel29 As Panel
+    Friend WithEvents Panel30 As Panel
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Guna2CirclePictureBox2 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents Panel53 As Panel
+    Friend WithEvents Panel38 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel54 As Panel
+    Friend WithEvents Panel51 As Panel
+    Friend WithEvents Panel52 As Panel
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents ListView2 As ListView
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents ColumnHeader16 As ColumnHeader
+    Friend WithEvents Panel17 As Panel
+    Friend WithEvents Panel18 As Panel
+    Friend WithEvents Panel19 As Panel
+    Friend WithEvents Panel20 As Panel
+    Friend WithEvents Panel55 As Panel
+    Friend WithEvents Panel56 As Panel
+    Friend WithEvents Panel57 As Panel
+    Friend WithEvents Panel58 As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Guna2CirclePictureBox3 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Guna2CirclePictureBox4 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents Panel40 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents Panel39 As Panel
+    Friend WithEvents Panel21 As Panel
+    Friend WithEvents ListView3 As ListView
+    Friend WithEvents ColumnHeader7 As ColumnHeader
+    Friend WithEvents ColumnHeader8 As ColumnHeader
+    Friend WithEvents ColumnHeader9 As ColumnHeader
+    Friend WithEvents Panel22 As Panel
+    Friend WithEvents Panel23 As Panel
+    Friend WithEvents Panel24 As Panel
+    Friend WithEvents Panel25 As Panel
+    Friend WithEvents Panel41 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Guna2CirclePictureBox5 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents Panel42 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Guna2CirclePictureBox6 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents Panel43 As Panel
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Guna2CirclePictureBox9 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents Panel44 As Panel
+    Friend WithEvents Panel45 As Panel
+    Friend WithEvents Panel46 As Panel
+    Friend WithEvents ColumnHeader17 As ColumnHeader
 End Class
