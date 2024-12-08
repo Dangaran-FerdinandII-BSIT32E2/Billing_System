@@ -55,6 +55,7 @@ Public Class frmManageBilling
 
                 Do While dr.Read = True
                     x = New ListViewItem(dr("BillingID").ToString())
+                    x.Font = New Font("Arial", 12, FontStyle.Regular)
                     x.SubItems.Add(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("DatePrintedF").ToString())
                     x.SubItems.Add(If(IsDBNull(dr("DateDeliveredF")), "Not Yet Delivered", dr("DateDeliveredF").ToString()))
@@ -88,13 +89,12 @@ Public Class frmManageBilling
             frmDeliveryInformation.lblCompanyName.Text = ListView1.SelectedItems(0).SubItems(1).Text
 
             frmDeliveryInformation.confirmdelivery = True
-
             frmDeliveryInformation.ShowDialog()
 
             loadBilling(startDate, endDate)
             loadDeliver(startDate, endDate)
         Else
-            MsgBox("Please select a billing invoice!", MsgBoxStyle.Information, "Selection Error")
+            MsgBox("Please select an item!", MsgBoxStyle.Information, "Select Error")
         End If
     End Sub
 
@@ -133,6 +133,7 @@ Public Class frmManageBilling
 
                 Do While dr.Read = True
                     x = New ListViewItem(dr("BillingID").ToString())
+                    x.Font = New Font("Arial", 12, FontStyle.Regular)
                     x.SubItems.Add(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("DatePrintedF").ToString())
                     x.SubItems.Add(If(IsDBNull(dr("DateDeliveredF")), "Not Yet Delivered", dr("DateDeliveredF").ToString()))
@@ -177,6 +178,7 @@ Public Class frmManageBilling
 
                 Do While dr.Read = True
                     x = New ListViewItem(dr("BillingID").ToString())
+                    x.Font = New Font("Arial", 12, FontStyle.Regular)
                     x.SubItems.Add(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("DatePrintedF").ToString())
                     x.SubItems.Add(dr("Terms").ToString())
@@ -204,8 +206,8 @@ Public Class frmManageBilling
 
             loadBilling(startDate, endDate)
             loadDeliver(startDate, endDate)
-
-
+        Else
+            MsgBox("Please select an item", MsgBoxStyle.Information, "Select Error")
         End If
     End Sub
 

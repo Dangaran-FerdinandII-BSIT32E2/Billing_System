@@ -368,10 +368,10 @@
     <Compile Include="frmRestockQuotation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSendPayment.Designer.vb">
-      <DependentUpon>frmSendPayment.vb</DependentUpon>
+    <Compile Include="frmUploadCheque.Designer.vb">
+      <DependentUpon>frmUploadCheque.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSendPayment.vb">
+    <Compile Include="frmUploadCheque.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmViewQuotation.Designer.vb">
@@ -580,8 +580,8 @@
     <EmbeddedResource Include="frmRestockQuotation.resx">
       <DependentUpon>frmRestockQuotation.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSendPayment.resx">
-      <DependentUpon>frmSendPayment.vb</DependentUpon>
+    <EmbeddedResource Include="frmUploadCheque.resx">
+      <DependentUpon>frmUploadCheque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewQuotation.resx">
       <DependentUpon>frmViewQuotation.vb</DependentUpon>

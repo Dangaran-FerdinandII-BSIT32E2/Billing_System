@@ -50,6 +50,7 @@ Public Class frmManageUsers
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("FirstName").ToString())
+                x.Font = New Font("Arial", 12, FontStyle.Regular)
                 x.SubItems.Add(dr("LastName").ToString())
                 x.SubItems.Add(dr("Password").ToString())
                 x.SubItems.Add(dr("Username").ToString())
@@ -385,6 +386,7 @@ Public Class frmManageUsers
 
                 Do While dr.Read = True
                     y = New ListViewItem(StrConv(dr("Username").ToString, VbStrConv.ProperCase))
+                    y.Font = New Font("Arial", 12, FontStyle.Regular)
                     y.SubItems.Add(dr("Action").ToString)
 
                     Dim dateTimeValue As DateTime = Convert.ToDateTime(dr("DateTime"))

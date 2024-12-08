@@ -161,7 +161,6 @@ Public Class frmManageOrder
     End Sub
 
     Private Sub btnAddWalkIn_Click(sender As Object, e As EventArgs) Handles btnAddWalkIn.Click
-        'frmLoginV2.ActiveControl = frmLoginV2.txtUsername
         frmAddCustomerWalkin.ActiveControl = frmAddCustomerWalkin.txtCompanyName
         frmAddCustomerWalkin.ShowDialog()
         Call loadFilteredOrders(startDate, endDate)

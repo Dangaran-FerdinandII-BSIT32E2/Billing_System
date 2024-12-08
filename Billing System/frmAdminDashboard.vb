@@ -15,7 +15,9 @@ Public Class frmAdminDashboard
     Private mouseDownY As Integer
     'Private isButtonClicked As Boolean = False
 
+    'load form
     Private Sub frmAdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.ActiveControl = Me.btnDashboard
         Call loadNotification()
         Call loadRoles()
         'frmNotifNewOrder.Show()
@@ -49,6 +51,18 @@ Public Class frmAdminDashboard
             frmAnalyticsData.Dock = DockStyle.Fill
             frmAnalyticsData.Show()
         End If
+
+        'color button indicator
+        btnDashboard.CustomBorderThickness = addThickness
+        btnDashboard.CustomBorderColor = addColor
+
+        'remove color indicator
+        Dim buttons() As Guna2Button = {btnProduct, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+
+        For Each btn In buttons
+            btn.CustomBorderThickness = removeThickness
+            btn.CustomBorderColor = removeColor
+        Next
     End Sub
 
     Public Sub loadNotification() Handles Timer2.Tick
@@ -111,7 +125,7 @@ Public Class frmAdminDashboard
                 btnProduct.Visible = False
                 btnUser.Visible = False
 
-                Panel1.AutoScroll = False
+                panelBody.AutoScroll = False
 
             'COLLECTION, CUSTOMER, SUPPLIER MODULE
             Case "Controller"
@@ -126,7 +140,7 @@ Public Class frmAdminDashboard
                 btnRental.Visible = False
                 btnUser.Visible = False
 
-                Panel1.AutoScroll = False
+                panelBody.AutoScroll = False
 
             'CUSTOMER, SUPPLIER, PRODUCT MODULE
             Case "Purchaser"
@@ -141,7 +155,7 @@ Public Class frmAdminDashboard
                 btnCollection.Visible = False
                 btnUser.Visible = False
 
-                Panel1.AutoScroll = False
+                panelBody.AutoScroll = False
             Case Else
                 'ADMIN ROLE
                 btnSales.Visible = True
@@ -474,34 +488,34 @@ Public Class frmAdminDashboard
         frmProduct.Close()
     End Sub
 
-    'SETTINGS MODULE
-    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
-        frmAdminSettings.TopLevel = False
-        panelDashboard.Controls.Add(frmAdminSettings)
-        frmAdminSettings.BringToFront()
-        frmAdminSettings.Dock = DockStyle.Fill
-        frmAdminSettings.Show()
+    ''SETTINGS MODULE
+    'Private Sub btnSettings_Click(sender As Object, e As EventArgs)
+    '    frmAdminSettings.TopLevel = False
+    '    panelDashboard.Controls.Add(frmAdminSettings)
+    '    frmAdminSettings.BringToFront()
+    '    frmAdminSettings.Dock = DockStyle.Fill
+    '    frmAdminSettings.Show()
 
-        'btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser
-        Dim buttons() As Guna2Button = {btnProduct, btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
+    '    'btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser
+    '    Dim buttons() As Guna2Button = {btnProduct, btnDashboard, btnSales, btnBilling, btnCollection, btnOrder, btnCustomer, btnSupplier, btnRental, btnUser}
 
-        For Each btn In buttons
-            btn.CustomBorderThickness = removeThickness
-            btn.CustomBorderColor = removeColor
-        Next
+    '    For Each btn In buttons
+    '        btn.CustomBorderThickness = removeThickness
+    '        btn.CustomBorderColor = removeColor
+    '    Next
 
-        frmManageSalesV2.Close()
-        frmManageBilling.Close()
-        frmManageCollectionV3.Close()
-        frmManageSuppliers.Close()
-        frmManageProducts.Close()
-        frmManageCustomerV3.Close()
-        frmManageUsers.Close()
-        frmManageRentalV2.Close()
-        frmProduct.Close()
-    End Sub
+    '    frmManageSalesV2.Close()
+    '    frmManageBilling.Close()
+    '    frmManageCollectionV3.Close()
+    '    frmManageSuppliers.Close()
+    '    frmManageProducts.Close()
+    '    frmManageCustomerV3.Close()
+    '    frmManageUsers.Close()
+    '    frmManageRentalV2.Close()
+    '    frmProduct.Close()
+    'End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs)
         lblTime.Text = Now.ToShortTimeString
         lblDate.Text = Now.ToLongDateString
     End Sub
@@ -511,11 +525,11 @@ Public Class frmAdminDashboard
         'frmManageNotifications.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         frmNotifNewOrder.Show()
     End Sub
 
-    Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel2.MouseDown
+    Private Sub panelBody_MouseDown(sender As Object, e As MouseEventArgs)
         If e.Button = MouseButtons.Left Then
             isFormBeingDragged = True
             mouseDownX = e.X
@@ -523,13 +537,14 @@ Public Class frmAdminDashboard
         End If
     End Sub
 
-    Private Sub Panel2_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel2.MouseUp
+    Private Sub panelBody_MouseUp(sender As Object, e As MouseEventArgs)
         If e.Button = MouseButtons.Left Then
             isFormBeingDragged = False
         End If
     End Sub
 
-    Private Sub Panel2_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel2.MouseMove
+    'USE TO MOVE DASHBOARD
+    Private Sub panelBody_MouseMove(sender As Object, e As MouseEventArgs)
         If isFormBeingDragged Then
             Dim temp As Point = New Point()
             temp.X = Me.Location.X + (e.X - mouseDownX)
@@ -537,5 +552,43 @@ Public Class frmAdminDashboard
             Me.Location = temp
             temp = Nothing
         End If
+    End Sub
+
+    'logout
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        Call connection()
+        Call loadActivity()
+        Me.Close()
+        'Environment.Exit(0)
+
+        frmLoginV2.txtUsername.Clear()
+        frmLoginV2.txtPassword.Clear()
+
+        frmLoginV2.ActiveControl = frmLoginV2.txtUsername
+        frmLoginV2.Show()
+    End Sub
+
+    Private Sub loadActivity()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "INSERT INTO tblactivity(UserID, Username, DateTime, Action) VALUES(@UserID, @Username, @DateTime, @Action)"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
+                .Parameters.AddWithValue("@Username", frmLoginV2.username)
+                .Parameters.AddWithValue("@DateTime", DateTime.Now)
+                .Parameters.AddWithValue("@Action", "LOGOUT")
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            MsgBox("An error occurred frmAdminSettings(loadActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 End Class

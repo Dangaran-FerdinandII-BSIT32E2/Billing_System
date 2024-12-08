@@ -129,16 +129,15 @@ Public Class frmManageProducts
 
                 If filled Then
                     If productid Is Nothing Then
-                        Call saveProduct
+                        Call saveProduct()
                     Else
-                        Call updateProduct
+                        Call updateProduct()
                     End If
 
                     Call loadActivity()
                     Call frmProduct.loadProducts()
                     MsgBox("Product successfully saved!", MsgBoxStyle.Information, "Product Insert")
                     Me.Close()
-
                 End If
             End If
         Else
@@ -311,7 +310,7 @@ Public Class frmManageProducts
         End Try
     End Sub
 
-    Private Sub btnSearchSupplier_Click(sender As Object, e As EventArgs) 
+    Private Sub btnSearchSupplier_Click(sender As Object, e As EventArgs)
         frmListofSuppliers.ShowDialog()
     End Sub
 
