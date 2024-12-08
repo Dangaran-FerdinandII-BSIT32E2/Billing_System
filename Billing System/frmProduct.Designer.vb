@@ -502,7 +502,7 @@ Partial Class frmProduct
         '
         'Amount
         '
-        Me.Amount.Text = "Amount"
+        Me.Amount.Text = "Stocks"
         Me.Amount.Width = 150
         '
         'Panel11

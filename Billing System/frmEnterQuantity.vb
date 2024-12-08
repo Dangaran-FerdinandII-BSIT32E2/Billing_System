@@ -19,7 +19,7 @@
                 ElseIf walkin Then
                     frmAddCustomerWalkin.newValue = txtQuantiyProducts.Text
                 ElseIf postdatedcheck Then
-                    frmPaymentInformation.amount = Convert.ToDouble(txtQuantiyProducts.Text)
+                    'frmPaymentInformation.amount = Convert.ToDouble(txtQuantiyProducts.Text)
                 End If
             Else
                 MsgBox("Please enter a valid amount.", MsgBoxStyle.Critical, "Input Error")

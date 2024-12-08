@@ -26,12 +26,12 @@ Partial Class frmEnterQuantity
         Me.lblHeaderTitle = New System.Windows.Forms.Label()
         Me.btnExit = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btnMinus = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.btnOkay = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.txtQuantiyProducts = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnMinus = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -102,6 +102,46 @@ Partial Class frmEnterQuantity
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.Size = New System.Drawing.Size(416, 181)
         Me.Guna2Panel2.TabIndex = 1
+        '
+        'btnMinus
+        '
+        Me.btnMinus.BorderRadius = 8
+        Me.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMinus.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnMinus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnMinus.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnMinus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnMinus.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnMinus.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnMinus.ForeColor = System.Drawing.Color.White
+        Me.btnMinus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnMinus.Location = New System.Drawing.Point(251, 65)
+        Me.btnMinus.Name = "btnMinus"
+        Me.btnMinus.PressedDepth = 20
+        Me.btnMinus.Size = New System.Drawing.Size(34, 32)
+        Me.btnMinus.TabIndex = 63
+        Me.btnMinus.TabStop = False
+        Me.btnMinus.Text = "-"
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BorderRadius = 8
+        Me.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnAdd.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnAdd.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnAdd.ForeColor = System.Drawing.Color.White
+        Me.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnAdd.Location = New System.Drawing.Point(138, 65)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.PressedDepth = 20
+        Me.btnAdd.Size = New System.Drawing.Size(34, 32)
+        Me.btnAdd.TabIndex = 62
+        Me.btnAdd.TabStop = False
+        Me.btnAdd.Text = "+"
         '
         'btnOkay
         '
@@ -176,46 +216,6 @@ Partial Class frmEnterQuantity
         Me.Label1.Size = New System.Drawing.Size(116, 19)
         Me.Label1.TabIndex = 34
         Me.Label1.Text = "Input Quantity"
-        '
-        'btnAdd
-        '
-        Me.btnAdd.BorderRadius = 8
-        Me.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnAdd.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnAdd.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnAdd.ForeColor = System.Drawing.Color.White
-        Me.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnAdd.Location = New System.Drawing.Point(138, 65)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.PressedDepth = 20
-        Me.btnAdd.Size = New System.Drawing.Size(34, 32)
-        Me.btnAdd.TabIndex = 62
-        Me.btnAdd.TabStop = False
-        Me.btnAdd.Text = "+"
-        '
-        'btnMinus
-        '
-        Me.btnMinus.BorderRadius = 8
-        Me.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMinus.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnMinus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnMinus.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnMinus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnMinus.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnMinus.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnMinus.ForeColor = System.Drawing.Color.White
-        Me.btnMinus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnMinus.Location = New System.Drawing.Point(251, 65)
-        Me.btnMinus.Name = "btnMinus"
-        Me.btnMinus.PressedDepth = 20
-        Me.btnMinus.Size = New System.Drawing.Size(34, 32)
-        Me.btnMinus.TabIndex = 63
-        Me.btnMinus.TabStop = False
-        Me.btnMinus.Text = "-"
         '
         'frmEnterQuantity
         '

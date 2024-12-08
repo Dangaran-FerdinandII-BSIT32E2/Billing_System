@@ -82,6 +82,7 @@ Public Class frmManageCollectionV3
 
                 Do While dr.Read = True
                     x = New ListViewItem(dr("CompanyName").ToString())
+                    x.Font = New Font("Arial", 12, FontStyle.Regular)
                     x.SubItems.Add(If(dr("RemainingBalance") <= 0, "Paid", dr("RemainingBalance").ToString()))
                     x.SubItems.Add(If(dr("Remarks"), "Paid", "For Collection"))
                     x.SubItems.Add(dr("BillingID").ToString()) '3
@@ -156,6 +157,7 @@ Public Class frmManageCollectionV3
 
                 Do While dr.Read = True
                     x = New ListViewItem(dr("CompanyName").ToString())
+                    x.Font = New Font("Arial", 12, FontStyle.Regular)
                     x.SubItems.Add(dr("FinalPrice").ToString())
                     x.SubItems.Add(If(dr("Remarks"), "Paid", "In Debt"))
                     x.SubItems.Add(dr("BillingID").ToString()) '3
@@ -228,6 +230,7 @@ Public Class frmManageCollectionV3
 
                 Do While dr.Read = True
                     y = New ListViewItem(dr("BillingID").ToString())
+                    y.Font = New Font("Arial", 12, FontStyle.Regular)
                     y.SubItems.Add(dr("CompanyName").ToString())
                     y.SubItems.Add(dr("FullName").ToString())
                     y.SubItems.Add(dr("FinalPrice").ToString())

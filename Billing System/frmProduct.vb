@@ -46,7 +46,7 @@ Public Class frmProduct
                 If dr("Status") = 2 Then
                     x.ForeColor = Color.Black
                 ElseIf dr("Status") = 1 Then
-                    x.ForeColor = Color.Orange
+                    x.ForeColor = Color.Black
                 Else
                     x.ForeColor = Color.Red
                 End If

@@ -209,11 +209,9 @@ Public Class frmManageSuppliers
                 x.SubItems.Add(dr("SupplierID").ToString()) '7
 
                 If x.SubItems(4).Text = "Critical Level" Then
-                    x.ForeColor = Color.Orange
-                ElseIf x.SubItems(4).Text = "Out of Stock" Then
-                    x.ForeColor = Color.Red
-                Else
                     x.ForeColor = Color.Black
+                Else x.SubItems(4).Text = "Out of Stock"
+                    x.ForeColor = Color.Red
                 End If
 
                 ListView3.Items.Add(x)
