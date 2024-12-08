@@ -145,6 +145,7 @@ Partial Class frmManageCollectionV3
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabPage1.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel14.SuspendLayout()
@@ -1154,7 +1155,7 @@ Partial Class frmManageCollectionV3
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.CompanyName, Me.OutstandingBalance, Me.Status})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader7, Me.CompanyName, Me.OutstandingBalance, Me.Status})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
@@ -1347,7 +1348,7 @@ Partial Class frmManageCollectionV3
         Me.cboFilter.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.cboFilter.ForeColor = System.Drawing.Color.Black
         Me.cboFilter.ItemHeight = 30
-        Me.cboFilter.Items.AddRange(New Object() {"Default", "For Collection", "Paid"})
+        Me.cboFilter.Items.AddRange(New Object() {"Default", "Paid", "For Collection"})
         Me.cboFilter.Location = New System.Drawing.Point(488, 38)
         Me.cboFilter.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.cboFilter.Name = "cboFilter"
@@ -1559,6 +1560,11 @@ Partial Class frmManageCollectionV3
         Me.TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Billing ID"
+        Me.ColumnHeader7.Width = 100
+        '
         'frmManageCollectionV3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1719,4 +1725,5 @@ Partial Class frmManageCollectionV3
     Friend WithEvents Panel18 As Panel
     Friend WithEvents TabControl2 As Guna.UI2.WinForms.Guna2TabControl
     Friend WithEvents Panel16 As Panel
+    Friend WithEvents ColumnHeader7 As ColumnHeader
 End Class

@@ -17,6 +17,8 @@ Public Class frmPaymentInformation
     Private Sub frmPaymentInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
 
+        pbxDepositSlip.Image = Nothing
+
         Call loadPayment()
         Call loadOrder()
     End Sub

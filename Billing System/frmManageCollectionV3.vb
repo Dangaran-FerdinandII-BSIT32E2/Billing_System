@@ -52,17 +52,18 @@ Public Class frmManageCollectionV3
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
                DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT b.CompanyName, b.Remarks, b.BillingID, b.CustomerID, b.FinalPrice - COALESCE( SUM( CASE WHEN c.Status = 2 THEN c.AmtPaid ELSE 0 END ), 0 ) AS RemainingBalance, COALESCE(c.newInsert, 1) AS newInsert FROM tblbilling b LEFT JOIN tblcollection c ON b.BillingID = c.BillingID WHERE DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' AND DateDelivered IS NOT NULL GROUP BY b.BillingID"
+                sql = "SELECT b.CompanyName, b.Remarks, b.BillingID, b.CustomerID, b.FinalPrice - COALESCE( SUM( CASE WHEN c.Status = 2 THEN c.AmtPaid ELSE 0 END ), 0 ) AS RemainingBalance, COALESCE(c.newInsert, 1) AS newInsert FROM tblbilling b LEFT JOIN tblcollection c ON b.BillingID = c.BillingID WHERE DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' AND DateDelivered IS NOT NULL "
 
 
                 If cboFilter.SelectedIndex > 0 Then
-                    sql += " AND Remarks = @Remarks"
+                    sql += "AND Remarks = @Remarks"
                 End If
 
+                sql += " GROUP BY b.BillingID"
                 cmd = New MySqlCommand(sql, cn)
 
                 If cboFilter.SelectedIndex > 0 Then
-                    cmd.Parameters.AddWithValue("@Remarks", cboFilter.SelectedIndex - 1)
+                    cmd.Parameters.AddWithValue("@Remarks", CBool(cboFilter.SelectedIndex = 1))
                 End If
 
                 If Not dr.IsClosed Then
@@ -74,11 +75,11 @@ Public Class frmManageCollectionV3
                 ListView1.Items.Clear()
 
                 Do While dr.Read = True
-                    x = New ListViewItem(dr("CompanyName").ToString())
+                    x = New ListViewItem(dr("BillingID").ToString())
                     x.Font = New Font("Arial", 12, FontStyle.Regular)
-                    x.SubItems.Add(If(dr("RemainingBalance") <= 0, "Paid", dr("RemainingBalance").ToString()))
-                    x.SubItems.Add(If(dr("Remarks"), "Paid", "For Collection"))
-                    x.SubItems.Add(dr("BillingID").ToString()) '3
+                    x.SubItems.Add(dr("CompanyName").ToString)
+                    x.SubItems.Add(dr("RemainingBalance").ToString())
+                    x.SubItems.Add(checkStatus(dr("RemainingBalance"), dr("BillingID")).ToString)
                     x.SubItems.Add(dr("CustomerID").ToString) '4
 
                     If dr("newInsert") = 1 Then
@@ -99,6 +100,33 @@ Public Class frmManageCollectionV3
         End Try
     End Sub
 
+    Private Function checkStatus(amount As Integer, billingID As String) As String
+        Using cn As New MySqlConnection("server=localhost;user=root;password=;database=dbbilling")
+            cn.Open()
+            sql = "UPDATE tblbilling SET Remarks=@Remarks WHERE BillingID = '" & billingID & "'"
+            Using cmd As New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@Remarks", "0")
+
+                    If amount = 0 Then
+                        .Parameters("@Remarks").Value = "1"
+                    Else
+                        .Parameters("@Remarks").Value = "0"
+                    End If
+                    .ExecuteNonQuery()
+                End With
+
+
+                Select Case amount
+                    Case 0
+                        Return "Paid"
+                    Case Else
+                        Return "For Collection"
+                End Select
+            End Using
+        End Using
+    End Function
+
     Private Sub DateFilter1_TextChanged(sender As Object, e As EventArgs) Handles DateFilter1.ValueChanged
         startDate = DateFilter1.Text
         loadCollections(startDate, endDate)
@@ -110,62 +138,10 @@ Public Class frmManageCollectionV3
     End Sub
     Private Sub btnShow_Click(sender As Object, e As EventArgs) Handles btnShow.Click, ListView1.DoubleClick
         If ListView1.SelectedItems.Count > 0 Then
-            frmPaymentInformation.billingid = ListView1.SelectedItems(0).SubItems(3).Text
+            frmPaymentInformation.billingid = ListView1.SelectedItems(0).SubItems(0).Text
             frmPaymentInformation.customerid = ListView1.SelectedItems(0).SubItems(4).Text
             frmPaymentInformation.Show()
         End If
-    End Sub
-
-    Private Sub loadCustomer(startDate As String, endDate As String)
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-
-            Dim startDateTime As DateTime
-            Dim endDateTime As DateTime
-
-            If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
-               DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT * FROM qrybilling WHERE DatePrinted BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' AND DateDelivered IS NOT NULL AND CustomerID = '" & customerid & "' "
-
-
-                If cboFilter.SelectedIndex > 0 Then
-                    sql += "AND Remarks = @Remarks "
-                End If
-
-                cmd = New MySqlCommand(sql, cn)
-
-                If cboFilter.SelectedIndex > 0 Then
-                    cmd.Parameters.AddWithValue("@Remarks", cboFilter.SelectedIndex - 1)
-                End If
-
-                If Not dr.IsClosed Then
-                    dr.Close()
-                End If
-
-                dr = cmd.ExecuteReader
-                Dim x As ListViewItem
-                ListView1.Items.Clear()
-
-                Do While dr.Read = True
-                    x = New ListViewItem(dr("CompanyName").ToString())
-                    x.Font = New Font("Arial", 12, FontStyle.Regular)
-                    x.SubItems.Add(dr("FinalPrice").ToString())
-                    x.SubItems.Add(If(dr("Remarks"), "Paid", "In Debt"))
-                    x.SubItems.Add(dr("BillingID").ToString()) '3
-                    x.SubItems.Add(dr("CustomerID").ToString) '4
-                    ListView1.Items.Add(x)
-                Loop
-                dr.Close()
-            End If
-        Catch ex As Exception
-            MsgBox("An error occurred frmManageCollectionV3(loadCustomer): " & ex.Message)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
     End Sub
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
