@@ -48,9 +48,6 @@ Public Class frmManageSuppliers
             End If
         End Try
     End Sub
-
-
-
     Private Sub btnAddNewSupplier_Click(sender As Object, e As EventArgs) Handles btnAddNewSupplier.Click
         frmManageSupplierV2.ShowDialog()
         btnEditSupplier.Enabled = False
@@ -185,7 +182,7 @@ Public Class frmManageSuppliers
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM qryproducts WHERE STATUS < 2 AND NOT EXISTS( SELECT 1 FROM tblquotationproducts WHERE qryproducts.ProductID = tblquotationproducts.ProductID ) ORDER BY STATUS ASC"
+            sql = "SELECT * FROM qryproducts WHERE STATUS < 2 AND NOT EXISTS( SELECT 1 FROM tblquotationproducts WHERE qryproducts.ProductID = tblquotationproducts.ProductID ) ORDER BY Amount ASC"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then

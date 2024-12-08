@@ -38,14 +38,14 @@ Public Class frmProduct
                 x.SubItems.Add(dr("Type").ToString())
                 x.SubItems.Add("₱ " & Convert.ToDecimal(dr("PurchasePrice")).ToString("N2"))
                 x.SubItems.Add("₱ " & Convert.ToDecimal(dr("SellingPrice")).ToString("N2"))
-                x.SubItems.Add(checkStatus(dr("Status").ToString()))
+                x.SubItems.Add(checkStatus(dr("Amount"), dr("ProductID")).ToString())
                 x.SubItems.Add(dr("ProductID").ToString()) '6
                 x.SubItems.Add(dr("SupplierID").ToString())
 
                 ' Adjust color and font
-                If dr("Status") = 2 Then
+                If x.SubItems(5).Text = "Available" Then
                     x.ForeColor = Color.Black
-                ElseIf dr("Status") = 1 Then
+                ElseIf x.SubItems(5).Text = "Critical Level" Then
                     x.ForeColor = Color.Black
                 Else
                     x.ForeColor = Color.Red
@@ -64,15 +64,33 @@ Public Class frmProduct
         End Try
     End Sub
 
-    Private Function checkStatus(status As String) As String
-        Select Case status
-            Case 2
-                Return "Available"
-            Case 1
-                Return "Critical Level"
-            Case Else
-                Return "Out of Stock"
-        End Select
+    Private Function checkStatus(amount As Integer, productID As String) As String
+        Using cn As New MySqlConnection("server=localhost;user=root;password=;database=dbbilling")
+            cn.Open()
+            sql = "UPDATE tblproduct SET Status=@Status WHERE ProductID = '" & productID & "'"
+            Using cmd As New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@Status", "0")
+
+                    If amount > 10 Then
+                        .Parameters("@Status").Value = "2"
+                    ElseIf amount <= 10 Then
+                        .Parameters("@Status").Value = "1"
+                    End If
+                    .ExecuteNonQuery()
+                End With
+
+
+                Select Case amount
+                    Case Is > 10
+                        Return "Available"
+                    Case 1 To 10
+                        Return "Critical Level"
+                    Case Else
+                        Return "Out of Stock"
+                End Select
+            End Using
+        End Using
     End Function
 
     Private Sub btnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
@@ -171,7 +189,7 @@ Public Class frmProduct
                 x.SubItems.Add("₱ " & Convert.ToDecimal(dr("PurchasePrice")).ToString("N2"))
                 'x.SubItems.Add(dr("SellingPrice").ToString())
                 x.SubItems.Add("₱ " & Convert.ToDecimal(dr("SellingPrice")).ToString("N2"))
-                x.SubItems.Add(checkStatus(dr("Status").ToString()))
+                x.SubItems.Add(checkStatus(dr("Amount"), dr("ProductID")).ToString())
                 x.SubItems.Add(dr("Amount").ToString())
                 x.SubItems.Add(dr("ProductID").ToString()) '7
                 x.SubItems.Add(dr("SupplierID").ToString()) '8

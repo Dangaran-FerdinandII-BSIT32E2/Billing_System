@@ -3,6 +3,7 @@ Imports MySql.Data.MySqlClient
 Imports Guna.UI2.WinForms
 Imports Guna.UI2.AnimatorNS
 Imports System.Web.UI.Design
+Imports System.ComponentModel
 
 Public Class frmAdminDashboard
     Dim removeThickness As New Padding(0, 0, 0, 0) 'use to remove border left
@@ -515,7 +516,7 @@ Public Class frmAdminDashboard
     '    frmProduct.Close()
     'End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs)
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lblTime.Text = Now.ToShortTimeString
         lblDate.Text = Now.ToLongDateString
     End Sub

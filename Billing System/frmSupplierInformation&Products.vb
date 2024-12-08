@@ -7,6 +7,7 @@ Public Class frmManageSupplierV2
     Private Sub frmManageSupplierV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
 
+        txtCompanyName.Focus()
         TabControl2.SelectedTab = TabPage1
         Call loadInformation()
         Call loadImage()

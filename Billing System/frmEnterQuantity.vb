@@ -5,13 +5,15 @@
     Public walkin As Boolean? = False
 
     Public postdatedcheck As Boolean? = False
+
+    Dim restockValue As Integer = 1
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
 
     Private Sub btnOkay_Click(sender As Object, e As EventArgs) Handles btnOkay.Click
         If restock Or payment Or walkin Or postdatedcheck Then
-            If Not String.IsNullOrWhiteSpace(txtQuantiyProducts.Text) AndAlso IsNumeric(txtQuantiyProducts.Text) Then
+            If Not String.IsNullOrWhiteSpace(txtQuantiyProducts.Text) Then
                 If restock Then
                     frmRestockProduct.newValue = txtQuantiyProducts.Text
                 ElseIf payment Then
@@ -26,9 +28,9 @@
             End If
         ElseIf reason Then
 
-            If Not String.IsNullOrWhiteSpace(txtQuantiyProducts.Text) Then
+            If Not String.IsNullOrWhiteSpace(txtRejection.Text) Then
 
-                frmRestockQuotation.reasonMSG = txtQuantiyProducts.Text
+                frmRestockQuotation.reasonMSG = txtRejection.Text
             Else
                 MsgBox("Please enter a valid reason.", MsgBoxStyle.Critical, "Input Error")
             End If
@@ -43,6 +45,12 @@
             walkin = Nothing
             payment = Nothing
             txtQuantiyProducts.Clear()
+
+
+            txtRejection.Visible = False
+            txtQuantiyProducts.Enabled = True
+            btnAdd.Enabled = True
+            btnMinus.Enabled = True
         End If
     End Sub
 
@@ -50,16 +58,53 @@
         If reason Then
             lblHeaderTitle.Text = "Reason for Rejection"
             Label1.Text = "Enter reason"
-            txtQuantiyProducts.PlaceholderText = "Enter reason for rejecting quotation"
+            txtRejection.Visible = True
+
+            txtQuantiyProducts.Visible = False
+            btnAdd.Visible = False
+            btnMinus.Visible = False
+
+            txtQuantiyProducts.Enabled = False
+            btnAdd.Enabled = False
+            btnMinus.Enabled = False
 
         ElseIf restock Then
             lblHeaderTitle.Text = "Restock Item"
             Label1.Text = "Input Quantity"
-            txtQuantiyProducts.PlaceholderText = "Enter quantity of product"
+            txtQuantiyProducts.PlaceholderText = restockValue.ToString
         ElseIf payment Then
             lblHeaderTitle.Text = "Payment"
             Label1.Text = "Input Amount"
-            txtQuantiyProducts.PlaceholderText = "Enter amount of payment"
+            txtRejection.PlaceholderText = "Enter amount of payment"
+
+            txtRejection.Visible = True
+
+            txtQuantiyProducts.Visible = False
+            btnAdd.Visible = False
+            btnMinus.Visible = False
+            txtQuantiyProducts.Enabled = False
+            btnAdd.Enabled = False
+            btnMinus.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        If txtQuantiyProducts.Text > 0 Then
+            restockValue += 1
+            txtQuantiyProducts.Text = restockValue
+        End If
+    End Sub
+
+    Private Sub btnMinus_Click(sender As Object, e As EventArgs) Handles btnMinus.Click
+        If txtQuantiyProducts.Text > 0 Then
+            restockValue -= 1
+            txtQuantiyProducts.Text = restockValue
+        End If
+    End Sub
+
+    Private Sub txtQuantiyProducts_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQuantiyProducts.KeyPress
+        If Not (Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Or e.KeyChar = "."c) Then
+            e.Handled = True
         End If
     End Sub
 End Class

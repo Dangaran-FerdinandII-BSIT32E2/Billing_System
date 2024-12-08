@@ -54,11 +54,11 @@ Public Class frmManageProducts
                         btnBrowse.Visible = True
                     End If
                     txtProductName.Text = dr("ProductName").ToString
-                        txtDescription.Text = dr("Description").ToString
-                        txtCategory.Text = dr("Category").ToString
-                        txtType.Text = dr("Type").ToString
-                        txtPurchasePrice.Text = dr("PurchasePrice").ToString
-                        txtSellingPrice.Text = dr("SellingPrice").ToString
+                    txtDescription.Text = dr("Description").ToString
+                    txtCategory.Text = dr("Category").ToString
+                    txtType.Text = dr("Type").ToString
+                    txtPurchasePrice.Text = dr("PurchasePrice").ToString
+                    txtSellingPrice.Text = dr("SellingPrice").ToString
 
                     txtSearchSupplierName.Text = dr("CompanyName").ToString
 
@@ -74,6 +74,7 @@ Public Class frmManageProducts
         Else
             Call clear()
         End If
+        txtProductName.Focus()
         Call loadImage()
     End Sub
     Private Sub clear()
@@ -336,6 +337,18 @@ Public Class frmManageProducts
             pbxProduct.Image = Nothing
             PictureBox2.Visible = True
             btnBrowse.Visible = True
+        End If
+    End Sub
+
+    Private Sub txtPurchasePrice_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPurchasePrice.KeyPress
+        If Not (Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Or e.KeyChar = "."c) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtSellingPrice_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSellingPrice.KeyPress
+        If Not (Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Or e.KeyChar = "."c) Then
+            e.Handled = True
         End If
     End Sub
 End Class

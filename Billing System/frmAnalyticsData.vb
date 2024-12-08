@@ -1,4 +1,5 @@
-﻿Imports System.Globalization
+﻿Imports System.ComponentModel
+Imports System.Globalization
 Imports System.IO.Ports
 Imports System.Web.UI.WebControls
 Imports System.Windows.Forms.DataVisualization.Charting
@@ -497,7 +498,6 @@ Public Class frmAnalyticsData
         frmAdminSettings.Close()
         frmProduct.Close()
     End Sub
-    'Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-    '    Call calculateData()
-    'End Sub
+
+
 End Class

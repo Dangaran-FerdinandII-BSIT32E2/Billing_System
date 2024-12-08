@@ -59,6 +59,7 @@ Public Class frmLoginV2
                     username = dr("Username").ToString()
                     frmAdminDashboard.lblRole.Text = dr("Role").ToString()
                     frmAdminDashboard.lblUsername.Text = dr("Username").ToString()
+                    frmAdminDashboard.lblStatus.Text = "Logged in"
                     If cn.State = ConnectionState.Open Then
                         cn.Close()
                     End If

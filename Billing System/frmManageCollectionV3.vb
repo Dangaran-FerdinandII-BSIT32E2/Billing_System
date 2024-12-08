@@ -30,13 +30,6 @@ Public Class frmManageCollectionV3
 
         Call loadCollections(startDate, endDate)
 
-        ''FOR COLLECTION
-
-        'Call loadForCollection()
-        '''PAID
-
-        'Call loadPaid()
-
         'SEND SMS TAB
         Call initializeSMS()
         DateFilter3.Text = DateTime.Now.AddDays(-5)
