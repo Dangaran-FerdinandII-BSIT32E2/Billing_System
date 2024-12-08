@@ -56,9 +56,8 @@ Partial Class frmRegisterV2
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(745, 945)
+        Me.Panel1.Size = New System.Drawing.Size(559, 768)
         Me.Panel1.TabIndex = 0
         '
         'btnCreateAccount
@@ -71,10 +70,9 @@ Partial Class frmRegisterV2
         Me.btnCreateAccount.FillColor = System.Drawing.Color.OrangeRed
         Me.btnCreateAccount.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCreateAccount.ForeColor = System.Drawing.Color.White
-        Me.btnCreateAccount.Location = New System.Drawing.Point(37, 779)
-        Me.btnCreateAccount.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCreateAccount.Location = New System.Drawing.Point(28, 633)
         Me.btnCreateAccount.Name = "btnCreateAccount"
-        Me.btnCreateAccount.Size = New System.Drawing.Size(668, 55)
+        Me.btnCreateAccount.Size = New System.Drawing.Size(501, 45)
         Me.btnCreateAccount.TabIndex = 26
         Me.btnCreateAccount.Text = "Create Account"
         '
@@ -84,18 +82,17 @@ Partial Class frmRegisterV2
         Me.cboRole.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cboRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboRole.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.cboRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.cboRole.FocusedColor = System.Drawing.Color.OrangeRed
+        Me.cboRole.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
         Me.cboRole.FocusedState.ForeColor = System.Drawing.Color.Black
         Me.cboRole.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.cboRole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(207, Byte), Integer))
         Me.cboRole.ItemHeight = 30
-        Me.cboRole.Items.AddRange(New Object() {"Choose your role...", "Sales", "Finance", "Controller", "Purchaser"})
+        Me.cboRole.Items.AddRange(New Object() {"Choose your role...", "Sales", "Controller", "Purchaser"})
         Me.cboRole.ItemsAppearance.ForeColor = System.Drawing.Color.Black
-        Me.cboRole.Location = New System.Drawing.Point(408, 647)
-        Me.cboRole.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboRole.Location = New System.Drawing.Point(306, 526)
         Me.cboRole.Name = "cboRole"
-        Me.cboRole.Size = New System.Drawing.Size(285, 36)
+        Me.cboRole.Size = New System.Drawing.Size(215, 36)
         Me.cboRole.StartIndex = 0
         Me.cboRole.TabIndex = 25
         '
@@ -107,17 +104,17 @@ Partial Class frmRegisterV2
         Me.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.txtUsername.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
         Me.txtUsername.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtUsername.Location = New System.Drawing.Point(48, 639)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtUsername.Location = New System.Drawing.Point(36, 519)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsername.PlaceholderText = "Enter your username"
         Me.txtUsername.SelectedText = ""
-        Me.txtUsername.Size = New System.Drawing.Size(287, 53)
+        Me.txtUsername.Size = New System.Drawing.Size(215, 43)
         Me.txtUsername.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.txtUsername.TabIndex = 24
         '
@@ -129,17 +126,17 @@ Partial Class frmRegisterV2
         Me.txtConfirmPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtConfirmPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtConfirmPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.txtConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
         Me.txtConfirmPassword.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtConfirmPassword.ForeColor = System.Drawing.Color.Black
         Me.txtConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(408, 527)
-        Me.txtConfirmPassword.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(306, 428)
+        Me.txtConfirmPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtConfirmPassword.PlaceholderText = "Confirm your password"
         Me.txtConfirmPassword.SelectedText = ""
-        Me.txtConfirmPassword.Size = New System.Drawing.Size(287, 53)
+        Me.txtConfirmPassword.Size = New System.Drawing.Size(215, 43)
         Me.txtConfirmPassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.txtConfirmPassword.TabIndex = 23
         '
@@ -151,17 +148,17 @@ Partial Class frmRegisterV2
         Me.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.txtPassword.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
         Me.txtPassword.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
         Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtPassword.Location = New System.Drawing.Point(48, 527)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtPassword.Location = New System.Drawing.Point(36, 428)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPassword.PlaceholderText = "Enter your password"
         Me.txtPassword.SelectedText = ""
-        Me.txtPassword.Size = New System.Drawing.Size(287, 53)
+        Me.txtPassword.Size = New System.Drawing.Size(215, 43)
         Me.txtPassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.txtPassword.TabIndex = 22
         '
@@ -173,17 +170,17 @@ Partial Class frmRegisterV2
         Me.txtLastname.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtLastname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtLastname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtLastname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.txtLastname.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
         Me.txtLastname.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLastname.ForeColor = System.Drawing.Color.Black
         Me.txtLastname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtLastname.Location = New System.Drawing.Point(408, 422)
-        Me.txtLastname.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtLastname.Location = New System.Drawing.Point(306, 343)
+        Me.txtLastname.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLastname.PlaceholderText = "Enter your last name"
         Me.txtLastname.SelectedText = ""
-        Me.txtLastname.Size = New System.Drawing.Size(287, 53)
+        Me.txtLastname.Size = New System.Drawing.Size(215, 43)
         Me.txtLastname.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.txtLastname.TabIndex = 21
         '
@@ -195,27 +192,26 @@ Partial Class frmRegisterV2
         Me.txtFirstname.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtFirstname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtFirstname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtFirstname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.txtFirstname.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
         Me.txtFirstname.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFirstname.ForeColor = System.Drawing.Color.Black
         Me.txtFirstname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtFirstname.Location = New System.Drawing.Point(48, 422)
-        Me.txtFirstname.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtFirstname.Location = New System.Drawing.Point(36, 343)
+        Me.txtFirstname.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFirstname.PlaceholderText = "Enter your first name"
         Me.txtFirstname.SelectedText = ""
-        Me.txtFirstname.Size = New System.Drawing.Size(287, 53)
+        Me.txtFirstname.Size = New System.Drawing.Size(215, 43)
         Me.txtFirstname.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.txtFirstname.TabIndex = 20
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(37, 63)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Location = New System.Drawing.Point(28, 51)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(668, 329)
+        Me.PictureBox1.Size = New System.Drawing.Size(501, 267)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
@@ -225,9 +221,8 @@ Partial Class frmRegisterV2
         Me.Panel2.Controls.Add(Me.btnBack)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(745, 49)
+        Me.Panel2.Size = New System.Drawing.Size(559, 40)
         Me.Panel2.TabIndex = 0
         '
         'btnBack
@@ -241,14 +236,14 @@ Partial Class frmRegisterV2
         Me.btnBack.FillColor = System.Drawing.Color.Transparent
         Me.btnBack.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(207, Byte), Integer))
-        Me.btnBack.HoverState.ForeColor = System.Drawing.Color.Black
+        Me.btnBack.HoverState.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.btnBack.Image = CType(resources.GetObject("btnBack.Image"), System.Drawing.Image)
+        Me.btnBack.ImageSize = New System.Drawing.Size(30, 30)
         Me.btnBack.Location = New System.Drawing.Point(0, 0)
-        Me.btnBack.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(53, 49)
+        Me.btnBack.Size = New System.Drawing.Size(40, 40)
         Me.btnBack.TabIndex = 12
         Me.btnBack.TabStop = False
-        Me.btnBack.Text = "<"
         Me.btnBack.TextOffset = New System.Drawing.Point(1, 0)
         '
         'ErrorProvider1
@@ -258,12 +253,11 @@ Partial Class frmRegisterV2
         '
         'frmRegisterV2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(745, 945)
+        Me.ClientSize = New System.Drawing.Size(559, 768)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmRegisterV2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
