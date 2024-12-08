@@ -169,7 +169,7 @@ Public Class frmPrintSalesInvoice
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
 
-            mail.From = New MailAddress("dangaranferds@gmail.com") ' Replace with your email
+            mail.From = New MailAddress("rambiccorpo@gmail.com") ' Replace with your email
             mail.To.Add(email)
 
             mail.Subject = "SALES INVOICE FOR Order Number " & orderid
@@ -189,7 +189,7 @@ Public Class frmPrintSalesInvoice
                     '    "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
 
                     smtpServer.Port = 587
-                    smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua") ' Use secure methods
+                    smtpServer.Credentials = New System.Net.NetworkCredential("rambiccorpo@gmail.com", "xcyu gtqv ctvk kzqa") ' Use secure methods
                     smtpServer.EnableSsl = True
                     smtpServer.Send(mail)
 
@@ -198,7 +198,7 @@ Public Class frmPrintSalesInvoice
             MsgBox("Email sent successfully!", MsgBoxStyle.Information, "Email Sent")
 
         Catch ex As Exception
-            MsgBox("An error occurred in sendEmail: " & ex.Message, MsgBoxStyle.Critical, "Error")
+            MsgBox("Sending email failed. Please connect to the Internet and try again.", MsgBoxStyle.Information, "Email Error")
         End Try
     End Sub
 

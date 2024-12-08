@@ -180,7 +180,7 @@ Public Class frmQuotation
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
 
-            mail.From = New MailAddress("dangaranferds@gmail.com") ' Replace with your email
+            mail.From = New MailAddress("rambiccorpo@gmail.com") ' Replace with your email
             mail.To.Add(email)
 
             mail.Subject = "NOTICE ON QUOTATION OF ORDER NUMBER " & orderid
@@ -200,7 +200,7 @@ Public Class frmQuotation
                         "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
 
                     smtpServer.Port = 587
-                    smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua") ' Use secure methods
+                    smtpServer.Credentials = New System.Net.NetworkCredential("rambiccorpo@gmail.com", "xcyu gtqv ctvk kzqa") ' Use secure methods
                     smtpServer.EnableSsl = True
                     smtpServer.Send(mail)
 

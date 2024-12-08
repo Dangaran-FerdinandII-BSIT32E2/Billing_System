@@ -172,10 +172,10 @@ Public Class frmPrintBillingInvoiceV2
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
 
-            mail.From = New MailAddress("dangaranferds@gmail.com") ' Replace with your email
+            mail.From = New MailAddress("rambiccorpo@gmail.com") ' Replace with your email
             mail.To.Add(email)
 
-            mail.Subject = "SALES INVOICE FOR Order Number " & orderid
+            mail.Subject = "BILLING STATEMENT FOR Order Number " & orderid
 
             Using memoryStream As New MemoryStream()
 
@@ -184,15 +184,15 @@ Public Class frmPrintBillingInvoiceV2
                     image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Jpeg)
                     memoryStream.Position = 0
 
-                    Dim imageAttachment As New Attachment(memoryStream, "QUOTATION-ORDER_NUMBER" & orderid & "-.jpeg")
+                    Dim imageAttachment As New Attachment(memoryStream, "CustomerCopy-SalesInvoice_#R" & orderid & "-.jpeg")
                     mail.Attachments.Add(imageAttachment)
 
-                    mail.Body = "There is now an available quotation for your Order Number " & orderid & "." & vbCrLf &
-                        "You can now accept or reject the Order Quotation through the website." & vbCrLf & vbCrLf &
-                        "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
+                    'mail.Body = "There is now an available quotation for your Order Number " & orderid & "." & vbCrLf &
+                    '    "You can now accept or reject the Order Quotation through the website." & vbCrLf & vbCrLf &
+                    '    "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
 
                     smtpServer.Port = 587
-                    smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua") ' Use secure methods
+                    smtpServer.Credentials = New System.Net.NetworkCredential("rambiccorpo@gmail.com", "xcyu gtqv ctvk kzqa") ' Use secure methods
                     smtpServer.EnableSsl = True
                     smtpServer.Send(mail)
 
