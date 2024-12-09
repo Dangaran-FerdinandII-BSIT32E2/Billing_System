@@ -146,7 +146,7 @@ Public Class frmAnalyticsData
         Call getOrderUpdates()
 
         'QUOTATION UPDATES
-        Call getQuotation()
+        Call getQuotation() 'REMOVE QUOTATIONUPDATES NOT IN BILLINOICE
 
         'RAMBIC PO UPDATED
         Call getRambicPO()
@@ -327,7 +327,7 @@ Public Class frmAnalyticsData
                 cn.Open()
             End If
 
-            sql = "SELECT q.PONumber, s.CompanyName, q.Status, q.QuotationID FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID"
+            sql = "SELECT q.PONumber, s.CompanyName, q.Amount, q.DateRequested, q.QuotationID FROM tblquotation q INNER JOIN tblsupplier s ON q.SupplierID = s.SupplierID"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -346,7 +346,8 @@ Public Class frmAnalyticsData
             Do While dr.Read = True
                 x = New ListViewItem(dr("PONumber").ToString())
                 x.SubItems.Add(dr("CompanyName").ToString())
-                x.SubItems.Add(dr("Status").ToString)
+                x.SubItems.Add(dr("Amount").ToString)
+                x.SubItems.Add(dr("DateRequested").ToString)
                 x.SubItems.Add(dr("QuotationID").ToString) '3
 
                 ListView4.Items.Add(x)

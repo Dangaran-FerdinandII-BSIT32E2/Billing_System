@@ -17,10 +17,10 @@ Public Class frmManageUsers
         'ACTIVITY LOGS
 
         DateFilter3.Text = DateTime.Now.AddDays(-5)
-        startDateAct = DateFilter3.Text
+        startDateAct = DateFilter3.Value.ToString("yyyy-MM-dd")
 
         DateFilter4.Text = DateTime.Now.AddDays(+5)
-        endDateAct = DateFilter4.Text
+        endDateAct = DateFilter4.Value.ToString("yyyy-MM-dd")
 
         Call loadActivity(startDateAct, endDateAct)
 
@@ -372,7 +372,7 @@ Public Class frmManageUsers
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
            DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT * FROM tblactivity WHERE DateTime BETWEEN '" & startDateTime.ToString("yyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyy-MM-dd") & "'"
+                sql = "SELECT * FROM tblactivity WHERE DateTime BETWEEN '" & startDateTime.ToString("yyyy-MM-dd") & "' AND '" & endDateTime.ToString("yyyy-MM-dd") & "' GROUP BY Username"
                 cmd = New MySqlCommand(sql, cn)
 
                 If Not dr.IsClosed Then
@@ -849,14 +849,14 @@ Public Class frmManageUsers
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT * FROM tblcustomer WHERE CustomerID <> 1 AND CustomerID <> 2 ORDER BY AcctStatus ASC", cn)
-            da.Fill(ds.Tables("dtCustomer"))
+            da.SelectCommand = New MySqlCommand("SELECT * FROM tblcustomer WHERE CustomerID > 2 ORDER BY AcctStatus ASC", cn)
+            da.Fill(ds.Tables("dtCustomerReport"))
 
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If
 
-            rptDS = New ReportDataSource("dtCustomerReport", ds.Tables("dtCustomer"))
+            rptDS = New ReportDataSource("dtCustomerReport", ds.Tables("dtCustomerReport"))
             ReportViewer1.LocalReport.DataSources.Add(rptDS)
             ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
             ReportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent
