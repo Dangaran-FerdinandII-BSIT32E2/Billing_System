@@ -225,20 +225,19 @@ Partial Class frmManageSupplierV2
         Me.btnInsert.ForeColor = System.Drawing.Color.White
         Me.btnInsert.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnInsert.Location = New System.Drawing.Point(0, 0)
-        Me.btnInsert.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnInsert.Name = "btnInsert"
         Me.btnInsert.PressedDepth = 20
-        Me.btnInsert.Size = New System.Drawing.Size(187, 50)
+        Me.btnInsert.Size = New System.Drawing.Size(140, 40)
         Me.btnInsert.TabIndex = 57
         Me.btnInsert.Text = "Add Product"
         '
         'Guna2Panel1
         '
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel1.Location = New System.Drawing.Point(187, 12)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(140, 10)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(13, 50)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(10, 40)
         Me.Guna2Panel1.TabIndex = 43
         '
         'Panel34
@@ -246,10 +245,9 @@ Partial Class frmManageSupplierV2
         Me.Panel34.BackColor = System.Drawing.Color.White
         Me.Panel34.Controls.Add(Me.btnInsert)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel34.Location = New System.Drawing.Point(0, 12)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel34.Location = New System.Drawing.Point(0, 10)
         Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(187, 50)
+        Me.Panel34.Size = New System.Drawing.Size(140, 40)
         Me.Panel34.TabIndex = 18
         '
         'btnViewOrder
@@ -266,10 +264,9 @@ Partial Class frmManageSupplierV2
         Me.btnViewOrder.ForeColor = System.Drawing.Color.White
         Me.btnViewOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnViewOrder.Location = New System.Drawing.Point(0, 0)
-        Me.btnViewOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnViewOrder.Name = "btnViewOrder"
         Me.btnViewOrder.PressedDepth = 20
-        Me.btnViewOrder.Size = New System.Drawing.Size(187, 50)
+        Me.btnViewOrder.Size = New System.Drawing.Size(140, 40)
         Me.btnViewOrder.TabIndex = 57
         Me.btnViewOrder.Text = "Remove"
         '
@@ -278,10 +275,9 @@ Partial Class frmManageSupplierV2
         Me.Panel15.BackColor = System.Drawing.Color.White
         Me.Panel15.Controls.Add(Me.btnViewOrder)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel15.Location = New System.Drawing.Point(200, 12)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel15.Location = New System.Drawing.Point(150, 10)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(187, 50)
+        Me.Panel15.Size = New System.Drawing.Size(140, 40)
         Me.Panel15.TabIndex = 58
         '
         'Panel6
@@ -293,20 +289,18 @@ Partial Class frmManageSupplierV2
         Me.Panel6.Controls.Add(Me.Panel7)
         Me.Panel6.Controls.Add(Me.Panel14)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(17, 771)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Location = New System.Drawing.Point(13, 618)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1758, 74)
+        Me.Panel6.Size = New System.Drawing.Size(1316, 60)
         Me.Panel6.TabIndex = 21
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.White
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel7.Location = New System.Drawing.Point(0, 62)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Location = New System.Drawing.Point(0, 50)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1758, 12)
+        Me.Panel7.Size = New System.Drawing.Size(1316, 10)
         Me.Panel7.TabIndex = 18
         '
         'Panel14
@@ -314,9 +308,8 @@ Partial Class frmManageSupplierV2
         Me.Panel14.BackColor = System.Drawing.Color.White
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1758, 12)
+        Me.Panel14.Size = New System.Drawing.Size(1316, 10)
         Me.Panel14.TabIndex = 18
         '
         'TabPage2
@@ -329,10 +322,9 @@ Partial Class frmManageSupplierV2
         Me.TabPage2.Controls.Add(Me.Panel12)
         Me.TabPage2.Controls.Add(Me.Panel9)
         Me.TabPage2.Location = New System.Drawing.Point(4, 44)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TabPage2.Size = New System.Drawing.Size(1792, 849)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Size = New System.Drawing.Size(1342, 681)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Supplier's Product"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -349,11 +341,9 @@ Partial Class frmManageSupplierV2
         Me.grpbxSupplierName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpbxSupplierName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpbxSupplierName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.grpbxSupplierName.Location = New System.Drawing.Point(17, 16)
-        Me.grpbxSupplierName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grpbxSupplierName.Location = New System.Drawing.Point(13, 13)
         Me.grpbxSupplierName.Name = "grpbxSupplierName"
-        Me.grpbxSupplierName.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.grpbxSupplierName.Size = New System.Drawing.Size(1026, 755)
+        Me.grpbxSupplierName.Size = New System.Drawing.Size(767, 605)
         Me.grpbxSupplierName.TabIndex = 40
         Me.grpbxSupplierName.TabStop = False
         Me.grpbxSupplierName.Text = "SupplierName Products"
@@ -367,10 +357,10 @@ Partial Class frmManageSupplierV2
         Me.ListView1.GridLines = True
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(17, 100)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.ListView1.Location = New System.Drawing.Point(13, 82)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(992, 639)
+        Me.ListView1.Size = New System.Drawing.Size(741, 510)
         Me.ListView1.TabIndex = 40
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -413,10 +403,9 @@ Partial Class frmManageSupplierV2
         'Panel70
         '
         Me.Panel70.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel70.Location = New System.Drawing.Point(17, 88)
-        Me.Panel70.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel70.Location = New System.Drawing.Point(13, 72)
         Me.Panel70.Name = "Panel70"
-        Me.Panel70.Size = New System.Drawing.Size(992, 12)
+        Me.Panel70.Size = New System.Drawing.Size(741, 10)
         Me.Panel70.TabIndex = 17
         '
         'Panel59
@@ -425,10 +414,9 @@ Partial Class frmManageSupplierV2
         Me.Panel59.Controls.Add(Me.Panel60)
         Me.Panel59.Controls.Add(Me.btnSearchCustomer)
         Me.Panel59.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel59.Location = New System.Drawing.Point(17, 39)
-        Me.Panel59.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel59.Location = New System.Drawing.Point(13, 32)
         Me.Panel59.Name = "Panel59"
-        Me.Panel59.Size = New System.Drawing.Size(992, 49)
+        Me.Panel59.Size = New System.Drawing.Size(741, 40)
         Me.Panel59.TabIndex = 16
         '
         'Guna2TextBox1
@@ -444,22 +432,21 @@ Partial Class frmManageSupplierV2
         Me.Guna2TextBox1.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(66, 0)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
+        Me.Guna2TextBox1.Location = New System.Drawing.Point(50, 0)
+        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Guna2TextBox1.Name = "Guna2TextBox1"
         Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Guna2TextBox1.PlaceholderText = "Searcy by product name"
         Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(926, 49)
+        Me.Guna2TextBox1.Size = New System.Drawing.Size(691, 40)
         Me.Guna2TextBox1.TabIndex = 90
         '
         'Panel60
         '
         Me.Panel60.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel60.Location = New System.Drawing.Point(53, 0)
-        Me.Panel60.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel60.Location = New System.Drawing.Point(40, 0)
         Me.Panel60.Name = "Panel60"
-        Me.Panel60.Size = New System.Drawing.Size(13, 49)
+        Me.Panel60.Size = New System.Drawing.Size(10, 40)
         Me.Panel60.TabIndex = 89
         '
         'btnSearchCustomer
@@ -477,55 +464,50 @@ Partial Class frmManageSupplierV2
         Me.btnSearchCustomer.ForeColor = System.Drawing.Color.White
         Me.btnSearchCustomer.Image = CType(resources.GetObject("btnSearchCustomer.Image"), System.Drawing.Image)
         Me.btnSearchCustomer.Location = New System.Drawing.Point(0, 0)
-        Me.btnSearchCustomer.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnSearchCustomer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSearchCustomer.Name = "btnSearchCustomer"
         Me.btnSearchCustomer.PressedDepth = 20
-        Me.btnSearchCustomer.Size = New System.Drawing.Size(53, 49)
+        Me.btnSearchCustomer.Size = New System.Drawing.Size(40, 40)
         Me.btnSearchCustomer.TabIndex = 91
         '
         'Panel78
         '
         Me.Panel78.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel78.Location = New System.Drawing.Point(1009, 39)
-        Me.Panel78.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel78.Location = New System.Drawing.Point(754, 32)
         Me.Panel78.Name = "Panel78"
-        Me.Panel78.Size = New System.Drawing.Size(13, 700)
+        Me.Panel78.Size = New System.Drawing.Size(10, 560)
         Me.Panel78.TabIndex = 15
         '
         'Panel79
         '
         Me.Panel79.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel79.Location = New System.Drawing.Point(4, 39)
-        Me.Panel79.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel79.Location = New System.Drawing.Point(3, 32)
         Me.Panel79.Name = "Panel79"
-        Me.Panel79.Size = New System.Drawing.Size(13, 700)
+        Me.Panel79.Size = New System.Drawing.Size(10, 560)
         Me.Panel79.TabIndex = 14
         '
         'Panel80
         '
         Me.Panel80.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel80.Location = New System.Drawing.Point(4, 739)
-        Me.Panel80.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel80.Location = New System.Drawing.Point(3, 592)
         Me.Panel80.Name = "Panel80"
-        Me.Panel80.Size = New System.Drawing.Size(1018, 12)
+        Me.Panel80.Size = New System.Drawing.Size(761, 10)
         Me.Panel80.TabIndex = 1
         '
         'Panel81
         '
         Me.Panel81.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel81.Location = New System.Drawing.Point(4, 27)
-        Me.Panel81.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel81.Location = New System.Drawing.Point(3, 22)
         Me.Panel81.Name = "Panel81"
-        Me.Panel81.Size = New System.Drawing.Size(1018, 12)
+        Me.Panel81.Size = New System.Drawing.Size(761, 10)
         Me.Panel81.TabIndex = 0
         '
         'Panel16
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel16.Location = New System.Drawing.Point(1043, 16)
-        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel16.Location = New System.Drawing.Point(780, 13)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(13, 755)
+        Me.Panel16.Size = New System.Drawing.Size(10, 605)
         Me.Panel16.TabIndex = 38
         '
         'GroupBox6
@@ -540,11 +522,9 @@ Partial Class frmManageSupplierV2
         Me.GroupBox6.Dock = System.Windows.Forms.DockStyle.Right
         Me.GroupBox6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.GroupBox6.Location = New System.Drawing.Point(1056, 16)
-        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox6.Location = New System.Drawing.Point(790, 13)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox6.Size = New System.Drawing.Size(719, 755)
+        Me.GroupBox6.Size = New System.Drawing.Size(539, 605)
         Me.GroupBox6.TabIndex = 39
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Product Image"
@@ -552,10 +532,9 @@ Partial Class frmManageSupplierV2
         'pbxProduct
         '
         Me.pbxProduct.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbxProduct.Location = New System.Drawing.Point(17, 39)
-        Me.pbxProduct.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbxProduct.Location = New System.Drawing.Point(13, 32)
         Me.pbxProduct.Name = "pbxProduct"
-        Me.pbxProduct.Size = New System.Drawing.Size(685, 639)
+        Me.pbxProduct.Size = New System.Drawing.Size(513, 510)
         Me.pbxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbxProduct.TabIndex = 59
         Me.pbxProduct.TabStop = False
@@ -564,10 +543,9 @@ Partial Class frmManageSupplierV2
         '
         Me.Panel71.BackColor = System.Drawing.Color.White
         Me.Panel71.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel71.Location = New System.Drawing.Point(17, 678)
-        Me.Panel71.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel71.Location = New System.Drawing.Point(13, 542)
         Me.Panel71.Name = "Panel71"
-        Me.Panel71.Size = New System.Drawing.Size(685, 12)
+        Me.Panel71.Size = New System.Drawing.Size(513, 10)
         Me.Panel71.TabIndex = 58
         '
         'btnDelete
@@ -584,11 +562,10 @@ Partial Class frmManageSupplierV2
         Me.btnDelete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
-        Me.btnDelete.Location = New System.Drawing.Point(17, 690)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelete.Location = New System.Drawing.Point(13, 552)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedDepth = 20
-        Me.btnDelete.Size = New System.Drawing.Size(685, 49)
+        Me.btnDelete.Size = New System.Drawing.Size(513, 40)
         Me.btnDelete.TabIndex = 57
         Me.btnDelete.TabStop = False
         Me.btnDelete.Text = "Delete Image"
@@ -596,64 +573,57 @@ Partial Class frmManageSupplierV2
         'Panel39
         '
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel39.Location = New System.Drawing.Point(702, 39)
-        Me.Panel39.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel39.Location = New System.Drawing.Point(526, 32)
         Me.Panel39.Name = "Panel39"
-        Me.Panel39.Size = New System.Drawing.Size(13, 700)
+        Me.Panel39.Size = New System.Drawing.Size(10, 560)
         Me.Panel39.TabIndex = 15
         '
         'Panel42
         '
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel42.Location = New System.Drawing.Point(4, 39)
-        Me.Panel42.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel42.Location = New System.Drawing.Point(3, 32)
         Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(13, 700)
+        Me.Panel42.Size = New System.Drawing.Size(10, 560)
         Me.Panel42.TabIndex = 14
         '
         'Panel54
         '
         Me.Panel54.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel54.Location = New System.Drawing.Point(4, 739)
-        Me.Panel54.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel54.Location = New System.Drawing.Point(3, 592)
         Me.Panel54.Name = "Panel54"
-        Me.Panel54.Size = New System.Drawing.Size(711, 12)
+        Me.Panel54.Size = New System.Drawing.Size(533, 10)
         Me.Panel54.TabIndex = 1
         '
         'Panel58
         '
         Me.Panel58.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel58.Location = New System.Drawing.Point(4, 27)
-        Me.Panel58.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel58.Location = New System.Drawing.Point(3, 22)
         Me.Panel58.Name = "Panel58"
-        Me.Panel58.Size = New System.Drawing.Size(711, 12)
+        Me.Panel58.Size = New System.Drawing.Size(533, 10)
         Me.Panel58.TabIndex = 0
         '
         'Panel8
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(17, 4)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Location = New System.Drawing.Point(13, 3)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1758, 12)
+        Me.Panel8.Size = New System.Drawing.Size(1316, 10)
         Me.Panel8.TabIndex = 22
         '
         'Panel12
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel12.Location = New System.Drawing.Point(1775, 4)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel12.Location = New System.Drawing.Point(1329, 3)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(13, 841)
+        Me.Panel12.Size = New System.Drawing.Size(10, 675)
         Me.Panel12.TabIndex = 10
         '
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel9.Location = New System.Drawing.Point(4, 4)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Location = New System.Drawing.Point(3, 3)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(13, 841)
+        Me.Panel9.Size = New System.Drawing.Size(10, 675)
         Me.Panel9.TabIndex = 9
         '
         'ColumnHeader6
@@ -722,10 +692,9 @@ Partial Class frmManageSupplierV2
         Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl2.ItemSize = New System.Drawing.Size(250, 40)
         Me.TabControl2.Location = New System.Drawing.Point(0, 0)
-        Me.TabControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1800, 897)
+        Me.TabControl2.Size = New System.Drawing.Size(1350, 729)
         Me.TabControl2.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
         Me.TabControl2.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabButtonHoverState.Font = New System.Drawing.Font("Arial", 12.0!)
@@ -750,9 +719,8 @@ Partial Class frmManageSupplierV2
         '
         Me.TabPage1.Controls.Add(Me.panelBody)
         Me.TabPage1.Location = New System.Drawing.Point(4, 44)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(1792, 849)
+        Me.TabPage1.Size = New System.Drawing.Size(1342, 681)
         Me.TabPage1.TabIndex = 2
         Me.TabPage1.Text = "Supplier Information"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -770,9 +738,8 @@ Partial Class frmManageSupplierV2
         Me.panelBody.Controls.Add(Me.Panel3)
         Me.panelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBody.Location = New System.Drawing.Point(0, 0)
-        Me.panelBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelBody.Name = "panelBody"
-        Me.panelBody.Size = New System.Drawing.Size(1792, 849)
+        Me.panelBody.Size = New System.Drawing.Size(1342, 681)
         Me.panelBody.TabIndex = 0
         '
         'GroupBox3
@@ -807,11 +774,9 @@ Partial Class frmManageSupplierV2
         Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.GroupBox3.Location = New System.Drawing.Point(13, 12)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Location = New System.Drawing.Point(10, 10)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox3.Size = New System.Drawing.Size(580, 763)
+        Me.GroupBox3.Size = New System.Drawing.Size(432, 611)
         Me.GroupBox3.TabIndex = 37
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Company Information"
@@ -830,23 +795,22 @@ Partial Class frmManageSupplierV2
         Me.txtPhoneNumber.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtPhoneNumber.ForeColor = System.Drawing.Color.Black
         Me.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtPhoneNumber.Location = New System.Drawing.Point(17, 687)
-        Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtPhoneNumber.Location = New System.Drawing.Point(13, 558)
+        Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
         Me.txtPhoneNumber.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPhoneNumber.PlaceholderText = "Enter phone number"
         Me.txtPhoneNumber.SelectedText = ""
-        Me.txtPhoneNumber.Size = New System.Drawing.Size(546, 43)
+        Me.txtPhoneNumber.Size = New System.Drawing.Size(406, 35)
         Me.txtPhoneNumber.TabIndex = 159
         '
         'Panel68
         '
         Me.Panel68.Controls.Add(Me.Label16)
         Me.Panel68.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel68.Location = New System.Drawing.Point(17, 662)
-        Me.Panel68.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel68.Location = New System.Drawing.Point(13, 538)
         Me.Panel68.Name = "Panel68"
-        Me.Panel68.Size = New System.Drawing.Size(546, 25)
+        Me.Panel68.Size = New System.Drawing.Size(406, 20)
         Me.Panel68.TabIndex = 158
         '
         'Label16
@@ -857,19 +821,17 @@ Partial Class frmManageSupplierV2
         Me.Label16.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label16.Location = New System.Drawing.Point(0, 0)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(139, 23)
+        Me.Label16.Size = New System.Drawing.Size(112, 18)
         Me.Label16.TabIndex = 107
         Me.Label16.Text = "Phone Number"
         '
         'Panel69
         '
         Me.Panel69.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel69.Location = New System.Drawing.Point(17, 650)
-        Me.Panel69.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel69.Location = New System.Drawing.Point(13, 528)
         Me.Panel69.Name = "Panel69"
-        Me.Panel69.Size = New System.Drawing.Size(546, 12)
+        Me.Panel69.Size = New System.Drawing.Size(406, 10)
         Me.Panel69.TabIndex = 157
         '
         'txtAccountNumber
@@ -886,23 +848,22 @@ Partial Class frmManageSupplierV2
         Me.txtAccountNumber.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtAccountNumber.ForeColor = System.Drawing.Color.Black
         Me.txtAccountNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtAccountNumber.Location = New System.Drawing.Point(17, 607)
-        Me.txtAccountNumber.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtAccountNumber.Location = New System.Drawing.Point(13, 493)
+        Me.txtAccountNumber.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtAccountNumber.Name = "txtAccountNumber"
         Me.txtAccountNumber.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAccountNumber.PlaceholderText = "Enter account number"
         Me.txtAccountNumber.SelectedText = ""
-        Me.txtAccountNumber.Size = New System.Drawing.Size(546, 43)
+        Me.txtAccountNumber.Size = New System.Drawing.Size(406, 35)
         Me.txtAccountNumber.TabIndex = 156
         '
         'Panel66
         '
         Me.Panel66.Controls.Add(Me.Label15)
         Me.Panel66.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel66.Location = New System.Drawing.Point(17, 582)
-        Me.Panel66.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel66.Location = New System.Drawing.Point(13, 473)
         Me.Panel66.Name = "Panel66"
-        Me.Panel66.Size = New System.Drawing.Size(546, 25)
+        Me.Panel66.Size = New System.Drawing.Size(406, 20)
         Me.Panel66.TabIndex = 155
         '
         'Label15
@@ -913,19 +874,17 @@ Partial Class frmManageSupplierV2
         Me.Label15.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label15.Location = New System.Drawing.Point(0, 0)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(154, 23)
+        Me.Label15.Size = New System.Drawing.Size(123, 18)
         Me.Label15.TabIndex = 107
         Me.Label15.Text = "Account Number"
         '
         'Panel67
         '
         Me.Panel67.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel67.Location = New System.Drawing.Point(17, 570)
-        Me.Panel67.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel67.Location = New System.Drawing.Point(13, 463)
         Me.Panel67.Name = "Panel67"
-        Me.Panel67.Size = New System.Drawing.Size(546, 12)
+        Me.Panel67.Size = New System.Drawing.Size(406, 10)
         Me.Panel67.TabIndex = 154
         '
         'txtAccountName
@@ -942,23 +901,22 @@ Partial Class frmManageSupplierV2
         Me.txtAccountName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtAccountName.ForeColor = System.Drawing.Color.Black
         Me.txtAccountName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtAccountName.Location = New System.Drawing.Point(17, 527)
-        Me.txtAccountName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtAccountName.Location = New System.Drawing.Point(13, 428)
+        Me.txtAccountName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtAccountName.Name = "txtAccountName"
         Me.txtAccountName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAccountName.PlaceholderText = "Enter account name"
         Me.txtAccountName.SelectedText = ""
-        Me.txtAccountName.Size = New System.Drawing.Size(546, 43)
+        Me.txtAccountName.Size = New System.Drawing.Size(406, 35)
         Me.txtAccountName.TabIndex = 153
         '
         'Panel55
         '
         Me.Panel55.Controls.Add(Me.Label14)
         Me.Panel55.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel55.Location = New System.Drawing.Point(17, 502)
-        Me.Panel55.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel55.Location = New System.Drawing.Point(13, 408)
         Me.Panel55.Name = "Panel55"
-        Me.Panel55.Size = New System.Drawing.Size(546, 25)
+        Me.Panel55.Size = New System.Drawing.Size(406, 20)
         Me.Panel55.TabIndex = 152
         '
         'Label14
@@ -969,19 +927,17 @@ Partial Class frmManageSupplierV2
         Me.Label14.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label14.Location = New System.Drawing.Point(0, 0)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(137, 23)
+        Me.Label14.Size = New System.Drawing.Size(110, 18)
         Me.Label14.TabIndex = 107
         Me.Label14.Text = "Account Name"
         '
         'Panel65
         '
         Me.Panel65.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel65.Location = New System.Drawing.Point(17, 490)
-        Me.Panel65.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel65.Location = New System.Drawing.Point(13, 398)
         Me.Panel65.Name = "Panel65"
-        Me.Panel65.Size = New System.Drawing.Size(546, 12)
+        Me.Panel65.Size = New System.Drawing.Size(406, 10)
         Me.Panel65.TabIndex = 151
         '
         'txtCompanyEmail
@@ -998,23 +954,22 @@ Partial Class frmManageSupplierV2
         Me.txtCompanyEmail.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtCompanyEmail.ForeColor = System.Drawing.Color.Black
         Me.txtCompanyEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtCompanyEmail.Location = New System.Drawing.Point(17, 447)
-        Me.txtCompanyEmail.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtCompanyEmail.Location = New System.Drawing.Point(13, 363)
+        Me.txtCompanyEmail.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCompanyEmail.Name = "txtCompanyEmail"
         Me.txtCompanyEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCompanyEmail.PlaceholderText = "Enter company email"
         Me.txtCompanyEmail.SelectedText = ""
-        Me.txtCompanyEmail.Size = New System.Drawing.Size(546, 43)
+        Me.txtCompanyEmail.Size = New System.Drawing.Size(406, 35)
         Me.txtCompanyEmail.TabIndex = 150
         '
         'Panel28
         '
         Me.Panel28.Controls.Add(Me.Label4)
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel28.Location = New System.Drawing.Point(17, 422)
-        Me.Panel28.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel28.Location = New System.Drawing.Point(13, 343)
         Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(546, 25)
+        Me.Panel28.Size = New System.Drawing.Size(406, 20)
         Me.Panel28.TabIndex = 149
         '
         'Label4
@@ -1025,19 +980,17 @@ Partial Class frmManageSupplierV2
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(0, 0)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(147, 23)
+        Me.Label4.Size = New System.Drawing.Size(119, 18)
         Me.Label4.TabIndex = 107
         Me.Label4.Text = "Company Email"
         '
         'Panel29
         '
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel29.Location = New System.Drawing.Point(17, 410)
-        Me.Panel29.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel29.Location = New System.Drawing.Point(13, 333)
         Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(546, 12)
+        Me.Panel29.Size = New System.Drawing.Size(406, 10)
         Me.Panel29.TabIndex = 148
         '
         'txtCompanyPosition
@@ -1054,23 +1007,22 @@ Partial Class frmManageSupplierV2
         Me.txtCompanyPosition.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtCompanyPosition.ForeColor = System.Drawing.Color.Black
         Me.txtCompanyPosition.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtCompanyPosition.Location = New System.Drawing.Point(17, 367)
-        Me.txtCompanyPosition.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtCompanyPosition.Location = New System.Drawing.Point(13, 298)
+        Me.txtCompanyPosition.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCompanyPosition.Name = "txtCompanyPosition"
         Me.txtCompanyPosition.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCompanyPosition.PlaceholderText = "Enter company position"
         Me.txtCompanyPosition.SelectedText = ""
-        Me.txtCompanyPosition.Size = New System.Drawing.Size(546, 43)
+        Me.txtCompanyPosition.Size = New System.Drawing.Size(406, 35)
         Me.txtCompanyPosition.TabIndex = 3
         '
         'Panel26
         '
         Me.Panel26.Controls.Add(Me.Label3)
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel26.Location = New System.Drawing.Point(17, 342)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel26.Location = New System.Drawing.Point(13, 278)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(546, 25)
+        Me.Panel26.Size = New System.Drawing.Size(406, 20)
         Me.Panel26.TabIndex = 147
         '
         'Label3
@@ -1081,19 +1033,17 @@ Partial Class frmManageSupplierV2
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(0, 0)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(168, 23)
+        Me.Label3.Size = New System.Drawing.Size(136, 18)
         Me.Label3.TabIndex = 107
         Me.Label3.Text = "Company Position"
         '
         'Panel27
         '
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel27.Location = New System.Drawing.Point(17, 330)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel27.Location = New System.Drawing.Point(13, 268)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(546, 12)
+        Me.Panel27.Size = New System.Drawing.Size(406, 10)
         Me.Panel27.TabIndex = 146
         '
         'txtDeliveryTerms
@@ -1110,24 +1060,23 @@ Partial Class frmManageSupplierV2
         Me.txtDeliveryTerms.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtDeliveryTerms.ForeColor = System.Drawing.Color.Black
         Me.txtDeliveryTerms.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtDeliveryTerms.Location = New System.Drawing.Point(17, 287)
-        Me.txtDeliveryTerms.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtDeliveryTerms.Location = New System.Drawing.Point(13, 233)
+        Me.txtDeliveryTerms.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtDeliveryTerms.Multiline = True
         Me.txtDeliveryTerms.Name = "txtDeliveryTerms"
         Me.txtDeliveryTerms.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtDeliveryTerms.PlaceholderText = "Enter delivery terms"
         Me.txtDeliveryTerms.SelectedText = ""
-        Me.txtDeliveryTerms.Size = New System.Drawing.Size(546, 43)
+        Me.txtDeliveryTerms.Size = New System.Drawing.Size(406, 35)
         Me.txtDeliveryTerms.TabIndex = 2
         '
         'Panel24
         '
         Me.Panel24.Controls.Add(Me.Label2)
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel24.Location = New System.Drawing.Point(17, 262)
-        Me.Panel24.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel24.Location = New System.Drawing.Point(13, 213)
         Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(546, 25)
+        Me.Panel24.Size = New System.Drawing.Size(406, 20)
         Me.Panel24.TabIndex = 142
         '
         'Label2
@@ -1138,19 +1087,17 @@ Partial Class frmManageSupplierV2
         Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(140, 23)
+        Me.Label2.Size = New System.Drawing.Size(110, 18)
         Me.Label2.TabIndex = 107
         Me.Label2.Text = "Delivery Terms"
         '
         'Panel25
         '
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel25.Location = New System.Drawing.Point(17, 250)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel25.Location = New System.Drawing.Point(13, 203)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(546, 12)
+        Me.Panel25.Size = New System.Drawing.Size(406, 10)
         Me.Panel25.TabIndex = 141
         '
         'txtAddress
@@ -1167,24 +1114,23 @@ Partial Class frmManageSupplierV2
         Me.txtAddress.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtAddress.ForeColor = System.Drawing.Color.Black
         Me.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtAddress.Location = New System.Drawing.Point(17, 144)
-        Me.txtAddress.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtAddress.Location = New System.Drawing.Point(13, 117)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAddress.PlaceholderText = "Enter company address"
         Me.txtAddress.SelectedText = ""
-        Me.txtAddress.Size = New System.Drawing.Size(546, 106)
+        Me.txtAddress.Size = New System.Drawing.Size(406, 86)
         Me.txtAddress.TabIndex = 1
         '
         'Panel43
         '
         Me.Panel43.Controls.Add(Me.Label1)
         Me.Panel43.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel43.Location = New System.Drawing.Point(17, 119)
-        Me.Panel43.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel43.Location = New System.Drawing.Point(13, 97)
         Me.Panel43.Name = "Panel43"
-        Me.Panel43.Size = New System.Drawing.Size(546, 25)
+        Me.Panel43.Size = New System.Drawing.Size(406, 20)
         Me.Panel43.TabIndex = 139
         '
         'Label1
@@ -1195,19 +1141,17 @@ Partial Class frmManageSupplierV2
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(83, 23)
+        Me.Label1.Size = New System.Drawing.Size(67, 18)
         Me.Label1.TabIndex = 107
         Me.Label1.Text = "Address"
         '
         'Panel44
         '
         Me.Panel44.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel44.Location = New System.Drawing.Point(17, 107)
-        Me.Panel44.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel44.Location = New System.Drawing.Point(13, 87)
         Me.Panel44.Name = "Panel44"
-        Me.Panel44.Size = New System.Drawing.Size(546, 12)
+        Me.Panel44.Size = New System.Drawing.Size(406, 10)
         Me.Panel44.TabIndex = 138
         '
         'txtCompanyName
@@ -1224,23 +1168,22 @@ Partial Class frmManageSupplierV2
         Me.txtCompanyName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtCompanyName.ForeColor = System.Drawing.Color.Black
         Me.txtCompanyName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtCompanyName.Location = New System.Drawing.Point(17, 64)
-        Me.txtCompanyName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtCompanyName.Location = New System.Drawing.Point(13, 52)
+        Me.txtCompanyName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCompanyName.Name = "txtCompanyName"
         Me.txtCompanyName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCompanyName.PlaceholderText = "Enter company name"
         Me.txtCompanyName.SelectedText = ""
-        Me.txtCompanyName.Size = New System.Drawing.Size(546, 43)
+        Me.txtCompanyName.Size = New System.Drawing.Size(406, 35)
         Me.txtCompanyName.TabIndex = 0
         '
         'Panel45
         '
         Me.Panel45.Controls.Add(Me.Label7)
         Me.Panel45.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel45.Location = New System.Drawing.Point(17, 39)
-        Me.Panel45.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel45.Location = New System.Drawing.Point(13, 32)
         Me.Panel45.Name = "Panel45"
-        Me.Panel45.Size = New System.Drawing.Size(546, 25)
+        Me.Panel45.Size = New System.Drawing.Size(406, 20)
         Me.Panel45.TabIndex = 136
         '
         'Label7
@@ -1251,55 +1194,49 @@ Partial Class frmManageSupplierV2
         Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(0, 0)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(150, 23)
+        Me.Label7.Size = New System.Drawing.Size(121, 18)
         Me.Label7.TabIndex = 107
         Me.Label7.Text = "Company Name"
         '
         'Panel23
         '
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel23.Location = New System.Drawing.Point(563, 39)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel23.Location = New System.Drawing.Point(419, 32)
         Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(13, 708)
+        Me.Panel23.Size = New System.Drawing.Size(10, 566)
         Me.Panel23.TabIndex = 15
         '
         'Panel22
         '
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel22.Location = New System.Drawing.Point(4, 39)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel22.Location = New System.Drawing.Point(3, 32)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(13, 708)
+        Me.Panel22.Size = New System.Drawing.Size(10, 566)
         Me.Panel22.TabIndex = 14
         '
         'Panel21
         '
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel21.Location = New System.Drawing.Point(4, 747)
-        Me.Panel21.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel21.Location = New System.Drawing.Point(3, 598)
         Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(572, 12)
+        Me.Panel21.Size = New System.Drawing.Size(426, 10)
         Me.Panel21.TabIndex = 1
         '
         'Panel20
         '
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel20.Location = New System.Drawing.Point(4, 27)
-        Me.Panel20.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel20.Location = New System.Drawing.Point(3, 22)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(572, 12)
+        Me.Panel20.Size = New System.Drawing.Size(426, 10)
         Me.Panel20.TabIndex = 0
         '
         'Panel64
         '
         Me.Panel64.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel64.Location = New System.Drawing.Point(593, 12)
-        Me.Panel64.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel64.Location = New System.Drawing.Point(442, 10)
         Me.Panel64.Name = "Panel64"
-        Me.Panel64.Size = New System.Drawing.Size(13, 763)
+        Me.Panel64.Size = New System.Drawing.Size(10, 611)
         Me.Panel64.TabIndex = 36
         '
         'GroupBox2
@@ -1327,11 +1264,9 @@ Partial Class frmManageSupplierV2
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Right
         Me.GroupBox2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.GroupBox2.Location = New System.Drawing.Point(606, 12)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Location = New System.Drawing.Point(452, 10)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox2.Size = New System.Drawing.Size(560, 763)
+        Me.GroupBox2.Size = New System.Drawing.Size(420, 611)
         Me.GroupBox2.TabIndex = 33
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Account Information"
@@ -1342,10 +1277,9 @@ Partial Class frmManageSupplierV2
         Me.Panel57.Controls.Add(Me.Guna2Panel2)
         Me.Panel57.Controls.Add(Me.btnActive)
         Me.Panel57.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel57.Location = New System.Drawing.Point(17, 436)
-        Me.Panel57.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel57.Location = New System.Drawing.Point(13, 362)
         Me.Panel57.Name = "Panel57"
-        Me.Panel57.Size = New System.Drawing.Size(526, 49)
+        Me.Panel57.Size = New System.Drawing.Size(394, 40)
         Me.Panel57.TabIndex = 171
         '
         'btnDeactive
@@ -1362,11 +1296,10 @@ Partial Class frmManageSupplierV2
         Me.btnDeactive.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnDeactive.ForeColor = System.Drawing.Color.White
         Me.btnDeactive.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnDeactive.Location = New System.Drawing.Point(273, 0)
-        Me.btnDeactive.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDeactive.Location = New System.Drawing.Point(205, 0)
         Me.btnDeactive.Name = "btnDeactive"
         Me.btnDeactive.PressedDepth = 20
-        Me.btnDeactive.Size = New System.Drawing.Size(253, 49)
+        Me.btnDeactive.Size = New System.Drawing.Size(189, 40)
         Me.btnDeactive.TabIndex = 60
         Me.btnDeactive.TabStop = False
         Me.btnDeactive.Text = "Deactivate"
@@ -1374,10 +1307,10 @@ Partial Class frmManageSupplierV2
         'Guna2Panel2
         '
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel2.Location = New System.Drawing.Point(260, 0)
-        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(195, 0)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(13, 49)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(10, 40)
         Me.Guna2Panel2.TabIndex = 59
         '
         'btnActive
@@ -1395,10 +1328,9 @@ Partial Class frmManageSupplierV2
         Me.btnActive.ForeColor = System.Drawing.Color.White
         Me.btnActive.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnActive.Location = New System.Drawing.Point(0, 0)
-        Me.btnActive.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnActive.Name = "btnActive"
         Me.btnActive.PressedDepth = 20
-        Me.btnActive.Size = New System.Drawing.Size(260, 49)
+        Me.btnActive.Size = New System.Drawing.Size(195, 40)
         Me.btnActive.TabIndex = 58
         Me.btnActive.TabStop = False
         Me.btnActive.Text = "Activate"
@@ -1406,10 +1338,9 @@ Partial Class frmManageSupplierV2
         'Panel53
         '
         Me.Panel53.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel53.Location = New System.Drawing.Point(17, 424)
-        Me.Panel53.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel53.Location = New System.Drawing.Point(13, 352)
         Me.Panel53.Name = "Panel53"
-        Me.Panel53.Size = New System.Drawing.Size(526, 12)
+        Me.Panel53.Size = New System.Drawing.Size(394, 10)
         Me.Panel53.TabIndex = 168
         '
         'cboAcctStatus
@@ -1427,20 +1358,18 @@ Partial Class frmManageSupplierV2
         Me.cboAcctStatus.ForeColor = System.Drawing.Color.Black
         Me.cboAcctStatus.ItemHeight = 30
         Me.cboAcctStatus.Items.AddRange(New Object() {"Active", "Inactive"})
-        Me.cboAcctStatus.Location = New System.Drawing.Point(17, 388)
-        Me.cboAcctStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboAcctStatus.Location = New System.Drawing.Point(13, 316)
         Me.cboAcctStatus.Name = "cboAcctStatus"
-        Me.cboAcctStatus.Size = New System.Drawing.Size(526, 36)
+        Me.cboAcctStatus.Size = New System.Drawing.Size(394, 36)
         Me.cboAcctStatus.TabIndex = 159
         '
         'Panel41
         '
         Me.Panel41.Controls.Add(Me.Label12)
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel41.Location = New System.Drawing.Point(17, 363)
-        Me.Panel41.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel41.Location = New System.Drawing.Point(13, 296)
         Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(526, 25)
+        Me.Panel41.Size = New System.Drawing.Size(394, 20)
         Me.Panel41.TabIndex = 167
         '
         'Label12
@@ -1451,19 +1380,17 @@ Partial Class frmManageSupplierV2
         Me.Label12.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label12.Location = New System.Drawing.Point(0, 0)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(142, 23)
+        Me.Label12.Size = New System.Drawing.Size(112, 18)
         Me.Label12.TabIndex = 107
         Me.Label12.Text = "Account Status"
         '
         'Panel40
         '
         Me.Panel40.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel40.Location = New System.Drawing.Point(17, 351)
-        Me.Panel40.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel40.Location = New System.Drawing.Point(13, 286)
         Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(526, 12)
+        Me.Panel40.Size = New System.Drawing.Size(394, 10)
         Me.Panel40.TabIndex = 164
         '
         'txtPassword
@@ -1479,23 +1406,22 @@ Partial Class frmManageSupplierV2
         Me.txtPassword.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
         Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtPassword.Location = New System.Drawing.Point(17, 307)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtPassword.Location = New System.Drawing.Point(13, 250)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPassword.PlaceholderText = "Enter password"
         Me.txtPassword.SelectedText = ""
-        Me.txtPassword.Size = New System.Drawing.Size(526, 44)
+        Me.txtPassword.Size = New System.Drawing.Size(394, 36)
         Me.txtPassword.TabIndex = 7
         '
         'Panel37
         '
         Me.Panel37.Controls.Add(Me.Label9)
         Me.Panel37.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel37.Location = New System.Drawing.Point(17, 282)
-        Me.Panel37.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel37.Location = New System.Drawing.Point(13, 230)
         Me.Panel37.Name = "Panel37"
-        Me.Panel37.Size = New System.Drawing.Size(526, 25)
+        Me.Panel37.Size = New System.Drawing.Size(394, 20)
         Me.Panel37.TabIndex = 163
         '
         'Label9
@@ -1506,19 +1432,17 @@ Partial Class frmManageSupplierV2
         Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(0, 0)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(98, 23)
+        Me.Label9.Size = New System.Drawing.Size(78, 18)
         Me.Label9.TabIndex = 107
         Me.Label9.Text = "Password"
         '
         'Panel38
         '
         Me.Panel38.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel38.Location = New System.Drawing.Point(17, 270)
-        Me.Panel38.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel38.Location = New System.Drawing.Point(13, 220)
         Me.Panel38.Name = "Panel38"
-        Me.Panel38.Size = New System.Drawing.Size(526, 12)
+        Me.Panel38.Size = New System.Drawing.Size(394, 10)
         Me.Panel38.TabIndex = 162
         '
         'txtUsername
@@ -1535,23 +1459,22 @@ Partial Class frmManageSupplierV2
         Me.txtUsername.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtUsername.Location = New System.Drawing.Point(17, 226)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtUsername.Location = New System.Drawing.Point(13, 184)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsername.PlaceholderText = "Enter username"
         Me.txtUsername.SelectedText = ""
-        Me.txtUsername.Size = New System.Drawing.Size(526, 44)
+        Me.txtUsername.Size = New System.Drawing.Size(394, 36)
         Me.txtUsername.TabIndex = 6
         '
         'Panel35
         '
         Me.Panel35.Controls.Add(Me.Label8)
         Me.Panel35.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel35.Location = New System.Drawing.Point(17, 201)
-        Me.Panel35.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel35.Location = New System.Drawing.Point(13, 164)
         Me.Panel35.Name = "Panel35"
-        Me.Panel35.Size = New System.Drawing.Size(526, 25)
+        Me.Panel35.Size = New System.Drawing.Size(394, 20)
         Me.Panel35.TabIndex = 160
         '
         'Label8
@@ -1562,19 +1485,17 @@ Partial Class frmManageSupplierV2
         Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(0, 0)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(99, 23)
+        Me.Label8.Size = New System.Drawing.Size(80, 18)
         Me.Label8.TabIndex = 107
         Me.Label8.Text = "Username"
         '
         'Panel36
         '
         Me.Panel36.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel36.Location = New System.Drawing.Point(17, 189)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel36.Location = New System.Drawing.Point(13, 154)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(526, 12)
+        Me.Panel36.Size = New System.Drawing.Size(394, 10)
         Me.Panel36.TabIndex = 158
         '
         'txtLastName
@@ -1591,23 +1512,22 @@ Partial Class frmManageSupplierV2
         Me.txtLastName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtLastName.ForeColor = System.Drawing.Color.Black
         Me.txtLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtLastName.Location = New System.Drawing.Point(17, 145)
-        Me.txtLastName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtLastName.Location = New System.Drawing.Point(13, 118)
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLastName.PlaceholderText = "Enter last name"
         Me.txtLastName.SelectedText = ""
-        Me.txtLastName.Size = New System.Drawing.Size(526, 44)
+        Me.txtLastName.Size = New System.Drawing.Size(394, 36)
         Me.txtLastName.TabIndex = 5
         '
         'Panel46
         '
         Me.Panel46.Controls.Add(Me.Label6)
         Me.Panel46.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel46.Location = New System.Drawing.Point(17, 120)
-        Me.Panel46.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel46.Location = New System.Drawing.Point(13, 98)
         Me.Panel46.Name = "Panel46"
-        Me.Panel46.Size = New System.Drawing.Size(526, 25)
+        Me.Panel46.Size = New System.Drawing.Size(394, 20)
         Me.Panel46.TabIndex = 155
         '
         'Label6
@@ -1618,19 +1538,17 @@ Partial Class frmManageSupplierV2
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(0, 0)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(105, 23)
+        Me.Label6.Size = New System.Drawing.Size(84, 18)
         Me.Label6.TabIndex = 107
         Me.Label6.Text = "Last Name"
         '
         'Panel47
         '
         Me.Panel47.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel47.Location = New System.Drawing.Point(17, 108)
-        Me.Panel47.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel47.Location = New System.Drawing.Point(13, 88)
         Me.Panel47.Name = "Panel47"
-        Me.Panel47.Size = New System.Drawing.Size(526, 12)
+        Me.Panel47.Size = New System.Drawing.Size(394, 10)
         Me.Panel47.TabIndex = 153
         '
         'txtFirstName
@@ -1647,23 +1565,22 @@ Partial Class frmManageSupplierV2
         Me.txtFirstName.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtFirstName.ForeColor = System.Drawing.Color.Black
         Me.txtFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtFirstName.Location = New System.Drawing.Point(17, 64)
-        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtFirstName.Location = New System.Drawing.Point(13, 52)
+        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFirstName.PlaceholderText = "Enter first name"
         Me.txtFirstName.SelectedText = ""
-        Me.txtFirstName.Size = New System.Drawing.Size(526, 44)
+        Me.txtFirstName.Size = New System.Drawing.Size(394, 36)
         Me.txtFirstName.TabIndex = 4
         '
         'Panel48
         '
         Me.Panel48.Controls.Add(Me.Label5)
         Me.Panel48.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel48.Location = New System.Drawing.Point(17, 39)
-        Me.Panel48.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel48.Location = New System.Drawing.Point(13, 32)
         Me.Panel48.Name = "Panel48"
-        Me.Panel48.Size = New System.Drawing.Size(526, 25)
+        Me.Panel48.Size = New System.Drawing.Size(394, 20)
         Me.Panel48.TabIndex = 151
         '
         'Label5
@@ -1674,65 +1591,58 @@ Partial Class frmManageSupplierV2
         Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(0, 0)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(106, 23)
+        Me.Label5.Size = New System.Drawing.Size(85, 18)
         Me.Label5.TabIndex = 107
         Me.Label5.Text = "First Name"
         '
         'Panel33
         '
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel33.Location = New System.Drawing.Point(543, 39)
-        Me.Panel33.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel33.Location = New System.Drawing.Point(407, 32)
         Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(13, 708)
+        Me.Panel33.Size = New System.Drawing.Size(10, 566)
         Me.Panel33.TabIndex = 16
         '
         'Panel32
         '
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel32.Location = New System.Drawing.Point(4, 39)
-        Me.Panel32.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel32.Location = New System.Drawing.Point(3, 32)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(13, 708)
+        Me.Panel32.Size = New System.Drawing.Size(10, 566)
         Me.Panel32.TabIndex = 15
         '
         'Panel30
         '
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel30.Location = New System.Drawing.Point(4, 747)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel30.Location = New System.Drawing.Point(3, 598)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(552, 12)
+        Me.Panel30.Size = New System.Drawing.Size(414, 10)
         Me.Panel30.TabIndex = 3
         '
         'Panel31
         '
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel31.Location = New System.Drawing.Point(4, 27)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel31.Location = New System.Drawing.Point(3, 22)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(552, 12)
+        Me.Panel31.Size = New System.Drawing.Size(414, 10)
         Me.Panel31.TabIndex = 2
         '
         'Panel19
         '
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel19.Location = New System.Drawing.Point(1166, 12)
-        Me.Panel19.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel19.Location = New System.Drawing.Point(872, 10)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(13, 763)
+        Me.Panel19.Size = New System.Drawing.Size(10, 611)
         Me.Panel19.TabIndex = 32
         '
         'Panel18
         '
         Me.Panel18.Controls.Add(Me.Guna2TabControl1)
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel18.Location = New System.Drawing.Point(1179, 12)
-        Me.Panel18.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel18.Location = New System.Drawing.Point(882, 10)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(600, 763)
+        Me.Panel18.Size = New System.Drawing.Size(450, 611)
         Me.Panel18.TabIndex = 30
         '
         'Guna2TabControl1
@@ -1744,10 +1654,9 @@ Partial Class frmManageSupplierV2
         Me.Guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2TabControl1.ItemSize = New System.Drawing.Size(222, 40)
         Me.Guna2TabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Guna2TabControl1.Name = "Guna2TabControl1"
         Me.Guna2TabControl1.SelectedIndex = 0
-        Me.Guna2TabControl1.Size = New System.Drawing.Size(600, 763)
+        Me.Guna2TabControl1.Size = New System.Drawing.Size(450, 611)
         Me.Guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
         Me.Guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Guna2TabControl1.TabButtonHoverState.Font = New System.Drawing.Font("Arial", 12.0!)
@@ -1776,10 +1685,9 @@ Partial Class frmManageSupplierV2
         Me.CompanyID.Controls.Add(Me.Guna2Panel6)
         Me.CompanyID.Controls.Add(Me.Guna2Panel5)
         Me.CompanyID.Location = New System.Drawing.Point(4, 4)
-        Me.CompanyID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CompanyID.Name = "CompanyID"
-        Me.CompanyID.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.CompanyID.Size = New System.Drawing.Size(592, 715)
+        Me.CompanyID.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.CompanyID.Size = New System.Drawing.Size(442, 563)
         Me.CompanyID.TabIndex = 3
         Me.CompanyID.Text = "Company ID"
         Me.CompanyID.ToolTipText = "Company picture ID"
@@ -1789,10 +1697,9 @@ Partial Class frmManageSupplierV2
         '
         Me.pbxCompanyID.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbxCompanyID.Image = CType(resources.GetObject("pbxCompanyID.Image"), System.Drawing.Image)
-        Me.pbxCompanyID.Location = New System.Drawing.Point(17, 16)
-        Me.pbxCompanyID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbxCompanyID.Location = New System.Drawing.Point(13, 13)
         Me.pbxCompanyID.Name = "pbxCompanyID"
-        Me.pbxCompanyID.Size = New System.Drawing.Size(558, 683)
+        Me.pbxCompanyID.Size = New System.Drawing.Size(416, 537)
         Me.pbxCompanyID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbxCompanyID.TabIndex = 27
         Me.pbxCompanyID.TabStop = False
@@ -1802,10 +1709,9 @@ Partial Class frmManageSupplierV2
         Me.Guna2Panel8.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.Guna2Panel8.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 1)
         Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel8.Location = New System.Drawing.Point(17, 699)
-        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel8.Location = New System.Drawing.Point(13, 550)
         Me.Guna2Panel8.Name = "Guna2Panel8"
-        Me.Guna2Panel8.Size = New System.Drawing.Size(558, 12)
+        Me.Guna2Panel8.Size = New System.Drawing.Size(416, 10)
         Me.Guna2Panel8.TabIndex = 1
         '
         'Guna2Panel7
@@ -1814,10 +1720,9 @@ Partial Class frmManageSupplierV2
         Me.Guna2Panel7.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.Guna2Panel7.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel7.Location = New System.Drawing.Point(17, 4)
-        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel7.Location = New System.Drawing.Point(13, 3)
         Me.Guna2Panel7.Name = "Guna2Panel7"
-        Me.Guna2Panel7.Size = New System.Drawing.Size(558, 12)
+        Me.Guna2Panel7.Size = New System.Drawing.Size(416, 10)
         Me.Guna2Panel7.TabIndex = 1
         '
         'Guna2Panel6
@@ -1825,10 +1730,9 @@ Partial Class frmManageSupplierV2
         Me.Guna2Panel6.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.Guna2Panel6.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 1, 1)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel6.Location = New System.Drawing.Point(575, 4)
-        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel6.Location = New System.Drawing.Point(429, 3)
         Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.Size = New System.Drawing.Size(13, 707)
+        Me.Guna2Panel6.Size = New System.Drawing.Size(10, 557)
         Me.Guna2Panel6.TabIndex = 1
         '
         'Guna2Panel5
@@ -1836,10 +1740,9 @@ Partial Class frmManageSupplierV2
         Me.Guna2Panel5.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.Guna2Panel5.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 0, 1)
         Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel5.Location = New System.Drawing.Point(4, 4)
-        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(3, 3)
         Me.Guna2Panel5.Name = "Guna2Panel5"
-        Me.Guna2Panel5.Size = New System.Drawing.Size(13, 707)
+        Me.Guna2Panel5.Size = New System.Drawing.Size(10, 557)
         Me.Guna2Panel5.TabIndex = 0
         '
         'GovID
@@ -1850,10 +1753,9 @@ Partial Class frmManageSupplierV2
         Me.GovID.Controls.Add(Me.Guna2Panel11)
         Me.GovID.Controls.Add(Me.Guna2Panel12)
         Me.GovID.Location = New System.Drawing.Point(4, 4)
-        Me.GovID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GovID.Name = "GovID"
-        Me.GovID.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GovID.Size = New System.Drawing.Size(592, 704)
+        Me.GovID.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.GovID.Size = New System.Drawing.Size(442, 572)
         Me.GovID.TabIndex = 4
         Me.GovID.Text = "Government ID"
         Me.GovID.ToolTipText = "Government picture ID"
@@ -1863,10 +1765,9 @@ Partial Class frmManageSupplierV2
         '
         Me.pbxGovID.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbxGovID.Image = CType(resources.GetObject("pbxGovID.Image"), System.Drawing.Image)
-        Me.pbxGovID.Location = New System.Drawing.Point(17, 16)
-        Me.pbxGovID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbxGovID.Location = New System.Drawing.Point(13, 13)
         Me.pbxGovID.Name = "pbxGovID"
-        Me.pbxGovID.Size = New System.Drawing.Size(558, 672)
+        Me.pbxGovID.Size = New System.Drawing.Size(416, 546)
         Me.pbxGovID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbxGovID.TabIndex = 28
         Me.pbxGovID.TabStop = False
@@ -1876,10 +1777,9 @@ Partial Class frmManageSupplierV2
         Me.Guna2Panel9.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.Guna2Panel9.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 1)
         Me.Guna2Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel9.Location = New System.Drawing.Point(17, 688)
-        Me.Guna2Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel9.Location = New System.Drawing.Point(13, 559)
         Me.Guna2Panel9.Name = "Guna2Panel9"
-        Me.Guna2Panel9.Size = New System.Drawing.Size(558, 12)
+        Me.Guna2Panel9.Size = New System.Drawing.Size(416, 10)
         Me.Guna2Panel9.TabIndex = 3
         '
         'Guna2Panel10
@@ -1888,10 +1788,9 @@ Partial Class frmManageSupplierV2
         Me.Guna2Panel10.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.Guna2Panel10.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel10.Location = New System.Drawing.Point(17, 4)
-        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel10.Location = New System.Drawing.Point(13, 3)
         Me.Guna2Panel10.Name = "Guna2Panel10"
-        Me.Guna2Panel10.Size = New System.Drawing.Size(558, 12)
+        Me.Guna2Panel10.Size = New System.Drawing.Size(416, 10)
         Me.Guna2Panel10.TabIndex = 4
         '
         'Guna2Panel11
@@ -1899,10 +1798,9 @@ Partial Class frmManageSupplierV2
         Me.Guna2Panel11.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.Guna2Panel11.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 1, 1)
         Me.Guna2Panel11.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel11.Location = New System.Drawing.Point(575, 4)
-        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel11.Location = New System.Drawing.Point(429, 3)
         Me.Guna2Panel11.Name = "Guna2Panel11"
-        Me.Guna2Panel11.Size = New System.Drawing.Size(13, 696)
+        Me.Guna2Panel11.Size = New System.Drawing.Size(10, 566)
         Me.Guna2Panel11.TabIndex = 5
         '
         'Guna2Panel12
@@ -1910,10 +1808,9 @@ Partial Class frmManageSupplierV2
         Me.Guna2Panel12.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.Guna2Panel12.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 0, 1)
         Me.Guna2Panel12.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel12.Location = New System.Drawing.Point(4, 4)
-        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel12.Location = New System.Drawing.Point(3, 3)
         Me.Guna2Panel12.Name = "Guna2Panel12"
-        Me.Guna2Panel12.Size = New System.Drawing.Size(13, 696)
+        Me.Guna2Panel12.Size = New System.Drawing.Size(10, 566)
         Me.Guna2Panel12.TabIndex = 2
         '
         'Panel4
@@ -1927,10 +1824,9 @@ Partial Class frmManageSupplierV2
         Me.Panel4.Controls.Add(Me.Panel13)
         Me.Panel4.Controls.Add(Me.Panel17)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(13, 775)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Location = New System.Drawing.Point(10, 621)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1766, 74)
+        Me.Panel4.Size = New System.Drawing.Size(1322, 60)
         Me.Panel4.TabIndex = 22
         '
         'Panel5
@@ -1938,10 +1834,9 @@ Partial Class frmManageSupplierV2
         Me.Panel5.BackColor = System.Drawing.Color.White
         Me.Panel5.Controls.Add(Me.btnCancel)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel5.Location = New System.Drawing.Point(400, 12)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Location = New System.Drawing.Point(300, 10)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(187, 50)
+        Me.Panel5.Size = New System.Drawing.Size(140, 40)
         Me.Panel5.TabIndex = 60
         '
         'btnCancel
@@ -1959,10 +1854,9 @@ Partial Class frmManageSupplierV2
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCancel.Location = New System.Drawing.Point(0, 0)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
-        Me.btnCancel.Size = New System.Drawing.Size(187, 50)
+        Me.btnCancel.Size = New System.Drawing.Size(140, 40)
         Me.btnCancel.TabIndex = 57
         Me.btnCancel.TabStop = False
         Me.btnCancel.Text = "Cancel"
@@ -1970,10 +1864,10 @@ Partial Class frmManageSupplierV2
         'Guna2Panel3
         '
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel3.Location = New System.Drawing.Point(387, 12)
-        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(290, 10)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel3.Name = "Guna2Panel3"
-        Me.Guna2Panel3.Size = New System.Drawing.Size(13, 50)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(10, 40)
         Me.Guna2Panel3.TabIndex = 59
         '
         'Panel10
@@ -1981,10 +1875,9 @@ Partial Class frmManageSupplierV2
         Me.Panel10.BackColor = System.Drawing.Color.White
         Me.Panel10.Controls.Add(Me.btnEdit)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel10.Location = New System.Drawing.Point(200, 12)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel10.Location = New System.Drawing.Point(150, 10)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(187, 50)
+        Me.Panel10.Size = New System.Drawing.Size(140, 40)
         Me.Panel10.TabIndex = 58
         '
         'btnEdit
@@ -2001,10 +1894,9 @@ Partial Class frmManageSupplierV2
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnEdit.Location = New System.Drawing.Point(0, 0)
-        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedDepth = 20
-        Me.btnEdit.Size = New System.Drawing.Size(187, 50)
+        Me.btnEdit.Size = New System.Drawing.Size(140, 40)
         Me.btnEdit.TabIndex = 57
         Me.btnEdit.TabStop = False
         Me.btnEdit.Text = "Edit"
@@ -2012,10 +1904,10 @@ Partial Class frmManageSupplierV2
         'Guna2Panel4
         '
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel4.Location = New System.Drawing.Point(187, 12)
-        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(140, 10)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel4.Name = "Guna2Panel4"
-        Me.Guna2Panel4.Size = New System.Drawing.Size(13, 50)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(10, 40)
         Me.Guna2Panel4.TabIndex = 43
         '
         'Panel11
@@ -2023,10 +1915,9 @@ Partial Class frmManageSupplierV2
         Me.Panel11.BackColor = System.Drawing.Color.White
         Me.Panel11.Controls.Add(Me.btnSave)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel11.Location = New System.Drawing.Point(0, 12)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel11.Location = New System.Drawing.Point(0, 10)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(187, 50)
+        Me.Panel11.Size = New System.Drawing.Size(140, 40)
         Me.Panel11.TabIndex = 18
         '
         'btnSave
@@ -2044,10 +1935,9 @@ Partial Class frmManageSupplierV2
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnSave.Location = New System.Drawing.Point(0, 0)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.PressedDepth = 20
-        Me.btnSave.Size = New System.Drawing.Size(187, 50)
+        Me.btnSave.Size = New System.Drawing.Size(140, 40)
         Me.btnSave.TabIndex = 57
         Me.btnSave.TabStop = False
         Me.btnSave.Text = "Save"
@@ -2056,10 +1946,9 @@ Partial Class frmManageSupplierV2
         '
         Me.Panel13.BackColor = System.Drawing.Color.White
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel13.Location = New System.Drawing.Point(0, 62)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel13.Location = New System.Drawing.Point(0, 50)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(1766, 12)
+        Me.Panel13.Size = New System.Drawing.Size(1322, 10)
         Me.Panel13.TabIndex = 18
         '
         'Panel17
@@ -2067,49 +1956,43 @@ Partial Class frmManageSupplierV2
         Me.Panel17.BackColor = System.Drawing.Color.White
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel17.Location = New System.Drawing.Point(0, 0)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(1766, 12)
+        Me.Panel17.Size = New System.Drawing.Size(1322, 10)
         Me.Panel17.TabIndex = 18
         '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(1779, 12)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Location = New System.Drawing.Point(1332, 10)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(13, 837)
+        Me.Panel1.Size = New System.Drawing.Size(10, 671)
         Me.Panel1.TabIndex = 14
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 12)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(0, 10)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(13, 837)
+        Me.Panel2.Size = New System.Drawing.Size(10, 671)
         Me.Panel2.TabIndex = 13
         '
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1792, 12)
+        Me.Panel3.Size = New System.Drawing.Size(1342, 10)
         Me.Panel3.TabIndex = 12
         '
         'frmManageSupplierV2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1800, 897)
+        Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.TabControl2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmManageSupplierV2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.Panel34.ResumeLayout(False)
         Me.Panel15.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
