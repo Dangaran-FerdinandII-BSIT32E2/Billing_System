@@ -69,10 +69,13 @@
             btnMinus.Enabled = False
 
         ElseIf restock Then
+
             lblHeaderTitle.Text = "Restock Item"
             Label1.Text = "Input Quantity"
             txtQuantiyProducts.Text = restockValue.ToString
+
         ElseIf payment Then
+
             lblHeaderTitle.Text = "Payment"
             Label1.Text = "Input Amount"
             txtRejection.PlaceholderText = "Enter amount of payment"
@@ -85,18 +88,19 @@
             txtQuantiyProducts.Enabled = False
             btnAdd.Enabled = False
             btnMinus.Enabled = False
+
         End If
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        If txtQuantiyProducts.Text > 0 Then
+        If txtQuantiyProducts.Text > -1 Then
             restockValue += 1
             txtQuantiyProducts.Text = restockValue
         End If
     End Sub
 
     Private Sub btnMinus_Click(sender As Object, e As EventArgs) Handles btnMinus.Click
-        If txtQuantiyProducts.Text > 0 Then
+        If txtQuantiyProducts.Text > 0 AndAlso restockValue - 1 <> 0 Then
             restockValue -= 1
             txtQuantiyProducts.Text = restockValue
         End If
@@ -106,5 +110,12 @@
         If Not (Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Or e.KeyChar = "."c) Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub txtQuantiyProducts_TextChanged(sender As Object, e As EventArgs) Handles txtQuantiyProducts.TextChanged
+        If String.IsNullOrWhiteSpace(txtQuantiyProducts.Text) Then
+            txtQuantiyProducts.Text = "0"
+        End If
+        restockValue = txtQuantiyProducts.Text
     End Sub
 End Class

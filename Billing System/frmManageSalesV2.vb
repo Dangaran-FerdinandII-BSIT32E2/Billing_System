@@ -19,7 +19,6 @@ Public Class frmManageSalesV2
         Call loadBilling()
         Call loadSalesInvoice()
         dtpDate.Text = Now.ToString()
-        lblBillingID.Text = getBillingID()
     End Sub
 
     Private Sub loadSalesInvoice()
@@ -237,6 +236,7 @@ Public Class frmManageSalesV2
             txtPONo.Text = "1"
         End If
 
+        lblBillingID.Text = getBillingID()
 
         Call savetoBilling()
         Call savetoBillInvoice()

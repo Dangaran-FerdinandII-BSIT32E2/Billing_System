@@ -26,13 +26,13 @@ Partial Class frmEnterQuantity
         Me.lblHeaderTitle = New System.Windows.Forms.Label()
         Me.btnExit = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.txtRejection = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnMinus = New Guna.UI2.WinForms.Guna2Button()
         Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.btnOkay = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.txtQuantiyProducts = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtRejection = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -46,7 +46,7 @@ Partial Class frmEnterQuantity
         Me.Guna2Panel1.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 0, 0)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(555, 53)
         Me.Guna2Panel1.TabIndex = 0
@@ -80,7 +80,7 @@ Partial Class frmEnterQuantity
         Me.btnExit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(207, Byte), Integer))
         Me.btnExit.HoverState.ForeColor = System.Drawing.Color.White
         Me.btnExit.Location = New System.Drawing.Point(502, 0)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.PressedColor = System.Drawing.Color.White
         Me.btnExit.PressedDepth = 0
@@ -104,10 +104,33 @@ Partial Class frmEnterQuantity
         Me.Guna2Panel2.CustomBorderThickness = New System.Windows.Forms.Padding(1, 0, 1, 1)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 53)
-        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.Size = New System.Drawing.Size(555, 223)
         Me.Guna2Panel2.TabIndex = 1
+        '
+        'txtRejection
+        '
+        Me.txtRejection.Cursor = System.Windows.Forms.Cursors.No
+        Me.txtRejection.DefaultText = ""
+        Me.txtRejection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtRejection.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtRejection.DisabledState.ForeColor = System.Drawing.Color.Black
+        Me.txtRejection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtRejection.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
+        Me.txtRejection.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtRejection.ForeColor = System.Drawing.Color.Black
+        Me.txtRejection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtRejection.Location = New System.Drawing.Point(21, 66)
+        Me.txtRejection.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtRejection.Name = "txtRejection"
+        Me.txtRejection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtRejection.PlaceholderText = "Enter reason for rejection"
+        Me.txtRejection.SelectedText = ""
+        Me.txtRejection.Size = New System.Drawing.Size(517, 39)
+        Me.txtRejection.TabIndex = 64
+        Me.txtRejection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtRejection.Visible = False
         '
         'btnMinus
         '
@@ -122,7 +145,7 @@ Partial Class frmEnterQuantity
         Me.btnMinus.ForeColor = System.Drawing.Color.White
         Me.btnMinus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnMinus.Location = New System.Drawing.Point(187, 80)
-        Me.btnMinus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMinus.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMinus.Name = "btnMinus"
         Me.btnMinus.PressedDepth = 20
         Me.btnMinus.Size = New System.Drawing.Size(45, 39)
@@ -143,7 +166,7 @@ Partial Class frmEnterQuantity
         Me.btnAdd.ForeColor = System.Drawing.Color.White
         Me.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnAdd.Location = New System.Drawing.Point(334, 80)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.PressedDepth = 20
         Me.btnAdd.Size = New System.Drawing.Size(45, 39)
@@ -164,7 +187,7 @@ Partial Class frmEnterQuantity
         Me.btnOkay.ForeColor = System.Drawing.Color.White
         Me.btnOkay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnOkay.Location = New System.Drawing.Point(21, 160)
-        Me.btnOkay.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnOkay.Margin = New System.Windows.Forms.Padding(4)
         Me.btnOkay.Name = "btnOkay"
         Me.btnOkay.PressedDepth = 20
         Me.btnOkay.Size = New System.Drawing.Size(149, 48)
@@ -185,7 +208,7 @@ Partial Class frmEnterQuantity
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCancel.Location = New System.Drawing.Point(389, 160)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
         Me.btnCancel.Size = New System.Drawing.Size(149, 48)
@@ -196,7 +219,7 @@ Partial Class frmEnterQuantity
         'txtQuantiyProducts
         '
         Me.txtQuantiyProducts.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtQuantiyProducts.DefaultText = ""
+        Me.txtQuantiyProducts.DefaultText = "1"
         Me.txtQuantiyProducts.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtQuantiyProducts.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtQuantiyProducts.DisabledState.ForeColor = System.Drawing.Color.Black
@@ -206,7 +229,7 @@ Partial Class frmEnterQuantity
         Me.txtQuantiyProducts.ForeColor = System.Drawing.Color.Black
         Me.txtQuantiyProducts.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtQuantiyProducts.Location = New System.Drawing.Point(241, 80)
-        Me.txtQuantiyProducts.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtQuantiyProducts.Margin = New System.Windows.Forms.Padding(5)
         Me.txtQuantiyProducts.Name = "txtQuantiyProducts"
         Me.txtQuantiyProducts.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtQuantiyProducts.PlaceholderText = "1"
@@ -228,29 +251,6 @@ Partial Class frmEnterQuantity
         Me.Label1.TabIndex = 34
         Me.Label1.Text = "Input Quantity"
         '
-        'txtRejection
-        '
-        Me.txtRejection.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtRejection.DefaultText = ""
-        Me.txtRejection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtRejection.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtRejection.DisabledState.ForeColor = System.Drawing.Color.Black
-        Me.txtRejection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtRejection.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
-        Me.txtRejection.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtRejection.ForeColor = System.Drawing.Color.Black
-        Me.txtRejection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtRejection.Location = New System.Drawing.Point(21, 80)
-        Me.txtRejection.Margin = New System.Windows.Forms.Padding(5)
-        Me.txtRejection.Name = "txtRejection"
-        Me.txtRejection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtRejection.PlaceholderText = "Enter reason for rejection"
-        Me.txtRejection.SelectedText = ""
-        Me.txtRejection.Size = New System.Drawing.Size(517, 39)
-        Me.txtRejection.TabIndex = 64
-        Me.txtRejection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtRejection.Visible = False
-        '
         'frmEnterQuantity
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -259,7 +259,7 @@ Partial Class frmEnterQuantity
         Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmEnterQuantity"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmRestockItem"

@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.IO
+Imports System.Text.RegularExpressions
 
 Public Class frmAddCustomerWalkin
 
@@ -15,7 +16,6 @@ Public Class frmAddCustomerWalkin
         Call connection()
         Call loadOrderID()
         Call loadWalkinID()
-        PONo = getPO()
     End Sub
 
     Private Sub loadOrderID()
@@ -320,7 +320,7 @@ Public Class frmAddCustomerWalkin
                     .Parameters.AddWithValue("@Status", 0)
                     .Parameters.AddWithValue("@DateOrdered", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
                     .Parameters.AddWithValue("@DeliveryAddress", txtDeliveryAddress.Text)
-                    .Parameters.AddWithValue("@PONo", PONo)
+                    .Parameters.AddWithValue("@PONo", 0)
                     .Parameters.AddWithValue("@isRental", 0)
                     .Parameters.AddWithValue("@RentDays", 0)
                     .Parameters.AddWithValue("@RentDueDate", Nothing)
@@ -336,37 +336,6 @@ Public Class frmAddCustomerWalkin
             End If
         End Try
     End Sub
-
-    Dim maxPONumber As String = 1
-    Private Function getPO() As String
-        Try
-            If cn.State <> ConnectionState.Open Then
-                cn.Open()
-            End If
-
-            sql = "SELECT COALESCE(MAX(PONo), 1) AS PONo FROM tblorder"
-            cmd = New MySqlCommand(sql, cn)
-
-            If Not dr.IsClosed Then
-                dr.Close()
-            End If
-
-            dr = cmd.ExecuteReader
-
-            If dr.Read = True Then
-                maxPONumber = dr("PONo").ToString
-            End If
-
-            Return "PO-" & 2 & "-" & DateTime.Now.ToString("yyyy") & "-" & maxPONumber.ToString.PadLeft(4, "0"c)
-        Catch ex As Exception
-            MsgBox("An Error occurred frmAddCustomerWalkin(checkTIN) :  " & ex.Message)
-            Return "PO-" & 2 & "-" & DateTime.Now.ToString("yyyy") & "-" & maxPONumber.ToString.PadLeft(4, "0"c)
-        Finally
-            If cn.State = ConnectionState.Open Then
-                cn.Close()
-            End If
-        End Try
-    End Function
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
@@ -409,5 +378,23 @@ Public Class frmAddCustomerWalkin
             chckRentOrder.Checked = False
             GroupBox5.Visible = False
         End If
+    End Sub
+
+    Private Sub txtPhoneNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhoneNumber.KeyPress
+        If Not (Char.IsDigit(e.KeyChar) OrElse
+            e.KeyChar = ChrW(Keys.Back) OrElse
+            (e.KeyChar = "+" AndAlso txtPhoneNumber.Text.Length = 0)) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTIN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTIN.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtRentDays_TextChanged(sender As Object, e As EventArgs) Handles txtRentDays.TextChanged
+
     End Sub
 End Class

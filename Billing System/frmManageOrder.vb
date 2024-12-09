@@ -62,7 +62,7 @@ Public Class frmManageOrder
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
                DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT COALESCE(w.LastName, o.LastName) AS LastName, COALESCE(w.FirstName, o.FirstName) AS FirstName, COALESCE(w.CompanyName, o.CompanyName) AS CompanyName, COALESCE(w.PhoneNumber, o.PhoneNumber) AS PhoneNumber, COALESCE(w.Email, o.Email) AS Email, o.OrderID, o.CustomerID, o.Status, DATE_FORMAT(o.OrderDate, '%M %d, %Y') AS OrderDateF, o.QuotationStatus FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE o.isRental = 0 AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT CASE WHEN COALESCE(ow.OrderID, o.OrderID) IS NOT NULL THEN CASE WHEN ow.OrderID IS NOT NULL THEN 'Walkin' WHEN o.OrderID IS NOT NULL THEN 'Order' END END AS TypeOfOrder, COALESCE(w.LastName, o.LastName) AS LastName, COALESCE(w.FirstName, o.FirstName) AS FirstName, COALESCE(w.CompanyName, o.CompanyName) AS CompanyName, COALESCE(w.PhoneNumber, o.PhoneNumber) AS PhoneNumber, COALESCE(w.Email, o.Email) AS Email, o.OrderID, o.CustomerID, o.Status, DATE_FORMAT(o.OrderDate, '%M %d, %Y') AS OrderDateF, o.QuotationStatus FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE o.isRental = 0 AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
 
 
                 If cboFilter.SelectedIndex > 0 Then
@@ -96,11 +96,18 @@ Public Class frmManageOrder
                     x.SubItems.Add(dr("CustomerID").ToString)
                     x.SubItems.Add(dr("QuotationStatus").ToString)
 
+                    If dr("TypeofOrder").ToString = "Walkin" Then
+                        x.ForeColor = Color.Blue
+                    Else
+                        x.ForeColor = Color.Black
+                    End If
+
                     ' Check if the status is "Urgent" and set the text color accordingly
                     If x.SubItems(5).Text = "Priority Order" Then
                         x.ForeColor = Color.Red
                         x.Font = New Font("Arial", 12, FontStyle.Bold)
                     End If
+
                     ListView1.Items.Add(x)
                 Loop
                 dr.Close()
@@ -172,12 +179,17 @@ Public Class frmManageOrder
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
             Dim quotationstatus As String = ListView1.SelectedItems(0).SubItems(8).Text
-
+            btnViewOrder.Enabled = True
+            btnCancel.Enabled = True
             If Not String.IsNullOrWhiteSpace(quotationstatus) AndAlso quotationstatus = "True" Then
                 btnCreateInvoice.Enabled = True
             Else
                 btnCreateInvoice.Enabled = False
             End If
+        Else
+            btnViewOrder.Enabled = False
+            btnCancel.Enabled = False
+            btnCreateInvoice.Enabled = False
         End If
     End Sub
 End Class
