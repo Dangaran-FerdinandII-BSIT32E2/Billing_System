@@ -54,10 +54,10 @@ Public Class frmPrintSalesInvoice
 
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
+                '.ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
                 '.ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
+                .ReportPath = Application.StartupPath & "\printSalesInvoice.rdlc"
                 .DataSources.Clear()
-
             End With
 
             Dim ds As New DataSet1
@@ -67,7 +67,7 @@ Public Class frmPrintSalesInvoice
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT COALESCE(w.CompanyName, c.CompanyName) AS CompanyName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress, b.DatePrinted AS DatePrinted, b.ProductOrder AS ProductOrder, b.Terms AS Terms, b.SalesMan AS Salesman, COALESCE(w.TIN, c.TIN) AS TIN, o.Quantity AS Quantity, p.ProductName AS ProductName, p.Description AS Description, p.SellingPrice AS SellingPrice, (o.Quantity * p.SellingPrice) AS Amount, SUM(o.Quantity * p.SellingPrice) AS FinalAmount, b.VATableSales, b.VAT FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'", cn)
+            da.SelectCommand = New MySqlCommand("SELECT COALESCE(w.CompanyName, c.CompanyName) AS CompanyName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress,  DATE_FORMAT(b.DatePrinted, '%M %d, %Y') AS DatePrinted, b.ProductOrder AS ProductOrder, b.Terms AS Terms, b.SalesMan AS Salesman, COALESCE(w.TIN, c.TIN) AS TIN, o.Quantity AS Quantity, p.ProductName AS ProductName, p.Description AS Description, CONCAT('₱ ', FORMAT(p.SellingPrice, 2)) AS SellingPrice, CONCAT('₱ ', FORMAT(o.Quantity * p.SellingPrice, 2)) AS Amount, CONCAT('₱ ', FORMAT(SUM(o.Quantity * p.SellingPrice), 2)) AS FinalAmount, CONCAT('₱ ', FORMAT(b.VATableSales, 2)) AS VATableSales, CONCAT('₱ ', FORMAT(b.VAT, 2)) AS VAT FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'", cn)
             da.Fill(ds.Tables("dtPrintBillingStatement"))
 
             If cn.State = ConnectionState.Open Then

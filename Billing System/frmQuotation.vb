@@ -52,8 +52,9 @@ Public Class frmQuotation
 
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printQuotation.rdlc"
+                '.ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printQuotation.rdlc"
                 '.ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printQuotation.rdlc"
+                .ReportPath = Application.StartupPath & "\printQuotation.rdlc"
                 .DataSources.Clear()
             End With
 
@@ -65,7 +66,7 @@ Public Class frmQuotation
             End If
 
             If order Then
-                da.SelectCommand = New MySqlCommand("SELECT CONCAT( COALESCE(w.LastName, o.LastName), ', ', COALESCE(w.FirstName, o.FirstName) ) AS FullName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress, DATE_FORMAT(CURDATE(), '%M %d, %Y') AS DateOrdered, DATE_FORMAT(CURDATE() + INTERVAL 7 DAY, '%M %d, %Y') AS QuotationDueDate, CONCAT('PO-', MONTH(NOW()), '-', YEAR(NOW()), '-', LPAD(o.OrderID, 4, '0')) AS OrderID, o.Unit AS ProductName, o.Description, o.Quantity, o.Amount, (o.Amount * o.Quantity) AS TotalAmount, SUM(o.Amount * o.Quantity) OVER() AS TotalPricing FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE o.OrderID = '" & orderid & "' AND o.isRental = 0 GROUP BY o.ProductID", cn)
+                da.SelectCommand = New MySqlCommand("SELECT CONCAT(COALESCE(w.LastName, o.LastName), ', ', COALESCE(w.FirstName, o.FirstName)) AS FullName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress, DATE_FORMAT(CURDATE(), '%M %d, %Y') AS DateOrdered, DATE_FORMAT(CURDATE() + INTERVAL 7 DAY, '%M %d, %Y') AS QuotationDueDate, CONCAT('PO-', MONTH(NOW()), '-', YEAR(NOW()), '-', LPAD(o.OrderID, 4, '0')) AS OrderID, o.Unit AS ProductName, o.Description, o.Quantity, CONCAT('₱ ', FORMAT(o.Amount, 2)) AS Amount, CONCAT('₱ ', FORMAT(o.Amount * o.Quantity, 2)) AS TotalAmount, CONCAT('₱ ', FORMAT(SUM(o.Amount * o.Quantity) OVER(), 2)) AS TotalPricing FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE o.OrderID = '" & orderid & "' AND o.isRental = 0 GROUP BY o.ProductID", cn)
             Else
                 da.SelectCommand = New MySqlCommand("SELECT CONCAT( COALESCE(w.LastName, o.LastName), ', ', COALESCE(w.FirstName, o.FirstName) ) AS FullName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress, DATE_FORMAT(CURDATE(), '%M %d, %Y') AS DateOrdered, DATE_FORMAT(CURDATE() + INTERVAL 7 DAY, '%M %d, %Y') AS QuotationDueDate, CONCAT('PO-', MONTH(NOW()), '-', YEAR(NOW()), '-', LPAD(o.OrderID, 4, '0')) AS OrderID, o.Unit AS ProductName, o.Description, o.Quantity, o.Amount, (o.Amount * o.Quantity) AS TotalAmount, SUM(o.Amount * o.Quantity) OVER() AS TotalPricing FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE o.OrderID = '" & orderid & "' AND o.isRental = 1 GROUP BY o.ProductID", cn)
             End If
