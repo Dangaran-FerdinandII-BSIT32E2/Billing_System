@@ -115,7 +115,7 @@ Public Class frmRestockProduct
         Try
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
-            mail.From = New MailAddress("dangaranferds@gmail.com")
+            mail.From = New MailAddress("rambiccorpo@gmail.com")
             mail.To.Add(email)
             mail.Subject = "Restock Request for " & lblSupplierName.Text & " - Purchase Order " & txtPONo.Text
 
@@ -162,7 +162,7 @@ Public Class frmRestockProduct
                 mail.Body = emailBody.ToString
 
                 smtpServer.Port = 587
-                smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua")
+                smtpServer.Credentials = New System.Net.NetworkCredential("rambiccorpo@gmail.com", "xcyu gtqv ctvk kzqa") ' Use secure methods
                 smtpServer.EnableSsl = True
                 smtpServer.Send(mail)
             End Using

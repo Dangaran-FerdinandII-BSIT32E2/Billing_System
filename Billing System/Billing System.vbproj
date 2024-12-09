@@ -443,9 +443,7 @@
     <Compile Include="frmTestOnly.Designer.vb">
       <DependentUpon>frmTestOnly.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmTestOnly.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmTestOnly.vb" />
     <Compile Include="GSMController.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
