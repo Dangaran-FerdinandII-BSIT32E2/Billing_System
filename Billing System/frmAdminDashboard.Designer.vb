@@ -226,11 +226,11 @@ Partial Class frmAdminDashboard
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(143, 50)
+        Me.Button1.Location = New System.Drawing.Point(57, 36)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(133, 23)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "click me to show notif"
+        Me.Button1.Text = "button"
         Me.Button1.UseVisualStyleBackColor = True
         Me.Button1.Visible = False
         '
