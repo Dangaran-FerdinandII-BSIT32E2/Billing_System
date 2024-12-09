@@ -190,27 +190,28 @@ Public Class frmManageProducts
 
             sql = "UPDATE tblproduct SET ProductName = @ProductName, Description = @Description, Category = @Category, Type = @Type, PurchasePrice = @PurchasePrice, SellingPrice = @SellingPrice, SupplierID=@SupplierID, Manufacturer=@Manufacturer, Image = @Image WHERE ProductID = '" & productid & "'"
 
-
             Using mstream As New System.IO.MemoryStream
-                pbxProduct.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
-                Dim arrImage() As Byte = mstream.GetBuffer
+                Using img As Image = New Bitmap(pbxProduct.Image)
+                    img.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                    Dim arrImage() As Byte = mstream.ToArray
 
-
-                Using cmd As New MySqlCommand(sql, cn)
-                    With cmd
-                        .Parameters.AddWithValue("@ProductName", txtProductName.Text)
-                        .Parameters.AddWithValue("@Description", txtDescription.Text)
-                        .Parameters.AddWithValue("@Category", txtCategory.Text)
-                        .Parameters.AddWithValue("@Type", txtType.Text)
-                        .Parameters.AddWithValue("@Manufacturer", txtSearchSupplierName.Text)
-                        .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
-                        .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
-                        .Parameters.AddWithValue("@SupplierID", supplierid)
-                        .Parameters.AddWithValue("@Image", arrImage)
-                        .ExecuteNonQuery()
-                    End With
+                    Using cmd As New MySqlCommand(sql, cn)
+                        With cmd
+                            .Parameters.AddWithValue("@ProductName", txtProductName.Text)
+                            .Parameters.AddWithValue("@Description", txtDescription.Text)
+                            .Parameters.AddWithValue("@Category", txtCategory.Text)
+                            .Parameters.AddWithValue("@Type", txtType.Text)
+                            .Parameters.AddWithValue("@Manufacturer", txtSearchSupplierName.Text)
+                            .Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text)
+                            .Parameters.AddWithValue("@SellingPrice", txtSellingPrice.Text)
+                            .Parameters.AddWithValue("@SupplierID", supplierid)
+                            .Parameters.AddWithValue("@Image", arrImage)
+                            .ExecuteNonQuery()
+                        End With
+                    End Using
                 End Using
             End Using
+
         Catch ex As Exception
             MsgBox("An error occurred frmManageProducts(updateProduct): " & ex.Message)
         Finally
@@ -325,6 +326,9 @@ Public Class frmManageProducts
     Private Sub frmManageProducts_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
             Call clear()
+            frmProduct.btnEdit.Enabled = False
+            frmProduct.btnDeactivate.Enabled = False
+            frmProduct.btnRestock.Enabled = False
         End If
     End Sub
 

@@ -101,9 +101,11 @@ Public Class frmProduct
         If ListView1.SelectedItems.Count > 0 Then
             btnEdit.Enabled = True
             btnDeactivate.Enabled = True
+            btnRestock.Enabled = True
         Else
             btnEdit.Enabled = False
             btnDeactivate.Enabled = False
+            btnRestock.Enabled = False
         End If
     End Sub
 
