@@ -102,6 +102,9 @@ Public Class frmManageRentalV2
             frmListofCustomerOrder.lblCompanyName.Text = ListView1.SelectedItems(0).SubItems(1).Text
             frmListofCustomerOrder.orderid = ListView1.SelectedItems(0).SubItems(6).Text
             frmListofCustomerOrder.custid = ListView1.SelectedItems(0).SubItems(7).Text
+
+            frmListofCustomerOrder.order = False
+
             frmListofCustomerOrder.ShowDialog()
         Else
             MsgBox("Please select an order!", MsgBoxStyle.Critical, "View Order Error")

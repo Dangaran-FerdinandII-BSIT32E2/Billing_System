@@ -6,6 +6,8 @@ Public Class frmListofCustomerOrder
 
     Public orderid As String
     Public custid As String
+
+    Public order As Boolean? = Nothing
     Private Sub frmListofCustomerOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadOrder()
@@ -32,7 +34,13 @@ Public Class frmListofCustomerOrder
                 cn.Open()
             End If
 
-            sql = "SELECT Unit, Description, Quantity, Amount, Availability, Status, QuotationImg, OrderListID FROM qryorder WHERE OrderID = '" & orderid & "'"
+            sql = "SELECT Unit, Description, Quantity, Amount, Availability, Status, QuotationImg, OrderListID FROM qryorder WHERE OrderID = '" & orderid & "' "
+
+            If order Then
+                sql += "AND isRental = 0"
+            Else
+                sql += "AND isRental = 1"
+            End If
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then

@@ -49,6 +49,7 @@ Public Class frmPrintSalesInvoice
 
     Private Sub loadReport()
         Dim rptDS As ReportDataSource
+        Me.ReportViewer1.Reset()
         Me.ReportViewer1.RefreshReport()
 
         Try
@@ -56,6 +57,7 @@ Public Class frmPrintSalesInvoice
                 .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
                 '.ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printSalesInvoice.rdlc"
                 .DataSources.Clear()
+
             End With
 
             Dim ds As New DataSet1

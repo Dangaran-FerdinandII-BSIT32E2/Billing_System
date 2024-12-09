@@ -46,10 +46,12 @@ Public Class frmPrintBillingInvoiceV2
 
     Private Sub loadReport()
         Dim rptDS As ReportDataSource
+        Me.ReportViewer1.Reset()
         Me.ReportViewer1.RefreshReport()
 
         Try
             With ReportViewer1.LocalReport
+                .DataSources.Clear()
                 .ReportPath = "C:\Users\danga\OneDrive\Documents\GitHub\Billing_System\Billing System\printBillingInvoiceV2.rdlc"
                 '.ReportPath = "C:\Users\Jayson Teleb\Documents\GitHub\Billing_System\Billing System\printBillingInvoiceV2.rdlc"
                 .DataSources.Clear()

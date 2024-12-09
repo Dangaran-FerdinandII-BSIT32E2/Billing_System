@@ -52,7 +52,6 @@ Public Class frmManageUsers
                 x = New ListViewItem(dr("FirstName").ToString())
                 x.Font = New Font("Arial", 12, FontStyle.Regular)
                 x.SubItems.Add(dr("LastName").ToString())
-                x.SubItems.Add(dr("Password").ToString())
                 x.SubItems.Add(dr("Username").ToString())
                 x.SubItems.Add(dr("Role").ToString())
                 x.SubItems.Add(dr("Status").ToString())

@@ -240,7 +240,8 @@ Public Class frmManageSalesV2
 
         Call savetoBilling()
         Call savetoBillInvoice()
-        Call updateOrder
+        Call updateOrder()
+        Call updateQuantityProduct()
 
         Dim email As ListViewItem = ListView1.Items(0)
         frmPrintSalesInvoice.billingid = lblBillingID.Text
@@ -341,6 +342,33 @@ Public Class frmManageSalesV2
             Next
         Catch ex As Exception
             MsgBox("An error occurred frmManageSalesV2(updateOrder): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub updateQuantityProduct()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            For Each item As ListViewItem In ListView1.Items
+                Dim productid As String = item.SubItems(7).Text
+                Dim quantity As Double = Convert.ToDouble(item.SubItems(0).Text)
+
+                sql = "UPDATE tblproduct SET Amount = Amount - @quantity WHERE ProductID = @ProductID"
+                cmd = New MySqlCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@quantity", quantity)
+                    .Parameters.AddWithValue("@ProductID", productid)
+                    .ExecuteNonQuery()
+                End With
+            Next
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageSalesV2(updateQuantityProduct): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()

@@ -71,7 +71,7 @@
         ElseIf restock Then
             lblHeaderTitle.Text = "Restock Item"
             Label1.Text = "Input Quantity"
-            txtQuantiyProducts.PlaceholderText = restockValue.ToString
+            txtQuantiyProducts.Text = restockValue.ToString
         ElseIf payment Then
             lblHeaderTitle.Text = "Payment"
             Label1.Text = "Input Amount"

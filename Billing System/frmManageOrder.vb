@@ -36,6 +36,9 @@ Public Class frmManageOrder
             frmListofCustomerOrder.lblCompanyName.Text = ListView1.SelectedItems(0).SubItems(1).Text
             frmListofCustomerOrder.orderid = ListView1.SelectedItems(0).SubItems(6).Text
             frmListofCustomerOrder.custid = ListView1.SelectedItems(0).SubItems(7).Text
+
+            frmListofCustomerOrder.order = True
+
             frmListofCustomerOrder.ShowDialog()
 
             Call loadFilteredOrders(startDate, endDate)
