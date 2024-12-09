@@ -476,7 +476,7 @@ Public Class frmCustomerViewInfo_Order
         Try
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
-            mail.From = New MailAddress("dangaranferds@gmail.com")
+            mail.From = New MailAddress("rambiccorpo@gmail.com")
             mail.To.Add(txtEmailAddress.Text)
             mail.Subject = "NOTICE ON UPDATE OF ACCOUNT STATUS"
 
@@ -484,7 +484,7 @@ Public Class frmCustomerViewInfo_Order
 
                 mail.Body = "Your account has been DEACTIVATED. Please login to continue using our services."
                 smtpServer.Port = 587
-                smtpServer.Credentials = New System.Net.NetworkCredential("dangaranferds@gmail.com", "tpbu vbxk ampu iwua")
+                smtpServer.Credentials = New System.Net.NetworkCredential("rambiccorpo@gmail.com", "xcyu gtqv ctvk kzqa") ' Use secure methods
                 smtpServer.EnableSsl = True
                 smtpServer.Send(mail)
             End Using
