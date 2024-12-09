@@ -39,7 +39,7 @@ Public Class frmListProducts
             Do While dr.Read = True
                 x = New ListViewItem(dr("ProductName").ToString())
                 x.SubItems.Add(dr("CompanyName").ToString())
-                x.SubItems.Add(dr("Description").ToString())
+                'x.SubItems.Add(dr("Description").ToString())
                 x.SubItems.Add(dr("Category").ToString())
                 x.SubItems.Add(dr("Manufacturer").ToString())
                 x.SubItems.Add(dr("ModelNumber").ToString())
@@ -86,7 +86,7 @@ Public Class frmListProducts
 
             Do While dr.Read = True
                 x = New ListViewItem(dr("ProductName").ToString())
-                x.SubItems.Add(dr("Description").ToString())
+                'x.SubItems.Add(dr("Description").ToString())
                 x.SubItems.Add(dr("Category").ToString())
                 x.SubItems.Add(dr("PurchasePrice").ToString())
                 x.SubItems.Add(dr("SellingPrice").ToString())
@@ -127,7 +127,7 @@ Public Class frmListProducts
                 Do While dr.Read = True
                     If Not listofProductIds.Contains(dr("ProductID").ToString()) Then
                         x = New ListViewItem(dr("ProductName").ToString())
-                        x.SubItems.Add(dr("Description").ToString())
+                        'x.SubItems.Add(dr("Description").ToString())
                         x.SubItems.Add(dr("Category").ToString())
                         x.SubItems.Add(dr("PurchasePrice").ToString())
                         x.SubItems.Add(dr("SellingPrice").ToString())
@@ -176,7 +176,7 @@ Public Class frmListProducts
             Do While dr.Read = True
                 x = New ListViewItem(dr("ProductName").ToString())
                 x.SubItems.Add(dr("CompanyName").ToString())
-                x.SubItems.Add(dr("Description").ToString())
+                'x.SubItems.Add(dr("Description").ToString())
                 x.SubItems.Add(dr("Category").ToString())
                 x.SubItems.Add(dr("Manufacturer").ToString())
                 x.SubItems.Add(dr("ModelNumber").ToString())
@@ -216,7 +216,7 @@ Public Class frmListProducts
                 If Not listofProductIds.Contains(dr("ProductID").ToString()) Then
                     x = New ListViewItem(dr("ProductName").ToString())
                     x.SubItems.Add(dr("CompanyName").ToString())
-                    x.SubItems.Add(dr("Description").ToString())
+                    'x.SubItems.Add(dr("Description").ToString())
                     x.SubItems.Add(dr("Category").ToString())
                     x.SubItems.Add(dr("Manufacturer").ToString())
                     x.SubItems.Add(dr("ModelNumber").ToString())
