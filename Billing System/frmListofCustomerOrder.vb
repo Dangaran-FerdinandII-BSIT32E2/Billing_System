@@ -41,6 +41,7 @@ Public Class frmListofCustomerOrder
             Else
                 sql += "AND isRental = 1"
             End If
+
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then

@@ -112,7 +112,7 @@ Partial Class frmRestockProduct
         Me.Panel19.Controls.Add(Me.Panel20)
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel19.Location = New System.Drawing.Point(0, 0)
-        Me.Panel19.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(1800, 62)
         Me.Panel19.TabIndex = 4
@@ -126,7 +126,7 @@ Partial Class frmRestockProduct
         Me.Panel14.Controls.Add(Me.Panel17)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel14.Location = New System.Drawing.Point(697, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(1103, 62)
         Me.Panel14.TabIndex = 14
@@ -163,7 +163,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel15.Location = New System.Drawing.Point(1090, 18)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(13, 32)
         Me.Panel15.TabIndex = 13
@@ -172,7 +172,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel16.Location = New System.Drawing.Point(0, 50)
-        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(1103, 12)
         Me.Panel16.TabIndex = 13
@@ -181,7 +181,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel17.Location = New System.Drawing.Point(0, 0)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(1103, 18)
         Me.Panel17.TabIndex = 13
@@ -194,7 +194,7 @@ Partial Class frmRestockProduct
         Me.Panel20.Controls.Add(Me.Panel29)
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel20.Location = New System.Drawing.Point(0, 0)
-        Me.Panel20.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel20.Name = "Panel20"
         Me.Panel20.Size = New System.Drawing.Size(353, 62)
         Me.Panel20.TabIndex = 13
@@ -217,7 +217,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel21.Location = New System.Drawing.Point(0, 18)
-        Me.Panel21.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel21.Name = "Panel21"
         Me.Panel21.Size = New System.Drawing.Size(13, 32)
         Me.Panel21.TabIndex = 13
@@ -226,7 +226,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel28.Location = New System.Drawing.Point(0, 50)
-        Me.Panel28.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel28.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel28.Name = "Panel28"
         Me.Panel28.Size = New System.Drawing.Size(353, 12)
         Me.Panel28.TabIndex = 13
@@ -235,7 +235,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel29.Location = New System.Drawing.Point(0, 0)
-        Me.Panel29.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel29.Name = "Panel29"
         Me.Panel29.Size = New System.Drawing.Size(353, 18)
         Me.Panel29.TabIndex = 13
@@ -244,7 +244,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel6.Location = New System.Drawing.Point(0, 62)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1800, 12)
         Me.Panel6.TabIndex = 14
@@ -253,7 +253,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel7.Location = New System.Drawing.Point(0, 74)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(13, 823)
         Me.Panel7.TabIndex = 15
@@ -262,7 +262,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel8.Location = New System.Drawing.Point(1787, 74)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(13, 823)
         Me.Panel8.TabIndex = 16
@@ -271,7 +271,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel9.Location = New System.Drawing.Point(13, 885)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1774, 12)
         Me.Panel9.TabIndex = 17
@@ -290,7 +290,7 @@ Partial Class frmRestockProduct
         Me.panelBody.Controls.Add(Me.Panel19)
         Me.panelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBody.Location = New System.Drawing.Point(0, 0)
-        Me.panelBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panelBody.Margin = New System.Windows.Forms.Padding(4)
         Me.panelBody.Name = "panelBody"
         Me.panelBody.Size = New System.Drawing.Size(1800, 897)
         Me.panelBody.TabIndex = 2
@@ -309,9 +309,9 @@ Partial Class frmRestockProduct
         Me.GroupBox3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.GroupBox3.Location = New System.Drawing.Point(26, 74)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(959, 811)
         Me.GroupBox3.TabIndex = 31
         Me.GroupBox3.TabStop = False
@@ -328,7 +328,7 @@ Partial Class frmRestockProduct
         Me.Guna2Panel1.Controls.Add(Me.pbxPayment)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel1.Location = New System.Drawing.Point(17, 125)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(925, 608)
         Me.Guna2Panel1.TabIndex = 10000005
@@ -347,7 +347,7 @@ Partial Class frmRestockProduct
         Me.btnBrowse.ForeColor = System.Drawing.Color.White
         Me.btnBrowse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnBrowse.Location = New System.Drawing.Point(388, 353)
-        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.PressedDepth = 20
         Me.btnBrowse.ShadowDecoration.BorderRadius = 15
@@ -360,7 +360,7 @@ Partial Class frmRestockProduct
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(401, 246)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(120, 103)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -370,7 +370,7 @@ Partial Class frmRestockProduct
         'pbxPayment
         '
         Me.pbxPayment.Location = New System.Drawing.Point(8, 7)
-        Me.pbxPayment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbxPayment.Margin = New System.Windows.Forms.Padding(4)
         Me.pbxPayment.Name = "pbxPayment"
         Me.pbxPayment.Size = New System.Drawing.Size(907, 593)
         Me.pbxPayment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -381,7 +381,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel25.Location = New System.Drawing.Point(17, 113)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(925, 12)
         Me.Panel25.TabIndex = 41
@@ -391,7 +391,7 @@ Partial Class frmRestockProduct
         Me.Panel2.Controls.Add(Me.txtPONo)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(17, 70)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(925, 43)
         Me.Panel2.TabIndex = 40
@@ -410,7 +410,7 @@ Partial Class frmRestockProduct
         Me.txtPONo.ForeColor = System.Drawing.Color.Black
         Me.txtPONo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.txtPONo.Location = New System.Drawing.Point(0, 0)
-        Me.txtPONo.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtPONo.Margin = New System.Windows.Forms.Padding(5)
         Me.txtPONo.Name = "txtPONo"
         Me.txtPONo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPONo.PlaceholderText = "Enter purchase order number"
@@ -423,7 +423,7 @@ Partial Class frmRestockProduct
         Me.Panel18.Controls.Add(Me.Label5)
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel18.Location = New System.Drawing.Point(17, 39)
-        Me.Panel18.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(925, 31)
         Me.Panel18.TabIndex = 39
@@ -451,7 +451,7 @@ Partial Class frmRestockProduct
         Me.Panel37.Controls.Add(Me.Panel42)
         Me.Panel37.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel37.Location = New System.Drawing.Point(17, 733)
-        Me.Panel37.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel37.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel37.Name = "Panel37"
         Me.Panel37.Size = New System.Drawing.Size(925, 74)
         Me.Panel37.TabIndex = 37
@@ -470,7 +470,7 @@ Partial Class frmRestockProduct
         Me.btnSendRequest.ForeColor = System.Drawing.Color.White
         Me.btnSendRequest.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnSendRequest.Location = New System.Drawing.Point(0, 12)
-        Me.btnSendRequest.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSendRequest.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSendRequest.Name = "btnSendRequest"
         Me.btnSendRequest.PressedDepth = 20
         Me.btnSendRequest.Size = New System.Drawing.Size(925, 50)
@@ -483,7 +483,7 @@ Partial Class frmRestockProduct
         Me.Panel41.BackColor = System.Drawing.Color.White
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel41.Location = New System.Drawing.Point(0, 62)
-        Me.Panel41.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel41.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel41.Name = "Panel41"
         Me.Panel41.Size = New System.Drawing.Size(925, 12)
         Me.Panel41.TabIndex = 18
@@ -493,7 +493,7 @@ Partial Class frmRestockProduct
         Me.Panel42.BackColor = System.Drawing.Color.White
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel42.Location = New System.Drawing.Point(0, 0)
-        Me.Panel42.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel42.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel42.Name = "Panel42"
         Me.Panel42.Size = New System.Drawing.Size(925, 12)
         Me.Panel42.TabIndex = 18
@@ -502,7 +502,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel48.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel48.Location = New System.Drawing.Point(942, 39)
-        Me.Panel48.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel48.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel48.Name = "Panel48"
         Me.Panel48.Size = New System.Drawing.Size(13, 768)
         Me.Panel48.TabIndex = 17
@@ -511,7 +511,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel49.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel49.Location = New System.Drawing.Point(4, 39)
-        Me.Panel49.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel49.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel49.Name = "Panel49"
         Me.Panel49.Size = New System.Drawing.Size(13, 768)
         Me.Panel49.TabIndex = 16
@@ -520,7 +520,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel50.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel50.Location = New System.Drawing.Point(4, 27)
-        Me.Panel50.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel50.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel50.Name = "Panel50"
         Me.Panel50.Size = New System.Drawing.Size(951, 12)
         Me.Panel50.TabIndex = 14
@@ -529,7 +529,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel13.Location = New System.Drawing.Point(13, 74)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(13, 811)
         Me.Panel13.TabIndex = 30
@@ -538,7 +538,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel5.Location = New System.Drawing.Point(985, 74)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(13, 811)
         Me.Panel5.TabIndex = 27
@@ -555,9 +555,9 @@ Partial Class frmRestockProduct
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.GroupBox1.Location = New System.Drawing.Point(998, 74)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(789, 811)
         Me.GroupBox1.TabIndex = 28
         Me.GroupBox1.TabStop = False
@@ -597,7 +597,7 @@ Partial Class frmRestockProduct
         '
         Me.pbxProduct.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbxProduct.Location = New System.Drawing.Point(17, 39)
-        Me.pbxProduct.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbxProduct.Margin = New System.Windows.Forms.Padding(4)
         Me.pbxProduct.Name = "pbxProduct"
         Me.pbxProduct.Size = New System.Drawing.Size(755, 694)
         Me.pbxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -614,7 +614,7 @@ Partial Class frmRestockProduct
         Me.Panel34.Controls.Add(Me.Panel45)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel34.Location = New System.Drawing.Point(17, 733)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(755, 74)
         Me.Panel34.TabIndex = 36
@@ -627,7 +627,7 @@ Partial Class frmRestockProduct
         Me.Panel35.Controls.Add(Me.btnAddProduct)
         Me.Panel35.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel35.Location = New System.Drawing.Point(256, 12)
-        Me.Panel35.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel35.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel35.Name = "Panel35"
         Me.Panel35.Size = New System.Drawing.Size(499, 50)
         Me.Panel35.TabIndex = 18
@@ -646,7 +646,7 @@ Partial Class frmRestockProduct
         Me.btnRemove.ForeColor = System.Drawing.Color.White
         Me.btnRemove.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnRemove.Location = New System.Drawing.Point(256, 0)
-        Me.btnRemove.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRemove.Margin = New System.Windows.Forms.Padding(4)
         Me.btnRemove.Name = "btnRemove"
         Me.btnRemove.PressedDepth = 20
         Me.btnRemove.Size = New System.Drawing.Size(243, 50)
@@ -659,7 +659,7 @@ Partial Class frmRestockProduct
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(243, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(13, 50)
         Me.Panel1.TabIndex = 60
@@ -678,7 +678,7 @@ Partial Class frmRestockProduct
         Me.btnAddProduct.ForeColor = System.Drawing.Color.White
         Me.btnAddProduct.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnAddProduct.Location = New System.Drawing.Point(0, 0)
-        Me.btnAddProduct.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAddProduct.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAddProduct.Name = "btnAddProduct"
         Me.btnAddProduct.PressedDepth = 20
         Me.btnAddProduct.Size = New System.Drawing.Size(243, 50)
@@ -691,7 +691,7 @@ Partial Class frmRestockProduct
         Me.Panel36.BackColor = System.Drawing.Color.White
         Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel36.Location = New System.Drawing.Point(243, 12)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel36.Name = "Panel36"
         Me.Panel36.Size = New System.Drawing.Size(13, 50)
         Me.Panel36.TabIndex = 18
@@ -702,7 +702,7 @@ Partial Class frmRestockProduct
         Me.Panel43.Controls.Add(Me.btnQuantity)
         Me.Panel43.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel43.Location = New System.Drawing.Point(0, 12)
-        Me.Panel43.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel43.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel43.Name = "Panel43"
         Me.Panel43.Size = New System.Drawing.Size(243, 50)
         Me.Panel43.TabIndex = 19
@@ -722,7 +722,7 @@ Partial Class frmRestockProduct
         Me.btnQuantity.ForeColor = System.Drawing.Color.White
         Me.btnQuantity.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnQuantity.Location = New System.Drawing.Point(0, 0)
-        Me.btnQuantity.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnQuantity.Margin = New System.Windows.Forms.Padding(4)
         Me.btnQuantity.Name = "btnQuantity"
         Me.btnQuantity.PressedDepth = 20
         Me.btnQuantity.Size = New System.Drawing.Size(243, 50)
@@ -735,7 +735,7 @@ Partial Class frmRestockProduct
         Me.Panel44.BackColor = System.Drawing.Color.White
         Me.Panel44.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel44.Location = New System.Drawing.Point(0, 62)
-        Me.Panel44.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel44.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel44.Name = "Panel44"
         Me.Panel44.Size = New System.Drawing.Size(755, 12)
         Me.Panel44.TabIndex = 18
@@ -745,7 +745,7 @@ Partial Class frmRestockProduct
         Me.Panel45.BackColor = System.Drawing.Color.White
         Me.Panel45.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel45.Location = New System.Drawing.Point(0, 0)
-        Me.Panel45.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel45.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel45.Name = "Panel45"
         Me.Panel45.Size = New System.Drawing.Size(755, 12)
         Me.Panel45.TabIndex = 18
@@ -754,7 +754,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel53.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel53.Location = New System.Drawing.Point(772, 39)
-        Me.Panel53.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel53.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel53.Name = "Panel53"
         Me.Panel53.Size = New System.Drawing.Size(13, 768)
         Me.Panel53.TabIndex = 17
@@ -763,7 +763,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel54.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel54.Location = New System.Drawing.Point(4, 39)
-        Me.Panel54.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel54.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel54.Name = "Panel54"
         Me.Panel54.Size = New System.Drawing.Size(13, 768)
         Me.Panel54.TabIndex = 16
@@ -772,7 +772,7 @@ Partial Class frmRestockProduct
         '
         Me.Panel55.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel55.Location = New System.Drawing.Point(4, 27)
-        Me.Panel55.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel55.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel55.Name = "Panel55"
         Me.Panel55.Size = New System.Drawing.Size(781, 12)
         Me.Panel55.TabIndex = 14

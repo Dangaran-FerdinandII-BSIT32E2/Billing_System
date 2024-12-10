@@ -202,7 +202,7 @@ Public Class frmAnalyticsData
                 cn.Open()
             End If
 
-            sql = "SELECT o.OrderID, b.CompanyName, b.DateDelivered, b.Remarks, o.Status, b.BillingID, b.CustomerID FROM tblbilling b INNER JOIN tblbillinvoice bi ON b.BillingID = bi.BillingID INNER JOIN tblorder o ON bi.OrderID = o.OrderID WHERE o.Status > 0 AND o.Status < 4"
+            sql = "SELECT o.OrderID, b.CompanyName, b.DateDelivered, b.Remarks, o.Status, b.BillingID, b.CustomerID FROM tblbilling b INNER JOIN tblbillinvoice bi ON b.BillingID = bi.BillingID INNER JOIN tblorder o ON bi.OrderID = o.OrderID WHERE o.Status > 0 AND o.Status < 4 AND Remarks = 0 ORDER BY Status ASC"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -262,7 +262,7 @@ Public Class frmAnalyticsData
                 cn.Open()
             End If
 
-            sql = "SELECT o.OrderID, c.CompanyName, o.QuotationStatus, o.CustomerID FROM tblorder o INNER JOIN tblcustomer c ON o.CustomerID = c.CustomerID"
+            sql = "SELECT o.OrderID, c.CompanyName, o.QuotationStatus, o.CustomerID FROM tblorder o INNER JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE NOT EXISTS ( SELECT 1 FROM tblbillinvoice bi WHERE bi.OrderID = o.OrderID )"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -298,7 +298,7 @@ Public Class frmAnalyticsData
                 ElseIf x.SubItems(2).Text = "Rejected" Then
                     x.ForeColor = Color.Red
                 Else
-                    x.ForeColor = Color.Yellow
+                    x.ForeColor = Color.Orange
                 End If
 
                 ListView3.Items.Add(x)
@@ -379,6 +379,7 @@ Public Class frmAnalyticsData
             If Not dr.IsClosed Then
                 dr.Close()
             End If
+
             dr = cmd.ExecuteReader
 
             If Not dr.HasRows Then
@@ -386,7 +387,7 @@ Public Class frmAnalyticsData
             End If
 
             Chart1.Series("Sales").Points.Clear()
-
+            Dim maxAmount As Double = 0
             While dr.Read()
                 If IsDBNull(dr("Paid")) Then
                     Exit Sub
@@ -394,7 +395,19 @@ Public Class frmAnalyticsData
                     Dim month As String = Convert.ToDateTime(dr("Month") & "-01").ToString("MMM yyyy")
                     Dim amount As Double = Convert.ToDouble(dr("Paid"))
 
+
                     Chart1.Series("Sales").Points.AddXY(month, amount)
+
+
+                    maxAmount = Math.Max(maxAmount, amount)
+
+                    If maxAmount >= 100000 Then
+                        Chart1.ChartAreas(0).AxisY.LabelStyle.Format = "₱#,##0"
+                    ElseIf maxAmount >= 1000 Then
+                        Chart1.ChartAreas(0).AxisY.LabelStyle.Format = "₱#,##0"
+                    Else
+                        Chart1.ChartAreas(0).AxisY.LabelStyle.Format = "₱0"
+                    End If
                 End If
             End While
 
@@ -406,7 +419,6 @@ Public Class frmAnalyticsData
                     .AxisX.Title = "Month"
                     .AxisY.Title = "Amount Paid"
                     .AxisX.LabelStyle.Angle = -45
-                    .AxisY.LabelStyle.Format = "₱"
                 End With
             End With
 

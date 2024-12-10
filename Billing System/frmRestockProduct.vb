@@ -88,27 +88,32 @@ Public Class frmRestockProduct
     End Sub
 
     Private Sub btnSendRequest_Click(sender As Object, e As EventArgs) Handles btnSendRequest.Click
-        If Not String.IsNullOrWhiteSpace(txtPONo.Text) AndAlso IsNumeric(txtPONo.Text) AndAlso listofProductIds.Count > 0 Then
-            Dim itemsWithoutAmount As New List(Of String)
-            For Each item As ListViewItem In ListView1.Items
-                If item.SubItems(2).Text <= 0 Then
-                    itemsWithoutAmount.Add(item.SubItems(1).Text)
-                End If
-            Next
+        If pbxPayment.Image IsNot Nothing Then
+            If Not String.IsNullOrWhiteSpace(txtPONo.Text) AndAlso IsNumeric(txtPONo.Text) AndAlso listofProductIds.Count > 0 Then
+                Dim itemsWithoutAmount As New List(Of String)
+                For Each item As ListViewItem In ListView1.Items
+                    If item.SubItems(2).Text <= 0 Then
+                        itemsWithoutAmount.Add(item.SubItems(1).Text)
+                    End If
+                Next
 
-            If itemsWithoutAmount.Count > 0 Then
-                Dim errorMessage As String = "Please enter an amount for the following product(s):" & Environment.NewLine & Environment.NewLine & String.Join(Environment.NewLine, itemsWithoutAmount)
-                MsgBox(errorMessage, MsgBoxStyle.Critical, "Send Request Error")
+                If itemsWithoutAmount.Count > 0 Then
+                    Dim errorMessage As String = "Please enter an amount for the following product(s):" & Environment.NewLine & Environment.NewLine & String.Join(Environment.NewLine, itemsWithoutAmount)
+                    MsgBox(errorMessage, MsgBoxStyle.Critical, "Send Request Error")
+                Else
+                    sendRequest()
+                End If
             Else
-                sendRequest()
+                If Not listofProductIds.Count = 0 Then
+                    MsgBox("Please enter a valid Purchase Order Number.", MsgBoxStyle.Critical, "Invalid Input")
+                Else
+                    MsgBox("Please add a product to send a restock request.", MsgBoxStyle.Critical, "Invalid Product")
+                End If
             End If
         Else
-            If Not listofProductIds.Count = 0 Then
-                MsgBox("Please enter a valid Purchase Order Number.", MsgBoxStyle.Critical, "Invalid Input")
-            Else
-                MsgBox("Please add a product to send a restock request.", MsgBoxStyle.Critical, "Invalid Product")
-            End If
+            MsgBox("Please attach purchase order number!", MsgBoxStyle.Critical, "PO Number Error")
         End If
+
     End Sub
 
     Private Sub sendRequest()

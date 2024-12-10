@@ -111,7 +111,7 @@ Partial Class frmManageOrder
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(13, 809)
         Me.Panel1.TabIndex = 0
@@ -120,7 +120,7 @@ Partial Class frmManageOrder
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(13, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1453, 12)
         Me.Panel2.TabIndex = 1
@@ -129,7 +129,7 @@ Partial Class frmManageOrder
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel3.Location = New System.Drawing.Point(1466, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(13, 809)
         Me.Panel3.TabIndex = 1
@@ -138,7 +138,7 @@ Partial Class frmManageOrder
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel4.Location = New System.Drawing.Point(13, 797)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1453, 12)
         Me.Panel4.TabIndex = 2
@@ -156,7 +156,7 @@ Partial Class frmManageOrder
         Me.panelBody.Controls.Add(Me.Panel9)
         Me.panelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBody.Location = New System.Drawing.Point(13, 12)
-        Me.panelBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panelBody.Margin = New System.Windows.Forms.Padding(4)
         Me.panelBody.Name = "panelBody"
         Me.panelBody.Size = New System.Drawing.Size(1453, 785)
         Me.panelBody.TabIndex = 8
@@ -171,7 +171,7 @@ Partial Class frmManageOrder
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(13, 157)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(1427, 554)
         Me.ListView1.TabIndex = 43
@@ -212,7 +212,7 @@ Partial Class frmManageOrder
         '
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel39.Location = New System.Drawing.Point(13, 145)
-        Me.Panel39.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel39.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel39.Name = "Panel39"
         Me.Panel39.Size = New System.Drawing.Size(1427, 12)
         Me.Panel39.TabIndex = 25
@@ -226,7 +226,7 @@ Partial Class frmManageOrder
         Me.Panel11.Controls.Add(Me.Panel20)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel11.Location = New System.Drawing.Point(13, 74)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(1427, 71)
         Me.Panel11.TabIndex = 24
@@ -244,7 +244,7 @@ Partial Class frmManageOrder
         Me.cboFilter.ItemHeight = 30
         Me.cboFilter.Items.AddRange(New Object() {"Default", "On Process", "On Hand", "Ready for Shipment", "Delivered", "Priority Orders", "Cancelled"})
         Me.cboFilter.Location = New System.Drawing.Point(500, 25)
-        Me.cboFilter.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.cboFilter.Margin = New System.Windows.Forms.Padding(5)
         Me.cboFilter.Name = "cboFilter"
         Me.cboFilter.Size = New System.Drawing.Size(317, 36)
         Me.cboFilter.StartIndex = 0
@@ -254,7 +254,7 @@ Partial Class frmManageOrder
         '
         Me.Panel38.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel38.Location = New System.Drawing.Point(368, 25)
-        Me.Panel38.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel38.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel38.Name = "Panel38"
         Me.Panel38.Size = New System.Drawing.Size(132, 46)
         Me.Panel38.TabIndex = 71
@@ -268,7 +268,7 @@ Partial Class frmManageOrder
         Me.Panel37.Controls.Add(Me.Panel60)
         Me.Panel37.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel37.Location = New System.Drawing.Point(0, 25)
-        Me.Panel37.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel37.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel37.Name = "Panel37"
         Me.Panel37.Size = New System.Drawing.Size(368, 46)
         Me.Panel37.TabIndex = 66
@@ -280,7 +280,7 @@ Partial Class frmManageOrder
         Me.DateFilter2.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.DateFilter2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateFilter2.Location = New System.Drawing.Point(188, 6)
-        Me.DateFilter2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DateFilter2.Margin = New System.Windows.Forms.Padding(4)
         Me.DateFilter2.Name = "DateFilter2"
         Me.DateFilter2.Size = New System.Drawing.Size(167, 30)
         Me.DateFilter2.TabIndex = 70
@@ -306,7 +306,7 @@ Partial Class frmManageOrder
         Me.DateFilter1.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.DateFilter1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateFilter1.Location = New System.Drawing.Point(0, 6)
-        Me.DateFilter1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DateFilter1.Margin = New System.Windows.Forms.Padding(4)
         Me.DateFilter1.Name = "DateFilter1"
         Me.DateFilter1.Size = New System.Drawing.Size(167, 30)
         Me.DateFilter1.TabIndex = 68
@@ -315,7 +315,7 @@ Partial Class frmManageOrder
         '
         Me.Panel60.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel60.Location = New System.Drawing.Point(0, 0)
-        Me.Panel60.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel60.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel60.Name = "Panel60"
         Me.Panel60.Size = New System.Drawing.Size(368, 6)
         Me.Panel60.TabIndex = 67
@@ -327,7 +327,7 @@ Partial Class frmManageOrder
         Me.Panel35.Controls.Add(Me.Label13)
         Me.Panel35.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel35.Location = New System.Drawing.Point(0, 0)
-        Me.Panel35.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel35.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel35.Name = "Panel35"
         Me.Panel35.Size = New System.Drawing.Size(1276, 25)
         Me.Panel35.TabIndex = 12
@@ -350,7 +350,7 @@ Partial Class frmManageOrder
         '
         Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel36.Location = New System.Drawing.Point(107, 0)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel36.Name = "Panel36"
         Me.Panel36.Size = New System.Drawing.Size(385, 25)
         Me.Panel36.TabIndex = 71
@@ -378,7 +378,7 @@ Partial Class frmManageOrder
         Me.Panel20.Controls.Add(Me.Panel25)
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel20.Location = New System.Drawing.Point(1276, 0)
-        Me.Panel20.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel20.Name = "Panel20"
         Me.Panel20.Size = New System.Drawing.Size(151, 71)
         Me.Panel20.TabIndex = 11
@@ -389,7 +389,7 @@ Partial Class frmManageOrder
         Me.Panel19.Controls.Add(Me.Panel33)
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel19.Location = New System.Drawing.Point(0, 48)
-        Me.Panel19.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(151, 18)
         Me.Panel19.TabIndex = 14
@@ -413,7 +413,7 @@ Partial Class frmManageOrder
         Me.Panel33.BackColor = System.Drawing.Color.Black
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel33.Location = New System.Drawing.Point(0, 0)
-        Me.Panel33.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Size = New System.Drawing.Size(33, 18)
         Me.Panel33.TabIndex = 9
@@ -422,7 +422,7 @@ Partial Class frmManageOrder
         '
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel32.Location = New System.Drawing.Point(0, 42)
-        Me.Panel32.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(151, 6)
         Me.Panel32.TabIndex = 13
@@ -433,7 +433,7 @@ Partial Class frmManageOrder
         Me.Panel30.Controls.Add(Me.Panel31)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel30.Location = New System.Drawing.Point(0, 24)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(151, 18)
         Me.Panel30.TabIndex = 12
@@ -457,7 +457,7 @@ Partial Class frmManageOrder
         Me.Panel31.BackColor = System.Drawing.Color.Blue
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel31.Location = New System.Drawing.Point(0, 0)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel31.Name = "Panel31"
         Me.Panel31.Size = New System.Drawing.Size(33, 18)
         Me.Panel31.TabIndex = 9
@@ -466,7 +466,7 @@ Partial Class frmManageOrder
         '
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel27.Location = New System.Drawing.Point(0, 18)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel27.Name = "Panel27"
         Me.Panel27.Size = New System.Drawing.Size(151, 6)
         Me.Panel27.TabIndex = 11
@@ -477,7 +477,7 @@ Partial Class frmManageOrder
         Me.Panel25.Controls.Add(Me.Panel26)
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel25.Location = New System.Drawing.Point(0, 0)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(151, 18)
         Me.Panel25.TabIndex = 10
@@ -501,7 +501,7 @@ Partial Class frmManageOrder
         Me.Panel26.BackColor = System.Drawing.Color.Red
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel26.Location = New System.Drawing.Point(0, 0)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel26.Name = "Panel26"
         Me.Panel26.Size = New System.Drawing.Size(33, 18)
         Me.Panel26.TabIndex = 9
@@ -519,7 +519,7 @@ Partial Class frmManageOrder
         Me.Panel21.Controls.Add(Me.Panel24)
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel21.Location = New System.Drawing.Point(13, 711)
-        Me.Panel21.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel21.Name = "Panel21"
         Me.Panel21.Size = New System.Drawing.Size(1427, 74)
         Me.Panel21.TabIndex = 23
@@ -530,7 +530,7 @@ Partial Class frmManageOrder
         Me.Panel29.Controls.Add(Me.btnAddWalkIn)
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel29.Location = New System.Drawing.Point(400, 12)
-        Me.Panel29.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel29.Name = "Panel29"
         Me.Panel29.Size = New System.Drawing.Size(187, 50)
         Me.Panel29.TabIndex = 61
@@ -549,7 +549,7 @@ Partial Class frmManageOrder
         Me.btnAddWalkIn.ForeColor = System.Drawing.Color.White
         Me.btnAddWalkIn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnAddWalkIn.Location = New System.Drawing.Point(0, 0)
-        Me.btnAddWalkIn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAddWalkIn.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAddWalkIn.Name = "btnAddWalkIn"
         Me.btnAddWalkIn.PressedDepth = 20
         Me.btnAddWalkIn.Size = New System.Drawing.Size(187, 50)
@@ -571,7 +571,7 @@ Partial Class frmManageOrder
         Me.Panel28.Controls.Add(Me.btnCancel)
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel28.Location = New System.Drawing.Point(1240, 12)
-        Me.Panel28.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel28.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel28.Name = "Panel28"
         Me.Panel28.Size = New System.Drawing.Size(187, 50)
         Me.Panel28.TabIndex = 59
@@ -591,7 +591,7 @@ Partial Class frmManageOrder
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCancel.Location = New System.Drawing.Point(0, 0)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedDepth = 20
         Me.btnCancel.Size = New System.Drawing.Size(187, 50)
@@ -604,7 +604,7 @@ Partial Class frmManageOrder
         Me.Panel22.Controls.Add(Me.btnViewOrder)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel22.Location = New System.Drawing.Point(200, 12)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(187, 50)
         Me.Panel22.TabIndex = 58
@@ -624,7 +624,7 @@ Partial Class frmManageOrder
         Me.btnViewOrder.ForeColor = System.Drawing.Color.White
         Me.btnViewOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnViewOrder.Location = New System.Drawing.Point(0, 0)
-        Me.btnViewOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnViewOrder.Margin = New System.Windows.Forms.Padding(4)
         Me.btnViewOrder.Name = "btnViewOrder"
         Me.btnViewOrder.PressedDepth = 20
         Me.btnViewOrder.Size = New System.Drawing.Size(187, 50)
@@ -646,7 +646,7 @@ Partial Class frmManageOrder
         Me.Panel34.Controls.Add(Me.btnCreateInvoice)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel34.Location = New System.Drawing.Point(0, 12)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(187, 50)
         Me.Panel34.TabIndex = 18
@@ -666,7 +666,7 @@ Partial Class frmManageOrder
         Me.btnCreateInvoice.ForeColor = System.Drawing.Color.White
         Me.btnCreateInvoice.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCreateInvoice.Location = New System.Drawing.Point(0, 0)
-        Me.btnCreateInvoice.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCreateInvoice.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCreateInvoice.Name = "btnCreateInvoice"
         Me.btnCreateInvoice.PressedDepth = 20
         Me.btnCreateInvoice.Size = New System.Drawing.Size(187, 50)
@@ -678,7 +678,7 @@ Partial Class frmManageOrder
         Me.Panel23.BackColor = System.Drawing.Color.White
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel23.Location = New System.Drawing.Point(0, 62)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(1427, 12)
         Me.Panel23.TabIndex = 18
@@ -688,7 +688,7 @@ Partial Class frmManageOrder
         Me.Panel24.BackColor = System.Drawing.Color.White
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel24.Location = New System.Drawing.Point(0, 0)
-        Me.Panel24.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel24.Name = "Panel24"
         Me.Panel24.Size = New System.Drawing.Size(1427, 12)
         Me.Panel24.TabIndex = 18
@@ -697,7 +697,7 @@ Partial Class frmManageOrder
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel12.Location = New System.Drawing.Point(13, 62)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(1427, 12)
         Me.Panel12.TabIndex = 9
@@ -706,7 +706,7 @@ Partial Class frmManageOrder
         '
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel13.Location = New System.Drawing.Point(1440, 62)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(13, 723)
         Me.Panel13.TabIndex = 10
@@ -715,7 +715,7 @@ Partial Class frmManageOrder
         '
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel18.Location = New System.Drawing.Point(0, 62)
-        Me.Panel18.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(13, 723)
         Me.Panel18.TabIndex = 8
@@ -727,7 +727,7 @@ Partial Class frmManageOrder
         Me.Panel9.Controls.Add(Me.Panel14)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1453, 62)
         Me.Panel9.TabIndex = 5
@@ -742,7 +742,7 @@ Partial Class frmManageOrder
         Me.Panel5.Controls.Add(Me.Panel6)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel5.Location = New System.Drawing.Point(816, 0)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(637, 62)
         Me.Panel5.TabIndex = 2
@@ -762,7 +762,7 @@ Partial Class frmManageOrder
         Me.btnSearchOrder.ForeColor = System.Drawing.Color.White
         Me.btnSearchOrder.Image = CType(resources.GetObject("btnSearchOrder.Image"), System.Drawing.Image)
         Me.btnSearchOrder.Location = New System.Drawing.Point(112, 12)
-        Me.btnSearchOrder.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnSearchOrder.Margin = New System.Windows.Forms.Padding(5)
         Me.btnSearchOrder.Name = "btnSearchOrder"
         Me.btnSearchOrder.PressedDepth = 20
         Me.btnSearchOrder.Size = New System.Drawing.Size(47, 38)
@@ -772,7 +772,7 @@ Partial Class frmManageOrder
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel10.Location = New System.Drawing.Point(159, 12)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(13, 38)
         Me.Panel10.TabIndex = 2
@@ -803,7 +803,7 @@ Partial Class frmManageOrder
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel8.Location = New System.Drawing.Point(0, 50)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(624, 12)
         Me.Panel8.TabIndex = 47
@@ -812,7 +812,7 @@ Partial Class frmManageOrder
         '
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(624, 12)
         Me.Panel7.TabIndex = 2
@@ -821,7 +821,7 @@ Partial Class frmManageOrder
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel6.Location = New System.Drawing.Point(624, 0)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(13, 62)
         Me.Panel6.TabIndex = 2
@@ -834,7 +834,7 @@ Partial Class frmManageOrder
         Me.Panel14.Controls.Add(Me.Panel16)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(445, 62)
         Me.Panel14.TabIndex = 13
@@ -857,7 +857,7 @@ Partial Class frmManageOrder
         '
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(0, 18)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(13, 32)
         Me.Panel15.TabIndex = 13
@@ -866,7 +866,7 @@ Partial Class frmManageOrder
         '
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel17.Location = New System.Drawing.Point(0, 50)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(445, 12)
         Me.Panel17.TabIndex = 13
@@ -875,7 +875,7 @@ Partial Class frmManageOrder
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel16.Location = New System.Drawing.Point(0, 0)
-        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(445, 18)
         Me.Panel16.TabIndex = 13
@@ -892,7 +892,7 @@ Partial Class frmManageOrder
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmManageOrder"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.panelBody.ResumeLayout(False)

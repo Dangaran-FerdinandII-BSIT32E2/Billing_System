@@ -184,7 +184,7 @@ Public Class frmListofOrdersPending
     End Sub
 
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "SELECT c.CompanyName, CONCAT(c.LastName, ', ', c.FirstName) AS ContactPerson, c.PhoneNumber, c.Email, COUNT(o.OrderID) AS PendingOrders, c.Address, o.DeliveryAddress, c.CompanyName, o.DateOrdered FROM tblorder o INNER JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE o.Status = 1 AND (c.CompanyName LIKE ? OR c.LastName LIKE ? OR c.FirstName LIKE ?) GROUP BY o.OrderID"
+        sql = "SELECT c.CompanyName, CONCAT(c.LastName, ', ', c.FirstName) AS ContactPerson, c.PhoneNumber, c.Email, COUNT(o.OrderID) AS PendingOrders, c.Address, o.DeliveryAddress, c.CompanyName, o.DateOrdered FROM tblorder o INNER JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE o.Status = 1 AND (c.CompanyName LIKE @searchTerm1 OR c.LastName LIKE @searchTerm2 OR c.FirstName LIKE @searchTerm3) GROUP BY o.OrderID"
 
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.Add(New MySqlParameter("searchTerm1", "%" & searchTerm & "%"))
