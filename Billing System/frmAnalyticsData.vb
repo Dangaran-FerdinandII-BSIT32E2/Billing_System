@@ -162,7 +162,7 @@ Public Class frmAnalyticsData
                 cn.Open()
             End If
 
-            sql = "SELECT * FROM tblbilling WHERE DueDate < CURDATE()"
+            sql = "SELECT b.BillingID, b.CompanyName, b.FinalPrice - COALESCE( SUM( CASE WHEN c.Status = 2 THEN c.AmtPaid ELSE 0 END ), 0 ) AS OutstandingBalance, DATE_FORMAT(MAX(c.DatePaid), '%M %d, %Y') AS LastPayment, b.CustomerID FROM tblbilling b INNER JOIN tblcollection c ON c.BillingID = b.BillingID INNER JOIN tblbillinvoice bi ON bi.BillingID = b.BillingID WHERE DueDate < CURDATE()  GROUP BY b.BillingID HAVING OutstandingBalance > 0"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -181,11 +181,9 @@ Public Class frmAnalyticsData
             Do While dr.Read = True
                 x = New ListViewItem(dr("BillingID").ToString())
                 x.SubItems.Add(dr("CompanyName").ToString())
-
-                Dim dueDate As DateTime = Convert.ToDateTime(dr("DueDate"))
-                Dim formattedDate As String = dueDate.ToString("MMMM dd, yyyy h:mm tt")
-
-                x.SubItems.Add(formattedDate)
+                x.SubItems.Add(dr("OutstandingBalance").ToString())
+                x.SubItems.Add(dr("LastPayment").ToString)
+                x.SubItems.Add(dr("CustomerID").ToString)
                 ListView1.Items.Add(x)
             Loop
             dr.Close()
@@ -196,6 +194,14 @@ Public Class frmAnalyticsData
                 cn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
+        If ListView1.SelectedItems.Count > 0 Then
+            frmPaymentInformation.billingid = ListView1.SelectedItems(0).SubItems(0).Text
+            frmPaymentInformation.customerid = ListView1.SelectedItems(0).SubItems(4).Text
+            frmPaymentInformation.ShowDialog()
+        End If
     End Sub
     Private Sub getOrderUpdates()
         Try
@@ -557,4 +563,6 @@ Public Class frmAnalyticsData
         frmAdminSettings.Close()
         frmProduct.Close()
     End Sub
+
+
 End Class

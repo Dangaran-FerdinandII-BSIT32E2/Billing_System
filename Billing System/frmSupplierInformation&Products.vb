@@ -344,11 +344,9 @@ Public Class frmManageSupplierV2
                             pbxProduct.Image = Image.FromStream(ms)
                         End Using
 
-                        btnDelete.Enabled = True
                     End If
                 Else
                     pbxProduct.Image = Nothing
-                    btnDelete.Enabled = False
                 End If
             Catch ex As Exception
                 MsgBox("An error occurred frmRestockQuotation(loadQuotationImage): " & ex.Message)
@@ -360,11 +358,10 @@ Public Class frmManageSupplierV2
         End If
     End Sub
 
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-
-    End Sub
-
     Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
-
+        If MsgBox("Do you want to add a product?", vbQuestion + vbYesNo) = vbYes Then
+            frmManageProducts.supplierid = supplierid
+            frmManageProducts.ShowDialog()
+        End If
     End Sub
 End Class

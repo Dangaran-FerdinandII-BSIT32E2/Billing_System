@@ -140,7 +140,7 @@ Public Class frmManageCollectionV3
         If ListView1.SelectedItems.Count > 0 Then
             frmPaymentInformation.billingid = ListView1.SelectedItems(0).SubItems(0).Text
             frmPaymentInformation.customerid = ListView1.SelectedItems(0).SubItems(4).Text
-            frmPaymentInformation.Show()
+            frmPaymentInformation.ShowDialog()
         End If
     End Sub
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
