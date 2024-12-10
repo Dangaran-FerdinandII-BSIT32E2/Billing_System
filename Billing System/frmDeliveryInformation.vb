@@ -18,10 +18,8 @@ Public Class frmDeliveryInformation
         dtpDateDelivered.Text = DateTime.Now
 
         If createbilling Then
-            GroupBox1.Text = "Upload Signed Sales Invoice"
             btnPrint.Visible = True
         ElseIf confirmdelivery Then
-            GroupBox1.Text = "Proof of Delivery"
             btnPrint.Visible = False
         End If
 
@@ -33,13 +31,11 @@ Public Class frmDeliveryInformation
 
     Private Sub frmManageCollectionV2_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
-            pbxDelivery.Image = Nothing
-            PictureBox2.Visible = True
-            btnBrowse.Visible = True
+            pbxProofDelivery.Image = Nothing
+            pbxSignedSalesInvoice.Image = Nothing
             confirmdelivery = False
             createbilling = False
 
-            GroupBox1.Text = "Proof of Delivery"
         End If
     End Sub
 
@@ -95,18 +91,13 @@ Public Class frmDeliveryInformation
                         If pic.Length > 0 Then
                             'Dim ms As New MemoryStream(pic)
                             Using ms As New MemoryStream(pic)
-                                pbxDelivery.Image = Image.FromStream(ms)
+                                pbxProofDelivery.Image = Image.FromStream(ms)
                             End Using
-
-                            PictureBox2.Visible = False
-                            btnBrowse.Visible = False
 
                             btnConfirm.Enabled = False
 
                         Else
-                            pbxDelivery.Image = Nothing
-                            PictureBox2.Visible = True
-                            btnBrowse.Visible = True
+                            pbxProofDelivery.Image = Nothing
 
                             btnConfirm.Enabled = True
                         End If
@@ -115,9 +106,7 @@ Public Class frmDeliveryInformation
                         MsgBox("Error loading image: " & ex.Message)
                     End Try
                 Else
-                    pbxDelivery.Image = Nothing
-                    PictureBox2.Visible = True
-                    btnBrowse.Visible = True
+                    pbxProofDelivery.Image = Nothing
 
                     btnConfirm.Enabled = True
                 End If
@@ -132,7 +121,7 @@ Public Class frmDeliveryInformation
         End Try
     End Sub
 
-    Private Sub btnBrowseDelivery_Click(sender As Object, e As EventArgs)
+    Private Sub btnBrowseDelivery_Click(sender As Object, e As EventArgs) Handles btnUploadProofDelivery.Click
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -141,10 +130,7 @@ Public Class frmDeliveryInformation
             d.Filter = "JPEG(*.jpg; *.jpeg)|*.jpg|PNG(*.png)|*.png"
 
             If d.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                pbxDelivery.Image = Image.FromFile(d.FileName)
-
-                PictureBox2.Visible = False
-                btnBrowse.Visible = False
+                pbxProofDelivery.Image = Image.FromFile(d.FileName)
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmConfirmPayment(btnBrowse): " & ex.Message)
@@ -157,47 +143,87 @@ Public Class frmDeliveryInformation
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
-            pbxDelivery.Image = Nothing
-            PictureBox2.Visible = True
-            btnBrowse.Visible = True
+
+            If createbilling Then
+                pbxSignedSalesInvoice.Image = Nothing
+            ElseIf confirmdelivery Then
+                pbxProofDelivery.Image = Nothing
+            End If
 
             btnConfirm.Enabled = True
         End If
     End Sub
 
     Private Sub btnConfirmDelivery_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+        If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
+            If confirmdelivery AndAlso pbxProofDelivery.Image IsNot Nothing Then
+                Call uploadDeliveryImage()
+            ElseIf createbilling AndAlso pbxSignedSalesInvoice.Image IsNot Nothing Then
+                Call uploadSignedSalesInvoice()
+            Else
+                MsgBox("Please upload an image!", MsgBoxStyle.Critical, "Upload Error")
+            End If
+        End If
+    End Sub
+
+    Private Sub uploadDeliveryImage()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
 
-            If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
-                If pbxDelivery.Image IsNot Nothing Then
-                    Dim mstream As New System.IO.MemoryStream()
-                    pbxDelivery.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
-                    Dim arrImage() As Byte = mstream.GetBuffer
-                    mstream.Close()
+            Dim mstream As New System.IO.MemoryStream()
+            pbxProofDelivery.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+            Dim arrImage() As Byte = mstream.GetBuffer
+            mstream.Close()
 
-                    sql = "UPDATE tblbilling SET imgDelivery=@imgDelivery, DateDelivered=@DateDelivered WHERE BillingID = '" & billingid & "'"
-                    cmd = New MySqlCommand(sql, cn)
-                    With cmd
-                        .Parameters.AddWithValue("@DateDelivered", dtpDateDelivered.Value)
-                        .Parameters.AddWithValue("@imgDelivery", arrImage)
-                        .ExecuteNonQuery()
-                    End With
-                    Call loadActivity()
-                    MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
+            sql = "UPDATE tblbilling SET imgDelivery=@imgDelivery, DateDelivered=@DateDelivered WHERE BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@DateDelivered", dtpDateDelivered.Value)
+                .Parameters.AddWithValue("@imgDelivery", arrImage)
+                .ExecuteNonQuery()
+            End With
+            Call loadActivity()
+            MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
 
-                    Call saveDelivery()
+            Call saveDelivery()
 
 
-                    btnConfirm.Enabled = False
-                    Me.Close()
-                Else
-                    MsgBox("Please upload an image!", MsgBoxStyle.Critical, "Upload Error")
-                End If
+            btnConfirm.Enabled = False
+            Me.Close()
 
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCollectionV2(btnConfirmDelivery): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
             End If
+        End Try
+    End Sub
+
+    Private Sub uploadSignedSalesInvoice()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            Dim mstream As New System.IO.MemoryStream()
+            pbxProofDelivery.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+            Dim arrImage() As Byte = mstream.GetBuffer
+            mstream.Close()
+
+            sql = "UPDATE tblbilling SET imgSigned=@imgSigned WHERE BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@imgSigned", arrImage)
+                .ExecuteNonQuery()
+            End With
+            Call loadActivity()
+            MsgBox("Successfully saved!", MsgBoxStyle.Information, "Image Uploading")
+            btnConfirm.Enabled = False
+            Me.Close()
+
         Catch ex As Exception
             MsgBox("An error occurred frmManageCollectionV2(btnConfirmDelivery): " & ex.Message)
         Finally
@@ -237,7 +263,7 @@ Public Class frmDeliveryInformation
                 .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
                 .Parameters.AddWithValue("@Username", frmLoginV2.username)
                 .Parameters.AddWithValue("@DateTime", DateTime.Now)
-                .Parameters.AddWithValue("@Action", "Confirm Delivery receipt for")
+                .Parameters.AddWithValue("@Action", "Confirm Delivery receipt for Billing No #" & billingid)
                 .ExecuteNonQuery()
             End With
         Catch ex As Exception
@@ -266,7 +292,7 @@ Public Class frmDeliveryInformation
                 .Parameters.AddWithValue("@UserID", frmLoginV2.userid)
                 .Parameters.AddWithValue("@Username", frmLoginV2.username)
                 .Parameters.AddWithValue("@DateTime", DateTime.Now)
-                .Parameters.AddWithValue("@Action", "Printed Delivery receipt for")
+                .Parameters.AddWithValue("@Action", "Printed Delivery receipt for Billing #" & billingid)
                 .ExecuteNonQuery()
             End With
         Catch ex As Exception
@@ -299,18 +325,13 @@ Public Class frmDeliveryInformation
                         If pic.Length > 0 Then
                             'Dim ms As New MemoryStream(pic)
                             Using ms As New MemoryStream(pic)
-                                pbxDelivery.Image = Image.FromStream(ms)
+                                pbxSignedSalesInvoice.Image = Image.FromStream(ms)
                             End Using
-
-                            PictureBox2.Visible = False
-                            btnBrowse.Visible = False
 
                             btnConfirm.Enabled = False
 
                         Else
-                            pbxDelivery.Image = Nothing
-                            PictureBox2.Visible = True
-                            btnBrowse.Visible = True
+                            pbxSignedSalesInvoice.Image = Nothing
 
                             btnConfirm.Enabled = True
                         End If
@@ -319,9 +340,7 @@ Public Class frmDeliveryInformation
                         MsgBox("Error loading image: " & ex.Message)
                     End Try
                 Else
-                    pbxDelivery.Image = Nothing
-                    PictureBox2.Visible = True
-                    btnBrowse.Visible = True
+                    pbxSignedSalesInvoice.Image = Nothing
 
                     btnConfirm.Enabled = True
                 End If

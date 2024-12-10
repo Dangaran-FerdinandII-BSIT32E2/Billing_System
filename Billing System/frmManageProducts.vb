@@ -155,7 +155,7 @@ Public Class frmManageProducts
                     "VALUES(@ProductName, @Description, @Category, @Type, @Manufacturer, @PurchasePrice, @SellingPrice, @SupplierID)"
 
             Using mstream As New System.IO.MemoryStream
-                pbxProduct.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                pbxProduct.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Png)
                 Dim arrImage() As Byte = mstream.GetBuffer
 
                 cmd = New MySqlCommand(sql, cn)
@@ -192,7 +192,7 @@ Public Class frmManageProducts
 
             Using mstream As New System.IO.MemoryStream
                 Using img As Image = New Bitmap(pbxProduct.Image)
-                    img.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                    img.Save(mstream, System.Drawing.Imaging.ImageFormat.Png)
                     Dim arrImage() As Byte = mstream.ToArray
 
                     Using cmd As New MySqlCommand(sql, cn)
