@@ -14,6 +14,8 @@ Public Class frmManageSalesV2
 
     Public phoneNumber As String
     Public email As String
+
+    Public order As Boolean? = False
     Private Sub frmManageBilling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadBilling()
@@ -63,7 +65,14 @@ Public Class frmManageSalesV2
                 cn.Open()
             End If
 
-            sql = "SELECT COALESCE(ow.Quantity, o.Quantity) AS Quantity, COALESCE(p.ProductName, o.Unit) AS Unit, COALESCE(p.Description, o.Description) AS Description, COALESCE(p.SellingPrice, o.SellingPrice) AS SellingPrice, COALESCE((ow.Quantity * p.SellingPrice), o.Amount) AS Amount, o.OrderID, o.OrderListID, COALESCE(ow.ProductID, o.ProductID) AS ProductID FROM qryorder o LEFT JOIN tblorderwalkin ow ON o.OrderID = ow.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblproduct p ON ow.ProductID = p.ProductID WHERE o.OrderID = '" & orderid & "'"
+            sql = "SELECT COALESCE(ow.Quantity, o.Quantity) AS Quantity, COALESCE(p.ProductName, o.Unit) AS Unit, COALESCE(p.Description, o.Description) AS Description, COALESCE(p.SellingPrice, o.SellingPrice) AS SellingPrice, COALESCE((ow.Quantity * p.SellingPrice), o.Amount) AS Amount, o.OrderID, o.OrderListID, COALESCE(ow.ProductID, o.ProductID) AS ProductID FROM qryorder o LEFT JOIN tblorderwalkin ow ON o.OrderID = ow.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblproduct p ON ow.ProductID = p.ProductID WHERE o.OrderID = '" & orderid & "' "
+
+            If order Then
+                sql += "AND o.isRental = 0"
+            Else
+                sql += "AND o.isRental = 1"
+            End If
+
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then

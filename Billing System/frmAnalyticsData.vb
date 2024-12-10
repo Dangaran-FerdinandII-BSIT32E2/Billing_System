@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Diagnostics.Eventing.Reader
 Imports System.Globalization
 Imports System.IO.Ports
 Imports System.Web.UI.WebControls
@@ -256,13 +257,31 @@ Public Class frmAnalyticsData
         End Select
     End Function
 
+    Private Sub ListView2_DoubleClick(sender As Object, e As EventArgs) Handles ListView2.DoubleClick
+        If ListView2.SelectedItems(0).SubItems(2).Text = "In-Transit" Then
+            frmDeliveryInformation.billingid = ListView2.SelectedItems(0).SubItems(3).Text
+            frmDeliveryInformation.lblCompanyName.Text = ListView2.SelectedItems(0).SubItems(1).Text
+
+            frmDeliveryInformation.confirmdelivery = True
+            frmDeliveryInformation.ShowDialog()
+        ElseIf ListView2.SelectedItems(0).SubItems(2).Text = "Delivered" Then
+            frmDeliveryInformation.btnPrint.Visible = False
+
+            frmDeliveryInformation.billingid = ListView2.SelectedItems(0).SubItems(3).Text
+
+            frmDeliveryInformation.createbilling = True
+            frmDeliveryInformation.ShowDialog()
+        End If
+        Call getOrderUpdates()
+    End Sub
+
     Private Sub getQuotation()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
             End If
 
-            sql = "SELECT o.OrderID, c.CompanyName, o.QuotationStatus, o.CustomerID FROM tblorder o INNER JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE NOT EXISTS ( SELECT 1 FROM tblbillinvoice bi WHERE bi.OrderID = o.OrderID )"
+            sql = "SELECT o.OrderID, c.CompanyName, o.QuotationStatus, o.isRental, o.CustomerID FROM tblorder o INNER JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE NOT EXISTS ( SELECT 1 FROM tblbillinvoice bi WHERE bi.OrderID = o.OrderID )"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -288,10 +307,10 @@ Public Class frmAnalyticsData
 
                 x = New ListViewItem(dr("OrderID").ToString())
                 x.SubItems.Add(dr("CompanyName").ToString())
-                ' x.SubItems.Add(getQuotationStatus(dr("QuotationStatus")).ToString)
-                x.SubItems.Add(quotationStatus)
-                x.SubItems.Add(dr("OrderID").ToString) '3
-                x.SubItems.Add(dr("CustomerID").ToString) '4
+                x.SubItems.Add(quotationStatus) '2
+                x.SubItems.Add(If(dr("isRental") = True, "Rental", "Order"))
+                x.SubItems.Add(dr("OrderID").ToString) '4
+                x.SubItems.Add(dr("CustomerID").ToString) '5
 
                 If x.SubItems(2).Text = "Approved" Then
                     x.ForeColor = Color.Green
@@ -305,7 +324,7 @@ Public Class frmAnalyticsData
             Loop
             dr.Close()
         Catch ex As Exception
-            MsgBox("An error occured at frmAnalyticsData(getQuotation): " & ex.Message)
+            MsgBox("An Error occured at frmAnalyticsData(getQuotation):  " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()
@@ -320,6 +339,46 @@ Public Class frmAnalyticsData
 
         Return If(status.Value, "Approved", "Rejected")
     End Function
+
+    Private Sub ListView3_DoubleClick(sender As Object, e As EventArgs) Handles ListView3.DoubleClick
+        Dim item As ListViewItem = ListView3.SelectedItems(0)
+        If item.SubItems(2).Text = "Rejected" Or item.SubItems(2).Text = "Pending" Then
+
+            frmListofCustomerOrder.lblCompanyName.Text = item.SubItems(1).Text
+            frmListofCustomerOrder.orderid = item.SubItems(4).Text
+            frmListofCustomerOrder.custid = item.SubItems(5).Text
+
+            Dim order As Boolean = False
+
+            If item.SubItems(3).Text = "Order" Then
+                order = True
+            End If
+
+            frmListofCustomerOrder.order = order
+
+            frmListofCustomerOrder.ShowDialog()
+            Call getQuotation()
+
+        ElseIf item.SubItems(2).Text = "Approved" Then
+            frmManageSalesV2.orderid = item.SubItems(4).Text
+            frmManageSalesV2.lblCustID.Text = item.SubItems(5).Text
+
+            Dim order As Boolean = False
+
+            If item.SubItems(3).Text = "Order" Then
+                order = True
+            End If
+
+            frmManageSalesV2.order = order
+
+            Me.Close()
+            frmManageSalesV2.TopLevel = False
+            frmAdminDashboard.panelDashboard.Controls.Add(frmManageSalesV2)
+            frmManageSalesV2.BringToFront()
+            frmManageSalesV2.Dock = DockStyle.Fill
+            frmManageSalesV2.Show()
+        End If
+    End Sub
 
     Private Sub getRambicPO()
         Try
@@ -498,6 +557,4 @@ Public Class frmAnalyticsData
         frmAdminSettings.Close()
         frmProduct.Close()
     End Sub
-
-
 End Class
