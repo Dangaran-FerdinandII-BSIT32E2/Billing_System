@@ -67,11 +67,11 @@ Public Class frmManageSalesV2
 
             sql = "SELECT COALESCE(ow.Quantity, o.Quantity) AS Quantity, COALESCE(p.ProductName, o.Unit) AS Unit, COALESCE(p.Description, o.Description) AS Description, COALESCE(p.SellingPrice, o.SellingPrice) AS SellingPrice, COALESCE((ow.Quantity * p.SellingPrice), o.Amount) AS Amount, o.OrderID, o.OrderListID, COALESCE(ow.ProductID, o.ProductID) AS ProductID FROM qryorder o LEFT JOIN tblorderwalkin ow ON o.OrderID = ow.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblproduct p ON ow.ProductID = p.ProductID WHERE o.OrderID = '" & orderid & "' "
 
-            If order Then
-                sql += "AND o.isRental = 0"
-            Else
-                sql += "AND o.isRental = 1"
-            End If
+            'If order Then
+            '    sql += "AND o.isRental = 0"
+            'Else
+            '    sql += "AND o.isRental = 1"
+            'End If
 
             cmd = New MySqlCommand(sql, cn)
 
@@ -247,14 +247,16 @@ Public Class frmManageSalesV2
 
         lblBillingID.Text = getBillingID()
 
-        Call savetoBilling()
-        Call savetoBillInvoice()
-        Call updateOrder()
-        Call updateQuantityProduct()
+        'Call savetoBilling()
+        'Call savetoBillInvoice()
+        'Call updateOrder()
+        'Call updateQuantityProduct()
 
         Dim email As ListViewItem = ListView1.Items(0)
         frmPrintSalesInvoice.billingid = lblBillingID.Text
         frmPrintSalesInvoice.orderid = email.SubItems(5).Text
+        frmPrintSalesInvoice.terms = (txtDays.Text & " " & cboTerms.Text)
+        frmPrintSalesInvoice.amountdue = trueadjustedvalue
         frmPrintSalesInvoice.ShowDialog()
 
         Call clearText()

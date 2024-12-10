@@ -135,9 +135,9 @@ Public Class frmListofOrdersPending
                     frmManageSalesV2.txtAddress.Text = ListView1.SelectedItems(0).SubItems(5).Text
                     frmManageSalesV2.txtDeliveryAddress.Text = ListView1.SelectedItems(0).SubItems(6).Text
                     frmManageSalesV2.txtTIN.Text = ListView1.SelectedItems(0).SubItems(12).Text
+                End If
                     Call frmManageSalesV2.loadBilling()
                 End If
-            End If
 
         Catch ex As Exception
             MsgBox("An error occurred frmListCompany(SelectedIndexChanged): " & ex.Message)

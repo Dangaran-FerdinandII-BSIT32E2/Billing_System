@@ -1,13 +1,15 @@
 ﻿Imports System.Drawing.Imaging
 Imports System.IO
 Imports System.Net.Mail
+Imports System.Text
+Imports System.Windows
 Imports Microsoft.Reporting.WinForms
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.Crud
 
 Public Class frmPrintBillingInvoiceV2
     Public orderid, billingid As String
-    Dim email As String
+    Dim email, customername, amountdue, duedate As String
 
     Private Sub frmPrintBillingInvoiceV2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
@@ -21,7 +23,7 @@ Public Class frmPrintBillingInvoiceV2
                 cn.Open()
             End If
 
-            sql = "SELECT COALESCE(w.Email, c.Email) AS Email FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'"
+            sql = "SELECT COALESCE(w.Email, c.Email) AS Email, COALESCE(w.CompanyName, c.CompanyName) AS CustomerName, FORMAT(b.FinalPrice, '₱#,##0.00') AS AmountDue, DATE_FORMAT(b.DueDate, '%M %d, %Y') AS DueDate FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -32,6 +34,9 @@ Public Class frmPrintBillingInvoiceV2
 
             If dr.Read = True Then
                 email = dr("Email").ToString
+                customername = dr("CustomerName").ToString
+                amountdue = dr("AmountDue").ToString
+                duedate = dr("DueDate").ToString
             End If
 
         Catch ex As Exception
@@ -188,11 +193,53 @@ Public Class frmPrintBillingInvoiceV2
                     memoryStream.Position = 0
 
                     Dim imageAttachment As New Attachment(memoryStream, "CustomerCopy-SalesInvoice_#R" & orderid & "-.jpeg")
-                    mail.Attachments.Add(imageAttachment)
 
-                    'mail.Body = "There is now an available quotation for your Order Number " & orderid & "." & vbCrLf &
-                    '    "You can now accept or reject the Order Quotation through the website." & vbCrLf & vbCrLf &
-                    '    "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
+                    Dim emailBody As New StringBuilder
+                    emailBody.AppendLine("<!DOCTYPE html>")
+                    emailBody.AppendLine("<html>")
+                    emailBody.AppendLine("<body>")
+
+                    emailBody.AppendLine("<p style='text-align: center;'><strong>Purchase Order Request</strong></p>")
+
+                    emailBody.AppendLine("<p>Dear " & customername & ",</p>")
+
+                    emailBody.AppendLine("<p>We hope you are doing well. Please find attached the billing statement for your recent order with Rambic Corporation. Below are the details of your order and the outstanding balance:</p><br>")
+
+                    emailBody.AppendLine("<h3>Order Details:</h3>
+                                            <ul>
+                                                <li><strong>Order Number:</strong> #" & orderid & "</li>
+                                                <li><strong>Order Date:</strong> #" & billingid & "</li>    
+                                                <li><strong>Total Amount Due:</strong> #" & amountdue & "</li>
+                                                <li><strong>Payment Due Date:</strong> #" & duedate & "</li>
+                                            </ul>
+                                        </div>")
+
+                    emailBody.AppendLine("As per our agreement, all balances must be settled by the end of the payment terms to avoid late fees or disruptions.")
+
+                    emailBody.AppendLine("<h2>Payment Options:</h2>")
+                    emailBody.AppendLine("<p>To ensure timely resolution of your account, you may choose one of the following payment options:</p>")
+                    emailBody.AppendLine("<h3>1. Post-Dated Check</h3>")
+                    emailBody.AppendLine("<h3>2. Bank Transfer <em>(Please upload cheque proof via website)</em></h3>")
+
+                    emailBody.AppendLine("<p><em>Disclaimer: If you have already provided a post-dated check to Rambic Corporation, please ensure the following to avoid any disruptions:</em></p>")
+                    emailBody.AppendLine("<p><em>The check amount matches the outstanding balance: " & amountdue & ".</em></p>")
+                    emailBody.AppendLine("<p><em>The check date aligns with the agreed payment terms: " & duedate & ".</em></p>")
+
+                    emailBody.AppendLine("<p><em>If these details are accurate, no further action is needed. However, if you believe there is an error or need to make adjustments in the cheque, please contact us immediately at (632) 809-9874 / (632) 850-1763 / (632) 753-8139 / (632) 833-1160 and inform your bank.</em></p>")
+
+
+                    emailBody.AppendLine("<p>If you have already completed this payment, please disregard this message. Should you have any questions or require assistance, our support team is ready to help at (632) 809-9874 / (632) 850-1763 / (632) 753-8139 / (632) 833-1160. We value your business and look forward to continuing our relationship.</p>")
+
+                    emailBody.AppendLine("<p class='signature'><strong>Best regards,</strong></p>")
+                    emailBody.AppendLine("<p><em>This is an automated email. Please do not reply directly to this message.</em></p>")
+                    emailBody.AppendLine("<p>The information contained in this email is intended for the recipient only. It may contain confidential or privileged material and should not be shared, reproduced, or distributed without permission. If you are not the intended recipient, please notify the sender immediately, and delete the email from your system. Rambic Corporation makes no representations or warranties regarding the accuracy or completeness of the information provided and disclaims any liability for any loss or damage arising from the use of this email.</p>")
+                    emailBody.AppendLine("<p>Please consider the environment before printing this email.</p>")
+                    emailBody.AppendLine("</body>")
+                    emailBody.AppendLine("</html>")
+
+                    mail.IsBodyHtml = True
+                    mail.Body = emailBody.ToString
+                    mail.Attachments.Add(imageAttachment)
 
                     smtpServer.Port = 587
                     smtpServer.Credentials = New System.Net.NetworkCredential("rambiccorpo@gmail.com", "xcyu gtqv ctvk kzqa") ' Use secure methods

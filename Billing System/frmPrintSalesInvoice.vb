@@ -1,6 +1,8 @@
 ﻿Imports System.Drawing.Imaging
 Imports System.IO
 Imports System.Net.Mail
+Imports System.Text
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports Microsoft.Reporting.WinForms
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.Crud
@@ -11,10 +13,18 @@ Public Class frmPrintSalesInvoice
     Public orderid As String
 
     Dim email As String
+    Dim customername As String
+
+    Dim accountNumber As String
+    Dim accountName As String
+
+
+    Public terms As String
+    Public amountdue As String
 
     Private Sub frmPrintSalesInvoice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        Call loadInformation
+        Call loadInformation()
         Call loadReport()
     End Sub
 
@@ -24,7 +34,7 @@ Public Class frmPrintSalesInvoice
                 cn.Open()
             End If
 
-            sql = "SELECT COALESCE(w.Email, c.Email) AS Email FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'"
+            sql = "SELECT COALESCE(w.Email, c.Email) AS Email, COALESCE(w.CompanyName, c.CompanyName) AS CustomerName FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'"
             cmd = New MySqlCommand(sql, cn)
 
             If Not dr.IsClosed Then
@@ -35,6 +45,7 @@ Public Class frmPrintSalesInvoice
 
             If dr.Read = True Then
                 email = dr("Email").ToString
+                customername = dr("CustomerName").ToString
             End If
 
         Catch ex As Exception
@@ -174,7 +185,7 @@ Public Class frmPrintSalesInvoice
             mail.From = New MailAddress("rambiccorpo@gmail.com") ' Replace with your email
             mail.To.Add(email)
 
-            mail.Subject = "SALES INVOICE FOR Order Number " & orderid
+            mail.Subject = "Sales Invoice for Order #" & orderid & " – Rambic Corporation"
 
             Using memoryStream As New MemoryStream()
 
@@ -184,11 +195,46 @@ Public Class frmPrintSalesInvoice
                     memoryStream.Position = 0
 
                     Dim imageAttachment As New Attachment(memoryStream, "CustomerCopy-SalesInvoice_#" & billingid & "-.jpeg")
-                    mail.Attachments.Add(imageAttachment)
 
-                    'mail.Body = "There is now an available quotation for your Order Number " & orderid & "." & vbCrLf &
-                    '    "You can now accept or reject the Order Quotation through the website." & vbCrLf & vbCrLf &
-                    '    "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
+                    Dim emailBody As New StringBuilder
+                    emailBody.AppendLine("<!DOCTYPE html>")
+                    emailBody.AppendLine("<html>")
+                    emailBody.AppendLine("<body>")
+
+                    emailBody.AppendLine("<p style='text-align: center;'><strong>Purchase Order Request</strong></p>")
+
+                    emailBody.AppendLine("<p>Dear " & customername & ",</p>")
+
+                    emailBody.AppendLine("<p>I hope this message finds you well. Please find attached the sales invoice receipt for your recent order with Rambic Corporation. Below are the key details of your transaction, including the payment options we accept:</p><br>")
+
+                    emailBody.AppendLine("<h3>Invoice Details:</h3>
+                                            <ul>
+                                                <li><strong>Order Number:</strong> #" & orderid & "</li>
+                                                <li><strong>Billing Number:</strong> #" & billingid & "</li>
+                                                <li><strong>Invoice Date:</strong> #" & Date.Today.ToString("MMM d, yyyy") & "</li>
+                                                <li><strong>Terms:</strong> #" & terms & "</li>
+                                                <li><strong>Total Amount Due:</strong> #" & amountdue & "</li>
+                                            </ul>
+                                        </div>")
+
+                    emailBody.AppendLine("<h2>Payment Options:</h2>")
+                    emailBody.AppendLine("<p>To ensure timely resolution of your account, you may choose one of the following payment options:</p>")
+                    emailBody.AppendLine("<h3>1. Post-Dated Check</h3>")
+                    emailBody.AppendLine("<h3>2. Bank Transfer <em>(Please upload cheque proof via website)</em></h3>")
+
+                    emailBody.AppendLine("<p>Should you have any questions or need assistance, feel free to contact us at (632) 809-9874 / (632) 850-1763 / (632) 753-8139 / (632) 833-1160. We value your business and look forward to continuing our relationship.</p>")
+
+                    emailBody.AppendLine("<p class='signature'><strong>Best regards,</strong></p>")
+                    emailBody.AppendLine("<p><em>This is an automated email. Please do not reply directly to this message.</em></p>")
+                    emailBody.AppendLine("<p>The information contained in this email is intended for the recipient only. It may contain confidential or privileged material and should not be shared, reproduced, or distributed without permission. If you are not the intended recipient, please notify the sender immediately, and delete the email from your system. Rambic Corporation makes no representations or warranties regarding the accuracy or completeness of the information provided and disclaims any liability for any loss or damage arising from the use of this email.</p>")
+                    emailBody.AppendLine("<p>Please consider the environment before printing this email.</p>")
+                    emailBody.AppendLine("</body>")
+                    emailBody.AppendLine("</html>")
+
+                    mail.IsBodyHtml = True
+                    mail.Body = emailBody.ToString
+
+                    mail.Attachments.Add(imageAttachment)
 
                     smtpServer.Port = 587
                     smtpServer.Credentials = New System.Net.NetworkCredential("rambiccorpo@gmail.com", "xcyu gtqv ctvk kzqa") ' Use secure methods
