@@ -122,7 +122,7 @@ Partial Class frmPaymentInformation
         Me.Panel9.Controls.Add(Me.Panel14)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1800, 62)
         Me.Panel9.TabIndex = 7
@@ -142,7 +142,7 @@ Partial Class frmPaymentInformation
         Me.Panel34.Controls.Add(Me.Panel37)
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel34.Location = New System.Drawing.Point(971, 0)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(829, 62)
         Me.Panel34.TabIndex = 40
@@ -179,7 +179,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel12.Location = New System.Drawing.Point(392, 18)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(27, 32)
         Me.Panel12.TabIndex = 117
@@ -216,7 +216,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel11.Location = New System.Drawing.Point(598, 18)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(27, 32)
         Me.Panel11.TabIndex = 114
@@ -253,7 +253,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel35.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel35.Location = New System.Drawing.Point(816, 18)
-        Me.Panel35.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel35.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel35.Name = "Panel35"
         Me.Panel35.Size = New System.Drawing.Size(13, 32)
         Me.Panel35.TabIndex = 13
@@ -262,7 +262,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel36.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel36.Location = New System.Drawing.Point(0, 50)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel36.Name = "Panel36"
         Me.Panel36.Size = New System.Drawing.Size(829, 12)
         Me.Panel36.TabIndex = 13
@@ -271,7 +271,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel37.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel37.Location = New System.Drawing.Point(0, 0)
-        Me.Panel37.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel37.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel37.Name = "Panel37"
         Me.Panel37.Size = New System.Drawing.Size(829, 18)
         Me.Panel37.TabIndex = 13
@@ -299,7 +299,7 @@ Partial Class frmPaymentInformation
         Me.Panel14.Controls.Add(Me.Panel16)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(624, 62)
         Me.Panel14.TabIndex = 13
@@ -336,7 +336,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(0, 18)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(13, 32)
         Me.Panel15.TabIndex = 13
@@ -345,7 +345,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel17.Location = New System.Drawing.Point(0, 50)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(624, 12)
         Me.Panel17.TabIndex = 13
@@ -354,7 +354,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel16.Location = New System.Drawing.Point(0, 0)
-        Me.Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(624, 18)
         Me.Panel16.TabIndex = 13
@@ -363,7 +363,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 62)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(13, 835)
         Me.Panel1.TabIndex = 8
@@ -372,7 +372,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel2.Location = New System.Drawing.Point(1787, 62)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(13, 835)
         Me.Panel2.TabIndex = 9
@@ -381,7 +381,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel3.Location = New System.Drawing.Point(13, 885)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1774, 12)
         Me.Panel3.TabIndex = 9
@@ -390,7 +390,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(13, 62)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1774, 12)
         Me.Panel4.TabIndex = 9
@@ -405,7 +405,7 @@ Partial Class frmPaymentInformation
         Me.panelBody.Controls.Add(Me.GroupBox1)
         Me.panelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelBody.Location = New System.Drawing.Point(13, 74)
-        Me.panelBody.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panelBody.Margin = New System.Windows.Forms.Padding(4)
         Me.panelBody.Name = "panelBody"
         Me.panelBody.Size = New System.Drawing.Size(1774, 811)
         Me.panelBody.TabIndex = 10
@@ -420,7 +420,7 @@ Partial Class frmPaymentInformation
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 160)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(1140, 588)
         Me.ListView1.TabIndex = 132
@@ -452,7 +452,7 @@ Partial Class frmPaymentInformation
         Me.Panel22.Controls.Add(Me.Panel68)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel22.Location = New System.Drawing.Point(0, 748)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(1140, 63)
         Me.Panel22.TabIndex = 130
@@ -471,7 +471,7 @@ Partial Class frmPaymentInformation
         Me.btnUpload.ForeColor = System.Drawing.Color.White
         Me.btnUpload.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnUpload.Location = New System.Drawing.Point(953, 12)
-        Me.btnUpload.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUpload.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpload.Name = "btnUpload"
         Me.btnUpload.PressedDepth = 20
         Me.btnUpload.Size = New System.Drawing.Size(187, 51)
@@ -482,7 +482,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel25.Location = New System.Drawing.Point(387, 12)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(13, 51)
         Me.Panel25.TabIndex = 44
@@ -502,7 +502,7 @@ Partial Class frmPaymentInformation
         Me.btnReject.ForeColor = System.Drawing.Color.White
         Me.btnReject.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnReject.Location = New System.Drawing.Point(200, 12)
-        Me.btnReject.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReject.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReject.Name = "btnReject"
         Me.btnReject.PressedDepth = 20
         Me.btnReject.Size = New System.Drawing.Size(187, 51)
@@ -513,7 +513,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel23.Location = New System.Drawing.Point(187, 12)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(13, 51)
         Me.Panel23.TabIndex = 30
@@ -523,7 +523,7 @@ Partial Class frmPaymentInformation
         Me.Panel24.Controls.Add(Me.btnAccept)
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel24.Location = New System.Drawing.Point(0, 12)
-        Me.Panel24.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel24.Name = "Panel24"
         Me.Panel24.Size = New System.Drawing.Size(187, 51)
         Me.Panel24.TabIndex = 13
@@ -543,7 +543,7 @@ Partial Class frmPaymentInformation
         Me.btnAccept.ForeColor = System.Drawing.Color.White
         Me.btnAccept.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnAccept.Location = New System.Drawing.Point(0, 0)
-        Me.btnAccept.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAccept.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAccept.Name = "btnAccept"
         Me.btnAccept.PressedDepth = 20
         Me.btnAccept.Size = New System.Drawing.Size(187, 51)
@@ -554,7 +554,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel68.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel68.Location = New System.Drawing.Point(0, 0)
-        Me.Panel68.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel68.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel68.Name = "Panel68"
         Me.Panel68.Size = New System.Drawing.Size(1140, 12)
         Me.Panel68.TabIndex = 13
@@ -563,7 +563,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(0, 148)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1140, 12)
         Me.Panel8.TabIndex = 129
@@ -577,7 +577,7 @@ Partial Class frmPaymentInformation
         Me.Panel6.Controls.Add(Me.GroupBox2)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1140, 148)
         Me.Panel6.TabIndex = 128
@@ -593,9 +593,9 @@ Partial Class frmPaymentInformation
         Me.GroupBox5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.Red
         Me.GroupBox5.Location = New System.Drawing.Point(768, 0)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Size = New System.Drawing.Size(372, 148)
         Me.GroupBox5.TabIndex = 39
         Me.GroupBox5.TabStop = False
@@ -607,7 +607,7 @@ Partial Class frmPaymentInformation
         Me.Panel33.Controls.Add(Me.Label10)
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel33.Location = New System.Drawing.Point(17, 60)
-        Me.Panel33.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Size = New System.Drawing.Size(338, 72)
         Me.Panel33.TabIndex = 130
@@ -642,7 +642,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel38.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel38.Location = New System.Drawing.Point(17, 132)
-        Me.Panel38.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel38.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel38.Name = "Panel38"
         Me.Panel38.Size = New System.Drawing.Size(338, 12)
         Me.Panel38.TabIndex = 129
@@ -651,7 +651,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel39.Location = New System.Drawing.Point(355, 60)
-        Me.Panel39.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel39.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel39.Name = "Panel39"
         Me.Panel39.Size = New System.Drawing.Size(13, 84)
         Me.Panel39.TabIndex = 128
@@ -660,7 +660,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel40.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel40.Location = New System.Drawing.Point(17, 27)
-        Me.Panel40.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel40.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel40.Name = "Panel40"
         Me.Panel40.Size = New System.Drawing.Size(351, 33)
         Me.Panel40.TabIndex = 35
@@ -669,7 +669,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel41.Location = New System.Drawing.Point(4, 27)
-        Me.Panel41.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel41.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel41.Name = "Panel41"
         Me.Panel41.Size = New System.Drawing.Size(13, 117)
         Me.Panel41.TabIndex = 34
@@ -678,7 +678,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel32.Location = New System.Drawing.Point(755, 0)
-        Me.Panel32.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(13, 148)
         Me.Panel32.TabIndex = 37
@@ -694,9 +694,9 @@ Partial Class frmPaymentInformation
         Me.GroupBox4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.Green
         Me.GroupBox4.Location = New System.Drawing.Point(384, 0)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Size = New System.Drawing.Size(371, 148)
         Me.GroupBox4.TabIndex = 36
         Me.GroupBox4.TabStop = False
@@ -708,7 +708,7 @@ Partial Class frmPaymentInformation
         Me.Panel27.Controls.Add(Me.Label7)
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel27.Location = New System.Drawing.Point(17, 60)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel27.Name = "Panel27"
         Me.Panel27.Size = New System.Drawing.Size(337, 72)
         Me.Panel27.TabIndex = 130
@@ -743,7 +743,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel28.Location = New System.Drawing.Point(17, 132)
-        Me.Panel28.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel28.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel28.Name = "Panel28"
         Me.Panel28.Size = New System.Drawing.Size(337, 12)
         Me.Panel28.TabIndex = 129
@@ -752,7 +752,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel29.Location = New System.Drawing.Point(354, 60)
-        Me.Panel29.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel29.Name = "Panel29"
         Me.Panel29.Size = New System.Drawing.Size(13, 84)
         Me.Panel29.TabIndex = 128
@@ -761,7 +761,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel30.Location = New System.Drawing.Point(17, 27)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(350, 33)
         Me.Panel30.TabIndex = 35
@@ -770,7 +770,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel31.Location = New System.Drawing.Point(4, 27)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel31.Name = "Panel31"
         Me.Panel31.Size = New System.Drawing.Size(13, 117)
         Me.Panel31.TabIndex = 34
@@ -779,7 +779,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel7.Location = New System.Drawing.Point(371, 0)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(13, 148)
         Me.Panel7.TabIndex = 35
@@ -795,9 +795,9 @@ Partial Class frmPaymentInformation
         Me.GroupBox2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(371, 148)
         Me.GroupBox2.TabIndex = 10
         Me.GroupBox2.TabStop = False
@@ -809,7 +809,7 @@ Partial Class frmPaymentInformation
         Me.Panel21.Controls.Add(Me.Label3)
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel21.Location = New System.Drawing.Point(17, 60)
-        Me.Panel21.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel21.Name = "Panel21"
         Me.Panel21.Size = New System.Drawing.Size(337, 72)
         Me.Panel21.TabIndex = 130
@@ -844,7 +844,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel20.Location = New System.Drawing.Point(17, 132)
-        Me.Panel20.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel20.Name = "Panel20"
         Me.Panel20.Size = New System.Drawing.Size(337, 12)
         Me.Panel20.TabIndex = 129
@@ -853,7 +853,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel19.Location = New System.Drawing.Point(354, 60)
-        Me.Panel19.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(13, 84)
         Me.Panel19.TabIndex = 128
@@ -862,7 +862,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel18.Location = New System.Drawing.Point(17, 27)
-        Me.Panel18.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(350, 33)
         Me.Panel18.TabIndex = 35
@@ -871,7 +871,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel13.Location = New System.Drawing.Point(4, 27)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(13, 117)
         Me.Panel13.TabIndex = 34
@@ -880,7 +880,7 @@ Partial Class frmPaymentInformation
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel5.Location = New System.Drawing.Point(1140, 0)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(13, 811)
         Me.Panel5.TabIndex = 127
@@ -896,9 +896,9 @@ Partial Class frmPaymentInformation
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.GroupBox1.Location = New System.Drawing.Point(1153, 0)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(621, 811)
         Me.GroupBox1.TabIndex = 126
         Me.GroupBox1.TabStop = False
@@ -909,7 +909,7 @@ Partial Class frmPaymentInformation
         Me.Panel10.Controls.Add(Me.pbxDepositSlip)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel10.Location = New System.Drawing.Point(17, 39)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(587, 756)
         Me.Panel10.TabIndex = 33
@@ -919,7 +919,7 @@ Partial Class frmPaymentInformation
         Me.pbxDepositSlip.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbxDepositSlip.Image = CType(resources.GetObject("pbxDepositSlip.Image"), System.Drawing.Image)
         Me.pbxDepositSlip.Location = New System.Drawing.Point(0, 0)
-        Me.pbxDepositSlip.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbxDepositSlip.Margin = New System.Windows.Forms.Padding(4)
         Me.pbxDepositSlip.Name = "pbxDepositSlip"
         Me.pbxDepositSlip.Size = New System.Drawing.Size(587, 756)
         Me.pbxDepositSlip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -931,7 +931,7 @@ Partial Class frmPaymentInformation
         Me.Guna2Panel8.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 1)
         Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel8.Location = New System.Drawing.Point(17, 795)
-        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel8.Name = "Guna2Panel8"
         Me.Guna2Panel8.Size = New System.Drawing.Size(587, 12)
         Me.Guna2Panel8.TabIndex = 3
@@ -942,7 +942,7 @@ Partial Class frmPaymentInformation
         Me.Guna2Panel7.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel7.Location = New System.Drawing.Point(17, 27)
-        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel7.Name = "Guna2Panel7"
         Me.Guna2Panel7.Size = New System.Drawing.Size(587, 12)
         Me.Guna2Panel7.TabIndex = 4
@@ -952,7 +952,7 @@ Partial Class frmPaymentInformation
         Me.Guna2Panel6.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 1, 1)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Right
         Me.Guna2Panel6.Location = New System.Drawing.Point(604, 27)
-        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel6.Name = "Guna2Panel6"
         Me.Guna2Panel6.Size = New System.Drawing.Size(13, 780)
         Me.Guna2Panel6.TabIndex = 5
@@ -962,7 +962,7 @@ Partial Class frmPaymentInformation
         Me.Guna2Panel5.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 0, 1)
         Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel5.Location = New System.Drawing.Point(4, 27)
-        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.Size = New System.Drawing.Size(13, 780)
         Me.Guna2Panel5.TabIndex = 2
@@ -980,7 +980,7 @@ Partial Class frmPaymentInformation
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel9)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPaymentInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel9.ResumeLayout(False)

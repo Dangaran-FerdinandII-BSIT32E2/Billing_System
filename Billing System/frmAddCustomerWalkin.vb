@@ -199,12 +199,19 @@ Public Class frmAddCustomerWalkin
             Next
 
             If filled AndAlso checkTIN() Then
-                Call saveWalkinInformation()
-                Call saveWalkinCart()
-                Call savetoOrders()
+                If txtPhoneNumber.Text.Length = 12 Then
+                    Call saveWalkinInformation()
+                    Call saveWalkinCart()
+                    Call savetoOrders()
 
-                MsgBox("Order saved successfully!", MsgBoxStyle.Information, "Walkin Status")
-                Me.Close()
+                    MsgBox("Order saved successfully!", MsgBoxStyle.Information, "Walkin Status")
+                    Me.Close()
+                Else
+                    MsgBox("Enter a valid phone number!", MsgBoxStyle.Critical, "Phone Number Error")
+                    Return
+                End If
+
+
             End If
         Else
             MsgBox("Please add products into the cart.", MsgBoxStyle.Critical, "Cart Error")
@@ -321,9 +328,17 @@ Public Class frmAddCustomerWalkin
                     .Parameters.AddWithValue("@DateOrdered", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
                     .Parameters.AddWithValue("@DeliveryAddress", txtDeliveryAddress.Text)
                     .Parameters.AddWithValue("@PONo", 0)
+
                     .Parameters.AddWithValue("@isRental", 0)
                     .Parameters.AddWithValue("@RentDays", 0)
                     .Parameters.AddWithValue("@RentDueDate", Nothing)
+
+                    If chckRentOrder.Checked = True Then
+                        .Parameters("@isRental").Value = 1
+                        .Parameters("@RentDays").Value = txtRentDays.Text
+                        .Parameters("@RentDueDate").Value = Date.Today.AddDays(Convert.ToInt32(txtRentDays.Text))
+                    End If
+
                     .ExecuteNonQuery()
                 End With
             Next
@@ -382,8 +397,9 @@ Public Class frmAddCustomerWalkin
 
     Private Sub txtPhoneNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhoneNumber.KeyPress
         If Not (Char.IsDigit(e.KeyChar) OrElse
-            e.KeyChar = ChrW(Keys.Back) OrElse
-            (e.KeyChar = "+" AndAlso txtPhoneNumber.Text.Length = 0)) Then
+        e.KeyChar = ChrW(Keys.Back) OrElse
+        (e.KeyChar = "6" AndAlso txtPhoneNumber.Text.Length = 0) OrElse
+        (e.KeyChar = "3" AndAlso txtPhoneNumber.Text = "6")) Then
             e.Handled = True
         End If
     End Sub
@@ -394,7 +410,9 @@ Public Class frmAddCustomerWalkin
         End If
     End Sub
 
-    Private Sub txtRentDays_TextChanged(sender As Object, e As EventArgs) Handles txtRentDays.TextChanged
-
+    Private Sub txtRentDays_KeyPress(sender As Object, e As KeyPressEventArgs) 
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
     End Sub
 End Class

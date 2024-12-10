@@ -22,17 +22,8 @@ Partial Class frmDeliveryInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDeliveryInformation))
         Me.panelBody = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnBrowse = New Guna.UI2.WinForms.Guna2Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.pbxDelivery = New System.Windows.Forms.PictureBox()
-        Me.Panel63 = New System.Windows.Forms.Panel()
-        Me.Panel62 = New System.Windows.Forms.Panel()
-        Me.Panel61 = New System.Windows.Forms.Panel()
-        Me.Panel60 = New System.Windows.Forms.Panel()
         Me.Panel42 = New System.Windows.Forms.Panel()
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -75,11 +66,27 @@ Partial Class frmDeliveryInformation
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
+        Me.QuotationImage = New System.Windows.Forms.TabPage()
+        Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.UploadPayment = New System.Windows.Forms.TabPage()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel12 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.btnUploadProofDelivery = New Guna.UI2.WinForms.Guna2Button()
+        Me.pbxProofDelivery = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.btnUploadSignedSalesInvoice = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.pbxSignedSalesInvoice = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.panelBody.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxDelivery, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel30.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Panel23.SuspendLayout()
@@ -93,6 +100,13 @@ Partial Class frmDeliveryInformation
         Me.Panel31.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel14.SuspendLayout()
+        Me.Guna2TabControl1.SuspendLayout()
+        Me.QuotationImage.SuspendLayout()
+        Me.UploadPayment.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        CType(Me.pbxProofDelivery, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel6.SuspendLayout()
+        CType(Me.pbxSignedSalesInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelBody
@@ -109,7 +123,7 @@ Partial Class frmDeliveryInformation
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.GroupBox1)
+        Me.Panel1.Controls.Add(Me.Guna2TabControl1)
         Me.Panel1.Controls.Add(Me.Panel42)
         Me.Panel1.Controls.Add(Me.Panel30)
         Me.Panel1.Controls.Add(Me.Panel25)
@@ -122,108 +136,6 @@ Partial Class frmDeliveryInformation
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1371, 688)
         Me.Panel1.TabIndex = 4
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.btnBrowse)
-        Me.GroupBox1.Controls.Add(Me.PictureBox2)
-        Me.GroupBox1.Controls.Add(Me.pbxDelivery)
-        Me.GroupBox1.Controls.Add(Me.Panel63)
-        Me.GroupBox1.Controls.Add(Me.Panel62)
-        Me.GroupBox1.Controls.Add(Me.Panel61)
-        Me.GroupBox1.Controls.Add(Me.Panel60)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(897, 12)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(461, 664)
-        Me.GroupBox1.TabIndex = 124
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Proof of Delivery"
-        '
-        'btnBrowse
-        '
-        Me.btnBrowse.BackColor = System.Drawing.Color.Transparent
-        Me.btnBrowse.BorderRadius = 15
-        Me.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBrowse.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnBrowse.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnBrowse.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnBrowse.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnBrowse.FillColor = System.Drawing.Color.OrangeRed
-        Me.btnBrowse.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnBrowse.ForeColor = System.Drawing.Color.White
-        Me.btnBrowse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnBrowse.Location = New System.Drawing.Point(167, 320)
-        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(5)
-        Me.btnBrowse.Name = "btnBrowse"
-        Me.btnBrowse.PressedDepth = 20
-        Me.btnBrowse.ShadowDecoration.BorderRadius = 15
-        Me.btnBrowse.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(2)
-        Me.btnBrowse.Size = New System.Drawing.Size(145, 44)
-        Me.btnBrowse.TabIndex = 10000013
-        Me.btnBrowse.Text = "Browse"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(179, 214)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(120, 103)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 10000012
-        Me.PictureBox2.TabStop = False
-        '
-        'pbxDelivery
-        '
-        Me.pbxDelivery.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbxDelivery.Location = New System.Drawing.Point(17, 39)
-        Me.pbxDelivery.Margin = New System.Windows.Forms.Padding(4)
-        Me.pbxDelivery.Name = "pbxDelivery"
-        Me.pbxDelivery.Size = New System.Drawing.Size(427, 609)
-        Me.pbxDelivery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbxDelivery.TabIndex = 3
-        Me.pbxDelivery.TabStop = False
-        '
-        'Panel63
-        '
-        Me.Panel63.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel63.Location = New System.Drawing.Point(17, 648)
-        Me.Panel63.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel63.Name = "Panel63"
-        Me.Panel63.Size = New System.Drawing.Size(427, 12)
-        Me.Panel63.TabIndex = 2
-        '
-        'Panel62
-        '
-        Me.Panel62.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel62.Location = New System.Drawing.Point(444, 39)
-        Me.Panel62.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel62.Name = "Panel62"
-        Me.Panel62.Size = New System.Drawing.Size(13, 621)
-        Me.Panel62.TabIndex = 1
-        '
-        'Panel61
-        '
-        Me.Panel61.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel61.Location = New System.Drawing.Point(4, 39)
-        Me.Panel61.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel61.Name = "Panel61"
-        Me.Panel61.Size = New System.Drawing.Size(13, 621)
-        Me.Panel61.TabIndex = 1
-        '
-        'Panel60
-        '
-        Me.Panel60.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel60.Location = New System.Drawing.Point(4, 27)
-        Me.Panel60.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel60.Name = "Panel60"
-        Me.Panel60.Size = New System.Drawing.Size(453, 12)
-        Me.Panel60.TabIndex = 0
         '
         'Panel42
         '
@@ -737,6 +649,265 @@ Partial Class frmDeliveryInformation
         Me.Panel16.Size = New System.Drawing.Size(344, 18)
         Me.Panel16.TabIndex = 13
         '
+        'Guna2TabControl1
+        '
+        Me.Guna2TabControl1.Controls.Add(Me.QuotationImage)
+        Me.Guna2TabControl1.Controls.Add(Me.UploadPayment)
+        Me.Guna2TabControl1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2TabControl1.ItemSize = New System.Drawing.Size(222, 40)
+        Me.Guna2TabControl1.Location = New System.Drawing.Point(897, 12)
+        Me.Guna2TabControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2TabControl1.Name = "Guna2TabControl1"
+        Me.Guna2TabControl1.SelectedIndex = 0
+        Me.Guna2TabControl1.Size = New System.Drawing.Size(461, 664)
+        Me.Guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
+        Me.Guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Guna2TabControl1.TabButtonHoverState.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.Guna2TabControl1.TabButtonHoverState.ForeColor = System.Drawing.Color.White
+        Me.Guna2TabControl1.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Guna2TabControl1.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty
+        Me.Guna2TabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Guna2TabControl1.TabButtonIdleState.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.Guna2TabControl1.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(156, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.Guna2TabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Guna2TabControl1.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty
+        Me.Guna2TabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.Guna2TabControl1.TabButtonSelectedState.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White
+        Me.Guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.OrangeRed
+        Me.Guna2TabControl1.TabButtonSize = New System.Drawing.Size(222, 40)
+        Me.Guna2TabControl1.TabIndex = 124
+        Me.Guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
+        '
+        'QuotationImage
+        '
+        Me.QuotationImage.Controls.Add(Me.pbxProofDelivery)
+        Me.QuotationImage.Controls.Add(Me.Panel5)
+        Me.QuotationImage.Controls.Add(Me.Guna2Panel7)
+        Me.QuotationImage.Controls.Add(Me.Guna2Panel6)
+        Me.QuotationImage.Controls.Add(Me.Guna2Panel5)
+        Me.QuotationImage.Location = New System.Drawing.Point(4, 44)
+        Me.QuotationImage.Margin = New System.Windows.Forms.Padding(4)
+        Me.QuotationImage.Name = "QuotationImage"
+        Me.QuotationImage.Padding = New System.Windows.Forms.Padding(4)
+        Me.QuotationImage.Size = New System.Drawing.Size(453, 616)
+        Me.QuotationImage.TabIndex = 3
+        Me.QuotationImage.Text = "Proof of Delivery"
+        Me.QuotationImage.ToolTipText = "Company picture ID"
+        Me.QuotationImage.UseVisualStyleBackColor = True
+        '
+        'Guna2Panel7
+        '
+        Me.Guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2Panel7.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2Panel7.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel7.Location = New System.Drawing.Point(17, 4)
+        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel7.Name = "Guna2Panel7"
+        Me.Guna2Panel7.Size = New System.Drawing.Size(419, 12)
+        Me.Guna2Panel7.TabIndex = 42
+        '
+        'Guna2Panel6
+        '
+        Me.Guna2Panel6.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2Panel6.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 1, 1)
+        Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Guna2Panel6.Location = New System.Drawing.Point(436, 4)
+        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel6.Name = "Guna2Panel6"
+        Me.Guna2Panel6.Size = New System.Drawing.Size(13, 608)
+        Me.Guna2Panel6.TabIndex = 1
+        '
+        'Guna2Panel5
+        '
+        Me.Guna2Panel5.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2Panel5.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 0, 1)
+        Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel5.Location = New System.Drawing.Point(4, 4)
+        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel5.Name = "Guna2Panel5"
+        Me.Guna2Panel5.Size = New System.Drawing.Size(13, 608)
+        Me.Guna2Panel5.TabIndex = 0
+        '
+        'UploadPayment
+        '
+        Me.UploadPayment.Controls.Add(Me.pbxSignedSalesInvoice)
+        Me.UploadPayment.Controls.Add(Me.Panel6)
+        Me.UploadPayment.Controls.Add(Me.Guna2Panel2)
+        Me.UploadPayment.Controls.Add(Me.Guna2Panel11)
+        Me.UploadPayment.Controls.Add(Me.Guna2Panel12)
+        Me.UploadPayment.Location = New System.Drawing.Point(4, 44)
+        Me.UploadPayment.Margin = New System.Windows.Forms.Padding(4)
+        Me.UploadPayment.Name = "UploadPayment"
+        Me.UploadPayment.Padding = New System.Windows.Forms.Padding(4)
+        Me.UploadPayment.Size = New System.Drawing.Size(453, 616)
+        Me.UploadPayment.TabIndex = 4
+        Me.UploadPayment.Text = "Signed Sales Invoice"
+        Me.UploadPayment.UseVisualStyleBackColor = True
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2Panel2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2Panel2.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel2.Location = New System.Drawing.Point(17, 4)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.Size = New System.Drawing.Size(419, 12)
+        Me.Guna2Panel2.TabIndex = 10000010
+        '
+        'Guna2Panel11
+        '
+        Me.Guna2Panel11.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2Panel11.CustomBorderThickness = New System.Windows.Forms.Padding(0, 1, 1, 1)
+        Me.Guna2Panel11.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Guna2Panel11.Location = New System.Drawing.Point(436, 4)
+        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel11.Name = "Guna2Panel11"
+        Me.Guna2Panel11.Size = New System.Drawing.Size(13, 608)
+        Me.Guna2Panel11.TabIndex = 5
+        '
+        'Guna2Panel12
+        '
+        Me.Guna2Panel12.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2Panel12.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 0, 1)
+        Me.Guna2Panel12.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel12.Location = New System.Drawing.Point(4, 4)
+        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel12.Name = "Guna2Panel12"
+        Me.Guna2Panel12.Size = New System.Drawing.Size(13, 608)
+        Me.Guna2Panel12.TabIndex = 2
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.btnUploadProofDelivery)
+        Me.Panel5.Controls.Add(Me.Panel10)
+        Me.Panel5.Controls.Add(Me.Panel13)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel5.Location = New System.Drawing.Point(17, 537)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(419, 75)
+        Me.Panel5.TabIndex = 44
+        '
+        'Panel10
+        '
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel10.Location = New System.Drawing.Point(0, 0)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(419, 12)
+        Me.Panel10.TabIndex = 13
+        '
+        'Panel13
+        '
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel13.Location = New System.Drawing.Point(0, 63)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(419, 12)
+        Me.Panel13.TabIndex = 44
+        '
+        'btnUploadProofDelivery
+        '
+        Me.btnUploadProofDelivery.BorderRadius = 8
+        Me.btnUploadProofDelivery.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUploadProofDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnUploadProofDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnUploadProofDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnUploadProofDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnUploadProofDelivery.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnUploadProofDelivery.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnUploadProofDelivery.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnUploadProofDelivery.ForeColor = System.Drawing.Color.White
+        Me.btnUploadProofDelivery.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnUploadProofDelivery.Location = New System.Drawing.Point(0, 12)
+        Me.btnUploadProofDelivery.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnUploadProofDelivery.Name = "btnUploadProofDelivery"
+        Me.btnUploadProofDelivery.PressedDepth = 20
+        Me.btnUploadProofDelivery.Size = New System.Drawing.Size(419, 51)
+        Me.btnUploadProofDelivery.TabIndex = 45
+        Me.btnUploadProofDelivery.Text = "Upload"
+        '
+        'pbxProofDelivery
+        '
+        Me.pbxProofDelivery.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbxProofDelivery.ImageRotate = 0!
+        Me.pbxProofDelivery.Location = New System.Drawing.Point(17, 16)
+        Me.pbxProofDelivery.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pbxProofDelivery.Name = "pbxProofDelivery"
+        Me.pbxProofDelivery.Size = New System.Drawing.Size(419, 521)
+        Me.pbxProofDelivery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxProofDelivery.TabIndex = 45
+        Me.pbxProofDelivery.TabStop = False
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.btnUploadSignedSalesInvoice)
+        Me.Panel6.Controls.Add(Me.Panel7)
+        Me.Panel6.Controls.Add(Me.Panel8)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel6.Location = New System.Drawing.Point(17, 537)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(419, 75)
+        Me.Panel6.TabIndex = 10000011
+        '
+        'btnUploadSignedSalesInvoice
+        '
+        Me.btnUploadSignedSalesInvoice.BorderRadius = 8
+        Me.btnUploadSignedSalesInvoice.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUploadSignedSalesInvoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnUploadSignedSalesInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnUploadSignedSalesInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnUploadSignedSalesInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnUploadSignedSalesInvoice.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnUploadSignedSalesInvoice.FillColor = System.Drawing.Color.OrangeRed
+        Me.btnUploadSignedSalesInvoice.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnUploadSignedSalesInvoice.ForeColor = System.Drawing.Color.White
+        Me.btnUploadSignedSalesInvoice.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnUploadSignedSalesInvoice.Location = New System.Drawing.Point(0, 12)
+        Me.btnUploadSignedSalesInvoice.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnUploadSignedSalesInvoice.Name = "btnUploadSignedSalesInvoice"
+        Me.btnUploadSignedSalesInvoice.PressedDepth = 20
+        Me.btnUploadSignedSalesInvoice.Size = New System.Drawing.Size(419, 51)
+        Me.btnUploadSignedSalesInvoice.TabIndex = 45
+        Me.btnUploadSignedSalesInvoice.Text = "Upload"
+        '
+        'Panel7
+        '
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(419, 12)
+        Me.Panel7.TabIndex = 13
+        '
+        'Panel8
+        '
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel8.Location = New System.Drawing.Point(0, 63)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(419, 12)
+        Me.Panel8.TabIndex = 44
+        '
+        'pbxSignedSalesInvoice
+        '
+        Me.pbxSignedSalesInvoice.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbxSignedSalesInvoice.ImageRotate = 0!
+        Me.pbxSignedSalesInvoice.Location = New System.Drawing.Point(17, 16)
+        Me.pbxSignedSalesInvoice.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pbxSignedSalesInvoice.Name = "pbxSignedSalesInvoice"
+        Me.pbxSignedSalesInvoice.Size = New System.Drawing.Size(419, 521)
+        Me.pbxSignedSalesInvoice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxSignedSalesInvoice.TabIndex = 10000012
+        Me.pbxSignedSalesInvoice.TabStop = False
+        '
         'frmDeliveryInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -750,9 +921,6 @@ Partial Class frmDeliveryInformation
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.panelBody.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxDelivery, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel30.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.Panel23.ResumeLayout(False)
@@ -770,6 +938,13 @@ Partial Class frmDeliveryInformation
         Me.Panel9.ResumeLayout(False)
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
+        Me.Guna2TabControl1.ResumeLayout(False)
+        Me.QuotationImage.ResumeLayout(False)
+        Me.UploadPayment.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        CType(Me.pbxProofDelivery, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel6.ResumeLayout(False)
+        CType(Me.pbxSignedSalesInvoice, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -782,14 +957,6 @@ Partial Class frmDeliveryInformation
     Friend WithEvents Panel17 As Panel
     Friend WithEvents Panel16 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btnBrowse As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents pbxDelivery As PictureBox
-    Friend WithEvents Panel63 As Panel
-    Friend WithEvents Panel62 As Panel
-    Friend WithEvents Panel61 As Panel
-    Friend WithEvents Panel60 As Panel
     Friend WithEvents Panel42 As Panel
     Friend WithEvents Panel30 As Panel
     Friend WithEvents GroupBox2 As GroupBox
@@ -826,4 +993,23 @@ Partial Class frmDeliveryInformation
     Friend WithEvents Panel22 As Panel
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Panel12 As Panel
+    Friend WithEvents Guna2TabControl1 As Guna.UI2.WinForms.Guna2TabControl
+    Friend WithEvents QuotationImage As TabPage
+    Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents UploadPayment As TabPage
+    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel11 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel12 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents btnUploadProofDelivery As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents pbxProofDelivery As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents pbxSignedSalesInvoice As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents btnUploadSignedSalesInvoice As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel8 As Panel
 End Class

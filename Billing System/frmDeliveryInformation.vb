@@ -27,6 +27,8 @@ Public Class frmDeliveryInformation
 
         Call loadDeliveryImage()
         Call loadDeliveryDetails()
+
+        Call loadSignedInvoiceImage()
     End Sub
 
     Private Sub frmManageCollectionV2_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -130,7 +132,7 @@ Public Class frmDeliveryInformation
         End Try
     End Sub
 
-    Private Sub btnBrowseDelivery_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
+    Private Sub btnBrowseDelivery_Click(sender As Object, e As EventArgs)
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -269,6 +271,64 @@ Public Class frmDeliveryInformation
             End With
         Catch ex As Exception
             MsgBox("An error occurred frmAdminSettings(loadActivity): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub loadSignedInvoiceImage()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            sql = "SELECT imgSigned FROM tblbilling WHERE BillingID = '" & billingid & "'"
+            cmd = New MySqlCommand(sql, cn)
+
+            If Not dr.IsClosed Then
+                dr.Close()
+            End If
+
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                If dr("imgSigned") IsNot DBNull.Value AndAlso dr("imgSigned") IsNot Nothing Then
+                    Try
+                        Dim pic As Byte() = DirectCast(dr("imgSigned"), Byte())
+                        If pic.Length > 0 Then
+                            'Dim ms As New MemoryStream(pic)
+                            Using ms As New MemoryStream(pic)
+                                pbxDelivery.Image = Image.FromStream(ms)
+                            End Using
+
+                            PictureBox2.Visible = False
+                            btnBrowse.Visible = False
+
+                            btnConfirm.Enabled = False
+
+                        Else
+                            pbxDelivery.Image = Nothing
+                            PictureBox2.Visible = True
+                            btnBrowse.Visible = True
+
+                            btnConfirm.Enabled = True
+                        End If
+
+                    Catch ex As Exception
+                        MsgBox("Error loading image: " & ex.Message)
+                    End Try
+                Else
+                    pbxDelivery.Image = Nothing
+                    PictureBox2.Visible = True
+                    btnBrowse.Visible = True
+
+                    btnConfirm.Enabled = True
+                End If
+                dr.Close()
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmManageCollectionV2(loadSignedInvoiceImage): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()

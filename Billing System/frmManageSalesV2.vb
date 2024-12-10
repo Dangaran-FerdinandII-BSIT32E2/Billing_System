@@ -247,10 +247,10 @@ Public Class frmManageSalesV2
 
         lblBillingID.Text = getBillingID()
 
-        'Call savetoBilling()
-        'Call savetoBillInvoice()
-        'Call updateOrder()
-        'Call updateQuantityProduct()
+        Call savetoBilling()
+        Call savetoBillInvoice()
+        Call updateOrder()
+        Call updateQuantityProduct()
 
         Dim email As ListViewItem = ListView1.Items(0)
         frmPrintSalesInvoice.billingid = lblBillingID.Text
@@ -320,13 +320,14 @@ Public Class frmManageSalesV2
                 Dim productid As String = item.SubItems(7).Text
                 Dim orderid As String = item.SubItems(5).Text
 
-                sql = "INSERT INTO tblbillinvoice(BillingID, OrderID, ProductID, Amount) VALUES(@BillingID, @OrderID, @ProductID, @Amount)"
+                sql = "INSERT INTO tblbillinvoice(BillingID, OrderID, ProductID, Amount, Quantity) VALUES(@BillingID, @OrderID, @ProductID, @Amount, @Quantity)"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
                     .Parameters.AddWithValue("@BillingID", lblBillingID.Text)
                     .Parameters.AddWithValue("@OrderID", orderid)
                     .Parameters.AddWithValue("@ProductID", productid)
-                    .Parameters.AddWithValue("@Amount", trueadjustedvalue)
+                    .Parameters.AddWithValue("@Amount", item.SubItems(3).Text)
+                    .Parameters.AddWithValue("@Quantity", item.SubItems(0).Text)
                     .ExecuteNonQuery()
                 End With
             Next

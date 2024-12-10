@@ -34,7 +34,7 @@ Public Class frmManageOrder
     Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click, ListView1.DoubleClick
         If ListView1.SelectedItems.Count > 0 Then
             frmListofCustomerOrder.lblCompanyName.Text = ListView1.SelectedItems(0).SubItems(1).Text
-            frmListofCustomerOrder.orderid = ListView1.SelectedItems(0).SubItems(6).Text
+            frmListofCustomerOrder.orderid = ListView1.SelectedItems(0).SubItems(0).Text
             frmListofCustomerOrder.custid = ListView1.SelectedItems(0).SubItems(7).Text
 
             frmListofCustomerOrder.order = True
@@ -85,16 +85,17 @@ Public Class frmManageOrder
                 ListView1.Items.Clear()
 
                 Do While dr.Read = True
-                    x = New ListViewItem((dr("LastName").ToString) & ", " & (dr("FirstName").ToString()))
+                    x = New ListViewItem(dr("OrderID").ToString)
                     x.Font = New Font("Arial", 12, FontStyle.Regular)
+                    x.SubItems.Add((dr("LastName").ToString) & ", " & (dr("FirstName").ToString()))
                     x.SubItems.Add(dr("CompanyName").ToString())
                     x.SubItems.Add(dr("PhoneNumber").ToString())
                     x.SubItems.Add(dr("Email").ToString())
-                    x.SubItems.Add(dr("OrderDateF").ToString()) ' 4
+                    x.SubItems.Add(dr("OrderDateF").ToString()) ' 5
                     x.SubItems.Add(GetStatusText(dr("Status").ToString))
-                    x.SubItems.Add(dr("OrderID").ToString) '6
-                    x.SubItems.Add(dr("CustomerID").ToString)
-                    x.SubItems.Add(dr("QuotationStatus").ToString)
+                    x.SubItems.Add(dr("CustomerID").ToString) '7
+                    x.SubItems.Add(dr("QuotationStatus").ToString) '8
+                    x.SubItems.Add(dr("Status").ToString) '9
 
                     If dr("TypeofOrder").ToString = "Walkin" Then
                         x.ForeColor = Color.Blue
@@ -159,7 +160,7 @@ Public Class frmManageOrder
         If ListView1.SelectedItems.Count > 0 Then
 
             frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(7).Text
-            frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(6).Text
+            frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(0).Text
 
             Me.Close()
             frmManageSalesV2.TopLevel = False
@@ -181,9 +182,10 @@ Public Class frmManageOrder
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
             Dim quotationstatus As String = ListView1.SelectedItems(0).SubItems(8).Text
+            Dim status As String = ListView1.SelectedItems(0).SubItems(9).Text
             btnViewOrder.Enabled = True
             btnCancel.Enabled = True
-            If Not String.IsNullOrWhiteSpace(quotationstatus) AndAlso quotationstatus = "True" Then
+            If Not String.IsNullOrWhiteSpace(quotationstatus) AndAlso quotationstatus = "True" AndAlso status > 2 Then
                 btnCreateInvoice.Enabled = True
             Else
                 btnCreateInvoice.Enabled = False

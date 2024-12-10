@@ -78,7 +78,7 @@ Public Class frmPrintSalesInvoice
                 cn.Open()
             End If
 
-            da.SelectCommand = New MySqlCommand("SELECT COALESCE(w.CompanyName, c.CompanyName) AS CompanyName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress,  DATE_FORMAT(b.DatePrinted, '%M %d, %Y') AS DatePrinted, b.ProductOrder AS ProductOrder, b.Terms AS Terms, b.SalesMan AS Salesman, COALESCE(w.TIN, c.TIN) AS TIN, o.Quantity AS Quantity, p.ProductName AS ProductName, p.Description AS Description, CONCAT('₱ ', FORMAT(p.SellingPrice, 2)) AS SellingPrice, CONCAT('₱ ', FORMAT(o.Quantity * p.SellingPrice, 2)) AS Amount, CONCAT('₱ ', FORMAT(SUM(o.Quantity * p.SellingPrice), 2)) AS FinalAmount, CONCAT('₱ ', FORMAT(b.VATableSales, 2)) AS VATableSales, CONCAT('₱ ', FORMAT(b.VAT, 2)) AS VAT FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'", cn)
+            da.SelectCommand = New MySqlCommand("SELECT COALESCE(w.CompanyName, c.CompanyName) AS CompanyName, COALESCE(w.Address, c.Address) AS Address, COALESCE( w.DeliveryAddress, o.DeliveryAddress ) AS DeliveryAddress, DATE_FORMAT(b.DatePrinted, '%M %d, %Y') AS DatePrinted, b.ProductOrder AS ProductOrder, b.Terms AS Terms, b.SalesMan AS Salesman, COALESCE(w.TIN, c.TIN) AS TIN, bi.Quantity AS Quantity, p.ProductName AS ProductName, p.Description AS Description, CONCAT('₱ ', FORMAT(p.SellingPrice, 2)) AS SellingPrice, CONCAT('₱ ',FORMAT(o.Quantity * p.SellingPrice, 2)) AS Amount, CONCAT('₱ ', FORMAT(b.FinalPrice, 2)) AS FinalAmount, CONCAT('₱ ', FORMAT(b.VATableSales, 2)) AS VATableSales, CONCAT('₱ ', FORMAT(b.VAT, 2)) AS VAT FROM tblbillinvoice bi LEFT JOIN tblbilling b ON b.BillingID = bi.BillingID LEFT JOIN tblorder o ON o.OrderID = bi.OrderID LEFT JOIN tblproduct p ON p.ProductID = bi.ProductID LEFT JOIN tblcustomer c ON b.CustomerID = c.CustomerID LEFT JOIN tblorderwalkin ow ON ow.OrderID = bi.OrderID LEFT JOIN tblwalkin w ON w.WalkinID = ow.WalkinID WHERE b.BillingID = '" & billingid & "'GROUP BY bi.ProductID", cn)
             da.Fill(ds.Tables("dtPrintBillingStatement"))
 
             If cn.State = ConnectionState.Open Then
@@ -182,7 +182,7 @@ Public Class frmPrintSalesInvoice
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
 
-            mail.From = New MailAddress("rambiccorpo@gmail.com") ' Replace with your email
+            mail.From = New MailAddress("corporationrambic@gmail.com") ' Replace with your email
             mail.To.Add(email)
 
             mail.Subject = "Sales Invoice for Order #" & orderid & " – Rambic Corporation"
@@ -237,7 +237,7 @@ Public Class frmPrintSalesInvoice
                     mail.Attachments.Add(imageAttachment)
 
                     smtpServer.Port = 587
-                    smtpServer.Credentials = New System.Net.NetworkCredential("rambiccorpo@gmail.com", "xcyu gtqv ctvk kzqa") ' Use secure methods
+                    smtpServer.Credentials = New System.Net.NetworkCredential("corporationrambic@gmail.com", "rxyx ldrd ngxp twjl") ' Use secure methods
                     smtpServer.EnableSsl = True
                     smtpServer.Send(mail)
 

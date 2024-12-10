@@ -180,7 +180,7 @@ Public Class frmPrintBillingInvoiceV2
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
 
-            mail.From = New MailAddress("rambiccorpo@gmail.com") ' Replace with your email
+            mail.From = New MailAddress("corporationrambic@gmail.com") ' Replace with your email
             mail.To.Add(email)
 
             mail.Subject = "BILLING STATEMENT FOR Order Number " & orderid
@@ -242,8 +242,7 @@ Public Class frmPrintBillingInvoiceV2
                     mail.Attachments.Add(imageAttachment)
 
                     smtpServer.Port = 587
-                    smtpServer.Credentials = New System.Net.NetworkCredential("rambiccorpo@gmail.com", "xcyu gtqv ctvk kzqa") ' Use secure methods
-                    smtpServer.EnableSsl = True
+                    smtpServer.Credentials = New System.Net.NetworkCredential("corporationrambic@gmail.com", "rxyx ldrd ngxp twjl") ' Use secure methods                    smtpServer.EnableSsl = True
                     smtpServer.Send(mail)
 
                 End Using

@@ -4,6 +4,7 @@ Imports Guna.UI2.WinForms
 Imports Guna.UI2.AnimatorNS
 Imports System.Web.UI.Design
 Imports System.ComponentModel
+Imports System.Diagnostics
 
 Public Class frmAdminDashboard
     Dim removeThickness As New Padding(0, 0, 0, 0) 'use to remove border left
@@ -596,5 +597,11 @@ Public Class frmAdminDashboard
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         'frmPrintSalesInvoice.ShowDialog()
         frmPrintBillingInvoiceV2.ShowDialog()
+    End Sub
+
+    Private Sub btnShowWebsite_Click(sender As Object, e As EventArgs) Handles btnShowWebsite.Click
+        Dim url As String = "http://localhost/CapstoneWebsite/login-admin.php"
+        Process.Start(New ProcessStartInfo(url) With {.UseShellExecute = True})
+
     End Sub
 End Class
