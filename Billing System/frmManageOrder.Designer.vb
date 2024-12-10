@@ -89,6 +89,7 @@ Partial Class frmManageOrder
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.panelBody.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel37.SuspendLayout()
@@ -163,7 +164,7 @@ Partial Class frmManageOrder
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ContactPerson, Me.CompanyName, Me.ContactNumber, Me.EmailAddress, Me.OrderedDate, Me.Stat})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ContactPerson, Me.CompanyName, Me.ContactNumber, Me.EmailAddress, Me.OrderedDate, Me.Stat})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
@@ -880,6 +881,11 @@ Partial Class frmManageOrder
         Me.Panel16.Size = New System.Drawing.Size(445, 18)
         Me.Panel16.TabIndex = 13
         '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Order No"
+        Me.ColumnHeader1.Width = 100
+        '
         'frmManageOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -987,4 +993,5 @@ Partial Class frmManageOrder
     Friend WithEvents EmailAddress As ColumnHeader
     Friend WithEvents OrderedDate As ColumnHeader
     Friend WithEvents Stat As ColumnHeader
+    Friend WithEvents ColumnHeader1 As ColumnHeader
 End Class

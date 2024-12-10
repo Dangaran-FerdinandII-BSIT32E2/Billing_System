@@ -2,6 +2,7 @@
 Imports System.Data.OleDb
 Imports System.IO
 Imports System.Runtime.InteropServices.ComTypes
+Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.Crud
 Public Class frmDeliveryInformation
@@ -19,13 +20,21 @@ Public Class frmDeliveryInformation
 
         If createbilling Then
             btnPrint.Visible = True
+            Guna2TabControl1.SelectedTab = UploadPayment
+
+            btnUploadProofDelivery.Enabled = False
+            btnUploadSignedSalesInvoice.Enabled = True
         ElseIf confirmdelivery Then
             btnPrint.Visible = False
+            Guna2TabControl1.SelectedTab = QuotationImage
+
+            btnUploadProofDelivery.Enabled = True
+            btnUploadSignedSalesInvoice.Enabled = False
         End If
 
-        Call loadDeliveryImage()
         Call loadDeliveryDetails()
 
+        Call loadDeliveryImage()
         Call loadSignedInvoiceImage()
     End Sub
 
@@ -209,7 +218,7 @@ Public Class frmDeliveryInformation
             End If
 
             Dim mstream As New System.IO.MemoryStream()
-            pbxProofDelivery.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+            pbxSignedSalesInvoice.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
             Dim arrImage() As Byte = mstream.GetBuffer
             mstream.Close()
 
@@ -348,6 +357,26 @@ Public Class frmDeliveryInformation
             End If
         Catch ex As Exception
             MsgBox("An error occurred frmManageCollectionV2(loadSignedInvoiceImage): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnUploadSignedSalesInvoice_Click(sender As Object, e As EventArgs) Handles btnUploadSignedSalesInvoice.Click
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            d.Filter = "JPEG(*.jpg; *.jpeg)|*.jpg|PNG(*.png)|*.png"
+
+            If d.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                pbxSignedSalesInvoice.Image = Image.FromFile(d.FileName)
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmConfirmPayment(btnUploadSignedSalesInvoice_Click): " & ex.Message)
         Finally
             If cn.State = ConnectionState.Open Then
                 cn.Close()

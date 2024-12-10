@@ -118,6 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnNotification.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAdZJREFUaEPtmb9Kw1AYxVs7KbT4Zy/oppuTdBURHCyCOKibos/QQaGDPoGT6FNI
+        naQ4CQ6+gYu+gg6KIPWc3LO0pBqbfMkt3B8cKOT2+53bNgltS4FAoBh6vV4ZOUDuFD4u6/D4gNKnyCAn
+        OjweoHAFeY+q9/OGVLTMf1C2HtWOp65l/oOyDdc5loaW+QkKTiD7yCPb/gHX7CF+nfwotIQ8If+Fz1nU
+        mGJBkS0k7sROCi8ATY0rBhRYQz7ZJiVfyIbG5gvEC0iad2IQzprX+HyAkHfte9ozpitFPkC47rwmrEpj
+        D2Qd5zThRhpbIJpCsjjBh/GBTEpnByS8Ullj//GC5Mi5TDmUzg5IWs5lSks6OyBpO5cpbensoMS5TAkb
+        SQwlzmVK2EhiKHEuU8JGEkOJc5kSNpIYSpzLlLCRxFDiXKbYbgSCGtKNVLbQUZM2WzB4GXmmJSdekBXp
+        swED+R2E39zyhs5j1UgHBu1EI4tlW3VGB0Ou3axCuVKd0cEQ/jBdNLuqkw4MaiIXyGXOoXNTNQIjgVew
+        ivAC8VuqWu4vKDmDfCPD4LFpLfcbFL2NKsfT0TL/QVn+Gfoa1e6Hd+vx+TOUoPAcco48KGfIrA4HAoFc
+        KZV+AHEQX/dyupXJAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btnShowWebsite.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -145,7 +159,7 @@
   <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAz5JREFUeF7tnb+KE1EchaONu6wKi76CoCyCaKHoG4iN+KfUtRDB2kZttlDE0lLL
+        DAAACwwBP0AiyAAAAz5JREFUeF7tnb+KE1EchaONu6wKi76CoCyCaKHoG4iN+KfUtRDB2kZttlDE0lLL
         tVOstPAJxFpk1dpGC0HBStH43cwNI0MSkpDMPXfu+eAUy94k59zD/naSzDA9Y4wxxhhjjOkq/X7/OLqL
         nqBnHdE2eojOoZUYVRuMnkZvUdf5im6iXTG6Hpi7gX6jkniBVuMW6ICpC+hvcFggz5HOXwpmDqLvwVnB
         XI7bkR7M3K88Fc2HuB3pwcynylPxHI1bkg5M7K+8GLgWtyUdmDhUeZnIazTquD43/UCTuBO3JR2Y2Ki8
@@ -165,7 +179,7 @@
   <data name="btnLogout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAA4pJREFUeF7tnb1rU1EYh6OLiq3tOYm4CE6CIopY9J6bCl1FXMSP0Y9BCoUOyTkp
+        DAAACwwBP0AiyAAAA4pJREFUeF7tnb1rU1EYh6OLiq3tOYm4CE6CIopY9J6bCl1FXMSP0Y9BCoUOyTkp
         1Q51UMTRUce6WZx08C8QZxE/ZhcdBAWnFj/ea07SeHtSkpDmvOfc3wM/StszvO95ct/cJPeSEgAAAAAA
         AADEiqo0TiXSLCmpn6RSP4shSpgV+vkwnWxcmDm0vNu2yptU1KupMG9Saf7EHJLzNZ3Uc9TyjmbnDKEi
         Z+mIWHc1EG2Eea4O1vbYLeBDVZpLVODvTQUXIPRAXKUt4HOkTI3VKzRbv7uKLUqU0FftdvgnFfq+q8gi
@@ -736,20 +750,6 @@
         ooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoo
         ooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoo
         ooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z
-</value>
-  </data>
-  <data name="btnNotification.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAdZJREFUaEPtmb9Kw1AYxVs7KbT4Zy/oppuTdBURHCyCOKibos/QQaGDPoGT6FNI
-        naQ4CQ6+gYu+gg6KIPWc3LO0pBqbfMkt3B8cKOT2+53bNgltS4FAoBh6vV4ZOUDuFD4u6/D4gNKnyCAn
-        OjweoHAFeY+q9/OGVLTMf1C2HtWOp65l/oOyDdc5loaW+QkKTiD7yCPb/gHX7CF+nfwotIQ8If+Fz1nU
-        mGJBkS0k7sROCi8ATY0rBhRYQz7ZJiVfyIbG5gvEC0iad2IQzprX+HyAkHfte9ozpitFPkC47rwmrEpj
-        D2Qd5zThRhpbIJpCsjjBh/GBTEpnByS8Ullj//GC5Mi5TDmUzg5IWs5lSks6OyBpO5cpbensoMS5TAkb
-        SQwlzmVK2EhiKHEuU8JGEkOJc5kSNpIYSpzLlLCRxFDiXKbYbgSCGtKNVLbQUZM2WzB4GXmmJSdekBXp
-        swED+R2E39zyhs5j1UgHBu1EI4tlW3VGB0Ou3axCuVKd0cEQ/jBdNLuqkw4MaiIXyGXOoXNTNQIjgVew
-        ivAC8VuqWu4vKDmDfCPD4LFpLfcbFL2NKsfT0TL/QVn+Gfoa1e6Hd+vx+TOUoPAcco48KGfIrA4HAoFc
-        KZV+AHEQX/dyupXJAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
