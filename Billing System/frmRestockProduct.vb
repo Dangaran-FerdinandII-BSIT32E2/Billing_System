@@ -84,6 +84,11 @@ Public Class frmRestockProduct
 
             productid = Nothing
             supplierid = Nothing
+
+            pbxPayment.Image = Nothing
+
+            btnBrowse.Visible = True
+            PictureBox2.Visible = True
         End If
     End Sub
 
@@ -283,5 +288,29 @@ Public Class frmRestockProduct
             btnQuantity.Enabled = False
             btnRemove.Enabled = False
         End If
+    End Sub
+
+    Dim d As OpenFileDialog = New OpenFileDialog
+    Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
+
+            d.Filter = "JPEG(*.jpg; *.jpeg)|*.jpg|PNG(*.png)|*.png"
+
+            If d.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                pbxPayment.Image = Image.FromFile(d.FileName)
+
+                PictureBox2.Visible = False
+                btnBrowse.Visible = False
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmPaymentInformation(btnUpload_Click): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 End Class

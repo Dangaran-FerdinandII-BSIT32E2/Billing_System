@@ -66,14 +66,14 @@ Public Class frmManageOrder
 
             If DateTime.TryParseExact(startDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, startDateTime) AndAlso
                DateTime.TryParseExact(endDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, endDateTime) Then
-                sql = "SELECT CASE WHEN COALESCE(ow.OrderID, o.OrderID) IS NOT NULL THEN CASE WHEN ow.OrderID IS NOT NULL THEN 'Walkin' WHEN o.OrderID IS NOT NULL THEN 'Order' END END AS TypeOfOrder, COALESCE(w.LastName, o.LastName) AS LastName, COALESCE(w.FirstName, o.FirstName) AS FirstName, COALESCE(w.CompanyName, o.CompanyName) AS CompanyName, COALESCE(w.PhoneNumber, o.PhoneNumber) AS PhoneNumber, COALESCE(w.Email, o.Email) AS Email, o.OrderID, o.CustomerID, o.Status, DATE_FORMAT(o.OrderDate, '%M %d, %Y') AS OrderDateF, o.QuotationStatus FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE o.isRental = 0 AND NOT EXISTS ( SELECT 1 FROM tblbillinvoice bi WHERE bi.OrderID = o.OrderID) AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "'"
+                sql = "SELECT CASE WHEN COALESCE(ow.OrderID, o.OrderID) IS NOT NULL THEN CASE WHEN ow.OrderID IS NOT NULL THEN 'Walkin' WHEN o.OrderID IS NOT NULL THEN 'Order' END END AS TypeOfOrder, COALESCE(w.LastName, o.LastName) AS LastName, COALESCE(w.FirstName, o.FirstName) AS FirstName, COALESCE(w.CompanyName, o.CompanyName) AS CompanyName, COALESCE(w.PhoneNumber, o.PhoneNumber) AS PhoneNumber, COALESCE(w.Email, o.Email) AS Email, o.OrderID, o.CustomerID, o.Status, DATE_FORMAT(o.OrderDate, '%M %d, %Y') AS OrderDateF, o.QuotationStatus FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID WHERE o.isRental = 0 AND NOT EXISTS ( SELECT 1 FROM tblbillinvoice bi WHERE bi.OrderID = o.OrderID) AND OrderDate BETWEEN '" & startDate.ToString() & "' AND '" & endDate.ToString() & "' "
 
 
                 If cboFilter.SelectedIndex > 0 Then
                     sql += " AND Status = @Status "
                 End If
 
-                sql += "GROUP BY OrderID"
+                sql += "GROUP BY OrderID ORDER BY OrderDate DESC"
                 cmd = New MySqlCommand(sql, cn)
 
                 If cboFilter.SelectedIndex > 0 Then

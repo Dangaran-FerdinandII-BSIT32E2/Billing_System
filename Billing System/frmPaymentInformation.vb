@@ -164,30 +164,30 @@ Public Class frmPaymentInformation
 
     Dim uploaded As Boolean? = False
     Private Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.Click
-        frmUploadCheque.ShowDialog()
-        'Try
-        '    If cn.State <> ConnectionState.Open Then
-        '        cn.Open()
-        '    End If
+        'frmUploadCheque.ShowDialog()
+        Try
+            If cn.State <> ConnectionState.Open Then
+                cn.Open()
+            End If
 
-        '    d.Filter = "JPEG(*.jpg; *.jpeg)|*.jpg|PNG(*.png)|*.png"
+            d.Filter = "JPEG(*.jpg; *.jpeg)|*.jpg|PNG(*.png)|*.png"
 
-        '    If d.ShowDialog() = Windows.Forms.DialogResult.OK Then
-        '        pbxDepositSlip.Image = Image.FromFile(d.FileName)
+            If d.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                pbxDepositSlip.Image = Image.FromFile(d.FileName)
 
-        '        btnReject.Enabled = True
-        '        uploaded = True
+                btnReject.Enabled = True
+                uploaded = True
 
-        '        btnAccept.Enabled = True
-        '        btnReject.Enabled = True
-        '    End If
-        'Catch ex As Exception
-        '    MsgBox("An error occurred frmPaymentInformation(btnUpload_Click): " & ex.Message)
-        'Finally
-        '    If cn.State = ConnectionState.Open Then
-        '        cn.Close()
-        '    End If
-        'End Try
+                btnAccept.Enabled = True
+                btnReject.Enabled = True
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred frmPaymentInformation(btnUpload_Click): " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnAccept.Click

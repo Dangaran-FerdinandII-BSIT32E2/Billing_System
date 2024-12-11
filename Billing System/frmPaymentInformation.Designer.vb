@@ -983,6 +983,7 @@ Partial Class frmPaymentInformation
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPaymentInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
         Me.Panel34.ResumeLayout(False)

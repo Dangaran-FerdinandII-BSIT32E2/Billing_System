@@ -442,7 +442,7 @@ Partial Class frmManageUsers
         Me.btnView.PressedDepth = 20
         Me.btnView.Size = New System.Drawing.Size(187, 50)
         Me.btnView.TabIndex = 57
-        Me.btnView.Text = "View"
+        Me.btnView.Text = "Okay"
         '
         'Panel24
         '

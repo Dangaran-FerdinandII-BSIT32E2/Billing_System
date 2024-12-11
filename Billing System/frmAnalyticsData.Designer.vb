@@ -22,9 +22,9 @@ Partial Class frmAnalyticsData
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -181,10 +181,10 @@ Partial Class frmAnalyticsData
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(13, 767)
+        Me.Panel4.Location = New System.Drawing.Point(13, 796)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1466, 12)
+        Me.Panel4.Size = New System.Drawing.Size(1465, 12)
         Me.Panel4.TabIndex = 7
         '
         'Panel3
@@ -193,7 +193,7 @@ Partial Class frmAnalyticsData
         Me.Panel3.Location = New System.Drawing.Point(0, 12)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(13, 767)
+        Me.Panel3.Size = New System.Drawing.Size(13, 796)
         Me.Panel3.TabIndex = 8
         '
         'Panel1
@@ -202,7 +202,7 @@ Partial Class frmAnalyticsData
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1479, 12)
+        Me.Panel1.Size = New System.Drawing.Size(1478, 12)
         Me.Panel1.TabIndex = 6
         '
         'panelBody
@@ -219,7 +219,7 @@ Partial Class frmAnalyticsData
         Me.panelBody.Location = New System.Drawing.Point(13, 12)
         Me.panelBody.Margin = New System.Windows.Forms.Padding(4)
         Me.panelBody.Name = "panelBody"
-        Me.panelBody.Size = New System.Drawing.Size(1466, 755)
+        Me.panelBody.Size = New System.Drawing.Size(1465, 784)
         Me.panelBody.TabIndex = 10
         '
         'Guna2GroupBox2
@@ -241,35 +241,35 @@ Partial Class frmAnalyticsData
         Me.Guna2GroupBox2.ShadowDecoration.BorderRadius = 0
         Me.Guna2GroupBox2.ShadowDecoration.Enabled = True
         Me.Guna2GroupBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(5, 0, 5, 5)
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1432, 684)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1431, 684)
         Me.Guna2GroupBox2.TabIndex = 15
         '
         'Chart1
         '
         Me.Chart1.BorderlineWidth = 5
         Me.Chart1.BorderSkin.BorderColor = System.Drawing.Color.Red
-        ChartArea1.AxisX.Title = "Months"
-        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        ChartArea1.AxisY.Title = "Revenue"
-        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
+        ChartArea2.AxisX.Title = "Months"
+        ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        ChartArea2.AxisY.Title = "Revenue"
+        ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Legend1.IsTextAutoFit = False
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        Legend2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Legend2.IsTextAutoFit = False
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
         Me.Chart1.Location = New System.Drawing.Point(13, 62)
         Me.Chart1.Margin = New System.Windows.Forms.Padding(4)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
         Me.Chart1.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.OrangeRed}
-        Series1.ChartArea = "ChartArea1"
-        Series1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series1.Legend = "Legend1"
-        Series1.Name = "Sales"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(1406, 610)
+        Series2.ChartArea = "ChartArea1"
+        Series2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series2.Legend = "Legend1"
+        Series2.Name = "Sales"
+        Me.Chart1.Series.Add(Series2)
+        Me.Chart1.Size = New System.Drawing.Size(1405, 610)
         Me.Chart1.TabIndex = 34
         '
         'Panel5
@@ -279,7 +279,7 @@ Partial Class frmAnalyticsData
         Me.Panel5.Location = New System.Drawing.Point(13, 672)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1406, 12)
+        Me.Panel5.Size = New System.Drawing.Size(1405, 12)
         Me.Panel5.TabIndex = 33
         '
         'Panel32
@@ -299,7 +299,7 @@ Partial Class frmAnalyticsData
         Me.Panel33.Location = New System.Drawing.Point(0, 50)
         Me.Panel33.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(1419, 12)
+        Me.Panel33.Size = New System.Drawing.Size(1418, 12)
         Me.Panel33.TabIndex = 33
         '
         'Label5
@@ -319,7 +319,7 @@ Partial Class frmAnalyticsData
         '
         Me.Panel34.BackColor = System.Drawing.Color.White
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel34.Location = New System.Drawing.Point(1419, 50)
+        Me.Panel34.Location = New System.Drawing.Point(1418, 50)
         Me.Panel34.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(13, 634)
@@ -331,7 +331,7 @@ Partial Class frmAnalyticsData
         Me.Panel31.Location = New System.Drawing.Point(0, 512)
         Me.Panel31.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(1432, 12)
+        Me.Panel31.Size = New System.Drawing.Size(1431, 12)
         Me.Panel31.TabIndex = 10
         '
         'Panel10
@@ -341,7 +341,7 @@ Partial Class frmAnalyticsData
         Me.Panel10.Location = New System.Drawing.Point(0, 188)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1432, 324)
+        Me.Panel10.Size = New System.Drawing.Size(1431, 324)
         Me.Panel10.TabIndex = 9
         '
         'TabControl2
@@ -358,7 +358,7 @@ Partial Class frmAnalyticsData
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
         Me.TabControl2.ShowToolTips = True
-        Me.TabControl2.Size = New System.Drawing.Size(1432, 324)
+        Me.TabControl2.Size = New System.Drawing.Size(1431, 324)
         Me.TabControl2.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
         Me.TabControl2.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.TabControl2.TabButtonHoverState.Font = New System.Drawing.Font("Arial", 12.0!)
@@ -386,7 +386,7 @@ Partial Class frmAnalyticsData
         Me.OverduePayments.Margin = New System.Windows.Forms.Padding(4)
         Me.OverduePayments.Name = "OverduePayments"
         Me.OverduePayments.Padding = New System.Windows.Forms.Padding(4)
-        Me.OverduePayments.Size = New System.Drawing.Size(1424, 276)
+        Me.OverduePayments.Size = New System.Drawing.Size(1423, 276)
         Me.OverduePayments.TabIndex = 6
         Me.OverduePayments.Text = "Overdue Payments"
         Me.OverduePayments.UseVisualStyleBackColor = True
@@ -402,7 +402,7 @@ Partial Class frmAnalyticsData
         Me.Panel11.Location = New System.Drawing.Point(4, 4)
         Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1416, 268)
+        Me.Panel11.Size = New System.Drawing.Size(1415, 268)
         Me.Panel11.TabIndex = 2
         '
         'ListView1
@@ -417,7 +417,7 @@ Partial Class frmAnalyticsData
         Me.ListView1.Location = New System.Drawing.Point(13, 37)
         Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1390, 219)
+        Me.ListView1.Size = New System.Drawing.Size(1389, 219)
         Me.ListView1.TabIndex = 48
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -448,7 +448,7 @@ Partial Class frmAnalyticsData
         Me.Panel12.Location = New System.Drawing.Point(13, 256)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(1390, 12)
+        Me.Panel12.Size = New System.Drawing.Size(1389, 12)
         Me.Panel12.TabIndex = 7
         '
         'Panel13
@@ -463,7 +463,7 @@ Partial Class frmAnalyticsData
         'Panel14
         '
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel14.Location = New System.Drawing.Point(1403, 37)
+        Me.Panel14.Location = New System.Drawing.Point(1402, 37)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(13, 231)
@@ -478,7 +478,7 @@ Partial Class frmAnalyticsData
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
         Me.Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(1416, 37)
+        Me.Panel15.Size = New System.Drawing.Size(1415, 37)
         Me.Panel15.TabIndex = 6
         '
         'Panel38
@@ -488,7 +488,7 @@ Partial Class frmAnalyticsData
         Me.Panel38.Controls.Add(Me.Panel51)
         Me.Panel38.Controls.Add(Me.Panel52)
         Me.Panel38.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel38.Location = New System.Drawing.Point(976, 0)
+        Me.Panel38.Location = New System.Drawing.Point(975, 0)
         Me.Panel38.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel38.Name = "Panel38"
         Me.Panel38.Size = New System.Drawing.Size(440, 37)
@@ -614,7 +614,7 @@ Partial Class frmAnalyticsData
         Me.OrderUpdates.Margin = New System.Windows.Forms.Padding(4)
         Me.OrderUpdates.Name = "OrderUpdates"
         Me.OrderUpdates.Padding = New System.Windows.Forms.Padding(4)
-        Me.OrderUpdates.Size = New System.Drawing.Size(1424, 276)
+        Me.OrderUpdates.Size = New System.Drawing.Size(1423, 276)
         Me.OrderUpdates.TabIndex = 3
         Me.OrderUpdates.Text = "Order Updates"
         Me.OrderUpdates.UseVisualStyleBackColor = True
@@ -630,7 +630,7 @@ Partial Class frmAnalyticsData
         Me.Panel16.Location = New System.Drawing.Point(4, 4)
         Me.Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(1416, 268)
+        Me.Panel16.Size = New System.Drawing.Size(1415, 268)
         Me.Panel16.TabIndex = 3
         '
         'ListView2
@@ -645,7 +645,7 @@ Partial Class frmAnalyticsData
         Me.ListView2.Location = New System.Drawing.Point(13, 37)
         Me.ListView2.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(1390, 219)
+        Me.ListView2.Size = New System.Drawing.Size(1389, 219)
         Me.ListView2.TabIndex = 48
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
@@ -676,7 +676,7 @@ Partial Class frmAnalyticsData
         Me.Panel17.Location = New System.Drawing.Point(13, 256)
         Me.Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(1390, 12)
+        Me.Panel17.Size = New System.Drawing.Size(1389, 12)
         Me.Panel17.TabIndex = 7
         '
         'Panel18
@@ -691,7 +691,7 @@ Partial Class frmAnalyticsData
         'Panel19
         '
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel19.Location = New System.Drawing.Point(1403, 37)
+        Me.Panel19.Location = New System.Drawing.Point(1402, 37)
         Me.Panel19.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(13, 231)
@@ -705,7 +705,7 @@ Partial Class frmAnalyticsData
         Me.Panel20.Location = New System.Drawing.Point(0, 0)
         Me.Panel20.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(1416, 37)
+        Me.Panel20.Size = New System.Drawing.Size(1415, 37)
         Me.Panel20.TabIndex = 6
         '
         'Panel55
@@ -865,7 +865,7 @@ Partial Class frmAnalyticsData
         Me.QuotationUpdates.Margin = New System.Windows.Forms.Padding(4)
         Me.QuotationUpdates.Name = "QuotationUpdates"
         Me.QuotationUpdates.Padding = New System.Windows.Forms.Padding(4)
-        Me.QuotationUpdates.Size = New System.Drawing.Size(1424, 276)
+        Me.QuotationUpdates.Size = New System.Drawing.Size(1423, 276)
         Me.QuotationUpdates.TabIndex = 4
         Me.QuotationUpdates.Text = "Quotation Updates"
         Me.QuotationUpdates.UseVisualStyleBackColor = True
@@ -881,7 +881,7 @@ Partial Class frmAnalyticsData
         Me.Panel21.Location = New System.Drawing.Point(4, 4)
         Me.Panel21.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(1416, 268)
+        Me.Panel21.Size = New System.Drawing.Size(1415, 268)
         Me.Panel21.TabIndex = 4
         '
         'ListView3
@@ -896,7 +896,7 @@ Partial Class frmAnalyticsData
         Me.ListView3.Location = New System.Drawing.Point(13, 37)
         Me.ListView3.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView3.Name = "ListView3"
-        Me.ListView3.Size = New System.Drawing.Size(1390, 219)
+        Me.ListView3.Size = New System.Drawing.Size(1389, 219)
         Me.ListView3.TabIndex = 48
         Me.ListView3.UseCompatibleStateImageBehavior = False
         Me.ListView3.View = System.Windows.Forms.View.Details
@@ -927,7 +927,7 @@ Partial Class frmAnalyticsData
         Me.Panel22.Location = New System.Drawing.Point(13, 256)
         Me.Panel22.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(1390, 12)
+        Me.Panel22.Size = New System.Drawing.Size(1389, 12)
         Me.Panel22.TabIndex = 7
         '
         'Panel23
@@ -942,7 +942,7 @@ Partial Class frmAnalyticsData
         'Panel24
         '
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel24.Location = New System.Drawing.Point(1403, 37)
+        Me.Panel24.Location = New System.Drawing.Point(1402, 37)
         Me.Panel24.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel24.Name = "Panel24"
         Me.Panel24.Size = New System.Drawing.Size(13, 231)
@@ -956,7 +956,7 @@ Partial Class frmAnalyticsData
         Me.Panel25.Location = New System.Drawing.Point(0, 0)
         Me.Panel25.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(1416, 37)
+        Me.Panel25.Size = New System.Drawing.Size(1415, 37)
         Me.Panel25.TabIndex = 6
         '
         'Panel41
@@ -1116,7 +1116,7 @@ Partial Class frmAnalyticsData
         Me.RambicPO.Margin = New System.Windows.Forms.Padding(4)
         Me.RambicPO.Name = "RambicPO"
         Me.RambicPO.Padding = New System.Windows.Forms.Padding(4)
-        Me.RambicPO.Size = New System.Drawing.Size(1424, 276)
+        Me.RambicPO.Size = New System.Drawing.Size(1423, 276)
         Me.RambicPO.TabIndex = 5
         Me.RambicPO.Text = "Rambic P.O."
         Me.RambicPO.UseVisualStyleBackColor = True
@@ -1132,7 +1132,7 @@ Partial Class frmAnalyticsData
         Me.Panel26.Location = New System.Drawing.Point(4, 4)
         Me.Panel26.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(1416, 268)
+        Me.Panel26.Size = New System.Drawing.Size(1415, 268)
         Me.Panel26.TabIndex = 3
         '
         'ListView4
@@ -1147,7 +1147,7 @@ Partial Class frmAnalyticsData
         Me.ListView4.Location = New System.Drawing.Point(13, 12)
         Me.ListView4.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView4.Name = "ListView4"
-        Me.ListView4.Size = New System.Drawing.Size(1390, 244)
+        Me.ListView4.Size = New System.Drawing.Size(1389, 244)
         Me.ListView4.TabIndex = 48
         Me.ListView4.UseCompatibleStateImageBehavior = False
         Me.ListView4.View = System.Windows.Forms.View.Details
@@ -1178,7 +1178,7 @@ Partial Class frmAnalyticsData
         Me.Panel27.Location = New System.Drawing.Point(13, 256)
         Me.Panel27.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(1390, 12)
+        Me.Panel27.Size = New System.Drawing.Size(1389, 12)
         Me.Panel27.TabIndex = 7
         '
         'Panel28
@@ -1193,7 +1193,7 @@ Partial Class frmAnalyticsData
         'Panel29
         '
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel29.Location = New System.Drawing.Point(1403, 12)
+        Me.Panel29.Location = New System.Drawing.Point(1402, 12)
         Me.Panel29.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel29.Name = "Panel29"
         Me.Panel29.Size = New System.Drawing.Size(13, 256)
@@ -1205,7 +1205,7 @@ Partial Class frmAnalyticsData
         Me.Panel30.Location = New System.Drawing.Point(0, 0)
         Me.Panel30.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(1416, 12)
+        Me.Panel30.Size = New System.Drawing.Size(1415, 12)
         Me.Panel30.TabIndex = 6
         '
         'Panel9
@@ -1214,7 +1214,7 @@ Partial Class frmAnalyticsData
         Me.Panel9.Location = New System.Drawing.Point(0, 176)
         Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(1432, 12)
+        Me.Panel9.Size = New System.Drawing.Size(1431, 12)
         Me.Panel9.TabIndex = 8
         '
         'Panel6
@@ -1228,7 +1228,7 @@ Partial Class frmAnalyticsData
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1432, 176)
+        Me.Panel6.Size = New System.Drawing.Size(1431, 176)
         Me.Panel6.TabIndex = 7
         '
         'Guna2Panel3
@@ -1242,10 +1242,10 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel3.Controls.Add(Me.Label3)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel3.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel3.Location = New System.Drawing.Point(944, 0)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(1026, 0)
         Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel3.Name = "Guna2Panel3"
-        Me.Guna2Panel3.Size = New System.Drawing.Size(488, 176)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(405, 176)
         Me.Guna2Panel3.TabIndex = 12
         '
         'btnViewPayment
@@ -1300,7 +1300,7 @@ Partial Class frmAnalyticsData
         'Panel8
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel8.Location = New System.Drawing.Point(931, 0)
+        Me.Panel8.Location = New System.Drawing.Point(1013, 0)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(13, 176)
@@ -1317,10 +1317,10 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel2.Controls.Add(Me.Label1)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel2.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel2.Location = New System.Drawing.Point(472, 0)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(513, 0)
         Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(459, 176)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(500, 176)
         Me.Guna2Panel2.TabIndex = 10
         '
         'btnViewOrder
@@ -1375,7 +1375,7 @@ Partial Class frmAnalyticsData
         'Panel7
         '
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel7.Location = New System.Drawing.Point(459, 0)
+        Me.Panel7.Location = New System.Drawing.Point(500, 0)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(13, 176)
@@ -1395,7 +1395,7 @@ Partial Class frmAnalyticsData
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(459, 176)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(500, 176)
         Me.Guna2Panel1.TabIndex = 8
         '
         'btnViewCustomer
@@ -1450,7 +1450,7 @@ Partial Class frmAnalyticsData
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(1432, 0)
+        Me.Panel2.Location = New System.Drawing.Point(1431, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(13, 1208)
@@ -1523,7 +1523,7 @@ Partial Class frmAnalyticsData
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gainsboro
-        Me.ClientSize = New System.Drawing.Size(1479, 779)
+        Me.ClientSize = New System.Drawing.Size(1478, 808)
         Me.Controls.Add(Me.panelBody)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
