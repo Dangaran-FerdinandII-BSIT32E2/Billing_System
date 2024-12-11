@@ -242,6 +242,7 @@ Public Class frmPrintBillingInvoiceV2
                     mail.Attachments.Add(imageAttachment)
 
                     smtpServer.Port = 587
+
                     smtpServer.Credentials = New System.Net.NetworkCredential("corporationrambic@gmail.com", "rxyx ldrd ngxp twjl") ' Use secure methods                    smtpServer.EnableSsl = True
                     smtpServer.Send(mail)
 

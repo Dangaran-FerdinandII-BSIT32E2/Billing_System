@@ -29,6 +29,7 @@ Partial Class frmManageOrder
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.panelBody = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ContactPerson = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.CompanyName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ContactNumber = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -89,7 +90,6 @@ Partial Class frmManageOrder
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.panelBody.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel37.SuspendLayout()
@@ -178,6 +178,11 @@ Partial Class frmManageOrder
         Me.ListView1.TabIndex = 43
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Order No"
+        Me.ColumnHeader1.Width = 100
         '
         'ContactPerson
         '
@@ -880,11 +885,6 @@ Partial Class frmManageOrder
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(445, 18)
         Me.Panel16.TabIndex = 13
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Order No"
-        Me.ColumnHeader1.Width = 100
         '
         'frmManageOrder
         '

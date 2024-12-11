@@ -37,13 +37,17 @@ Public Class frmManageOrder
             frmListofCustomerOrder.orderid = ListView1.SelectedItems(0).SubItems(0).Text
             frmListofCustomerOrder.custid = ListView1.SelectedItems(0).SubItems(7).Text
 
+            If ListView1.SelectedItems(0).SubItems(10).Text = "Walkin" Then
+                frmQuotation.walkin = True
+            End If
+
             frmListofCustomerOrder.order = True
 
-            frmListofCustomerOrder.ShowDialog()
+                frmListofCustomerOrder.ShowDialog()
 
-            Call loadFilteredOrders(startDate, endDate)
-        Else
-            MsgBox("Please select an order!", MsgBoxStyle.Critical, "View Order Error")
+                Call loadFilteredOrders(startDate, endDate)
+            Else
+                MsgBox("Please select an order!", MsgBoxStyle.Critical, "View Order Error")
         End If
     End Sub
 
@@ -96,6 +100,7 @@ Public Class frmManageOrder
                     x.SubItems.Add(dr("CustomerID").ToString) '7
                     x.SubItems.Add(dr("QuotationStatus").ToString) '8
                     x.SubItems.Add(dr("Status").ToString) '9
+                    x.SubItems.Add(dr("TypeofOrder").ToString) '10
 
                     If dr("TypeofOrder").ToString = "Walkin" Then
                         x.ForeColor = Color.Blue
@@ -104,9 +109,12 @@ Public Class frmManageOrder
                     End If
 
                     ' Check if the status is "Urgent" and set the text color accordingly
-                    If x.SubItems(5).Text = "Priority Order" Then
+                    If x.SubItems(6).Text = "Priority Order" Then
                         x.ForeColor = Color.Red
                         x.Font = New Font("Arial", 12, FontStyle.Bold)
+                    ElseIf x.SubItems(6).Text = "Cancelled Order" Then
+                        x.ForeColor = Color.Orange
+                        x.Font = New Font("Arial", 12, FontStyle.Regular)
                     End If
 
                     ListView1.Items.Add(x)
@@ -159,6 +167,11 @@ Public Class frmManageOrder
 
         If ListView1.SelectedItems.Count > 0 Then
 
+            frmManageSalesV2.txtCompanyName.Text = ListView1.SelectedItems(0).SubItems(2).Text
+            'frmManageSalesV2.txtAddress.Text = ListView1.SelectedItems(0).SubItems(2).Text
+            'frmManageSalesV2.txtDeliveryAddress.Text = ListView1.SelectedItems(0).SubItems(2).Text
+            'frmManageSalesV2.txtTIN.Text = ListView1.SelectedItems(0).SubItems(2).Text
+
             frmManageSalesV2.lblCustID.Text = ListView1.SelectedItems(0).SubItems(7).Text
             frmManageSalesV2.orderid = ListView1.SelectedItems(0).SubItems(0).Text
 
@@ -181,11 +194,13 @@ Public Class frmManageOrder
 
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
+
+            orderid = ListView1.SelectedItems(0).SubItems(0).Text
             Dim quotationstatus As String = ListView1.SelectedItems(0).SubItems(8).Text
             Dim status As String = ListView1.SelectedItems(0).SubItems(9).Text
             btnViewOrder.Enabled = True
             btnCancel.Enabled = True
-            If Not String.IsNullOrWhiteSpace(quotationstatus) AndAlso quotationstatus = "True" AndAlso status > 2 Then
+            If Not String.IsNullOrWhiteSpace(quotationstatus) AndAlso quotationstatus = "True" AndAlso status < 2 Then
                 btnCreateInvoice.Enabled = True
             Else
                 btnCreateInvoice.Enabled = False
@@ -194,6 +209,27 @@ Public Class frmManageOrder
             btnViewOrder.Enabled = False
             btnCancel.Enabled = False
             btnCreateInvoice.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        If MsgBox("Do you want to cancel order?", vbQuestion + vbYesNo) = vbYes Then
+            Try
+                If cn.State <> ConnectionState.Open Then
+                    cn.Open()
+                End If
+
+                sql = "UPDATE tblorder SET Status = 5 WHERE OrderID = '" & orderid & "'"
+                cmd = New MySqlCommand(sql, cn)
+                cmd.ExecuteNonQuery()
+                Call loadFilteredOrders(startDate, endDate)
+            Catch ex As Exception
+                MsgBox("An error occurred frmManageOrder(loadFilteredOrders): " & ex.Message)
+            Finally
+                If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+            End Try
         End If
     End Sub
 End Class

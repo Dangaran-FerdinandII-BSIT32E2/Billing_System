@@ -153,8 +153,6 @@ Public Class frmListofOrdersPending
             manageOrder = False
         End If
         frmManageSalesV2.btnPrint.Enabled = True
-        frmManageSalesV2.lblPONu.Visible = False
-        frmManageSalesV2.txtPONo.Visible = False
         Me.Close()
     End Sub
 
@@ -206,7 +204,6 @@ Public Class frmListofOrdersPending
             frmManageSalesV2.txtAddress.Clear()
             frmManageSalesV2.txtDeliveryAddress.Clear()
             frmManageSalesV2.txtTIN.Clear()
-            frmManageSalesV2.txtPONo.Clear()
             frmManageSalesV2.cboSalesman.SelectedIndex = -1
 
             frmAddNewCustomer.ShowDialog()

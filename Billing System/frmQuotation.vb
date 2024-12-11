@@ -12,6 +12,8 @@ Public Class frmQuotation
     Private email As String
 
     Public order As Boolean? = frmListofCustomerOrder.order
+
+    Public walkin As Boolean? = False
     Private Sub frmQuotation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadInformation()
@@ -65,7 +67,7 @@ Public Class frmQuotation
                 cn.Open()
             End If
 
-            If order Then
+            If frmListofCustomerOrder.order Then
                 da.SelectCommand = New MySqlCommand("SELECT CONCAT(COALESCE(w.LastName, o.LastName), ', ', COALESCE(w.FirstName, o.FirstName)) AS FullName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress, DATE_FORMAT(CURDATE(), '%M %d, %Y') AS DateOrdered, DATE_FORMAT(CURDATE() + INTERVAL 7 DAY, '%M %d, %Y') AS QuotationDueDate, CONCAT('PO-', MONTH(NOW()), '-', YEAR(NOW()), '-', LPAD(o.OrderID, 4, '0')) AS OrderID, o.Unit AS ProductName, o.Description, o.Quantity, CONCAT('₱ ', FORMAT(o.Amount, 2)) AS Amount, CONCAT('₱ ', FORMAT(o.Amount * o.Quantity, 2)) AS TotalAmount, CONCAT('₱ ', FORMAT(SUM(o.Amount * o.Quantity) OVER(), 2)) AS TotalPricing FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE o.OrderID = '" & orderid & "' AND o.isRental = 0 GROUP BY o.ProductID", cn)
             Else
                 da.SelectCommand = New MySqlCommand("SELECT CONCAT( COALESCE(w.LastName, o.LastName), ', ', COALESCE(w.FirstName, o.FirstName) ) AS FullName, COALESCE(w.Address, c.Address) AS Address, COALESCE(w.DeliveryAddress, o.DeliveryAddress) AS DeliveryAddress, DATE_FORMAT(CURDATE(), '%M %d, %Y') AS DateOrdered, DATE_FORMAT(CURDATE() + INTERVAL 7 DAY, '%M %d, %Y') AS QuotationDueDate, CONCAT('PO-', MONTH(NOW()), '-', YEAR(NOW()), '-', LPAD(o.OrderID, 4, '0')) AS OrderID, o.Unit AS ProductName, o.Description, o.Quantity, o.Amount, (o.Amount * o.Quantity) AS TotalAmount, SUM(o.Amount * o.Quantity) OVER() AS TotalPricing FROM qryorder o LEFT JOIN tblorderwalkin ow ON ow.OrderID = o.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblcustomer c ON o.CustomerID = c.CustomerID WHERE o.OrderID = '" & orderid & "' AND o.isRental = 1 GROUP BY o.ProductID", cn)
@@ -143,7 +145,7 @@ Public Class frmQuotation
 
             ' Update database with image and quotation due date
             If MsgBox("Do you want to continue?", vbYesNo + vbQuestion) = vbYes Then
-                sql = "UPDATE tblorder SET QuotationImg=@QuotationImg, QuotationDueDate=@QuotationDueDate, QuotationStatus = NULL, Status = 2 WHERE OrderID = '" & orderid & "'"
+                sql = "UPDATE tblorder SET QuotationImg=@QuotationImg, QuotationDueDate=@QuotationDueDate, QuotationStatus = @QuotationStatus, Status = 1 WHERE OrderID = '" & orderid & "'"
                 cmd = New MySqlCommand(sql, cn)
                 With cmd
                     Dim mstream As New MemoryStream()
@@ -153,6 +155,12 @@ Public Class frmQuotation
 
                     .Parameters.AddWithValue("@QuotationImg", arrImage)
                     .Parameters.AddWithValue("@QuotationDueDate", DateTime.Now.AddDays(7))
+
+                    .Parameters.AddWithValue("@QuotationStatus", Nothing)
+
+                    If walkin Then
+                        .Parameters("@QuotationStatus").Value = 1
+                    End If
                     .ExecuteNonQuery()
                 End With
 
@@ -188,7 +196,7 @@ Public Class frmQuotation
             Dim mail As New MailMessage()
             Dim smtpServer As New SmtpClient("smtp.gmail.com")
 
-            mail.From = New MailAddress("rambiccorpo@gmail.com") ' Replace with your email
+            mail.From = New MailAddress("corporationrambic@gmail.com") ' Replace with your email
             mail.To.Add(email)
 
             mail.Subject = "NOTICE ON QUOTATION OF ORDER NUMBER " & orderid
@@ -208,7 +216,7 @@ Public Class frmQuotation
                         "The deadline for the Quotation is on " & DateTime.Now.AddDays(7).ToString("MMMM dd, yyyy") & "."
 
                     smtpServer.Port = 587
-                    smtpServer.Credentials = New System.Net.NetworkCredential("rambiccorpo@gmail.com", "xcyu gtqv ctvk kzqa") ' Use secure methods
+                    smtpServer.Credentials = New System.Net.NetworkCredential("corporationrambic@gmail.com", "rxyx ldrd ngxp twjl") ' Use secure methods
                     smtpServer.EnableSsl = True
                     smtpServer.Send(mail)
 

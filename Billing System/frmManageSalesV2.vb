@@ -20,6 +20,7 @@ Public Class frmManageSalesV2
         Call connection()
         Call loadBilling()
         Call loadSalesInvoice()
+        Call loadInformation()
         dtpDate.Text = Now.ToString()
     End Sub
 
@@ -65,7 +66,7 @@ Public Class frmManageSalesV2
                 cn.Open()
             End If
 
-            sql = "SELECT COALESCE(ow.Quantity, o.Quantity) AS Quantity, COALESCE(p.ProductName, o.Unit) AS Unit, COALESCE(p.Description, o.Description) AS Description, COALESCE(p.SellingPrice, o.SellingPrice) AS SellingPrice, COALESCE((ow.Quantity * p.SellingPrice), o.Amount) AS Amount, o.OrderID, o.OrderListID, COALESCE(ow.ProductID, o.ProductID) AS ProductID FROM qryorder o LEFT JOIN tblorderwalkin ow ON o.OrderID = ow.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblproduct p ON ow.ProductID = p.ProductID WHERE o.OrderID = '" & orderid & "' "
+            sql = "SELECT COALESCE(ow.Quantity, o.Quantity) AS Quantity, COALESCE(p.ProductName, o.Unit) AS Unit, COALESCE(p.Description, o.Description) AS Description, COALESCE(p.SellingPrice, o.SellingPrice) AS SellingPrice, COALESCE((ow.Quantity * p.SellingPrice), o.Amount) AS Amount, o.OrderID, o.OrderListID, COALESCE(ow.ProductID, o.ProductID) AS ProductID FROM qryorder o LEFT JOIN tblorderwalkin ow ON o.OrderID = ow.OrderID LEFT JOIN tblwalkin w ON ow.WalkinID = w.WalkinID LEFT JOIN tblproduct p ON ow.ProductID = p.ProductID WHERE o.OrderID = '" & orderid & "' GROUP BY p.ProductID"
 
             'If order Then
             '    sql += "AND o.isRental = 0"
@@ -106,7 +107,7 @@ Public Class frmManageSalesV2
         End Try
     End Sub
 
-    Private Sub lblCustID_TextChanged(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub loadInformation()
         Try
             If cn.State <> ConnectionState.Open Then
                 cn.Open()
@@ -158,8 +159,6 @@ Public Class frmManageSalesV2
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         If MsgBox("Do you want to cancel?", vbYesNo + vbQuestion) = vbYes Then
             Call clearText()
-            lblPONu.Visible = True
-            txtPONo.Visible = True
         End If
     End Sub
 
@@ -241,10 +240,6 @@ Public Class frmManageSalesV2
             End If
         End If
 
-        If IsNothing(txtPONo.Text) Then
-            txtPONo.Text = "1"
-        End If
-
         lblBillingID.Text = getBillingID()
 
         Call savetoBilling()
@@ -291,7 +286,7 @@ Public Class frmManageSalesV2
                 .Parameters.AddWithValue("@CompanyName", txtCompanyName.Text)
                 .Parameters.AddWithValue("@SalesMan", cboSalesman.Text)
                 .Parameters.AddWithValue("@Terms", (txtDays.Text & " " & cboTerms.Text))
-                .Parameters.AddWithValue("@ProductOrder", txtPONo.Text)
+                .Parameters.AddWithValue("@ProductOrder", 0)
                 .Parameters.AddWithValue("@DatePrinted", DateTime.Now)
                 .Parameters.AddWithValue("@DueDate", adjusteddate)
                 .Parameters.AddWithValue("@Discount", If(cboAdjust.Text = "Add Discount", changeAmount, DBNull.Value))
@@ -445,7 +440,6 @@ Public Class frmManageSalesV2
         txtTIN.Clear()
         txtDays.Clear()
 
-        txtPONo.Clear()
         txtAmount.Clear()
 
         txtCompanyName.Enabled = False
@@ -471,4 +465,5 @@ Public Class frmManageSalesV2
     Private Sub btnViewSales_Click(sender As Object, e As EventArgs) Handles btnViewSales.Click
         frmViewTotalSales.ShowDialog()
     End Sub
+
 End Class

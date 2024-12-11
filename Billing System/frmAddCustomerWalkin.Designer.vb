@@ -77,6 +77,13 @@ Partial Class frmAddCustomerWalkin
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.txtRentDays = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Panel68 = New System.Windows.Forms.Panel()
+        Me.Panel67 = New System.Windows.Forms.Panel()
+        Me.DateFilter2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.DateFilter1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel59 = New System.Windows.Forms.Panel()
         Me.Panel63 = New System.Windows.Forms.Panel()
         Me.Panel64 = New System.Windows.Forms.Panel()
@@ -133,13 +140,6 @@ Partial Class frmAddCustomerWalkin
         Me.Panel41 = New System.Windows.Forms.Panel()
         Me.Panel53 = New System.Windows.Forms.Panel()
         Me.Panel55 = New System.Windows.Forms.Panel()
-        Me.Panel67 = New System.Windows.Forms.Panel()
-        Me.DateFilter2 = New System.Windows.Forms.DateTimePicker()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.DateFilter1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Panel68 = New System.Windows.Forms.Panel()
-        Me.txtRentDays = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel9.SuspendLayout()
         Me.Panel12.SuspendLayout()
         Me.Panel14.SuspendLayout()
@@ -156,6 +156,7 @@ Partial Class frmAddCustomerWalkin
         Me.Panel49.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.Panel67.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -167,7 +168,6 @@ Partial Class frmAddCustomerWalkin
         Me.Panel18.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel28.SuspendLayout()
-        Me.Panel67.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel9
@@ -860,6 +860,102 @@ Partial Class frmAddCustomerWalkin
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "How many days to rent?"
         Me.GroupBox5.Visible = False
+        '
+        'txtRentDays
+        '
+        Me.txtRentDays.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtRentDays.DefaultText = ""
+        Me.txtRentDays.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtRentDays.DisabledState.FillColor = System.Drawing.Color.White
+        Me.txtRentDays.DisabledState.ForeColor = System.Drawing.Color.DimGray
+        Me.txtRentDays.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtRentDays.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
+        Me.txtRentDays.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.txtRentDays.ForeColor = System.Drawing.Color.Black
+        Me.txtRentDays.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtRentDays.Location = New System.Drawing.Point(17, 83)
+        Me.txtRentDays.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtRentDays.Name = "txtRentDays"
+        Me.txtRentDays.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtRentDays.PlaceholderText = "Please enter number of days"
+        Me.txtRentDays.SelectedText = ""
+        Me.txtRentDays.Size = New System.Drawing.Size(526, 50)
+        Me.txtRentDays.TabIndex = 141
+        '
+        'Panel68
+        '
+        Me.Panel68.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel68.Location = New System.Drawing.Point(17, 71)
+        Me.Panel68.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel68.Name = "Panel68"
+        Me.Panel68.Size = New System.Drawing.Size(526, 12)
+        Me.Panel68.TabIndex = 140
+        '
+        'Panel67
+        '
+        Me.Panel67.BackColor = System.Drawing.Color.White
+        Me.Panel67.Controls.Add(Me.DateFilter2)
+        Me.Panel67.Controls.Add(Me.Label13)
+        Me.Panel67.Controls.Add(Me.DateFilter1)
+        Me.Panel67.Controls.Add(Me.Label14)
+        Me.Panel67.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel67.Location = New System.Drawing.Point(17, 39)
+        Me.Panel67.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel67.Name = "Panel67"
+        Me.Panel67.Size = New System.Drawing.Size(526, 32)
+        Me.Panel67.TabIndex = 139
+        '
+        'DateFilter2
+        '
+        Me.DateFilter2.CustomFormat = "yyyy-MM-dd"
+        Me.DateFilter2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.DateFilter2.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.DateFilter2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateFilter2.Location = New System.Drawing.Point(279, 0)
+        Me.DateFilter2.Margin = New System.Windows.Forms.Padding(4)
+        Me.DateFilter2.Name = "DateFilter2"
+        Me.DateFilter2.Size = New System.Drawing.Size(167, 30)
+        Me.DateFilter2.TabIndex = 72
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label13.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(233, 0)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(46, 24)
+        Me.Label13.TabIndex = 71
+        Me.Label13.Text = "  To"
+        '
+        'DateFilter1
+        '
+        Me.DateFilter1.CustomFormat = "yyyy-MM-dd"
+        Me.DateFilter1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.DateFilter1.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.DateFilter1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateFilter1.Location = New System.Drawing.Point(66, 0)
+        Me.DateFilter1.Margin = New System.Windows.Forms.Padding(4)
+        Me.DateFilter1.Name = "DateFilter1"
+        Me.DateFilter1.Size = New System.Drawing.Size(167, 30)
+        Me.DateFilter1.TabIndex = 68
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label14.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.Label14.Location = New System.Drawing.Point(0, 0)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(66, 24)
+        Me.Label14.TabIndex = 70
+        Me.Label14.Text = "From:"
         '
         'Panel59
         '
@@ -1578,102 +1674,6 @@ Partial Class frmAddCustomerWalkin
         Me.Panel55.Size = New System.Drawing.Size(692, 12)
         Me.Panel55.TabIndex = 2
         '
-        'Panel67
-        '
-        Me.Panel67.BackColor = System.Drawing.Color.White
-        Me.Panel67.Controls.Add(Me.DateFilter2)
-        Me.Panel67.Controls.Add(Me.Label13)
-        Me.Panel67.Controls.Add(Me.DateFilter1)
-        Me.Panel67.Controls.Add(Me.Label14)
-        Me.Panel67.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel67.Location = New System.Drawing.Point(17, 39)
-        Me.Panel67.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel67.Name = "Panel67"
-        Me.Panel67.Size = New System.Drawing.Size(526, 32)
-        Me.Panel67.TabIndex = 139
-        '
-        'DateFilter2
-        '
-        Me.DateFilter2.CustomFormat = "yyyy-MM-dd"
-        Me.DateFilter2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.DateFilter2.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.DateFilter2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFilter2.Location = New System.Drawing.Point(279, 0)
-        Me.DateFilter2.Margin = New System.Windows.Forms.Padding(4)
-        Me.DateFilter2.Name = "DateFilter2"
-        Me.DateFilter2.Size = New System.Drawing.Size(167, 30)
-        Me.DateFilter2.TabIndex = 72
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label13.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(233, 0)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(46, 24)
-        Me.Label13.TabIndex = 71
-        Me.Label13.Text = "  To"
-        '
-        'DateFilter1
-        '
-        Me.DateFilter1.CustomFormat = "yyyy-MM-dd"
-        Me.DateFilter1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.DateFilter1.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.DateFilter1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFilter1.Location = New System.Drawing.Point(66, 0)
-        Me.DateFilter1.Margin = New System.Windows.Forms.Padding(4)
-        Me.DateFilter1.Name = "DateFilter1"
-        Me.DateFilter1.Size = New System.Drawing.Size(167, 30)
-        Me.DateFilter1.TabIndex = 68
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label14.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(0, 0)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(66, 24)
-        Me.Label14.TabIndex = 70
-        Me.Label14.Text = "From:"
-        '
-        'Panel68
-        '
-        Me.Panel68.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel68.Location = New System.Drawing.Point(17, 71)
-        Me.Panel68.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel68.Name = "Panel68"
-        Me.Panel68.Size = New System.Drawing.Size(526, 12)
-        Me.Panel68.TabIndex = 140
-        '
-        'txtRentDays
-        '
-        Me.txtRentDays.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtRentDays.DefaultText = ""
-        Me.txtRentDays.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtRentDays.DisabledState.FillColor = System.Drawing.Color.White
-        Me.txtRentDays.DisabledState.ForeColor = System.Drawing.Color.DimGray
-        Me.txtRentDays.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtRentDays.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
-        Me.txtRentDays.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtRentDays.ForeColor = System.Drawing.Color.Black
-        Me.txtRentDays.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtRentDays.Location = New System.Drawing.Point(17, 83)
-        Me.txtRentDays.Margin = New System.Windows.Forms.Padding(5)
-        Me.txtRentDays.Name = "txtRentDays"
-        Me.txtRentDays.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtRentDays.PlaceholderText = "Please enter number of days"
-        Me.txtRentDays.SelectedText = ""
-        Me.txtRentDays.Size = New System.Drawing.Size(526, 50)
-        Me.txtRentDays.TabIndex = 141
-        '
         'frmAddCustomerWalkin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1686,6 +1686,7 @@ Partial Class frmAddCustomerWalkin
         Me.Name = "frmAddCustomerWalkin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAddCustomerWalkin"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel9.ResumeLayout(False)
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
@@ -1709,6 +1710,8 @@ Partial Class frmAddCustomerWalkin
         Me.Panel49.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
+        Me.Panel67.ResumeLayout(False)
+        Me.Panel67.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.Panel10.ResumeLayout(False)
@@ -1726,8 +1729,6 @@ Partial Class frmAddCustomerWalkin
         Me.Panel18.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel28.ResumeLayout(False)
-        Me.Panel67.ResumeLayout(False)
-        Me.Panel67.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

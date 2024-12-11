@@ -76,7 +76,6 @@ Partial Class frmManageSalesV2
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.Panel28 = New System.Windows.Forms.Panel()
-        Me.txtPONo = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.txtTIN = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel27 = New System.Windows.Forms.Panel()
@@ -84,7 +83,6 @@ Partial Class frmManageSalesV2
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.txtAddress = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.lblPONu = New System.Windows.Forms.Label()
         Me.Panel29 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel15 = New System.Windows.Forms.Panel()
@@ -818,7 +816,6 @@ Partial Class frmManageSalesV2
         '
         'Panel28
         '
-        Me.Panel28.Controls.Add(Me.txtPONo)
         Me.Panel28.Controls.Add(Me.Panel19)
         Me.Panel28.Controls.Add(Me.txtTIN)
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Top
@@ -827,28 +824,6 @@ Partial Class frmManageSalesV2
         Me.Panel28.Name = "Panel28"
         Me.Panel28.Size = New System.Drawing.Size(665, 49)
         Me.Panel28.TabIndex = 132
-        '
-        'txtPONo
-        '
-        Me.txtPONo.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtPONo.DefaultText = ""
-        Me.txtPONo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtPONo.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtPONo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtPONo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtPONo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtPONo.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
-        Me.txtPONo.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.txtPONo.ForeColor = System.Drawing.Color.Black
-        Me.txtPONo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.txtPONo.Location = New System.Drawing.Point(328, 0)
-        Me.txtPONo.Margin = New System.Windows.Forms.Padding(5)
-        Me.txtPONo.Name = "txtPONo"
-        Me.txtPONo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtPONo.PlaceholderText = "Enter purchase order number"
-        Me.txtPONo.SelectedText = ""
-        Me.txtPONo.Size = New System.Drawing.Size(337, 49)
-        Me.txtPONo.TabIndex = 4
         '
         'Panel19
         '
@@ -868,6 +843,7 @@ Partial Class frmManageSalesV2
         Me.txtTIN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtTIN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtTIN.Dock = System.Windows.Forms.DockStyle.Left
+        Me.txtTIN.Enabled = False
         Me.txtTIN.FocusedState.BorderColor = System.Drawing.Color.OrangeRed
         Me.txtTIN.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.txtTIN.ForeColor = System.Drawing.Color.Black
@@ -949,7 +925,6 @@ Partial Class frmManageSalesV2
         '
         'Panel13
         '
-        Me.Panel13.Controls.Add(Me.lblPONu)
         Me.Panel13.Controls.Add(Me.Panel29)
         Me.Panel13.Controls.Add(Me.Label8)
         Me.Panel13.Controls.Add(Me.Panel15)
@@ -962,20 +937,6 @@ Partial Class frmManageSalesV2
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(1419, 31)
         Me.Panel13.TabIndex = 5
-        '
-        'lblPONu
-        '
-        Me.lblPONu.AutoSize = True
-        Me.lblPONu.BackColor = System.Drawing.Color.Transparent
-        Me.lblPONu.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblPONu.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPONu.ForeColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.lblPONu.Location = New System.Drawing.Point(1049, 0)
-        Me.lblPONu.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblPONu.Name = "lblPONu"
-        Me.lblPONu.Size = New System.Drawing.Size(128, 24)
-        Me.lblPONu.TabIndex = 130
-        Me.lblPONu.Text = "P.O. Number"
         '
         'Panel29
         '
@@ -1556,9 +1517,7 @@ Partial Class frmManageSalesV2
     Friend WithEvents Panel34 As Panel
     Friend WithEvents txtDays As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel39 As Panel
-    Friend WithEvents txtPONo As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel19 As Panel
-    Friend WithEvents lblPONu As Label
     Friend WithEvents Panel29 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel40 As Panel
